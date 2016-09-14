@@ -42,7 +42,7 @@
         </div>
 
         <form action="" name="search">
-            <input name="q" type="text" onfocus="this.select()" value="" autocomplete="off" placeholder="To be implemented">
+            <input name="q" type="text" onfocus="this.select()" value="" autocomplete="off" placeholder="Search Items, NPCs, Zones etc.">
             <a href="javascript:document.search.submit();"></a>
         </form>
 

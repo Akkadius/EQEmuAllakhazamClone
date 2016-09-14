@@ -878,10 +878,10 @@ a.blocklink:hover {box-shadow:0 2px 5px rgba(0, 0, 0, .35), inset 0 0 0 100px rg
 .skinned #header {background:#000 !important;height:121px}
 #wrapper {padding:35px 0 0}
 #uctl {font:11px Arial,Helvetica,sans-serif;letter-spacing:1px;position:absolute;right:98px;text-shadow:0 0 5px #000;top:13px}
-#header form {background:url(/i/black-35.png);padding:1px;*padding:0 1px;position:absolute;right:-1px;top:42px}
-#header input {background:#fff url(/i/bg-light.gif) repeat-x !important;border:0;color:#000 !important;font-size:16px;height:20px;line-height:20px;margin:0;padding:8px 35px 7px 5px;width:255px}
-#header input.inactive {background:#fff url(/i/search-text.gif) left no-repeat;color:#999}
-#header form a {background:url(/i/search.png) 10px 8px no-repeat !important;height:35px;width:21px;position:absolute;right:1px;top:1px;width:35px}
+#header form {background:url(../images/bg/black-35.png);padding:1px;*padding:0 1px;position:absolute;right:-1px;top:42px}
+#header input {background:#fff url(../images/bg/bg-light.gif) repeat-x !important;border:0;color:#000 !important;font-size:16px;height:20px;line-height:20px;margin:0;padding:8px 35px 7px 5px;width:255px}
+#header input.inactive {background:#fff url(../images/bg/search.png) left no-repeat;color:#999}
+#header form a {background:url(../images/bg/search.png) 10px 8px no-repeat !important;height:35px;width:21px;position:absolute;right:1px;top:1px;width:35px}
 #header form a:hover {background-position:bottom}
 #logo {background:url(/i/logo-smallish-shadowed.png) 0 10px no-repeat;height:106px;left:-2px;position:absolute;top:0;width:165px}
 #logo a {display:block;height:106px;width:165px}
