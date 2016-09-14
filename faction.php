@@ -7,8 +7,8 @@
 	 *  If neither 'id' nor 'name' are specified or if 'id' is not a valid faction ID, redirects to the faction search page.
 	 */
 
-	include('./includes/constants.php');
-	include('./includes/config.php');
+	require_once('./includes/constants.php');
+	require_once('./includes/config.php');
 	include($includes_dir.'functions.php');
 	include($includes_dir.'mysql.php');
 

@@ -1,10 +1,10 @@
 <?php
-include('../includes/constants.php');
-include('../includes/config.php');
-include('../includes/functions.php');
-include('../includes/mysql.php');
+require_once('../includes/constants.php');
+require_once('../includes/config.php');
+require_once('../includes/functions.php');
+require_once('../includes/mysql.php');
 $Title="Melee damage calculator";
-include('../includes/headers.php');
+require_once('../includes/headers.php');
 
 $istr = (isset($_GET['istr']) ? $_GET['istr'] : 75);
 $idex = (isset($_GET['idex']) ? $_GET['idex'] : 75);

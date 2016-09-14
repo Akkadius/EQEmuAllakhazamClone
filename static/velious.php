@@ -1,10 +1,10 @@
 <?php
 $Title="Frozen Lands of Velious";
-include('../includes/config.php');
-include('../includes/constants.php');
-include('../includes/headers.php');
-include('../includes/mysql.php');
-include('../includes/functions.php');
+require_once('../includes/config.php');
+require_once('../includes/constants.php');
+require_once('../includes/headers.php');
+require_once('../includes/mysql.php');
+require_once('../includes/functions.php');
 ?>
 <p class=page_small_title>Cities and Zones</p><ul>
 <li><a href=../zone.php?name=cobaltscar>Cobalt Scar</a>
@@ -27,5 +27,5 @@ include('../includes/functions.php');
 <li><a href=../zone.php?name=wakening>Wakening Land</a>
 <li><a href=../zone.php?name=westwastes>Western Wastes</a>
 <?
-include('../includes/footers.php');
+require_once('../includes/footers.php');
 ?>

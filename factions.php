@@ -5,8 +5,8 @@
 	 *  If 'iname' is not set then it is equivalent to searching for all factions.
 	 *  For compatbility with Wikis and multi-word searches, underscores are treated as jokers in 'iname'.
 	 */
-	include('./includes/constants.php');
-	include('./includes/config.php');
+	require_once('./includes/constants.php');
+	require_once('./includes/config.php');
 	include($includes_dir.'mysql.php');
 	include($includes_dir.'functions.php');
 

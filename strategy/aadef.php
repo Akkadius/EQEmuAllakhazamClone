@@ -1,10 +1,10 @@
 <?php
-include('../includes/constants.php');
-include('../includes/config.php');
-include('../includes/functions.php');
-include('../includes/mysql.php');
+require_once('../includes/constants.php');
+require_once('../includes/config.php');
+require_once('../includes/functions.php');
+require_once('../includes/mysql.php');
 $Title="Defensive AA";
-include('../includes/headers.php');
+require_once('../includes/headers.php');
 
 print "<p><center><table border=0 width=0%>";
 print "<form method=POST action=$PHP_SELF>";

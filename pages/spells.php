@@ -3,8 +3,8 @@
 	#ini_set('display_errors', 'On');
 	#error_reporting(E_ALL);
 		
-	include('./includes/constants.php');
-	include('./includes/config.php');
+	require_once('./includes/constants.php');
+	require_once('./includes/config.php');
 	include($includes_dir.'mysql.php');
 	include($includes_dir.'functions.php');
 	$Title="Spell Search";

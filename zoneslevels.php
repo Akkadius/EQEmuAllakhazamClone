@@ -1,6 +1,6 @@
 <?php
 $Title="Populated Zones By Level";
-include('./includes/config.php');
+require_once('./includes/config.php');
 include($includes_dir.'constants.php');
 include($includes_dir.'headers.php');
 include($includes_dir.'mysql.php');

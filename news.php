@@ -1,6 +1,6 @@
 <?php
-include('./includes/constants.php');
-include('./includes/config.php');
+require_once('./includes/constants.php');
+require_once('./includes/config.php');
 include($includes_dir.'mysql.php');
 $Title="News and Updates";
 include($includes_dir.'headers.php');

@@ -4,8 +4,8 @@
  *  If the parameter 'isearchtype' equals 'name' and 'iname' is set then queries for objects with approximately this name and displays them.
  *  At the moment the object types supported are factions, NPCs and items.
  */
-include('./includes/constants.php');
-include('./includes/config.php');
+require_once('./includes/constants.php');
+require_once('./includes/config.php');
 include($includes_dir.'mysql.php');
 include($includes_dir.'functions.php');
 
