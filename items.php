@@ -6,9 +6,9 @@
 	  *  For compatbility with Wikis and multi-word searches, underscores are treated as jokers in 'iname'.
 	  */
 	require_once('./includes/config.php');
-	include($includes_dir.'constants.php');
-	include($includes_dir.'mysql.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'constants.php');
+	require_once($includes_dir.'mysql.php');
+	require_once($includes_dir.'functions.php');
 
 	
 	$isearch       = (isset($_GET[       'isearch']) ? $_GET[       'isearch'] : '');
@@ -163,7 +163,7 @@
 
 	$Title="Item Search";
 	$XhtmlCompliant = TRUE;
-	include($includes_dir.'headers.php');
+	require_once($includes_dir.'headers.php');
 
 	echo "<center><table><tr><td style='toggle_btn'><a href='#' onclick='toggleItem(\"myTbody\")'><b><img src='" . $images_url . "dropdown.png' align='left' width='20' height='20'/>(Toggle Search Fields)</b></a></td></tr></table></center>";
 	echo "<center><table border='0' width='0%' cellpadding='15'>\n";
@@ -355,6 +355,6 @@
 		}
 	}
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 
 ?>

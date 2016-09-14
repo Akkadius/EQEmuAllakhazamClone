@@ -2,9 +2,9 @@
 	$Title="Search Recipes";
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'mysql.php');
-	include($includes_dir.'headers.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'mysql.php');
+	require_once($includes_dir.'headers.php');
+	require_once($includes_dir.'functions.php');
 
 	$minskill = (isset($_GET['minskill']) ? $_GET['minskill'] : 0);
 	$maxskill = (isset($_GET['maxskill']) ? $_GET['maxskill'] : 0);
@@ -53,6 +53,6 @@
 		}
 	}
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 
 ?>

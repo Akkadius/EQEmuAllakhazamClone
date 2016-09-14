@@ -1,10 +1,10 @@
 <?php
 $Title="Populated Zones By Level";
 require_once('./includes/config.php');
-include($includes_dir.'constants.php');
-include($includes_dir.'headers.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'constants.php');
+require_once($includes_dir.'headers.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 
 print "<p><b>The suggested levels are approximate based upon the levels of the majority of creatures found in the zone, and, except for the newbie zones, assume that you will hunt with a group.  Most zones also have some higher and lower level monsters roaming the area, and can thus be selectively hunted at different levels.  Follow the links to get more complete descriptions for the individual zones.</b><p>";
 if ($SortZoneLevelList==TRUE) {
@@ -143,5 +143,5 @@ print "</td><td width=0% nowrap>";
 // right column, unused
 print "</td></tr></table>";
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

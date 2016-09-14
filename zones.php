@@ -1,10 +1,10 @@
 <?php
 $Title="Populated Zones List";
 require_once('./includes/config.php');
-include($includes_dir.'constants.php');
-include($includes_dir.'headers.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'constants.php');
+require_once($includes_dir.'headers.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 
 print "<table border=0 width=100%><tr valign=top><td width=100%>";
 
@@ -44,5 +44,5 @@ print "</td><td width=0% nowrap>";
 
 print "</td></tr></table>";
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

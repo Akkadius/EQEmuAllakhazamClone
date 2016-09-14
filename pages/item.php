@@ -8,8 +8,8 @@
 
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir . 'mysql.php');
-include($includes_dir . 'functions.php');
+require_once($includes_dir . 'mysql.php');
+require_once($includes_dir . 'functions.php');
 
 $id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');

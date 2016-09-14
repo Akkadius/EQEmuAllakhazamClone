@@ -72,5 +72,5 @@ if (isset($icalculate)) {
 } // fin calculate
 
 
-include("../includes/footers.php");
+require_once("../includes/footers.php");
 ?>

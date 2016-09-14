@@ -1,10 +1,10 @@
 <?php
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
+require_once($includes_dir.'mysql.php');
 $Title="News and Updates";
-include($includes_dir.'headers.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'headers.php');
+require_once($includes_dir.'functions.php');
 
 if ($EnableNews==FALSE)
 {
@@ -23,5 +23,5 @@ while ($res=mysql_fetch_array($result))
 	$sep="<center><p><img src=images/line.gif width=75% height=5><p></center>";
 }
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

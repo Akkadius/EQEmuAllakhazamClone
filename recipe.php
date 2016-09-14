@@ -1,7 +1,7 @@
 <?php
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'mysql.php');
+	require_once($includes_dir.'mysql.php');
 
 	$id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
 
@@ -12,8 +12,8 @@
 	}
 
 	$Title="Recipe : ".str_replace('_',' ',GetFieldByQuery("name","SELECT name FROM $tbtradeskillrecipe WHERE id=$id"));
-	include($includes_dir.'headers.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'headers.php');
+	require_once($includes_dir.'functions.php');
 
 	if (!isset($id)) { print "<script>document.location=\"index.php\";</script>"; }
 
@@ -143,5 +143,5 @@
 	}
 	print "</table>";
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 ?>

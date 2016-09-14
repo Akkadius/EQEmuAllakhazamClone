@@ -1,9 +1,9 @@
 <?php
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
-include($includes_dir.'spell.inc.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
+require_once($includes_dir.'spell.inc.php');
 
 $iname   = (isset($_GET[  'iname']) ? $_GET[  'iname'] : '');
 $iclass   = (isset($_GET[  'iclass']) ? $_GET[  'iclass'] : 0);

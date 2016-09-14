@@ -5,10 +5,10 @@
 		
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'mysql.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'mysql.php');
+	require_once($includes_dir.'functions.php');
 	$Title="Spell Search";
-	include($includes_dir.'spell.inc.php');
+	require_once($includes_dir.'spell.inc.php');
 	
 	$opt = (isset($_GET['opt']) ? $_GET['opt'] : '');
 	$namestring = (isset($_GET['name']) ? $_GET['name'] : '');

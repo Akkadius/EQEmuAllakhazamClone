@@ -1,10 +1,10 @@
 <?php
 $Title="Zone List";
 require_once('./includes/config.php');
-include($includes_dir.'constants.php');
-include($includes_dir.'headers.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'constants.php');
+require_once($includes_dir.'headers.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 CreateToolTip("kunark", '<center><img src="http://media.giantbomb.com/uploads/0/1593/370230-everquest_ruins_of_kunark_large.jpg"></center>');
 CreateToolTip("velious", '<center><img src="http://upload.wikimedia.org/wikipedia/en/d/d5/EverQuest_-_The_Scars_of_Velious_Coverart.png"></center>');
 CreateToolTip("luclin", '<center><img src="http://upload.wikimedia.org/wikipedia/en/1/19/EverQuest_-_The_Shadows_of_Luclin_Coverart.png"></center>');
@@ -34,5 +34,5 @@ echo '<a href=static/uf.php>Underfoot</a><br>                             ';
 echo '<a href=static/hot.php>House of Thule</a><br>                       ';
 echo '<a href=static/voa.php>Veil of Alaris</a><br>                       ';
 echo '</center>';
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

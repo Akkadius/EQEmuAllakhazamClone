@@ -1,13 +1,13 @@
 <?php
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 $Title="PET :: $name";
-include($includes_dir.'headers.php');
+require_once($includes_dir.'headers.php');
 
 
 if (!isset($name)) { print "<script>document.location=\"index.php\";</script>"; }
@@ -93,5 +93,5 @@ if ($npc["npc_spells_id"]>0) {
 
 print "</td></tr></table><p>\n";
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

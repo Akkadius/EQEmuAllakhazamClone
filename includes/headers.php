@@ -96,7 +96,7 @@
 	// Left-side menu
 	echo "<tr valign='top'>\n";
 	echo "<td class='menu' width='0%'>\n";
-	include("menu.php");
+	require_once("menu.php");
 	echo "</td>\n";
 
 	// Right side content

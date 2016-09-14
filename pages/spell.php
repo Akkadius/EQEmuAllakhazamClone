@@ -1,6 +1,6 @@
 <?php
 
-	include($includes_dir.'spell.inc.php');
+	require_once($includes_dir.'spell.inc.php');
 	$id = $_GET["id"];
 	$spell=getspell($id);
 	if(!$spell)

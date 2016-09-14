@@ -1,7 +1,7 @@
 <?php
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
+require_once($includes_dir.'mysql.php');
 
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
@@ -14,8 +14,8 @@ if ($DisplayNamedNPCsInfo==FALSE)
 }
 
 $Title=GetFieldByQuery("long_name","SELECT long_name FROM $tbzones WHERE short_name='$name'")." ($name)";
-include($includes_dir.'headers.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'headers.php');
+require_once($includes_dir.'functions.php');
 
 if (!isset($name)) { print "<script>document.location=\"zones.php\";</script>"; }
 
@@ -224,5 +224,5 @@ if ($AllowQuestsNPC==TRUE) {
 }
 print "</td></tr></table>";
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

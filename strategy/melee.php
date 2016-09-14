@@ -115,7 +115,7 @@ if (isset($icalculate)) {
   //if (($do==true) and (($imoblevel<=0) or (!isinteger($imoblevel)))) { print "Invalid mob level..."; $do=false; }
   
   if ($do==false) {
-    include("../includes/footers.php");
+    require_once("../includes/footers.php");
     exit;
   }
 
@@ -252,5 +252,5 @@ if (isset($icalculate)) {
   
 }
 
-include("../includes/footers.php");
+require_once("../includes/footers.php");
 ?>

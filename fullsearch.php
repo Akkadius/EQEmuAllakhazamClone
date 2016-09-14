@@ -6,8 +6,8 @@
  */
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 
 $iid         = (isset($_GET[        'iid']) ? addslashes($_GET[        'iid']) : '');
 $iname       = (isset($_GET[      'iname']) ? addslashes($_GET[      'iname']) : '');
@@ -101,7 +101,7 @@ if(     mysql_num_rows($FoundFactions) == 0
 
 $Title="Search Results";
 $XhtmlCompliant = TRUE;
-include($includes_dir.'headers.php');
+require_once($includes_dir.'headers.php');
 
 // Display found objects
 print "          <table border='0' width='100%'>\n";
@@ -119,5 +119,5 @@ print "            </tr>\n";
 print "          </table>\n";
 
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

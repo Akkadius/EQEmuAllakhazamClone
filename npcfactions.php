@@ -1,7 +1,7 @@
 <?php
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'mysql.php');
+	require_once($includes_dir.'mysql.php');
 	
 	// Pagination //
 	$page = (isset($_GET['page']) ? addslashes($_GET['page']) : 0);
@@ -19,8 +19,8 @@
 	// Pagination //
 	
 	$Title="Bestiary by Factions";
-	include($includes_dir.'headers.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'headers.php');
+	require_once($includes_dir.'functions.php');
 
 	echo '<br><center><table width="50%" border ="1" style="background-color: ; filter:alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8;"><td align="left">';
 	echo "<p class=menuh>Factions:<p>";
@@ -47,5 +47,5 @@
 	print Pagination($targetpage, $page, $total_pages, $MaxResultsPerPage, $AdjacentPages);
 	print "</td></tr></table>";
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 ?>

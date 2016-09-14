@@ -1,8 +1,8 @@
 <?php
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 
 $id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
 
@@ -24,7 +24,7 @@ $x=floor($spawn["x"]);
 $y=floor($spawn["y"]);
 $z=floor($spawn["z"]);
 
-include($includes_dir.'headers.php');
+require_once($includes_dir.'headers.php');
 
 if (!isset($id) || $id=='') { print "<script>document.location=\"index.php\";</script>"; }
 
@@ -75,5 +75,5 @@ if (mysql_num_rows($result)>0) {
 }
 print "</ul></td></tr></table></center>";
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

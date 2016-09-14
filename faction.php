@@ -9,8 +9,8 @@
 
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'functions.php');
-	include($includes_dir.'mysql.php');
+	require_once($includes_dir.'functions.php');
+	require_once($includes_dir.'mysql.php');
 
 	/** Formats the npc/zone info selected in '$QueryResult' to display them by zone
 	 *  The top-level sort must be on the zone
@@ -82,7 +82,7 @@
 
 	$Title = "Faction :: ".$name;
 	$XhtmlCompliant = TRUE;
-	include($includes_dir.'headers.php');
+	require_once($includes_dir.'headers.php');
 
 	print "          <center>\n";
 	print "            <table border='1' width='80%' style='background-color: black; filter:alpha(opacity=70); -moz-opacity:0.7; opacity: 0.7;'>\n";
@@ -141,6 +141,6 @@
 	print "            </table>\n";
 	print "          </center>\n";
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 
 ?>

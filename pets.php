@@ -2,9 +2,9 @@
 
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'mysql.php');
-	include($includes_dir.'functions.php');
-	include($includes_dir.'blobs.inc.php');
+	require_once($includes_dir.'mysql.php');
+	require_once($includes_dir.'functions.php');
+	require_once($includes_dir.'blobs.inc.php');
 
 	$class   = (isset($_GET['class']) ? $_GET['class'] : 0);
 	
@@ -15,7 +15,7 @@
 	}
 
 	$Title="Pets Statistics";
-	include($includes_dir.'headers.php');
+	require_once($includes_dir.'headers.php');
 
 	print "<table border=0 width=100%><tr valign=top><td nowrap>";
 	
@@ -127,6 +127,6 @@
 
 	print "</td></tr></table>";
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 
 ?>

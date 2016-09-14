@@ -9,8 +9,8 @@
 
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'functions.php');
-include($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
+require_once($includes_dir.'mysql.php');
 
 $id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
 $name = (isset($_GET['name']) ? $_GET['name'] : '');
@@ -42,7 +42,7 @@ else
 
 $Title="Task :: ".$name;
 $XhtmlCompliant = TRUE;
-include($includes_dir.'headers.php');
+require_once($includes_dir.'headers.php');
 
 print "<p><center><table border='0' width='60%'>";
 print "<tr><td nowrap='1'><b>Task Title : </b></td><td width='100%'>".$task["title"]."</td></tr>";
@@ -293,6 +293,6 @@ if ($DisplayTaskActivities==TRUE)
 }
 print "</table></center></p>";
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 
 ?>

@@ -7,8 +7,8 @@
  */
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-include($includes_dir.'mysql.php');
-include($includes_dir.'functions.php');
+require_once($includes_dir.'mysql.php');
+require_once($includes_dir.'functions.php');
 
 $isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
 $iname   = (isset($_GET[  'iname']) ? $_GET[  'iname'] : '');
@@ -56,7 +56,7 @@ if($isearch != "")
 
 $Title="NPCs search";
 $XhtmlCompliant = TRUE;
-include($includes_dir.'headers.php');
+require_once($includes_dir.'headers.php');
 
 echo "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
 echo "<tr align='left'>\n";
@@ -71,5 +71,5 @@ echo "</form></table></center>\n";
 if(isset($QueryResult))
   PrintQueryResults($QueryResult, $MaxNpcsReturned, "npc.php", "npc", "npcs", "id", "name");
 
-include($includes_dir."footers.php");
+require_once($includes_dir."footers.php");
 ?>

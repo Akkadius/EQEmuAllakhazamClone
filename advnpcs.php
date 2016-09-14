@@ -2,9 +2,9 @@
 	$Title="Advanced NPC Search";
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
-	include($includes_dir.'mysql.php');
-	include($includes_dir.'headers.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'mysql.php');
+	require_once($includes_dir.'headers.php');
+	require_once($includes_dir.'functions.php');
 
 	$isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
 	$id   = (isset($_GET[  'id']) ? addslashes($_GET[  'id']) : '');
@@ -40,17 +40,17 @@
 		$query="SELECT $tbnpctypes.id,$tbnpctypes.name,$tbnpctypes.level
 				FROM $tbnpctypes
 				WHERE 1=1";
-		if ($iminlevel>$imaxlevel) { $c=$iminlevel; $iminlevel=$imaxlevel; $imaxlevel=$c; }          
+		if ($iminlevel>$imaxlevel) { $c=$iminlevel; $iminlevel=$imaxlevel; $imaxlevel=$c; }
 		if ($iminlevel>0 && is_numeric($iminlevel)) { $query.=" AND $tbnpctypes.level>=$iminlevel"; }
 		if ($imaxlevel>0 && is_numeric($imaxlevel)) { $query.=" AND $tbnpctypes.level<=$imaxlevel"; }
 		if ($inamed) { $query.=" AND substring($tbnpctypes.name,1,1)='#'"; }
 		if ($irace>0 && is_numeric($irace)) { $query.=" AND $tbnpctypes.race=$irace"; }
 		if ($iname!="")
-		{ 
+		{
 			$iname=str_replace('`','%',str_replace(' ','%',addslashes($iname)));
-			$query.=" AND $tbnpctypes.name LIKE '%$iname%'"; 
+			$query.=" AND $tbnpctypes.name LIKE '%$iname%'";
 		}
-		if ($HideInvisibleMen==TRUE) { $query.=" AND $tbnpctypes.race!=127"; }          
+		if ($HideInvisibleMen==TRUE) { $query.=" AND $tbnpctypes.race!=127"; }
 		$query.=" ORDER BY $tbnpctypes.name";
 		$result=mysql_query($query) or message_die('npcs.php','MYSQL_QUERY',$query,mysql_error());
 		$n=mysql_num_rows($result);
@@ -74,5 +74,5 @@
 		}
 	}
 
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 ?>

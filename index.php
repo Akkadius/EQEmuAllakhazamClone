@@ -3,10 +3,10 @@
 	#error_reporting(E_ALL);
 
 	require_once('./includes/config.php');
-	include($includes_dir.'constants.php');
+	require_once($includes_dir.'constants.php');
 
-	include($includes_dir.'mysql.php');
-	include($includes_dir.'functions.php');
+	require_once($includes_dir.'mysql.php');
+	require_once($includes_dir.'functions.php');
 	
 	// Pagination //
 	$page = (isset($_GET['page']) ? addslashes($_GET['page']) : 0);
@@ -26,14 +26,14 @@
 	
 
 	$Title="Wecome to AllaClone!";
-	include($includes_dir.'headers.php');
+	require_once($includes_dir.'headers.php');
 
 	// Here's the main page of the website
 
 	if (file_exists("design/index.html"))
 	{
 		print "<center><table width=95% border=0><tr valign=top><td>";
-		include("design/index.html");
+		require_once("design/index.html");
 		print "</td></tr></table></center>";
 	}
 
@@ -104,7 +104,7 @@
 		print "</td></tr></table>";
 	}
 	
-	include($includes_dir."footers.php");
+	require_once($includes_dir."footers.php");
 ?>
 
 
