@@ -1,6 +1,6 @@
 <?php
 	$Title="Advanced NPC Search";
-	include('./includes/constantes.php');
+	include('./includes/constants.php');
 	include('./includes/config.php');
 	include($includes_dir.'mysql.php');
 	include($includes_dir.'headers.php');

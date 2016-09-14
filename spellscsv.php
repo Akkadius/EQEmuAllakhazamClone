@@ -1,5 +1,5 @@
 <?php
-include('./includes/constantes.php');
+include('./includes/constants.php');
 include('./includes/config.php');
 include($includes_dir.'mysql.php');
 include($includes_dir.'functions.php');

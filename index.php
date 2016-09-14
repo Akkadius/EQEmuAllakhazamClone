@@ -3,7 +3,7 @@
 	#error_reporting(E_ALL);
 
 	include('./includes/config.php');
-	include($includes_dir.'constantes.php');
+	include($includes_dir.'constants.php');
 
 	include($includes_dir.'mysql.php');
 	include($includes_dir.'functions.php');

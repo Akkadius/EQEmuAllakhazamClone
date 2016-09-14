@@ -7,7 +7,7 @@
 	 *  If neither 'id' nor 'name' are specified or if 'id' is not a valid NPC ID, redirects to the NPC search page.
 	 */
 
-	include('./includes/constantes.php');
+	include('./includes/constants.php');
 	include('./includes/config.php');
 	include($includes_dir.'functions.php');
 	include($includes_dir.'mysql.php');

@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 include('../includes/config.php');
-include('../includes/constantes.php');
+include('../includes/constants.php');
 include('../includes/headers.php');
 include('../includes/mysql.php');
 include('../includes/functions.php');

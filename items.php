@@ -6,7 +6,7 @@
 	  *  For compatbility with Wikis and multi-word searches, underscores are treated as jokers in 'iname'.
 	  */
 	include('./includes/config.php');
-	include($includes_dir.'constantes.php');
+	include($includes_dir.'constants.php');
 	include($includes_dir.'mysql.php');
 	include($includes_dir.'functions.php');
 

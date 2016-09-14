@@ -3,7 +3,7 @@
 	#ini_set('display_errors', 'On');
 	#error_reporting(E_ALL);
 		
-	include('./includes/constantes.php');
+	include('./includes/constants.php');
 	include('./includes/config.php');
 	include($includes_dir.'mysql.php');
 	include($includes_dir.'functions.php');
