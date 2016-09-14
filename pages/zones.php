@@ -1,12 +1,6 @@
 <?php
 $Title="Populated Zones List";
-require_once('./includes/config.php');
-require_once($includes_dir.'constants.php');
-require_once($includes_dir.'headers.php');
-require_once($includes_dir.'mysql.php');
-require_once($includes_dir.'functions.php');
-
-print "<table border=0 width=100%><tr valign=top><td width=100%>";
+print "<table ><tr valign=top><td width=100%>";
 
 $query="SELECT $tbzones.short_name AS short_name,
                $tbzones.long_name AS long_name,
@@ -30,7 +24,7 @@ print "<center><table border=1><tr>
        ";
 while ($row=mysql_fetch_array($result)) {
   print "<tr>
-         <td><a href=?a=zone&name=".$row["short_name"].">".$row["long_name"]."</a></td>
+         <td><a href='?a=zone&name=".$row["short_name"]."''>".$row["long_name"]."</a></td>
          <td>".$row["short_name"]."</td>
          <td>".$row["zoneidnumber"]."</td>
          <td align=center>".$row["spawns"]."</td>

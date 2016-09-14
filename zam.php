@@ -123,7 +123,7 @@
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
                                                     <li><a href="?a=zonelist">Zones by Era</a></li>
-                                                    <li><a href="http://10.0.1.12/allaclone/zones.php">Populated Zones</a> </li>
+                                                    <li><a href="?a=zones">Populated Zones</a> </li>
                                                     <li><a href="?a=zones_by_level">Zones by Level</a> </li>
                                                 </td>
                                             </tr>
@@ -185,7 +185,7 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/recipes.php">Recipe
+                                                    <li><a href="?a=recipes&">Recipe
                                                             Search</a>
                                                     </li>
                                                 </td>
@@ -221,6 +221,8 @@
                                             if($route == "zone"){ require_once('pages/zone.php'); }
                                             if($route == "npc"){ require_once('pages/npc.php'); }
                                             if($route == "recipe"){ require_once('pages/recipe.php'); }
+                                            if($route == "recipes"){ require_once('pages/recipes.php'); }
+                                            if($route == "zones"){ require_once('pages/zones.php'); }
 
                                             if($Title){
                                                 $footer_javascript .= '
@@ -249,9 +251,9 @@
 
         $page_load_time = 'This page loaded in ' . $time . ' seconds';
 
-        if($slow_page_logging){
-            $myfile = fopen("slow_page_logging.txt", "w") or die("Unable to open file!");
-            fwrite($myfile, $_SERVER['REQUEST_URI'] . ' :: Took ' . $time . ' to load');
+        if($slow_page_logging && $time > 1){
+            $myfile = fopen("logs/slow_page_logging.txt", "a") or die("Unable to open file!");
+            fwrite($myfile, $_SERVER['REQUEST_URI'] . ' :: Took ' . $time . ' to load' . "\n");
             fclose($myfile);
         }
 

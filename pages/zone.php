@@ -64,11 +64,11 @@ if ($mode=="npcs") {
 	if (mysql_num_rows($result) > 0)
 	{
 		print "<p>Bestiary<p><table border=0 width='0%' cellpadding='5' cellspacing='0'><tr>";
-		if ($ZoneDebug==TRUE) { print "<td class='menuh'><b><a href=$PHP_SELF?name=$name&order=id>Id</a></b></td>"; }
-		print "<td align='left'  class='menuh'><b><a href=$PHP_SELF?name=$name&order=name>Name</a></b></td>";
-		if ($ZoneDebug==TRUE) { print "<td class='menuh' align='left'><b><a href=$PHP_SELF?name=$name&order=loottable_id>Loottable</a></b></td>"; }
-		print "<td align='left'  class='menuh'><b><a href=$PHP_SELF?name=$name&order=level>Level Range</a></b></td>";
-		print "<td align='left' class='menuh'><b><a href=$PHP_SELF?name=$name&order=race>Race</a></b></td>";
+		if ($ZoneDebug==TRUE) { print "<td class='menuh'><b><a href=?a=zone&name=$name&order=id>Id</a></b></td>"; }
+		print "<td align='left'  class='menuh'><b><a href=?a=zone&name=$name&order=name>Name</a></b></td>";
+		if ($ZoneDebug==TRUE) { print "<td class='menuh' align='left'><b><a href=?a=zone&name=$name&order=loottable_id>Loottable</a></b></td>"; }
+		print "<td align='left'  class='menuh'><b><a href=?a=zone&name=$name&order=level>Level Range</a></b></td>";
+		print "<td align='left' class='menuh'><b><a href=?a=zone&name=$name&order=race>Race</a></b></td>";
 		print "<td align='left' class='menuh'><b>Type</b></td>";
 		
 		$RowClass = "lr";
@@ -116,8 +116,8 @@ if ($mode=="items") {
 	
 	$EquiptmentTable = "<p>Equipment List<p><table border=0><tr>
 		<th class='menuh'>Icon</a></th>
-		<th class='menuh'><a href=$PHP_SELF?name=$name&mode=items&order=Name>Name</a></th>
-		<th class='menuh'><a href=$PHP_SELF?name=$name&mode=items&order=itemtype>Item type</a></th>
+		<th class='menuh'><a href=?a=zone&name=$name&mode=items&order=Name>Name</a></th>
+		<th class='menuh'><a href=?a=zone&name=$name&mode=items&order=itemtype>Item type</a></th>
 		</tr>";
 
 	$query="SELECT $tbnpctypes.id";
@@ -375,23 +375,23 @@ if ($mode=="tasks") {
 
 print "</td><td width=0% nowrap>"; // end first column
 print "<p class=menuh>Resources:</p>";
-print "<li><a href=$PHP_SELF?name=$name&mode=npcs>".$zone["long_name"]." Bestiary List</a>";
+print "<li><a href=?a=zone&name=$name&mode=npcs>".$zone["long_name"]." Bestiary List</a>";
 if ($DisplayNamedNPCsInfo==TRUE)
 {
 	print "<li><a href=zonenameds.php?name=$name&mode=npcs>".$zone["long_name"]." Named Mobs List</a>";
 }
-print "<li><a href=$PHP_SELF?name=$name&mode=items>".$zone["long_name"]." Equipment List </a>";
+print "<li><a href=?a=zone&name=$name&mode=items>".$zone["long_name"]." Equipment List </a>";
 if (file_exists($maps_dir.$name.".jpg")) {
   print "<li><a href=".$maps_url.$name.".jpg>".$zone["long_name"]." Map</a>";
 }
 if ($DisplaySpawnGroupInfo==TRUE)
 {
-	print "<li><a href=$PHP_SELF?name=$name&mode=spawngroups>".$zone["long_name"]." Spawn Groups</a>";
+	print "<li><a href=?a=zone&name=$name&mode=spawngroups>".$zone["long_name"]." Spawn Groups</a>";
 }
-print "<li><a href=$PHP_SELF?name=$name&mode=forage>".$zone["long_name"]." Forageable items</a>";
+print "<li><a href=?a=zone&name=$name&mode=forage>".$zone["long_name"]." Forageable items</a>";
 if ($DisplayTaskInfo==TRUE)
 {
-	print "<li><a href=$PHP_SELF?name=$name&mode=tasks>".$zone["long_name"]." Tasks</a>";
+	print "<li><a href=?a=zone&name=$name&mode=tasks>".$zone["long_name"]." Tasks</a>";
 }
 if ($AllowQuestsNPC==TRUE) {
   print "<li><a href=$root_url"."quests/zones.php?aZone=$name>".$zone["long_name"]." Quest NPCs</a>";

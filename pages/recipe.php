@@ -5,7 +5,7 @@
 
 	if(!is_numeric($id))
 	{
-		header("Location: recipes.php");
+		header("Location: ?a=recipes&");
 		exit();
 	}
 

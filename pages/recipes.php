@@ -18,8 +18,9 @@
 	if (!ctype_digit($minskill)) { $minskill=0; }
 	if ($minskill>$maxskill) { $tempskill=$minskill; $minskill=$maxskill; $maxskill=$tempskill; }
 
-	print "<table border=0 width=0%>";
+	print "<center><table border=0>";
 	print "<form method='GET' action=$PHP_SELF>";
+	print '<input type="hidden" name="a" value="recipes">';
 	print "<tr><td nowrap><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname></td></tr>";
 	print "<tr><td nowrap><b>Tradeskill : </b></td><td>";
 	print SelectTradeSkills("iskill",$iskill);
@@ -45,12 +46,14 @@
 		if ($minskill>0) { $query.=" $s $tbtradeskillrecipe.trivial>=$minskill"; $s="AND"; }
 		if ($maxskill>0) { $query.=" $s $tbtradeskillrecipe.trivial<=$maxskill"; $s="AND"; }
 		$query.=" ORDER BY $tbtradeskillrecipe.name";
-		$result=mysql_query($query) or message_die('recipes.php','MYSQL_QUERY',$query,mysql_error());
+		$result=mysql_query($query) or message_die('?a=recipes&','MYSQL_QUERY',$query,mysql_error());
 
+		echo '<div>';
 		if(isset($result))
 		{
-			PrintQueryResults($result, $MaxItemsReturned, "recipe.php", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
+			PrintQueryResults($result, $MaxItemsReturned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
 		}
+		echo '</div>';
 	}
 
 

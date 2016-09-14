@@ -34,7 +34,7 @@ function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPa
 		echo  "<ul>\n";
 		for( $j = 1 ; $j <= $ObjectsToShow ; $j ++ ){
 			$row = mysql_fetch_array($FoundObjects);
-			$PrintString = " <li><a href='".$OpenObjectByIdPage."id=".$row[$IdAttribute]."'>";
+			$PrintString = " <li style='text-align:left'><a href='".$OpenObjectByIdPage."id=".$row[$IdAttribute]."'>";
 			if ($ObjectDescription == "npc"){
 				// Clean up the name for NPCs
 				$PrintString .= ReadableNpcName($row[$NameAttribute]);
