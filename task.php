@@ -63,7 +63,7 @@ if ($task["rewardmethod"] == 0)
 	{
 		$ItemID = $task["rewardid"];
 		$ItemName = GetFieldByQuery("Name","SELECT Name FROM items WHERE id = $ItemID");
-		$Reward = "<a href=item.php?id=".$ItemID.">".$ItemName."</a>";
+		$Reward = "<a href=?a=item&id=".$ItemID.">".$ItemName."</a>";
 	}
 }
 if ($Reward)
@@ -251,7 +251,7 @@ if ($DisplayTaskActivities==TRUE)
 				}
 				if ($ItemID > 0)
 				{
-					print "<li>Related Item: <a href=item.php?id=".$ItemID.">".$ItemName."</a></li>";
+					print "<li>Related Item: <a href=?a=item&id=".$ItemID.">".$ItemName."</a></li>";
 				}
 			}
 			// Goal List
@@ -276,7 +276,7 @@ if ($DisplayTaskActivities==TRUE)
 						{
 							$ItemID = $row2["entry"];
 							$ItemName = GetFieldByQuery("name","SELECT name FROM items WHERE id = $ItemID");
-							$GoalListString .= "<li>Related Item: <a href=item.php?id=".$ItemID.">".$ItemName."</a></li>";
+							$GoalListString .= "<li>Related Item: <a href=?a=item&id=".$ItemID.">".$ItemName."</a></li>";
 						}
 					}
 				}

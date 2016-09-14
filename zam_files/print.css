@@ -1,0 +1,58 @@
+#notifications, #header, #footer, footer, #zul-bar, #row-top, #col-right, #buffer-top, #buffer-bottom, .listfilters, #ffclock, .fb-like, .wiki-nav, .non-premium #square-box {display:none !important}
+
+html, body, #bg-wrapper, #wrapper, #body, #cols, #col-main, #col-main-inner-3 {background:none !important;border:0 !important;margin:0 !important;overflow:visible !important;padding:0 !important}
+
+.path > li {padding:0 !important}
+.path > li:before {content:' › '}
+.path > li:first-child:before {content:''}
+
+.datatable {width:100%}
+.datatable th {font-weight:bold}
+
+/* FFXIV */
+.icon-primary, .icon-secondary {background:none}
+.icon-primary:before {content:"P";font-weight:bold}
+.icon-secondary:before {content:"S"}
+.icon-text span span span span span {color:#fc0}
+.icon-count span span span span {color:#0cf}
+.xivicon-sml .icon-count {margin:0 !important}
+
+/* Rift */
+#soultree {overflow:visible}
+#soultree > div {margin:0 !important}
+#st-ratings, #st-comments-link, #st-status #link, #st-comments, #soultree .tablist, .st .info .icon, .st .info .souls {display:none}
+#st-status h1, #st-status > div, .st .branches i, .st .info .name, .st .roots a {text-shadow:none}
+#st-status {height:auto;position:static}
+#st-status h1 {font-size:22px;margin:0 0 20px;position:static;text-align:left}
+#st-status h1:before {content:'ZAM '}
+#st-status #points {left:0;padding:0;right:0;top:0;width:auto}
+#st-status #calling {line-height:normal;padding-bottom:0;right:0;text-align:right;top:0}
+#st-status #callings > a {font-size:inherit}
+.pre-ie9 #st-status #points, .pre-ie9 #st-status #calling {top:-70px}
+#soultree .tbcont {display:block !important}
+#soultree .tbcont .bcont {border:0;padding:0}
+.st .branches {text-align:center}
+.st .branches img {opacity:.5;position:static}
+.st .branches .active img {opacity:1}
+.pre-ie9 .st .branches .active img {outline:2px solid #000}
+.st .branches i {color:#0cf !important;top:0px}
+.st .branches .active i {color:#000 !important}
+.st .info {left:auto;position:relative;right:auto;top:auto}
+.st .info .name {left:0;top:-10px;width:300px;z-index:9}
+.st .info .level {color:#000;left:0;text-align:center;width:300px;z-index:99}
+.st .roots {margin:-40px 15px 0;padding-top:40px;position:relative;top:10px;z-index:9}
+.st .roots div {float:left;margin-bottom:10px;position:static}
+.st .roots i {display:none}
+.st .roots a {color:#0cf;line-height:20px;position:static;width:31px}
+.st .roots .active a {color:#000}
+.st .roots .active em {display:block}
+.st .roots img {display:block !important;opacity:.5;position:static !important}
+.st .roots .active img {opacity:1}
+.pre-ie9 .st .roots .active img {outline:2px solid #000}
+.st, .st .branches .active img, .st .roots .active img {-moz-box-shadow:1px 1px 5px #000}
+#soultree .datatable a {color:#000;text-decoration:underline}
+#soultree .datatable th a {text-decoration:none}
+#soultree .datatable .icon-link.block {display:block;height:auto;padding:0;position:static}
+#soultree .datatable .rifticon {float:left;position:static}
+#soultree .datatable .rifticon img {float:left;position:static}
+#soultree h2 {margin:20px 0 5px 0}

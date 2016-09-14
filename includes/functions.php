@@ -1112,7 +1112,7 @@ function BuildItemStats($item, $show_name_icon) {
 	//item proc
 	if (($item["proceffect"]>0) && ($item["proceffect"]<65535))
 	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='spell.php?id=".$item["proceffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["proceffect"])."</a>";
+		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=".$item["proceffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["proceffect"])."</a>";
 		if ($item["proclevel2"]>0)
 		{
 			$html_string .= "<br><b>Level for effect: </b>".$item["proclevel2"];
@@ -1122,7 +1122,7 @@ function BuildItemStats($item, $show_name_icon) {
 	// worn effect
 	if (($item["worneffect"]>0) && ($item["worneffect"]<65535))
 	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='spell.php?id=".$item["worneffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["worneffect"])."</a>";
+		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=".$item["worneffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["worneffect"])."</a>";
 		if ($item["wornlevel"]>0)
 		{
 			$html_string .= "<br><b>Level for effect: </b>".$item["wornlevel"];
@@ -1132,7 +1132,7 @@ function BuildItemStats($item, $show_name_icon) {
 	// focus effect
 	if (($item["focuseffect"]>0) && ($item["focuseffect"]<65535))
 	{
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='spell.php?id=".$item["focuseffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["focuseffect"])."</a>";
+		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=".$item["focuseffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["focuseffect"])."</a>";
 		if ($item["focuslevel"]>0)
 		{
 			$html_string .= "<br/><b>Level for effect: </b>".$item["focuslevel"];
@@ -1142,7 +1142,7 @@ function BuildItemStats($item, $show_name_icon) {
 	// clicky effect
 	if (($item["clickeffect"]>0) && ($item["clickeffect"]<65535))
 	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='spell.php?id=".$item["clickeffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["clickeffect"])."</a> (";
+		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=".$item["clickeffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["clickeffect"])."</a> (";
 		if ($item["clicktype"]==4)
 		{
 			$html_string .= "Must Equip. ";
@@ -1177,7 +1177,7 @@ function BuildItemStats($item, $show_name_icon) {
 	// scroll
 	if (($item["scrolleffect"]>0) && ($item["scrolleffect"]<65535))
 	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='spell.php?id=".$item["scrolleffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["scrolleffect"])."</a>";
+		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=".$item["scrolleffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["scrolleffect"])."</a>";
 		$html_string .= "</td></tr>";
 	}
 	// bard item ?

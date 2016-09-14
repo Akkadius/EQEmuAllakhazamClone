@@ -211,7 +211,7 @@ if ($mode=="items") {
 		$EquiptmentTable .= "<tr class='".$RowClass."'>
 		<td><img src='".$icons_url."item_".$ItemData["icon"].".gif' align='left'/>
 		<img src='".$images_url."spacer_1.png' align='left'/>
-		</td><td><a href=item.php?id=".$ItemData["id"]." id='" . $ItemData["id"] . "'>".$ItemData["Name"]."</a></td>
+		</td><td><a href=?a=item&id=".$ItemData["id"]." id='" . $ItemData["id"] . "'>".$ItemData["Name"]."</a></td>
 		<td>".$ItemType."</td></tr>";
 		if ($RowClass == "lr")
 		{
@@ -303,7 +303,7 @@ if ($mode=="forage") {
 			</tr>";
 		while ($row=mysql_fetch_array($result))
 		{
-			print "<tr><td><a href=item.php?id=".$row["id"].">".$row["Name"]."</a></td></tr>";
+			print "<tr><td><a href=?a=item&id=".$row["id"].">".$row["Name"]."</a></td></tr>";
 		}
 		print "</table>";
 	}
@@ -347,7 +347,7 @@ if ($mode=="tasks") {
 					{
 						$ItemID = $row["rewardid"];
 						$ItemName = GetFieldByQuery("Name","SELECT Name FROM items WHERE id = $ItemID");
-						$Reward = "<a href=item.php?id=".$ItemID.">".$ItemName."</a>";
+						$Reward = "<a href=?a=item&id=".$ItemID.">".$ItemName."</a>";
 					}
 				}
 

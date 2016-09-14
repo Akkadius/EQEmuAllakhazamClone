@@ -44,7 +44,7 @@ function SpellDescription($spell,$n,$csv=false) {
         print $dbspelleffects[$spell["effectid$n"]];
         $name=GetFieldByQuery("name","SELECT name FROM $tbitems WHERE id=".$spell["effect_base_value$n"]);
         if (($name!="") AND ($csv==false)) { 
-          print " : <a href=item.php?id=".$spell["effect_base_value$n"].">$name</a>"; 
+          print " : <a href=?a=item&id=".$spell["effect_base_value$n"].">$name</a>";
         } else { print " : $name"; }
         break;
       case 87: // Increase Magnification
@@ -202,7 +202,7 @@ function SpellDescription($spell,$n,$csv=false) {
         print $dbspelleffects[$spell["effectid$n"]];
         $name=GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$spell["effect_base_value$n"]);
         if ($csv==false) {
-          print "<a href=spell.php?id=".$spell["effect_base_value$n"].">$name</a>";
+          print "<a href=?a=spell&id=".$spell["effect_base_value$n"].">$name</a>";
         } else { print " : $name"; }
         break;
       case 89: // Increase Player Size
@@ -238,7 +238,7 @@ function SpellDescription($spell,$n,$csv=false) {
         if ($csv==false) {
           print "($name)";
         } else {
-          print " (<a href=spell.php?id=".$spell["effect_base_value$n"].">$name</a>$v)";
+          print " (<a href=?a=spell&id=".$spell["effect_base_value$n"].">$name</a>$v)";
         }
         break;
       case 140: // Limit: Min Duration

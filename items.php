@@ -146,7 +146,7 @@
 		if(mysql_num_rows($QueryResult) == 1)
 		{
 			$row = mysql_fetch_array($QueryResult);
-			header("Location: item.php?id=".$row["id"]);
+			header("Location: ?a=item&id=".$row["id"]);
 			exit();
 		}
 	}
@@ -321,7 +321,7 @@
 				$TableData .= "</td><td>";
 
 				CreateToolTip($row["id"], BuildItemStats($row, 1));
-				$TableData .= "<a href='item.php?id=" . $row["id"] . "' id='" . $row["id"] . "'>" . $row["Name"] . "</a>";
+				$TableData .= "<a href='?a=item&id=" . $row["id"] . "' id='" . $row["id"] . "'>" . $row["Name"] . "</a>";
 				
 				$TableData .= "</td><td>";
 				$TableData .= $dbitypes[$row["itemtype"]];

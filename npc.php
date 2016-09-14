@@ -226,7 +226,7 @@
 				while ($row=mysql_fetch_array($result2))
 				{
 					$spell=getspell($row["spellid"]);
-					print "<li><a href='spell.php?id=".$row["spellid"]."'>".$spell["name"]."</a>";
+					print "<li><a href='?a=spell&id=".$row["spellid"]."'>".$spell["name"]."</a>";
 					print " (".$dbspelltypes[$row["type"]].")";
 					if ($DebugNpc)
 					{
@@ -283,7 +283,7 @@
 						$ldid=$row["lootdrop_id"];
 					}
 				}
-				print "<li><a href='item.php?id=".$row["id"]."'>".$row["Name"]."</a>";
+				print "<li><a href='?a=item&id=".$row["id"]."'>".$row["Name"]."</a>";
 				print " (".$dbitypes[$row["itemtype"]].")";
 				if ($ShowNpcDropChances==TRUE)
 				{ 
@@ -314,7 +314,7 @@
 			print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells : </b><br/>";
 			while ($row=mysql_fetch_array($result))
 			{
-				print "<li><a href='item.php?id=".$row["id"]."'>".$row["Name"]."</a> ";
+				print "<li><a href='?a=item&id=".$row["id"]."'>".$row["Name"]."</a> ";
 				if ($npc["class"]==41) { print "(".price($row["price"]).")"; } // NPC is a shopkeeper
 				if ($npc["class"]==61) { print "(".$row["ldonprice"]." points)"; } // NPC is a LDON merchant
 				print "</li>";

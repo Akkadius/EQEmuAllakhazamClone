@@ -151,7 +151,7 @@ if (isset($submitDetail)) {
         print "<td nowrap>";
         $sep="";
         while ($row=mysql_fetch_array($result)) {
-          print "$sep<a href=item.php?id=".$row["id"].">".$row["Name"]."</a>";
+          print "$sep<a href=?a=item&id=".$row["id"].">".$row["Name"]."</a>";
           print ", ".$dbitypes[$row["itemtype"]];
           $sep="<br>";
         }

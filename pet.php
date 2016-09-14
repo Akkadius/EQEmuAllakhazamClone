@@ -82,7 +82,7 @@ if ($npc["npc_spells_id"]>0) {
       print "<ul>";
       while ($row=mysql_fetch_array($result2)) {
         $spell=getspell($row["spellid"]);
-        print "<li><a href=spell.php?id=".$row["spellid"].">".$spell["name"]."</a>";
+        print "<li><a href=?a=spell&id=".$row["spellid"].">".$spell["name"]."</a>";
       }
     }
     print "</td></tr></table></td>";

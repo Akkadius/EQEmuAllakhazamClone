@@ -1,0 +1,453 @@
+#headjs {left:0;position:absolute;right:0;*text-align:left;top:0;z-index:999999999}
+.tt-source {clear:both;font-size:11px;padding:0 5px 0 0;text-align:right;text-shadow:0 1px 3px #000}
+.tooltip-icon {left:-36px;position:absolute;top:0}
+.hide-icon .tooltip-icon {display:none}
+
+/* Rift */
+.rtt-gen td {color:#fbfbfb !important}
+.rtt-gen .clear {clear:both}
+.rtt-gen .icon-link {line-height:38px}
+.rtt-gen .icon-link.block {display:block;height:38px;padding:0 0 0 43px;position:relative}
+.rtt-gen .icon-link-sml {font-size:12px;line-height:18px}
+.rtt-gen a.icon-link *, .rtt-gen a.icon-link-sml * {cursor:pointer}
+.rifticon {cursor:default;display:inline-block;height:38px;margin:0 4px 0 0;overflow:hidden;position:relative;text-decoration:none !important;vertical-align:middle;width:39px}
+.rifticon-sml {height:19px;margin:0 2px 0 0;vertical-align:top;width:20px}
+a .rifticon {cursor:pointer}
+.rtt-gen .icon-link.block .rifticon {left:0;position:absolute;top:0}
+.rifticon b {background:url(/rift/i/icon-borders-32.png) no-repeat;_background-image:url(/rift/i/icon-borders-32.gif);display:block;height:38px;left:0;position:absolute;top:0;width:43px;z-index:1}
+.rifticon-sml b {background-image:url(/rift/i/icon-borders-16.png);_background-image:url(/rift/i/icon-borders-16.gif);height:19px;width:20px}
+a:hover .rifticon b {background-position:bottom left}
+.rifticon img {height:32px;left:3px;position:absolute;top:3px;width:32px}
+a:active .rifticon img {height:30px;left:4px;top:4px;width:30px}
+.rifticon-sml img {height:16px;left:2px;top:2px;width:16px}
+a:active .rifticon-sml img {height:14px;left:3px;top:3px;width:14px}
+a:hover .rifticon, .rtt-gen a:hover .rifticon * {text-decoration:none !important}
+.rifticon .icon-count {bottom:0;color:#000;font:bold 13px Arial,Helvetica,sans-serif;position:absolute;right:0}
+.rifticon .icon-count, .rtt-gen .icon-count span {text-decoration:none !important}
+.rifticon .icon-count span {left:2px;position:absolute;top:0}
+.rifticon .icon-count span span {left:0;top:2px}
+.rifticon .icon-count span span span {left:-2px;top:0}
+.rifticon .icon-count span span span span {color:#fff;left:1px;top:-1px}
+.rifticon-sml .icon-count {font:bold 10px Verdana,Arial,Helvetica,sans-serif;margin:2px 3px !important}
+.rifticon .icon-count {margin:2px 4px}
+.rifticon .icon-text {color:#000;font:bold 8px Verdana,Arial,Helvetica,sans-serif;left:0;position:absolute;right:0;top:-1px;width:32px}
+.rifticon .icon-text span {position:relative}
+.rifticon .icon-text, .rtt-gen .icon-text span {text-decoration:none !important}
+.rifticon .icon-text span span {left:2px;position:absolute;top:0}
+.rifticon .icon-text span span span {left:0;top:2px}
+.rifticon .icon-text span span span span {left:-2px;top:0}
+.rifticon .icon-text span span span span span {color:#f0d080;left:1px;top:-1px}
+.rifticon-sml .icon-text {display:none}
+.rtt-gen .icon-link.has-desc {line-height:normal;text-decoration:none !important}
+.rtt-gen .icon-link.has-desc .text {position:relative;top:3px}
+.rtt-gen .icon-link.has-desc .desc {color:#d3d3d3;font-size:11px;opacity:1;filter:alpha(opacity=100);position:relative;text-decoration:none !important;top:3px}
+.rtt {color:#fbfbfb !important;font:13px Arial,Helvetica,sans-serif !important;max-width:256px;position:relative;_width:256px}
+.rtt table {border-collapse:collapse;color:#fbfbfb;font:13px Arial,Helvetica,sans-serif;*table-layout:fixed}
+.rtt td {overflow:hidden;padding:0}
+.rtt th {background:url(/rift/i/tooltip.png) bottom left;_background-image:url(/rift/i/tooltip.gif);font-size:1px;height:14px;padding:0;width:50%}
+.rtt th.r {background-position:bottom right}
+.rtt .rtt-cont {background:url(/rift/i/tooltip.png) 0 -8px;_background-image:url(/rift/i/tooltip.gif);margin:0 15px 0 0;padding:10px 0 0 15px;position:relative}
+.rtt .rtt-cont-cap {background:url(/rift/i/tooltip.png) right -8px;_background-image:url(/rift/i/tooltip.gif);bottom:0;_font-size:expression((this.parentNode.offsetHeight*.91)+'px');position:absolute;right:-15px;_right:0;top:0;width:15px}
+.rtt .rtt-name {color:#fc3;font-size:15px !important;width:228px;word-wrap:break-word}
+.rtt .rtt-name.auto-width {width:auto}
+.rtt .rtt-indent {margin-left:10px}
+.rtt .rtt-r {float:right}
+.rtt .rtt-div {background:url(/rift/i/tooltip.png);_background-image:url(/rift/i/tooltip.gif);font-size:1px;height:8px;margin:2px -7px;width:242px}
+.rtt .rtt-vendor {margin:3px 0 0;text-align:right}
+.rtt-s, .rtt-g, .rtt-p, .rift-s, .rift-g, .rift-p {background:url(/rift/i/coins.png?1) top right no-repeat;_background-image:url(/rift/i/coins.gif?1);padding:0 17px 0 0}
+.rtt-g, .rift-g {background-position:right}
+.rtt-p, .rift-p {background-position:bottom right}
+.rtt .rtt-invalid {color:#f00;margin:5px 0 0}
+.rtt-recipe {margin:0 -5px 20px 0}
+.rtt-ingredients {line-height:18px}
+.rtt-ingredients div {margin-left:10px}
+.tooltip-icon.rift {left:-38px}
+.rift-q0 a, .rift-q1 a, .rift-q2 a, .rift-q3 a, .rift-q4 a, .rift-q5 a, .rift-q6 a, .rift-quest a, .rift-quest-item a, .rift-questitem a {text-decoration:underline !important}
+.rift-quest, .rift-quest-item, .rift-questitem {color:#fbf200 !important}
+.rift-q0, .rift-trash {color:#888 !important}
+.rift-q1, .rift-common {color:#fbfbfb !important}
+.rift-q2, .rift-uncommon {color:#0c0 !important}
+.rift-q3, .rift-rare {color:#267ffa !important}
+.rift-q4, .rift-epic {color:#ad48fb !important}
+.rift-q5, .rift-relic {color:#ff8000 !important}
+.rift-q6 {color:red !important}
+.rift-flavortext {color:#fbc864}
+.riftitem-q0 {color:#888 !important}
+.riftitem-q1 {color:#fbfbfb !important}
+.riftitem-q2 {color:#0c0 !important}
+.riftitem-q3 {color:#fbf200 !important}
+.riftitem-q4 {color:#267ffa !important}
+.riftitem-q5 {color:#ad48fb !important}
+.riftitem-q6 {color:#ff8000 !important}
+.riftitem-q7 {color:red !important}
+.rift-diff-0 {color:#888 !important}
+.rift-diff-1 {color:#0c0 !important}
+.rift-diff-2 {color:#ff0 !important}
+.rift-diff-3 {color:#ff8040 !important}
+.rift-diff-4 {color:#d22 !important}
+.rach {color:#fbfbfb !important;font:13px Arial,Helvetica,sans-serif !important;position:relative;text-shadow:1px 1px 1px #000;width:412px}
+.rach table {border-collapse:collapse;*table-layout:fixed;width:412px}
+.rach td {padding:0}
+.rach th {background:url(/rift/i/achievement.png?2) bottom left;_background-image:url(/rift/i/achievement.gif);font-size:1px;height:58px;padding:0;width:50%}
+.rach th.r {background-position:bottom right}
+.rach .rach-icon {position:absolute;left:1px;top:6px;z-index:1}
+.rach .rach-icon img {background:#000;height:48px;left:14px;max-width:none !important;position:absolute;top:15px;width:48px}
+.rach .rach-icon div {background:url(/rift/i/achievement.png?2);_background-image:url(/rift/i/achievement.gif);height:78px;left:0;position:absolute;top:0;width:77px}
+.rach .rach-cont {background:url(/rift/i/achievement.png?2) 0 -142px;_background-image:url(/rift/i/achievement.gif);padding:17px 0 0 18px;position:relative;_zoom:100%}
+.rach .rach-name {color:#d8cb99;font-size:18px;left:78px;margin:0 0 0 60px;text-transform:uppercase;width:285px;word-wrap:break-word;z-index:1}
+.rach .rach-time {color:#d8cb99;position:absolute;right:56px;top:21px;z-index:1}
+.rach .rach-desc {margin:-1px 0 14px 60px;padding:0 55px 0 0;z-index:1}
+.rach .rach-points {background:url(/rift/i/achievement.png?2) -77px 0;_background-image:url(/rift/i/achievement.gif);color:#fb8b48;font-size:24px;height:69px;line-height:70px;padding:0 1px 0 0;position:absolute;right:-14px;text-align:center;top:6px;width:68px;_width:69px;z-index:1}
+.rach ul {list-style:none;margin:30px 0 0 -2px;overflow:visible;padding:0;_padding-top:17px;*zoom:100%}
+.rach ul li {background:url(/rift/i/achievement.png?2) -146px 4px no-repeat;_background-image:url(/rift/i/achievement.gif);line-height:19px;margin:0;padding:0 0 0 20px;float:left;position:relative;top:0;width:172px;_width:182px;z-index:1}
+.rach ul li.check {background-position:-358px 2px}
+.rach ul .clear {clear:left;float:none;font-size:0;height:0}
+.rach ul .rach-cont-cap {background:url(/rift/i/achievement.png?2) right -142px;_background-image:url(/rift/i/achievement.gif);bottom:0;_font-size:expression((this.parentNode.offsetHeight-15)+'px');position:absolute;right:0;top:0;width:15px;z-index:0;*z-index:-1}
+.rquest {color:#fbfbfb !important;font:13px Arial,Helvetica,sans-serif !important;position:relative;width:320px}
+.rquest table {border-collapse:collapse;color:#fbfbfb;font:13px Arial,Helvetica,sans-serif;*table-layout:fixed;width:320px}
+.rquest td {padding:0}
+.rquest th {background:url(/rift/i/quest.png) bottom left;_background-image:url(/rift/i/quest.gif);font-size:1px;height:29px;padding:0;width:50%}
+.rquest th.r {background-position:bottom right}
+.rquest .rquest-cont-wrap {position:relative}
+.rquest .rquest-cont {line-height:20px !important;margin:0 0 -14px 0;overflow:hidden;padding:14px 32px 0;position:relative}
+.rquest .rquest-bg {background:url(/rift/i/quest.png) 0 -234px;_background-image:url(/rift/i/quest.gif);bottom:14px;_font-size:expression(((this.parentNode.offsetHeight-14)*.91)+'px');left:0;position:absolute;right:0;top:0;_width:320px}
+.rquest .rquest-name {color:#f8f3c8;font-size:17px !important;line-height:normal !important;width:256px;word-wrap:break-word}
+.rquest .rquest-name div {background:url(/rift/i/quest.png) no-repeat;_background-image:url(/rift/i/quest.gif);height:29px;margin:-17px 0 0 -15px;*position:relative;*z-index:-1}
+.rquest .rquest-header, .rquest .rquest-subhead {color:#f8f3c8;line-height:normal !important;text-transform:uppercase}
+.rquest .rquest-subhead {font-size:11px !important;line-height:20px !important}
+.rquest .rquest-indent {margin-left:10px}
+.rquest .rquest-header div {background:url(/rift/i/quest.png) 0 -29px no-repeat;_background-image:url(/rift/i/quest.gif);_font-size:4px;height:5px;margin:0 0 0 -8px}
+.rquest .rquest-topmargin {margin-top:15px}
+.rquest .rquest-objectives {line-height:normal !important;list-style:none;margin:2px 0 10px;padding:0}
+.rquest .rquest-objectives li {background:url(/rift/i/quest.png) 2px -37px no-repeat;_background-image:url(/rift/i/quest.gif);background-position:2px -38px\9;padding:0 0 0 18px}
+.rquest .rquest-objectives li.check {background-position:0 -140px;background-position:0 -142px\9}
+.pre-ie9 .rquest .rquest-objectives li {background-position:2px -37px;*background-position:2px -35px;_background-position:2px -37px}
+.pre-ie9 .rquest .rquest-objectives li.check {background-position:0 -140px;*background-position:0 -138px;_background-position:0 -140px}
+.rquest .rquest-rewards {line-height:normal !important;margin:2px 0 10px}
+.rquest .rquest-rewards:last-child {margin-bottom:0}
+.rquest .rquest-reward {float:left;height:auto;margin:0 0 4px;overflow:hidden;position:relative;width:128px}
+.rquest .rquest-reward .text {float:left;height:auto;left:39px;line-height:normal;min-height:38px;padding:0;position:static;word-wrap:break-word;width:85px}
+.rquest .rquest-reward .rifticon, .rquest .rquest-rewards .rifticon {float:left}
+.rquest .rquest-xp span {color:#199ba5}
+.rquest .rquest-r {float:right}
+.rquest .rquest-div {background:url(/rift/i/quest.png);_background-image:url(/rift/i/quest.gif);font-size:1px;height:8px;margin:2px -7px;width:242px}
+.rquest .rquest-vendor {text-align:right}
+.rquest .rquest-invalid {color:#f00;margin:5px 0 0}
+.rcol {color:#fbfbfb !important;font:13px Arial,Helvetica,sans-serif !important;position:relative;width:290px}
+.rcol table {border-collapse:collapse;color:#fbfbfb;font:13px Arial,Helvetica,sans-serif;*table-layout:fixed}
+.rcol td {overflow:hidden;padding:0}
+.rcol th {background:url(/rift/i/collection.png) bottom left;_background-image:url(/rift/i/collection.gif);font-size:1px;height:14px;padding:0;width:50%}
+.rcol th.r {background-position:bottom right}
+.rcol .rcol-cont {background:url(/rift/i/collection.png) 0 -234px;_background-image:url(/rift/i/collection.gif);padding:12px 15px 0;position:relative}
+.rcol .rcol-name {color:#fc3;color:#f8f3c8;font-size:17px !important;line-height:normal !important;width:260px;word-wrap:break-word}
+.rcol .rcol-name div {background:url(/rift/i/collection.png) no-repeat;_background-image:url(/rift/i/collection.gif);height:29px;margin:-17px 0 0 -3px;*position:relative;*z-index:-1}
+.rcol .rcol-desc {margin:0 0 10px}
+.rcol .rcol-items {margin:0 0 0 1px;padding:0 0 4px}
+.rcol .rcol-items .rifticon {margin:0 2px}
+.rcol .rcol-indent {margin-left:10px}
+.rcol .rcol-r {float:right}
+.rcol .rcol-div {background:url(/rift/i/collection.png);_background-image:url(/rift/i/collection.gif);font-size:1px;height:8px;margin:2px -7px;width:242px}
+.rcol .clear {*font-size:0;*height:0}
+.rcol .zam-icon {float:left}
+
+.zr-addicon {padding:0 0 0 22px}
+.zamrift-icon {position:relative}
+.zamrift-icon img {border:0;height:16px;left:-19px;position:absolute;top:-1px;width:16px}
+.zamrift-icon b {background:url(/rift/i/icon-borders-16.png);_background:url(/rift/i/icon-borders-16.gif);display:block;height:19px;left:-21px;position:absolute;top:-2px;width:20px}
+
+/* EQ2 */
+.eq2tt {background:url(/eq2/i/tooltip-bg.png);border:1px solid;border-color:#ae9b5e #b19a58 #b19e60 #ad9755;color:#c7cfc7;font:11px Arial,Helvetica,sans-serif;width:300px;line-height:1.4em}
+.eq2tt .inner-border {border:1px solid;border-color:#161200 #191400 #1c1803 #171300;padding:2px}
+.eq2tt .item-details {padding:6px 4px 4px 4px}
+.eq2tt td {color:#bbb;font-size:11px;padding:0 7px 0 0;vertical-align:top}
+.eq2tt .name {color:#fff;font-size:13px}
+.eq2tt .flags {color:#f2e388;font-weight:bold}
+.eq2tt .eq2-icon {background:url(/eq2/i/no-icon-lrg.gif);float:right;height:42px;position:relative;width:42px}
+.eq2tt .eq2-icon span {background:url(/eq2/i/eq2icon-border-lrg.gif);height:42px;left:0;position:absolute;width:42px}
+.eq2tt .value {color:#fff;text-align:left}
+.eq2tt .stats {color:#2f2}
+.eq2tt .stats .blue {color:#93d9ff}
+.eq2tt .negstats {color:#f22}
+.eq2tt .wield {color:#fff}
+.eq2tt .effects {color:#e1e39d;font-weight:bold;margin:.5em 0 0 0}
+.eq2tt .effects ul {list-style-type:disc !important;margin:0;padding:0 0 0 1.4em}
+.eq2tt .effects b {color:#bbb;font-weight:normal}
+.eq2tt .set .name {color:#ff0;font-size:11px;font-weight:normal !important;margin:1.2em 0}
+.eq2tt .set .items {margin:0 0 1.2em 0}
+.eq2tt .set .items a {color:#c7cfc7}
+.eq2tt .set .effects {color:#c7cfc7;font-weight:normal}
+.eq2tt .body-only {display:none}
+.eq2tt .referal {color:#fff}
+
+var.eq2-icon, var.eq2-icon-lrg, var.eq2-icon-med, var.eq2-icon-sml {background:url(/eq2/i/no-icon-lrg.gif) no-repeat;height:42px;position:relative;width:42px}
+var.eq2-icon span, var.eq2-icon-lrg span, var.eq2-icon-med span, var.eq2-icon-sml span {background:url(/eq2/i/eq2icon-border-lrg.gif) no-repeat;height:42px;left:0;position:absolute;top:0;width:49px}
+var.eq2-icon img, var.eq2-icon-lrg img, var.eq2-icon-med img, var.eq2-icon-sml img {background:#000;height:42px;vertical-align:top;width:42px}
+var.eq2-icon-med {background-image:url(/eq2/i/no-icon-med.gif);height:26px;width:26px}
+var.eq2-icon-med span {background-image:url(/eq2/i/eq2icon-border-med.gif);height:26px;width:31px}
+var.eq2-icon-med img {height:26px;width:26px}
+var.eq2-icon-sml {background-image:url(/eq2/i/no-icon-sml.gif);height:16px;width:16px}
+var.eq2-icon-sml span {background-image:url(/eq2/i/eq2icon-border-sml.gif);height:16px;width:19px}
+var.eq2-icon-sml img {height:16px;width:16px}
+.eq2-icon-float-lrg, .eq2-icon-float {line-height:42px}
+.eq2-icon-float-med {line-height:26px}
+.eq2-icon-float-sml {line-height:16px}
+.eq2-icon-float-lrg var, .eq2-icon-float var {float:left;padding:0 7px 0 0}
+.eq2-icon-float-med var {float:left;padding:0 5px 0 0}
+.eq2-icon-float-sml var {float:left;padding:0 3px 0 0}
+
+.eq2-icon-float-lrg var, .eq2-icon-float var, .eq2-icon-float-med var, .eq2-icon-float-sml var {display:inline-block;float:none;vertical-align:middle}
+.eq2-icon-float-sml var {vertical-align:top}
+
+.eq2-quality.common {color:#fff !important}
+.eq2-quality.fabled, .eq2-quality.mastercrafted.fabled {color:#ff939d !important}
+.eq2-quality.treasured {color:#93d9ff !important}
+.eq2-quality.mythical {color:#ea93ff !important}
+.eq2-quality.uncommon, .eq2-quality.handcrafted {color:#beff93 !important}
+.eq2-quality.mastercrafted, .eq2-quality.legendary, .eq2-quality.mastercrafted.legendary {color:#ffc993 !important}
+
+/* WoW */
+.questOver {width:297px;max-height:259px;height:auto;background:#333333;border:1px solid #a9a9a9;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;overflow:auto;font-family:Arial,Helvetica,sans-serif;font-size:12px;color:#e5e0dd;vertical-align:middle;padding:3px}
+.questOver .referal {text-decoration:none;color:#e5e0dd}
+.questNameT {font-size:14px;color:#fff}
+.wowitem {font:12px Arial,Helvetica,sans-serif;border:1px solid #a9a9a9;padding:3px;width:auto;color:#e5e0dd;background-color:#222;border-radius:4px;-moz-border-radius:4px;-webkit-border-radius:4px;min-width:180px;max-width:450px;opacity:0.90}
+.wowitem .wowrttxt {position:absolute;right:3px;text-align:right;top:inherit}
+.wowitem .iname {font-size:14px}
+.wowitem .greyname {color:#9d9d9d}
+.wowitem .whitename {color:#fff}
+.wowitem .greenname,.greentext,.itemeffectlink {color:#1eff00}
+.wowitem .bluename {color:#326eff}
+.wowitem .purplename {color:#a434ee}
+.wowitem .orangename {color:#d17c22}
+.wowitem .redname {color:#f00}
+.wowitem .goldtext {color:#ffd200}
+.wowitem .yellowname {color:yellow}
+.wowitem .itemeffectlink {max-width:400px}
+.wowitem .itemsetitems {padding-left:8px}
+.wowitem .hasitem {color:#e5eead}
+.wowitem .nothave {color:#7a787d}
+.wowitem .referal {text-decoration:none;color:#e5e0dd}
+
+.wowtt {border-collapse:collapse;color:#fff;font:12px Arial,Helvetica,sans-serif;min-width:150px;max-width:320px;position:relative;_width:320px;*width:320px}
+.wowtt td {background:url(/wow/i/tooltip.png);_background-image:url(/wow/i/tooltip.gif);padding:8px 4px 1px 9px}
+.wowtt th {background:url(/wow/i/tooltip.png) top right;_background-image:url(/wow/i/tooltip.gif);padding:3px}
+.wowtt .bot th {background-position:bottom left;height:6px;padding:0}
+.wowtt .bot th.right {background-position:bottom right}
+.wowtt td .right {position:absolute;right:0;text-align:right;top:inherit;white-space:nowrap}
+.wowtt div {max-width:320px;min-width:75px;position:relative}
+.wowtt .iname {font-size:14px}
+.wowtt .q0, .wowtt .greyname   {color:#9d9d9d}
+.wowtt .q1, .wowtt .whitename  {color:#fff}
+.wowtt .q2, .wowtt .greenname, .wowtt .greentext, .wowtt .itemeffectlink {color:#1eff00}
+.wowtt .q3, .wowtt .bluename   {color:#0070dd}
+.wowtt .q4, .wowtt .purplename {color:#a434ee}
+.wowtt .q5, .wowtt .orangename {color:#ff8000}
+.wowtt .q6, .wowtt .redname, .wowtt .q7 {color:#e5cc80}
+.wowtt .yellowname {color:#aa0}
+.wowtt .goldtext {color:#ffd200}
+.wowtt .itemsetitems {padding-left:8px}
+.wowtt .hasitem {color:#ffff9c}
+.wowtt .nothave {color:#9c9e9c}
+.wowtt .referal {text-decoration:none}
+#tmpItemFrm .wowtt {margin:10px 0 0 5px}
+
+/* WAR */
+.waritem, .questOver {color:#fff;font:12px Arial,Helvetica,sans-serif;max-width:400px;opacity:1;position:relative;width:auto;_width:300px}
+.waritem table {color:#fff;font:12px Arial,Helvetica,sans-serif}
+.waritem a, .questOver a {color:#f0d080;text-decoration:none}
+.waritem a:hover, .questOver a:hover {color:#ffc;text-decoration:underline}
+.waritem .warrttxt {position:absolute;right:3px;text-align:right;top:inherit}
+.waritem .icon {background:url(/war/i/noicon.gif) 1px 1px no-repeat;float:left;height:32px;margin:0 6px 2px 0;position:relative;width:32px}
+.waritem .icon img {height:32px;width:32px}
+.waritem .icon span, .waritem .icon a {background:url(/war/i/border-medium.png);_background:url(/war/i/border-medium.gif);display:block;height:32px;left:0;position:absolute;top:0;width:32px}
+.waritem table {border-collapse:collapse;min-width:180px}
+.waritem td {background:url(/war/i/tooltip.png) -12px -12px;background:url(/war/i/tooltip.gif) -12px -12px}
+.waritem td.left {background-position:center left;width:12px}
+.waritem td.right {background-position:center right;width:12px}
+.waritem .top td {background-position:top center;height:12px}
+.waritem .top .left {background-position:top left}
+.waritem .top .right {background-position:top right}
+.waritem .bot td {background-position:bottom center;height:12px}
+.waritem .bot .left {background-position:bottom left}
+.waritem .bot .right {background-position:bottom right}
+.waritem td {padding:2px 4px 2px 2px}
+.waritem .top td, .waritem .bot td, .waritem td.left, .waritem td.right {line-height:0;overflow:hidden;padding:0}
+
+.waritem .iname {font:18px Georgia,"Times New Roman",serif;line-height:32px}
+.waritem .greyname {color:#9d9d9d}
+.waritem .whitename {color:#FFFFFF}
+.waritem .greenname,.greentext,.itemeffectlink {color:#1EFF00}
+.waritem .bluename {color:#326eff}
+.waritem .purplename {color:#A434EE}
+.waritem .orangename {color:#D17C22}
+.waritem .redname {color:#FF0000}
+.waritem .goldtext {color:#ffd200}
+.waritem .yellowname {color:yellow}
+.waritem .itemeffectlink {max-width:400px}
+.waritem .itemsetitems {padding-left:8px}
+.waritem .hasitem {color:#e5eead}
+.waritem .nothave {color:#7a787d}
+.waritem .referal {text-decoration:none;color:#E5E0DD}
+
+.war-quality.utility, .waritem .utility {color:#969696}
+.war-quality.common, .waritem .common {color:#FFFFFF}
+.war-quality.uncommon, .waritem .uncommon {color:#18F000}
+.war-quality.rare, .waritem .rare {color:#0064C3}
+.war-quality.very_rare, .waritem .very_rare {color:#9238D0}
+.war-quality.mythic, .waritem .mythic {color:#FBAC03}
+
+.waritem.reward {float:left}
+.waritem.reward .icon {margin-bottom:0}
+
+span.war-icon {background:url(/war/i/noicon.gif) center no-repeat;display:inline-block;height:32px;margin:0 6px 0 0;position:relative;vertical-align:middle;width:32px}
+span.war-icon img {height:32px;width:32px}
+span.war-icon span, span.war-icon a {background:url(/war/i/border-medium.png);display:block;height:32px;left:0;position:absolute;top:0;width:32px}
+a:hover span.war-icon span, a:hover span.war-icon a, span.war-icon a:hover {background:url(/war/i/border-medium.png) center}
+a:active span.war-icon span, a:active span.war-icon a, span.war-icon a:active {background:url(/war/i/border-medium.png) bottom}
+
+span.war-icon.small {height:16px;margin:0 3px 0 0;width:16px}
+span.war-icon.small img {height:16px;width:16px}
+span.war-icon.small span, span.war-icon.small a {background:url(/war/i/border-small.png);height:16px;width:16px}
+a:hover span.war-icon.small span, a:hover span.war-icon.small a, span.war-icon.small a:hover {background:url(/war/i/border-small.png) center}
+a:active span.war-icon.small span, a:active span.war-icon.small a, span.war-icon.small a:active {background:url(/war/i/border-small.png) bottom}
+
+/* EQ */
+.eqitem a.shot {text-decoration:none;color:yellow}
+.eqitem a.shot:visited {color:yellow}
+.eqitem {background:#333;border:1px solid #a9a9a9;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 0 3px #000;color:#e5e0dd;font:13px Arial,Helvetica,sans-serif;max-width:350px;min-width:150px;padding:3px}
+.eqitem a {color:#ffd200}
+.eqitem .iname {font-size:18px}
+.eqitem span.herosta {color:cyan}
+.eq-link-icon {border:0;height:16px;margin-right:3px;vertical-align:bottom;width:16px}
+.eq.itemicon.tooltip-icon {background:#333;border:1px solid #a9a9a9;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 0 3px #000;height:32px;padding:3px;left:-44px;top:0;width:32px}
+
+/* LotRO */
+.lotritem {background:url(/i/black-90.png);_background:#000;color:#fff;font:12px Arial,Helvetica,sans-serif;padding:5px;position:relative;min-width:150px;max-width:350px}
+#headjs .lotritem {margin:2px}
+.lotro-top, .lotro-right, .lotro-bottom, .lotro-left {background:url(/i/white-35.png);_background:#818189;position:absolute}
+.lotro-top, .lotro-bottom {height:2px;left:-2px;right:-2px;top:-2px}
+.lotro-bottom {bottom:-2px;top:auto}
+.lotro-right, .lotro-left {bottom:0;right:-2px;top:0;width:2px}
+.lotro-left {left:-2px;right:auto}
+div.lotritem .itemGreen, .lotro-quality.itemGreen {color:#0f0}
+div.lotritem .itemLightGreen, .lotro-quality.itemLightGreen {color:lightgreen}
+div.lotritem .itemPink, .lotro-quality.itemPink {color:#f00}
+div.lotritem .itemCyan, .lotro-quality.itemCyan {color:#87ceeb}
+div.lotritem .itemBrown, .lotro-quality.itemBrown {color:#c89449}
+div.lotritem .itemGold, .lotro-quality.itemGold {color:#ffd700}
+div.lotritem .itemRed, .lotro-quality.itemRed {color:red}
+div.lotritem .itemBlueGreen, .lotro-quality.itemBlueGreen {color:#33cc99}
+div.lotritem .itemYellow, .lotro-quality.itemYellow {color:#ff0}
+div.lotritem .itemWhite, .lotro-quality.itemWhite {color:white}
+div.lotritem .itemPurple, .lotro-quality.itemPurple {color:#f0f}
+div.lotritem .itemBlue, .lotro-quality.itemBlue {color:#0ff}
+div.lotritem .itemOrange, .lotro-quality.itemOrange {color:#cd6600}
+div.lotritem a {color:#ff9;text-decoration:none}
+.lotro-link-icon {border:0;height:16px;margin-right:3px;vertical-align:bottom;width:16px}
+.lotro.tooltip-icon {height:32px;width:32px}
+
+/* FFXI */
+div.ffxiItemCont {background:url(/ffxi/i/itembg2.png) #333;color:white;padding:5px;border-top:2px solid #e3edff;border-left:2px solid #e3edff;border-bottom:2px solid #727084;border-right:2px solid #727084;width:367px;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:bold}
+div.ffxiItemCont .ffitemIcon {float:left;margin:2px 2px 2px 2px}
+div.ffxiItemCont .ffitemDetails {margin-left:40px}
+div.ffxiItemCont .ffitemFlags {float:right}
+div.ffxiItemCont .ffitemSt {width:75%}
+div.ffxiItemCont a {color:#ccc;text-decoration:none}
+.ffxi-link-icon {border:0;height:16px;margin-right:3px;vertical-align:bottom;width:16px}
+
+/* FFXIV */
+.xivtt {color:#dedfd9;font:14px 'Times New Roman',Times,serif;overflow:hidden;padding:14px;position:relative;text-align:left;width:500px;_width:528px}
+.xivtt a {color:#8193ac}
+.xivtt-bg {background:#141342 url(/ffxiv/i/tt-bg.png)}
+.xivtt-wm {background:url(/i/tt-watermark.png);bottom:16px;height:14px;position:absolute;right:17px;width:29px;z-index:2}
+.xivtt-inner {position:relative;top:0;*zoom:100%}
+.xivtt-topleft, .xivtt-topright, .xivtt-botleft, .xivtt-botright {background:url(/ffxiv/i/tt-corners.png);_background:url(/ffxiv/i/tt-corners.gif);height:33px;position:absolute;width:33px}
+.xivtt-topleft {left:3px;top:3px}
+.xivtt-topright {background-position:top right;height:33px;right:3px;top:3px}
+.xivtt-botleft {background-position:bottom left;bottom:0;height:35px;left:3px}
+.xivtt-botright {background-position:bottom right;bottom:0;height:35px;right:3px;width:37px}
+.xivtt-top, .xivtt-right, .xivtt-bot, .xivtt-left {background:url(/ffxiv/i/tt-horiz.png) top repeat-x;_background:url(/ffxiv/i/tt-horiz.gif) top repeat-x;position:absolute}
+.xivtt-top {height:30px;left:36px;right:36px;top:3px;_width:456px}
+.xivtt-right {background:url(/ffxiv/i/tt-vert.png) right repeat-y;_background:url(/ffxiv/i/tt-vert.gif) right repeat-y;bottom:35px;_height:expression(this.parentNode.offsetHeight - 43 + 'px');right:3px;top:36px;width:30px}
+.xivtt-bot {background-position:bottom;bottom:0;height:30px;left:36px;right:40px;_width:456px}
+.xivtt-left {background:url(/ffxiv/i/tt-vert.png) left repeat-y;_background:url(/ffxiv/i/tt-vert.gif) left repeat-y;bottom:35px;_height:expression(this.parentNode.offsetHeight - 43 + 'px');left:-1px;top:36px;width:30px}
+.xivtt table {color:#dedfd9}
+.xivtt td {vertical-align:top}
+.xivtt-inner {padding:3px}
+.xivtt-head {background:url(/ffxiv/i/tt-head.png);_background:url(/ffxiv/i/tt-head.jpg);height:48px;_height:60px;padding:6px 6px 6px 59px;position:relative}
+.xivtt-head h2 {font-size:inherit;*font-size:14px;*line-height:1.5em;margin:0;*margin-bottom:-6px !important}
+.xivtt-head div.right {*margin-top:-5px}
+.xivtt-head img {left:6px;height:48px;position:absolute;top:6px;width:48px}
+.xivtt-body {margin:5px 0;padding:0 0 0 10px}
+.xivtt-base {}
+.xivtt-desc, .xivtt-flags {}
+.xivtt hr {border:solid #3d4062;border-width:1px 0 0;box-shadow:0 0 3px rgba(0,0,0,.75);-moz-box-shadow:0 0 3px rgba(0,0,0,.75);-webkit-box-shadow:0 0 3px rgba(0,0,0,.75);margin:4px 0 3px}
+.xivtt-body hr {margin-left:-10px}
+.xivtt-maininfo {min-height:85px}
+.xivtt-maininfo.no-resists {min-height:0}
+.xivtt-stats table {border-collapse:collapse}
+.xivtt-stats th, .xivtt-stats td {padding:0 10px 0 0}
+.xivtt-stats th {color:#cec59b;font-weight:normal;text-align:left}
+.xivtt-resists {float:right;position:relative;top:-2px}
+.xivtt-res-dark, .xivtt-res-air, .xivtt-res-fire, .xivtt-res-water, .xivtt-res-earth, .xivtt-res-light {background:url(/ffxiv/i/resists.png);height:16px;position:absolute;right:46px;top:16px;width:16px}
+.xivtt-res-dark b, .xivtt-res-air b, .xivtt-res-fire b, .xivtt-res-water b, .xivtt-res-earth b, .xivtt-res-light b {display:block;font-weight:normal;height:16px;;position:absolute;text-align:center;top:-16px;width:16px}
+.xivtt-res-air {background-position:-16px 0;right:66px;top:26px}
+.xivtt-res-fire {background-position:-32px 0;right:26px;top:26px}
+.xivtt-res-water {background-position:-48px 0;right:66px;top:46px}
+.xivtt-res-earth {background-position:-64px 0;right:26px;top:46px}
+.xivtt-res-light {background-position:-80px 0;top:56px}
+.xivtt-res-air b {left:-16px;top:-8px}
+.xivtt-res-fire b {left:16px;top:-8px}
+.xivtt-res-water b {left:-16px;top:8px}
+.xivtt-res-earth b {left:16px;top:8px}
+.xivtt-res-light b {top:16px}
+.xivtt-foot {background:url(/ffxiv/i/tt-foot.png);_background:url(/ffxiv/i/tt-foot.jpg);height:35px;padding:6px 6px 6px 6px;position:relative}
+.xivtt-foot th, .xivtt-foot td {font-size:.9em;padding:0}
+.xivtt-foot th {color:#cec59b;font-weight:normal;padding-right:10px;text-align:left}
+
+.xivtt-pos {color:#91e3a3}
+.xivtt-neg {color:#f99}
+
+.xivtt-untradable {color:#85e1b4}
+.xivtt-unique {color:#f4e986}
+
+.xivtt-abil .xivtt-head {line-height:24px}
+.xivtt-abil .xivtt-head img {background:none}
+.xivtt-abil .xivtt-head h2 {color:#fff}
+.xivtt-abil .xivtt-head {background:url(/ffxiv/i/tt-head-blank.png);_background:url(/ffxiv/i/tt-head-blank.jpg)}
+
+.xivtt-gleve .xivtt-head {background:url(/ffxiv/i/tt-head-blank.png);_background:url(/ffxiv/i/tt-head-blank.jpg);padding:6px}
+.xivtt-gleve .xivtt-head h2 {color:inherit}
+.xivtt-gleve .xivtt-body {padding:0 0 0 4px}
+.xivtt-gleve .xivtt-body hr {margin-left:-4px}
+.xivtt-gleve h2, .xivtt-gleve p {margin:0}
+.xivtt-gleve h3 {background:url(/ffxiv/i/tt-subhead.png) bottom left no-repeat;_background:url(/ffxiv/i/tt-subhead.gif) bottom left no-repeat;color:#d1d4b7;font-size:inherit;margin:5px 0 0;padding:0 0 8px 16px}
+.xivtt-gleve .gleve-data {padding:0 0 0 20px}
+
+.glborder-2, .glborder-4, .glborder-5 {float:right;height:255px;overflow:hidden;position:relative;width:162px}
+.glborder-2 b, .glborder-4 b, .glborder-5 b {background:url(/ffxiv/i/glborder-2.png);_background:url(/ffxiv/i/glborder-2.gif);display:block;height:255px;left:0;position:absolute;top:0;width:162px;z-index:1}
+.glborder-4 b {background:url(/ffxiv/i/glborder-4.png);_background:url(/ffxiv/i/glborder-4.gif)}
+.glborder-5 b {background:url(/ffxiv/i/glborder-5.png);_background:url(/ffxiv/i/glborder-5.gif)}
+.glborder-2 i, .glborder-4 i, .glborder-5 i {display:block;height:226px;left:-48px;overflow:hidden;position:absolute;top:0;width:256px}
+.gltext-1, .gltext-2, .gltext-3, .gltext-4 {background:url(/ffxiv/i/gltext-1.png);_background:url(/ffxiv/i/gltext-1.gif);display:block;height:16px;left:74px;position:absolute;top:234px;width:64px;z-index:1}
+.gltext-2 {background:url(/ffxiv/i/gltext-2.png);_background:url(/ffxiv/i/gltext-2.gif)}
+.gltext-3 {background:url(/ffxiv/i/gltext-3.png);_background:url(/ffxiv/i/gltext-3.gif)}
+.gltext-4 {background:url(/ffxiv/i/gltext-4.png);_background:url(/ffxiv/i/gltext-4.gif)}
+
+.xivtt-obj-rew {border-collapse:collapse;width:320px}
+.xivtt-obj-rew th, .xivtt-obj-rew td {padding:0 10px 0 0}
+.xivtt-obj-rew th:last-child, .xivtt-obj-rew td:last-child {padding:0}
+
+.xivicon {background:#3e3d4d url(/ffxiv/i/iconbg-32-light.jpg);cursor:default;display:inline-block;*height:32px;margin:0 4px 0 0;position:relative;text-decoration:none !important;vertical-align:middle;*width:32px}
+a .xivicon {cursor:pointer}
+.xivicon-sml {background:#3e3d4d url(/ffxiv/i/iconbg-16-light.jpg);*height:16px;vertical-align:top;*width:16px}
+.xivicon b {display:block;position:absolute;top:0;z-index:1}
+
+.xivicon img {height:30px;left:1px;position:absolute;top:1px;width:30px}
+.xivicon-sml img {height:16px;left:0;top:0;width:16px}
+
+.xivicon, .xivicon b {height:32px;width:32px}
+.xivicon-sml {height:16px;width:16px;margin:0 2px 0 0}
+.xivicon-sml b {height:16px;width:16px}
+
+/* make sure div shows up on top */
+#tmpItemFrm {z-index:499}

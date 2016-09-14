@@ -1,0 +1,205 @@
+.zam-silver {color:#ddd}
+
+body.has-zul-bar {margin-top:40px}
+body.has-zul-bar.zul-bar-relative-to-body {position:relative}
+.zul-bar {background:#242424;cursor:default;height:40px;left:0;line-height:40px;padding:0 10px;position:absolute;right:0;top:0;white-space:nowrap;z-index:5000}
+body.has-zul-bar.zul-bar-relative-to-body .zul-bar {top:-40px}
+.zul-bar a {cursor:pointer}
+.zul-bar input {outline:0}
+
+.zul-bar-has-fa .fa:before {margin-right:3px}
+
+/* Mobile bar */
+.zul-bar[data-mobile="true"] {position:fixed}
+body.enlarge-mobile-zul-bar .zul-bar[data-mobile="true"] {height:80px}
+body.has-zul-bar.has-mobile-zul-bar.enlarge-mobile-zul-bar {margin-top:80px}
+body.has-zul-bar.has-mobile-zul-bar .zul-bar {box-shadow:0 2px 5px rgba(0, 0, 0, .4)}
+.zul-bar-mobile {display:none}
+.zul-bar[data-mobile="true"] .zul-bar-mobile {display:block}
+.zul-bar[data-mobile="true"] .zul-bar-inner {display:none}
+
+.zul-bar-mobile-menu-button {height:40px;left:0;position:absolute;top:0;width:40px}
+.zul-bar-mobile-menu-button a {background:url(icons/mobile-menu-medium.png) -4px -5px no-repeat;display:block;height:40px;width:30px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-button {height:80px;width:80px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-button a {background-image:url(icons/mobile-menu-large.png);background-position:15px 15px;height:80px;width:65px}
+
+.zul-bar-mobile-content {height:40px;left:40px;padding:0 5px 0 0;position:absolute;right:0}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-content {height:80px;left:80px;right:5px}
+.zul-bar .zul-bar-mobile-content .zul-bar-form {margin:0;width:100%}
+.zul-bar .zul-bar-mobile-content .zul-bar-form input[type="text"] {background-image:url(icons/search-small-666.png);background-position:8px center;background-repeat:no-repeat;background-size:auto 12px;border-radius:4px;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;font-size:14px;height:30px;margin:5px 0;padding:0 5px 0 25px;width:100%}
+body.enlarge-mobile-zul-bar .zul-bar .zul-bar-mobile-content .zul-bar-form input[type="text"] {background-image:url(icons/search-medium-666.png);background-position:15px center;border-radius:8px;font-size:24px;height:60px;margin:10px 0;padding:0 5px 0 55px}
+
+/* Mobile menu */
+.zul-bar-mobile-menu {background:#161616;bottom:0;display:none;left:0;overflow-x:hidden;overflow-y:auto;position:fixed;top:40px;width:85%;z-index:5001}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu {top:80px}
+.zul-bar-mobile-menu-has-mobile-header .zul-bar-mobile-menu {top:40px !important}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-has-mobile-header .zul-bar-mobile-menu {top:80px !important}
+.zul-bar-mobile.zul-bar-mobile-top-menu .zul-bar-mobile-menu {top:0px}
+.zul-bar-fade {background:#000;bottom:0;left:0;opacity:.5;position:fixed;right:0;top:0;z-index:4999}
+.zul-bar-fade.zul-bar-fade-body-only {top:40px}
+body.enlarge-mobile-zul-bar .zul-bar-fade.zul-bar-fade-body-only {top:80px}
+
+body.zul-mobile-show-menu {overflow:hidden}
+body.zul-mobile-show-menu .zul-bar-mobile-menu {display:block}
+body.zul-mobile-show-menu iframe, body.zul-mobile-show-menu object, body.zul-mobile-show-menu embed {visibility:hidden}
+
+.zul-bar-mobile small {font-size:75%}
+
+/* Mobile menu content */
+.zul-bar-mobile-menu .zul-bar-mobile-menu-list-wrapper {bottom:0;display:inline-block;height:100%;left:0%;position:relative;top:0;transition:left 250ms !important;vertical-align:top;width:100%}
+.zul-bar-mobile-menu-list {list-style:none;margin:0;padding:0}
+.zul-bar-mobile-menu-list li {background:#242424;border-bottom:2px solid #161616;font-size:16px;height:28px;line-height:28px;margin:0;padding:5px 10px;position:relative}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li {font-size:28px;height:58px;line-height:58px;padding:10px 20px}
+.zul-bar-mobile-menu-list li a {cursor:default}
+.zul-bar-mobile-menu-list li a.has-tap-event {cursor:pointer}
+.zul-bar-mobile-menu-list li a.zul-bar-mobile-heading {background:#161616;color:#aaa}
+
+.zul-bar-mobile-menu-list li.zul-mobile-menu-has-submenu a:after {background:#242424 url(icons/chevron-medium-right-padded-444.png) right no-repeat;content:' ';display:block;height:38px;position:absolute;right:0;top:0;width:38px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li.zul-mobile-menu-has-submenu a:after {background-image:url(icons/chevron-large-right-padded-444.png);height:78px;width:78px}
+.zul-bar-mobile-menu-list li.zul-mobile-menu-has-submenu a.zul-bar-mobile-menu-active:after {background-color:#303030;background-image:url(icons/chevron-medium-right-padded-fff.png)}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li.zul-mobile-menu-has-submenu a.zul-bar-mobile-menu-active:after {background-image:url(icons/chevron-large-right-padded-fff.png)}
+.zul-bar-mobile-menu-list li > a:first-child:last-child, .zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu > a:first-child {display:block;height:28px;line-height:28px;margin:-5px -10px;padding:5px 10px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a:first-child:last-child, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu > a:first-child {height:58px;line-height:58px;margin:-10px -20px;padding:10px 20px}
+.zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu > a:first-child {margin-right:32px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu > a:first-child {margin-right:62px}
+.zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu .zul-mobile-menu-submenu-arrow {background:#242424 url(icons/chevron-medium-right-padded-444.png) right no-repeat;border-left:2px solid #191919;display:block;height:38px;position:absolute;right:0;top:0;width:40px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu .zul-mobile-menu-submenu-arrow {background:#242424 url(icons/chevron-large-right-padded-444.png) right no-repeat;height:78px;width:80px}
+.zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu .zul-mobile-menu-submenu-arrow.zul-bar-mobile-menu-active {background-color:#303030;background-image:url(icons/chevron-medium-right-padded-fff.png)}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li.zul-mobile-menu-action-with-submenu .zul-mobile-menu-submenu-arrow.zul-bar-mobile-menu-active {background-image:url(icons/chevron-large-right-padded-fff.png)}
+
+.zul-bar-mobile-menu-list .zul-bar-mobile-menu-active {background-color:#303030 !important;color:#fff !important}
+.zul-bar-mobile-menu-list .fa:before {margin-right:5px}
+
+.zul-bar-mobile-menu-list li > a.zul-bar-icon-spacing, .zul-bar-mobile-menu-list li > a.zul-bar-icon-spacing:first-child:last-child, .zul-bar-mobile-menu-list li > a.zul-bar-icon-spacing:first-child,
+.zul-bar-mobile-menu-list li > a.zul-bar-checked, .zul-bar-mobile-menu-list li > a.zul-bar-checked:first-child:last-child, .zul-bar-mobile-menu-list li > a.zul-bar-checked:first-child,
+.zul-bar-mobile-menu-list li > a.zul-bar-has-fa, .zul-bar-mobile-menu-list li > a.zul-bar-has-fa:first-child:last-child, .zul-bar-mobile-menu-list li > a.zul-bar-has-fa:first-child,
+.zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon, .zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon:first-child:last-child, .zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon:first-child
+    {padding-left:32px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-icon-spacing, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-icon-spacing:first-child:last-child, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-icon-spacing:first-child,
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-checked, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-checked:first-child:last-child, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-checked:first-child,
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-fa, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-fa:first-child:last-child, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-fa:first-child,
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon:first-child:last-child, body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon:first-child
+    {padding-left:62px}
+.zul-bar-mobile-menu-list li > a.zul-bar-checked {background:url(icons/check-medium-aaa.png) 11px center no-repeat}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-checked {background:url(icons/check-large-aaa.png) 20px center no-repeat}
+.zul-bar-mobile-menu-list li > a.zul-bar-has-fa .fa:before {height:38px;left:7px;line-height:38px;position:absolute;top:1px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-fa .fa:before {height:78px;left:18px;line-height:78px;position:absolute;top:2px}
+.zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon {background-position:9px center;background-repeat:no-repeat}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-has-image-icon {background-position:20px center}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-list li > a.zul-bar-enlarge-image-icon {background-size:30px auto}
+.zul-bar-mobile-menu .zul-bar-checked.zul-bar-mobile-menu-active {background-image:url(icons/check-medium-fff.png)}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu .zul-bar-checked.zul-bar-mobile-menu-active {background-image:url(icons/check-large-fff.png)}
+
+/* Mobile menu back button */
+.zul-bar-mobile-menu-back-row {background:#161616;font-size:16px;height:40px;left:0;position:fixed;top:0px;transition:top 250ms;width:85%;z-index:5002}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-back-row {font-size:28px;height:80px}
+.zul-bar-mobile-menu-has-mobile-header .zul-bar-mobile-menu-back-row {top:0 !important}
+.zul-bar-mobile.zul-bar-mobile-top-menu .zul-bar-mobile-menu-back-row {top:-40px}
+body.enlarge-mobile-zul-bar .zul-bar-mobile.zul-bar-mobile-top-menu .zul-bar-mobile-menu-back-row {top:-80px}
+.zul-bar-mobile-menu-back-button {background:url(icons/chevron-medium-left-aaa.png) 10px center no-repeat;color:#aaa;display:block;height:40px;left:0;line-height:40px;padding:0 10px 0 25px;position:absolute;top:0}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-back-button {background:url(icons/chevron-large-left-aaa.png) 20px center no-repeat;height:80px;line-height:80px;padding:0 20px 0 45px}
+.zul-bar-mobile-menu-back-button:hover {color:#aaa}
+/* .zul-bar-mobile-menu-back-button:hover {background-image:url(icons/chevron-medium-left-fff.png);color:#fff} */
+/* body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-back-button:hover {background-image:url(icons/chevron-large-left-fff.png)} */
+.zul-bar-mobile-menu-back-title {color:#fff;display:block;height:0;left:0;line-height:40px;position:absolute;text-align:center;top:0;width:100%}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-back-title {line-height:80px}
+.zul-bar-mobile-menu-back-title span {background:rgba(22, 22, 22, .5);padding:5px;pointer-events:none}
+body.enlarge-mobile-zul-bar .zul-bar-mobile-menu-back-title span {padding:10px}
+.zul-bar-mobile-menu-back-header {display:none;list-style:none;margin:0;padding:0}
+
+.zul-bar-mobile.zul-bar-mobile-top-menu.zul-bar-mobile-menu-has-mobile-header .zul-bar-mobile-menu-back-button, .zul-bar-mobile.zul-bar-mobile-top-menu.zul-bar-mobile-menu-has-mobile-header .zul-bar-mobile-menu-back-title {display:none}
+.zul-bar-mobile.zul-bar-mobile-top-menu.zul-bar-mobile-menu-has-mobile-header .zul-bar-mobile-menu-back-header {display:block}
+
+/* ZUL site wrapper that doesn't work as desired */
+
+/*
+#zul-site-wrapper {left:0;position:relative}
+#zul-site-wrapper {transition:left 250ms}
+body.zul-mobile-show-menu #zul-site-wrapper {left:85%}
+*/
+
+/* Mobile menu animations (too intense for even high-end mobile devices atm) */
+
+.zul-bar {transition:left 250ms}
+.zul-bar-mobile-menu {left:-85%;transition:left 250ms, top 250ms}
+/*
+.zul-bar-fade {opacity:0;transition:opacity 250ms}
+*/
+
+body.zul-mobile-animate-menu .zul-bar {left:85%}
+body.zul-mobile-animate-menu #zul-site-wrapper {left:85%}
+body.zul-mobile-animate-menu .zul-bar-mobile-menu {left:0}
+/*
+body.zul-mobile-animate-menu .zul-bar-fade {opacity:.5}
+*/
+
+/* ZAM logo and site list */
+.zul-bar .zul-bar-sites {height:40px;left:10px;line-height:18px;position:absolute;top:0}
+.zul-bar .zul-bar-sites a {font-weight:normal !important;text-decoration:none !important}
+.zul-bar .zul-bar-sites .zul-bar-zam-logo {background:url(logos/zam.png) 0 5px no-repeat;display:inline-block;height:45px;margin:0 5px;position:relative;vertical-align:top;width:90px;z-index:3}
+.zul-bar .zul-bar-sites .zul-bar-sites-list-cover {background:#242424 url(icons/chevrons.png) 105px 16px no-repeat;box-shadow:50px 0 0 #242424;height:40px;left:0;position:absolute;top:0;width:226px;z-index:2}
+.zul-bar .zul-bar-sites.zul-bar-zam-logo-small .zul-bar-zam-logo {background:url(logos/zam-small.png) 0 9px no-repeat;height:40px;width:60px}
+.zul-bar .zul-bar-sites.zul-bar-zam-logo-small .zul-bar-sites-list-cover {background-position:75px 16px}
+.zul-bar .zul-bar-sites ul {list-style:none;margin:0;padding:0}
+.zul-bar .zul-bar-sites .zul-bar-sites-list {background:#242424;box-shadow:3px 3px 0 rgba(0, 0, 0, 0.6);display:none;left:0;opacity:0;padding:5px 0 0;position:absolute;top:0;transition:opacity 150ms, top 150ms;z-index:1}
+.zul-bar .zul-bar-sites.animate .zul-bar-sites-list-cover {background-position:105px -84px}
+.zul-bar .zul-bar-sites.show .zul-bar-sites-list {display:block}
+.zul-bar .zul-bar-sites.animate .zul-bar-sites-list {opacity:1;top:35px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li {background:#161616;line-height:18px;margin:0;padding:0}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-list-heading, .zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > div {border-top:1px solid #161616;color:#fff;font-weight:bold;padding:5px 10px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-list-item {background:#242424 right -291px no-repeat}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-list-item:hover {background-color:#303030;background-image:url(icons/chevrons.png);color:#fff}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-list-item a {background:10px center no-repeat;border-top:1px solid #161616;color:#aaa;display:block;padding:5px 30px 5px 31px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-list-item a:hover {color:#fff}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra {}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > ul {display:none;height:30px;overflow:hidden;transition:height 150ms, width 150ms;width:216px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > div {color:#0095cc;cursor:pointer;font-size:12px;padding-left:30px;text-align:right}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > div span {background:url(icons/chevrons.png) 4px -198px no-repeat;padding:0 0 0 17px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > div span b {color:#fff}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > div:hover {color:#fff}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra > div:hover span {background-position:0 5px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra.show > ul {display:block}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra.show > div {display:none}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra.animate > ul {height:404px;width:198px}
+.zul-bar .zul-bar-sites .zul-bar-sites-list li.zul-bar-sites-extra.animate-complete > ul {height:auto;width:auto}
+
+/* Logo Row *//*
+.zul-bar .zul-bar-links {height:40px;position:absolute;left:0;top:0}
+.zul-bar .zul-bar-links a {background-position:0 5px;background-repeat:no-repeat;display:inline-block;height:40px;margin:0 5px;vertical-align:top;width:60px}
+.zul-bar .zul-bar-links a.zul-bar-links-zam {background-image:url(logos/zam.png);height:45px;width:90px}
+.zul-bar .zul-bar-links a.zul-bar-links-wowhead {background-image:url(logos/wowhead.png);height:40px;width:71px}
+.zul-bar .zul-bar-links a.zul-bar-links-hearthhead {background-image:url(logos/hearthhead.png);height:40px;width:100px}
+.zul-bar .zul-bar-links a.zul-bar-links-lolking {background-image:url(logos/lolking.png);height:40px;width:179px}
+.zul-bar .zul-bar-links a.zul-bar-links-tf2outpost {background-image:url(http://cdn.tf2outpost.com/img/header/logo_440.png);background-position:4px 4px;height:40px;width:40px} */
+
+/* User Area */
+.zul-bar .zul-bar-user {height:40px;position:absolute;right:0;text-shadow:0 1px 1px #242424;top:0;z-index:3}
+.zul-bar .zul-bar-user > a {display:inline-block;height:30px;line-height:30px;margin:5px 0;padding:0 10px}
+
+/* User Form */
+.zul-bar .zul-bar-form {display:inline;margin:0 0 0 20px;padding:0}
+.zul-bar .zul-bar-form ::-webkit-input-placeholder {color:#666}
+.zul-bar .zul-bar-form :-moz-placeholder           {color:#666}
+.zul-bar .zul-bar-form ::-moz-placeholder          {color:#666}
+.zul-bar .zul-bar-form :-ms-input-placeholder      {color:#666}
+.zul-bar .zul-bar-form :input-placeholder          {color:#666}
+.zul-bar .zul-bar-form ::input-placeholder         {color:#666}
+.zul-bar .zul-bar-form :placeholder                {color:#666}
+.zul-bar .zul-bar-form ::placeholder               {color:#666}
+.zul-bar .zul-bar-form input[type="text"], .zul-bar .zul-bar-form input[type="password"] {background-color:#111;background-position:5px center;background-repeat:no-repeat;border:0;box-shadow:none;color:#eee;height:30px;line-height:30px;margin:5px 5px 5px 0;padding:0 5px 0 25px;width:110px}
+.zul-bar .zul-bar-form input[type="text"]:focus, .zul-bar .zul-bar-form input[type="password"]:focus {background-color:#000}
+.zul-bar .zul-bar-form input[type="checkbox"] {margin:0 0 0 5px;position:relative;top:2px}
+.zul-bar .zul-bar-form .zul-bar-form-prelabel {padding-right:5px}
+.zul-bar .zul-bar-form .zul-bar-form-postlabel {margin:0 10px 0 0;padding-left:5px}
+.zul-bar .zul-bar-form button,
+.zul-bar .zul-bar-form .btn,
+.zul-bar .zul-bar-form .formbtn
+    {line-height:18px;margin:0 10px 0 0;padding:6px 12px;position:relative;top:-1px}
+.zul-bar .zul-bar-form .btn,
+.zul-bar .zul-bar-form .formbtn
+    {height:18px}
+.zul-bar .zul-bar-form button.btn,
+.zul-bar .zul-bar-form button.formbtn
+    {height:auto}
+.zul-bar .zul-bar-form .zul-bar-form-email, .zul-bar .zul-bar-form .zul-bar-form-user, .zul-bar .zul-bar-form .zul-bar-form-username {background-image:url(icons/user.png)}
+.zul-bar .zul-bar-form .zul-bar-form-password {background-image:url(icons/pass.png)}

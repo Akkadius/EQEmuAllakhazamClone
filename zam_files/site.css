@@ -1,0 +1,307 @@
+html, body {background:#8a816f url(/eq/i/bgl-dark.gif);color:#000}
+a {color:#1313d5;text-decoration:none}
+a:hover {color:#000;text-decoration:underline}
+hr {border-color:#000}
+
+#wrapper {background:#d4c7ab url(/eq/i/bgl.gif)}
+#logo a {background:url(/eq/i/logo.png) right no-repeat;width:331px}
+#row-top {background:#c0ad89 url(/eq/i/bgd.gif)}
+#cols {border-top:1px solid #e5e5e5}
+#col-right {background:#c0ad89 url(/eq/i/colright.png)}
+#featured-promos .cont {background:#d4c7ab url(/eq/i/bgl.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+footer .block-content {background:#d4c7ab url(/eq/i/bgl.gif)}
+footer .footer-featured-sites ul li a, footer .footer-zam .footer-social .footer-callout, footer .footer-zam .footer-social-links
+    {background:#c0ad89 url(/eq/i/colright.png) -1px 0}
+
+#menu_horiz {background:url(/eq/i/nav.jpg);border-color:#696969}
+#nav a, #user-login a {color:#000}
+#nav a:hover, #user-login a:hover {color:#1313d5}
+#menu_horiz > li:hover {background:url(/eq/i/nav.jpg) bottom}
+#nav div {background:#c0ad89 url(/eq/i/bgd.gif) !important;border:1px solid #696969;border-bottom:0 !important}
+#menu_horiz .cols-2 > ul, #menu_horiz .cols-3 > ul {border-color:#696969}
+#nav div li {border-bottom:1px solid #696969}
+#nav div a {border-bottom:0 !important;border-left:1px solid #e5e5e5;border-top:1px solid #e5e5e5}
+#nav li:hover > a {background:url(/i/nav-white-top.png) repeat-x}
+#nav div li:hover {background:#d4c7ab url(/eq/i/bgl.gif)}
+#nav > ul > .ext > a {background:url(/i/extarrow-black.gif) right no-repeat}
+#menu_horiz li li.has-sub > a {background:url(/i/arrow-right-spaced-black.png) right no-repeat !important}
+#menu_horiz > li > div {left:-1px}
+
+#menu_horiz > li > a {border-left:1px solid #e5e5e5;border-right:1px solid #696969}
+.nc-forums {border-right:1px solid #e5e5e5}
+.nc-account-code {border-left:1px solid #696969}
+.nc-account-code > a {border-right:0 !important}
+
+#footer {color:#333}
+#footer li, #footer #footer-network {border-color:#6b6b6b}
+#footer h3 {color:#000}
+#footer a {color:#333}
+#footer a:hover {color:#000}
+#footer #footer-logo .logo {background:url(/i/logo-footer-black.png)}
+
+.no-template {background:#d4c7ab url(/eq/i/bgl.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+
+.menuh {font-weight:bold;border-style:solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-width:1px;background:url(/eq/i/bgd.gif)}
+
+#pagetitle{font-family:'Charter BT';font-size:22px;font-weight:bold}
+
+.hb {background:#b1a67e;font-size:10px}
+
+.fs14 {font-size:12.5px;font-weight:500}
+.lr, .s2-lr {background:#d4c7ab url(/eq/i/bgl.gif)}
+.dr, .s2-dr {background:#d7c69a url(/eq/i/bg.gif)}
+.link-list .s2-lr, .link-list .s2-dr, .list .s2-lr, .list .s2-dr, #rss-feed .s2-lr, #rss-feed .s2-dr {border-color:#696969 !important}
+
+#bigrow, .bigrow {color:#000;font-size:18px;font-weight:bold}
+.bigrow a {color:#000;font-size:18px;font-weight:bold}
+
+#tmpItemFrm {opacity:1;z-index:99999}
+
+#red, .red {color:darkred;text-decoration:none;font-size:10px}
+#notbold, .notbold {font-weight:normal}
+
+.hotzoneLabel {text-align:center:font-size:150%;color:red}
+
+.mobDisplay .moblevel {clear:right;padding-top:5px}
+.mobDisplay .eff img {float:left}
+.mobDisplay .eff .effDet {margin-left:29px}
+.mobDisplay .mobtype {margin-bottom:12px}
+.mobDisplay .ssG {float:right;margin:0 0 10px 10px}
+.mobDisplay .ssGH {text-align:right}
+
+table.db-page {border:0;border-collapse:collapse;width:100%}
+.db-page h1, .db-page h2 {background:#b1a67e;margin:0;padding:3px}
+.db-page h2 {font-size:13px;font-weight:bold}
+.db-page h2 small {font-size:12px}
+
+/* Item display */
+
+.itemicon {height:20px;width:20px;border:0;vertical-align:absmiddle}
+.shotbg {width:451px;height:230px;background-image:url(/eq/images/itemshot.gif?1);text-align:left}
+.shottopbg {width:451px;height:18px;background-image:url(/eq/images/itemtop.gif?1)}
+.shotbotbg {width:451px;height:10px;background-image:url(/eq/images/itembot.gif?1)}
+.shottitle {font:Arial;color:#c0c0c0;text-align:center;width:100%}
+.shottitle a {color: yellow;}
+.shotdata {font:Arial;color:#fff;padding:7px;width:100%}
+.shotrec {font:Arial;color:#ff4040}
+a.shot {text-decoration:none;color:yellow}
+a.shot:hover {text-decoration:underline}
+a.shot:visited {color:yellow}
+div.nobgrd a.shot {text-decoration:none;color:#1313d5}
+div.nobgrd a.shot:hover {text-decoration:underline}
+div.nobgrd a.shot:visited {color:#071076}
+.metanote {font-style: italic;}
+
+.eqitem {background:#333;border:1px solid #a9a9a9;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 0 3px #000;color:#e5e0dd;font:13px Arial,Helvetica,sans-serif;max-width:350px;min-width:150px;padding:3px}
+a.eqitem {color:#ffd200}
+.eq.itemicon.tooltip-icon {background:#333;border:1px solid #a9a9a9;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;box-shadow:0 0 3px #000;height:32px;left:-44px;padding:3px;top:0;width:32px}
+.iname {font-size:18px}
+.credit {font-family:Arial, Helvetica, sans-serif;font-size:11px}
+a.credit {font-size:11px;color:blue}
+
+.mform, .mform2 {background:silver;border:1px solid #000}
+.mform2 {background:#d6d6d6}
+
+.forumList caption a {color:#000}
+
+.msgHeaderFrame {background:#b1a67e;color:#000}
+.msgUMex {background:#d7c69a url(/eq/i/bg.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+
+.msgQuote {background:#d4c7ab url(/eq/i/bgl.gif);border-width:1px;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.msgQuote .source {background:#b1a67e url(/eq/i/bgd.gif)}
+.msgQuote, .msgQuote .source {border-top-left-radius:0;-moz-border-radius-topleft:0;-webkit-border-top-left-radius:0}
+
+.stagedirection {font-style:italic}
+.editorial {font-weight:bold}
+.taskstage {text-decoration:underline}
+
+/* Coin Colors for Template:EQ2 Coin */
+.coin-platinum {color:#c0c0c0}
+.coin-gold {color:#fb0}
+.coin-silver {color:#909090}
+.coin-copper {color:#c80}
+.coin-status {color:#09f}
+
+div.nobgrd .herosta {color:purple}
+
+.story .Title h2 .StoryLink {color:#000}
+.story .Title h2 a.CatLink {color:#1313d5}
+.story .Title .Byline {color:#696969;border-color:#696969}
+
+#game-column h3 {background:#caba9a;background:rgba(192, 173, 137, .5)}
+#game-column .game-news li {border-color:#000}
+
+.path {background:url(/i/arrow-down-gray.png) 0 999px no-repeat}
+.path ul {background:#d7c69a url(/eq/i/bg.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.path li {background:url(/i/arrow-right-gray.png) 3px 3px no-repeat}
+.path b {background:url(/i/check-black.gif) 0 999px no-repeat}
+.path .cur a {background:url(/i/check-black.gif) 1px 6px no-repeat}
+.path .has-sub:hover {background:url(/i/arrow-down-gray.png) left no-repeat}
+.path .has-sub:hover > a {color:#000}
+
+.pages span, .pages a {background:#d7c69a url(/eq/i/bg.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.pages span {background:#c0ad89 url(/eq/i/bgd.gif)}
+
+/* Icons */
+.icon-daoc, .icon-camelot {background:url(/i/icon-daoc-black.png) left no-repeat}
+.icon-ffxi {background:url(/i/icon-ffxi-black.png) left no-repeat}
+.icon-ffxiv {background:url(/i/icon-ffxiv-black.png) left no-repeat}
+.icon-gh {background:url(/i/icon-gh-dark.png) left no-repeat}
+.icon-tor {background:url(/i/icon-tor-dark.png) left no-repeat}
+
+.front .box .header, .front .box .subhead, #game-column .box .header, #game-column .box h3 {border-color:#696969;font-weight:bold}
+
+.bcont, #user-nav li, #video-infobox {background:#d7c69a url(/eq/i/bg.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.bcont-dark, .bcont-alt {background:#c0ad89 url(/eq/i/bgd.gif)}
+.bcont-light {background:#d4c7ab url(/eq/i/bgl.gif)}
+.box {background:#d4c7ab url(/eq/i/bgl.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.box .header {background:#c0ad89 url(/eq/i/bgd.gif);border-bottom:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+
+#userbox #loading {background:url(/i/loading-black.gif)}
+
+.tablist a {background:url(/eq/i/bgd.gif);border-color:#000;border-style:solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.tablist .current a {color:#000}
+
+/* Dialogue */
+#dialogue-screen {background:#d6c399}
+#dialogue-cont {width:424px}
+#dialogue-cont .cont {background:#d7c69a url(/eq/i/bg.gif);border:1px solid #000;border-radius:0;-moz-border-radius:0;-webkit-border-radius:0}
+#dialogue-shadow {border-radius:0;-moz-border-radius:0;-webkit-border-radius:0;width:424px}
+
+#notifications {background:#d7c69a url(/eq/i/bg.gif);border-bottom:1px solid #000;color:inherit}
+
+.alert > .box {background:#c0ad89 url(/eq/i/bgd.gif)}
+
+.datatable {background:#d7c69a url(/eq/i/bg.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-collapse:separate;border-spacing:0}
+.datatable caption {background:#d7c69a url(/eq/i/bg.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.datatable th {background:#b1a67e url(/eq/i/bgd.gif);border:solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-width:0 0 1px}
+.datatable td {border:solid #9e9e9e;border-width:1px 0 0}
+.datatable td:first-child {border-left:0}
+.datatable tbody tr:first-child td {border-top:0}
+.datatable .lr, .datatable .dr {background:none}
+.datatable tr:hover, .datatable tr.lr:hover, .datatable tr.dr:hover {background:#d4c7ab url(/eq/i/bgl.gif)}
+
+#livetable .secrow td {border-top:0}
+
+.zonelevels td {border-width:1px 0 0 1px}
+
+.dbgReport {margin-left:175px}
+
+.no-banner .header-bg, .no-tower .sidebar-bg, .no-cube .block-bg {display:none !important}
+.no-tower #mainContent {margin-right:5px !important}
+
+.mini-dropdown > span {color:#1313d5}
+
+/* NF */
+#lightbox #lightbox-close, .forums .post-buttons a, .forums .f-read, .forums .f-unread, .forums .f-lastpost img, #forum table .f-thread, #forum table .f-newthread, #forum table .f-newreplies, #forum table .f-sticky, #forum table .f-lock, .post .head .f-rateup span, .post .head a.button, .post .head .actions a, #posts h1 small a, #messages h1 small a, .post a.post-link, .post .poster .user .name .online, .f-follow span, .f-quote span, .f-sticky span, .f-lock span, .f-move span, .f-report span, .compact .f-report span, .f-nuke span, .f-unnuke span, .f-bookmark span, .f-edit span, .f-reply span, .f-pm span, .f-delete span, .f-add span, .f-remove span, .f-ignore span, .pre-ie9 .forums .f-read, .pre-ie9 .forums .f-unread, .pre-ie9 .forums .f-lastpost img, .pre-ie9 #forum table .f-thread, .pre-ie9 #forum table .f-newthread, .pre-ie9 #forum table .f-newreplies, .pre-ie9 #forum table .f-sticky, .pre-ie9 #forum table .f-lock, .pre-ie9 .post .head .f-rateup span, .pre-ie9 .f-follow span, .pre-ie9 .f-quote span, .pre-ie9 .f-sticky span, .pre-ie9 .f-lock span, .pre-ie9 .f-move span, .pre-ie9 .f-report span, .pre-ie9 .compact .f-report span, .pre-ie9 .f-nuke span, .pre-ie9 .f-unnuke span, .pre-ie9 .f-bookmark span, .pre-ie9 .f-edit span, .pre-ie9 .f-reply span, .pre-ie9 .f-pm span, .pre-ie9 .f-delete span, .f-add span, .f-remove span, .f-ignore span, .f-message, #user #config #close, .f-gtalk, .f-aim, .f-msn, .f-icq, .f-skype, .f-fb, .f-tw, .forums #markup .help, .forums #markup .quote, .pm-inbox, .pm-sent, .pm-saved, .pm-drafts {background-image:url(/eq/i/forum-sprite.png?1)}
+
+.f-search input.inactive {color:#999}
+
+.forums .post-buttons a {background-color:#b8a177}
+.forums .post-buttons a:hover {background-color:#b39b6e}
+.forums .post-buttons a span {color:#000}
+.forums .post-buttons a:hover span {color:#000}
+.forums .post-buttons a:active:hover {background-color:#ab946a}
+.forums .post-buttons a.disabled-button {background:#d7c69a url(/eq/i/bg.gif) !important;border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.forums .post-buttons a.disabled-button span {color:#333}
+#posts h1 small a, #messages h1 small a {background-color:#b8a177;color:#000 !important}
+#posts h1 small a:hover, #messages h1 small a:hover {background-color:#b39b6e}
+#posts h1 small a:active:hover, #messages h1 small a:active:hover {background-color:#ab946a}
+.post .head a.button, .post .head .actions a, .post a.post-link {background-color:#d0c2a3;color:#000 !important}
+.post .head a.button:hover, .post .head .actions a:hover, .post a.post-link:hover {background-color:#cebe9d}
+.post .head a.button:active:hover, .post .head .actions a:active:hover, .post a.post-link:active:hover {background-color:#c3b596}
+
+#forums table, #forum table, #messages .f-table {background:#d7c69a url(/eq/i/bg.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+#forums th, #forum th, #messages .f-table th {background:#b1a67e url(/eq/i/bgd.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+#forums td, #forum td, #messages .f-table td {border-color:#9e9e9e}
+#forum tr, #messages .f-table tr {background:transparent}
+#forum tr:hover, #messages .f-table tr:hover {background:#d4c7ab url(/eq/i/bgl.gif)}
+#forum .deleted {background:#cabb90}
+
+.post {background:#d7c69a url(/eq/i/bg.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.post-inner {background:url(/eq/i/post.gif) repeat-y}
+.post-filtered .post-inner {background:0}
+.post .head, .post.post-filtered {background:#c0ad89 url(/eq/i/bgd.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.post .head .info, .post.post-filtered .post-inner {background:url(/i/fade-white-top-28-25.png) repeat-x;color:#444}
+.post.post-filtered .post-inner {color:#000}
+.post .head .info span span, .post .head .info .actions span, .post .head .subject {color:#000}
+.post .head .info .nukes > span, .post .head .info span .details {background:#c0ad89 url(/eq/i/bgd.gif) -37px bottom;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.post .head .info .nukes > span {background-image:url(/i/other-white-25.png), url(/eq/i/bgd.gif);background-position:bottom, -37px bottom;background-color:transparent, #c0ad89;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.pre-ie9 .post .head .info .nukes > span {background:#c0ad89 url(/eq/i/bgd.gif) -37px bottom !important}
+.post .poster {background:#c0ad89 url(/eq/i/bgd.gif) 0 -28px}
+.post .body .sig {color:#555}
+.post .body .sig .bar {color:#777}
+
+.post:target, .post:target ~ .post-necro {box-shadow:0 1px 5px rgba(0,0,0,0.5);-moz-box-shadow:0 1px 5px rgba(0,0,0,0.5);-webkit-box-shadow:0 1px 5px rgba(0,0,0,0.5)}
+
+.post .quote {background:#d4c7ab url(/eq/i/bgl.gif);border-width:1px;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.post .quote .source {background:#b1a67e url(/eq/i/bgd.gif)}
+
+.post-necro {background:#d7c69a url(/i/fade-black-top-28-15.png) repeat-x}
+.post-necro b {text-shadow:none}
+
+.forums #colors, .forums #smilies {background:url(/i/arrow-right-black.png) 3px 2px no-repeat;color:#1313d5}
+#f-jump span {background:url(/i/arrow-right-black.png) 3px 4px no-repeat;color:#1313d5}
+.forums #colors:hover, .forums #smilies:hover, #f-jump:hover span {background:url(/i/arrow-down-black.png) left no-repeat;color:#000}
+.forums #smilies:hover a {color:#000}
+
+.Scholar, .Scholar .name > a {color:#008}
+.Sage, .Sage .name > a {color:#060}
+.Guru, .Guru .name > a {color:#d00}
+.Administrator, .Administrator .name > a {color:#d50}
+
+#user #config #loading, #avatar-gallery #loading {background-image:url(/i/loading-black.gif)}
+
+.spoiler-block > span {background:#b6a882;background:rgba(0,0,0,.15)}
+
+.pre-ie9 .forums .post-buttons a, .pre-ie9 .post .head a.button, .pre-ie9 .post .head .actions a, .pre-ie9 #posts h1 small a, .pre-ie9 #messages h1 small a, .pre-ie9 .post a.post-link, .pre-ie9 .forums .post-buttons a b, .pre-ie9 .post .head a.button b, .pre-ie9 .post .head .actions a b, .pre-ie9 #posts h1 small a b, .pre-ie9 #messages h1 small a b, .pre-ie9 .post a.post-link b {background-image:url(/eq/i/forum-buttons.png)}
+
+/* Wiki */
+
+.wiki {border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.wiki-nav {border-bottom:1px solid #b8a480}
+.wiki-nav a {color:#00f}
+.wiki-nav a:hover {color:#000}
+.wiki-nav .cur, .wiki-nav .tools:hover {background:#c0ad89 url(/eq/i/bgd.gif)}
+.wiki-nav .cur a {color:#000}
+.wiki-nav .tools > a {background:url(/i/smallarrow-black-down-spaced-extra.gif) right no-repeat;color:#000}
+.wiki-nav .tools ul {background:#c0ad89 url(/eq/i/bgd.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;right:-1px}
+.wiki-cats {border:1px solid #b8a480;background:#c0ad89 url(/eq/i/bgd.gif);color:#000}
+.wheader {border-bottom:none}
+.toc {float:right;color:#000;background:silver;border:1px solid #b8a480}
+.wframe {border:1px solid #b8a480}
+.infobox {border:2px solid #b1a67e;margin:0 0 1em 1em;background-color:#f5deb3;color:#000}
+.infobox caption {font-size:150%;font-weight:bold}
+.infobox th {background-color:#b1a67e}
+.infobox2 {border:1px solid #b1a67e;margin:2px;background-color:#f5deb3;color:#000}
+.infobox2 th {background-color:#b1a67e}
+.mainpagebox {border:1px solid #b1a67e;margin:2px;background-color:#f5deb3;color:#000}
+.mainpagebox th {background-color:#b1a67e;font-size:150% ;text-align:center}
+.mainpagecreds {border:1px solid #b1a67e;margin:2px;background-color:#f5deb3;color:#000}
+.mainpagecreds caption {font-size:120%;text-align:center;font-weight:bold}
+.mainpagecreds th {background-color:#b1a67e;color:#000;text-align:center}
+.mainpagecreds td {padding-left:1em}
+.gametag {background:#c0ad89 url(/eq/i/bgd.gif);border:1px solid #000;color:#fff;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;float:right;margin:.5em;padding:.1em}
+.gametag td {text-align:right}
+.wiki-recessed {background-color:#b1a67e;border-color:#b1a67e}
+
+.poll-results div {background:#cdbe9f}
+.poll-results var {background:#c0ad89}
+
+.ratingstars b, .ratingstars-static b, .ratingstars.ratingstars-static:hover b {background:url(/i/stars-dark-blue.png) bottom left no-repeat}
+.ratingstars:hover b, .ratingstars.rated b, .ratingstars-static.rated b {background:url(/i/stars-dark.png) bottom left no-repeat}
+
+.blocklink, .imaged-list a span, .video-list .video-link b, #mini-features a, #countdown-clock span, #countdown-clock a:hover span {border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+
+#twitter-feed li, .link-list .cont a, #rss-feed .cont a, #narrow-featured-news li {border-color:#000}
+
+.video-list .video-delete {background:#afafaf;color:#000}
+.video-list .video-delete strong {color:red}
+.video-list .video-delete:hover b {background:red;color:#fff}
+
+#livesearch {right:0}
+#livesearch ul {background:#d7c69a url(/eq/i/bg.gif) top right;border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;width:293px}
+#livesearch a {width:283px}
+#livesearch a span {background:#d7c69a url(/eq/i/bg.gif) top right;color:#696969}
+#livesearch .hlight a, #livesearch li.hlight a span {background:#c0ad89 url(/eq/i/bgd.gif) top right;color:#000}
+#livesearch a.common, #livesearch a.uncommon, #livesearch a.handcrafted, #livesearch a.fabled, #livesearch a.treasured, #livesearch a.legendary, #livesearch a.mythical, #livesearch a.mastercrafted {font-weight:normal}

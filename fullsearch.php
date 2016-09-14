@@ -79,7 +79,7 @@ if(     mysql_num_rows($FoundFactions) == 0
     and mysql_num_rows($FoundNpcs)     == 0
   )
 { $ItemRow = mysql_fetch_array($FoundItems);
-   header("Location: item.php?id=".$ItemRow["id"]);
+   header("Location: ?a=item&id=".$ItemRow["id"]);
   exit();
 }
 
