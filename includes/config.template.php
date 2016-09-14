@@ -2,7 +2,7 @@
 
 $SiteTitle = 'EQEmu Server AllaClone';
 $ServerName = 'EQEmu Server';
-$cfgversion = '2.0.1 - Rev2103';
+$cfgversion = '2.0 - Rev2100';
 $SiteEmail = '';
 
 $dbhost = "localhost";
@@ -45,8 +45,6 @@ if (isset($_COOKIE["Theme"])) {
 // OPTIONS
 $ServerMaxLevel = 80; // Max Level for Characters on the Server
 $ServerMaxNPCLevel = 95; // Max Level for any NPCs on the Server
-$MaxResultsPerPage = 15; // Max number of results per page for results that are paged
-$AdjacentPages = 3; // How many adjacent pages to show for the pages bar
 $MaxItemsReturned = 50; // max number of items returned by search engines (0=all)
 $MaxNpcsReturned = 50; // max number of npcs returned by search engines (0=all)
 $SpawngroupAroundRange = 100; // range of surrounding spawngroups, spawngroups page
@@ -80,6 +78,7 @@ $UseCustomZoneList = FALSE; // If TRUE, will display only the custom zone list i
 // For custom zone lists, set the file_name field of the zone table to a number (in the order you want them displayed)
 // Then, set the notes field in the zone table to the note you want for the zone such as "Raid Tier1"
 // You can block any zones from the custom zone list by adding "disabled" anywhere in the notes field
+
 
 $ShowHeader = TRUE; // Shows the page header for each page
 $UseWikiImages = FALSE; // Use Wiki added images for NPCs and other (not in use yet)
