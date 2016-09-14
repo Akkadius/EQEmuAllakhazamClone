@@ -110,7 +110,7 @@ function SpellDescription($spell,$n,$csv=false) {
       case 152: // Summon Pets: 
         print $dbspelleffects[$spell["effectid$n"]];
         if ($csv==false) {
-          print " <a href=pet.php?name=".$spell["teleport_zone"].">".$spell["teleport_zone"]."</a>";
+          print " <a href=?a=pet&?name=".$spell["teleport_zone"].">".$spell["teleport_zone"]."</a>";
         } else { print " : ".$spell["teleport_zone"]; }
         break;
       case 13: // See Invisible

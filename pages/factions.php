@@ -48,6 +48,7 @@
 	print "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
 	print "<tr>\n";
 	print "<td nowrap='1'><b>Search : </b></td>\n";
+	print '<input type="hidden" name="a" value="factions">';
 	print "<td><input type='text' value=\"$iname\" size='30' name='iname'/></td>\n";
 	print "</tr>";
 	print "<tr align='center'>";
@@ -58,7 +59,7 @@
 
 	if(isset($QueryResult))
 	{
-		PrintQueryResults($QueryResult, $MaxFactionsReturned, "faction.php", "faction", "factions", "id", "name");
+		PrintQueryResults($QueryResult, $MaxFactionsReturned, "?a=faction&", "faction", "factions", "id", "name");
 	}
 
 

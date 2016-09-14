@@ -219,6 +219,8 @@
                                             if($route == "zonelist"){ require_once('pages/zonelist.php'); }
                                             if($route == "items"){ require_once('pages/items.php'); }
                                             if($route == "factions"){ require_once('pages/factions.php'); }
+                                            if($route == "faction"){ require_once('pages/faction.php'); }
+                                            if($route == "pet"){ require_once('pages/?a=pet&'); }
 
                                             if($Title){
                                                 $footer_javascript .= '
