@@ -75,5 +75,5 @@ if (mysql_num_rows($result)>0) {
 }
 print "</ul></td></tr></table></center>";
 
-require_once($includes_dir."footers.php");
+
 ?>

@@ -71,5 +71,5 @@ echo "</form></table></center>\n";
 if(isset($QueryResult))
   PrintQueryResults($QueryResult, $MaxNpcsReturned, "npc.php", "npc", "npcs", "id", "name");
 
-require_once($includes_dir."footers.php");
+
 ?>

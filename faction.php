@@ -141,6 +141,6 @@
 	print "            </table>\n";
 	print "          </center>\n";
 
-	require_once($includes_dir."footers.php");
+
 
 ?>

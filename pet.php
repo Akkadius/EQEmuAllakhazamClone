@@ -93,5 +93,5 @@ if ($npc["npc_spells_id"]>0) {
 
 print "</td></tr></table><p>\n";
 
-require_once($includes_dir."footers.php");
+
 ?>

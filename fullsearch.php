@@ -119,5 +119,5 @@ print "            </tr>\n";
 print "          </table>\n";
 
 
-require_once($includes_dir."footers.php");
+
 ?>

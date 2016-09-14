@@ -23,5 +23,5 @@ while ($res=mysql_fetch_array($result))
 	$sep="<center><p><img src=images/line.gif width=75% height=5><p></center>";
 }
 
-require_once($includes_dir."footers.php");
+
 ?>

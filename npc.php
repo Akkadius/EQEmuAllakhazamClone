@@ -435,5 +435,5 @@
 	print "</td></tr></table>\n";
 	print "</td></tr></table></center>\n";
 
-	require_once($includes_dir."footers.php");
+
 ?>

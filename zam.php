@@ -126,23 +126,9 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="?a=zonelist">Zones by
-                                                            Era</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/zones.php">Populated
-                                                            Zones</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/zoneslevels.php">Zones by
-                                                            Level</a>
-                                                    </li>
+                                                    <li><a href="?a=zonelist">Zones by Era</a></li>
+                                                    <li><a href="http://10.0.1.12/allaclone/zones.php">Populated Zones</a> </li>
+                                                    <li><a href="http://10.0.1.12/allaclone/zoneslevels.php">Zones by Level</a> </li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -150,8 +136,7 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/items.php">Item Search</a>
-                                                    </li>
+                                                    <li><a href="?a=items">Item Search</a> </li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -159,8 +144,7 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="?a=spells">Spell Search</a>
-                                                    </li>
+                                                    <li><a href="?a=spells">Spell Search</a></li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -168,9 +152,7 @@
                                             </tr>
                                             <tr>
                                                 <td class="menu_item" nowrap="1">
-                                                    <li><a href="http://10.0.1.12/allaclone/factions.php">Faction
-                                                            Search</a>
-                                                    </li>
+                                                    <li><a href="?a=factions">Faction Search</a> </li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -235,6 +217,8 @@
                                             if($route == "item"){ require_once('pages/item.php'); }
                                             if($route == "pets"){ require_once('pages/pets.php'); }
                                             if($route == "zonelist"){ require_once('pages/zonelist.php'); }
+                                            if($route == "items"){ require_once('pages/items.php'); }
+                                            if($route == "factions"){ require_once('pages/factions.php'); }
 
                                             if($Title){
                                                 $footer_javascript .= '

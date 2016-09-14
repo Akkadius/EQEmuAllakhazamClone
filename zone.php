@@ -404,5 +404,5 @@ if ($AllowQuestsNPC==TRUE) {
 }
 print "</td></tr></table>";
 
-require_once($includes_dir."footers.php");
+
 ?>

@@ -293,6 +293,6 @@ if ($DisplayTaskActivities==TRUE)
 }
 print "</table></center></p>";
 
-require_once($includes_dir."footers.php");
+
 
 ?>

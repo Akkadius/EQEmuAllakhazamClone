@@ -165,13 +165,14 @@
 	$XhtmlCompliant = TRUE;
 	require_once($includes_dir.'headers.php');
 
-	echo "<center><table><tr><td style='toggle_btn'><a href='#' onclick='toggleItem(\"myTbody\")'><b><img src='" . $images_url . "dropdown.png' align='left' width='20' height='20'/>(Toggle Search Fields)</b></a></td></tr></table></center>";
+	echo "<center><table><tr><td style='toggle_btn'></td></tr></table></center>";
 	echo "<center><table border='0' width='0%' cellpadding='15'>\n";
 
 	echo "<tbody id='myTbody'>";
 	// Hide the search fields when results show
 
 	echo "<form method='GET' action='".$PHP_SELF."'>\n";
+	echo '<input type="hidden" name="a" value="items">';
 	// Split into 2 tables side by side
 	echo "<tr><td><table border='0' width='0%'>";
 	echo "<tr><td nowrap='1'><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
@@ -355,6 +356,6 @@
 		}
 	}
 
-	require_once($includes_dir."footers.php");
+
 
 ?>
