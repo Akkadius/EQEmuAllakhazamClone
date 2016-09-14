@@ -1,7 +1,5 @@
 <?php
-	require_once('./includes/constants.php');
-	require_once('./includes/config.php');
-	require_once($includes_dir.'mysql.php');
+
 
 	$id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
 
@@ -12,8 +10,7 @@
 	}
 
 	$Title="Recipe : ".str_replace('_',' ',GetFieldByQuery("name","SELECT name FROM $tbtradeskillrecipe WHERE id=$id"));
-	require_once($includes_dir.'headers.php');
-	require_once($includes_dir.'functions.php');
+
 
 	if (!isset($id)) { print "<script>document.location=\"index.php\";</script>"; }
 
@@ -23,7 +20,7 @@
 			
 	$result=mysql_query($query) or message_die('recipe.php','MYSQL_QUERY',$query,mysql_error());
 	$recipe=mysql_fetch_array($result);
-	print "<table border=0 width=0%>";
+	print "<center><table border=0 width=0%>";
 	print "<tr><td nowrap><b>Recipe : </b></td><td nowrap>".ucfirstwords(str_replace('_',' ',$recipe["name"]))."</td></tr>";
 	print "<tr><td nowrap><b>Tradeskill : </b></td><td nowrap>".ucfirstwords($dbskills[$recipe["tradeskill"]])."</td></tr>";
 	if ($recipe["skillneeded"]>0)

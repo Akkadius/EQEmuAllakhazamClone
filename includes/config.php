@@ -10,6 +10,8 @@ $dbname = "peq";
 $dbuser = "root";
 $dbpasswd = "eocdev";
 
+$slow_page_logging = 1;
+
 $root_url = 'http://10.0.1.12/allaclone/';
 $includes_url = $root_url . 'includes/';
 $includes_dir = getcwd() . "/includes/";

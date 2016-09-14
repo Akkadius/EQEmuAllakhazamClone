@@ -132,7 +132,7 @@ if (mysql_num_rows($result) > 0) {
     $TradeskillResults .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
     $TradeskillResults .= "<tr><td nowrap='1'><b>This item is used in the following tradeskill recipes : </b><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $TradeskillResults .= "<li><a href='recipe.php?id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
+        $TradeskillResults .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
     }
     $TradeskillResults .= "</ul></td></tr>";
 }
@@ -152,7 +152,7 @@ if (mysql_num_rows($result) > 0) {
     $TradeskillResults .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
     $TradeskillResults .= "<tr><td nowrap='1'><b>This item is the result of the following tradeskill recipes : </b><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $TradeskillResults .= "<li><a href='recipe.php?id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . $dbskills[$row["tradeskill"]] . ")</li>";
+        $TradeskillResults .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . $dbskills[$row["tradeskill"]] . ")</li>";
     }
     $TradeskillResults .= "</ul></td></tr>";
 }
@@ -224,7 +224,7 @@ if ($ItemFoundInfo == TRUE) {
             $DroppedList .= $Separator;
             $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
             $DroppedList .= "<tr>\n";
-            $DroppedList .= "<td nowrap='1'><b>This item is dropped : </b>\n";
+            $DroppedList .= "<td nowrap='1'><b>This item is dropped: </b>\n";
             $CurrentZone = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($CurrentZone != $row["zone"]) {

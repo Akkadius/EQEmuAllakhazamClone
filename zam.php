@@ -3,6 +3,8 @@
     require_once('./includes/config.php');
     require_once($includes_dir . 'mysql.php');
     require_once($includes_dir . 'functions.php');
+
+    $start = microtime(true);
 ?>
 
 <!DOCTYPE html>
@@ -218,6 +220,7 @@
                                             if($route == "zones_by_level"){ require_once('pages/zones_by_level.php'); }
                                             if($route == "zone"){ require_once('pages/zone.php'); }
                                             if($route == "npc"){ require_once('pages/npc.php'); }
+                                            if($route == "recipe"){ require_once('pages/recipe.php'); }
 
                                             if($Title){
                                                 $footer_javascript .= '
@@ -240,26 +243,24 @@
         </div>
     </div>
 
+    <?php
+        $end = microtime(true);
+        $time = number_format(($end - $start), 2);
+
+        $page_load_time = 'This page loaded in ' . $time . ' seconds';
+
+        if($slow_page_logging){
+            $myfile = fopen("slow_page_logging.txt", "w") or die("Unable to open file!");
+            fwrite($myfile, $_SERVER['REQUEST_URI'] . ' :: Took ' . $time . ' to load');
+            fclose($myfile);
+        }
+
+    ?>
 
     <footer>
         <div class="block-content pad10" style="line-height:24px">
             <ul class="site-footer">
-                <li><a href="http://legacy.zam.com/subscribe.html">Subscribe</a>
-                </li>
-                <li><a href="http://everquest.allakhazam.com/wiki/About_Us">About ZAM</a>
-                </li>
-                <li><a href="http://legacy.zam.com/wiki/Frequently_Asked_Questions_(Support)">FAQ</a>
-                </li>
-                <li><a href="http://legacy.zam.com/press.html">Press</a>
-                </li>
-                <li><a href="http://legacy.zam.com/advertising.html">Advertise</a>
-                </li>
-                <li><a href="http://legacy.zam.com/privacy.html">Privacy Policy</a>
-                </li>
-                <li><a href="http://legacy.zam.com/terms.html">Terms of Service</a>
-                </li>
-                <li><a href="http://everquest.allakhazam.com/wiki/Forum_Rules">Forum Rules</a>
-                </li>
+                <?php echo $page_load_time; ?>
             </ul>
             <div class="clear"></div>
         </div>
