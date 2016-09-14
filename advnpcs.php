@@ -64,7 +64,7 @@
 		{
 			while ($row=mysql_fetch_array($result))
 			{
-				print "<li><a href=npc.php?id=".$row["id"].">".ReadableNpcName($row["name"])."</a>";
+				print "<li><a href=?a=npc&id=".$row["id"].">".ReadableNpcName($row["name"])."</a>";
 				if ($ishowlevel) { print " - level ".$row["level"]; }
 			}
 		}

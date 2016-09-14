@@ -88,7 +88,7 @@ if(     mysql_num_rows($FoundFactions) == 0
     and mysql_num_rows($FoundNpcs)     == 1
   )
 { $NpcRow = mysql_fetch_array($FoundNpcs);
-   header("Location: npc.php?id=".$NpcRow["id"]);
+   header("Location: ?a=npc&id=".$NpcRow["id"]);
   exit();
 }
 

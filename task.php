@@ -55,7 +55,7 @@ if ($task["maxlevel"] <= $ServerMaxLevel && $task["maxlevel"] != 0)
 $ZoneID = $task["startzone"];
 $ZoneLongName = GetFieldByQuery("long_name","SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
 $ZoneShortName = GetFieldByQuery("short_name","SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
-print "<tr><td nowrap='1'><b>Starts In : </b></td><td><a href=zone.php?name=".$ZoneShortName.">".$ZoneLongName."</a></td></tr>";
+print "<tr><td nowrap='1'><b>Starts In : </b></td><td><a href=?a=zone&name=".$ZoneShortName.">".$ZoneLongName."</a></td></tr>";
 $Reward = $task["reward"];
 if ($task["rewardmethod"] == 0)
 {
@@ -239,7 +239,7 @@ if ($DisplayTaskActivities==TRUE)
 			{
 				$ZoneLongName = GetFieldByQuery("long_name","SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
 				$ZoneShortName = GetFieldByQuery("short_name","SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
-				$ZoneName = "<a href=zone.php?name=".$ZoneShortName.">".$ZoneLongName."</a>";
+				$ZoneName = "<a href=?a=zone&name=".$ZoneShortName.">".$ZoneLongName."</a>";
 			}
 			print "<tr><td colspan='2' nowrap='1'><ul><li>Step ".($row["activityid"] + 1).": $StepDescription - Zone: $ZoneName</li><ul>";
 			// Single Goals
@@ -247,7 +247,7 @@ if ($DisplayTaskActivities==TRUE)
 			{
 				if ($NPCID > 0)
 				{
-					print "<li>Related NPC: <a href=npc.php?id=".$NPCID.">".$NPCName."</a></li>";
+					print "<li>Related NPC: <a href=?a=npc&id=".$NPCID.">".$NPCName."</a></li>";
 				}
 				if ($ItemID > 0)
 				{
@@ -270,7 +270,7 @@ if ($DisplayTaskActivities==TRUE)
 						{
 							$NPCID = $row2["entry"];
 							$NPCName = GetFieldByQuery("name","SELECT name FROM npc_types WHERE id = $NPCID");
-							$GoalListString .= "<li>Related NPC: <a href=npc.php?id=".$NPCID.">".ReadableNpcName($NPCName)."</a></li>";
+							$GoalListString .= "<li>Related NPC: <a href=?a=npc&id=".$NPCID.">".ReadableNpcName($NPCName)."</a></li>";
 						}
 						if ($GoalType == "ItemID" && $row2["entry"])
 						{

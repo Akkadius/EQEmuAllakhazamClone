@@ -114,7 +114,7 @@ if (mysql_num_rows($result) > 0) {
     print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
     print "<tr><td nowrap='1'><b>This item can be foraged in: </b>";
     while ($row = mysql_fetch_array($result)) {
-        print "<li><a href='zone.php?name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a></li>";
+        print "<li><a href='?a=zone&name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a></li>";
     }
     print "</td></tr>";
 }
@@ -167,7 +167,7 @@ if ($AllowQuestsNPC == TRUE) {
         print "<tr><td nowrap='1'><b>This item is the result of a quest.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
-            print ", <a href=$root_url" . "zone.php?name=" . $res["zone"] . ">";
+            print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
             print GetFieldByQuery("long_name", "SELECT long_name FROM $tbzones WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
         }
         print "</ul></td></tr>";
@@ -181,7 +181,7 @@ if ($AllowQuestsNPC == TRUE) {
         print "<tr><td nowrap='1'><b>This item is used in quests.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
-            print ", <a href=$root_url" . "zone.php?name=" . $res["zone"] . ">";
+            print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
             print GetFieldByQuery("long_name", "SELECT long_name FROM $tbzones WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
         }
         print "</ul></td></tr>";
@@ -233,11 +233,11 @@ if ($ItemFoundInfo == TRUE) {
                         $DroppedList .= "</ul>\n";
                     }
                     $DroppedList .= "<ul>\n";
-                    $DroppedList .= "<li><b>in <a href='zone.php?name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b></li>\n";
+                    $DroppedList .= "<li><b>in <a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b></li>\n";
                     $DroppedList .= "<ul>\n";
                     $CurrentZone = $row["zone"];
                 }
-                $DroppedList .= "<li><a href='npc.php?id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a>";
+                $DroppedList .= "<li><a href='?a=npc&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a>";
                 if ($ItemAddChanceToDrop) {
                     $DroppedList .= " (" . ($row["chance"] * $row["probability"] / 100) . "% x " . $row["multiplier"] . ")";
                 }
@@ -278,11 +278,11 @@ if ($ItemFoundInfo == TRUE) {
                         $MerchantList .= "</ul>\n";
                     }
                     $MerchantList .= "<ul>\n";
-                    $MerchantList .= "<li><b>in <a href='zone.php?name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b></li>\n";
+                    $MerchantList .= "<li><b>in <a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b></li>\n";
                     $MerchantList .= "<ul>\n";
                     $CurrentZone = $row["zone"];
                 }
-                $MerchantList .= "<li><a href='npc.php?id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a>";
+                $MerchantList .= "<li><a href='?a=npc&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a>";
                 if ($row["class"] == 41) $MerchantList .= " (" . price($item["price"]) . ")"; // NPC is a shopkeeper
                 if ($row["class"] == 61) $MerchantList .= " (" . $item["ldonprice"] . " points)"; // NPC is a LDON merchant
                 $MerchantList .= "</li>\n";
@@ -314,7 +314,7 @@ if (mysql_num_rows($result) > 0) {
             if ($CurrentZone != "") {
                 print "</ul>\n";
             }
-            print "<b><a href='zone.php?name=" . $row["short_name"] . "'>" . $row["long_name"] . "</a> at: </b>\n";
+            print "<b><a href='?a=zone&name=" . $row["short_name"] . "'>" . $row["long_name"] . "</a> at: </b>\n";
             print "<ul>\n";
             $CurrentZone = $row["short_name"];
         }

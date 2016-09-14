@@ -26,7 +26,7 @@
 	else
 	{
 		print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."zones.php'>Populated Zones</a></li></td></tr>\n";
-		print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."zoneslevels.php'>Zones by Level</a></li></td></tr>\n";
+		print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."zones_by_level.php'>Zones by Level</a></li></td></tr>\n";
 	}
 	// Items section
 	print "<tr><td class='menuh' nowrap='1'>Items...</td></tr>\n";

@@ -30,7 +30,7 @@ print "<center><table border=1><tr>
        ";
 while ($row=mysql_fetch_array($result)) {
   print "<tr>
-         <td><a href=zone.php?name=".$row["short_name"].">".$row["long_name"]."</a></td>
+         <td><a href=?a=zone&name=".$row["short_name"].">".$row["long_name"]."</a></td>
          <td>".$row["short_name"]."</td>
          <td>".$row["zoneidnumber"]."</td>
          <td align=center>".$row["spawns"]."</td>

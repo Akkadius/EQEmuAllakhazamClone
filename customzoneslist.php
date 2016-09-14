@@ -31,7 +31,7 @@
 		if (substr_count(strtolower($row["note"]), "disabled") == 0)
 		{
 			print "<tr class='" .$RowClass. "'>
-				<td valign='top'><a href=zone.php?name=".$row["short_name"].">".$row["long_name"]."</a></td>
+				<td valign='top'><a href=?a=zone&name=".$row["short_name"].">".$row["long_name"]."</a></td>
 				<td valign='top'>".$row["short_name"]."</td>
 				<td valign='top'>".$row["zoneidnumber"]."</td>
 				<td valign='top'>".$row["note"]."</td>

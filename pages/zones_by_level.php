@@ -1,10 +1,5 @@
 <?php
 $Title="Populated Zones By Level";
-require_once('./includes/config.php');
-require_once($includes_dir.'constants.php');
-require_once($includes_dir.'headers.php');
-require_once($includes_dir.'mysql.php');
-require_once($includes_dir.'functions.php');
 
 print "<p><b>The suggested levels are approximate based upon the levels of the majority of creatures found in the zone, and, except for the newbie zones, assume that you will hunt with a group.  Most zones also have some higher and lower level monsters roaming the area, and can thus be selectively hunted at different levels.  Follow the links to get more complete descriptions for the individual zones.</b><p>";
 if ($SortZoneLevelList==TRUE) {
@@ -34,7 +29,7 @@ foreach ($IgnoreZones AS $zid) {
   $query.=" $v $tbzones.short_name!='$zid'"; $v=" AND ";
 }          
 $query.=" ORDER BY $tbzones.long_name ASC";
-$result=mysql_query($query) or message_die('zoneslevels.php','MYSQL_QUERY',$query,mysql_error());
+$result=mysql_query($query) or message_die('zones_by_level.php','MYSQL_QUERY',$query,mysql_error());
 $cpt=0;
 while ($res=mysql_fetch_array($result)) {
   $zones[$cpt]["shortname"]=$res["short_name"];
@@ -49,7 +44,7 @@ while ($res=mysql_fetch_array($result)) {
   if ($HideInvisibleMen==TRUE) { $query.=" AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240"; }          
   $query.=" AND $tbnpctypes.level>$MinimumNpcLvl
           GROUP BY $tbnpctypes.id";
-  $result2=mysql_query($query) or message_die('zoneslevels.php','MYSQL_QUERY',$query,mysql_error());
+  $result2=mysql_query($query) or message_die('zones_by_level.php','MYSQL_QUERY',$query,mysql_error());
   while ($row=mysql_fetch_array($result2)) {
     $lvl=floor($row["level"]/5);
     $zones[$cpt][$lvl]++;
@@ -94,7 +89,7 @@ if ($SortZoneLevelList==TRUE) {
 } // end SortZoneLevelList
 
 
-print "<table border=0 width=100%><tr valign=top><td width=100%>";
+print "<table><tr valign=top><td width=100%>";
 print "<center><table border=1>";
 print "<tr class='menuh'><th>Name</th>
        <th class=tab_title>Short name</th>";
@@ -120,7 +115,7 @@ for ($i=0; $i<=$cpt; $i++) {
       print "</tr>";
     }
     print "<tr>
-           <td><a href=zone.php?name=".$zones[$i]["shortname"].">".$zones[$i]["longname"]."</a></td>
+           <td><a href=?a=zone&name=".$zones[$i]["shortname"].">".$zones[$i]["longname"]."</a></td>
            <td>".$zones[$i]["shortname"]."</td>";
     if ($SortZoneLevelList==TRUE) {
       print "<td align=center>".round($zones[$i]["val"])."</td>";           

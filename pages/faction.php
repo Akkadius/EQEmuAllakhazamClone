@@ -26,10 +26,10 @@
 				{
 					if($CurrentZone != "")
 						print "                  <br/><br/>\n";
-					print "                  <b>in <a href='zone.php?name=".$row["zone"]."'>".$row["long_name"]."</a> by </b>\n";
+					print "                  <b>in <a href='?a=zone&name=".$row["zone"]."'>".$row["long_name"]."</a> by </b>\n";
 					$CurrentZone = $row["zone"];
 				}
-				print "<li><a href='npc.php?id=".$row["id"]."'>".str_replace("_"," ",$row["name"])."</a> (".$row["id"].")</li>\n";
+				print "<li><a href='?a=npc&id=".$row["id"]."'>".str_replace("_"," ",$row["name"])."</a> (".$row["id"].")</li>\n";
 			}
 			if($CurrentZone != "")
 				print "                  <br/><br/>\n";

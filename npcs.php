@@ -42,7 +42,7 @@ if($isearch != "")
 	if(mysql_num_rows($QueryResult) == 1)
 	{
 		$row = mysql_fetch_array($QueryResult);
-		header("Location: npc.php?id=".$row["id"]);
+		header("Location: ?a=npc&id=".$row["id"]);
 		exit();
 	}
 }

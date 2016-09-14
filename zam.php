@@ -89,7 +89,7 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/index.php">AllaClone Main
+                                                    <li><a href="?">AllaClone Main
                                                             Page</a>
                                                     </li>
                                                 </td>
@@ -97,12 +97,6 @@
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
                                                     <li><a href="http://www.eqemulator.org">EQEmulator</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/news.php">Server News</a>
                                                     </li>
                                                 </td>
                                             </tr>
@@ -128,7 +122,7 @@
                                                 <td nowrap="1" class="menu_item">
                                                     <li><a href="?a=zonelist">Zones by Era</a></li>
                                                     <li><a href="http://10.0.1.12/allaclone/zones.php">Populated Zones</a> </li>
-                                                    <li><a href="http://10.0.1.12/allaclone/zoneslevels.php">Zones by Level</a> </li>
+                                                    <li><a href="?a=zones_by_level">Zones by Level</a> </li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -221,6 +215,9 @@
                                             if($route == "factions"){ require_once('pages/factions.php'); }
                                             if($route == "faction"){ require_once('pages/faction.php'); }
                                             if($route == "pet"){ require_once('pages/pet.php'); }
+                                            if($route == "zones_by_level"){ require_once('pages/zones_by_level.php'); }
+                                            if($route == "zone"){ require_once('pages/zone.php'); }
+                                            if($route == "npc"){ require_once('pages/npc.php'); }
 
                                             if($Title){
                                                 $footer_javascript .= '

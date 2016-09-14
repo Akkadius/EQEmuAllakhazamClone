@@ -1,8 +1,4 @@
 <?php
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir.'mysql.php');
-
 
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
@@ -19,14 +15,12 @@ if ($UseCustomZoneList==TRUE && $name != '')
 }
 
 $Title=GetFieldByQuery("long_name","SELECT long_name FROM $tbzones WHERE short_name='$name'")." ($name)";
-require_once($includes_dir.'headers.php');
-require_once($includes_dir.'functions.php');
 
 if (!isset($name)) { print "<script>document.location=\"zones.php\";</script>"; }
 
 $ZoneDebug=FALSE; // this is new in 0.5.3 but undocumented, it is for world builders
 
-print "<table border=0 width=100%><tr valign=top><td width=100%>";
+print "<table><tr valign=top><td width=100%>";
 
 $query="SELECT $tbzones.*
         FROM $tbzones
@@ -84,7 +78,7 @@ if ($mode=="npcs") {
 			{
 				print "<tr class='" .$RowClass. "'>";
 				if ($ZoneDebug==TRUE) { print "<td>".$row["id"]."</td>"; }
-				print "<td><a href=npc.php?id=".$row["id"].">".ReadableNpcName($row["name"])."</a>";
+				print "<td><a href=?a=npc&id=".$row["id"].">".ReadableNpcName($row["name"])."</a>";
 				if ($ZoneDebug==TRUE) { print "</td><td>".$row["loottable_id"]; }    
 
 				if($row['maxlevel'] == 0){
@@ -271,7 +265,7 @@ if ($mode=="spawngroups") {
 				$result2=mysql_query($query) or message_die('zone.php','MYSQL_QUERY',$query,mysql_error());           
 				while ($res=mysql_fetch_array($result2))
 				{
-					print "<li><a href=npc.php?id=".$res["npcID"].">".$res["name"]."</a>, chance ".$res["chance"]."%";
+					print "<li><a href=?a=npc&id=".$res["npcID"].">".$res["name"]."</a>, chance ".$res["chance"]."%";
 					print " (level ".$res["level"].")";
 				}           
 				print "</ul>";

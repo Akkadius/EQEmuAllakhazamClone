@@ -7,10 +7,6 @@
 	 *  If neither 'id' nor 'name' are specified or if 'id' is not a valid NPC ID, redirects to the NPC search page.
 	 */
 
-	require_once('./includes/constants.php');
-	require_once('./includes/config.php');
-	require_once($includes_dir.'functions.php');
-	require_once($includes_dir.'mysql.php');
 
 	$id   = (isset($_GET['id']) ? $_GET['id'] : '');
 	$name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
@@ -85,8 +81,6 @@
 	 */
 
 	$Title="NPC :: ".ReadableNpcName($name);
-	//$XhtmlCompliant = TRUE;
-	require_once($includes_dir.'headers.php');
 
 	$DebugNpc=FALSE; // for world builders, set this to false for common use
 
@@ -375,7 +369,7 @@
 		{
 			if ($z!=$row["short_name"])
 			{
-				print "<p><a href='zone.php?name=".$row["short_name"]."'>".$row["long_name"]."</a>";
+				print "<p><a href='?a=zone&name=".$row["short_name"]."'>".$row["long_name"]."</a>";
 				$z=$row["short_name"];
 				if ($AllowQuestsNPC==TRUE)
 				{

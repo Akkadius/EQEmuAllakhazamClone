@@ -109,7 +109,7 @@ if (isset($submitDetail)) {
     $query="SELECT * FROM $tbnpctypes WHERE $tbnpctypes.id=".$_POST["npc"][$i];
     $mymob=GetRowByQuery($query);
     if ($ZoneDebug==TRUE) { print "<td align=center>".$_POST["npc"][$i]."</td>"; }
-    print "<td nowrap><a href=npc.php?id=".$mymob["id"].">".str_replace(array('_','#'),' ',$mymob["name"])."</a></td>";
+    print "<td nowrap><a href=?a=npc&id=".$mymob["id"].">".str_replace(array('_','#'),' ',$mymob["name"])."</a></td>";
     print "<td nowrap>".$dbiracenames[$mymob["race"]]."</td>";
     print "<td nowrap>".$dbclasses[$mymob["class"]]."</td>";
     print "<td nowrap align=center>".$mymob["level"]."</td>";
@@ -195,7 +195,7 @@ if ($mode=="npcs") {
     print "<tr>";
     if ($ZoneDebug==TRUE) { print "<td>".$row["id"]."</td>"; }
     print "<td align=center><input type=checkbox name=npc[] value=".$row["id"].(isChecked($row["id"])?" checked":"")." class=form></td>";
-    print "<td><a href=npc.php?id=".$row["id"].">".str_replace(array('_','#'),' ',$row["name"])."</a>";
+    print "<td><a href=?a=npc&id=".$row["id"].">".str_replace(array('_','#'),' ',$row["name"])."</a>";
     if ($ZoneDebug==TRUE) { print "</td><td>".$row["loottable_id"]; }           
     print "</td>
            <td align=center>".$dbclasses[$row["class"]]."</td>
@@ -211,14 +211,14 @@ if ($mode=="npcs") {
 
 print "</td><td width=0% nowrap>"; // end first column
 print "<p class=page_small_title>Ressources</p>";
-print "<li><a href=zone.php?name=$name&mode=npcs>".$zone["long_name"]." Bestiary List</a>";
+print "<li><a href=?a=zone&name=$name&mode=npcs>".$zone["long_name"]." Bestiary List</a>";
 print "<li><a href=zonenameds.php?name=$name&mode=npcs>".$zone["long_name"]." Named Mobs List</a>";
-print "<li><a href=zone.php?name=$name&mode=items>".$zone["long_name"]." Equipment List </a>";
+print "<li><a href=?a=zone&name=$name&mode=items>".$zone["long_name"]." Equipment List </a>";
 if (file_exists($maps_dir.$name.".jpg")) {
   print "<li><a href=".$maps_url.$name.".jpg>".$zone["long_name"]." Map</a>";
 }
-print "<li><a href=zone.php?name=$name&mode=spawngroups>".$zone["long_name"]." Spawn Groups</a>";
-print "<li><a href=zone.php?name=$name&mode=forage>".$zone["long_name"]." Forageable items</a>";
+print "<li><a href=?a=zone&name=$name&mode=spawngroups>".$zone["long_name"]." Spawn Groups</a>";
+print "<li><a href=?a=zone&name=$name&mode=forage>".$zone["long_name"]." Forageable items</a>";
 if ($AllowQuestsNPC==TRUE) {
   print "<li><a href=$root_url"."quests/zones.php?aZone=$name>".$zone["long_name"]." Quest NPCs</a>";
 }

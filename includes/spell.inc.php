@@ -193,7 +193,7 @@ function SpellDescription($spell,$n,$csv=false) {
         //print " (Need to add zone to spells table)";
         print $dbspelleffects[$spell["effectid$n"]];
         if ($csv==false) {
-          print " <a href=zone.php?name=".$spell["teleport_zone"].">".$spell["teleport_zone"]."</a>";
+          print " <a href=?a=zone&name=".$spell["teleport_zone"].">".$spell["teleport_zone"]."</a>";
         } else { print " : ".$spell["teleport_zone"]; }
         break;
       case 85: // Add Proc:

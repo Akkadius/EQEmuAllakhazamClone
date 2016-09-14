@@ -39,7 +39,7 @@ $result=mysql_query($query) or message_die('spawngroup.php','MYSQL_QUERY',$query
 print "<b>NPCs composing that spawngroup :</b>";
 if (mysql_num_rows($result)>0) {
   while ($row=mysql_fetch_array($result)) {
-    print "<li><a href=npc.php?id=".$row["id"].">".$row["name"]."</a> (".$row["chance"]."%)"; 
+    print "<li><a href=?a=npc&id=".$row["id"].">".$row["name"]."</a> (".$row["chance"]."%)";
   }
 }
 print "</td><td width=50% nowrap>";
@@ -68,7 +68,7 @@ if (mysql_num_rows($result)>0) {
       print floor(sqrt(($x-$row["x"])*($x-$row["x"])+($y-$row["y"])*($y-$row["y"])));
       print " (".floor($row["y"]).",".floor($row["x"]).",".floor($row["z"]).")<ul>";
     }
-    print "<li><a href=npc.php?id=".$row["id"].">".$row["name"]."</a> (".$row["chance"]."%)";
+    print "<li><a href=?a=npc&id=".$row["id"].">".$row["name"]."</a> (".$row["chance"]."%)";
   }
 } else {
   print "None... ";
