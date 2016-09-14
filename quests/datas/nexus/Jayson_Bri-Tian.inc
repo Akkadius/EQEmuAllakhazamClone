@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Jayson Bri-Tian says </b>'Ahh. welcome [Your Name]. It is good to see more and more people visiting now that the portals are functional. It took us many. many years to understand the magical powers of Luclin. Whether through dumb luck or divine intervention. we have succeeded in opening the gate back to Norrath.  How long it will stay open. no one knows. My colleagues and I are here to maintain and watch for changes in the Nexus- should anything happen. you will be notified. Safe travels.'
+</td></tr></table>

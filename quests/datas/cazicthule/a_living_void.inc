@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=8720>Phobonomicon of Thul Tae Ew</a></ul></td><td><p><b>You give a living void : </b><a href=http://phobos/eq/item.php?id=8720>Phobonomicon of Thul Tae Ew</a>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=48214>a_horror_construct</a></b> spawns.</font>
+</td></tr></table>

@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=30961>A Frosted Claw</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=30962>A Frosted Bag</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul></td><td><p><b>You give Dar Khura Shavra : </b><a href=http://phobos/eq/item.php?id=30961>A Frosted Claw</a>
+<br><b>Dar Khura Shavra says </b>'Oh [Your Name]! This is a whisperling. and she is beautiful! You must find a way to free her of this anchor. Take her to Ragnar. he may know what to do. Let me put her in this bag to keep her safe for now.'
+<br><b>Dar Khura Shavra gives you : </b><a href=http://phobos/eq/item.php?id=30962>A Frosted Bag</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+</td></tr></table>

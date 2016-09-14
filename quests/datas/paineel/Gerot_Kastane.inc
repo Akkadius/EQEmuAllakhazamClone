@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Gerot Kastane says </b>'[Your Name]! My hero! I am at your service. I have been told to tell you all I know of the Head of the Valiant. Its construction is a mockery to the gods of Light, an abomination above all others. The method of creation of the Head of the Valiant was passed down through my family for centuries. All I require of you is the physical head of a valiant warrior. I have the rest of the materials right here to fashion this item for you.'
+</td></tr></table>

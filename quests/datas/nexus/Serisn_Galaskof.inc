@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Serisn Galaskof says </b>'Hi there [Your Name]. If you could please try to keep away from Eslof. He is going through a very tough time now as his brother was part of the mining contingent that was working on this here entrance to the Paludal caverns when it caved in sealing up the entrance. We have troops working on the other side around the clock to clear up the rocks. Sorry for any trouble.'
+</td></tr></table>

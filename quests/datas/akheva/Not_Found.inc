@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=10294>Summoned: Wisp Stone</a><li><a href=http://phobos/eq/item.php?id=9963>Essence Emerald</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17323>Shadowed Scepter Frame</a></ul></td><td><p><b>You give Not Found : </b><a href=http://phobos/eq/item.php?id=9963>Essence Emerald</a>, <a href=http://phobos/eq/item.php?id=10294>Summoned: Wisp Stone</a>
+<br><b>Not Found gives you : </b><a href=http://phobos/eq/item.php?id=17323>Shadowed Scepter Frame</a>
+</td></tr></table>

@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Atdehim Sqonci says </b>'Ah. greetings. I hope you are a student of the way of fear. Within this temple there are many who can teach you to harness your gifts. I am an instructor in the [rituals of fear].'
+<p><b>You say, </b>'what rituals of fear'
+<br><b>Atdehim Sqonci says </b>'So you wish to learn. eh? I am working on a ritual to strike fear into the hearts of the other inhabitants of Odus. The reagents I require for this ritual are the doll of a Kerran priestess. the ichor of a giant wooly spider. your initiate symbol of Cazic- Thule. and a giant snake fang with which to carve my glyphs. Fetch me these components. We shall infect this land with fear. and I shall reward you with the station of disciple of this temple.'
+</td></tr></table>

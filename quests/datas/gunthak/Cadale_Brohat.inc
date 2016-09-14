@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><font color=green><b>Cadale Brohat </b>smiles widely at you. 'Welcome. You are brave to venture to Broken Skull Rock. Don't mind the others. Everyone is a bit touchy around here. If you are interested in dyes, feel free to peruse what I have to offer. Playing with them has given me hours of entertainment! Just be careful on this rock, and watch your back. Oh, before I forget, I'm looking for someone to help me with some [tasks] that I need to get done. All my time with the dyes has kept me from some of the more important things I need to take care of.'</font>
+</td></tr></table>

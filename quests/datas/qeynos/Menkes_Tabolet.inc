@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Menkes Tabolet says </b>'Greetings, fine citizen of Qeynos, what can I make for you today?  How about a genuine, handmade [rat fur cap]?  Or maybe a lovely [rat pelt cape]?  Maybe you'd like a necklace?  For a small fee. I can make a nice [snake fang necklace] or a [lucky rat's foot necklace].'
+<p><b>You say, </b>'i want a rat fur cap'
+<br><b>Menkes Tabolet says </b>'Rat fur cap?  You're in luck, that happens to be my specialty, [Your Name].  Just bring me 2 pieces of rat fur and 3 gold, and I'll make one up for you while you wait.'
+<p><b>You say, </b>'i want a rat pelt cape'
+<br><b>Menkes Tabolet says </b>'The rat pelt cape..  that happens to be my specialty!  I must say, it would be the perfect choice to go with that outfit you have on.  All I need are 3 rat pelts, those big ol' rats out in the hills work great for these capes, and 4 gold.  I must say, at these prices, everyone in Qeynos will be wearing one in a matter of weeks.'
+<p><b>You say, </b>'i want a snake fang necklace'
+<br><b>Menkes Tabolet says </b>'Hey, great choice..  the snake fang necklace just happens to be my specialty. [Your Name]!  Just bring me 3 snake fangs, and 2 gold.  With one of these around your neck, you're sure to be the center of attention down at Crow's..  or anywhere else you fill your mug.'
+<p><b>You say, </b>'i want a lucky rat'
+<br><b>Menkes Tabolet says </b>'Now that is exactly what you need my friend, a lucky rat's foot necklace..  and, it just happens to be my specialty!  Just bring me one rat's foot, some rat whiskers, and I won't even charge you any gold. Just buy me a honey mead, and you'll be the luckiest rat dodger this side of Highpass.'
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Barrith the Brave says </b>'Good day t'ye. [Your Name]!  'Tis sure good t'see ye here.  I've been doin' a bit of thinkin' about the past.  Ah yes. me past t'would surprise even ye.  Alas. I cannae dwell on it now.  I am Barrith the Brave.  I must be searchin' for a hero worthy of havin' the eyes of the gods upon them.'
+</td></tr></table>

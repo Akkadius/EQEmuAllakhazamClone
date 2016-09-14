@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=16166>Black Mamba Skin</a><li><a href=http://phobos/eq/item.php?id=19582>Leatherfoot Short Bow</a><li><a href=http://phobos/eq/item.php?id=19583>Lock of Zombie Hair</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=19611>Ebon Short Bow</a></ul></td><td><p><b>You give Andara C-Luzz : </b><a href=http://phobos/eq/item.php?id=19583>Lock of Zombie Hair</a>, <a href=http://phobos/eq/item.php?id=19582>Leatherfoot Short Bow</a>, <a href=http://phobos/eq/item.php?id=16166>Black Mamba Skin</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Andara C-Luzz gives you : </b><a href=http://phobos/eq/item.php?id=19611>Ebon Short Bow</a>
+<br><b>Andara C-Luzz says </b>'Here's your bow.  Use it well, young rogue.'
+</td></tr></table>

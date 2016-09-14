@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'why were you selected'
+<br><b>Vorshar the Despised says </b>'You dare to ask one such as I the will of the Hateful Father?! However. you do seem to be quite lacking in the field of thought and intelligence. which would easily explain why you have not heard my name nor of my [legend].'
+<p><b>You say, </b>'what legend'
+<br><b>Vorshar the Despised says </b>'I. my dear witless Dark Elf. was chosen by Innoruuk's hand during the uprising and fall of the [Combine Empire.] When the Teir`Dal first began to discuss the decision to sign a treaty and join the Empire. I was one of the few who opposed siding with humans and the rest of the lowly creatures of this world.'
+<p><b>You say, </b>'why did you return'
+<br><b>Vorshar the Despised says </b>'It is the Dark Father's will that I have returned to this realm. I do not question his judgement. nor shall I ever. His will is mine. and I do not question myself. The Dark Father wishes to expand his followers within the Realm of Heroes. and thus. I have been sent as more of a judge and jury for those who would consider themselves [worthy of Innoruuk's recognition] and divine favor.'
+</td></tr></table>

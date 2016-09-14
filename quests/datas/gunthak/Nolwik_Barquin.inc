@@ -1,0 +1,18 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=59061>A Golden Emblem</a><li><a href=http://phobos/eq/item.php?id=59062>A Golden Emblem</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=59014>Spell: Healing Water</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><font color=green><b>Nolwik Barquin </b>glances up at you. 'Hello, [Your Name].  I'm in no mood to talk, please leave me in peace.'  Nolwik turns and looks out across the water seemingly looking or perhaps listening for something.</font>
+<p><b>You say, </b>'promise'
+<br><b>Nolwik Barquin says </b>'Since I was a boy, Xanuusus has entrusted me with a pair of holy symbols, one of Karana, and one of Tunare. I guarded them faithfully since that day until recently. I had been patrolling Innothule swamp in hopes of finding the wayward trolls that had been disturbing those of Tunare's children that inhabit the wetlands. Unknown to me at the time, a new [presence] was there in the swamp that day.'
+<p><b>You say, </b>'presence'
+<br><b>Nolwik Barquin says </b>'I had just found a troll threatening a water moccasin a fair distance from the gates of Grobb. The troll looked to be dressed a bit differently then most of the other trolls I'd found recently. He had a patch over one eye, and his armor appeared to be of much higher quality then anything the Bashers normally carried. I paid it no heed though, and continued planning my [attack] on the unsuspecting troll.'
+<p><b>You say, </b>'attack'
+<br><b>Nolwik Barquin says </b>'Just as I was beginning to weave my first spell against the troll, a large wet figure struck me by surprise knocking me to the ground. I staggered to my feet and looked at my attacker. It was a larger then normal troll holding a rather large curved sword and shield. It scowled at me with a sort of enraged hunger as it licked its lips in apparent anticipation of a fresh [meal].'
+<p><b>You say, </b>'meal'
+<br><b>Nolwik Barquin says </b>'As fate would have it the troll would go hungry that night. Although I was badly injured from his initial strike, I was able to stand and weave the roots of the nearby trees around his feet which allowed me time to gate away before more of his friends arrived. It wasn't until I arrived in the plains of Karana that I realized that I had lost my holy [emblems].'
+<p><b>You say, </b>'emblems'
+<br><b>Nolwik Barquin says </b>'I highly doubt that the trolls know the importance of the symbols they have stolen from me, but I am sure they at least recognize the value of the metal they were forged from. I suspect that they have tossed them in with the rest of their treasure as if they were nothing more then gold coins. I must get them back at all costs.'
+<p><b>You give Nolwik Barquin : </b><a href=http://phobos/eq/item.php?id=59061>A Golden Emblem</a>, <a href=http://phobos/eq/item.php?id=59062>A Golden Emblem</a>
+<br><font color=green><b>Nolwik Barquin </b>gasps as you hand him the two symbols. 'I am in your debt, [Your Name]. There is nothing I can ever do to repay you, but I can at least teach you of the healing water that Tunare has shown me how to control. Take this scroll, I pray to Tunare that it will serve you well.' </font>
+<br><b>Nolwik Barquin gives you : </b><a href=http://phobos/eq/item.php?id=59014>Spell: Healing Water</a>
+<br><b>Nolwik Barquin says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

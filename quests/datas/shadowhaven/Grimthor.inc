@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Grimthor says </b>'Hi there [Your Name]. my name is Grimthor and this here is my distillery. My little bar sure has come a long way since the beginning. If you would like to have a drink please help yourself. Woolf has a nice selection along with some information about any spirit you may choose.'
+</td></tr></table>

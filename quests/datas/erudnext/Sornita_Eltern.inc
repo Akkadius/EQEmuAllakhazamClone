@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Sornita Eltern says </b>'Greetings. [Your Name]!  Please be do not speak too loudly while inside the library.  If you need anything special. feel free to ask me. I am a member of the Crimson Hands and my specialty is divination.  In my research I have stumbled across many [rare tomes].'
+<p><b>You say, </b>'what rare tomes'
+<br><b>Sornita Eltern says </b>'Why. just yesterday I stumbled upon what I believe to be an excerpt from Miragul's own treatise on the origin of the creatures known as scarecrows.  Such a work is heresy and would be destroyed if the High Council knew of its existence so I have been tight-lipped about my discovery.  If you would like to see it. I will show it to you. for a nominal donation of 20 gold pieces.'
+</td></tr></table>

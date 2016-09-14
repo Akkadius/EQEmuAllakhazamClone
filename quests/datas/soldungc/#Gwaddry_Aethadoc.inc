@@ -1,0 +1,26 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=61230>Fireback Silk</a><li><a href=http://phobos/eq/item.php?id=61231>Sweltering Slime Bauble</a><li><a href=http://phobos/eq/item.php?id=61232>Fireborn Tooth</a><li><a href=http://phobos/eq/item.php?id=61233>Blistering Tentacle</a><li><a href=http://phobos/eq/item.php?id=61237>Gwaddry's Trinket</a><li><a href=http://phobos/eq/item.php?id=61235>Burning Totem Base</a><li><a href=http://phobos/eq/item.php?id=61234>Burning Totem Hilt</a><li><a href=http://phobos/eq/item.php?id=61236>Sweltering Totem Runes</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=61237>Gwaddry's Trinket</a><li><a href=http://phobos/eq/item.php?id=61238>Flame Etched Cloak</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>#Gwaddry Aethadoc says </b>'Get out of my way mortal, you have no business with me unless you [wish disposal of the fire demons].'
+<p><b>You say, </b>'wish disposal of the fire demons'
+<br><b>#Gwaddry Aethadoc says </b>'Well then [Your Name], you might be of service to me after all. I seek some brave soldiers to strike back at the servants of Nagafen that have been chosen to guard his hordes of treasure. They need to be cut down so that we may claim what is rightfully ours. Do you wish to [strike back at the minions of Nagafen]'
+<p><b>You say, </b>'strike back at the minions of nagafen'
+<br><b>#Gwaddry Aethadoc says </b>'Very well, I will need you to collect me 4 items for an incantation I have been working on. My limited area that I am forced to reside in has prevented my practice of magic so I have been restricted to concocting alchemy potions. When you are [ready] I will have you [gather the components] I need for my potion.'
+<p><b>You say, </b>'ready to gather the components'
+<br><b>#Gwaddry Aethadoc says </b>'As I said before I require 4 important components for my recipe. They all must be taken from the beasts that reside in the deepest parts of these caverns. Return to me when you have gathered 1 Fireback Silk, 1 Sweltering Slime Bauble, 1 Fireborn Tooth and 1 Blistering Tentacle.'
+<p><b>You say, </b>'bigger problem'
+<br><b>#Gwaddry Aethadoc says </b>'I do feel that you have no problem assisting me with any items I may need, but what I am about to ask you to do could put my life in jeopardy. Let me begin by telling you how I lost my sacred [family totem].'
+<p><b>You say, </b>'family totem'
+<br><b>#Gwaddry Aethadoc says </b>'The totem I speak of has been in my family for 5 generations, that is until I lost it recently in a battle to hold back the forces of the Taklasinai. I wish to regain my totem so that I may use it to do the [unspeakable].'
+<p><b>You say, </b>'unspeakable'
+<br><b>#Gwaddry Aethadoc says </b>'For years I have sat here in this dwelling unable to practice my magic at the fault of the Vrodak. I no longer wish to be confined to this space and want to be free. The only way I will not die where I stand is to pledge allegiance to the Taklasinai. I feel if I seek council before their leaders they will agree to use my ranking as a way to infiltrate the Vrodak defenses and eventually cause the Vrodak clan to crumble. Before I can free myself I will need my magical family artifact. If you will [collect the pieces of my totem] I will reward you greatly.'
+<p><b>You say, </b>'collect the pieces of your totem'
+<br><b>#Gwaddry Aethadoc says </b>'Very well [Your Name], I wish you luck in obtaining the pieces to my family totem so I can once again reconstruct it. When it was lost it was broken into 3 pieces; A hilt, a base and a collection of runes that were engraved into it. Should you return these 3 pieces to me along with my trinket, I can once again construct the totem and free myself from this area to seek council with the Taklasinai. Please hurry [Your Name], if word gets out that I am planning a revolt against my own people I will be killed for sure.'
+<p><b>You give #Gwaddry Aethadoc : </b><a href=http://phobos/eq/item.php?id=61230>Fireback Silk</a>, <a href=http://phobos/eq/item.php?id=61231>Sweltering Slime Bauble</a>, <a href=http://phobos/eq/item.php?id=61232>Fireborn Tooth</a>, <a href=http://phobos/eq/item.php?id=61233>Blistering Tentacle</a>
+<br><b>#Gwaddry Aethadoc says </b>'Well I see that you can certainly be trusted to uphold my will should I request it of you. Please take this symbol and return to me if you should desire to help me with a much [bigger problem].'
+<br><b>#Gwaddry Aethadoc gives you : </b><a href=http://phobos/eq/item.php?id=61237>Gwaddry's Trinket</a>
+<br><b>#Gwaddry Aethadoc says </b>'I don't need this.'
+<p><b>You give #Gwaddry Aethadoc : </b><a href=http://phobos/eq/item.php?id=61237>Gwaddry's Trinket</a>, <a href=http://phobos/eq/item.php?id=61235>Burning Totem Base</a>, <a href=http://phobos/eq/item.php?id=61234>Burning Totem Hilt</a>, <a href=http://phobos/eq/item.php?id=61236>Sweltering Totem Runes</a>
+<br><b>#Gwaddry Aethadoc says </b>'Take this, [Your Name].  I go to do the unspeakable now.'
+<br><b>#Gwaddry Aethadoc gives you : </b><a href=http://phobos/eq/item.php?id=61238>Flame Etched Cloak</a>
+<br><b>#Gwaddry Aethadoc says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

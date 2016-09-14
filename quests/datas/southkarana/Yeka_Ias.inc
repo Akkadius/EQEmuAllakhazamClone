@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20695>Warm Pulsing Treant Heart</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20698>Cleansed Spirit of Antonica</a></ul></td><td><p><b>You give Yeka Ias : </b><a href=http://phobos/eq/item.php?id=20695>Warm Pulsing Treant Heart</a>
+<br><font color=green><b>Yeka Ias </b>grabs the heart as you toss it to him before realizing what it is. As soon as it touches his hands, his body convulses, a sickly light emanating from his eyes and oozing cracks appear in his skin. As he melts into the ground, a small glowing ball floats where he once stood.</font>
+<br><b>Yeka Ias disappears.</b>
+<br><b>Yeka Ias gives you : </b><a href=http://phobos/eq/item.php?id=20698>Cleansed Spirit of Antonica</a>
+</td></tr></table>

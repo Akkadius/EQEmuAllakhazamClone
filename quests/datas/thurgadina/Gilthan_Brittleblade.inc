@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1198>Embroidered Coldain Prayer Shawl</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=1198>Embroidered Coldain Prayer Shawl</a></ul></td><td><p><b>You give Gilthan Brittleblade : </b><a href=http://phobos/eq/item.php?id=1198>Embroidered Coldain Prayer Shawl</a>
+<br><b>Gilthan Brittleblade says </b>'So, you've been chosen to attempt the rune, eh? Been ages since anyone's even made an attempt. The rune represents the very essence of our people, our culture, and our religion. Take a sea shell runed with enduring breath and a small brick of velium and grind them together in a mortar and pestle. Add water to the powder and model the rune. Fire the rune with water and the best of firing sheets. Show the product to Trademaster Kroven.'
+<br><b>Gilthan Brittleblade gives you : </b><a href=http://phobos/eq/item.php?id=1198>Embroidered Coldain Prayer Shawl</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

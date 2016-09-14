@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Bittrik the Unkempt says </b>'Oh me oh my! A visitor! Pardon me for not cleaning up. but I wasn't expecting company so early! Bittrik's the name. stories are my game. Looking to unmask the secret of the Kingdom of Lok? I might indeed have that story tucked away somewhere. Perhaps you'd fancy a smaller story. one revolving around an ill-tempered giant? That one happens to be one of my favorites! Of course. there are the stories of raging Storms to be found through this land. which I know plenty about as well. So. what'll it be. friend?'
+</td></tr></table>

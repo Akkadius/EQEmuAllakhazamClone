@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Kardador Tarsinian says </b>'Greetings. [Your Name]. The passages extending from the heart of Luclin take you east to Shadow Haven. south to the Bazaar. west in the direction of the city Sanctus Seru. and north to the city of Shar Vahl.  Before heading in any one of these directions. speak to the keepers at the entrances.'
+</td></tr></table>

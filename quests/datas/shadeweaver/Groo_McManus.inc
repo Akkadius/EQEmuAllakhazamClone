@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=30601>A Needle Thin Claw</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=15093>Spell: Burst of Flame</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Groo McManus says </b>'Greetings adventure seeker. I have come from afar to study this strange thicket. The spirits are strong within this region, but they are secretive as well.  I am willing to impart my wisdom to those who will aid me in my exploration. Are you [interested?]'
+<p><b>You say, </b>'I am interested'
+<br><b>Groo McManus says </b>'Very well then! Let us begin.  First you must attune yourself with the nature of spirits. For this you must learn to find a spiritual anchor. Find such a thing within the crater that surrounds Shar Vahl and return it to me.  Then we may continue. I cannot tell you more, but there is a Vah Shir who has the knowledge that you seek. Seek him out in this thicket to learn what you can.'
+<p><b>You give Groo McManus : </b><a href=http://phobos/eq/item.php?id=30601>A Needle Thin Claw</a>
+<br><b>Groo McManus says </b>'Excellent! You have done well.  I can sense that you are in tune with the spirits around you. Take this, for you will need it in your next task. When you are [ready] for your next lesson let me know.'
+<br><b>Groo McManus gives you : </b><a href=http://phobos/eq/item.php?id=15093>Spell: Burst of Flame</a>
+</td></tr></table>

@@ -1,0 +1,22 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=29852>Bixie Charm</a><li><a href=http://phobos/eq/item.php?id=29854>Bregun's Directions</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=29853>Sealed Note to Bregun</a><li><a href=http://phobos/eq/item.php?id=29857>Insignia Earring of Veracity</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=350>Validus Custodus</a><li><a href=http://phobos/eq/faction.php?id=168>Katta Castellum Citizens</a><li><a href=http://phobos/eq/faction.php?id=206>Magus Conlegium</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=228>Nathyn Illuminious</a><li><a href=http://phobos/eq/faction.php?id=55>Coterie of the Eternal Night</a><li><a href=http://phobos/eq/faction.php?id=284>Seru</a><li><a href=http://phobos/eq/faction.php?id=139>Hand of Seru</a><li><a href=http://phobos/eq/faction.php?id=96>Eye of Seru</a><li><a href=http://phobos/eq/faction.php?id=138>Hand Legionnaries</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Torsten Reidan says </b>'Oh, hello there. Sorry I didn't notice you before I was thinking of an old friend. This used to be his room. I guess no one else has been assigned to these quarters.'
+<p><b>You say, </b>'old friend'
+<br><b>Torsten Reidan says </b>'His name was Bregun Dorey. What a funny little halfling he was. He had a good heart and worked hard. That is up until one day he just started acting odd, very nervous like he was hiding something. Then all he would talk about was Bixie Treats and then show off some weird heirloom charm bracelet. His time for the question came and due to his odd behavior he was sent to Marus Seru. I sure wish I knew how he was doing.'
+<p><b>You give Torsten Reidan : </b><a href=http://phobos/eq/item.php?id=29852>Bixie Charm</a>
+<br><b>Torsten Reidan says </b>'Bregun is still alive!? Amazing, I thought in his fragile state he wouldn't last long in Marus Seru or the Lair of the Netherbians for that matter. Here, before anyone hears us talking, take this note to him. I believe he was onto something big and I must know what it was.'
+<br><b>Torsten Reidan gives you : </b><a href=http://phobos/eq/item.php?id=29853>Sealed Note to Bregun</a>
+<p><b>You give Torsten Reidan : </b><a href=http://phobos/eq/item.php?id=29854>Bregun's Directions</a>
+<br><font color=green><b>Torsten Reidan </b>pulls out a hollow book entitled 'A Detailed Look at Etiquette and Proper Grammar' and opens it to find a journal placed inside.</font>
+<br><b>Torsten Reidan says </b>'This is astounding. The information in this journal is invaluable and must be brought to the others attention. Take this insignia. When you are ready to help us further seek out Euzan Jurek, tell him you were sent by me, and he will tell you what you can do to further our cause. I can not tell you more than this, but keep the insignia close to you for now.'
+<br><b>Torsten Reidan gives you : </b><a href=http://phobos/eq/item.php?id=29857>Insignia Earring of Veracity</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=350>Validus Custodus</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=168>Katta Castellum Citizens</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=206>Magus Conlegium</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=228>Nathyn Illuminious</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=55>Coterie of the Eternal Night</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=284>Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=139>Hand of Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=96>Eye of Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=138>Hand Legionnaries</a> has gotten worse.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

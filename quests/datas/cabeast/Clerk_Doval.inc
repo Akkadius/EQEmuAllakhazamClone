@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'what proposition'
+<br><b>Clerk Doval says </b>'I was sent by the Legion to deliver a restraining order to a few of the troopers.  They have been ordered to stay away from the tavern.  They have spent too much time drinking and not enough training.  I am to have them initial the restraint order list. but my feet are killing me.  Perhaps you could [deliver the restraining order]?'
+<p><b>You say, </b>'i want to deliver the restraining order'
+<br><b>Clerk Doval says </b>'Here is the restraint order.  Go to the troopers and ask them to [sign the restraining order].   Also. make sure to have them sign it in alphabetical order.  I am a very big stickler about this.  The troopers' names are as follows; Ozlot. Ogmire. Nish Nish. Frogzin. Gummin. Inkin. Roklon. Taer. Fryp and Selbat.   When all is done. I shall pay you.'
+<p><b>You say, </b>'i will deliver the restraining order'
+<br><b>Clerk Doval says </b>'Here is the restraint order.  Go to the troopers and ask them to [sign the restraining order].   Also. make sure to have them sign it in alphabetical order.  I am a very big stickler about this.  The troopers' names are as follows; Ozlot. Ogmire. Nish Nish. Frogzin. Gummin. Inkin. Roklon. Taer. Fryp and Selbat.   When all is done. I shall pay you.'
+</td></tr></table>

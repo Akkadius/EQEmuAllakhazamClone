@@ -1,0 +1,35 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=4488>Sun Jewel</a><li><a href=http://phobos/eq/item.php?id=5921>Mark of Feral Spirits</a><li><a href=http://phobos/eq/item.php?id=5927>Embedded Copper Figurine</a><li><a href=http://phobos/eq/item.php?id=5928>Frosted Stone</a><li><a href=http://phobos/eq/item.php?id=4489>Moon Jewel</a><li><a href=http://phobos/eq/item.php?id=5929>Mark of Animal Spirits</a><li><a href=http://phobos/eq/item.php?id=5922>Silver Gilded Bracelet</a><li><a href=http://phobos/eq/item.php?id=5923>Embedded Mithril Figurine</a><li><a href=http://phobos/eq/item.php?id=4490>Star Jewel</a><li><a href=http://phobos/eq/item.php?id=5925>Embedded Clay Figurine</a><li><a href=http://phobos/eq/item.php?id=5924>Mark of Wild Spirits</a><li><a href=http://phobos/eq/item.php?id=5926>Furrowed Carving</a><li><a href=http://phobos/eq/item.php?id=4491>Cloud Jewel</a><li><a href=http://phobos/eq/item.php?id=5930>Mark of Natural Spirits</a><li><a href=http://phobos/eq/item.php?id=5931>Embedded Stone Figurine</a><li><a href=http://phobos/eq/item.php?id=5932>Blue Moonstone</a><li><a href=http://phobos/eq/item.php?id=4492>Sky Jewel</a><li><a href=http://phobos/eq/item.php?id=5933>Mark of Wilderness</a><li><a href=http://phobos/eq/item.php?id=5934>Embedded Platinum Figurine</a><li><a href=http://phobos/eq/item.php?id=4493>Meteor Jewel</a><li><a href=http://phobos/eq/item.php?id=5935>Mark of Animal Training</a><li><a href=http://phobos/eq/item.php?id=5936>Embedded Brass Figurine</a><li><a href=http://phobos/eq/item.php?id=4494>Astral Jewel</a><li><a href=http://phobos/eq/item.php?id=5937>Mark of Beast Mastery</a><li><a href=http://phobos/eq/item.php?id=5938>Embedded Gold Figurine</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=3985>Feral Cap</a><li><a href=http://phobos/eq/item.php?id=3986>Feral Tunic</a><li><a href=http://phobos/eq/item.php?id=3987>Feral Sleeves</a><li><a href=http://phobos/eq/item.php?id=3988>Feral Leggings</a><li><a href=http://phobos/eq/item.php?id=3989>Feral Mantle</a><li><a href=http://phobos/eq/item.php?id=3990>Feral Bracer</a><li><a href=http://phobos/eq/item.php?id=3991>Feral Boots</a></ul></td><td><p><b>You say, </b>'hail'
+<br><font color=green><b>Tamben Prinon </b>looks over you examining you from head to toe. 'Ye have the look of an adventurer. I have a tale to tell if you would like to hear it.'</font>
+<p><b>You say, </b>'tale'
+<br><b>Tamben Prinon says </b>'Years ago I and Jilan were traveling around the far reaches of this land. One day we came upon an old vah shir who was injured in the mountains. He implored us to help him. Do you wish me to continue?'
+<p><b>You say, </b>'continue'
+<br><b>Tamben Prinon says </b>'As I was saying this old vah shir required assistance.  We bound his wounds and he asked us to take his armor and give it to a Beastlord worthy of wearing it.  Are you a worthy beastlord?'
+<p><b>You say, </b>'cap'
+<br><b>Tamben Prinon says </b>'For the cap you must prove your worth. Go gather up a sun jewel, a mark of feral spirits, an embedded copper figurine, and a frosted stone.'
+<p><b>You say, </b>'tunic'
+<br><b>Tamben Prinon says </b>'For the tunic you must prove your worth. Go gather up a moon jewel, a mark of animal spirits, a silver gilded bracelet, and an embedded mithril figurine.'
+<p><b>You say, </b>'sleeves'
+<br><b>Tamben Prinon says </b>'For the sleeves you must prove your worth. Go gather a star jewel, a mark of wild spirits, an embedded clay figurine, and a furrowed carving.'
+<p><b>You say, </b>'leggings'
+<br><b>Tamben Prinon says </b>'For the leggings you must prove your worth. Go gather a cloud jewel, a mark of natural spirits, an embedded stone figurine, and a blue moonstone.'
+<p><b>You say, </b>'mantle'
+<br><b>Tamben Prinon says </b>'For the mantle you must prove your worth. Go gather a sky jewel, a mark of wilderness, and an embedded platinum figurine.'
+<p><b>You say, </b>'bracer'
+<br><b>Tamben Prinon says </b>'For the bracer you must prove your worth. Go gather a meteor jewel, a mark of animal training, and an embedded brass figurine.'
+<p><b>You say, </b>'boots'
+<br><b>Tamben Prinon says </b>'For the boots you must prove your worth. Go gather an astral jewel, a mark of beast mastery, and an embedded gold figurine.'
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4488>Sun Jewel</a>, <a href=http://phobos/eq/item.php?id=5921>Mark of Feral Spirits</a>, <a href=http://phobos/eq/item.php?id=5927>Embedded Copper Figurine</a>, <a href=http://phobos/eq/item.php?id=5928>Frosted Stone</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3985>Feral Cap</a>
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4489>Moon Jewel</a>, <a href=http://phobos/eq/item.php?id=5929>Mark of Animal Spirits</a>, <a href=http://phobos/eq/item.php?id=5922>Silver Gilded Bracelet</a>, <a href=http://phobos/eq/item.php?id=5923>Embedded Mithril Figurine</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3986>Feral Tunic</a>
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4490>Star Jewel</a>, <a href=http://phobos/eq/item.php?id=5925>Embedded Clay Figurine</a>, <a href=http://phobos/eq/item.php?id=5924>Mark of Wild Spirits</a>, <a href=http://phobos/eq/item.php?id=5926>Furrowed Carving</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3987>Feral Sleeves</a>
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4491>Cloud Jewel</a>, <a href=http://phobos/eq/item.php?id=5930>Mark of Natural Spirits</a>, <a href=http://phobos/eq/item.php?id=5931>Embedded Stone Figurine</a>, <a href=http://phobos/eq/item.php?id=5932>Blue Moonstone</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3988>Feral Leggings</a>
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4492>Sky Jewel</a>, <a href=http://phobos/eq/item.php?id=5933>Mark of Wilderness</a>, <a href=http://phobos/eq/item.php?id=5934>Embedded Platinum Figurine</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3989>Feral Mantle</a>
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4493>Meteor Jewel</a>, <a href=http://phobos/eq/item.php?id=5935>Mark of Animal Training</a>, <a href=http://phobos/eq/item.php?id=5936>Embedded Brass Figurine</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3990>Feral Bracer</a>
+<p><b>You give Tamben Prinon : </b><a href=http://phobos/eq/item.php?id=4494>Astral Jewel</a>, <a href=http://phobos/eq/item.php?id=5937>Mark of Beast Mastery</a>, <a href=http://phobos/eq/item.php?id=5938>Embedded Gold Figurine</a>
+<br><b>Tamben Prinon gives you : </b><a href=http://phobos/eq/item.php?id=3991>Feral Boots</a>
+</td></tr></table>

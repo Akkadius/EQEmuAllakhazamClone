@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=59032>A stone emblem</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=59033>A glowing collar</a></ul></td><td><p><b>You give #an injured wolf : </b><a href=http://phobos/eq/item.php?id=59032>A stone emblem</a>
+<br><font color=green><b>#an injured wolf </b>cringes as you lean forward, but visibly relaxes as it recognizes the stone in your hand. You place the stone emblem into the clasp on the collar. The collar begins to glow softly and the beast begins to look much healthier. he struggles to his feet and looks at you for a moment. He then lets out a great howl that echoes in the caverns. He moves towards you and nuzzles your hand. You reach forward and run you fingers across his head. As your fingers cross the collar, the wolf winks out of existence, leaving you holding only only the softly glowing collar.</font>
+<br><b>#an injured wolf gives you : </b><a href=http://phobos/eq/item.php?id=59033>A glowing collar</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><font color=green><b>Osborne </b>eyes dart around the lighthouse crazily. 'WHAT! I didn't do anything, leave me alone! Oh. . . You're here about a drogmor. . .very sorry I didn't realize. The red ones are very. . .energetic? But I've been trained to handle them.  If you've got a wild one you want to get rid of, show me your drum and I'll see what I can do with it.'.</font>
+</td></tr></table>

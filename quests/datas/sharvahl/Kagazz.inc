@@ -1,0 +1,4 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a></ul></td><td><p><b>You give Kagazz : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+<br><b>Kagazz says </b>'My wife is making some jewelry. Not the sparkly stuff. mind you. She is nearly blind so appearance means little to her. She is intent on making jewelry with a more. uhh. natural feel. Currently she's constructing a special scorpion leg necklace. and is in need of more scorpion legs. I can't leave the shop so I need your help. Fill this box with scorpion legs and I'll pay you with metal fasteners that any merchant will gladly buy.'
+<br><b>Kagazz gives you : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+</td></tr></table>

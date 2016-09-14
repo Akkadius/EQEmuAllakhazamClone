@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Raenna Griff says </b>'Hail [Your Name]. If it is refuge you seek from the evil that is corrupting this city then I suggest you flee to Qeynos or take up arms along side the Sentries of Passion and the Knights of Truth. You must have faith that the Marr twins will not let this city fall to the hate of the Dismal Rage.'
+</td></tr></table>

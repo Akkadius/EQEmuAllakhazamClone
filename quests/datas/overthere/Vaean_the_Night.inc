@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=19423>Spell: Convergence</a><li><a href=http://phobos/eq/item.php?id=19296>Spell: Defoliation</a><li><a href=http://phobos/eq/item.php?id=19294>Spell: Splurt</a><li><a href=http://phobos/eq/item.php?id=19299>Spell: Thrall of Bones</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=19421>Spell: Sacrifice</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Vaean the Night says </b>'Ahh, welcome! More souls to succumb to the inhabitants of the Outlands! My army of undead will grow stronger by the day, but it would be a pity if you perished before doing a [mortal bidding] for me.'
+<p><b>You say, </b>'mortal bidding'
+<br><b>Vaean the Night says </b>'I see it as a win-win situation for me. If you succeed, I'll gain more power from the knowledge you bring back to me. If you fail, you become another addition to my undead minions. Thus, you cannot fail me in returning a scroll of Splurt, Defoliation, Covergence, or Thrall of Bones. In return, I will part with a scroll of mine.'
+<p><b>You give Vaean the Night : </b><a href=http://phobos/eq/item.php?id=19296>Spell: Defoliation</a>, <a href=http://phobos/eq/item.php?id=19299>Spell: Thrall of Bones</a>, <a href=http://phobos/eq/item.php?id=19423>Spell: Convergence</a>, <a href=http://phobos/eq/item.php?id=19294>Spell: Splurt</a>
+<br><b>Vaean the Night says </b>'Here is the scroll that I promised. We have both gained much knowledge today. I hope to do business with you again soon. Farewell.'
+<br><b>Vaean the Night gives you : </b><a href=http://phobos/eq/item.php?id=19421>Spell: Sacrifice</a>
+<br><font color=yellow>You gain experience!!</font>
+</td></tr></table>

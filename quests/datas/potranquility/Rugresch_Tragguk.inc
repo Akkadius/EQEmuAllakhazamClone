@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Rugresch Tragguk says </b>'I am Rugresch.  I cratch da fur from da skins and other tings dat dey brings me.  Da cratchins is wut dey makes da weavin strings from.  All day long. cratch. . . cratch. . . cratch. . . but it is wut I do.  I needs ta get back ta work.  I gots lots more ta do.'
+</td></tr></table>

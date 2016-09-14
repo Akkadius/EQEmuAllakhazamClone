@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Guardian Drendle says </b>'Welcome to [New Tanaan]. friend!  Enjoy your visit and may your quest for enlightenment be a pleasant one!'
+<p><b>You say, </b>'what is New Tanaan?'
+<br><b>Guardian Drendle says </b>'New Tanaan is a haven for knowledge and those who seek it. and exists outside of all normal physical and political boundaries.  If you are [looking] for something. you've come to the right place.  A magically enforced peace exists throughout the city.  No one is able to wield a weapon or cast harmful magic here. making crime almost non-existent.  The city is divided into several sections -- [Kartis]. the dark district; [Tanaan]. the neutral district; [Selia]. the light district; [Jeral] Abbey. the trade plaza; and of course [Myrist]. the Great Library.'
+</td></tr></table>

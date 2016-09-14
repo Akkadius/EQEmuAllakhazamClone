@@ -1,0 +1,2 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=6338>Silver Wand</a></ul></td><td><p><b>You give Ezmirella : </b><a href=http://phobos/eq/item.php?id=6338>Silver Wand</a>
+</td></tr></table>

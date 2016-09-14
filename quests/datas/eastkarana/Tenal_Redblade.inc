@@ -1,0 +1,21 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=18083>Redblade's Legacy</a><li><a href=http://phobos/eq/item.php?id=20680>Totem of the Freezing War</a><li><a href=http://phobos/eq/item.php?id=10549>Heart of Frost</a><li><a href=http://phobos/eq/item.php?id=20681>Totem of Fiery War</a><li><a href=http://phobos/eq/item.php?id=11622>Red Dragon Scales</a><li><a href=http://phobos/eq/item.php?id=11582>Green Dragon Scales</a><li><a href=http://phobos/eq/item.php?id=20683>Mark of the Sword</a><li><a href=http://phobos/eq/item.php?id=20676>Hand of the Maestro</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20680>Totem of the Freezing War</a><li><a href=http://phobos/eq/item.php?id=20681>Totem of Fiery War</a><li><a href=http://phobos/eq/item.php?id=20683>Mark of the Sword</a><li><a href=http://phobos/eq/item.php?id=20684>Tenal's note to Kargek</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Tenal Redblade says </b>'What brings you to my home, [Your Name]? Do you seek knowledge of Rallos Zek and the great wars to come?'
+<p><b>You give Tenal Redblade : </b><a href=http://phobos/eq/item.php?id=18083>Redblade's Legacy</a>
+<br><b>Tenal Redblade says </b>'So, Kargek sent you.  How is my dear brother?  If you come to me with this book then you must be interested in the scabbard. Take this totem and return to me with it and the heart of frost from the goblins of permafrost. Do not return until this task is accomplished.'
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Tenal Redblade gives you : </b><a href=http://phobos/eq/item.php?id=20680>Totem of the Freezing War</a>
+<p><b>You give Tenal Redblade : </b><a href=http://phobos/eq/item.php?id=20680>Totem of the Freezing War</a>, <a href=http://phobos/eq/item.php?id=10549>Heart of Frost</a>
+<br><b>Tenal Redblade says </b>'Very good, you have wreaked havoc on your foes in the ancient land of the giants. Rallos Zek must have guided your blade. (Tenal's voice is suddenly silenced and you feel as if your body is frozen. From Tenal's lips issues a voice that is not his own.) 'Bring this mortal the scales of the children of Veeshan. The red and green as well as my war totem. I will guide your blade.' Your movement returns as Tenal falls to the ground, gasping for breath.'
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Tenal Redblade gives you : </b><a href=http://phobos/eq/item.php?id=20681>Totem of Fiery War</a>
+<p><b>You give Tenal Redblade : </b><a href=http://phobos/eq/item.php?id=20681>Totem of Fiery War</a>, <a href=http://phobos/eq/item.php?id=11622>Red Dragon Scales</a>, <a href=http://phobos/eq/item.php?id=11582>Green Dragon Scales</a>
+<br><font color=green><b>Tenal Redblade </b>looks at you oddly as you hand him the scales.</font>
+<br><b>Tenal Redblade says </b>'What are..? 'You have done well, mortal, and you will be rewarded if you are truly brave. Travel to the Plane of Hatred and slay the ancient bard who lives there. Do not return without his hand and this mark or you will never be a true warlord.' Tenal drops to the ground as the last words leave his lips.'
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Tenal Redblade gives you : </b><a href=http://phobos/eq/item.php?id=20683>Mark of the Sword</a>
+<p><b>You give Tenal Redblade : </b><a href=http://phobos/eq/item.php?id=20683>Mark of the Sword</a>, <a href=http://phobos/eq/item.php?id=20676>Hand of the Maestro</a>
+<br><font color=green><b>Tenal Redblade </b>looks horrified as you give him the hand of the Maestro of Rancor and show him the mark of the sword.  The godlike voice returns, 'You have done well to acquire this. One final task must be completed before you hold the red scabbard in your mortal hands.' Tenal reaches out and hands you a note. 'Take this note and a wingblade of the spirocs to Kargek. When he receives them, I will speak to you one last time.'</font>
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Tenal Redblade gives you : </b><a href=http://phobos/eq/item.php?id=20684>Tenal's note to Kargek</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

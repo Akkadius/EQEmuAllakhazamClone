@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Galornas Eaksilwobble says </b>'Hi there friend. I carry all kinds of ales and spirits that you may find to your liking.  A little word of advice though. when enjoying drinks in the Midst. try to not draw too much attention to yourself- many here think drinking is silly because it impairs ones ability to practice magic.'
+</td></tr></table>

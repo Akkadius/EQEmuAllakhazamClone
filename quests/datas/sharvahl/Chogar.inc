@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=5954>Gawfed's Receipt</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=5956>Rough Vase Sketch</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Chogar says </b>'Hello. Would you care to dabble in the art of ceramics?  My prices are quite fair. Feel free to make use of my pottery wheel if you would like to try your hand in the art.'
+<p><b>You give Chogar : </b><a href=http://phobos/eq/item.php?id=5954>Gawfed's Receipt</a>
+<br><b>Chogar says </b>'I can do nothing to repair this mess. but a skilled potter like you should be able to create a new one with little trouble.  One second please. I'll jot a rough sketch of the what I surmise the original looked like when it was intact.  You can take the sketch and make a new one.  It will require of you a medium sized block of clay. a little water. and this sketch.  Here you go.  The sketch is a little crude. but I am sure that it will suffice. Fire it with a quality firing sheet and give the resulting product to Gawfed. Jihli told me that he was eager to receive it.'
+<br><b>Chogar gives you : </b><a href=http://phobos/eq/item.php?id=5956>Rough Vase Sketch</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+</td></tr></table>

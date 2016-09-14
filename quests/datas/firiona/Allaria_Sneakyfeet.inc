@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=18347>Rozzuts plans</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Allaria Sneakyfeet says </b>'Well hello, [Your Name]. What brings you to me? Are you one of the sneaky folk in search of the plans for the Whistler?'
+<p><b>You say, </b>'plans for the whistler'
+<br><b>Allaria Sneakyfeet says </b>'I must tell you first off, there was much bloodshed in getting these plans. Three of Rivervale's bravest warrior were killed by Rozzut's brother, Neezee in order to keep the plans out of the hands of the Goblins. Allaria sighs deeply. There was much sorrow over this. The only positive that seemed to come out of the whole ordeal, was the finding of the plans to make the weapon that Rozzut, Chief Zambooz's main assassin uses so effectively. I have now made it my calling to give a copy of these plans to those that are worthy of such knowledge. Do you believe yourself to be worthy of such an honor?'
+<p><b>You say, </b>'i am worthy'
+<br><b>Allaria Sneakyfeet says </b>''Very well then. Here are the plans for the weapon that is said to cut holes into the enemy without much effort. Legend has it that if the wind is blowing, your enemy will be whistling after the fight. But they won't be whistling voluntarily.' Allaria smiles. 'Good luck to you friend.''
+<br><b>Allaria Sneakyfeet gives you : </b><a href=http://phobos/eq/item.php?id=18347>Rozzuts plans</a>
+</td></tr></table>

@@ -1,0 +1,10 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28741>Locked Tome of Dark Power</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=28742>Unlocked Tome of Dark Power</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Elder Tal Almad says </b>'Welcome traveler. are you here to meet with someone or are you new to this place?'
+<p><b>You say, </b>'i am new to this place'
+<br><b>Elder Tal Almad says </b>'Please take some time to look around. but be sure to speak with one of my fellow Elders prior to tampering with anything that may resemble a magical portal.  Tampering with the wrong object or in the wrong location on this island may take you to a very different and dangerous plane of existence.'
+<p><b>You say, </b>'i m here to meet with someone'
+<br><b>Elder Tal Almad says </b>'Well then, if you do not need my assistance, I will continue my work. May you find that which you seek.'
+<p><b>You give Elder Tal Almad : </b><a href=http://phobos/eq/item.php?id=28741>Locked Tome of Dark Power</a>
+<br><font color=green><b>Elder Tal Almad </b>looks the book over carefully, 'This is a most interesting find indeed. You seek to break the seal that surrounds this tome? This may take some time, please be patient.' As he waves his hand over the lock and mumbles a few syllables, the clasp instantly falls open. With a surprised look he says, 'That was odd, the seal was easier to break then I thought it would be. It's almost. . . Well, it's almost as if the book had a will to be opened. I sense much power inside this tome, you best be careful with it.' He hands the book back to you.</font>
+<br><b>Elder Tal Almad gives you : </b><a href=http://phobos/eq/item.php?id=28742>Unlocked Tome of Dark Power</a>
+</td></tr></table>

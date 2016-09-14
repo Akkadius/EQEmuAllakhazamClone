@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=31440>Scroll of Enlightenment</a><li><a href=http://phobos/eq/item.php?id=31442>Scroll of Insight</a><li><a href=http://phobos/eq/item.php?id=31441>Scroll of Knowledge</a><li><a href=http://phobos/eq/item.php?id=31439>Scroll of Power</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=1324>Visage of Life</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Ancient Totem says </b>'Greetings, my friend. It is not often that we see strangers coming to this plane. I fear that our growing infestation problem has kept us busy as of late. The time for battle grows near yet we still do not have the offensive magics necessary to fend off our enemies.'
+<p><b>You say, </b>'magic'
+<br><b>Ancient Totem says </b>'There are legends describing scrolls of ultimate power and enlightenment from fallen channelers that preserver the knowledge necessary for us to overcome our plight. Since these are just legends I cannot assure you that these scrolls exist, but at this point they are our only hope.'
+<p><b>You say, </b>'scrolls'
+<br><b>Ancient Totem says </b>'The ancient scrolls needed to complete the Tome that will aid us are found in Dragon Necropolis if the legends are true. The tome itself was made up of the incantations and the teachings of the great Lel`Farthok who was a mighty channeler for his time.'
+<p><b>You give Ancient Totem : </b><a href=http://phobos/eq/item.php?id=31440>Scroll of Enlightenment</a>, <a href=http://phobos/eq/item.php?id=31442>Scroll of Insight</a>, <a href=http://phobos/eq/item.php?id=31441>Scroll of Knowledge</a>, <a href=http://phobos/eq/item.php?id=31439>Scroll of Power</a>
+<br><b>Ancient Totem says </b>'Thank you, friend.  These scrolls will serve us well in the future.  Please take this as a sign of my gratitude.'
+<br><b>Ancient Totem gives you : </b><a href=http://phobos/eq/item.php?id=1324>Visage of Life</a>
+<br><font color=yellow>You gain experience!!</font>
+</td></tr></table>

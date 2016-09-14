@@ -1,0 +1,4 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Record Keeper Ajar says </b>'Greetings friend Vah Shir! I'm afraid I am quite busy with all the transactions that occur and shipments that come and go from the city but if you have an official request form for some information from our library of records I will gladly assist you.'
+<br><b>Record Keeper Ajar says </b>'Greetings friend Gnome! I'm afraid I am quite busy with all the transactions that occur and shipments that come and go from the city but if you have an official request form for some information from our library of records I will gladly assist you.'
+</td></tr></table>

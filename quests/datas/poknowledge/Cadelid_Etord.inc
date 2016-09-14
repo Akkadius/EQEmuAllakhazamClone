@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28795>Beginner Magic Manual</a><li><a href=http://phobos/eq/item.php?id=28801>Heart of Vhaksiz</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=28796>Intermediate Magic Manual</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Cadelid Etord says </b>'I see by the beginner manual you carry that you are on the right track. Let us continue your lessons, shall we? Magic can be a susceptible, yet volatile force sometimes, especially when wielded in the hands of dark beings. I fear there is one such being in particular that seeks to damage the very foundation of our mystic abilities, an ugly warrior by the name of Vhaksiz the Shade. He calls the Plane of Nightmares his home. You must seek this foul creature out and acquire proof of his demise: his dark, sinister heart. Bring it to me along with your Beginner's Magic Manual.'
+<p><b>You say, </b>'Hail'
+<br><b>Cadelid Etord says </b>'I see by the beginner manual you carry that you are on the right track. Let us continue your lessons, shall we? Magic can be a susceptible, yet volatile force sometimes, especially when wielded in the hands of dark beings. I fear there is one such being in particular that seeks to damage the very foundation of our mystic abilities, an ugly warrior by the name of Vhaksiz the Shade. He calls the Plane of Nightmares his home. You must seek this foul creature out and acquire proof of his demise: his dark, sinister heart. Bring it to me along with your Beginner's Magic Manual.'
+<p><b>You give Cadelid Etord : </b><a href=http://phobos/eq/item.php?id=28795>Beginner Magic Manual</a>, <a href=http://phobos/eq/item.php?id=28801>Heart of Vhaksiz</a>
+<br><b>Cadelid Etord says </b>'Very impressive, [Your Name]. This proves you have clearly graduated to the next phase of training we have to offer. Keep this book by your side and speak to Zalil Nyvin when you are ready for your next lesson.'
+<br><b>Cadelid Etord gives you : </b><a href=http://phobos/eq/item.php?id=28796>Intermediate Magic Manual</a>
+<br><b>Cadelid Etord says </b>'I don't need this.'
+<br><b>Cadelid Etord says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

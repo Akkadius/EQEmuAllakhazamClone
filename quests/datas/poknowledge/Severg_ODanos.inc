@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Severg ODanos says </b>'Aaah. . . Good day to you. [Your Name]. I am Severg O'Danos. once a great alchemist upon Norrath with my brothers. but I have found a new calling here in New Tanaan. If you yourself are a dabbler in the art of potion making. then perhaps my wares will serve you well. Please. feel free to peruse my wares at your leisure.'
+</td></tr></table>

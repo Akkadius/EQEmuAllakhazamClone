@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2695>Sturdy Grimling Mining Pick</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=31727>Industria Acrylia War Pick</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=52>Concillium Universus</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=284>Seru</a><li><a href=http://phobos/eq/faction.php?id=142>Heart of Seru</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Toktonn Geerlok says </b>'Well met, kind . I am Governor Toktonn Geerlok of the Loyalist Combine. It is my duty to oversee all matters concerning engineering, construction, and maintenance within Katta Castellum. There is a wonderful ore native to Luclin called [Acrylia] that has proved to be a valuable asset to my crew and I.'
+<p><b>You say, </b>'acrylia'
+<br><b>Toktonn Geerlok says </b>'Yes, it is a marvelous luminescent ore that when properly smelted has properties similar to the finest of steels, and sometimes even better. Depending on the purity of the ore of course. The Tenebrous Mountains are rich with very pure acrylia veins but unfortunately the Grimlings have overrun the mines and are not willing to allow others to mine the ore. Instead they horde it for their tribes to the south. I am permitted by the Validus Custodus to reward those seeking to cleanse the mines of the Grimlings. More precisely to pay a reward for every four grimling mining picks presented to me.'
+<p><b>You give Toktonn Geerlok : </b><a href=http://phobos/eq/item.php?id=2695>Sturdy Grimling Mining Pick</a> x4
+<br><b>Toktonn Geerlok says </b>'Excellent! Soon the grimlings may be coerced into being less stingy with their precious ore!'
+<br><b>Toktonn Geerlok gives you : </b><a href=http://phobos/eq/item.php?id=31727>Industria Acrylia War Pick</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=52>Concillium Universus</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=284>Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=142>Heart of Seru</a> has gotten worse.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

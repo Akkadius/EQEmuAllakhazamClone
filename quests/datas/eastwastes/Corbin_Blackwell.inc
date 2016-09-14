@@ -1,0 +1,6 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1046>Shackle key</a><li><a href=http://phobos/eq/item.php?id=30162>Mithril Coldain Insignia Ring</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=30162>Mithril Coldain Insignia Ring</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Corbin Blackwell says </b>'Hurry! There's not much time. give me the key and show me proof that you are a friend sent to rescue me...'
+<p><b>You give Corbin Blackwell : </b><a href=http://phobos/eq/item.php?id=30162>Mithril Coldain Insignia Ring</a>, <a href=http://phobos/eq/item.php?id=1046>Shackle key</a>
+<br><b>Corbin Blackwell says </b>'I thought I was a dwarfskin rug there for a minute! Thank Brell for your help stranger! Now cover me while I make good my escape. I am weakened and cannot endure much more.'
+<br><b>Corbin Blackwell gives you : </b><a href=http://phobos/eq/item.php?id=30162>Mithril Coldain Insignia Ring</a>
+</td></tr></table>

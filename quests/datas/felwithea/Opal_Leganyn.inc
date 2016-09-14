@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'what koada dal falchion'
+<br><b>Opal Leganyn says </b>'Koada'Dal Falchions are highly specialized weapons crafted of the finest mithril. The weapon must be forged in the unique Koada'Dal Forge and you will need a curved blade mold. a hilt and a pommel Mold. some morning dew. and a folded sheet of mithril. If you are a faithful follower of the All Mother then you may craft a magical falchion using moonlight temper instead of the morning dew and forging an emerald imbued by a cleric into the weapon at the time of its creation.'
+</td></tr></table>

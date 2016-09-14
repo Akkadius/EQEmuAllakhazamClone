@@ -1,0 +1,6 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=18845>A tattered note</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=13576>Molding Tunic*</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=126>Greater Vann Giants</a></ul></td><td><p><b>You give Not Found : </b><a href=http://phobos/eq/item.php?id=18845>A tattered note</a>
+<br><b>Not Found gives you : </b><a href=http://phobos/eq/item.php?id=13576>Molding Tunic*</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=126>Greater Vann Giants</a> has gotten worse.</font>
+</td></tr></table>

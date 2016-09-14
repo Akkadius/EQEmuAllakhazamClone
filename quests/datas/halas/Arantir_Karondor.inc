@@ -1,0 +1,18 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=14335>Arantir's Ring</a><li><a href=http://phobos/eq/item.php?id=18168>Note to Arantir</a><li><a href=http://phobos/eq/item.php?id=14337>Blue Crystal Staff</a><li><a href=http://phobos/eq/item.php?id=14338>Gnarled Staff</a><li><a href=http://phobos/eq/item.php?id=14339>Staff of Gabstik</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=14334>Arantir's Ring</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Arantir Karondor says </b>'Before I tell you anything, I require you to help me. Seek a woman named Challice. Give her this letter and then return to me.'
+<br><b>Arantir Karondor gives you : </b><a href=http://phobos/eq/item.php?id=14334>Arantir's Ring</a>
+<p><b>You say, </b>'story'
+<br><b>Arantir Karondor says </b>'I once was one of four true followers of Solusek Ro. So great were the four of us that Solusek Ro himself made us each a special item. We did not know what the others' items were, but we realized that was for our own safety. Each one of us, after receiving the item, began to plot against Solusek Ro. Each of us believed we had enough power to dominate Norrath. Solusek Ro saw this and at the time we needed our powers most, he stripped us of them. Now I know two of the other wizards by name. One was called Sylen Tyrn, the other's name was Demunir Scry. The last wizard was a gnome, but I can't think of his name.'
+<p><b>You say, </b>'Sylen Tyrn'
+<br><b>Arantir Karondor says </b>'Sylen was a high elf wizard, and like many high elves, he believed himself to be better than others. Because of his birth, he thought he was more noble and more intelligent than anyone else. I heard how met his demise - while flying over a vast area of water, his powers were stripped from him in midflight. He fell and was captured by a rival wizard who specialized in magics of the water. Search for that wizard and you could find a trace of Sylen.'
+<p><b>You say, </b>'Demunir Scry'
+<br><b>Arantir Karondor says </b>'Demunir was a human in a rush for power. He was extremely intelligent and resourceful but, unfortunately, was more interested in destructive magic. Hearing of an ancient land, he immediately traveled to it, believing there to be powerful relics left undiscovered there. While exploring, he came upon a dwelling that housed a powerful warrior. Believing himself to be more powerful, he attempted to take this dwelling for himself. While in battle with this warrior, Solusek Ro stole his powers and left him helpless. It is said that Demunir's item is the warrior's most prized trophy.'
+<p><b>You say, </b>'the gnome'
+<p><b>You give Arantir Karondor : </b><a href=http://phobos/eq/item.php?id=14335>Arantir's Ring</a>
+<br><font color=grey><i>That step of the quest sets a global variable.</font></i>
+<p><b>You give Arantir Karondor : </b><a href=http://phobos/eq/item.php?id=18168>Note to Arantir</a>
+<br><font color=grey><i>A global variable is unset at this point.</font></i>
+<br><font color=grey><i>That step of the quest sets a global variable.</font></i>
+<p><b>You give Arantir Karondor : </b><a href=http://phobos/eq/item.php?id=14337>Blue Crystal Staff</a>, <a href=http://phobos/eq/item.php?id=14338>Gnarled Staff</a>, <a href=http://phobos/eq/item.php?id=14339>Staff of Gabstik</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

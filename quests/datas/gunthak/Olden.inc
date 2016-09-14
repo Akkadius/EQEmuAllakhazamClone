@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><font color=green><b>Olden </b>coughs violently as you approach him. He looks rather sick. 'Hello [Your Name], you might want to stand back.  I've got a nasty cough and I don't want to be spreading it around.  Hopefully you haven't come to sell a green drogmor back, I'm afraid I might be allergic to them and that will make my cough even worse!  Oh, but I suppose I'll have to buy it back from you if you're sure you don't want it.  Show me your green drum and I'll make you a platinum offer for it.</font>
+</td></tr></table>

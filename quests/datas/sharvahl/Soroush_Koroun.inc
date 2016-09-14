@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Soroush Koroun says </b>'Greetings to you. [Your Name].  I have just returned from another trip to Katta Castellum and am trying to organize my notes. I apologize that I've little time to talk.  Everything happened so suddenly what with the odd circumstances surrounding the last diplomat. I have not quite had time to get used to my new post.'
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Defender Faeloritar says </b>'Welcome to the Knights Table [Your Name]. I am Faeloritar and I watch the bar here. There have been some pretty rowdy brawls here in the past. so we always have a guard near by in case things get out of hand. It's not often that a fight breaks out here. but it sure is fun when one does.'
+</td></tr></table>

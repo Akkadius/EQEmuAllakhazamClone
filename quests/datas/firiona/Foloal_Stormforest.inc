@@ -1,0 +1,12 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20462>Softly Glowing Stone</a><li><a href=http://phobos/eq/item.php?id=20461>Pulsing Green Stone</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20468>Warmly Glowing Stone</a></ul></td><td><p><b>You say, </b>'are you one such as myself'
+<br><font color=green><b>Foloal Stormforest </b>stares at you and whispers. 'You must be the one that has been spoken of. Yes, yes I am one of the circle. There are many of us in the lands right now, all seeking answers to the ills that have befallen our homes.'</font>
+<p><b>You say, </b>'answers'
+<br><b>Foloal Stormforest says </b>'I have heard whispers of new Iksar movements in the land. The name of Venril Sathir is on the scaled lips and sharp tongues of every cold blooded lizard in this place.'
+<p><b>You say, </b>'venril sathir'
+<br><b>Foloal Stormforest says </b>'All I've heard are whispers of connections between the undead lizards and the dark god of hate. There's some kind of history behind the two. It might be that Venril is the main focus of Innoruuk's will in the land. Then again, maybe not, but this is the best we've gotten so far. If you think you can do it, then find him and remove him from the face of this earth. Bring me the half of the stone I know you have and whatever conduit of power you find on his rotting corpse.'
+<p><b>You give Foloal Stormforest : </b><a href=http://phobos/eq/item.php?id=20462>Softly Glowing Stone</a>, <a href=http://phobos/eq/item.php?id=20461>Pulsing Green Stone</a>
+<br><font color=green><b>Foloal Stormforest </b>blinks and carefully takes the stones from you, cautiously scratching the jagged green stone against the other. Its skin seems to shiver and flake at the contact and eventually begins to shine brightly. 'With the gem nature's balance is complete. Take the stone and walk your path. Blade or lightning caller, burning sword or the mother's walk.'</font>
+<br><b>Foloal Stormforest gives you : </b><a href=http://phobos/eq/item.php?id=20468>Warmly Glowing Stone</a>
+<br><font color=green><b>Foloal Stormforest </b>will not take this item.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

@@ -1,0 +1,25 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'hail'
+<br><font color=green><b>Kazen Fecae </b>eyes seem to glow as he turns to you and says, 'Leave me be if you have no reason to be here, mortal!'</font>
+<p><b>You say, </b>'i wish to learn the dark arts'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<p><b>You say, </b>'prove'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<br><b>Kazen Fecae says </b>'The wandering knight, Sir Edwin Motte, recently slew one of my lesser servants. This foolish knave travels from town to town pretending to be good. Separate his head from his body and return it to me so I may work my magics upon it. This fool will become another plaything for me, even in death.'
+<p><b>You say, </b>'advance'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<br><b>Kazen Fecae says </b>'I share great secrets with my more powerful servants who show me they are willing to server without question. Tell my servant the name of any symbol he gives you and he will instruct you. If I give you a symbol, speak its name to me so I may instruct you.'
+<p><b>You say, </b>'symbol of apprentice'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<br><b>Kazen Fecae says </b>'You have a long way to go before I teach you the true secrets of life and death. Visit Venenzi Oberendi in the Nektulos Forest and show her the symbol. She is collecting reagents for one of my experiments and is taking far too long. I do not wish her dead, yet, I simply need the reagents soon. Retrieve the reagents and give them to my assistant Emkel Kabae. I do not wish to handle them myself.'
+<p><b>You say, </b>'reagents'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<br><b>Kazen Fecae says </b>''The reagents are the same types the great sorcerer Miragul used to cheat death and become a lich. I do not wish to become a lich as Miragul did, I have greater aspirations than to simply live forever as a hollow shell. I will rise up a being of pirit only, with a will off my own.' Kazen's eyes glow sickly red as he stared off toward the horizon.'
+<p><b>You say, </b>'symbol of testing'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<br><b>Kazen Fecae says </b>'Show me that you can overcome larger obstacles and manipulate servants. Gather a force for of mercenaries if you like, or so-called friends, if you desire, and prepare for battle, my promising young student. Return to me with the symbol of testing when you are prepared for battle with my creations. Have no fear, I will not slay you myself. If you do live, tell me the name of the symbol you receive.'
+<p><b>You say, </b>'symbol of insanity'
+<br><b>Kazen Fecae says </b>'Ha! You call yourself a Necromancer? Come back when you have tortured a few more souls!'
+<br><b>Kazen Fecae says </b>'It is time for you to meet my partner, so to speak. Drendico Metalbones is his name and I assure you he is quite mad. His mind has been rended by fright, dread, and terror in his trips to the planes and his heart is full of hatred now. He has a tome which I wish you to use. Show him your symbol slowly and listen to his rantings well, they hide great knowledge.'
+<br><font color=green><b>Kazen Fecae </b>will not accept this item.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

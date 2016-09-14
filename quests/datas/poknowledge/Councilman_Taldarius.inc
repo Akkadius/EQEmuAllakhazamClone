@@ -1,0 +1,16 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=16256>Marked Runed Signet</a><li><a href=http://phobos/eq/item.php?id=16258>Hope Stone</a><li><a href=http://phobos/eq/item.php?id=16255>Signet of Might</a><li><a href=http://phobos/eq/item.php?id=16257>Signet of the Arcane</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=16255>Signet of Might</a><li><a href=http://phobos/eq/item.php?id=16257>Signet of the Arcane</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Councilman Taldarius says </b>'regards you, and grins. 'Greetings, [Your Name]. I am Councilman Taldarius, mighty Paladin of Mithaniel Marr and Guardian of the City of Tanaan! If you cannot find what you are looking for here in the Myrist library, I most certainly can add it to my list of things to look for in the Planes. Unfortunately, I am quite busy at the moment, planning my next trip to the Elemental Planes. I believe my aid may have some tasks he could use help with. That is, if you are skilled enough.''
+<p><b>You say, </b>'marked runed signet'
+<br><b>Councilman Taldarius says </b>'I see you have helped Grimel immensely. He would not have given up his signet very easily. I cannot let him deprive himself of such a valuable tool. If you were to do a task for me I would grant you something I picked up in the Planes. Are you interested in the task?'
+<p><b>You say, </b>'interested in the task'
+<br><b>Councilman Taldarius says </b>'Very well [Your Name]. I warn you I will not grant this without proof that you possess a valiant spirit. You may have the trust of my aid but I still require a noble deed. Through research done by the council they have discovered something called a Hope Stone that exists in the Elemental Planes. Bring me one of these stones and the signet of Grimel. Fear not I shall reward you well.'
+<p><b>You give Councilman Taldarius : </b><a href=http://phobos/eq/item.php?id=16256>Marked Runed Signet</a>, <a href=http://phobos/eq/item.php?id=16258>Hope Stone</a>
+<br><b>Councilman Taldarius says </b>'Wonderful! You have proven yourself as both a Master of the Trade as well as a valiant spirit. Take this and may it server you well! If this signet does not suffice, bring it back to me and i will exchange it for one more attuned to your needs.'
+<br><b>Councilman Taldarius gives you : </b><a href=http://phobos/eq/item.php?id=16255>Signet of Might</a>
+<p><b>You give Councilman Taldarius : </b><a href=http://phobos/eq/item.php?id=16255>Signet of Might</a>
+<br><b>Councilman Taldarius says </b>'I hope this is more attuned to your needs.'
+<br><b>Councilman Taldarius gives you : </b><a href=http://phobos/eq/item.php?id=16257>Signet of the Arcane</a>
+<p><b>You give Councilman Taldarius : </b><a href=http://phobos/eq/item.php?id=16257>Signet of the Arcane</a>
+<br><b>Councilman Taldarius says </b>'I hope this is more attuned to your needs.'
+<br><b>Councilman Taldarius gives you : </b><a href=http://phobos/eq/item.php?id=16255>Signet of Might</a>
+</td></tr></table>

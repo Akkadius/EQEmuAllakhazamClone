@@ -1,0 +1,15 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=12204>Baby Joseph Sayer</a><li><a href=http://phobos/eq/item.php?id=8357>Gnoll's Eye</a><li><a href=http://phobos/eq/item.php?id=8356>Journal of Greater Enchantment</a><li><a href=http://phobos/eq/item.php?id=5416>Gnoll Slayer</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=5416>Gnoll Slayer</a><li><a href=http://phobos/eq/item.php?id=5417>Gnoll Slayer</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Marton Sayer says </b>'Welcome. Please stock up on provisions, especially if you are headed toward the lair of the vile gnolls. If so, I wish you much luck and many gnoll pelts!! I also have knowledge of a [powerful dog]. I pray you do not encounter him.'
+<p><b>You say, </b>'powerful dog'
+<br><b>Marton Sayer says </b>'I have encountered a gnoll who spoke the common tongue. He dared to call himself Lord Elgnub. He swore that some day we would cross paths and he would snatch my infant son Joseph from our home. He would stand no chance against me and the mighty [Gnoll Slayer].'
+<p><b>You say, </b>'gnoll slayer'
+<br><b>Marton Sayer says </b>'Gnoll Slayer is the mighty longsword which was passed down unto me through generations of Sayers. My days of battle are over, but I can still wield her with ferocity. The only thing more precious would be my son, Joseph Sayer. I would trade Gnoll Slayer only for him to be safe and sound at home.'
+<p><b>You say, </b>'potential'
+<br><b>Marton Sayer says </b>'The true potential of Gnoll Slayer is an enchantment which was once imbedded into a gnoll's eye which was placed into the hilt of the blade. The spell would help you fight off disease and call forth a wolf to fight beside you. Alas, the gnoll eye was stolen from the blade by a great, one-eyed, white gnoll. Alone with the eye, the only book which explained how to return the enchantment was also stolen. I know not where this gnoll might be. If you can find the journal and the eye, return them with the Gnoll Slayer to me for I have been searching for decades.'
+<p><b>You give Marton Sayer : </b><a href=http://phobos/eq/item.php?id=12204>Baby Joseph Sayer</a>
+<br><b>Marton Sayer gives you : </b><a href=http://phobos/eq/item.php?id=5416>Gnoll Slayer</a>
+<br><b>Marton Sayer says </b>'Baby Joseph!! Look, Momma!! Baby Joseph has been rescued by this good adventurer!! That evil Lord Elgnub made good on his word and snatched my son from under our noses. You saved the day!! For this you shall wield 'Gnoll Slayer'!! Be aware of its [true potential].'
+<p><b>You give Marton Sayer : </b><a href=http://phobos/eq/item.php?id=8357>Gnoll's Eye</a>, <a href=http://phobos/eq/item.php?id=8356>Journal of Greater Enchantment</a>, <a href=http://phobos/eq/item.php?id=5416>Gnoll Slayer</a>
+<br><b>Marton Sayer gives you : </b><a href=http://phobos/eq/item.php?id=5417>Gnoll Slayer</a>
+<br><b>Marton Sayer says </b>'You have found the missing pieces!  Now the Gnoll Slayer is returned to it's full power!'
+</td></tr></table>

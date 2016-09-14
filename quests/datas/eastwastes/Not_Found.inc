@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1553>Vial of Velium Vapors</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=1560>Tanik's note</a></ul></td><td><p><b>You give Not Found : </b><a href=http://phobos/eq/item.php?id=1553>Vial of Velium Vapors</a>
+<br><b>Not Found gives you : </b><a href=http://phobos/eq/item.php?id=1560>Tanik's note</a>
+</td></tr></table>

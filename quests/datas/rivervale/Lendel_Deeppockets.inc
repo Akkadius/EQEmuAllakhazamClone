@@ -1,0 +1,37 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=22693>Orc Bone Fragments</a><li><a href=http://phobos/eq/item.php?id=22694>Fractured Orc Jawbone</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17247>Dusty Mail Assembly Kit</a><li><a href=http://phobos/eq/item.php?id=22671>An Enchanted Coif Pattern</a><li><a href=http://phobos/eq/item.php?id=22672>An Enchanted Bracer Pattern</a><li><a href=http://phobos/eq/item.php?id=22673>An Enchanted Sleeves Pattern</a><li><a href=http://phobos/eq/item.php?id=22674>An Enchanted Boots Pattern</a><li><a href=http://phobos/eq/item.php?id=22675>An Enchanted Legplates Pattern</a><li><a href=http://phobos/eq/item.php?id=22676>An Enchanted Gauntlets Pattern</a><li><a href=http://phobos/eq/item.php?id=22677>An Enchanted Tunic Pattern</a><li><a href=http://phobos/eq/item.php?id=22695>Dirk of the Slickfinger</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Lendel Deeppockets says </b>'Its nice to meet you [Your Name]. Allow me to introduce myself. I am Lendel Deeppockets master Assassin of Rivervale. I am personally in charge of all [training] we have the new recruits go through before they are sent out on specific missions.'
+<p><b>You say, </b>'what training'
+<br><b>Lendel Deeppockets says </b>'There are many steps that a young rouge must take on the road to stealth. The most important part of your training is learning how to use the tools around you such as the forge. From the looks of you I can tell you could use some more [enchanted armor] as well so I think this would be a good learning experience.'
+<p><b>You say, </b>'what enchanted armor'
+<br><b>Lendel Deeppockets says </b>'I am pleased to hear that you are interested in making your own armor [Your Name]. I have some instructions for you so please listen closely. First, I will present you with your Dusty Mail Assembly kit when you are ready. After that, simply tell me what piece of Slickfinger Chainmail you [want] to craft and I will give you a pattern along with a recipe for  [Coifs], [Bracers], [Sleeves], [Boots], [Legplates], [Gauntlets] and [Tunics]. The recipe I will give you for specific items will need to me combined in the assembly kit to create the magical material necessary. Once you have this material and pattern that I gave you when you told me what item you wanted to craft, put both in the nearest forge to create the armor piece you asked for. Here is your Dusty Mail Assembly Kit.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=17247>Dusty Mail Assembly Kit</a>
+<p><b>You say, </b>'I want to craft Coifs'
+<br><b>Lendel Deeppockets says </b>'Protecting the ole noggin is probably the smartest move you will make young [Your Name]. Here is your pattern, once you have combined 2 Bricks of Crude Iron Ore, 2 Ruined Thorn Drakeling Scales and 1 Carrot in your kit place it in a forge along with this pattern to create your Slickfinger Chainmail Coif.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22671>An Enchanted Coif Pattern</a>
+<p><b>You say, </b>'I want to craft bracers'
+<br><b>Lendel Deeppockets says </b>'Go out into the thicket and seek out 1 Brick of Crude Iron Ore, 1 Shattered Warbead, 1 Large Yellowjacket Sternite and 1 Milk. Once you have combined them in your kit to fashion the bracer material take it to a forge along with this pattern to create your Slickfinger Chainmail Bracer.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22672>An Enchanted Bracer Pattern</a>
+<p><b>You say, </b>'I want to craft sleeves'
+<br><b>Lendel Deeppockets says </b>'If sleeves are what you wish to craft you will need to collect 3 Bricks of Crude Iron Ore, 3 Honeycombs, 2 Thorn Drakeling Scales and 2 Grapes then combine them in your kit to fashion the necessary material. Take this pattern to the nearest forge with that material to create your Sleeves of the Slickfinger.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22673>An Enchanted Sleeves Pattern</a>
+<p><b>You say, </b>'I want to craft boots'
+<br><b>Lendel Deeppockets says </b>'Boots you say [Your Name]? Well I think I heard you right but I had to check. Make sure you only wear your boots in case of emergency. All other times you should showcase your feet to the world with pride. You will need to combine 2 Bricks of Crude Iron Ore, 2 Fire Beetle Eyes and 2 Giant Thicket Rat Skulls in your kit to fashion your Slickfinger Boot Material. Once you have done this take the material to a forge along with this pattern to create your Slickfinger Chainmail Boots.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22674>An Enchanted Boots Pattern</a>
+<p><b>You say, </b>'I want to craft legplates'
+<br><b>Lendel Deeppockets says </b>'I must say that pants are a good idea young [Your Name]. Please gather 4 Bricks of Crude Iron Ore, 2 Spiderling Eyes, 2 Large Wood Spider Tarsus, 1 Bottle of Kalish and 1 Ruined Wolf Pelt then combine them in your kit to create your Legplates Material.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22675>An Enchanted Legplates Pattern</a>
+<p><b>You say, </b>'I want to craft gauntlets'
+<br><b>Lendel Deeppockets says </b>'Your gauntlets may possibly be the most important part of armor. One should always be sure that their hands are not exposed, because taking a blow to the hand is a lot worse then getting hurt anywhere else! To create the gauntlet material please collect 3 Bricks of Crude Iron Ore, 2 Bixie Wings, 1 Large Snake Skin and 1 Red Wine.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22676>An Enchanted Gauntlets Pattern</a>
+<p><b>You say, </b>'I want to craft tunic'
+<br><b>Lendel Deeppockets says </b>'I'm happy to see that your training is coming along so well [Your Name]. I have no doubt in my mind that you are ready to craft your tunic. Please collect 5 Bricks of Crude Iron Ore, 1 Giant Wood Spider Femurs, 1 Embalming Dusts, 1 Dark Elf Skin and 1 Giant Yellowjacket Thorax. Come back after you are finished. I have a [job] for you.'
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22677>An Enchanted Tunic Pattern</a>
+<p><b>You say, </b>'what job'
+<br><b>Lendel Deeppockets says </b>'Orcs is the job [Your Name]. Plain and simple I cannot stand these homewreckers. They have moved into our land and continue to storm our front gate. I seek out bone fragments and fractured jawbones from these nasty Orcs. Once we have 1 of each we will be able to create a weapon for you to use.'
+<p><b>You give Lendel Deeppockets : </b><a href=http://phobos/eq/item.php?id=22693>Orc Bone Fragments</a>, <a href=http://phobos/eq/item.php?id=22694>Fractured Orc Jawbone</a>
+<br><b>Lendel Deeppockets gives you : </b><a href=http://phobos/eq/item.php?id=22695>Dirk of the Slickfinger</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Lendel Deeppockets says </b>'I have no use for this.'
+<br><b>Lendel Deeppockets says </b>'I have no use for this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

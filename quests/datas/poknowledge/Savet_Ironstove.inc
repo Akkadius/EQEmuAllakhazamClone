@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Savet Ironstove says </b>'Greetings. [Your Name]. and welcome to New Tanaan. This city holds a great variety of supplies for all tradesmen -- you shall not find such a welcoming host of merchants gathered in one city upon Norrath. I guarantee! Come. if you be a baker. and search my inventory. Perhaps you shall find something of interest or necessity to your search.'
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Incantator Icewand says </b>'Greetings. [Your Name].  You are headed towards the library of the Midst a place of great power for it has been said many times  that knowledge is power.  Here you will find information on almost all practices of magic. I encourage you to stay as long as you like.'
+</td></tr></table>

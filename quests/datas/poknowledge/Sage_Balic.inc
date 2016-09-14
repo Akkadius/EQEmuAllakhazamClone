@@ -1,0 +1,18 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17176>Sage's Box of Research</a><li><a href=http://phobos/eq/item.php?id=11275>Picturebook</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Sage Balic says </b>'Greetings friend. Welcome to my place of private contemplation. I relax here and leaf through my old studies. admiring at creations from the past made by races we thought would never amount to anything.'
+<p><b>You say, </b>'tell me research'
+<br><b>Sage Balic says </b>'My research?  Oh. I imagine Tenada sent you to me.  I'd love to tell you about my studies. if you have time to listen. [Continue]'
+<p><b>You say, </b>'continue'
+<br><b>Sage Balic says </b>'I have come to Knowledge to fine-tune my abilities in spell craft.  To date I've been able to create some minor incantations. but have had little success in creating any magic that was truly revolutionary.  I am actually in a bit of a race with the other Sages who are my contemporaries.  They too are looking to make a major breakthrough . . . Come to think of it. I could probably find quite a few [uses for their research]. should you manage to come by any of it. [Continue]'
+<br><b>Sage Balic says </b>'Sorry. I digress.  Where was I?  Oh yes! In the past I. as well as the other Sages. have had little success; however from the volumes of information found here. each of us found a new outlook on the creation of magic.  I found that most of the magical discoveries came from existing magical components. mostly runes and words of power.  Should you come by any of these components please use this box to check to see if they have the proper magical configuration. the extractor will be able to remove what it needs if you find a valid combination. right now I believe the box will only function with a single word and rune of approximately the same power.'
+<br><b>Sage Balic gives you : </b><a href=http://phobos/eq/item.php?id=17176>Sage's Box of Research</a>
+<p><b>You say, </b>'uses for research'
+<br><b>Sage Balic says </b>'Well it couldn't hurt. now could it?  If you manage to 'acquire' any of their research feel free to show it to my assistants; Xelrin's research to Tenada and Gunyth's research to Winon downstairs.'
+<p><b>You say, </b>'What frogloks'
+<br><b>Sage Balic says </b>'A surprising race to study is the Frogloks of Antonica. While we may think their magic was weak, it was at one time so powerful the Gods reached down and smote them for their creations. Balls of energy that made life into magic! Their High Enchanter even made a mask that transformed the wearer into a Teir`Dal! Quite an interesting race worthy of some study if you ask me, someday I shall like to go and see these frogloks, especially to learn more knowledge of the magical mask.'
+<p><b>You say, </b>'magical mask'
+<br><font color=green><b>Sage Balic </b>Sage Balic blinks and looks at you.</font>
+<br><b>Sage Balic says </b>'I have told you all that I know, for more knowledge you will need to seek its creator. The enchanter is more than likely very old, the mask having been made at the height of the power of the Froglok race. Here take this picture book to aid you in your quest.'
+<br><font color=green><b>Sage Balic </b>Sage Balic hands you a Picturebook. </font>
+<br><b>Sage Balic gives you : </b><a href=http://phobos/eq/item.php?id=11275>Picturebook</a>
+</td></tr></table>

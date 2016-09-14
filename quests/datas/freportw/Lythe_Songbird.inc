@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=9590>Notice to Cease and Desist</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Lythe Songbird says </b>'Hello [Your Name], Such a beautiful day for music and tales. Don't you think?'
+<p><b>You give Lythe Songbird : </b><a href=http://phobos/eq/item.php?id=9590>Notice to Cease and Desist</a>
+<br><b>Lythe Songbird says </b>'What's this? It says that you wish me to cease and desist spreading slander about the swashbuckler known as Stanos, or else . . .? You know, I am new in Freeport. Haven't been performing at this venue for long. I'm just a fledgling muse trying to make ends meet in this big city. My father told me that someday I'd have to put up my fists to protect my rights. I can see that day is today. What I have to say to you is . . . Guards, help!'
+</td></tr></table>

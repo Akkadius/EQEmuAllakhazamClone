@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=30162>Mithril Coldain Insignia Ring</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=1047>Note from Corbin</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=49>Coldain</a><li><a href=http://phobos/eq/faction.php?id=67>Dain Frostreaver IV</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=188>Kromrif</a><li><a href=http://phobos/eq/faction.php?id=189>Kromzek</a></ul></td><td><p><b>You give Dobbin Crossaxe : </b><a href=http://phobos/eq/item.php?id=30162>Mithril Coldain Insignia Ring</a>
+<br><b>Dobbin Crossaxe says </b>'Thank you. [Your Name]. your deeds will be mentioned to  the Dain. Please take this note from Corbin to Garadain. it may help him to achieve victory over the enemy.'
+<br><b>Dobbin Crossaxe gives you : </b><a href=http://phobos/eq/item.php?id=1047>Note from Corbin</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=49>Coldain</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=67>Dain Frostreaver IV</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=188>Kromrif</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=189>Kromzek</a> has gotten worse.</font>
+</td></tr></table>

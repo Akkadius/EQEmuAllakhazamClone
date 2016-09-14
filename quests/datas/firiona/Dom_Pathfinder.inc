@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Dom Pathfinder says </b>'Whoa!!  Hold up there. adventurer!  Gaze upon the fine packs and containers I have available.  Such fine items could only be crafted by a Fier'Dal tailor.  And lucky you!!  You made it here just as I lowered my prices.  How can you resist these bargains?  I am taking a loss here!!  Last day!!  Buy now!!'
+</td></tr></table>

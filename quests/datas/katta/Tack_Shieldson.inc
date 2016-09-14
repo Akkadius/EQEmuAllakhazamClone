@@ -1,0 +1,14 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=19188>Boot Beer</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=350>Validus Custodus</a><li><a href=http://phobos/eq/faction.php?id=168>Katta Castellum Citizens</a><li><a href=http://phobos/eq/faction.php?id=206>Magus Conlegium</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=228>Nathyn Illuminious</a><li><a href=http://phobos/eq/faction.php?id=55>Coterie of the Eternal Night</a><li><a href=http://phobos/eq/faction.php?id=284>Seru</a><li><a href=http://phobos/eq/faction.php?id=139>Hand of Seru</a><li><a href=http://phobos/eq/faction.php?id=96>Eye of Seru</a><li><a href=http://phobos/eq/faction.php?id=138>Hand Legionnaries</a></ul></td><td><p><b>You give Tack Shieldson : </b><a href=http://phobos/eq/item.php?id=19188>Boot Beer</a>
+<br><font color=green><b>Tack Shieldson </b>gingerly takes the boot from you, handling it as though it were a fine porcelain. With a look of thanks to you he slowly lifts it to his lips and suddenly tips it back to empty it in one gulp, frothing his beard in the process. 'Yar! That's the ticket! Damn fine stuff that is, just like me uncle always said. A service to the Validus Custodus have ye done, my friend... And I'd be happy to assist ye in that service again sometime. HAR!'</font>
+<br><font color=yellow>You gain experience!!</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=350>Validus Custodus</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=168>Katta Castellum Citizens</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=206>Magus Conlegium</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=228>Nathyn Illuminious</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=55>Coterie of the Eternal Night</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=284>Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=139>Hand of Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=96>Eye of Seru</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=138>Hand Legionnaries</a> has gotten worse.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

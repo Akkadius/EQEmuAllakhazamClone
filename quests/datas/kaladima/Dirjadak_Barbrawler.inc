@@ -1,0 +1,37 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28064>Pristine Krag Claw</a><li><a href=http://phobos/eq/item.php?id=28063>Dirjadak`s Chipped Stein</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17247>Dusty Mail Assembly Kit</a><li><a href=http://phobos/eq/item.php?id=19635>Crude Vambrace Mold</a><li><a href=http://phobos/eq/item.php?id=19634>Crude Boot Mold</a><li><a href=http://phobos/eq/item.php?id=19632>Crude Bracer Mold</a><li><a href=http://phobos/eq/item.php?id=19637>Crude Breastplate Mold</a><li><a href=http://phobos/eq/item.php?id=19633>Crude Gauntlets Mold</a><li><a href=http://phobos/eq/item.php?id=19636>Crude Greaves Mold</a><li><a href=http://phobos/eq/item.php?id=19631>Crude Helm Mold</a><li><a href=http://phobos/eq/item.php?id=26076>Gem-Etched Battle Axe</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Dirjadak Barbrawler says </b>'Hail to ye too [Your Name], what brings ye to Kaladim`s hall of champions? I am Dirjadak Barbrawler and its gud to meet ye. I pride myself on being one of the finest Warlords to have ever served in Brells Army. However, my days nowadays aren't all that exciting. I just spend me time training young ones that are born into the life of a Kaladim Champion. If you are a young [warrior] of Brell I might have some work for you.'
+<p><b>You say, </b>'warrior'
+<br><b>Dirjadak Barbrawler says </b>'Excellent [Your Name], you must surely have been sent to me to begin yer training then. Aye? If you are [interested] in beginning yer training as a Champion of Kaladim I will be happy to present you with yer instructions for crafting yer own set of Axebringers Platemail Armor.'
+<p><b>You say, </b>'interested'
+<br><b>Dirjadak Barbrawler says </b>'Dats great to here dere young one. First and foremost you will need dis Dusty Mail Assembly Kit to combine all the various items that you will need to collect from different parts of the Butcherblock Mountains and in our great city of Kaladim. As you collect specific items from yer surroundings, you will use them in certain quantities in this kit to create armor materials that will then be placed in a forge with armor molds to fashion yer armor. Once you are [ready] to begin collecting the supplies for yer materials I will be happy to supply you with the necessary material recipes and molds to craft yer armor.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=17247>Dusty Mail Assembly Kit</a>
+<p><b>You say, </b>'ready'
+<br><b>Dirjadak Barbrawler says </b>'Glad to ere that I am indeed Aye! When you have decided what armor piece you would like to collect please simply tell me what piece it is that you want to craft and I will supply you material recipe and mold necessary for crafting Axebringers Platemail [Helm], [Bracer], [Armguards], [Boots], [Greaves], [Gauntlets], and [Breastplate].'
+<p><b>You say, </b>'armguards'
+<br><b>Dirjadak Barbrawler says </b>'To create yer armguards material you will need to combine 2 Bricks of Crude Bronze, 2 Giant Scarab Claw, and 1 Torch in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Armguards of the Axebringer.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19635>Crude Vambrace Mold</a>
+<p><b>You say, </b>'boots'
+<br><b>Dirjadak Barbrawler says </b>'To create yer boots material you will need to combine 3 Bricks of Crude Bronze, 1 Skunk Eye and 1 Water Flask in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Boots of the Axebringer.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19634>Crude Boot Mold</a>
+<p><b>You say, </b>'bracer'
+<br><b>Dirjadak Barbrawler says </b>'To create yer bracer material you will need to combine 1 Bricks of Crude Bronze, 1 Scarab Carapace, 1 Giant Bat Fur and 1 White Wine in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Bracer of the Axebringer.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19632>Crude Bracer Mold</a>
+<p><b>You say, </b>'breastplate'
+<br><b>Dirjadak Barbrawler says </b>'To create yer breastplate material you will need to combine 5 Bricks of Crude Bronze, 1 Glyndas Tongue, 1 Pristine Forest Drakeling Scale, 1 Golden Bandit Tooth, 1 Goblin Brain and 1 Aqua Goblin Headdress in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Breastplate of the Axebringer. I would also like to see you after you have completed yer breastplate because I have a final [favor] to ask of ye.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19637>Crude Breastplate Mold</a>
+<p><b>You say, </b>'gauntlets'
+<br><b>Dirjadak Barbrawler says </b>'To create yer gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Chunk of Meat, 1 Giant Scarab Eye, and 1 Cracked Giant Scarab Carapace in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Gauntlets of the Axebringer.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19633>Crude Gauntlets Mold</a>
+<p><b>You say, </b>'greaves'
+<br><b>Dirjadak Barbrawler says </b>'To create yer greaves material you will need to combine 4 Bricks of Crude Bronze, 1 Skunk Scent Gland , 1 Giant Scarab Egg Sack and 1 Small Lantern in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Greaves of the Axebringer.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19636>Crude Greaves Mold</a>
+<p><b>You say, </b>'helm'
+<br><b>Dirjadak Barbrawler says </b>'To create yer helm material you will need to combine 2 Bricks of Crude Bronze, 1 Aviak Chick Talon, 1 Spider Leg and 1 Fishing Bait in yer assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion yer very own Helm of the Axebringer.'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=19631>Crude Helm Mold</a>
+<p><b>You say, </b>'favor'
+<br><b>Dirjadak Barbrawler says </b>'Well ya see young one, I am a dwarf and I like me Ale. But there is one thing that I like more then my Ale and that?s me mug! While out in the mountains late one evening not too long ago I had a few too many then I should have me wife says. Har har. Anyways, when me woke up da next morning me mug was gone so I had to have lost it out there somewhere. If you should find my mug and were able to return it to me intact or not I would be very grateful! Return my mug to me along with 2 Pristine Krag Claws and I will reward you with a blade worthy of Brells finest battlemaster. Now git going!'
+<p><b>You give Dirjadak Barbrawler : </b><a href=http://phobos/eq/item.php?id=28064>Pristine Krag Claw</a> x2, <a href=http://phobos/eq/item.php?id=28063>Dirjadak`s Chipped Stein</a>
+<br><b>Dirjadak Barbrawler says </b>'Here is that blade I promised you [Your Name].'
+<br><b>Dirjadak Barbrawler gives you : </b><a href=http://phobos/eq/item.php?id=26076>Gem-Etched Battle Axe</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

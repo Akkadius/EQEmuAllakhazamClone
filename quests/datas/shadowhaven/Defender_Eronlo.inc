@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Defender Eronlo says </b>'Lo dere. [Your Name].  Da Shadowhaven can be a confusin place at times. but it can be quite easy to git around once ya know what quarter you are in. The city consists of four of these quarters being da Commons quarter which is here. along with the House of Stout. House of Fordel and House of Midst.'
+</td></tr></table>

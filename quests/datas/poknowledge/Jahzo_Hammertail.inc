@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Jahzo Hammertail says </b>'speaks forth in a slow and almost whispered hiss of the Cabilisian accent. 'Aaaah. . . Good day to you. traveler. Perhaps you have come in search of supplies to further your trade as a smith. yes? Well. then look no further. [Your Name]. for the Hammertails hold the highest quality in their inventories and there is nothing that you won't find in our stock. we assure you.''
+</td></tr></table>

@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Priest of Tumagal says </b>'Seek ye the way to avoid Justice. %#1479?'  He laughs a hearty laugh. which fades in and out as his body materialises and dematerialises before you.  'Ye might as well try and escape Time itself.  I spent more than my fair share of time here. an eternity it was.  In the endless millennia that this place has served the universe. there have been more than a few attempts at escape.  Walk the [tunnels] some have. . . but fleeing justice is much like trying to outrun yer own shadow.'
+<p><b>You say, </b>'what tunnels'
+<br><b>Priest of Tumagal says </b>'What ye see here is the combined effort of the countless aeons of inhabitants bidding to escape the clutches of Justice.  I would not break yer hopes. but none o' them made it out.'  He bursts into laughter again.  'Well. nearly all o' them. . .'
+</td></tr></table>

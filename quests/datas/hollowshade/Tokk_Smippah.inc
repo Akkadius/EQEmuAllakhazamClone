@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Tokk Smippah says </b>'Greetings. [Your Name]. I am Tokk. perhaps you've heard of me? I'd be out in the forest aiding in the war if it weren't for some nasty wounds I took from the grunts. I'm working here as a merchant until they heal. then it's back to the fray. I'll be back out there soon. perhaps we'll raid a grimling camp together.'
+</td></tr></table>

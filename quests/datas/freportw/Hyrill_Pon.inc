@@ -1,0 +1,10 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=18010>Torn Parchment</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=51>Commons Residents</a><li><a href=http://phobos/eq/faction.php?id=105>Freeport Militia</a><li><a href=http://phobos/eq/faction.php?id=184>Knights of Truth</a><li><a href=http://phobos/eq/faction.php?id=258>Priests of Marr</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Hyrill Pon says </b>'What do you want?  Leave me be!  Can't a man drown his sorrows in peace!?'
+<p><b>You give Hyrill Pon : </b><a href=http://phobos/eq/item.php?id=18010>Torn Parchment</a>
+<br><b>Hyrill Pon says </b>'Peh! He thinks this old skull he found is a legendary skull of Wun Toque. It is said, a wizard who possesses one is granted power and intelligence far beyond those of his peers. Yiz was searching for the skulls missing ruby eyes. It seems he found the location of the first eye. Hmm.. Lynuga.. Lynuga.. I think I have heard that name before.. Yeah! Now I remember. I met her in the Foreign Quarter of Neria.. um.. Highpass Hold. She was trying to hawk some stolen gems! I think she mumbled something about going home to Grobb. I sure don't have time to track her down.'
+<br><font color=yellow>You gain experience!!</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=51>Commons Residents</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=105>Freeport Militia</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=184>Knights of Truth</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=258>Priests of Marr</a> has gotten better.</font>
+</td></tr></table>

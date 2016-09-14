@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Falorn says </b>'Do not waste my time, [Your Name].  Do you wish to take the test of blades or not? Or do you have one of my old trinkets you wish to trade in?'
+<p><b>You say, </b>'what trinkets'
+<br><b>Falorn says </b>'Ahh, I've given out some lesser trinkets in the past that many have gotten bored with.  I'm willing to accept Aerated Pauldrons in trade for Pauldrons of the Blue Sky.'
+<p><b>You say, </b>'i wish to take the test of blades'
+<br><b>Falorn says </b>'The test of blades is not easy.  I hope you are as powerful as you are brave.  What do you wish to strive for? Strength, force, or skill?'
+<p><b>You say, </b>'i strive for strength'
+<br><b>Falorn says </b>'Remember, true strength lies not only in the body, but in the mind as well. Return to me a bronze disc, a small pick, and a stone amulet.  If you manage to do this, my runed wind amulet shall be yours.'
+<p><b>You say, </b>'i strive for force'
+<br><b>Falorn says </b>'Foolishness or bravery, [Your Name]?  We shall see.  Return to me a pearlescent globe, silver mesh and a spiroc air totem.  In return, you will receive both my deepest respect and the Pauldrons of the Blue Sky.'
+<p><b>You say, </b>'i strive for skill'
+<br><b>Falorn says </b>'The test of skill it is. Go upward and retrieve these three items: an ivory tessera, a small ruby, and an azure ring.  Return these to me and the azure ruby ring shall be yours.'
+</td></tr></table>

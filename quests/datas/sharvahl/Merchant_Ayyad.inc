@@ -1,0 +1,6 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Merchant Ayyad says </b>'Hello [Your Name]. sorry but I have no time to chitchat. I'm looking for the help of a citizen.'
+<p><b>You give Merchant Ayyad : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+<br><b>Merchant Ayyad says </b>'Some of my wares are spoiling and I must place them in a container to preserve them. I cannot afford to take the loss that would result if they were to rot. Please [Your Name]. take this bowl and combine two lumps of gray mud with a flask of water and xakra bile. Take the resulting clay and this sketch with another water flask to fashion an unfired gray jar. Fire it in a kiln with a firing sheet and return to me with the product as soon as you can.'
+<br><b>Merchant Ayyad gives you : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+</td></tr></table>

@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=19959>Piece of a medallion</a><li><a href=http://phobos/eq/item.php?id=19960>Piece of a medallion</a><li><a href=http://phobos/eq/item.php?id=19961>Piece of a medallion</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=19954>Medallion of the Jarsath</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Xiblin Fizzlebik says </b>'Hello, [Your Name]! I am Xiblin Fizzlebik, renowned archeologist and historian of Ak'Anon. I'm currently in search of artifacts and relics on the Iksar [Jarsath tribe]. If you stumble upon anything, please bring it to me.'
+<p><b>You say, </b>'Jarsath tribe'
+<br><b>Xiblin Fizzlebik says </b>'About two thousand years ago, there were five different tribes of Iksar who dwelled on the continent of Kunark. One of these tribes was the Jarsath. They were a very primitive sort, proud and tribal, but also cannibalistic. Often, they went to war with the other tribes that co-existed with them back then. The ruins found on this island were of structures created by the Jarsath. I've been excavating for quite some time now, but haven't been able to find anything of significance.'
+<p><b>You say, </b>'looking for'
+<br><b>Xiblin Fizzlebik says </b>'In my studies, I have learned that the Jarsath believed they could draw power from a holy symbol... specifically a medallion that represented their tribe. When Salthir became king of the Iksar empire Sebilis, he had the medallion broken into three pieces and hid them on the Kunark continent so that they would never be found. I'm searching for the pieces so that I can put it back together and learn more about this tribe. Perhaps you wish to help?'
+<p><b>You say, </b>'help'
+<br><b>Xiblin Fizzlebik says </b>'All I know is that the pieces were most likely hidden in water regions. If you manage to find them, bring them to me and I will be able to put the medallion of the Jarsath back together. I am sure there is much to be learned from it.'
+<p><b>You give Xiblin Fizzlebik : </b><a href=http://phobos/eq/item.php?id=19961>Piece of a medallion</a>, <a href=http://phobos/eq/item.php?id=19960>Piece of a medallion</a>, <a href=http://phobos/eq/item.php?id=19959>Piece of a medallion</a>
+<br><font color=green><b>Xiblin Fizzlebik </b>tinkers with the three pieces and snaps the pieces together. 'Wow.. You've done it.. but I suddenly feel very.. strange.. This medallion is cursed! Here, you take it!'</font>
+<br><b>Xiblin Fizzlebik gives you : </b><a href=http://phobos/eq/item.php?id=19954>Medallion of the Jarsath</a>
+<br><font color=yellow>You gain experience!!</font>
+</td></tr></table>

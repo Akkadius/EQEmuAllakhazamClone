@@ -1,0 +1,18 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=59056>A Sharp Glass Shard</a><li><a href=http://phobos/eq/item.php?id=59055>A Torn Luggald Robe</a><li><a href=http://phobos/eq/item.php?id=59058>A Jar of Broken Skull Clan Ink</a><li><a href=http://phobos/eq/item.php?id=59059>A Dark Ore Amulet</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=59057>Dark Cord of Broken Skull</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><font color=green><b>Gwen Lonnes </b>glances at you for a moment, then sneers and turns back around. 'Go away whelp, before I decide to use you for a sparring dummy.'</font>
+<p><b>You say, </b>'Luggalds'
+<br><font color=green><b>Gwen Lonnes </b>whips her arm around and slashes it towards your face. It stops a mere inch squarely in front of your nose. 'You obviously just got off the boat, ______. Anyone who's been here more then a day knows about the Luggalds. Rumors say they are the new children of Innoruuk, created to serve their dark master in the aqueous lands of Norrath. Even now they sit in their caves deep within Broken Skull, weaving their magics and making plans to gather more relics of the old age. Few have seen what lies under their dark robes and lived to tell about it. Indeed the [robes] seem to have some sort of dark enchantment on them.'</font>
+<p><b>You say, </b>'robes'
+<br><b>Gwen Lonnes says </b>'The dark cloth that the Luggalds wear is made with some manner of enchantment. It allows them much of the same protection that normally requires heavy armor. I hope to take a robe from one of them and possibly use it against them, but they are very cunning and have so far eluded me on my journeys on to the island. So far the only thing I've discovered that will cut though this odd fabric is glass. If I had some sections of robe and a glass shard, I might be able to fashion the robe into something quite useful.'
+<p><b>You say, </b>'other things'
+<p><b>You give Gwen Lonnes : </b><a href=http://phobos/eq/item.php?id=59056>A Sharp Glass Shard</a>, <a href=http://phobos/eq/item.php?id=59055>A Torn Luggald Robe</a>
+<br><font color=green><b>Gwen Lonnes </b>stops her practice cold as you show her the torn robe. She seems to be fairly impressed, but her words convey a different message. 'Where did you get this? You're trying to tell me you took it from a Luggald yourself? What, did you find one on a rotting corpse somewhere? Bah, whatever the method it is still somewhat useful. Not exactly a prime specimen, but it will do.' She takes the glass shard and begins to cut long sections of fabric from the robe. She takes several strands and begins to weave them into a sort of braid. She hands it to you when she's made a sizeable length of cord.</font>
+<br><b>Gwen Lonnes says </b>'Here, place this around your neck and it should offer you some small bit of protection. As long as you're interested in scavenging, you might try to find a few [other things] for me as well.'
+<br><b>Gwen Lonnes gives you : </b><a href=http://phobos/eq/item.php?id=59057>Dark Cord of Broken Skull</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><font color=grey><i>That step of the quest sets a global variable.</font></i>
+<p><b>You give Gwen Lonnes : </b><a href=http://phobos/eq/item.php?id=59058>A Jar of Broken Skull Clan Ink</a>, <a href=http://phobos/eq/item.php?id=59059>A Dark Ore Amulet</a>
+<br><b>Gwen Lonnes says </b>'I don't need this.'
+<br><b>Gwen Lonnes says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

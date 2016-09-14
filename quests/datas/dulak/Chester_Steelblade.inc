@@ -1,0 +1,6 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=59028>A glowing black skull necklace</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=59004>Spell: Light of Life</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><font color=green><b>Chester Steelblade </b>A soft glow fills the cavern as an ethereal form begins to form in front of you. The stern face of a middle aged Erudite forms from the swirling mists and begins to speak to you. 'Find the key to Brokenskull and free me from my torment.'</font>
+<p><b>You give Chester Steelblade : </b><a href=http://phobos/eq/item.php?id=59028>A glowing black skull necklace</a>
+<br><font color=green><b>Chester Steelblade </b>Chester Steelblade twitches as the necklace touches the ethereal form. You feel unfamiliar hands in your packs, but before you can check them, the stern face of the ghost turns into a snarl. The spirit's hands dart forward and take hold of your throat with an unholy strength.</font>
+<br><b>Chester Steelblade gives you : </b><a href=http://phobos/eq/item.php?id=59004>Spell: Light of Life</a>
+</td></tr></table>

@@ -1,0 +1,28 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=5664>Jade Reaver</a><li><a href=http://phobos/eq/item.php?id=20478>Soulbound Hammer</a><li><a href=http://phobos/eq/item.php?id=20485>Hammer of the Ancients</a><li><a href=http://phobos/eq/item.php?id=20482>Small bit of Mithril Ore</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20455>Enchanted Clay</a><li><a href=http://phobos/eq/item.php?id=20478>Soulbound Hammer</a><li><a href=http://phobos/eq/item.php?id=20482>Small bit of Mithril Ore</a><li><a href=http://phobos/eq/item.php?id=20483>Refined Mithril Blade</a></ul></td><td><p><b>You say, </b>'mud'
+<br><b>Kinlo Strongarm says </b>'Eh? Oh, the clay. Arrr. Lots o' that mud round 'ere. Mostly, a good dwarf not be needin' somethin' so soft 'n squishy but the womenfolk, you know, the elves come lookin' fer it. If ye be one o' those pansy elves wantin' some mud fer workin' into fairy statues, flashy trinkets, 'n pig sticker arrers then I can get it for ye. Course I'd be lowerin' meself, a good dwarf, ta be diggin' that kinda mush outta the ground, but I can do it fer ya.'
+<p><b>You say, </b>'do it for me'
+<br><b>Kinlo Strongarm says </b>'Arrr. Shaddap. I ain't doin' it til ya bring me somethin'. A fee, I guess ye'd call it, fer lowerin' meself ta elf woman work. Go get me a good strong axe and I'll do it fer ye. Mebbe somethin' with a good tinted polish on it. I got plenty o' axes but no tinted ones. Har har! Colored axe. Somethin' to go with the color left on the blade after I be crackin open a gobbo head.'
+<p><b>You say, </b>'ancient longsword'
+<br><b>Kinlo Strongarm says </b>'The ancient smiths, for what I think yer askin' about, ain't been around fer a long time, laddy. Last anyone heard o' the ancients was 'fore my time even. There be more than a few tales about 'em.'
+<p><b>You say, </b>'tales'
+<br><b>Kinlo Strongarm says </b>'There be some who talk about how the ancient smiths went down to work fer the Duke o' Below, sayin' he be needin' some fine dwarven smiths fer makin' some castle or some such. There be tales that the ancients were so good at smithin' that the Duke took 'em down and made 'em head smiths over his minions. There's even tales that some o' the smiths' souls were trapped in their hammers, stuck there by some necromancer or somethin', as punishment or retribution.'
+<p><b>You say, </b>'trapped in their hammers'
+<br><b>Kinlo Strongarm says </b>'Aye. Some says their souls were bound into their hammers by an Erudite necromancer and enchanter. They say they used the power of the hammers ta profit by makin' ships, boats, and houses better than any other merchants. Sad tale, if'n it be true.'
+<p><b>You say, </b>'necromancer and enchanter'
+<br><b>Kinlo Strongarm says </b>'I'm not knowin' more about the story, lad. Everythin' I know is already in what I said. Aye, Erudites. I suppose if yer wantin' ta run after shortbeard tales ya can look over on that plague island they call Odus.'
+<p><b>You give Kinlo Strongarm : </b><a href=http://phobos/eq/item.php?id=5664>Jade Reaver</a>
+<br><b>Kinlo Strongarm says </b>'Arrrrr. Ooooo. Arrrrrr... Yah, now that's what I be callin' a good lookin' axe. I be crackin' a few skulls with this one. Oh, here's yer block o' mud. Our priests o' Brell use the mud pit fer relievin' themselves after really hard ale blessin' ceremonies, so ya ain't got ta be enchantin' it in holy water or anythin' cause they already have. Har har!'
+<br><b>Kinlo Strongarm gives you : </b><a href=http://phobos/eq/item.php?id=20455>Enchanted Clay</a>
+<p><b>You give Kinlo Strongarm : </b><a href=http://phobos/eq/item.php?id=20478>Soulbound Hammer</a>
+<br><font color=green><b>Kinlo Strongarm </b>examines the hammer respectfully, admiring its craftsmanship. He strikes it against his anvil and winces as a howl fills the air. 'This is one of the ancients' hammers? I can almost, well, almost hear it callin ta me. It's strong, that's fer sure, lad. I don't know how ye got it, but aye, a dwarf could make a mighty blade with this. It's lookin like this thing still has its owner inside it though. I'm not knowin how, and not wantin to know, but fer yer own good ye better find some way ta get 'im out.'</font>
+<br><b>Kinlo Strongarm gives you : </b><a href=http://phobos/eq/item.php?id=20478>Soulbound Hammer</a>
+<p><b>You give Kinlo Strongarm : </b><a href=http://phobos/eq/item.php?id=20485>Hammer of the Ancients</a>
+<br><font color=green><b>Kinlo Strongarm </b>looks at the hammer and nods once before slamming the head against his anvil, and shattering the head. In a cloud of dust, another dwarf appears from the cloud and tosses you a hunk of metal. Kinlo stares in awe.</font>
+<br><b>Kinlo Strongarm gives you : </b><a href=http://phobos/eq/item.php?id=20482>Small bit of Mithril Ore</a>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=67089>Usbak_the_Old</a></b> spawns (346.8,-189.5,1.8).</font>
+<p><b>You give Kinlo Strongarm : </b><a href=http://phobos/eq/item.php?id=20482>Small bit of Mithril Ore</a>
+<br><b>Kinlo Strongarm says </b>'Erm. Well, I ain't never worked with this stuff but here's what I got for ya. It ain't bad, pretty much like the one ye got there. I suppose ye should take the one the ancient made and show it ta yer friend.'
+<br><b>Kinlo Strongarm gives you : </b><a href=http://phobos/eq/item.php?id=20483>Refined Mithril Blade</a>
+<br><font color=green><b>Kinlo Strongarm </b>will not take this item.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

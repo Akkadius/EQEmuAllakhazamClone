@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=14041>A Rolled Up Note</a></ul></td><td><p><b>You say, </b>'i do understand common'
+<br><b>Auhrik Siet-ka says </b>'Of course you do.  Now. listen carefully.  It may be too much for your feeble mind to gather all at once. and I hate to repeat myself.  Bring me one bat wing. one rat ear. one snake egg. and one fire beetle eye.  Take this bag. and make sure it's sealed before you return it to me.  Snake eggs spoil.  Now. quit staring at me with your jaw hanging open like a dead codfish.  I would have mistaken you for one. but dead codfish smell better. Haha!'
+<p><b>You give Auhrik Siet-ka : </b><a href=http://phobos/eq/item.php?id=14041>A Rolled Up Note</a>
+<br><b>Auhrik Siet-ka says </b>'Why are you giving this to me?  Oh I see.  I forgot that rats don't know how to read. Haha!  Well. then. I shall read it for you. You do [understand common] don't you? Haha.'
+</td></tr></table>

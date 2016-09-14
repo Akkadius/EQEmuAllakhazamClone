@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Felodius Sworddancer says </b>'Hello. [Your Name]. I am Felodius Sworddancer.  A travelling historian and storyteller.  Would you care to hear a [story]?'
+<p><b>You say, </b>'what story?'
+<br><b>Felodius Sworddancer says </b>'I could treat you to a story about an ogre legend!  Or perhaps you would like to hear a story about the [gnome] who cried kobold?'
+<p><b>You say, </b>'what gnome?'
+<br><b>Felodius Sworddancer says </b>'Once upon a time. there was a young gnome boy.   His job was to repair the clockworks outside Ak'Anon and tell the guards if there was any trouble from kobolds.  Well. one day. the boy decided to play a prank on the guards.  He decided it would be fun to watch the guards. in full plate armor. run from the gates of Ak'Anon to the valley that led to the Faydark [forest].'
+<p><b>You say, </b>'what forest?'
+<br><b>Felodius Sworddancer says </b>'The boy cried out as loud as he could. running to the guard.  Kobolds!  Kobolds!  They are dragging off a girl into the forest!  The guard sprinted off in the direction of the forest. looking to destroy the kobold menace.  The boy jogged after him. laughing the whole time.  When the guard arrived there were. of course. no kobolds.  He trudged back to Ak'Anon waiting for some [excitement].'
+<p><b>You say, </b>'what excitement?'
+<br><b>Felodius Sworddancer says </b>'The next day. the boy claimed that kobolds were attacking one of the local farms.  The guards all ran to save the farm and of course. no kobolds. and no sign of a battle.  Angered by another prank the guards cursed the boy and went back to their stations at the [entrance] to Ak'Anon.'
+<p><b>You say, </b>'what entrance?'
+<br><b>Felodius Sworddancer says </b>'The following day. the boy was fixing a small clockwork just out of view of the guards.  A vicious kobold sprang at him and ripped into him with its big claws.  The boy screamed and cried!  Kobolds!  Kobolds!  But the guards did not come. they had grown tired of the boy's pranks the kobolds had a fine meal that night.  The end.'
+</td></tr></table>

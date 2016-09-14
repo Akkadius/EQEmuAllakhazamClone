@@ -1,0 +1,16 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=29892>Confidential Report</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17120>Jeweled Quiver of the Hand</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=96>Eye of Seru</a><li><a href=http://phobos/eq/faction.php?id=139>Hand of Seru</a><li><a href=http://phobos/eq/faction.php?id=142>Heart of Seru</a><li><a href=http://phobos/eq/faction.php?id=284>Seru</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=141>Haven Smugglers</a><li><a href=http://phobos/eq/faction.php?id=350>Validus Custodus</a><li><a href=http://phobos/eq/faction.php?id=206>Magus Conlegium</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Aderyn Goldleaf says </b>'Greetings, [Your Name]. I am a Ranger of Seru. There are not many that follow our ways within the city, as there is only limited need for us. Tracking is an invaluable tool at times though so our ways continue to be passed on. There is no way that [Katta] Castellium can match our tracking skills. What are you look... ah, I see you are eyeing my quiver. It is the Jeweled Quiver of the Hand. It is given to each ranger that is in the Hand's Ranks. '
+<p><b>You say, </b>'katta'
+<br><b>Aderyn Goldleaf says </b>'Katta Castellium is a dreary place. To show how vile it is, they have vampyres living within the city! My point though, is that they would easily spot one of us entering their city. You are just right. They would not question one from Norrath. If you with to prove your worth and earn your own Quiver go to Katta. Galren Fuzzytoes is know to us to be a spy, but we can never catch him. Surely it will be easier to find him within his own city. Defeat him, and retrieve any report that he is taking back to their Governors.'
+<p><b>You give Aderyn Goldleaf : </b><a href=http://phobos/eq/item.php?id=29892>Confidential Report</a>
+<br><b>Aderyn Goldleaf says </b>'You actually did it? You have done an invaluable service ridding us of that wretched little halfing. You deserve to be a soldier in Seru's army. Take this Quiver with my regard, [Your Name].'
+<br><b>Aderyn Goldleaf gives you : </b><a href=http://phobos/eq/item.php?id=17120>Jeweled Quiver of the Hand</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=96>Eye of Seru</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=139>Hand of Seru</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=142>Heart of Seru</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=284>Seru</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=141>Haven Smugglers</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=350>Validus Custodus</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=206>Magus Conlegium</a> has gotten worse.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

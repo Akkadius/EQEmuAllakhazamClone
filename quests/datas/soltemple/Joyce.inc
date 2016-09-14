@@ -1,0 +1,39 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=10545>Globe of Mist</a><li><a href=http://phobos/eq/item.php?id=10547>Ring of Evoluoy</a><li><a href=http://phobos/eq/item.php?id=10034>Sapphire</a><li><a href=http://phobos/eq/item.php?id=10546>Water Ring</a><li><a href=http://phobos/eq/item.php?id=10539>Rune of Clay</a><li><a href=http://phobos/eq/item.php?id=10542>Rune of Clay</a><li><a href=http://phobos/eq/item.php?id=10540>Rune of Clay</a><li><a href=http://phobos/eq/item.php?id=10541>Rune of Clay</a><li><a href=http://phobos/eq/item.php?id=10543>A Stone Marker</a><li><a href=http://phobos/eq/item.php?id=10026>Cat's Eye Agate</a><li><a href=http://phobos/eq/item.php?id=10544>Heart of Stone</a><li><a href=http://phobos/eq/item.php?id=2363>Soiled Boots</a><li><a href=http://phobos/eq/item.php?id=2361>Fire Goblin Skin</a><li><a href=http://phobos/eq/item.php?id=2362>Frost Goblin Skin</a><li><a href=http://phobos/eq/item.php?id=15109>Spell: Elemental Armor</a><li><a href=http://phobos/eq/item.php?id=2360>Twice-Woven Cloak</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2358>Circlet of Mist</a><li><a href=http://phobos/eq/item.php?id=2359>Clay Bracelet</a><li><a href=http://phobos/eq/item.php?id=2357>Earthen Boots</a><li><a href=http://phobos/eq/item.php?id=1356>Robe of the Elements</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=320>Temple of Solusek Ro</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=291>Shadowed Men</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Joyce says </b>'I am Joyce of the Temple of Solusek Ro. I am the guardian of four of the items of the elementalist. If you are a magician, ask me about the [Robe of the Elements], the [Clay Bracelet], the [Earthen Boots] or the [Circlet of Mist]'
+<p><b>You say, </b>'circlet of mist'
+<br><b>Joyce says </b>'The Circlet of Mist is a beautiful hoop that would look good atop your head. It produces a fine gleam, and is known to increase your mental power. Are you [interested in the circlet]?'
+<p><b>You say, </b>'interested in the circlet'
+<br><b>Joyce says </b>'I will be needing the proper components to craft the circlet of mist. I will be needing a Globe of Mist which can be found on festering hags, a Water Ring from a Tidal Lord in Dagnor's Cauldron, a Ring of Evoluoy from an alligator in Feerrott, and a Sapphire, I will craft it for you.'
+<p><b>You say, </b>'clay bracelet'
+<br><b>Joyce says </b>'The clay bracelet is a wonderful piece of jewelry to wear on your wrist. It provides fine protection, enhances your resistance to magic, and lets you call forth a mystic eye to help you in your travels. Are you [interested in the bracelet]?'
+<p><b>You say, </b>'interested in the bracelet'
+<br><b>Joyce says </b>'I will make you a clay bracelet, but you will need to bring me the proper components. I will need each of the four runes of clay. Three of them can be found in the Rathe Mountains, held by gnomish necromancers. The fourth one is somewhere in the Ocean of Tears, held by a goblin headmaster. Bring me these four components, and I will make you a clay bracelet.'
+<p><b>You say, </b>'earthen boots'
+<br><b>Joyce says </b>'Earthen Boots are a fine adornment for the feet of any Magician. They have a wonderful brown color, and are known to enhance the stamina of any Magician who wears them. As an added bonus, animals do not tend to notice those who wear Earthen Boots. Are you [interested in the boots]?'
+<p><b>You say, </b>'interested in the boots'
+<br><b>Joyce says </b>'I will make you a pair of earthen boots, but you will need to retrieve for me the proper components to craft these. I will be needing a Stone Marker which can be found on a Glyphed Guard in Castle Mistmoore, a Heart of Stone from a Stone Skeleton, a pair of Soiled Boots which can be found on a froglok Tonta Knight in Guk, and a Cats Eye Agate. Bring me these items and I will craft your earthen boots.'
+<p><b>You say, </b>'robe of the elements'
+<br><b>Joyce says </b>'The Robe of the Elements is a fine cloak for a Magician. It provides protection from the elements, protection from melee attacks and aids the Magician with her focus. Are you [interested in the robe]?'
+<p><b>You say, </b>'interested in the robe'
+<br><b>Joyce says </b>'I will make for you the Robe of the Elements, but I will be needing the proper components. I will be needing a fire goblin skin, a frost goblin skin, a Twice-Woven Cloak which can be found on Faerie Guards in the Faydark, and a scroll of elemental armor. Return to me with these items and I will craft your robe.'
+<p><b>You give Joyce : </b><a href=http://phobos/eq/item.php?id=10545>Globe of Mist</a>, <a href=http://phobos/eq/item.php?id=10546>Water Ring</a>, <a href=http://phobos/eq/item.php?id=10034>Sapphire</a>, <a href=http://phobos/eq/item.php?id=10547>Ring of Evoluoy</a>
+<br><b>Joyce says </b>'You have done well. You are truly a powerful magician. Here is yourCirclet of Mist.'
+<br><b>Joyce gives you : </b><a href=http://phobos/eq/item.php?id=2358>Circlet of Mist</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=320>Temple of Solusek Ro</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=291>Shadowed Men</a> has gotten worse.</font>
+<p><b>You give Joyce : </b><a href=http://phobos/eq/item.php?id=10541>Rune of Clay</a>, <a href=http://phobos/eq/item.php?id=10539>Rune of Clay</a>, <a href=http://phobos/eq/item.php?id=10540>Rune of Clay</a>, <a href=http://phobos/eq/item.php?id=10542>Rune of Clay</a>
+<br><b>Joyce says </b>'One, two, three.. all four runes of clay! I knew you looked competent. I am very impressed! Please take the Clay Bracelet that you have earned.'
+<br><b>Joyce gives you : </b><a href=http://phobos/eq/item.php?id=2359>Clay Bracelet</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=320>Temple of Solusek Ro</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=291>Shadowed Men</a> has gotten worse.</font>
+<p><b>You give Joyce : </b><a href=http://phobos/eq/item.php?id=10544>Heart of Stone</a>, <a href=http://phobos/eq/item.php?id=2363>Soiled Boots</a>, <a href=http://phobos/eq/item.php?id=10543>A Stone Marker</a>, <a href=http://phobos/eq/item.php?id=10026>Cat's Eye Agate</a>
+<br><b>Joyce says </b>'You have done well. You are truly a powerful magician. Here are your EarthenBoots.'
+<br><b>Joyce gives you : </b><a href=http://phobos/eq/item.php?id=2357>Earthen Boots</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=320>Temple of Solusek Ro</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=291>Shadowed Men</a> has gotten worse.</font>
+<p><b>You give Joyce : </b><a href=http://phobos/eq/item.php?id=2360>Twice-Woven Cloak</a>, <a href=http://phobos/eq/item.php?id=2361>Fire Goblin Skin</a>, <a href=http://phobos/eq/item.php?id=2362>Frost Goblin Skin</a>, <a href=http://phobos/eq/item.php?id=15109>Spell: Elemental Armor</a>
+<br><b>Joyce says </b>'You have done well. You are truly a powerful magician. Here is your Robe of the Elements.'
+<br><b>Joyce gives you : </b><a href=http://phobos/eq/item.php?id=1356>Robe of the Elements</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=320>Temple of Solusek Ro</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=291>Shadowed Men</a> has gotten worse.</font>
+</td></tr></table>

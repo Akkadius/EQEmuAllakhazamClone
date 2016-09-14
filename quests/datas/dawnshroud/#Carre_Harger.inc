@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=31781>Note to Carre</a><li><a href=http://phobos/eq/item.php?id=31783>A Ravenous Wolf's Pelt</a><li><a href=http://phobos/eq/item.php?id=31784>A Bloodthirsty Wolf's Pelt</a><li><a href=http://phobos/eq/item.php?id=31785>A Rabid Wolf's Pelt</a><li><a href=http://phobos/eq/item.php?id=31786>An Enraged Wolf's Pelt</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=31782>Note to Wils</a></ul></td><td><p><b>You give #Carre Harger : </b><a href=http://phobos/eq/item.php?id=31781>Note to Carre</a>
+<br><b>#Carre Harger says </b>'There's been four wolves that have been ravaging the forest. We need them killed. When you are done bring me back their pelts. I know one to be bloodthristy, while the other is enraged. The other two I haven't even seen. But I can hear 'em.'
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=174273>#an_enraged_beast</a></b> spawns (,5,).</font>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=174320>#a_ravenous_beast</a></b> spawns (,-5,).</font>
+<p><b>You give #Carre Harger : </b><a href=http://phobos/eq/item.php?id=31783>A Ravenous Wolf's Pelt</a>, <a href=http://phobos/eq/item.php?id=31784>A Bloodthirsty Wolf's Pelt</a>, <a href=http://phobos/eq/item.php?id=31785>A Rabid Wolf's Pelt</a>, <a href=http://phobos/eq/item.php?id=31786>An Enraged Wolf's Pelt</a>
+<br><b>#Carre Harger says </b>'I'm still in shock. I can't believe those pesky wolves are finally gone. Bring this note to Wils, he should have something for you.'
+<br><b>#Carre Harger gives you : </b><a href=http://phobos/eq/item.php?id=31782>Note to Wils</a>
+<br><b>#Carre Harger disappears.</b>
+</td></tr></table>

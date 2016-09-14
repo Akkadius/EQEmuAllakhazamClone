@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20477>Ancient Longsword</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20481>Refined Ancient Sword</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Usbak the Old says </b>'Took ya long enough! Ye'd think ya had an Orc head on them shoulders there. I'm owin' ya for yer help though. Else I'd have been on that darn hammer for ages. Ye said ya had an ancient blade or somethin ta be smithin. If so lemme see it.'
+<p><b>You give Usbak the Old : </b><a href=http://phobos/eq/item.php?id=20477>Ancient Longsword</a>
+<br><font color=green><b>Usbak the Old </b>admires the blade and then starts to bang the edge with a hammer. 'Hah, that was a good blade, no doubt. Ain't seen one I couldn't make better though. I'm knowin' yer cause and all I know is ye should take that ancient blade ta yer friend in the woods, he'll know what to do now. With that I'm gonna be takin muh leave. Debt paid and all. If'n yer wantin' another blade, which ye do, ye got enough ore left that Kinlo can do it for ye'</font>
+<br><b>Usbak the Old gives you : </b><a href=http://phobos/eq/item.php?id=20481>Refined Ancient Sword</a>
+<br><b>Usbak the Old disappears.</b>
+</td></tr></table>

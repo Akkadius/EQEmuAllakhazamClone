@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=12375>Humerus Handled Mace</a><li><a href=http://phobos/eq/item.php?id=12374>Ribcage Chest Armor</a><li><a href=http://phobos/eq/item.php?id=12372>Cat Skull Cap</a><li><a href=http://phobos/eq/item.php?id=12373>Fractured Femur</a><li><a href=http://phobos/eq/item.php?id=12369>Puab's Token</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=28055>Tattered Parchment</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>a banished Kerran says </b>'Rrrrrr..  Away frrrom this isle of death and.. prrrr.. punishment.'
+<p><b>You say, </b>'What remains of Thipt'
+<br><b>a banished Kerran says </b>'Clawknight Thipt wished to learn the ways of Ashen. Prrr. Together we go into green Goblin's lair to train. Prrr.. We find too many and he is too weak. Seperated and unable to find him, I hear his death cry. Prr.. I cannot make it back, the eyes are upon me. Now I must find one sent by Ashen to aid in the recoverrry of his remains - his Humorous Handled Mace, Ribcage Breastplate, Cat Skullcap and Fractured Femur Bone'
+<p><b>You give a banished Kerran : </b><a href=http://phobos/eq/item.php?id=12374>Ribcage Chest Armor</a>, <a href=http://phobos/eq/item.php?id=12375>Humerus Handled Mace</a>, <a href=http://phobos/eq/item.php?id=12373>Fractured Femur</a>, <a href=http://phobos/eq/item.php?id=12372>Cat Skull Cap</a>
+<br><b>a banished Kerran says </b>'Prrr.. Thank you brother of Ashen. I can now spend my time upon this island in peace, until my penance is serrrved. He dabs his paw into the mud and places it upon a tattered parchment. Take this message to Puab. Farrrwell.'
+<br><b>a banished Kerran gives you : </b><a href=http://phobos/eq/item.php?id=28055>Tattered Parchment</a>
+<br><font color=yellow>You gain experience!!</font>
+<p><b>You give a banished Kerran : </b><a href=http://phobos/eq/item.php?id=12369>Puab's Token</a>
+<br><b>a banished Kerran says </b>'Ashen Order!! Prrr.. My order. I have been expecting one of us. Prrr.. Help me rejoin my native land. Return the [remains of Thipt] to me. This shall aid me in my redemption.'
+</td></tr></table>

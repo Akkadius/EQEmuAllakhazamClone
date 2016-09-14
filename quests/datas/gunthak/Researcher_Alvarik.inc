@@ -1,0 +1,15 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Researcher Alvarik says </b>'Hello there. Are you too a student of the arcane?'
+<p><b>You say, </b>'student of the arcane'
+<br><b>Researcher Alvarik says </b>'Excellent. I hold myself as a master of researching the arcane. Even though I study mostly in the art of wizardry, I still carry tomes of the other realms. If you are a master of research and would like to borrow a copy of the research tome, let me know what school of magic you belong to and I may be able to help you out. I also carry with me hand copied works of the masters. If you like you can buy one from me for a small fee.'
+<p><b>You say, </b>'enchanter'
+<br><b>Researcher Alvarik says </b>'Do you take me for a fool? It is obvious that you are not what you state. Begone from my sight, your false statements disgust me and insult the realms of the arcane.'
+<p><b>You say, </b>'wizard'
+<br><b>Researcher Alvarik says </b>'Do you take me for a fool? It is obvious that you are not what you state. Begone from my sight, your false statements disgust me and insult the realms of the arcane.'
+<p><b>You say, </b>'magician'
+<br><b>Researcher Alvarik says </b>'Do you take me for a fool? It is obvious that you are not what you state. Begone from my sight, your false statements disgust me and insult the realms of the arcane.'
+<p><b>You say, </b>'necromancer'
+<br><b>Researcher Alvarik says </b>'Do you take me for a fool? It is obvious that you are not what you state. Begone from my sight, your false statements disgust me and insult the realms of the arcane.'
+<br><b>Researcher Alvarik says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Trainee Garanik says </b>'Karim is right, we cannot let the Gor Taku fool us. The gor taku workers have been gathering a lot of stones lately. I'll wager they are crafting a large quantity of stone weapons to attack us with. I hear they even have a blacksmith making weapons for the Loda Kai.'
+</td></tr></table>

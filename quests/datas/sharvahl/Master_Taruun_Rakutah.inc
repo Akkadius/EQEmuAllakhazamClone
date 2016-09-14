@@ -1,0 +1,19 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=18554>A Taruun Guild Summons</a><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a><li><a href=http://phobos/eq/item.php?id=2897>Notarized Application</a><li><a href=http://phobos/eq/item.php?id=29828>Shadowscream Steel Boots</a><li><a href=http://phobos/eq/item.php?id=29825>Shadowscream Boot Case</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a><li><a href=http://phobos/eq/item.php?id=17499>Boot Case</a><li><a href=http://phobos/eq/item.php?id=29826>Rakutah's Seal</a><li><a href=http://phobos/eq/item.php?id=2878>Initiate's Cloak of Shar Vahl</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=132>Guardians of Shar Vahl</a></ul></td><td><p><b>You give Master Taruun Rakutah : </b><a href=http://phobos/eq/item.php?id=18554>A Taruun Guild Summons</a>
+<br><b>Master Taruun Rakutah gives you : </b><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a>
+<p><b>You give Master Taruun Rakutah : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>, <a href=http://phobos/eq/item.php?id=2897>Notarized Application</a>
+<br><b>Master Taruun Rakutah gives you : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+<p><b>You give Master Taruun Rakutah : </b><a href=http://phobos/eq/item.php?id=29828>Shadowscream Steel Boots</a>
+<br><b>Master Taruun Rakutah says </b>'So you're Barkhem's newest student are you? I may not have taken your word for it, but craftsmanship this fine could only be from a student of our Master Smith. Take this and fill it with Shadowscream steel boots. I need 6 pairs to outfit some of my hunters. When you've finished, return the box to me.'
+<br><b>Master Taruun Rakutah gives you : </b><a href=http://phobos/eq/item.php?id=17499>Boot Case</a>
+<p><b>You give Master Taruun Rakutah : </b><a href=http://phobos/eq/item.php?id=29825>Shadowscream Boot Case</a>
+<br><font color=green><b>Master Taruun Rakutah </b>inspects the boots for a moment and looks you square in the eyes. 'This is excellent work, [Your Name], you do not disappoint! Would that you could outfit all of my hunters with these boots, but I must not keep your talents all to myself. Take some change for your troubles and this seal back to Barkhem - let him know that I am very impressed with his new protege.'</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=132>Guardians of Shar Vahl</a> has gotten better.</font>
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Master Taruun Rakutah gives you : </b><a href=http://phobos/eq/item.php?id=29826>Rakutah's Seal</a>
+<p><b>You give Master Taruun Rakutah : </b><a href=http://phobos/eq/item.php?id=18554>A Taruun Guild Summons</a>
+<br><b>Master Taruun Rakutah gives you : </b><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a>
+<p><b>You give Master Taruun Rakutah : </b><a href=http://phobos/eq/item.php?id=2897>Notarized Application</a>
+<br><b>Master Taruun Rakutah says </b>'Allow me to be the first to welcome you. Accept this cloak, young initiate. It is a symbol of your loyalty to our noble people. May it serve you as you serve us all. Present your acrylia slate to Harbin Gernawl and he will give you instruction. May the spirits of the beasts guide you and keep you safe.''
+<br><b>Master Taruun Rakutah gives you : </b><a href=http://phobos/eq/item.php?id=2878>Initiate's Cloak of Shar Vahl</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

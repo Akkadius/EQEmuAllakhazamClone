@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2344>Confession Document</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2369>Riley's Confession</a></ul></td><td><p><b>You say, </b>'Bloodsaber'
+<br><b>#Riley Sots.pl says </b>'Oh, no. I knew this would happen one day. Please don't hurt me! I had very little to do with this plague, though it is quite a nice one, you must admit. I was just a courier. I'll come quietly. I don't want any trouble. My small contribution to the glory of Bertoxxulous has already been given but I certainly don't want to go to meet him just yet!'
+<p><b>You give #Riley Sots.pl : </b><a href=http://phobos/eq/item.php?id=2344>Confession Document</a>
+<br><b>#Riley Sots.pl gives you : </b><a href=http://phobos/eq/item.php?id=2369>Riley's Confession</a>
+</td></tr></table>

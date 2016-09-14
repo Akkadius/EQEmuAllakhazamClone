@@ -1,0 +1,25 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=10989>Parchment to Glerbella</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=19631>Crude Helm Mold</a><li><a href=http://phobos/eq/item.php?id=19633>Crude Gauntlets Mold</a><li><a href=http://phobos/eq/item.php?id=19632>Crude Bracer Mold</a><li><a href=http://phobos/eq/item.php?id=19634>Crude Boot Mold</a><li><a href=http://phobos/eq/item.php?id=19635>Crude Vambrace Mold</a><li><a href=http://phobos/eq/item.php?id=19636>Crude Greaves Mold</a><li><a href=http://phobos/eq/item.php?id=19637>Crude Breastplate Mold</a><li><a href=http://phobos/eq/item.php?id=51380>Assembly Kit of Darkness</a></ul></td><td><p><b>You say, </b>'plague raiser helm'
+<br><b>Glerbella Gibblix says </b>'To assemble a Plague Raiser Helm you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Helm Mold. Once that is done combine the Crude Bronze Helm with a Ruined Coyote Pelt and two Yellow Recluse Eyes in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19631>Crude Helm Mold</a>
+<p><b>You say, </b>'plague raiser gauntlets'
+<br><b>Glerbella Gibblix says </b>'To assemble Plague Raiser Gauntlets you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Gauntlet Mold. Once that is done combine the Crude Bronze Gauntlets with a Ruined Coyote Pelt and two Clockwork Spider Mesh in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19633>Crude Gauntlets Mold</a>
+<p><b>You say, </b>'plague raiser bracer'
+<br><b>Glerbella Gibblix says </b>'To assemble a Plague Raiser Mail Bracer you will need to obtain a brick of crude bronze and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Bronze Bracer with a Ruined Coyote Pelt and a Clockwork Spider Mesh in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19632>Crude Bracer Mold</a>
+<p><b>You say, </b>'plague raiser boots'
+<br><b>Glerbella Gibblix says </b>'To assemble Plague Raiser Mail Boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Ruined Coyote Pelts, and two Clockwork Spider Mesh in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19634>Crude Boot Mold</a>
+<p><b>You say, </b>'plague raiser vambraces'
+<br><b>Glerbella Gibblix says </b>'To assemble Plague Raiser Vambraces you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Bronze Vambraces with a Low Quality Coyote Pelt and three Clockwork Spider Mesh in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19635>Crude Vambrace Mold</a>
+<p><b>You say, </b>'plague raiser greaves'
+<br><b>Glerbella Gibblix says </b>'To assemble Plague Raiser Greaves you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Greaves Mold. Once that is done combine the Crude Bronze Greaves with two Low Quality Coyote Pelts and three Clockwork Spider Mesh in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19636>Crude Greaves Mold</a>
+<p><b>You say, </b>'plague raiser breastplate'
+<br><b>Glerbella Gibblix says </b>'To assemble a Plague Raiser Breastplate you will need to obtain four bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Bronze Breastplate with a Coyote Pelt, a Clockwork Spider Thorax Plate, and two Ebon Drake Wings in the Mail Assembly Kit.'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=19637>Crude Breastplate Mold</a>
+<p><b>You give Glerbella Gibblix : </b><a href=http://phobos/eq/item.php?id=10989>Parchment to Glerbella</a>
+<br><b>Glerbella Gibblix says </b>'Hail Clinical! You must be one of Derthix new disciples. Derthix has asked me to help get you outfitted in a suit of armor to protect you from the weapons of our foes. I have assembled a kit for you that will allow you to construct the armor pieces once you have gathered the necessary components. The required components vary according to which piece of Plague Raiser Armor you are planning on assembling. Do you wish to craft a [plague raiser helm], a [plague raiser bracer], [plague raiser gauntlets], [plague raiser boots], [plague raiser vambraces], [plague raiser greaves], or a [plague raiser breastplate].'
+<br><b>Glerbella Gibblix gives you : </b><a href=http://phobos/eq/item.php?id=51380>Assembly Kit of Darkness</a>
+</td></tr></table>

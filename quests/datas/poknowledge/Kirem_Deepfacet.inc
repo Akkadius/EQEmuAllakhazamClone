@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Kirem Deepfacet says </b>'Good day. traveler. I am Kirem Deepfacet and as a merchant of precious metals and stones. I serve this city. which has been most gracious in providing a home away from the turmoil of Norrath. If you seek supplies to craft jewelry of all sorts. then do not hesitate to search my inventory.'
+</td></tr></table>

@@ -1,0 +1,16 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=9296>Shard of Hsagra's Talisman</a><li><a href=http://phobos/eq/item.php?id=27255>Klandicar's Talisman</a><li><a href=http://phobos/eq/item.php?id=27256>Sontalak's Talisman</a><li><a href=http://phobos/eq/item.php?id=27258>Zlandicar's Talisman</a><li><a href=http://phobos/eq/item.php?id=27259>Lendiniara's Talisman</a><li><a href=http://phobos/eq/item.php?id=27266>Yelinak's Talisman</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=27265>Sleeper's Key</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Jaled Dar-s shade says </b>'Mortal! You MUST aid me! I will have my revenge, and my rest!'
+<p><b>You say, </b>'aid you'
+<br><b>Jaled Dar-s shade says </b>'You must wake The Sleeper. He is our salvation, he will restore a new golden age to Norrath. It was a terrible mistake to subdue him, jealousy and envy led us to do it. I see all of this clearly now.'
+<p><b>You say, </b>'the sleeper'
+<br><b>Jaled Dar-s shade says </b>'Kerafyrm, the best of us, what we should be. We imprsoned him in a timeless slumber aeons ago. I know how to release him, but I am no longer of the flesh, so I cannot do it myself. But you can accomplish this task!'
+<p><b>You say, </b>'task'
+<br><b>Jaled Dar-s shade says </b>'When the tomb was closed and the entry sealed, many dragons participated in the ceremony. They invested portions of their essence into the seal. The seal is part of them now. With the right talismans, I can show you how to make a key that will allow one to pass, as if they were of the First Brood. If you do not wish to do this for the good of all, perhaps you will be willing to do it for material riches. Priceless treasures are stored in the tomb, yours for the taking, once you are inside and have released The Sleeper.'
+<p><b>You give Jaled Dar-s shade : </b><a href=http://phobos/eq/item.php?id=9296>Shard of Hsagra's Talisman</a>, <a href=http://phobos/eq/item.php?id=27255>Klandicar's Talisman</a>, <a href=http://phobos/eq/item.php?id=27256>Sontalak's Talisman</a>, <a href=http://phobos/eq/item.php?id=27258>Zlandicar's Talisman</a>, <a href=http://phobos/eq/item.php?id=27259>Lendiniara's Talisman</a>, <a href=http://phobos/eq/item.php?id=27266>Yelinak's Talisman</a>
+<br><b>Jaled Dar-s shade says </b>'Very well done, [Your Name]. Here is how you unlock the entry. Seek out a great dragon statue in the Eastern Wastes and use this key there. Not very different from how you entered my old domain, Veeshan's Peak, now, is it? Haha, yes, I know many things, even dead.'
+<br><b>Jaled Dar-s shade gives you : </b><a href=http://phobos/eq/item.php?id=27265>Sleeper's Key</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Jaled Dar-s shade says </b>'Very well done, [Your Name]. Here is how you unlock the entry. Seek out a great dragon statue in the Eastern Wastes and use this key there. Not very different from how you entered my old domain, Veeshan's Peak, now, is it? Haha, yes, I know many things, even dead.'
+<br><b>Jaled Dar-s shade gives you : </b><a href=http://phobos/eq/item.php?id=27265>Sleeper's Key</a>
+<br><font color=yellow>You gain experience!!</font>
+</td></tr></table>

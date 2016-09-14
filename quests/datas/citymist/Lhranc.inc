@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=14367>Corrupted Ghoulbane</a><li><a href=http://phobos/eq/item.php?id=14368>Heart of the Innocent</a><li><a href=http://phobos/eq/item.php?id=14369>Head of the Valiant</a><li><a href=http://phobos/eq/item.php?id=14370>Will of Innoruuk</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=14384>Lhranc's Token</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=342>True Spirit</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Lhranc says </b>'Ahh, finally! He has sent you. No time to waste now, you must help me lift the curse at once!'
+<p><b>You say, </b>'curse'
+<br><b>Lhranc says </b>'Can you not see my condition! I have been unjustly sentenced to an eternity in this wretched form you see before you, never to leave these walls. In exchange for the cure for this curse, I swear to show you a secret that would make you the most powerful of your kind.'
+<p><b>You say, </b>'cure'
+<br><b>Lhranc says </b>'I require only four things of you, dark one, and one of them you hold now. Bring me the heart of an innocent, the head of the valiant, and the will of Innoruuk. With these, my curse shall be lifted at last and I will craft a weapon that will cast a shadow over all of Norrath.'
+<p><b>You give Lhranc : </b><a href=http://phobos/eq/item.php?id=14368>Heart of the Innocent</a>, <a href=http://phobos/eq/item.php?id=14369>Head of the Valiant</a>, <a href=http://phobos/eq/item.php?id=14367>Corrupted Ghoulbane</a>, <a href=http://phobos/eq/item.php?id=14370>Will of Innoruuk</a>
+<br><b>Lhranc says </b>'Ahh, at last I can free myself of this prison! Centuries have passed since I enjoyed the fruits of mortality.' He hurls the components above his head where they remain suspended in midair. They hover in place while he chants the words of an ancient spell. As he speaks, the items begin to rotate around his head, slowly at first, then faster as the chanting grows louder, until it spins in a blur. Soon, the room is filled with a deafening shriek that pierces you to the core.'
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=342>True Spirit</a> has gotten better.</font>
+<br><b>Lhranc gives you : </b><a href=http://phobos/eq/item.php?id=14384>Lhranc's Token</a>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=90187>Lhranc</a></b> spawns (0.9,85.1,7.8).</font>
+<br><b>Lhranc disappears.</b>
+</td></tr></table>

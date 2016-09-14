@@ -1,0 +1,10 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Adler Fuirstel says </b>'Can you smell it? It is the musk of death and pestilence. It is a smell that I have welcomed for so long, but now it turns my stomach. My brother Milyk and I have come here from Qeynos. We were members of the Bloodsabers but sought higher enlightenment. Upon arriving here Milyk began to channel all of his energy into opening the [portal to the Plane of Disease].'
+<p><b>You say, </b>'portal to the plane of disease'
+<br><b>Adler Fuirstel says </b>'We sought only the wisdom of Bertoxxulous. When Milyk finished his chant and the portal opened, it began to spew out this vile pestilence you see before you. Milyk caught the brunt of the plague, and his condition worsens. I have been infected as well, and am weak but I will go into the plane to save my brother if I must. The weavers have seen in their tapestries that one holds a [ward] that will halt the effects of the toxins that the touch of Bertoxxulous brings.'
+<p><b>You say, </b>'ward'
+<br><b>Adler Fuirstel says </b>'The ward is carried by the one that Bertoxxulous has created to protect the entrance into his den. If you dare travel into this pungent plane and find the ward bring it back. If we can halt the advanced toxins in Milyk's system maybe we can save him.'
+<br><font color=grey><i>That step of the quest sets a global variable.</font></i>
+<p><b>You say, </b>'hail'
+<br><b>Adler Fuirstel says </b>'Can you smell it? It is the musk of death and pestilence. It is a smell that I have welcomed for so long, but now it turns my stomach. My brother Milyk and I have come here from Qeynos. We were members of the Bloodsabers but sought higher enlightenment. Upon arriving here Milyk began to channel all of his energy into opening the [portal to the Plane of Disease].'
+</td></tr></table>

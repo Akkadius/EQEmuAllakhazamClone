@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20478>Soulbound Hammer</a><li><a href=http://phobos/eq/item.php?id=20479>Dwarven Smiths Hammer</a><li><a href=http://phobos/eq/item.php?id=20494>Swirling Sphere of Color</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20479>Dwarven Smiths Hammer</a><li><a href=http://phobos/eq/item.php?id=20485>Hammer of the Ancients</a></ul></td><td><p><b>You say, </b>'ancient hammer'
+<br><b>Mairee Silentone says </b>'Yes, the ancient hammer. I heard something about that. Do you mind if I take a look at it?'
+<p><b>You give Mairee Silentone : </b><a href=http://phobos/eq/item.php?id=20478>Soulbound Hammer</a>
+<br><font color=green><b>Mairee Silentone </b>makes a few marks on the hammer, and all the while you can hear a muffled cursing coming from the hammer head. 'Yes, it is an ancient dwarf's hammer. Interesting artifact. I've marked it to keep it stable while you retrieve something for me. You need to travel to the Plane of Sky and find a swirling sphere of color. Bring it and the hammer back to me.'</font>
+<br><b>Mairee Silentone gives you : </b><a href=http://phobos/eq/item.php?id=20479>Dwarven Smiths Hammer</a>
+<p><b>You give Mairee Silentone : </b><a href=http://phobos/eq/item.php?id=20479>Dwarven Smiths Hammer</a>, <a href=http://phobos/eq/item.php?id=20494>Swirling Sphere of Color</a>
+<br><font color=green><b>Mairee Silentone </b>holds the sphere and makes intricate marks and patterns on it, eventually turning the entire crystal clear. She rolls it across the hammer, raising a ringing sound in the room. 'There. Now take the hammer back to Kinlo. He'll know what to do from here. Good luck to you.'</font>
+<br><b>Mairee Silentone gives you : </b><a href=http://phobos/eq/item.php?id=20485>Hammer of the Ancients</a>
+<br><font color=green><b>Mairee Silentone </b>will not accept this item.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

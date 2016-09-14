@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Silna Songsmith says </b>'Hail. [Your Name] - Are you [interested] in helping the League of Antonican Bards by delivering some [mail]?'
+<p><b>You say, </b>'what mail'
+<br><b>Silna Songsmith says </b>'The League of Antonican Bards has a courier system made up of travelers and adventurers.  We pay good gold to anyone who will take messages from bards such as myself to one of our more central offices.  Are you [interested]?'
+<p><b>You say, </b>'I am interested'
+<br><b>Silna Songsmith says </b>'I have messages that need to go to - well. right now I have one that needs to go to Freeport.  Will you [deliver] mail to [Freeport] for me?'
+<p><b>You say, </b>'I will deliver it to freeport'
+<br><b>Silna Songsmith says </b>'Take this letter to Felicity Starbright. You can find her at the bard guild hall. I'm sure she will compensate you for your trouble.'
+<p><b>You say, </b>'i will deliver mail to freeport'
+<br><b>Silna Songsmith says </b>'Take this letter to Felicity Starbright. You can find her at the bard guild hall. I'm sure she will compensate you for your trouble.'
+</td></tr></table>

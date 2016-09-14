@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20694>Gleaming Unicorn Horn</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20697>Cleansed Spirit of Faydwer</a></ul></td><td><p><b>You give Silox Azrix : </b><a href=http://phobos/eq/item.php?id=20694>Gleaming Unicorn Horn</a>
+<br><font color=green><b>Silox Azrix </b>looks up at you with a twisted gleam in his eyes. 'Something for me then, eh?' As he looks closer his skin begins to peel and stretch, a bright hot light emanating from his hands gripped around the unicorn horn. 'NOOOO!' The pure cleansing light burns away the gnome without a trace of his existence except for a tiny ball of light which you pick up.</font>
+<br><b>Silox Azrix gives you : </b><a href=http://phobos/eq/item.php?id=20697>Cleansed Spirit of Faydwer</a>
+<br><b>Silox Azrix disappears.</b>
+</td></tr></table>

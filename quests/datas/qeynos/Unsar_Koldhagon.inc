@@ -1,0 +1,6 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=13070>Snake Scales</a><li><a href=http://phobos/eq/item.php?id=13068>Bat Wing</a><li><a href=http://phobos/eq/item.php?id=13071>Rat Whiskers</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul></td><td><p><b>You give Unsar Koldhagon : </b><a href=http://phobos/eq/item.php?id=13068>Bat Wing</a> (x2), <a href=http://phobos/eq/item.php?id=13071>Rat Whiskers</a>, <a href=http://phobos/eq/item.php?id=13070>Snake Scales</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten worse.</font>
+</td></tr></table>

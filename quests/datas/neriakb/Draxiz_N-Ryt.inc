@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=12807>Halfling Druid Master's Head</a><li><a href=http://phobos/eq/item.php?id=18957>Leatherfoot Raider Orders</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2284>Skinned Halfling Face Mask</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=331>The Spurned</a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=322>The Dead</a></ul></td><td><p><b>You give Draxiz N-Ryt : </b><a href=http://phobos/eq/item.php?id=12807>Halfling Druid Master's Head</a>
+<br><b>Draxiz N-Ryt says </b>'I have foreseen your arrival, [Your Name]. I see from the mind of this lesser creature you have slain that he was receiving orders from beyond the boundaries of Nektulos. I see an armored Leatherfoot moving cautiously through the commonlands attempting to avoid the eyes of travelers and guard posts. Find this Leatherfoot I see in my visions and return any pertinent information he may be carrying to me so that I may decipher it. I have skinned the face of this druid and enchanted it so that you may learn what you must through your skills of subterfuge. Go now, [Your Name], and do not disappoint me!'
+<br><b>Draxiz N-Ryt gives you : </b><a href=http://phobos/eq/item.php?id=2284>Skinned Halfling Face Mask</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=322>The Dead</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=331>The Spurned</a> has gotten better.</font>
+<p><b>You give Draxiz N-Ryt : </b><a href=http://phobos/eq/item.php?id=18957>Leatherfoot Raider Orders</a>
+<br><b>Draxiz N-Ryt says </b>'I see you are more cunning than you appear, [Your Name]. These orders to Whoopal bring disturbing news indeed. It seems there is a Leatherfoot spy somewhere in Neriak who has been providing the raiders with information. Find this spy and return his head and your initiate holy symbol of Innoruuk to Ithvol and if he deems you worthy he will promote you within the ranks of the Spires.'
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=41104>#a_leatherfoot_spy</a></b> spawns (-506.42,-158.12,-4.91).</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=322>The Dead</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=331>The Spurned</a> has gotten better.</font>
+<br><b>Draxiz N-Ryt says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=10644>Mud Burrower Carapace</a><li><a href=http://phobos/eq/item.php?id=10645>Muck Digger Carapace</a><li><a href=http://phobos/eq/item.php?id=10646>Grime Tunneler Carapace</a><li><a href=http://phobos/eq/item.php?id=10647>Sediment Delver Carapace</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=85054>Paludal Carapace Shield</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=132>Guardians of Shar Vahl</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Sentry Kedra Kai says </b>'Well met wanderer. Pay heed to the road you chose to travel on, for there are many [hazards] you may come across no matter which direction you chose.'
+<p><b>You say, </b>'hazards'
+<br><b>Sentry Kedra Kai says </b>'The western road passes through a dangerous part of the thickets. A rivalry between the strange Tegi clans is afoot. Pay close attention, for the darker ones seem much more hostile than the ones that came before them. The Northern road passes through to the [Paludal] caverns. Once it was a rather safe trade route to the city of Shadow Haven. It has since fallen to regular brigand attacks.. We still get traders coming to sell their wares, but the journey is far more treacherous these days.'
+<p><b>You say, </b>'paludal'
+<br><b>Sentry Kedra Kai says </b>'What is Paludal? The Paludal caverns mark the trade route to Shadowhaven. A series of tunnels that burrow into the very heart of Luclin. I would be very careful of the creatures that burrow through these caverns. They are very dangerous and will show no mercy on young adventurers. If you come across these creatures bring me four different carapaces shells and I will reward you with a shield made from them.'
+<p><b>You give Sentry Kedra Kai : </b><a href=http://phobos/eq/item.php?id=10644>Mud Burrower Carapace</a>, <a href=http://phobos/eq/item.php?id=10645>Muck Digger Carapace</a>, <a href=http://phobos/eq/item.php?id=10646>Grime Tunneler Carapace</a>, <a href=http://phobos/eq/item.php?id=10647>Sediment Delver Carapace</a>
+<br><b>Sentry Kedra Kai gives you : </b><a href=http://phobos/eq/item.php?id=85054>Paludal Carapace Shield</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=132>Guardians of Shar Vahl</a> has gotten better.</font>
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Sentry Kedra Kai says </b>'I don't need these items, [Your Name]. You can have them back.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

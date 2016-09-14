@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<p><b>You say, </b>'Darkness Beckons'
+<p><b>You say, </b>'the war drums echo'
+<p><b>You say, </b>'I will destroy the plaguebringer'
+<p><b>You say, </b>'I am familiar with Order'
+<p><b>You say, </b>'My Valor is Unmatched'
+<p><b>You say, </b>'I will defeat the Storm Lord'
+<p><b>You say, </b>'I am ready to face Lord Mithaniel Marr'
+<p><b>You say, </b>'I will defeat Saryrn'
+<p><b>You say, </b>'No gladiator shall match me'
+<p><b>You say, </b>'I am a child of fire'
+<p><b>You say, </b>'I am worthy of the elemental planes'
+</td></tr></table>

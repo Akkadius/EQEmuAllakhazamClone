@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Annaelia Wylassi says </b>'If you have nothing other than a hail to offer me you best move along. I need concentration to study these odd bones that I unearthed.  Funny thing about them though. they seem to resonate a hum.   Quite unusual. you probably aren't interested in that though.'
+</td></tr></table>

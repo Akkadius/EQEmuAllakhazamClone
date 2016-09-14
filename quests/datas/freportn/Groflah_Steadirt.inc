@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=18818>A tattered flier</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=18818>A tattered flier</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Groflah Steadirt says </b>'Greetings, adventurer! Certainly a person who looks as hardened as yourself deserves a fine blade to match your prowess. Here at Groflah's Forge, we supply you with only the finest quality weapons.'
+<p><b>You say, </b>'Do you know Ariska Zimel'
+<br><b>Groflah Steadirt says </b>'Zimel!! I do not know who you mean. Now go away. I am very busy. I will not talk here!!'
+<p><b>You give Groflah Steadirt : </b><a href=http://phobos/eq/item.php?id=18818>A tattered flier</a>
+<br><b>Groflah Steadirt says </b>'Where did you find this? This was the main price list of Zimel's Blades, but it should be all burnt up. I was at Zimel's right after the fire and I did not see it hanging where it should have been. The entire inside was gutted and . . . wait . . . the sequence of the dots!! Hmmm. I cannot talk with you here. Meet me at the Seafarer's by the docks at night. Give me the note when next we meet.'
+<br><b>Groflah Steadirt gives you : </b><a href=http://phobos/eq/item.php?id=18818>A tattered flier</a>
+<p><b>You give Groflah Steadirt : </b>
+<br><b>Groflah Steadirt says </b>'Where did you find this? This was the main price list of Zimel's Blades, but it should be all burnt up. I was at Zimel's right after the fire and I did not see it hanging where it should have been. The entire inside was gutted and . . . wait . . . the sequence of the dots!! Hmmm. I cannot talk with you here. Meet me at the Seafarer's by the docks at night. Give me the note when next we meet.'
+<br><b>Groflah Steadirt gives you : </b><a href=http://phobos/eq/item.php?id=18818>A tattered flier</a>
+<br><b>Groflah Steadirt says </b>'Where did you find this? This was the main price list of Zimel's Blades, but it should be all burnt up. I was at Zimel's right after the fire and I did not see it hanging where it should have been. The entire inside was gutted and . . . wait . . . the sequence of the dots!! Hmmm. I cannot talk with you here. Meet me at the Seafarer's by the docks at night. Give me the note when next we meet.'
+<br><b>Groflah Steadirt gives you : </b><a href=http://phobos/eq/item.php?id=18818>A tattered flier</a>
+</td></tr></table>

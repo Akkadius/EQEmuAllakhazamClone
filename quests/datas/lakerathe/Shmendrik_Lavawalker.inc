@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28044>Lord Bergurgle's Crown</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=28045>Oil of Fennin Ro</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Shmendrik Lavawalker says </b>'Hail, good [Your Name]!! Be wary near the waters of Lake Rathe! The Riptide goblin king, Lord Bergurgle, has been commanding his minions to murder and rob all who come near it! I am here seeking his death but I am afraid I am no match for all of his subjects. I shall reward you greatly for the death of Lord Bergurgle. I simply ask that you bring me his crown as proof.'
+<hr><b>When Shmendrik Lavawalker is killed </b>
+<p><b>You give Shmendrik Lavawalker : </b><a href=http://phobos/eq/item.php?id=28044>Lord Bergurgle's Crown</a>
+<br><font color=green><b>Shmendrik Lavawalker </b>shoves the crown into a scorch marked leather satchel and cackles uncontrollably as madness twists his features and flames dance in his eyes. 'You, [Your Name], have reduced the Riptides into chaos! Without a king to keep them in control they will ravage the settlements surrounding this lake! After the slaughter I shall return and easily burn the remainder of the villages and fishing shanties to the ground! None shall escape the fires of the Tyrant!!'</font>
+<br><b>Shmendrik Lavawalker gives you : </b><a href=http://phobos/eq/item.php?id=28045>Oil of Fennin Ro</a>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=51138>#Natasha_Whitewater</a></b> spawns (3627.3,111,51).</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

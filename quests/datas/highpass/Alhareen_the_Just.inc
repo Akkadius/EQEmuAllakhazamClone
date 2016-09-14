@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Alhareen the Just says </b>'Hail and well met. [Your Name]. I am Alhareen the Just. herald and servant of The Tribunal. Judge and adjudicator of mortal deeds. Sent down from the Realm of Heroes. I have been given the duty of bestowing honor and due recognition on those whose deeds have been found worthy in the eyes of the gods for divine honor and reward.'
+</td></tr></table>

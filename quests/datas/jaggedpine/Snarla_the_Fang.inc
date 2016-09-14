@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Snarla the Fang says </b>'Shhh. quiet! This is place of solitude and peace! You [respect temple] while you here if you know what good for you!'
+<p><b>You say, </b>'i respect the temple'
+<br><b>Snarla the Fang says </b>'One way guests show respect is to bring the host [food]. Something really good would be nice.'
+<p><b>You say, </b>'what food'
+<br><b>Snarla the Fang says </b>'Lessee. . . Dryad Pate is what I want. Bring me some [Dryad Pate] and then you be a good guest. Maybe then I return a favor for you.'
+<p><b>You say, </b>'what dryad pate'
+<br><b>Snarla the Fang says </b>'I don't know how it made. Talk to the Braguss about it. He the cook.'
+<p><b>You say, </b>'i respect temple'
+<br><b>Snarla the Fang says </b>'One way guests show respect is to bring the host [food]. Something really good would be nice.'
+</td></tr></table>

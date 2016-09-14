@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a><li><a href=http://phobos/eq/item.php?id=3653>Unfired Bowl of the Jharin</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17236>Young Hopperhide Sack</a><li><a href=http://phobos/eq/item.php?id=3655>Stretched Hopperhide</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Broker Fahaar says </b>'Hello [Your Name]. if you know any citizens looking for work please tell them to show me their acrylia slate.'
+<p><b>You give Broker Fahaar : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+<br><b>Broker Fahaar says </b>'Excellent. I can always use someone eager to work. I require young rockhopper hides to stretch for some special tailoring projects. Combine in this sack the hides of four young rockhoppers and return to me the full hopperhide sack. I will give you a stretched hide in return.'
+<br><b>Broker Fahaar gives you : </b><a href=http://phobos/eq/item.php?id=17236>Young Hopperhide Sack</a>
+<p><b>You give Broker Fahaar : </b><a href=http://phobos/eq/item.php?id=3653>Unfired Bowl of the Jharin</a>
+<br><b>Broker Fahaar says </b>'Very nice. I thank you [Your Name]. Here is the stretched hide I promised. and a leather cord I made from the scraps. If you have no need for the hide itself. any merchant will purchase it from you. If you desire to become my apprentice. save four of the cords that you earn from me and return them when you desire to learn more.  May the spirits guide and protect you!'
+<br><b>Broker Fahaar gives you : </b><a href=http://phobos/eq/item.php?id=3655>Stretched Hopperhide</a>
+</td></tr></table>

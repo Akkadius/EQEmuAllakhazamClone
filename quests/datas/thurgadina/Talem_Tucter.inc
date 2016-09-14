@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1859>Velium etched rune</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2040>Rune Casing Pattern</a><li><a href=http://phobos/eq/item.php?id=1859>Velium etched rune</a></ul></td><td><p><b>You say, </b>'casing'
+<br><b>Talem Tucter says </b>'Combine two platinum bars, a small piece of velium and the casing pattern in a Jeweler's kit. Take the completed casing and the rune and combine them in the same kit. When this is done all that's left is to tailor the rune to the shawl with the pattern. Take the finished product to Borannin, I'm sure he's eager to speak with you.'
+<p><b>You give Talem Tucter : </b><a href=http://phobos/eq/item.php?id=1859>Velium etched rune</a>
+<br><b>Talem Tucter says </b>'I've heard of your mission, [Your Name]. I must admit that I had my doubts you'd make it this far. The rune's creation is nearly impossible for even the most skilled of Coldain craftsmen. You should be exceedingly proud. Many have attempted this feat and nearly all have lacked the skill, faith, patience and persistence that is prerequisite for what destiny holds in store for you. You are now ready to use this pattern to construct the sacred rune's casing and complete the runed shawl.'
+<br><b>Talem Tucter gives you : </b><a href=http://phobos/eq/item.php?id=2040>Rune Casing Pattern</a>
+<br><b>Talem Tucter gives you : </b><a href=http://phobos/eq/item.php?id=1859>Velium etched rune</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

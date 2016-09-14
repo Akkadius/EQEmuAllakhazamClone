@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Tronso Namistail says </b>'Hail dere to you as well [Your Name]. me name is Tronso Namistail. I am a carpenter in this here Shadowhaven and responsible for many of the fine structures that we have here. I have lived in this city for quite some time. and know me way around pretty well I would say. So I thought I would help out the new folks a bit. Are you a [newcomer] to the Haven?'
+<p><b>You say, </b>'I am a newcomer'
+<br><b>Tronso Namistail says </b>'Ah excellent to hear dat. Well it sure is great to have ye here. we have many places to see and so many different merchants with such an assortment of goods that you are sure to find what ya need here or in the Bazaar. I can also give you a tour of the Haven if you would like to learn yer way around!'
+</td></tr></table>

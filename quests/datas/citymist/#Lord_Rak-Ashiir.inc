@@ -1,0 +1,6 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1673>Child's Tear</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=342>True Spirit</a></ul></td><td><p><b>You give #Lord Rak-Ashiir : </b><a href=http://phobos/eq/item.php?id=1673>Child's Tear</a>
+<br><font color=green><b>#Lord Rak-Ashiir </b>looks down at the tear in his hand and says 'A minion of my god came to me one night. I knew it was of Cazic-Thule as I was frozen in terror. My mind screamed for me to flee but my body would not respond. The being took my daughter and vanished to only he knew where. When I regained control of my body and thoughts, I felt nothing but betrayal. I don't care anymore about anything. If you want repentance then slay me, [Your Name]</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=342>True Spirit</a> has gotten better.</font>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=90183>#Lord_Rak`Ashiir_</a></b> spawns.</font>
+<br><b>#Lord Rak-Ashiir disappears.</b>
+</td></tr></table>

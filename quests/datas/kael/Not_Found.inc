@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Not Found says </b>'Greetings. [Your Name].  I am the captain of the Kael militia.  I will be watching those of your kind who have come to Kael Drakkel as mercenaries and bounty hunters.  You may have come here to serve king Tormax but Kael is my home and I intend to keep it a safe place for the Kromzek.  Keep yourself out of trouble or you will end up in a world of pain.'
+</td></tr></table>

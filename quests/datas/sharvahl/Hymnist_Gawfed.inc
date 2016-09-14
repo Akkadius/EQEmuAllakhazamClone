@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=3659>Buckler of the Jharin Recruit</a><li><a href=http://phobos/eq/item.php?id=5957>Unfired Vase Replica</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=5954>Gawfed's Receipt</a><li><a href=http://phobos/eq/item.php?id=17611>Large Cloth Sack</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul></td><td><p><b>You give Hymnist Gawfed : </b><a href=http://phobos/eq/item.php?id=3659>Buckler of the Jharin Recruit</a>
+<br><b>Hymnist Gawfed says </b>'Very well met. young friend.  I assume that Gherik has sent you to me for the purpose of training you.  Unforunately. I will not be doing any formal training for the several days.  I'm taking a bit of a holiday to celebrate my wife's birthday.  If you could take this receipt to the merchant for me before my wife gets home. I'd appreciate it.  I'll place you at the top of my training list as well.'
+<br><b>Hymnist Gawfed gives you : </b><a href=http://phobos/eq/item.php?id=5954>Gawfed's Receipt</a>
+<p><b>You give Hymnist Gawfed : </b><a href=http://phobos/eq/item.php?id=5957>Unfired Vase Replica</a>
+<br><b>Hymnist Gawfed gives you : </b><a href=http://phobos/eq/item.php?id=17611>Large Cloth Sack</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+</td></tr></table>

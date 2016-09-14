@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=29881>Shard of the Shoulder</a><li><a href=http://phobos/eq/item.php?id=29882>Shard of the Eye</a><li><a href=http://phobos/eq/item.php?id=29883>Shard of the Hand</a><li><a href=http://phobos/eq/item.php?id=29884>Shard of the Heart</a></ul></td><td><p><b>You say, </b>'hail'
+<p><b>You say, </b>'serve.*katta'
+<p><b>You give Elnerick Augustleaf : </b><a href=http://phobos/eq/item.php?id=29881>Shard of the Shoulder</a>, <a href=http://phobos/eq/item.php?id=29882>Shard of the Eye</a>, <a href=http://phobos/eq/item.php?id=29883>Shard of the Hand</a>, <a href=http://phobos/eq/item.php?id=29884>Shard of the Heart</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

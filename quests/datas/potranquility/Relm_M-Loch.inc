@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=10092>Fuligan Soulstone of Innoruuk</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Relm M-Loch says </b>'Greetings, traveler. Do you find the Plane of Tranquility interesting? Myself, hmm . . . I'm afraid it rather bores me. I have read these ancient tomes, watched the waves lap lazily against the shore, quietly observed the Weavereaders while they ply their trade - and it does nothing for me. My thoughts always return to the one place that has utterly captured my fascination, Innoruuk's realm: the Plane of Hatred. There are not words to describe the exhilarating emotions of rage, terror and anxiety that overwhelm me while in his domain. Unfortunately, my obligations require me to tarry here awhile longer, but if you would like to visit Hate I can take you there. Give me a Fuligan Soulstone to focus upon and I can transport a single person.'
+<p><b>You give Relm M-Loch : </b><a href=http://phobos/eq/item.php?id=10092>Fuligan Soulstone of Innoruuk</a>
+<br><b>Relm M-Loch says </b>'Enjoy the exquisite anger, [Your Name], and give my regards to Innoruuk!'
+<br><font color=brown><b>Relm M-Loch casts a spell : </b><a href=http://phobos/eq/spell.php?id=666>Alter Plane: Hate</a>.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Trainee Larden says </b>'I agree with Karim. I went on a scouting mission into the gor taku caves, they were definitely building fortifications. They have a slew of builders constructing defences from the stones collected by the workers. We have to strike them before they have finished their preperations for battle.'
+</td></tr></table>

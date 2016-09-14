@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Kaleras Darkanvil says </b>'Good day t'ye. traveler. If ye be in need of smithin' supplies. then ye've certainly come t'the right place. friend! The Darkanvils have many supplies needed for crafting some of the finest weapons and armor the universe has ever seen. and they are offered t'ye. . . At a fair price. a'course.'
+</td></tr></table>

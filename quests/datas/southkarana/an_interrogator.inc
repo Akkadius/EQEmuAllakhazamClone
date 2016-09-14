@@ -1,0 +1,19 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2390>Head of Markus Cachexia</a><li><a href=http://phobos/eq/item.php?id=2391>Head of Morley Murrain</a><li><a href=http://phobos/eq/item.php?id=2395>Theodore's Confession</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2344>Confession Document</a><li><a href=http://phobos/eq/item.php?id=2387>Interrogator's Badge</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>an interrogator says </b>'I see you wish to become an interrogator. This is not a duty for the weak of heart you know. This job sometimes requires. .. an interrogator coughs, 'a little muscle I guess you would say.''
+<br><b>an interrogator says </b>'Nevertheless, we have an important job to do. There is a man by the name of Theodore Exanthem who is a known member of the Bloodsaber cult. He fled from Qeynos some time ago and we have been hot on his tail ever since.'
+<br><b>an interrogator says </b>'We have tracked this man down and we now know his whereabouts. However, we have bigger fish to fry today then just this low life. Theodore knows the location of two other individuals also suspected of hiding out here in the plains.'
+<br><b>an interrogator says </b>'Sadly, these fiends were the two that slipped into Surefall Glade and poisoned the waters there. Though the druids were able to quickly combine their efforts and neutralize the toxins with their magicks, grievous damage was done none the less. Two of the great protectors of the hills and the glade, Holly Windstalker and Cros Treewind, became seriously ill as did one of the glade's sacred bears.'
+<br><b>an interrogator says </b>'Holly and Cros, sickened as they were, removed themselves from the Hills to weather out their illness and to keep the disease from spreading further. During their absence, the Bloodsabers were easily able to traffic in the materials needed to complete their terrible work.'
+<br><b>an interrogator says </b>'Tragically, Cros Treewind was attacked by one of the sacred bears which was maddened by its illness. In his weakened state Cros was unable to defend himself and was killed by this defiled grizzly, one of the very creatures he was sworn to protect.'
+<br><b>an interrogator says </b>'So our goal is to pry the information we need from Theodore Exanthem so that we may bring these two fugitives to justice. After getting him to comply, you are to collect a confession from Theodore and have him lead us to the two fugitives. Give me Theodore's confession and the heads of these two fugitives and you shall have your badge.'
+<br><b>an interrogator says </b>'I believe I know where we can find him. Follow me please.'
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=14146>Theodore_Exanthem</a></b> spawns (10,10,).</font>
+<br><font color=white><b>The NPC moves to 7,7,.</b></font>
+<p><b>You say, </b>'Give me a confession document'
+<br><b>an interrogator says </b>'Here you are.''
+<br><b>an interrogator gives you : </b><a href=http://phobos/eq/item.php?id=2344>Confession Document</a>
+<p><b>You give an interrogator : </b><a href=http://phobos/eq/item.php?id=2391>Head of Morley Murrain</a>, <a href=http://phobos/eq/item.php?id=2395>Theodore's Confession</a>, <a href=http://phobos/eq/item.php?id=2390>Head of Markus Cachexia</a>
+<br><b>an interrogator says </b>'Excellent work, you did just fine today. You'll make a fine interrogator. Talk to Vegalys about advancing further.'
+<br><b>an interrogator gives you : </b><a href=http://phobos/eq/item.php?id=2387>Interrogator's Badge</a>
+<br><b>an interrogator disappears.</b>
+</td></tr></table>

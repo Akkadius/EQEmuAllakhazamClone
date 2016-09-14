@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1676>Woe</a><li><a href=http://phobos/eq/item.php?id=1677>Envy</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=1670>Marble Pebble</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Tabien the Goodly says </b>'Oh thank Marr you are here, [Your Name]. I was beginning to think I would be abandoned in my time of need. I have a [task] for you to complete in the name of my patron Mithaniel Marr.'
+<p><b>You say, </b>'task'
+<br><font color=green><b>Tabien the Goodly </b>displays his shield that must once have been shining and regal but is now scoured in cuts, dents, and chipped paint. He says, 'This shield is known as Marr's Promise. It is a sacred relic that was actually used by one of Mithaniel's angels on the Plane of Valor. Its value to our church is immeasurable and I have been charged with the protection of it. However, a patriarch of the false god, Bertoxxulous, is after my shield and me. He must be stopped! Please, destroy him and bring me proof of his death.</font>
+<p><b>You give Tabien the Goodly : </b><a href=http://phobos/eq/item.php?id=1677>Envy</a>, <a href=http://phobos/eq/item.php?id=1676>Woe</a>
+<br><b>Tabien the Goodly says </b>'Ahh, thank Mithaniel you have put Glaron and his terrible reign to an end! You have done the world a great service by carrying out my instructions. Take this gem and give it to the one who sent you. He will reward you as befits such an accomplished mercenary such as yourself. Oh, and Marr be with you!'
+<br><b>Tabien the Goodly gives you : </b><a href=http://phobos/eq/item.php?id=1670>Marble Pebble</a>
+<br><b>Tabien the Goodly disappears.</b>
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Hannis Silvertip says </b>'What are you doing back here?  We appreciate people trying to help. but I've got my hands full trying to keep Zurmsa from stepping on Trila as is.  I don't need another set of feet tromping around in here. Be on your way. traveler. There's nothing of interest for you here. I'm quite certain.'
+</td></tr></table>

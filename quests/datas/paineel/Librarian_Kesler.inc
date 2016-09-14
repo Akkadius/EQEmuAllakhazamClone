@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Librarian Kesler says </b>'Hello. researcher!  There are many things to be found here.  Our selection grows daily.  Would you [care for any books]?'
+<p><b>You say, </b>'i care for any books'
+<br><b>Librarian Kesler says </b>'Excellent!  I love to see the young so interested in knowledge.  What subject would you like to research? My most interesting topics today would have to be the Hole. old Paineel. the Underfoot. and the history of Paineel.'
+<p><b>You say, </b>'tell me about the history of paineel'
+<br><b>Librarian Kesler says </b>'Tis an excellent topic. [Your Name].  Much can be learned of a civilization if one first understands its history.  I hope you enjoy the book.'
+<p><b>You say, </b>'tell me about the hole'
+<br><b>Librarian Kesler says </b>'Here you are. [Your Name].  The book has old bindings and is worthless to most. but the value of knowledge is priceless.'
+<p><b>You say, </b>'tell me about the underfoot'
+<br><b>Librarian Kesler says </b>'Excellent choice. [Your Name].  The Underfoot is a mysterious place.  I hope you get as much from the book as I did.'
+<p><b>You say, </b>'tell me about the old paineel'
+<br><b>Librarian Kesler says </b>'Take this book. [Your Name].  It contains the history of the ancient city from which we came.'
+</td></tr></table>

@@ -1,0 +1,18 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=55253>A Smoldering Tentacle</a><li><a href=http://phobos/eq/item.php?id=55256>Seared Imp's Blood</a><li><a href=http://phobos/eq/item.php?id=55254>Seared Ooze</a><li><a href=http://phobos/eq/item.php?id=55255>Crystallized Soul of Fire</a><li><a href=http://phobos/eq/item.php?id=55260>Flame-Forged Vial</a><li><a href=http://phobos/eq/item.php?id=55257>Melted Hilt</a><li><a href=http://phobos/eq/item.php?id=55258>Shattered Blade</a><li><a href=http://phobos/eq/item.php?id=55259>Shattered Blade</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=55260>Flame-Forged Vial</a><li><a href=http://phobos/eq/item.php?id=55261>Ghaib's Flame-Forged Longsword</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>#Ghaib Zilal says </b>'Quiet, fool. The pathetic kobolds know not of my presence and I'd like to keep it that way. Though, I was hoping someone with your strength would come along. I am in need of your [aid].'
+<p><b>You say, </b>'aid'
+<br><b>#Ghaib Zilal says </b>'I've infiltrated this, the latest stronghold of the servants of Solusek Ro, to find a way to cast them out before they grow too strong. My excursions into the deeper caverns have led me to an answer, but I alone cannot retrieve what I require. If you [lend me your strength], I will in turn help you in your own destruction of our mutual foes.'
+<p><b>You say, </b>'lend you my strength'
+<br><b>#Ghaib Zilal says </b>'Excellent. Deeper within these caves lie many fierce denizens of flame. The kobolds fear them and rightly so for many dogs have fallen to the pure elemental might these creatures control. By harnessing this power, I believe I can produce a temper that once infused into a weapon will allow the owner to wield the very essence of fire itself. To create this temper, though, I need [raw materials].'
+<p><b>You say, </b>'raw materials'
+<br><b>#Ghaib Zilal says </b>'I need the very essence of the fire creatures that make their home here: pieces of flesh, drops of blood, fluids, bone or whatever else you can find that still radiates heat long after the creature is destroyed. I'll need parts from four different types of creatures to produce the temper. We've spoken long enough. You must go before you alert the kobolds to my presence. Return to me only once you have the materials.'
+<p><b>You give #Ghaib Zilal : </b><a href=http://phobos/eq/item.php?id=55253>A Smoldering Tentacle</a>, <a href=http://phobos/eq/item.php?id=55256>Seared Imp's Blood</a>, <a href=http://phobos/eq/item.php?id=55254>Seared Ooze</a>, <a href=http://phobos/eq/item.php?id=55255>Crystallized Soul of Fire</a>
+<br><b>#Ghaib Zilal says </b>'Quite excellent.  The kobolds have found pieces of a sword that was undone.  Bring me the three pieces along with this vial, and I will remake the blade.'
+<br><b>#Ghaib Zilal gives you : </b><a href=http://phobos/eq/item.php?id=55260>Flame-Forged Vial</a>
+<br><b>#Ghaib Zilal says </b>'I don't need this.'
+<p><b>You give #Ghaib Zilal : </b><a href=http://phobos/eq/item.php?id=55260>Flame-Forged Vial</a>, <a href=http://phobos/eq/item.php?id=55257>Melted Hilt</a>, <a href=http://phobos/eq/item.php?id=55258>Shattered Blade</a>, <a href=http://phobos/eq/item.php?id=55259>Shattered Blade</a>
+<br><b>#Ghaib Zilal says </b>'Amazing.  This should serve you well, take it and slaughter our mutual enemies, [Your Name]!'
+<br><b>#Ghaib Zilal gives you : </b><a href=http://phobos/eq/item.php?id=55261>Ghaib's Flame-Forged Longsword</a>
+<br><b>#Ghaib Zilal says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

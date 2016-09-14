@@ -1,0 +1,17 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=3887>The History of the Greenmist</a><li><a href=http://phobos/eq/item.php?id=3893>Note to Librarian Zimor</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=3895>A note to Oxyn</a><li><a href=http://phobos/eq/item.php?id=18320>Notes from the Greenmist Tome</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=62>Crusaders of Greenmist</a><li><a href=http://phobos/eq/faction.php?id=193>Legion of Cabilis</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Librarian Zimor says </b>'Hail, citizen, I hope that you are here to assist. We are gathering Crusaders to make an assault on the Libraries of Chardok. The slave creations have thrived in their sanctuary for too long. The tomes and texts they have stolen to fill their library belong us. They are even rumored to have a text on the Sacred Khukri of Rile, the Greenmist. If you see such a tome, you must bring it to me immediately. May Cazic-Thule guide you!'
+<p><b>You give Librarian Zimor : </b><a href=http://phobos/eq/item.php?id=3887>The History of the Greenmist</a>
+<br><font color=green><b>Librarian Zimor </b>looks disturbed as he examines the book. His hands tremble as he mouths the words on the ancient parchment pages. 'This book may alter the reality you see before you,' the scholar says as he continues to read the tome. 'The information that has been waiting in this book may have been brought to us by your hand, but your fate has obviously been chosen by our Lord. Our mystics have conveyed a new vision to us in this most recent season. Please take this note to Hierophant Oxyn, while I continue to translate this tome.' the Librarian hands you a note and turns his attention back to the book.</font>
+<br><b>Librarian Zimor gives you : </b><a href=http://phobos/eq/item.php?id=3895>A note to Oxyn</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=62>Crusaders of Greenmist</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=193>Legion of Cabilis</a> has gotten better.</font>
+<p><b>You give Librarian Zimor : </b><a href=http://phobos/eq/item.php?id=3893>Note to Librarian Zimor</a>
+<br><b>Librarian Zimor says </b>'I am very glad you have returned. Your discovery of the tynnonium is extraordinary! This Sarnak tome has been an incredible source of information. It appears that they have been studying the Greenmist for some time. I'm sure they sought it as nothing more than a trinket to be collected. Their shortsightedness will be their eventual undoing. I have compiled a book of notes that will aid you in your quest for the Greenmist. Please take care to keep this information out of the grasp of our enemies.'
+<br><b>Librarian Zimor gives you : </b><a href=http://phobos/eq/item.php?id=18320>Notes from the Greenmist Tome</a>
+<br><font color=yellow>You gain experience!!</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=62>Crusaders of Greenmist</a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=193>Legion of Cabilis</a> has gotten better.</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+<br><b>Librarian Zimor says </b>'I don't need that.'
+</td></tr></table>

@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Szrix Hammertail says </b>'speaks in a drawling hiss. his voice tainted with the dark accent of Cabilis. 'The Hammertails greet you. traveler. If you seek supplies of which to craft iron and steel weaponry. then you need search no further. The Hammertails will accommodate all of your needs at a fair price.''
+</td></tr></table>

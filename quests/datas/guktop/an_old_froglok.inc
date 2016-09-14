@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=11275>Picturebook</a><li><a href=http://phobos/eq/item.php?id=11274>Elf Essence</a><li><a href=http://phobos/eq/item.php?id=11276>Reet Froglok Crown</a><li><a href=http://phobos/eq/item.php?id=10254>Vial of Purified Mana</a><li><a href=http://phobos/eq/item.php?id=26999>Velium Mastodon Fur Cloak</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=18499>Elf Essence Recipe</a><li><a href=http://phobos/eq/item.php?id=11277>Crown of Deceit</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>an old froglok says </b>'Frroooaaaaaakkkk!'
+<p><b>You say, </b>'mask'
+<br><b>an old froglok says </b>'Frroooaaaaaakkkk! Speciaaal maaask I maaake for sneaky types! Lost long ago! Baaad frogs taaake! I too old to maaake more! Frroooaaaaaakkkk! Maaagic aaalmost used up! So cold! You help me! I help you!'
+<p><b>You say, </b>'help'
+<br><b>an old froglok says </b>'Frroooaaaaaakkkk! So cold! You bring me waaarm velium mastodon fur cloaaak! I need supplies! You bring me maaana juice! You bring me elf essence! You bring me sturdy froglock crown those naaasty big frogs stole! Frroooaaaaaakkkk! I maaake you something nice! So cold! You bring me all those things, don't forget cloaaak!'
+<p><b>You give an old froglok : </b><a href=http://phobos/eq/item.php?id=11275>Picturebook</a>
+<br><b>an old froglok says </b>'Frroooaaaaaakkkk! I'm in this book! You see me! Owww that flip hurt my old bones! Frroooaaaaaakkkk! Look there is a picture of my maaask from long ago! Frroooaaaaaakkkk! I keep book! You taaake this recipe! Maaaybe more! I'm in book! Frroooaaaaaakkkk!'
+<br><b>an old froglok gives you : </b><a href=http://phobos/eq/item.php?id=18499>Elf Essence Recipe</a>
+<p><b>You give an old froglok : </b><a href=http://phobos/eq/item.php?id=11274>Elf Essence</a>, <a href=http://phobos/eq/item.php?id=11276>Reet Froglok Crown</a>, <a href=http://phobos/eq/item.php?id=10254>Vial of Purified Mana</a>, <a href=http://phobos/eq/item.php?id=26999>Velium Mastodon Fur Cloak</a>
+<br><b>an old froglok says </b>'Frroooaaaaaakkkk!!! This cloaaak so waaarm! Here let me work! Frroooaaaaaakkkk!' The old froglok goes to work on the crown and after uttering a few froaks, a small cloud of smoke rises from the crown. You reach over and pick it up. 'Frroooaaaaaakkkk! Maaagic haaat! Taaake good care of it aaand staay away from baaad frogs! Frroooaaaaaakkkk!'
+<br><b>an old froglok gives you : </b><a href=http://phobos/eq/item.php?id=11277>Crown of Deceit</a>
+</td></tr></table>

@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=32403>Underbulk Bile</a><li><a href=http://phobos/eq/item.php?id=32510>Razor Fungus Spores</a><li><a href=http://phobos/eq/item.php?id=19836>Saprophyte Spores</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=19842>Tarafol's Pendant</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Priestess Tarafol says </b>'Oh, these poor forsaken souls. We must do whatever we can to help them. So far I've been unable to find anything that can cure their afflictions. I'm not even certain there is a cure. The least I've been able to do is ease some of their suffering.'
+<p><b>You say, </b>'cure'
+<br><b>Priestess Tarafol says </b>'I'm not certain what causes the disease that inflicts most of these people. I believe it's from living down in these caverns for so long. It seems most people have a natural immunity, but the few who are stricken are cursed to slowly rot to death. A most horrible and painful way to die. I wish I could do more than just ease their pain.'
+<p><b>You say, </b>'help'
+<br><b>Priestess Tarafol says </b>'You would be willing to do that? That would be great! I've heard of the possible curative powers of many things here on Luclin. I've been so busy here that I haven't been able to go out and search for any of the needed compounds. If you would be so kind as to collect some things for me I would be very appreciative.'
+<p><b>You say, </b>'collect'
+<br><b>Priestess Tarafol says </b>'Ok, I need you to find these things... Underbulk Bile, Razorfungus Spores and Saprophyte Spores. You should be able to be find them within the nearby cavern systems. Please return to me once you have acquired all the ingredients. Thank you very much for assisting. Good luck.'
+<p><b>You give Priestess Tarafol : </b><a href=http://phobos/eq/item.php?id=32403>Underbulk Bile</a>, <a href=http://phobos/eq/item.php?id=32510>Razor Fungus Spores</a>, <a href=http://phobos/eq/item.php?id=19836>Saprophyte Spores</a>
+<br><b>Priestess Tarafol says </b>'Thank you so much!! These will help so much in trying to find a cure for these people. Here, take this as a token of my gratitude.'
+<br><b>Priestess Tarafol gives you : </b><a href=http://phobos/eq/item.php?id=19842>Tarafol's Pendant</a>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

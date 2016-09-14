@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Jasila Maqul says </b>'Welcome friend. Should you need to store any of your belongings or coin. you'll find that this area is quite secure and your precious belongings will remain safe in our care.  You'll find Aelisian to be a fair broker if you wish to pick up a little extra clang in your coffers.'
+</td></tr></table>

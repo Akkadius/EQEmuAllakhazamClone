@@ -1,0 +1,4 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20372>Solusek Mining Company Invoice</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20370>Mechanical Doll</a></ul></td><td><p><b>You give Marfen Binkdie.pl : </b><a href=http://phobos/eq/item.php?id=20372>Solusek Mining Company Invoice</a>
+<br><b>Marfen Binkdie.pl says </b>'Ah! 'Bout time ye got yer lazy bones down here! I was beginnin' ta worry bout ya. Thought ye'd never pick the doll up. Me kin worked and toiled over this thing fer days. That Baenar was sure exact in every detail. For a special child, he said. Must be some child. He spent all he had and some he didn't. Still owes us a show! Anyway, I heard she passed away some time ago. Give the lad muh regards.'
+<br><b>Marfen Binkdie.pl gives you : </b><a href=http://phobos/eq/item.php?id=20370>Mechanical Doll</a>
+</td></tr></table>

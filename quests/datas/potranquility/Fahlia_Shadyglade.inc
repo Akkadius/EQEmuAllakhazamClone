@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Fahlia Shadyglade says </b>'I can see that you may be passionate to help others but now I must ask you to be about your own business. I sense that if you were to try to help you may befall the same fate as poor Tyllis. Perhaps you should become more experienced in travelling through the planes before you learn more about his condition.'
+<p><b>You say, </b>'Hail'
+<br><b>Fahlia Shadyglade says </b>'I can see that you may be passionate to help others but now I must ask you to be about your own business. I sense that if you were to try to help you may befall the same fate as poor Tyllis. Perhaps you should become more experienced in travelling through the planes before you learn more about his condition.'
+<p><b>You say, </b>'condition'
+<br><b>Fahlia Shadyglade says </b>'I can see that you may be passionate to help others but now I must ask you to be about your own business. I sense that if you were to try to help you may befall the same fate as poor Tyllis. Perhaps you should become more experienced in travelling through the planes before you learn more about his condition.'
+<p><b>You say, </b>'black cube'
+<br><b>Fahlia Shadyglade says </b>'I can see that you may be passionate to help others but now I must ask you to be about your own business. I sense that if you were to try to help you may befall the same fate as poor Tyllis. Perhaps you should become more experienced in travelling through the planes before you learn more about his condition.'
+<p><b>You say, </b>'Plane of Torment'
+<br><b>Fahlia Shadyglade says </b>'I can see that you may be passionate to help others but now I must ask you to be about your own business. I sense that if you were to try to help you may befall the same fate as poor Tyllis. Perhaps you should become more experienced in travelling through the planes before you learn more about his condition.'
+<p><b>You say, </b>'I will go'
+<br><b>Fahlia Shadyglade says </b>'I can see that you may be passionate to help others but now I must ask you to be about your own business. I sense that if you were to try to help you may befall the same fate as poor Tyllis. Perhaps you should become more experienced in travelling through the planes before you learn more about his condition.'
+</td></tr></table>

@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=30962>A Frosted Bag</a><li><a href=http://phobos/eq/item.php?id=18551>A Dar Khura Guild Summons</a><li><a href=http://phobos/eq/item.php?id=2897>Notarized Application</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=15225>Spell: Endure Cold</a><li><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a><li><a href=http://phobos/eq/item.php?id=2878>Initiate's Cloak of Shar Vahl</a></ul></td><td><p><b>You give Elder Spiritist Grawleh : </b><a href=http://phobos/eq/item.php?id=30962>A Frosted Bag</a>
+<br><b>Elder Spiritist Grawleh gives you : </b><a href=http://phobos/eq/item.php?id=15225>Spell: Endure Cold</a>
+<p><b>You give Elder Spiritist Grawleh : </b><a href=http://phobos/eq/item.php?id=18551>A Dar Khura Guild Summons</a>
+<br><b>Elder Spiritist Grawleh gives you : </b><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a>
+<p><b>You give Elder Spiritist Grawleh : </b><a href=http://phobos/eq/item.php?id=2897>Notarized Application</a>
+<br><b>Elder Spiritist Grawleh gives you : </b><a href=http://phobos/eq/item.php?id=2878>Initiate's Cloak of Shar Vahl</a>
+</td></tr></table>

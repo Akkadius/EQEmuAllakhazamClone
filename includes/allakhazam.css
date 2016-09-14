@@ -1,0 +1,329 @@
+@charset "iso-8859-1";
+
+BODY {
+	background-color: #d6c399;
+	background: #ffffff url(../images/bg_alla_ldark.gif);
+	color:			#000000;
+	font-family:		verdana,arial,helvetica;
+	font-weight:		normal;
+	font-size:		10pt;
+	text-align:		justify;
+	margin: 0px;
+	margin-top: 0px;
+	padding: 0px;
+}
+
+.page_background {
+	background-color: #000000;
+	background-image: url('../images/bg_alla_ldark.gif');
+}
+
+.main_page {
+	background-color: #d6c399;
+	background-image: url('../images/bg_alla.gif');
+	color:			#000000;
+	font-family:		verdana,arial,helvetica;
+	font-weight:		normal;
+	font-size:		10pt;
+	text-align:		justify;
+	margin: 0px;
+	margin-top: 0px;
+	padding: 0px;
+	border: #555555 1px solid;
+}
+
+
+A:link { 
+	text-decoration:  none; 
+	font-weight:	    none;
+	color: 		    #0000FF; 
+}
+
+A:active { 
+	text-decoration:  none; 
+	font-weight:	    none;
+	color: 		    #0000FF; 
+}
+
+A:visited { 
+	text-decoration:  none; 
+	font-weight:	    none;
+	color: 		    #0000FF; 
+}
+
+A:hover { 
+	text-decoration:  underline; 
+	font-weight:	    none;
+	color: 		    #0000FF; 
+}
+
+.form {
+	background-color: #d6c399;
+	color:            #000000;
+	text-align:       left;
+	font-size:		13;
+	font-weight:		normal;
+	padding:          2 4 2 4;
+	border:           #000000 1px solid;
+}
+
+TABLE {
+	font-family:		arial,helvetica;
+	font-weight:		normal; 
+	font-size:		  10pt;
+	text-align:		  inherit;
+	vertical-align:   top;
+	margin:           0px;
+	padding:          0px;
+}
+
+.tab_title {
+	font-weight:    bold;
+	text-align:     center;
+}
+
+.myheader {
+	background: url(../images/header_alla.gif) no-repeat center;
+	font-family: 'Arial', Times;
+	font-weight: bold;
+	text-align: right;
+	vertical-align: top;
+	text-decoration: none;
+	font-size: 26px;
+	color: #000000;
+}
+
+.myline {
+	background-image: url(../images/line_alla.gif);
+}
+
+.menu_title {
+	font-family: 'Arial', Times;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 11px;
+	border-style: outset; 
+	border-width: 1px;
+	background: url('../images/bgmenu_title_alla.gif');
+	padding:  0 4 0 4;
+} 
+
+.menu_item {
+	font-family: 'Arial', Times;
+	font-weight: normal;
+	text-decoration: none;
+	font-size: 12px;
+	border-style: none; 
+	border-width: 0px;
+	padding:  0 4 0 4;
+} 
+
+.page_title {
+	color:  #000000;
+	font-size:  20pt;
+	font-family: 'Arial';
+	font-weight:	bold; 
+	text-align: center;
+	font:Arial;
+	width:100%
+}
+
+.page_small_title {
+	color:  #000000;
+	font-size:  18pt;
+	font-family: 'Times New Roman';
+	font-weight:		bold; 
+	text-align:		left;
+	padding:  0 4 0 4;
+}    
+
+.headerrow {
+	background: #B1A67E; 
+	color: black;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0px;
+}
+
+.menuh {
+	font-weight:bold;
+	border-style:solid;
+	border-color:#e5e5e5 #696969 #696969 #e5e5e5;
+	border-width:1px;
+	background:url('../images/bgmenu_title_alla.gif');
+}
+
+.lr, .s2-lr {
+	background:#d4c7ab url('../images/bg_alla_light.gif');
+}
+
+.dr, .s2-dr {
+	background:#d7c69a url('../images/bg_alla_dark.gif');
+}
+
+.header_cell {
+	font-weight:bold;
+	font-size: 20pt;
+}
+
+#easyTooltip{
+	padding:5px 10px;
+	border:1px solid #195fa4;
+	background:#195fa4 repeat-x;
+	color:#fff;
+	}
+
+#easyTooltip2{
+	padding:5px 10px;
+	border:1px solid #000000;
+	background:#5e5e5e repeat-x;	
+	color:#fff;
+	/*
+	width:450px;
+	*/
+	width:450px;
+	}
+#easyTooltip2 h4, #easyTooltip2 p, #easyTooltip2 table{
+	color:#fff;
+	margin:.25em 0;
+	
+	}	
+	
+input[type=text]
+, input[type=password] 
+, textarea
+, select
+{
+	font-family: Verdana, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+	font-size: 12px;
+	color: #424242;
+	padding: 3px;
+	border: 1px solid #CCC;
+	outline: none;
+	
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;	
+	
+	-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .15) inset;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15) inset;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, .15) inset;
+	
+	-moz-transition: border .2s linear, box-shadow .2s linear;
+	-webkit-transition: border .2s linear, -webkit-box-shadow .2s linear;
+	 
+}
+
+input[type=text]:focus 
+, input[type=password]:focus
+, textarea:focus
+, select:focus
+{
+    border: 1px solid #80bfff;
+    
+    -moz-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    -webkit-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+    box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
+}
+
+/* For modern browsers */
+.cf:before,
+.cf:after {
+    content:"";
+    display:table;
+}
+
+.cf:after {
+    clear:both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.cf {
+    zoom:1;
+}
+
+/* =Dropdown
+----------------------------------------------- */
+.dropdown .item { padding-right: 25px; }
+
+	.dropdown .arrow { 
+		background: url(../images/layout/nav_arrow_lite.png) no-repeat 0 0;
+		width: 8px;
+		height: 4px;	
+		display: block;	
+		margin-top: -2px;	
+		position: absolute;	
+		top: 50%;
+		right: 10px;
+	}
+	
+	.dropdown .item.icon { padding-right: 20px; }
+		.dropdown .item.icon span { left: 0; }
+		
+		/* =Btn
+----------------------------------------------- */
+.btn
+, .btn:visited {
+	background-repeat: repeat-x;
+	background-position: 0 0;
+	
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	line-height: normal;	
+	color: #FFF;
+	
+	display: inline-block;
+	margin: 0;
+	*overflow: visible; 
+	
+	position: relative;	
+	
+	border: none;
+	border-width: 1px;
+	border-style: solid;
+	
+	cursor: pointer;
+	
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;	
+	
+	text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+	
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+	
+}
+
+div.pagination {
+	padding: 3px;
+	margin: 3px;
+}
+
+div.pagination a {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #999999;
+	text-decoration: none; /* no underline */
+}
+
+div.pagination a:active, div.pagination a:hover {
+	border: 1px solid #ffffff;
+}
+
+div.pagination span.current {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #ffffff;
+	font-weight: bold;
+}
+
+div.pagination span.disabled {
+	padding: 2px 5px 2px 5px;
+	margin: 2px;
+	border: 1px solid #EEE;
+}
+
+	

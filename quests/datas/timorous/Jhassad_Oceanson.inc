@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28048>Orb of Clear Water</a><li><a href=http://phobos/eq/item.php?id=28049>Orb of Frozen Water</a><li><a href=http://phobos/eq/item.php?id=28050>Orb of Vapor</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=28023>Orb of the Triumvirate</a></ul></td><td><p><b>You give Jhassad Oceanson : </b><a href=http://phobos/eq/item.php?id=28048>Orb of Clear Water</a>, <a href=http://phobos/eq/item.php?id=28049>Orb of Frozen Water</a>, <a href=http://phobos/eq/item.php?id=28050>Orb of Vapor</a>
+<br><font color=green><b>Jhassad Oceanson </b>kneels in the sand and places the three orbs into a large abalone shell bowl. A blue glow surrounds his hands as he waves them over the orbs resting in the bowl. The orbs crack and fall apart, releasing their contents, then reform into a single glowing orb. Jhassad Oceanson gently removes the Orb of the Triumvirate and places it in your hands.</font>
+<br><b>Jhassad Oceanson says </b>'The Avatar of Water approaches. You must hand him the Orb of the Triumvirate and it will be decided if it is your destiny to wield the Nem Ankh Sprinkler.'
+<br><b>Jhassad Oceanson gives you : </b><a href=http://phobos/eq/item.php?id=28023>Orb of the Triumvirate</a>
+<br><font color=white><b><a href=http://phobos/eq/npc.php?id=96086>Avatar_of_Water</a></b> spawns (1,10,).</font>
+<br><b>Jhassad Oceanson disappears.</b>
+</td></tr></table>

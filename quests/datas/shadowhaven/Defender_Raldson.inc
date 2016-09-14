@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=4764>A List of Potion Components</a></ul></td><td><p><b>You say, </b>'hail'
+<br><b>Defender Raldson says </b>'Good day to you, [Your Name]. A fine day it is today in the Haven. I hear the bazaar is full of great deals today. I'd love to go and check them out for myself unfortunately I'm stuck here worrying about my friend [Daksins].'
+<p><b>You say, </b>'daksins'
+<br><b>Defender Raldson says </b>'Well, I know that he told me he was going to the Tenebrous Mountains to try to acquire the blood of one of the cursed vampyres there. A very brave gnome he is, but also sometimes not very aware of what he is getting himself into. He told me that he needed to bring it to Zimloro so that a potion could be made to cure his sick sister. She was attacked by one of the cursed not too long ago. Perhaps you could go [lend him a hand] so that he could return sooner. His family is very worried about him.'
+<p><b>You say, </b>'lend him a hand'
+<br><b>Defender Raldson says </b>'That is very nice of you, [Your Name]. I'm sure his family will be very grateful. He should not be there alone and we fear the worst for him. If you are to go search for him, please bring him this note from Zimloro that contains further instructions. Please seek him out and do your best to convince him to come home.'
+<br><b>Defender Raldson gives you : </b><a href=http://phobos/eq/item.php?id=4764>A List of Potion Components</a>
+</td></tr></table>

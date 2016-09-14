@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Gralin Silvertooth says </b>'Thank you for coming to Shandeling's Casino! If you would like to try your luck at a game of chance, I can offer you a game of King's Court with prizes best suited for any shadow knight, ranger, beastlord, bard, or paladin. To play, buy a token from any of the waitresses and hand it to me when ready.'
+</td></tr></table>

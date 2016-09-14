@@ -1,0 +1,14 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a><li><a href=http://phobos/eq/item.php?id=2875>Stamped Certificate of Taxability</a><li><a href=http://phobos/eq/item.php?id=2876>Acrylia Slate</a><li><a href=http://phobos/eq/item.php?id=18304>Note from King Raja</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=2874>Certificate of Taxability</a><li><a href=http://phobos/eq/item.php?id=18299>Note to King Raja</a><li><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a><li><a href=http://phobos/eq/item.php?id=2897>Notarized Application</a></ul></td><td><p><b>You give Registrar Bindarah : </b><a href=http://phobos/eq/item.php?id=2873>Application for Citizenship</a>
+<br><b>Registrar Bindarah says </b>'Young [Your Name], I will be happy to process your registration for you. While I etch your name on our people's book of records I will require you to run a couple of errands. Take this certificate to the tax collector and obtain his seal. While you're out doing that, have Mignah create your personal Acrylia slate for you. Bring both the seal and the slate to me as soon as you can.'
+<br><font color=yellow>You gain experience!!</font>
+<br><b>Registrar Bindarah gives you : </b><a href=http://phobos/eq/item.php?id=2874>Certificate of Taxability</a>
+<p><b>You give Registrar Bindarah : </b><a href=http://phobos/eq/item.php?id=2875>Stamped Certificate of Taxability</a>, <a href=http://phobos/eq/item.php?id=2876>Acrylia Slate</a>
+<br><b>Registrar Bindarah says </b>'Ahh, there you are. I was about to send someone looking for you. Everything seems to be in order here, only one task remains. You must gain audience with the king and swear fealty to his highness by handing him this document. Return to me when this is done.'
+<br><b>Registrar Bindarah gives you : </b><a href=http://phobos/eq/item.php?id=18299>Note to King Raja</a>
+<p><b>You give Registrar Bindarah : </b><a href=http://phobos/eq/item.php?id=18304>Note from King Raja</a>
+<br><b>Registrar Bindarah says </b>'Well done, [Your Name], I am honored to be the first to welcome you to citizenship of Shar Vahl! May you serve our society as well as it serves you. Return to your guildmaster and present both the slate and the application to him. The acrylia slate shall henceforth serve as proof of your citizenship.'
+<br><b>Registrar Bindarah gives you : </b><a href=http://phobos/eq/item.php?id=2877>Acrylia Slate of Shar Vahl</a>
+<br><b>Registrar Bindarah gives you : </b><a href=http://phobos/eq/item.php?id=2897>Notarized Application</a>
+<br><b>Registrar Bindarah says </b>'Oh, by the way, be careful with this as it will be important for recording your service to our society. If you should somehow lose it, ask me about your slate and I will issue you a new one.'
+<br><font color=yellow>You gain experience!!</font>
+</td></tr></table>

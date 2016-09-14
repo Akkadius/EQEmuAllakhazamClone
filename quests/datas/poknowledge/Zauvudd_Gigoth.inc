@@ -1,0 +1,13 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28787>Planar Blood Brew</a><li><a href=http://phobos/eq/item.php?id=28745>Planar Traveler's Manual</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=28788>Beginner Combat Manual</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Zauvudd Gigoth says </b>'Hello. [Your Name].  If you are looking for something in particular. I might be able to help you.  I spent many years teaching combat techniques to the finest warriors in Grobb.  I came to New Tanaan to further develop my teaching skills; it seems we all have our own lessons to learn.  I can teach you a few things if you are looking to be taught.  I will teach you the basics of planar combat if you are [willing to learn].'
+<p><b>You say, </b>'willing to learn'
+<br><b>Zauvudd Gigoth says </b>'This is good. One of the most important aspects to your battle readiness is your strong willpower and bravery. Years ago I discovered a particular concoction that will very readily put your willpower to the test. Unfortunately I ran out not too long ago and I am in need of some more [Planar Blood Brew]. If you can make some more for my students, it would certainly look favorably upon you in your future teachings. Bring me some along with your Planar Traveler's Manual.'
+<p><b>You say, </b>'planar blood brew'
+<br><b>Zauvudd Gigoth says </b>'To make the infamous Planar Blood Brew, you must attain some Nightmare Mephit Blood, Slarghilug Blood, Bubonian Blood, Soda Water, Grapes, a Cask, a Cork, and a Corking Device. Mix them in a Brew Barrel, and if you are skilled enough, the resulting swill should curl the hairs on even the hardiest of traveler's heads!'
+<p><b>You give Zauvudd Gigoth : </b><a href=http://phobos/eq/item.php?id=28787>Planar Blood Brew</a>, <a href=http://phobos/eq/item.php?id=28745>Planar Traveler's Manual</a>
+<br><b>Zauvudd Gigoth says </b>'How tasty!! You have done well here, I can't remember how long it's been since I've tasted a brew so fine. Take this book, it will certainly help you in combat. When you are ready, Gwiraba Gelrid will give you your next lesson, so be sure to speak to him. Do not lose your book or else he may not appreciate you coming to class unprepared.'
+<br><b>Zauvudd Gigoth gives you : </b><a href=http://phobos/eq/item.php?id=28788>Beginner Combat Manual</a>
+<br><b>Zauvudd Gigoth says </b>'I don't need this.'
+<br><b>Zauvudd Gigoth says </b>'I don't need this.'
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

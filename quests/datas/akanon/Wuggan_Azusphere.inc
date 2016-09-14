@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=18772>Registration Letter</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=13521>Dusty Gold Robe*</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=11204></a><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul><b>Factions lowered :</b><ul><li><a href=http://phobos/eq/faction.php?id=303>Snowfang Gnolls</a><li><a href=http://phobos/eq/faction.php?id=305>Solusek Mining Co</a></ul></td><td><p><b>You give Wuggan Azusphere : </b><a href=http://phobos/eq/item.php?id=18772>Registration Letter</a>
+<br><b>Wuggan Azusphere says </b>'Welcome to Library Mechanimagica.  I am Master Magician Wuggan Azusphere. and I will help to teach you the ways of summoning.  Here is our guild tunic. make us proud.'
+<br><b>Wuggan Azusphere gives you : </b><a href=http://phobos/eq/item.php?id=13521>Dusty Gold Robe*</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=11204></a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=303>Snowfang Gnolls</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=305>Solusek Mining Co</a> has gotten worse.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+</td></tr></table>

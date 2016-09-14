@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Hizaklom Traeton.pl says </b>'Well hey there youngin', what brings you to this neck of the woods?  Lookin' to buy one of my trained [drogmors] are ya?  Well ya come to the right place.  I've the best prices in all of the land when it comes to drogmors.  And you'll not find a better display of fine animals anywhere!  So if ya got the coin and the inclination, I've got just the thing to improve your traveling situation.  Step right up and take a look.'
+</td></tr></table>

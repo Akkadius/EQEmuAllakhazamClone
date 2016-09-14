@@ -1,0 +1,11 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'i am well'
+<br><b>Lord Nethryn says </b>'Excellent! It is quite a pleasant day. indeed. However. I am curious. and I do not mean [to pry]. but by what grace of Tunare have I the pleasure of your company? Perhaps you merely [travel]. or is it [me] you truly seek?'
+<p><b>You say, </b>'i travel'
+<br><b>Lord Nethryn says </b>'A traveler then? Perhaps for adventure and fame. Indeed. I do remember those days. It has been. . . quite some time. so much that I can hardly remember. In any case. my reminiscence must be of no consequence to you. and I do not wish to keep you. Please. do be well and may Tunare's grace kindly guide you through your path.'
+<p><b>You say, </b>'what realm'
+<br><b>Lord Nethryn says </b>'I am Lord Nethryn the Arbitrator. once a devout priest of Tunare. and now a most loyal servant. I once resided within the Realm of Heroes. but she has called upon me to [serve] again as I once did within my mortal form.'
+<p><b>You say, </b>'what serve'
+<br><b>Lord Nethryn says </b>'There are five coins. five very specific coins. each of which contains a divine light and essence. Even the hand and eye of the most crafted rogue or artist cannot forge Honor. Insight. Gallantry. Tranquility. or Faith.'
+<p><b>You say, </b>'what faith'
+<br><b>Lord Nethryn says </b>'There are five coins. five very specific coins. each of which contains a divine light and essence. Even the hand and eye of the most crafted rogue or artist cannot forge Honor. Insight. Gallantry. Tranquility. or Faith.'
+</td></tr></table>

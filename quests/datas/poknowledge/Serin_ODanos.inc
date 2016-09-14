@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Serin ODanos says </b>'Greetings and well met. [Your Name]. I am Serin O'Danos. one of three alchemists that have left our native world of Norrath in search of more peaceful pastures here in New Tanaan. We make a modest. humble living and pride ourselves on the benefit our knowledge gives to aspiring and adept alchemists alike. If you are in need of ingredients to brew a potion. then search our wares at your convenience and leisure. The O'Danos' are more than happy to accommodate your needs.'
+</td></tr></table>

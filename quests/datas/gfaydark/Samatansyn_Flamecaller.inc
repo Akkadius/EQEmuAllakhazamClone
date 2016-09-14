@@ -1,0 +1,38 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=27539>Master Crushbone Cell Key</a><li><a href=http://phobos/eq/item.php?id=13266>Orc Eye</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17367>Trueshot Assembly Kit</a><li><a href=http://phobos/eq/item.php?id=22671>An Enchanted Coif Pattern</a><li><a href=http://phobos/eq/item.php?id=22672>An Enchanted Bracer Pattern</a><li><a href=http://phobos/eq/item.php?id=22673>An Enchanted Sleeves Pattern</a><li><a href=http://phobos/eq/item.php?id=22674>An Enchanted Boots Pattern</a><li><a href=http://phobos/eq/item.php?id=22675>An Enchanted Legplates Pattern</a><li><a href=http://phobos/eq/item.php?id=22676>An Enchanted Gauntlets Pattern</a><li><a href=http://phobos/eq/item.php?id=22677>An Enchanted Tunic Pattern</a><li><a href=http://phobos/eq/item.php?id=27532>Faydark Champions Long Sword</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Samatansyn Flamecaller says </b>'It is a pleasure to meet you [Your Name], I am Samatansyn Flamecaller, Warder of Tunare and Guildmaster of Faydarks Champions. I have studied here for many of my years until recently when I took up teaching. I have many pupils that undergo my vigorous [training exercises].'
+<p><b>You say, </b>'what training exercises'
+<br><b>Samatansyn Flamecaller says </b>'I have a series of tests that all new rangers of Kelethin are suggested to participate in. These tests will help you develop many of your skills including hunting and gathering and will also provide you with a chance to fashion your own Trueshot Chainmail. If you are a [ranger of Tunare] and are willing to begin your training I will be happy to explain to you how the tests work.'
+<p><b>You say, </b>'ranger of tunare'
+<br><b>Samatansyn Flamecaller says </b>'Excellent [Your Name], then lets get started! Here is your Trueshot Assembly Kit. You will collect various items from the Faydark and Clan Crushbone that will be necessary for creating your armor materials in your assembly kit. Once you have fashioned together a specific armor material you can then take it to a forge along with the applicable pattern to create your Trueshot Chainmail armor piece. Simply tell me what armor piece you [want] to craft and I can provide you with the material recipes and patterns for Trueshot Chainmail [Coifs], [Bracers], [Sleeves], [Boots], [Legplates], [Gauntlets] and [Tunics].'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=17367>Trueshot Assembly Kit</a>
+<p><b>You say, </b>'I want to craft a coif'
+<br><b>Samatansyn Flamecaller says </b>'To create your coif material you will need to combine 2 Bricks of Crude Bronze, 1 Royal Jelly, 1 Spiderling Eye and 1 Ration in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Coif.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22671>An Enchanted Coif Pattern</a>
+<p><b>You say, </b>'I want to craft a bracer'
+<br><b>Samatansyn Flamecaller says </b>'To create your bracer material you will need to combine 1 Brick of Crude Bronze, 1 Skeleton Tibia, 1 Pixie Wing and 1 Gypsy Wine in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Chainmail Bracer.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22672>An Enchanted Bracer Pattern</a>
+<p><b>You say, </b>'I want to craft sleeves'
+<br><b>Samatansyn Flamecaller says </b>'To create your sleeves material you will need to combine 2 Bricks of Crude Bronze, 2 Giant Wasp Venom Sacs, 1 Large Widow Abdomen and 1 White Wine in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Chainmail Sleeves.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22673>An Enchanted Sleeves Pattern</a>
+<p><b>You say, </b>'I want to craft boots'
+<br><b>Samatansyn Flamecaller says </b>'To create your boots material you will need to combine 3 Bricks of Crude Bronze, 1 Severed Orc Foot, 2 Spider Legs in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Chainmail Boots.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22674>An Enchanted Boots Pattern</a>
+<p><b>You say, </b>'I want to craft legplates'
+<br><b>Samatansyn Flamecaller says </b>'To create your legplates material you will need to combine 4 Bricks of Crude Bronze, 1 Orc Fibula, 1 Orc Clavicle, and 1 Lightstone in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Chainmail Legplates.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22675>An Enchanted Legplates Pattern</a>
+<p><b>You say, </b>'I want to craft gauntlets'
+<br><b>Samatansyn Flamecaller says </b>'To create your gauntlets material you will need to combine 3 Bricks of Crude Bronze, 1 Orc Ulna, 1 Orc Tibia, and 2 Orc Finger Bones in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Chainmail Gauntlets.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22676>An Enchanted Gauntlets Pattern</a>
+<p><b>You say, </b>'I want to craft a tunic'
+<br><b>Samatansyn Flamecaller says </b>'To create your tunic material you will need to combine 5 Bricks of Crude Bronze, 1 Orc Fibula, 1 Golden Bandit Tooth, 1 Pristine Forest Drakeling Scale, 1 Orc Ribcage and 1 Orc Eye in your assembly kit. Once you have created the proper material take it to a forge along with this mold to fashion your very own Trueshot Chainmail Tunic. Please return to me after you have completed your tunic, for I have one final [favor] to ask of you.'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=22677>An Enchanted Tunic Pattern</a>
+<p><b>You say, </b>'what favor'
+<br><b>Samatansyn Flamecaller says </b>'I have received word that there are numerous elves being held hostage in the confines of Clan Crushbone, beaten and forced to perform slave work under horrible conditions. There is believed to be a specific Orc that patrols the jail cells that has a master key in his possession for all of the elven hostages. If you were to retrieve this master key for me I would possibly be able to make copies of it and distribute them to my task force so that we may attempt to rescue our helpless bretheren. Will you [retrieve the master key]?'
+<p><b>You say, </b>'I will retrieve the master key'
+<br><b>Samatansyn Flamecaller says </b>'Excellent news, I was afraid I would not be able to find someone willing to help. Please bring me the master key along with 2 Orc Eyes and I shall craft you a long sword worthy of your great deeds.'
+<p><b>You give Samatansyn Flamecaller : </b><a href=http://phobos/eq/item.php?id=27539>Master Crushbone Cell Key</a>, <a href=http://phobos/eq/item.php?id=13266>Orc Eye</a> (x2)
+<br><b>Samatansyn Flamecaller says </b>'Well done, [Your Name]! Now we will be able to free more of our brothers and sisters from the orcs! Take this, as promised, a fine weapon with which to slay more orcs!!'
+<br><b>Samatansyn Flamecaller gives you : </b><a href=http://phobos/eq/item.php?id=27532>Faydark Champions Long Sword</a>
+<br><font color=yellow>You gain experience!!</font>
+<p><i>This npc will return you any extra items you gave him.</i>
+</td></tr></table>

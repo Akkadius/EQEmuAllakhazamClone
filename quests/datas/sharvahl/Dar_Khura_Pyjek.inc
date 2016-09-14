@@ -1,0 +1,5 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=30667>Tailfangs Tail</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=30783>Scorpialis</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=Not_Found></a></ul></td><td><p><b>You give Dar Khura Pyjek : </b><a href=http://phobos/eq/item.php?id=30667>Tailfangs Tail</a>
+<br><b>Dar Khura Pyjek says </b>'Great spirit you've done it! Thank you [Your Name]. we are in your debt. You have earned this weapon of the venomous scourge. wield it with honor and pride.'
+<br><b>Dar Khura Pyjek gives you : </b><a href=http://phobos/eq/item.php?id=30783>Scorpialis</a>
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=Not_Found></a> has gotten better.</font>
+</td></tr></table>

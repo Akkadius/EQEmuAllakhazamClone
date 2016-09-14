@@ -1,0 +1,25 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=10987>Parchment to Mimtia</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=19634>Crude Boot Mold</a><li><a href=http://phobos/eq/item.php?id=19632>Crude Bracer Mold</a><li><a href=http://phobos/eq/item.php?id=19637>Crude Breastplate Mold</a><li><a href=http://phobos/eq/item.php?id=19633>Crude Gauntlets Mold</a><li><a href=http://phobos/eq/item.php?id=19636>Crude Greaves Mold</a><li><a href=http://phobos/eq/item.php?id=19631>Crude Helm Mold</a><li><a href=http://phobos/eq/item.php?id=19635>Crude Vambrace Mold</a><li><a href=http://phobos/eq/item.php?id=17124>Mail Assembly Kit</a></ul></td><td><p><b>You say, </b>'plague knight boots'
+<br><b>Mimtia Zethkog says </b>'To assemble Plague Knight Boots you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Boot Mold. Once that is done combine the Crude Bronze Boots with two Ruined Cat Pelts, and two Clockwork Rat Belly Plates in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19634>Crude Boot Mold</a>
+<p><b>You say, </b>'plague knight bracer'
+<br><b>Mimtia Zethkog says </b>'To assemble a Plague Knight Bracer you will need to obtain a brick of crude bronze and smelt it in a forge with a Water Flask and this Crude Bracer Mold. Once that is done, combine the Crude Bronze Bracer with a Ruined Cat Pelt and a Clockwork Rat Leg Section in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19632>Crude Bracer Mold</a>
+<p><b>You say, </b>'plague knight breastplate'
+<br><b>Mimtia Zethkog says </b>'To assemble a Plague Knight Breastplate you will need to obtain four bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Breastplate Mold. Once that is done combine the Crude Bronze Breastplate with a Medium Quality Cat Pelt, a Clockwork Spider Thorax Plate, and a Clockwork Spider Abdomen Plate in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19637>Crude Breastplate Mold</a>
+<p><b>You say, </b>'plague knight gauntlets'
+<br><b>Mimtia Zethkog says </b>'To assemble Plague Knight Gauntlets you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this crude Gauntlet Mold. Once that is done combine the Crude Bronze Gauntlets with a Ruined Cat Pelt and two Clockwork Rat Back Plates in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19633>Crude Gauntlets Mold</a>
+<p><b>You say, </b>'plague knight greaves'
+<br><b>Mimtia Zethkog says </b>'To assemble Plague Knight Greaves you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Greaves Mold. Once that is done combine the Crude Bronze Greaves with two Low Quality Cat Pelts and four Clockwork Spider Leg Sections in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19636>Crude Greaves Mold</a>
+<p><b>You say, </b>'plague knight helm'
+<br><b>Mimtia Zethkog says </b>'To assemble a Plague Knight Helm you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Helm Mold. Once that is done combine the Crude Bronze Helm with a Ruined Cat Pelt and two Clockwork Spider Eye Lenses in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19631>Crude Helm Mold</a>
+<p><b>You say, </b>'plague knight vambraces'
+<br><b>Mimtia Zethkog says </b>'To assemble Plague Knight Vambraces you will need to obtain two bricks of crude bronze and smelt them in a forge with a Water Flask and this Crude Vambrace Mold. Once that is done combine the Crude Bronze Vambraces with a Low Quality Cat Pelt and two Clockwork Spider Leg Sections in the Mail Assembly Kit.'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=19635>Crude Vambrace Mold</a>
+<p><b>You give Mimtia Zethkog : </b><a href=http://phobos/eq/item.php?id=10987>Parchment to Mimtia</a>
+<br><b>Mimtia Zethkog says </b>'Hail [Your Name]! You must be one of Garret's new knights. Garret has asked me to help get you outfitted in a suit of armor to protect you from the weapons of our foes. I have assembled a kit for you that will allow you to construct the armor pieces once you have gathered the necessary components. The required components vary according to which piece of Plague Knight Armor you are planning on assembling. Do you wish to craft a [plague knight helm], a [plague knight bracer], [plague knight gauntlets], [plague knight boots], [plague knight vambraces], [plague knight greaves], or a [plague knight breastplate].'
+<br><b>Mimtia Zethkog gives you : </b><a href=http://phobos/eq/item.php?id=17124>Mail Assembly Kit</a>
+</td></tr></table>

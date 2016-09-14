@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Lieutenant Ulfur says </b>'Hail. there. Barbarian. How goes it? Much fairer than I. I'll wager. Me troops can't hit the broad side of a mammoth with their crossbows. Oh. by the way. I'm Lieutenant Ulfur. Commander of the 23rd Coldain crossbow regiment. if ye kin call it a regiment.'
+<br><b>Lieutenant Ulfur says </b>'Hail. there. %#1472. How goes it? Much fairer than I. I'll wager. Me troops can't hit the broad side of a mammoth with their crossbows. Oh. by the way. I'm Lieutenant Ulfur. Commander of the 23rd Coldain crossbow regiment. if ye kin call it a regiment.'
+<p><b>You say, </b>'what regiment'
+<br><b>Lieutenant Ulfur says </b>'Yes. we assist our troops in military endeavors. Although we're almost more harm than good. All me troops have soldier envy. they want in the middle of the rumble. face ta face with their enemies stompin them into the ground. That's all well and good but a contingent of crossbowmen can be the difference in winning or losing. Do you favor ranged weapons. [Your Name]?'
+<p><b>You say, </b>'yes i favor ranged weapons'
+<br><b>Lieutenant Ulfur says </b>'Ahh. well. maybe sometime I'll let ya try out one of our famed crossbows. Maybe even give ye one if ye prove yerself to the Coldain cause. Unfortunately. though. we can spare no crossbows now.  Perhaps in the future we will be able to.'
+</td></tr></table>

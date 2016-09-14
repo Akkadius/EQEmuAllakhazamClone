@@ -1,0 +1,9 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=14372>Drake Spine</a><li><a href=http://phobos/eq/item.php?id=14371>Decrepit Hide</a><li><a href=http://phobos/eq/item.php?id=16507>Enchanted Platinum Bar</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=14366>Decrepit Sheath</a></ul><b>Factions raised :</b><ul><li><a href=http://phobos/eq/faction.php?id=342>True Spirit</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Teydar says </b>'Hello [Your Name], it's good to see another shadowknight around here. I'm Teydar. I've made it my life to fashion suitable scabbards and sheaths for our order.'
+<p><b>You say, </b>'decrepit sheath'
+<br><b>Teydar says </b>'The object you desire is very difficult to fashion.  Nearly impossible, really.  All I can offer to do is try.  The real difficulty is the contents that give the sheath its power. They have to be of an almost equal evil. I think some kind of decrepit hide and a drake spine, along with a bar of enchanted platinum, should prove enough to make this item.'
+<p><b>You give Teydar : </b><a href=http://phobos/eq/item.php?id=16507>Enchanted Platinum Bar</a>, <a href=http://phobos/eq/item.php?id=14371>Decrepit Hide</a>, <a href=http://phobos/eq/item.php?id=14372>Drake Spine</a>
+<br><b>Teydar says </b>'I did it! The pieces you got me were perfect! It took a huge effort on my part to craft this, of course. It saddens me that I'm unable to keep one of my best works, but a deal is a deal. There is honor among shadowknights.'
+<br><font color=red>Your faction with <a href=http://phobos/eq/faction.php?id=342>True Spirit</a> has gotten better.</font>
+<br><b>Teydar gives you : </b><a href=http://phobos/eq/item.php?id=14366>Decrepit Sheath</a>
+</td></tr></table>

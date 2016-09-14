@@ -1,0 +1,7 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=1852>Blank rune</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=1852>Blank rune</a><li><a href=http://phobos/eq/item.php?id=18281>Prayer to Brell</a></ul></td><td><p><b>You say, </b>'burin'
+<br><b>Trademaster Kroven says </b>'You'll need a fletching kit and a fair bit of skill for this one, [Your Name]. Round up a tooth from a swordfish and attatch it to an Ulthork tusk wrapped in a Molkor hide.'
+<p><b>You give Trademaster Kroven : </b><a href=http://phobos/eq/item.php?id=1852>Blank rune</a>
+<br><b>Trademaster Kroven says </b>'Fine piece of work there, [Your Name], especially fer an outlander. Now yer gunna need to make a burin to etch the rune with. Once that's done ye need to kneel in front of the Grand Historian in the chapel and recite this prayer to him with total sincerity in yer heart. If yer plea be heard by our Father Brell he'll bless ya with the knowledge necessary to carry on. With that knowledge you'll take the blank rune, the burin and a fletching kit to etch the rune. Show Grimthor the etched rune and he'll guide you from there.'
+<br><b>Trademaster Kroven gives you : </b><a href=http://phobos/eq/item.php?id=1852>Blank rune</a>
+<br><b>Trademaster Kroven gives you : </b><a href=http://phobos/eq/item.php?id=18281>Prayer to Brell</a>
+</td></tr></table>

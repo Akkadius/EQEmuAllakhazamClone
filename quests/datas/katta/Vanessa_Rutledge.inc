@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Vanessa Rutledge says </b>'Welcome to the Nectar of Unity Tavern! My family has been running this establishment since the very birth of Katta Castellum. Please stay and sample our fine selection of imported and house brews! I am sure you will find the company here in the tavern quite pleasant as well.'
+</td></tr></table>

@@ -1,0 +1,14 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=28291>The Talisman Schematic</a><li><a href=http://phobos/eq/item.php?id=28297>Sealed Lined Case</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=17279>Small Lined Case</a><li><a href=http://phobos/eq/item.php?id=28296>The Binden Concerrentia</a></ul></td><td><p><b>You say, </b>'Hail, Elder Clinka'
+<br><font color=green><b>Elder Clinka </b>does not seem to notice you.</font>
+<p><b>You give Elder Clinka : </b><a href=http://phobos/eq/item.php?id=28291>The Talisman Schematic</a>
+<br><b>Elder Clinka says </b>'It is a pleasure to meet you. I've heard a great deal about you from the other elders. Please give me a moment to scan over this for you.'
+<br><font color=green><b>Elder Clinka </b>scans the schematic for a few seconds, mumbling as she reads, 'This parchment states that you are to place a small shard of concentrated elemental matter into each of the holes in your talisman.' She points a finger to the diagram as she begins to recount what she has learned from it, 'They would then need to be locked into place, as the diagram indicates here.'</font>
+<br><b>Elder Clinka says </b>'If you bring me a fragment or shard of some living creature from each of the elemental planes, I will see if we can make this device work. Place them in this box with your talisman and combine them together before returning the box to me. In the meantime, I will continue to translate this document from its original language.'
+<br><b>Elder Clinka gives you : </b><a href=http://phobos/eq/item.php?id=17279>Small Lined Case</a>
+<p><b>You give Elder Clinka : </b><a href=http://phobos/eq/item.php?id=28297>Sealed Lined Case</a>
+<br><font color=green><b>Elder Clinka </b>carefully opens the small box and takes several small tools from the pocket in her robe. Her nimble fingers place the glowing elemental pieces into the appropriate sockets and covers them with several small caps that she must have made while you were away.</font>
+<br><b>Elder Clinka says </b>'This device is called the Binden Concerrentia. Its true power will be revealed to you soon. This document describes it as a device that is meant to convert the energy that can be found in true prime elemental matter, into an entirely new form of energy. The schematic states that this energy will 'bind you in the now'. I am not sure what that means, but I believe that you will soon find out.'
+<br><b>Elder Clinka says </b>'Take care of it and keep it with you at all times. I feel that your journey from this point will only become more dangerous. Perhaps this device will play a role in all of that. Move forward along the path of enlightenment. May the Balance guide your fate.'
+<br><b>Elder Clinka gives you : </b><a href=http://phobos/eq/item.php?id=28296>The Binden Concerrentia</a>
+<br><font color=yellow>You gain experience!!</font>
+</td></tr></table>

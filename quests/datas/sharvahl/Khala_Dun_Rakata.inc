@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap></td><td><p><b>You say, </b>'Hail'
+<br><b>Khala Dun Rakata says </b>'May your spirit thrive with strength traveler. You are at the south gates of the Merchants Quarter. Within. you may find the bank. arena. armory. as well as many other fine shops. In your bustle. do not forget to take a moment to enjoy our many fountains and gardens.'
+</td></tr></table>

@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Easy Tooltip jQuery Plugin Demo</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/easyTooltip.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){	
+		$("a#link").easyTooltip({
+			useElement: "item"				   
+		});
+	});
+</script>
+<meta name="description" content="Simple easy-to-use jQuery plugin for custom tooltips">
+</meta>
+
+<style>
+body {
+	margin:0;
+	padding:40px;
+	background:#fff;
+	font:80% Arial, Helvetica, sans-serif;
+	color:#555;
+	line-height:180%;
+}
+h1{
+	font-size:180%;
+	font-weight:normal;
+	}
+h2{
+	font-size:160%;
+	font-weight:normal;
+	}	
+h3{
+	font-size:140%;
+	font-weight:normal;
+	}	
+img{border:none;}
+pre{
+	display:block;
+	font:12px "Courier New", Courier, monospace;
+	padding:10px;
+	border:1px solid #bae2f0;
+	background:#e3f4f9;	
+	margin:.5em 0;
+	width:500px;
+	}		
+
+/* Easy Tooltip */
+
+#easyTooltip{
+	margin:0 10px 1em 0;
+	width:250px;
+	padding:8px;
+	background:#fcfcfc;
+	border:1px solid #e1e1e1;
+	line-height:130%;				
+	}
+#easyTooltip h3{
+	margin:0 0 .5em 0;
+	font:13px Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	}	
+#easyTooltip p{
+	margin:0 0 .5em 0;
+	}		
+#easyTooltip img{
+		background:#fff;
+		padding:1px;
+		border:1px solid #e1e1e1;
+		float:left;
+		margin-right:10px;
+		}		
+
+#item{display:none;}
+					
+
+/* // Easy Tooltip */
+
+</style>
+</head>
+<body>
+
+	<h1>Easy Tooltip jQuery Plugin Demo</h1>
+	
+	<script type="text/javascript" src="http://cssglobe.com/ads/blogsponsor.js"></script>
+	
+	<h2>Easy Tooltip using an element from the page</h2>
+	
+	<p>This plugin can use any element on the page, take it's inner HTML and display in the tooltip. Roll over <a href="http://cssglobe.com" id="link">this link</a> to view it in action<br />
+	<strong>Note:</strong> The best way to use this principle is to initialy hide the element you are taking the content from.</p>
+	
+<h3>Usage</h3>
+	
+<pre>$(document).ready(function(){	
+	$("a").easyTooltip({
+		useElement: "item"	
+	});
+});</pre>
+
+	<h3>CSS</h3>
+	
+<pre>#easyTooltip{
+	margin:0 10px 1em 0;
+	width:250px;
+	padding:8px;
+	background:#fcfcfc;
+	border:1px solid #e1e1e1;
+	line-height:130%;				
+	}
+#easyTooltip h3{
+	margin:0 0 .5em 0;
+	font:13px Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	}	
+#easyTooltip p{
+	margin:0 0 .5em 0;
+	}		
+#easyTooltip img{
+		background:#fff;
+		padding:1px;
+		border:1px solid #e1e1e1;
+		float:left;
+		margin-right:10px;
+		}		
+
+#item{display:none;}</pre>	
+	
+<p><a href="http://cssglobe.com/post/4380/easy-tooltip--jquery-plugin" title="read more about this jquery plugin">back to the article</a></p>
+	
+	<p><strong>Easy Tooltip</strong> jQuery Plugin is brought to you by <a href="http://cssglobe.com" title="web standards magazine and css news">Css Globe</a> and supported by <a href="http://templatica.com">Css Templates</a> by Templatica</p>
+
+<div id="item">
+	<h3>Item title</h3>
+	<img src="http://cssglobe.com/ads/templatica_125.gif" />
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi at dui. Pellentesque nec augue vitae magna tincidunt imperdiet. Etiam at nisl ut felis pellentesque rhoncus.</p>
+	<ul>
+		<li>List item 1</li>
+		<li>List item 2</li>
+		<li>List item 3</li>
+	</ul>
+</div>
+
+</body>
+</html>

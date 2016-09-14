@@ -1,0 +1,143 @@
+HISTORY.TXT
+
+Version 2.0.1 Rev2103 - 02/13/2012
+- (Trevius) Added pagination to Discovered Items on the welcome page.
+- (Trevius) Added Task Step Goal List Details.
+- (Trevius) Added Tooltips to Zone Equipment lists.
+- (Trevius) Corrected display positioning for multiple pages.
+
+Version 2.0 Rev2099 - 02/13/2012
+- (Trevius/Akkadius) Revamped how almost all of the website works and looks.
+- (Trevius/Akkadius) Added Tooltips for items.
+- (Trevius/Akkadius) Revamped Pets page completely.
+- (Akkadius) Revamped Recipe Search to match ZAM recipe search.
+- (Akkadius) Revamped Spell Search completely to match ZAM spell search.
+- (Akkadius) Added a Theme/Style changing window that allows viewer to choose from multiple themes.
+- (Akkadius) Added a ZAM Search window option.
+- (Akkadius) Added new item icons.
+- (Akkadius) Added Class Monograms (animated class symbols).
+- (Trevius) Added a toggle search fields button to items search.
+- (Trevius) Added a Dark Blue theme.
+- (Trevius) Reformatted the page layout to have side bars on both side.
+- (Trevius) Revamped the item output to match Live format and to include all newer stat types.
+- (Trevius) Removed the need to source tables for this tool.  Spells data now comes from spells_new and race data was made into an array.
+- (Trevius) Resolved many security issues in the code.
+- (Trevius) Updated the race list through VoA expansion.
+- (Trevius) Fixed various issues related to displaying item stats.
+- (Trevius) Implemented Discovered Items and the option to display recently discovered items on the main page.
+- (Trevius) Added many new options that can be toggled on or off in the config so admins can display exactly what they want.
+- (Trevius/Akkadius) Fixed/Adjusted various other systems.
+
+version 0.6.0
+- (Bulle) code cosmetics change
+- (Bulle) Indentation of the generated HTML code for debug purposes - first shot at XHTML compliance.
+- (Bulle) Make the top part of the page (header) optional through a flag in config.php.
+- (Bulle) Made "faction.php" and "factions.php" interoperate. If "faction.php" is passed an invalid faction it redirects to "factions.php". If "factions.php" finds one and only one faction it redirects to "faction.php" with the found faction.
+- (Bulle) Made "faction.php" more Wiki-friendly : it accepts both an 'id' and 'name' parameter. If the 'id' parameter is non-empty it is used. Otherwise if the 'name' parameter is not empty it is used to query for the faction.
+- (Bulle) Same remarks for "npc.php", "npcs.php", "item.php" and "items.php"
+- (Bulle) Added icons in factions, NPCs and items to link to a PEQ Editor and Lucy when possible
+- (Bulle) Diverted the place where NPC images are searched for. Now it links to a Mediawiki installation (which has to be installed) used to store the images. Allows for much easier image upload as no access to the server filesystem is needed 
+- (Bulle) Added two "generic" search fields in the menu bar, one for searching on the name, one on the ID. It looks for items, NPCs or factions
+- (Bulle) Displayed the IDs of objects in many places, which makes life much easier for the world builder
+
+version 0.5.3
+- (Muuss) Added a detailled mob listing for zones, with spawn points, drops, and possibility to dump to CSV file or EQ map files.
+- (Muuss) Fixed the url for NPCs snapshots (jpg files in /npcs directory, name is NPC's id).
+- (Muuss) Added resist and resist adjustment to spells (ressource spells.sql and rerun import_spells.pl).
+- (Muuss) Added support for quest::setnexthpevent, quest::set_zone_flag, quest::gmmove & quest::pause.
+- (Muuss) Added support for entity_list->GetMobID(), npc->AddToHateList() & entity->CastToNPC() to quests.
+- (Muuss) Fixed quests with no sub EVENT_ITEM {}.
+- (Muuss) Added proc damage to the melee damage calculator.
+- (Muuss) Added attack speed and average melee damage to NPCs (see config.php). Average melee damage reflects how much brut damages the mob does per round, if not accurate due to mitigation and avoidance, it permits to compare the mobs between em.
+- (Muuss) Added "NPC by faction" in Bestiary's submenu.
+- (Muuss) Added Primary faction and details about spells to npc's description.
+- (Muuss) Removed the SQL update files for version 0.3 and under. Just source includes/sql/*sql files for a fresh install.
+- (Muuss) Added details to items (stackable, fixed price,
+- (Muuss) Added the possibility to ignore certain zones (config.php).
+- (Muuss) Added ground spawns.
+
+version 0.5.2
+- (Muuss) Added the possibility to dump spells into a CSV file (txt file, with comma separated columns, can be imported directly into Excel).
+- (Muuss) Added a comparator for 2H and dual weilded 1H weapons.
+- (Muuss) Added a link to the zone in the quest page, and added info that specifies that the NPC will return extra items if the player gave him some.
+- (Muuss) Fixed the quests for NPCs whose names begin with a sharp (#).
+- (Muuss) Added a variable in config.php that permits to hide Invisible Men in bestiaries.
+- (Muuss) Added a table that contains a list of items handed or rewarded in the quests (populated when people browse the quests).
+- (Muuss) Added quest::ChooseRandom, plugin::try_tome_handins & quest::unique_spawn to quests methods.
+- (Muuss) Added spawned NPCs to parsed quests.
+- (Muuss) Fixed recognition for (($itemcount{..} && $itemcount{..})==1) syntax.
+- (Muuss) Added the chances to have the items droped by NPCs in item's page. (see config.php)
+- (Muuss) Added lore name to item's page.
+- (Muuss) Added the possibility to search for items thru their focus/worn/proc/clicky effects & mana/hp regeneration & weapon delay.
+- (Muuss) Added sort order by class or race in zone bestiaries.
+- (Muuss) Added a maximum level for mob droped items in item's search page.
+- (Muuss) Fixed Cazic Thule in the Antonica's zones list.
+- (Muuss) Item prices are now in points instead of money for the LDON merchants.
+
+version 0.5.1
+- (Muuss) Improved quest parser.
+  * Added support for client->GetCharacterFactionLevel method (other methods will be added has needed).
+  * Added the possibility to parse the quests from the website with different Classes/Levels/Factions (requires $AlwaysBuildQuest to be set at TRUE)
+  * Added spells casted by npcs.
+  * Added support for plugin soulbinders.pl
+  * Added support for plugin check_handin.pl
+- (Muuss) Fixed bags in zones equipment list, they no longer appear has 1 hand slashing weapons.
+- (Muuss) Inverted x and y in the locs. They match now the results given by /loc instead of database locs.
+- (Muuss) Fixed and improved some spell effects, added duration for damages and healings over time, fixed increase/decrease speed and movement.
+
+version 0.5
+- (Muuss) Added quests for npcs. If a npc has a quest, it can be displayed directly in the web browser, under a readable form.
+- (Muuss) Improved item's search engine and fixed a small bug.
+- (Muuss) Added 'Pet Power Increase' to spell's description (167)
+
+Version 0.4.3 (03/27/2006) (Need to update spells table, see includes/sql, source spells.sql or update-0.4_0.4.3.sql, re-run importspells.pl)
+- (Muuss) Added a pet description page.
+- (Muuss) Added special attacks to pets and npcs pages.
+- (Muuss) Sorted zones by level in the zone levels list (can be unvalidated from config file).
+- (Muuss) Fixed a bug with items with small prices (less than 1 plat).
+- (Muuss) Fixed a display bug in zone levels page that was showing the first zone from the DB after each level row.
+- (Muuss) Added a new variable in config file that allows to configure the max number of items/recipes returned by the search engines.
+
+Version 0.4.2
+- (Muuss) Added a page with zone levels.
+
+Version 0.4.1
+- (Muuss) Improved item's search engine.
+- (Muuss) Updated allspells.sql to 13 sept. 2006 spells_us.txt file.
+- (Muuss) Greatly improved and completed spell's descriptions.
+
+Version 0.4
+- (Muuss) Converted to 6.5 database format.
+
+Version 0.3
+- (Muuss) Added personnalization facilities, see README.TXT.
+- (Muuss) Added optional News support, see config.php and source includes/sql/news.sql into your database.
+- (Muuss) Remade NPC spell's list, it now correctly works.
+- (Muuss) Added support for additional modifiers to items display.
+- (Muuss) Added items price support to npc and item display.
+- (Muuss) Added deity restrictions to items research and display.
+- (Muuss) Merchants won't appear anymore in items droper's list (see config.php)
+- (Muuss) Totally revamped items display page. 
+- (Muuss) Added Mainhand/Offhand efficiency to weapons display.
+- (Muuss) Added Spell effects parameter to spell research.
+- (Muuss) Completed the README file.
+[Version 0.3 needs a SQL update, see includes/sql/updates_[n]_0.3.sql]
+
+Version 0.2.1
+- (Muuss) Added an option to reduce the items research to sold or droped items.
+- (Muuss) Added an option to reduce the items research to items with a stat higher or lower than the specified value.
+- (Muuss) Added the possibility to display chances of droping of each item in the npc display page (see config.php).
+- (Muuss) Added item type to zones equipment list.
+- (Muuss) Added required level to items research and items display.
+- (Muuss) Added display of surrounding spawngroups in the spawngroups display page. (see config.php for range)
+- (Muuss) Added the possibility to remove sold items from zones equipments lists. (see config.php)
+- (Muuss) Added the possibility to remove drop lists from merchant npcs. (see config.php)
+- (Muuss) Modified the NPC page to display spells and drops in columns.
+
+Version 0.2
+- (Muuss) Added support for pets stats.
+- (Muuss) Modified the way search tools work with words. Replaced spaces by %.
+- (Muuss) Added bard skills to items display.
+
+Version 0.1 (04/11/2004)
+- (Muuss) 1st release.

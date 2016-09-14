@@ -1,0 +1,8 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=20457>Crushed Pot</a><li><a href=http://phobos/eq/item.php?id=20459>Bag of Provisions</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=20458>Grocery List</a><li><a href=http://phobos/eq/item.php?id=20474>Receipt</a></ul></td><td><p><b>You give Farios Elianos : </b><a href=http://phobos/eq/item.php?id=20457>Crushed Pot</a>
+<br><b>Farios Elianos says </b>'Eh? What is this? A cracked earthen pot? Why in the nine hells would I need a crushed pot? Perhaps I could use it to not hold water! Why did you even bother me with this? Are you mentally deficient? Apparently. Oh, well, you're just a servant boy. Well, then, we'll make you useful, if just a little. Take this shopping list and go get my groceries. Take it to Nora in the tavern. She'll know what I need.'
+<br><b>Farios Elianos gives you : </b><a href=http://phobos/eq/item.php?id=20458>Grocery List</a>
+<p><b>You give Farios Elianos : </b><a href=http://phobos/eq/item.php?id=20459>Bag of Provisions</a>
+<br><b>Farios Elianos says </b>'Ah, good. Here's a few copper and a receipt for services rendered. Now be off, I'm sure citizens across the land are in dire need of broken pots at right this moment.'
+<br><b>Farios Elianos gives you : </b><a href=http://phobos/eq/item.php?id=20474>Receipt</a>
+<br><b>You receive </b> 3cp
+</td></tr></table>

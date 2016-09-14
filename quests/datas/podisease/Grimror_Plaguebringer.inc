@@ -1,0 +1,15 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=9290>Sengian Larvae Flesh</a><li><a href=http://phobos/eq/item.php?id=9291>Generian Larvae Flesh</a><li><a href=http://phobos/eq/item.php?id=9292>Scaevian Larvae Flesh</a><li><a href=http://phobos/eq/item.php?id=9293>Harrion Larvae Flesh</a></ul><b>Rewards :</b><ul><li><a href=http://phobos/eq/item.php?id=9294>Bangle of Disease Warding</a></ul></td><td><p><b>You say, </b>'Hail'
+<br><b>Grimror Plaguebringer says </b>'Grimror no have time ta talk. Gots stuffs ta do.'
+<p><b>You say, </b>'stuffs'
+<br><b>Grimror Plaguebringer says </b>'I wuz sent here by Zulort to, err. . . To gadder some alchemy type stuffs. Him have big plan, and need me to travel lots.'
+<p><b>You say, </b>'big plan'
+<br><font color=green><b>Grimror Plaguebringer </b>laughs. 'Me not tell you dat! Grimror keep secrets secret. You gonna help Grimror or no?'</font>
+<p><b>You say, </b>'help Grimror'
+<br><b>Grimror Plaguebringer says </b>'Dat good!'
+<br><b>Grimror Plaguebringer says </b>'Grimror been getting compon ents for dayz now and Grimror still not finushed. You gonna get dem tings fur me?'
+<p><b>You say, </b>'dem tings'
+<br><b>Grimror Plaguebringer says </b>'Grimror need bile, dat stuff es strong here! But Grimror keent seem to git eet all. Bile comz from da leetle bugs. Keel little bugs, and geeve Grimror dere leetel bodiez and Grimror give yuuz anyting dat yuuz want. Dere on four leetel buggiez dat Grimror still neez, two uf dem come from da fliez, one comez from da wurmiez, and one comez from the moss-skeeterz. Yuuz bring Grimror dere lavas and Grimror geeve yuuz, and yuuz freends, anyting yuuz want'
+<p><b>You give Grimror Plaguebringer : </b><a href=http://phobos/eq/item.php?id=9290>Sengian Larvae Flesh</a>, <a href=http://phobos/eq/item.php?id=9291>Generian Larvae Flesh</a>, <a href=http://phobos/eq/item.php?id=9292>Scaevian Larvae Flesh</a>, <a href=http://phobos/eq/item.php?id=9293>Harrion Larvae Flesh</a>
+<br><b>Grimror Plaguebringer says </b>'Yuuz dun guud! But Grimror keent geeve you anyting, but Grimror have dis. Grimror also have seekret information. Krypt of Deekay in in here. Dunt tink yuuz wanna go in dere. Dere be mean old rotten keengs in dere, yuuz dunt want ta mess wif dem, dere also be udder sortz uf baddies in dere, be carefuul if yuuz goin dat way. I hurd stories dat Bertoshulus es in dere too, Grimror even saw him in here one time. In dis place yuuz only gots ta worry about Grummus, him fatter dan Grimror, got theek skin too. Him have key ta get inna de Krypt,but Grimror knew da seekret way een. Dat bracer keen make da portil into de Krypt tink dat yuuz belongz dere. Guud barshin!'
+<br><b>Grimror Plaguebringer gives you : </b><a href=http://phobos/eq/item.php?id=9294>Bangle of Disease Warding</a>
+</td></tr></table>

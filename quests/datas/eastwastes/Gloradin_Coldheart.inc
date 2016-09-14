@@ -1,0 +1,3 @@
+<table border=0 width=100%><tr valign=top><td nowrap><b>Quest items:</b><ul><li><a href=http://phobos/eq/item.php?id=30163>Adamantium Coldain Insignia Ring</a></ul></td><td><p><b>You give Gloradin Coldheart : </b><a href=http://phobos/eq/item.php?id=30163>Adamantium Coldain Insignia Ring</a>
+<br><b>Gloradin Coldheart says </b>'Thank you. I will return to the Dain and inform him that the battle is underway. Please escort Garadain to the battlefield and see that he returns safely. May Brell bless you and bring you victory over these beasts.'
+</td></tr></table>
