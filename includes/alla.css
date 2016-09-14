@@ -391,3 +391,10 @@ select {
     background: #ffffff url(/rsrc.php/v3/yL/r/unHwF9CkMyM.png) no-repeat left 4px;
     padding-left: 17px
 }
+
+.container_div{
+    border: 1px solid;
+    border-color: #e5e5e5 #696969 #696969 #e5e5e5;
+    border-collapse: separate;
+    border-spacing: 0;
+}

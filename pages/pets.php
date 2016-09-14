@@ -15,6 +15,8 @@
 
 	$Title="Pets Statistics";
 
+	print "<center>";
+
 	print "<table><tr valign=top><td nowrap>";
 	
 	CreateToolTip('class15', '<table> <td> <img src="images/monograms/15.gif"> </td> <td> The Beastlord class is a unique class that is a hybrid of the Shaman and Monk parent classes. One of the class\'s distinguishing features is the ability to summon a warder pet to fight alongside them. The form the warder takes depends on the race of the beastlord. </td>');
@@ -75,7 +77,7 @@
 			exit;
 		}
 		$columns = mysql_num_fields($result);
-		print "<table border=0><thead>";
+		print "<table style='width:100%'><thead>";
 		print "<th class='menuh'>Level</th>";
 		print "<th class='menuh'>Icon</th>";
 		print "<th class='menuh'>Spell Name</th>";

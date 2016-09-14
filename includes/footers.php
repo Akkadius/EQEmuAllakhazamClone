@@ -1,4 +1,6 @@
 <?php
+
+return;
 // Close the right-side (content) column
 
 //print "<br/>\n";

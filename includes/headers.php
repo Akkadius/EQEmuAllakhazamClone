@@ -1,5 +1,6 @@
 <?php 
-	
+
+return;
 
 	if(isset($_POST['SetTheme'])){
 		setcookie("Theme", $_POST['SetTheme'], time()+31536000); ### Set Theme for the user and hold cookie for a year

@@ -13,7 +13,7 @@ footer .block-content {background:#d4c7ab url(/eq/i/bgl.gif)}
 footer .footer-featured-sites ul li a, footer .footer-zam .footer-social .footer-callout, footer .footer-zam .footer-social-links
     {background:#c0ad89 url(/eq/i/colright.png) -1px 0}
 
-#menu_horiz {background:url(/eq/i/nav.jpg);border-color:#696969}
+#menu_horiz {background:url(../images/nav.jpg);border-color:#696969}
 #nav a, #user-login a {color:#000}
 #nav a:hover, #user-login a:hover {color:#1313d5}
 #menu_horiz > li:hover {background:url(/eq/i/nav.jpg) bottom}
