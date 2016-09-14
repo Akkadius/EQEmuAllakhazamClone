@@ -40,12 +40,11 @@
         <div id="logo" style="background: url(images/logos/eqemu.png) 0 10px no-repeat;">
             <a href="#" style="background: url(images/logos/logo.png) right no-repeat;top:10px"></a>
         </div>
-        <!--
+
         <form action="" name="search">
-            <input name="q" type="text" onfocus="this.select()" value="" autocomplete="off">
+            <input name="q" type="text" onfocus="this.select()" value="" autocomplete="off" placeholder="To be implemented">
             <a href="javascript:document.search.submit();"></a>
         </form>
-        -->
 
         <div id="nav">
             <ul id="menu_horiz">
@@ -103,21 +102,6 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="menuh" nowrap="1">Search...
-                                                    <input type="hidden" name="isearchtype" value="">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input onfocus="if(this.value == 'Name...') { this.value = ''; }" onkeypress="var key=event.keyCode || event.which; if(key==13){ this.form.isearchtype.value = 'name'; this.form.submit(); } else {return true;}" type="text" name="iname" placeholder="Name..." size="20">
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <input onfocus="if(this.value == 'ID...') { this.value = ''; }" onkeypress="var key=event.keyCode || event.which; if(key==13){ this.form.isearchtype.value = 'id'; this.form.submit(); } else {return true;}" type="text" name="iid" placeholder="ID..." size="10">
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td class="menuh" nowrap="1">Zones...</td>
                                             </tr>
                                             <tr>
@@ -163,13 +147,13 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/npcs.php">NPC Search</a>
+                                                    <li><a href="?a=npcs">NPC Search</a>
                                                     </li>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/advnpcs.php">Advanced NPC
+                                                    <li><a href="?a=advanced_npcs">Advanced NPC
                                                             Search</a>
                                                     </li>
                                                 </td>
@@ -187,16 +171,6 @@
                                                 <td nowrap="1" class="menu_item">
                                                     <li><a href="?a=recipes&">Recipe
                                                             Search</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="menuh" nowrap="1">Strategy...</td>
-                                            </tr>
-                                            <tr>
-                                                <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/strategy/melee.php">Melee
-                                                            Damage Calculator</a>
                                                     </li>
                                                 </td>
                                             </tr>
@@ -223,6 +197,9 @@
                                             if($route == "recipe"){ require_once('pages/recipe.php'); }
                                             if($route == "recipes"){ require_once('pages/recipes.php'); }
                                             if($route == "zones"){ require_once('pages/zones.php'); }
+                                            if($route == "zone_named"){ require_once('pages/zone_named.php'); }
+                                            if($route == "npcs"){ require_once('pages/npcs.php'); }
+                                            if($route == "advanced_npcs"){ require_once('pages/advanced_npcs.php'); }
 
                                             if($Title){
                                                 $footer_javascript .= '

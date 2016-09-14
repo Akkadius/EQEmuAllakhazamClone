@@ -5,10 +5,6 @@
  *  If 'iname' is not set then it is equivalent to searching for all factions.
  *  For compatbility with Wikis and multi-word searches, underscores are treated as jokers in 'iname'.
  */
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir.'mysql.php');
-require_once($includes_dir.'functions.php');
 
 $isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
 $iname   = (isset($_GET[  'iname']) ? $_GET[  'iname'] : '');
@@ -59,6 +55,7 @@ $XhtmlCompliant = TRUE;
 require_once($includes_dir.'headers.php');
 
 echo "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
+echo '<input type="hidden" name="a" value="npcs">';
 echo "<tr align='left'>\n";
 echo "<td nowrap='1'><b>Name : </b></td>\n";
 echo "<td><input type='text' value=\"$iname\" size='30' name='iname'></td>\n";

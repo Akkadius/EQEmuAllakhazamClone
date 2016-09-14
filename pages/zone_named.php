@@ -1,7 +1,4 @@
 <?php
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir.'mysql.php');
 
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
@@ -14,8 +11,6 @@ if ($DisplayNamedNPCsInfo==FALSE)
 }
 
 $Title=GetFieldByQuery("long_name","SELECT long_name FROM $tbzones WHERE short_name='$name'")." ($name)";
-require_once($includes_dir.'headers.php');
-require_once($includes_dir.'functions.php');
 
 if (!isset($name)) { print "<script>document.location=\"zones.php\";</script>"; }
 
@@ -23,7 +18,7 @@ $ZoneDebug=FALSE; // this is new in 0.5.3 but undocumented, it is for world buil
 
 if ($ZoneDebug==TRUE) { print "<p>ZoneDebug at TRUE ! Edit source code and set it to false.<p>"; }
 
-print "<table border=0 width=100%><tr valign=top><td width=100%>";
+print "<table ><tr valign=top><td width=100%>";
 
 $query="SELECT $tbzones.*
         FROM $tbzones
@@ -212,7 +207,7 @@ if ($mode=="npcs") {
 print "</td><td width=0% nowrap>"; // end first column
 print "<p class=page_small_title>Ressources</p>";
 print "<li><a href=?a=zone&name=$name&mode=npcs>".$zone["long_name"]." Bestiary List</a>";
-print "<li><a href=zonenameds.php?name=$name&mode=npcs>".$zone["long_name"]." Named Mobs List</a>";
+print "<li><a href=?a=zone_named&name=$name&mode=npcs>".$zone["long_name"]." Named Mobs List</a>";
 print "<li><a href=?a=zone&name=$name&mode=items>".$zone["long_name"]." Equipment List </a>";
 if (file_exists($maps_dir.$name.".jpg")) {
   print "<li><a href=".$maps_url.$name.".jpg>".$zone["long_name"]." Map</a>";

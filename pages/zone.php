@@ -378,7 +378,7 @@ print "<p class=menuh>Resources:</p>";
 print "<li><a href=?a=zone&name=$name&mode=npcs>".$zone["long_name"]." Bestiary List</a>";
 if ($DisplayNamedNPCsInfo==TRUE)
 {
-	print "<li><a href=zonenameds.php?name=$name&mode=npcs>".$zone["long_name"]." Named Mobs List</a>";
+	print "<li><a href=?a=zone_named&name=$name&mode=npcs>".$zone["long_name"]." Named Mobs List</a>";
 }
 print "<li><a href=?a=zone&name=$name&mode=items>".$zone["long_name"]." Equipment List </a>";
 if (file_exists($maps_dir.$name.".jpg")) {

@@ -19,6 +19,7 @@
 	print "<center><table border=0 width=0%><tr valign=top><td>";
 	print "<table border=0 width=0%>";
 	print "<form method=GET action=$PHP_SELF>";
+	echo '<input type="hidden" name="a" value="advanced_npcs">';
 	print "<tr><td nowrap><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname ></td></tr>";
 	print "<tr><td nowrap><b>Level : </b></td><td nowrap>Between ";
 	print SelectLevel("iminlevel",$ServerMaxNPCLevel,$iminlevel);
