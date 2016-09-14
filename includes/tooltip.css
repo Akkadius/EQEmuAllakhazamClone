@@ -5,6 +5,7 @@ body {
 	font:80% Arial, Helvetica, sans-serif;
 	color:#555;
 	line-height:180%;
+
 }
 h1{
 	font-size:180%;
@@ -26,6 +27,7 @@ pre{
 	border:1px solid #bae2f0;
 	background:#e3f4f9;	
 	margin:.5em 0;
+	z-index:9999;
 	}		
 
 /* Easy Tooltip */
@@ -43,6 +45,7 @@ pre{
 	background:#5e5e5e url(bg2.gif) repeat-x;
 	color:#fff;
 	width:450px;
+	z-index:9999;
 	}
 #easyTooltip2 h4, #easyTooltip2 p{
 	margin:.25em 0;

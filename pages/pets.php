@@ -4,20 +4,18 @@
 	require_once('./includes/config.php');
 	require_once($includes_dir.'mysql.php');
 	require_once($includes_dir.'functions.php');
-	require_once($includes_dir.'blobs.inc.php');
 
 	$class   = (isset($_GET['class']) ? $_GET['class'] : 0);
 	
 	if(!is_numeric($class))
 	{
-		header("Location: pets.php");
+		header("Location: ?a=pets");
 		exit();
 	}
 
 	$Title="Pets Statistics";
-	require_once($includes_dir.'headers.php');
 
-	print "<table border=0 width=100%><tr valign=top><td nowrap>";
+	print "<table><tr valign=top><td nowrap>";
 	
 	CreateToolTip('class15', '<table> <td> <img src="images/monograms/15.gif"> </td> <td> The Beastlord class is a unique class that is a hybrid of the Shaman and Monk parent classes. One of the class\'s distinguishing features is the ability to summon a warder pet to fight alongside them. The form the warder takes depends on the race of the beastlord. </td>');
 	CreateToolTip('class6', '<table> <td> <img src="images/monograms/6.gif"> </td> <td> Druids - a powerful outdoor class. With the triple ability to heal, inflict direct damage and cast damage over time, druids are a popular solo class, as well as popular in a group. They are also a travelling class, given both sow and teleportation abilities.  </td>');
@@ -28,17 +26,17 @@
 	CreateToolTip('class10', '<table> <td> <img src="images/monograms/10.gif"> </td> <td> Shamen - primitive power. The only magic using class of the barbarians, ogres and trolls, shamen get a variety of spells that combine aspects of most of the other magic using classes. This combination, along with the racial strength, means the class can be played in a variety of different ways.  </td>');
 	CreateToolTip('class2', '<table> <td> <img src="images/monograms/2.gif"> </td> <td> Clerics -- the premier healer in the game. A popular class for any group, the cleric brings the ability to heal the party and keep you from dying, and can even bring you back from death at higher levels.   </td>');
 	CreateToolTip('class12', '<table> <td> <img src="images/monograms/12.gif"> </td> <td> S	The Wizard - Master Nuker. The wizard\'s abilities are in direct damage spells and in individual and group teleportation.   </td>');
-	print "<table border=0 width=0%><tr valign=top><td nowrap>";
-	print "<b>Choose a class:</b><ul>";
-	print "<li><a href=$PHP_SELF?class=15 id='class15'>Beastlord</a>";
-	print "<li><a href=$PHP_SELF?class=2  id='class2'>Cleric</a>";
-	print "<li><a href=$PHP_SELF?class=6  id='class6'>Druid</a>";
-	print "<li><a href=$PHP_SELF?class=14  id='class14'>Enchanter</a>";
-	print "<li><a href=$PHP_SELF?class=13  id='class13'>Magician</a>";
-	print "<li><a href=$PHP_SELF?class=11  id='class11'>Necromancer</a>";
-	print "<li><a href=$PHP_SELF?class=5  id='class5'>Shadow knight</a>";
-	print "<li><a href=$PHP_SELF?class=10  id='class10'>Shaman</a>";
-	print "<li><a href=$PHP_SELF?class=12  id='class12'>Wizard</a>";
+	print "<table><tr valign=top><td>";
+	print "<b>Choose a class:</b><ul style='text-align:left'>";
+	print "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
+	print "<li><a href=?a=pets&class=2  id='class2'>Cleric</a>";
+	print "<li><a href=?a=pets&class=6  id='class6'>Druid</a>";
+	print "<li><a href=?a=pets&class=14  id='class14'>Enchanter</a>";
+	print "<li><a href=?a=pets&class=13  id='class13'>Magician</a>";
+	print "<li><a href=?a=pets&class=11  id='class11'>Necromancer</a>";
+	print "<li><a href=?a=pets&class=5  id='class5'>Shadow knight</a>";
+	print "<li><a href=?a=pets&class=10  id='class10'>Shaman</a>";
+	print "<li><a href=?a=pets&class=12  id='class12'>Wizard</a>";
 	print "</ul>";
 	print "</td></tr></table></td><td nowrap>";
 
@@ -77,7 +75,7 @@
 			exit;
 		}
 		$columns = mysql_num_fields($result);
-		print "<center><table border=0 width=100%><thead>";
+		print "<table border=0><thead>";
 		print "<th class='menuh'>Level</th>";
 		print "<th class='menuh'>Icon</th>";
 		print "<th class='menuh'>Spell Name</th>";
@@ -126,7 +124,5 @@
 	}
 
 	print "</td></tr></table>";
-
-	require_once($includes_dir."footers.php");
 
 ?>

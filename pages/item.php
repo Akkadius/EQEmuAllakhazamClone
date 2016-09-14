@@ -60,7 +60,7 @@ $item = $ItemRow;
 $Tableborder = 0;
 
 print "<center>\n";
-print "<table border='$Tableborder' width='100%'>\n";
+print "<table border='$Tableborder' >\n";
 
 // Title and Icon bar
 print "<tr valign='top'>\n";

@@ -163,6 +163,7 @@ TABLE {
     width:450px;
     */
     width:450px;
+    z-index:9999;
 }
 #easyTooltip2 h4, #easyTooltip2 p, #easyTooltip2 table{
     color:#fff;

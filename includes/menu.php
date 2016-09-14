@@ -45,7 +45,7 @@
 	print "<tr><td class='menuh' nowrap='1'>Bestiary...</td></tr>\n";
 	print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."npcs.php'>NPC Search</a></li></td></tr>\n";
 	print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."advnpcs.php'>Advanced NPC Search</a></li></td></tr>\n";
-	print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."pets.php'>Pets</a></li></td></tr>";
+	print "<tr><td nowrap='1' class='menu_item'><li><a href='".$root_url."?a=pets&'>Pets</a></li></td></tr>";
 
 	// Trade Skills section
 	print "<tr><td class='menuh' nowrap='1'>Trade skills...</td></tr>\n";

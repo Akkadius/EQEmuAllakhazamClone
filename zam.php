@@ -18,14 +18,6 @@
     <link rel="stylesheet" type="text/css" href="includes/alla.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
-    <script async="" src="./zam_files/beacon.js"></script>
-    <script async="" src="http://cdn2.lockerdome.com/_js/ajs.js" id="ld-ajs"></script>
-    <script src="./zam_files/aquant.js" async="" type="text/javascript"></script>
-    <script async="" src="./zam_files/analytics.js"></script>
-    <script>
-        isIE = false
-    </script>
-
     <script src="./zam_files/jquery-1.10.2.min.js"></script>
     <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
     <script src="./zam_files/global.js"></script>
@@ -39,24 +31,12 @@
 <div id="headjs" style="position: absolute; left: 0px; right: 0px; top: 0px; z-index: 999999999;"></div>
 <div class="zul-bar" id="zul-bar" data-mobile="false">
     <div class="zul-bar-inner" id="zul-bar-inner">
-
-
     </div>
 </div>
-<!--[if lte IE 8]>
-<script>document.body.className += ' pre-ie9'</script><![endif]-->
-<script>
-    ZUL.init({
-        state: 'loggedOut'
-    });
-</script>
-<div id="tmpItemFrm"></div>
+
 <div id="bg-wrapper" style="min-height: auto;">
     <div id="skin-wrap"></div>
     <div id="header">
-        <div id="livesearch"></div>
-        <!--[if lt IE 8]>
-        <script>ZAM.warnIE()</script><![endif]-->
         <div id="logo" style="background: url(images/logos/eqemu.png) 0 10px no-repeat;">
             <a href="#" style="background: url(images/logos/logo.png) right no-repeat;top:10px"></a>
         </div>
@@ -527,7 +507,7 @@
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/pets.php">Pets</a>
+                                                    <li><a href="?a=pets">Pets</a>
                                                     </li>
                                                 </td>
                                             </tr>
@@ -560,6 +540,7 @@
                                             if($route == "spells"){ require_once('pages/spells.php'); }
                                             if($route == "spell"){ require_once('pages/spell.php'); }
                                             if($route == "item"){ require_once('pages/item.php'); }
+                                            if($route == "pets"){ require_once('pages/pets.php'); }
                                         ?>
                                     </div>
                                 </div>
@@ -600,7 +581,7 @@
 
         <div class="div15"></div>
 
-
+        <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
     </footer>
 
     <div class="copyright">© 2016 EQEmulator :: Akkadius</div>
