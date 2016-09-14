@@ -80,7 +80,7 @@
 		echo "<table width='80%' border='0'>\n";
 		echo "<tr valign='top' align='right'>\n";
 		echo "<td>\n";
-		echo '<center><font face="times new roman" size="12"><b>'.$SiteTitle.'</b></font></center>';
+		echo '<center><h1>'.$SiteTitle.'</h1></center>';
 		echo "</td>\n";
 		echo "</tr>\n";
 		echo "</table>\n";

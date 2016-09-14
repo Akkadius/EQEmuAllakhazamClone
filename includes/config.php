@@ -7,10 +7,10 @@ $SiteEmail = '';
 
 $dbhost = "localhost";
 $dbname = "peq";
-$dbuser = "username";
-$dbpasswd = "password";
+$dbuser = "root";
+$dbpasswd = "eocdev";
 
-$root_url = 'http://www.myserver.com/AllaClone/';
+$root_url = 'http://10.0.1.12/allaclone/';
 $includes_url = $root_url . 'includes/';
 $includes_dir = getcwd() . "/includes/";
 $eqemu_dir = "/home/eqemu/server/";

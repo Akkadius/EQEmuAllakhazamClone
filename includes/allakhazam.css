@@ -1,8 +1,8 @@
 @charset "iso-8859-1";
 
-BODY {
-	background-color: #d6c399;
-	background: #ffffff url(../images/bg_alla_ldark.gif);
+html, body {
+	background: #8a816f url(images/bg/bgl-dark.gif);
+	color: #000;
 	color:			#000000;
 	font-family:		verdana,arial,helvetica;
 	font-weight:		normal;
@@ -13,9 +13,13 @@ BODY {
 	padding: 0px;
 }
 
+a {color:#1313d5;text-decoration:none}
+a:hover {color:#000;text-decoration:underline}
+hr {border-color:#000}
+
 .page_background {
 	background-color: #000000;
-	background-image: url('../images/bg_alla_ldark.gif');
+	background: #8a816f url(images/bg/bgl-dark.gif);
 }
 
 .main_page {
@@ -326,4 +330,270 @@ div.pagination span.disabled {
 	border: 1px solid #EEE;
 }
 
-	
+form {
+	margin: 0;
+	padding: 0
+}
+
+label {
+	cursor: pointer;
+	color: #666;
+	font-weight: bold;
+	vertical-align: middle
+}
+
+label input {
+	font-weight: normal
+}
+
+textarea, .inputtext, .inputpassword {
+	border: 1px solid #bdc7d8;
+	margin: 0;
+	padding: 3px;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0
+}
+
+textarea {
+	max-width: 100%
+}
+
+select {
+	border: 1px solid #bdc7d8;
+	padding: 2px
+}
+
+.inputtext, .inputpassword {
+	padding-bottom: 4px
+}
+
+.inputtext:invalid, .inputpassword:invalid {
+	box-shadow: none
+}
+
+.inputradio {
+	padding: 0;
+	margin: 0 5px 0 0;
+	vertical-align: middle
+}
+
+.inputcheckbox {
+	border: 0;
+	vertical-align: middle
+}
+
+.inputbutton, .inputsubmit {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #dddfe2 #0e1f5b #0e1f5b #d9dfea;
+	background-color: #3b5998;
+	color: #fff;
+	padding: 2px 15px 3px 15px;
+	text-align: center
+}
+
+.inputsubmit_disabled {
+	background-color: #999;
+	border-bottom: 1px solid #000;
+	border-right: 1px solid #666;
+	color: #fff
+}
+
+.inputaux {
+	background: #e9ebee;
+	border-color: #e9ebee #666 #666 #e7e7e7;
+	color: #000
+}
+
+.inputaux_disabled {
+	color: #999
+}
+
+.inputsearch {
+	background: #ffffff url(/rsrc.php/v3/yL/r/unHwF9CkMyM.png) no-repeat left 4px;
+	padding-left: 17px
+}
+
+body {
+	background: #fff;
+	color: #1d2129;
+	direction: ltr;
+	line-height: 1.34;
+	margin: 0;
+	padding: 0;
+	unicode-bidi: embed
+}
+
+body, button, input, label, select, td, textarea {
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 12px
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #1d2129;
+	font-size: 13px;
+	margin: 0;
+	padding: 0
+}
+
+h1 {
+	font-size: 14px
+}
+
+h4, h5, h6 {
+	font-size: 12px
+}
+
+p {
+	margin: 1em 0
+}
+
+a {
+	color: #365899;
+	cursor: pointer;
+	text-decoration: none
+}
+
+button {
+	margin: 0
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+img {
+	border: 0
+}
+
+td, td.label {
+	text-align: left
+}
+
+dd {
+	color: #000
+}
+
+dt {
+	color: #777
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0
+}
+
+abbr {
+	border-bottom: none;
+	text-decoration: none
+}
+
+hr {
+	background: #d9d9d9;
+	border-width: 0;
+	color: #d9d9d9;
+	height: 1px
+}
+
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	font-size: 0;
+	height: 0;
+	line-height: 0;
+	visibility: hidden
+}
+
+.clearfix {
+	zoom: 1
+}
+
+.datawrap {
+	word-wrap: break-word
+}
+
+.word_break {
+	display: inline-block
+}
+
+.ellipsis {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.aero {
+	opacity: .5
+}
+
+.column {
+	float: left
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto
+}
+
+#facebook .hidden_elem {
+	display: none !important
+}
+
+#facebook .invisible_elem {
+	visibility: hidden
+}
+
+#facebook .accessible_elem {
+	clip: rect(1px 1px 1px 1px);
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 1px
+}
+
+.direction_ltr {
+	direction: ltr
+}
+
+.direction_rtl {
+	direction: rtl
+}
+
+.text_align_ltr {
+	text-align: left
+}
+
+.text_align_rtl {
+	text-align: right
+}
+
+.inlineBlock {
+	display: inline-block;
+	zoom: 1
+}
+
+html {overflow-y:scroll}
+body {font:13px Arial,Helvetica,sans-serif;margin:0}
+a {cursor:pointer;outline:0}
+:focus {outline:0}
+h1, h2, h3, h4, h5, h6 {font-weight:normal}
+h1 {font-size:22px}
+h2 {font-size:18px}
+h3 {font-size:16px}
+h4 {font-size:14px}
+h5, h6 {font-size:13px}
+form {padding:0;margin:0}
+textarea {font-family:Arial,Helvetica,sans-serif;font-size:1em;line-height:19px}
+.monospace-textareas textarea {font-family:'Bitstream Vera Sans Mono','Lucida Console','Courier New',Monaco,Courier,monospace}
+input[type='radio'] {border:none;background:none}
+input[type='checkbox'] {border:none;background:none}
+optgroup option {padding-left:10px}
+img {border:0}
+pre {font-family:'Bitstream Vera Sans Mono','Lucida Console','Courier New',Monaco,Courier,monospace;overflow:auto}
+ul {padding:0 0 0 1.75em}
+hr {border-style:solid;border-width:1px 0 0;*height:1px}
+p {margin:10px 0}
