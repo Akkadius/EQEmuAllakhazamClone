@@ -200,6 +200,11 @@
                                             if($route == "zone_named"){ require_once('pages/zone_named.php'); }
                                             if($route == "npcs"){ require_once('pages/npcs.php'); }
                                             if($route == "advanced_npcs"){ require_once('pages/advanced_npcs.php'); }
+                                            if($route == "zone_era"){
+                                                echo '<table class=\'display_table container_div\'><tr><td>';
+                                                require_once('pages/zones_by_era/' . $_GET['era'] . '.php');
+                                                echo '</td></tr></table>';
+                                            }
 
                                             if($Title){
                                                 $footer_javascript .= '
