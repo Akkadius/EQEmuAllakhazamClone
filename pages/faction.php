@@ -41,7 +41,7 @@ if ($id != "" && is_numeric($id)) {
     $Query = "
         SELECT
             id,
-            NAME
+            name
         FROM
             $faction_list_table
         WHERE
@@ -58,11 +58,11 @@ if ($id != "" && is_numeric($id)) {
     $Query = "
         SELECT
             id,
-            NAME
+            name
         FROM
             $faction_list_table
         WHERE
-            NAME LIKE '$name'
+            name LIKE '$name'
     ";
     $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
@@ -110,7 +110,7 @@ print "                  <b>NPCs whom death raises the faction</b><br/><br/>\n";
 $Query = "
     SELECT
         $npc_types_table.id,
-        $npc_types_table. NAME,
+        $npc_types_table.name,
         $zones_table.long_name,
         $spawn2_table.zone
     FROM
@@ -142,7 +142,7 @@ print "                  <b>NPCs whom death lowers the faction</b><br/><br/>\n";
 $Query = "
     SELECT
         $npc_types_table.id,
-        $npc_types_table. NAME,
+        $npc_types_table.name,
         $zones_table.long_name,
         $spawn2_table.zone
     FROM

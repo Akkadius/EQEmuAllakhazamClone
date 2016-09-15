@@ -229,7 +229,7 @@ if ($item_found_info == TRUE) {
         $query = "
             SELECT
                 $npc_types_table.id,
-                $npc_types_table. NAME,
+                $npc_types_table.name,
                 $spawn2_table.zone,
                 $zones_table.long_name,
                 $loot_table_entries.multiplier,
