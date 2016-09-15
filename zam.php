@@ -5,6 +5,7 @@
     require_once($includes_dir . 'functions.php');
 
     $start = microtime(true);
+    $debug_queries = "";
 ?>
 
 <!DOCTYPE html>
@@ -242,12 +243,20 @@
             fclose($myfile);
         }
 
+
+
     ?>
 
     <footer>
         <div class="block-content pad10" style="line-height:24px">
             <ul class="site-footer">
-                <?php echo $page_load_time; ?>
+                <?php
+                    echo $page_load_time;
+
+                    if($mysql_debugging){
+                        print $debug_queries;
+                    }
+                ?>
             </ul>
             <div class="clear"></div>
         </div>

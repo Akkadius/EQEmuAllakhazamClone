@@ -39,9 +39,19 @@ function GetRowByQuery($query)
 }
 
 function db_mysql_query($query){
-    global $mysql_debugging;
+    global $mysql_debugging, $debug_queries;
+    $start = microtime(true);
 
-    return mysql_query($query);
+    $result = mysql_query($query);
+
+    if($query != "" && $mysql_debugging){
+        $millisecond_time = microtime(true) - $start;
+        $millisecond_time = ($millisecond_time * 1000);
+
+        $debug_queries .= ' <pre style="margin: 0px; line-height: 24px;">' . $query . ' <b>Execution Time :: ' . $millisecond_time . 'ms</b> ' . (mysql_error() ? 'ERROR: ' . mysql_error() : '') . '</pre><hr>';
+    }
+
+    return $result;
 }
 
 ?>
