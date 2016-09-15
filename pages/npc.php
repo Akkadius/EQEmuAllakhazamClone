@@ -264,7 +264,7 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
                     $ldid = $row["lootdrop_id"];
                 }
             }
-            $print_buffer .= "<li><a href='?a=item&id=" . $row["id"] . "'>" . $row["Name"] . "</a>";
+            $print_buffer .= "<li>" . get_item_icon_from_id($row["id"]) . " <a href='?a=item&id=" . $row["id"] . "'>" . $row["Name"] . "</a>";
             $print_buffer .= " (" . $dbitypes[$row["itemtype"]] . ")";
             if ($show_npc_drop_chances == TRUE) {
                 $print_buffer .= " - " . $row["chance"] . "%";
@@ -315,7 +315,7 @@ if ($npc["merchant_id"] > 0) {
 $print_buffer .= "</tr></table>";
 
 
-$print_buffer .= "</td><td valign='top'><table border='0' width='0%'>"; // right column height='100%'
+$print_buffer .= "</td><td valign='top'><table class='display_table container_div'>"; // right column height='100%'
 $print_buffer .= "<tr><td>"; // image
 if ($UseWikiImages) {
     $ImageFile = NpcImage($wiki_server_url, $wiki_root_name, $id);
@@ -359,7 +359,7 @@ foreach ($ignore_zones AS $zid) {
 $query .= " ORDER BY $zones_table.long_name,$spawn_group_table.`name`";
 $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
-    $print_buffer .= "<b>This NPC spawns in : </b>";
+    $print_buffer .= "<h2 class='section_header'>This NPC spawns in</h2>";
     $z = "";
     while ($row = mysql_fetch_array($result)) {
         if ($z != $row["short_name"]) {
@@ -397,7 +397,7 @@ $query = "
 ";
 $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
-    $print_buffer .= "<p><b>Killing this NPC lowers factions with : </b><ul>";
+    $print_buffer .= "<h2 class='section_header'>Killing this NPC lowers factions with</h2><ul>";
     while ($row = mysql_fetch_array($result)) {
         $print_buffer .= "<li><a href=faction.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
     }
@@ -420,7 +420,9 @@ $query = "
 ";
 $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
-    $print_buffer .= "<p><b>Killing this NPC raises factions with : </b><ul>";
+    $print_buffer .= "
+        <h2 class='section_header'>Killing this NPC raises factions with</h2>
+        <ul>";
     while ($row = mysql_fetch_array($result)) {
         $print_buffer .= "<li><a href=faction.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
     }
