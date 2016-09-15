@@ -4,9 +4,15 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 $Title = "Pet :: $name";
 
-$query = "SELECT $npc_types_table.*
-            FROM $npc_types_table
-            WHERE $npc_types_table.`name` = '$name' LIMIT 1";
+$query = "
+    SELECT
+        $npc_types_table.*
+    FROM
+        $npc_types_table
+    WHERE
+        $npc_types_table.`name` = '$name'
+    LIMIT 1
+";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 $npc = mysql_fetch_array($result);
 
@@ -60,13 +66,18 @@ if ($npc["npc_spells_id"] > 0) {
     if (mysql_num_rows($result) > 0) {
         $g = mysql_fetch_array($result);
         print "<td><table border=0><tr><td colspan=2 nowrap><b>This pet casts the following spells : </b><p>";
-        $query = "SELECT $npc_spells_entries_table.spellid
-                FROM $npc_spells_entries_table
-                WHERE $npc_spells_entries_table.npc_spells_id=" . $npc["npc_spells_id"] . "
-                  AND $npc_spells_entries_table.minlevel<=" . $npc["level"] . "
-                  AND $npc_spells_entries_table.maxlevel>=" . $npc["level"] . "
-                ORDER BY $npc_spells_entries_table.priority DESC
-                ";
+        $query = "
+            SELECT
+                $npc_spells_entries_table.spellid
+            FROM
+                $npc_spells_entries_table
+            WHERE
+                $npc_spells_entries_table.npc_spells_id = " . $npc["npc_spells_id"] . "
+            AND $npc_spells_entries_table.minlevel <= " . $npc["level"] . "
+            AND $npc_spells_entries_table.maxlevel >= " . $npc["level"] . "
+            ORDER BY
+                $npc_spells_entries_table.priority DESC
+        ";
         $result2 = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {
             print "</ul><li><b>Listname : </b>" . $g["name"];

@@ -187,7 +187,15 @@ print $trade_skill_return;
 
 if ($allow_quests_npc == TRUE) {
     // npcs that use that give that item as reward
-    $query = "SELECT * FROM $tbquestitems WHERE item_id=$id AND rewarded>0";
+    $query = "
+        SELECT
+            *
+        FROM
+            $tbquestitems
+        WHERE
+            item_id = $id
+        AND rewarded > 0
+    ";
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr><td><h2 class='section_header'>This item is from the result of a quest</h2></b><ul>";
@@ -200,7 +208,15 @@ if ($allow_quests_npc == TRUE) {
     }
 
     // npcs that use that give that item as quest item
-    $query = "SELECT * FROM $tbquestitems WHERE item_id=$id AND handed>0";
+    $query = "
+        SELECT
+            *
+        FROM
+            $tbquestitems
+        WHERE
+            item_id = $id
+        AND handed > 0
+    ";
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr><td><b>This item is used in quests.</b></b><ul>";
