@@ -12,7 +12,7 @@
 
   print "<table class='container_div'><tr valign=top><td>\n";
   if (file_exists($npcs_dir . $id . ".jpg")) {
-    print "<center><img src=" . $npcs_dir . $id . ".jpg></center>";
+    print "<img src=" . $npcs_dir . $id . ".jpg>";
   }
   print "<p><table >";
   print "<tr><td style='text-align:right'><b>Full name : </b></td><td>" . str_replace("_", " ", $npc["name"]);

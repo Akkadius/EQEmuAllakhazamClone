@@ -5,12 +5,7 @@
 	  *  If no criteria is set then it is equivalent to searching for all items.
 	  *  For compatbility with Wikis and multi-word searches, underscores are treated as jokers in 'iname'.
 	  */
-	require_once('./includes/config.php');
-	require_once($includes_dir.'constants.php');
-	require_once($includes_dir.'mysql.php');
-	require_once($includes_dir.'functions.php');
 
-	
 	$isearch       = (isset($_GET[       'isearch']) ? $_GET[       'isearch'] : '');
 	$iname         = (isset($_GET[         'iname']) ? $_GET[         'iname'] : '');
 	$iclass        = (isset($_GET[        'iclass']) ? addslashes($_GET[        'iclass']) : '');
@@ -163,9 +158,9 @@
 
 	$Title="Item Search";
 
-	require_once($includes_dir.'headers.php');
 
-	echo "<table><tr><td style='toggle_btn'></td></tr></table></center>";
+
+	echo "<table><tr><td style='toggle_btn'></td></tr></table>";
 	echo "<table border='0' width='0%' cellpadding='15'>\n";
 
 	echo "<tbody id='myTbody'>";
@@ -278,7 +273,7 @@
 		{
 			$num_rows = LimitToUse($MaxItemsReturned);
 		}
-		echo "<center>";
+		echo "";
 		if($num_rows == 0)
 		{
 			echo "<b>No items found...</b><br>";
@@ -291,9 +286,9 @@
 				$OutOf = " (Searches are limited to 100 Max Results)";
 			}
 			echo "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
-			echo "</center>";
+			echo "";
 
-			echo "<center><table border='$Tableborder' cellpadding='5' width='0%'>";
+			echo "<table border='$Tableborder' cellpadding='5' width='0%'>";
 			echo "<tr>
 					<th class='menuh'>Icon</th>
 					<th class='menuh'>Item Name</th>
@@ -352,7 +347,7 @@
 				
 				print $TableData;
 			}
-			echo "</table></center>";
+			echo "</table>";
 		}
 	}
 

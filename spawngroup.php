@@ -24,11 +24,11 @@ $x=floor($spawn["x"]);
 $y=floor($spawn["y"]);
 $z=floor($spawn["z"]);
 
-require_once($includes_dir.'headers.php');
+
 
 if (!isset($id) || $id=='') { print "<script>document.location=\"index.php\";</script>"; }
 
-print "<center><table border=0 width=0%><tr valign=top><td width=50% nowrap>\n";
+print "<table border=0 width=0%><tr valign=top><td width=50% nowrap>\n";
 $query="SELECT $tbspawnentry.chance,$tbnpctypes.name,$tbnpctypes.id
         FROM $tbspawnentry,$tbnpctypes
         WHERE $tbspawnentry.spawngroupID=$id
@@ -73,7 +73,7 @@ if (mysql_num_rows($result)>0) {
 } else {
   print "None... ";
 }
-print "</ul></td></tr></table></center>";
+print "</ul></td></tr></table>";
 
 
 ?>

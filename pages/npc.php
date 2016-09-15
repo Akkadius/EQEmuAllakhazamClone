@@ -427,7 +427,7 @@
 	
 	print "</td></tr></table>\n";
 	print "</td></tr></table>\n";
-	print "</td></tr></table></center>\n";
+	print "</td></tr></table>\n";
 
 
 ?>

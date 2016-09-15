@@ -82,9 +82,9 @@
 
 	$Title = "Faction :: ".$name;
 
-	require_once($includes_dir.'headers.php');
 
-	print "          <center>\n";
+
+	print "          \n";
 	print "            <table border='1' width='80%' style='background-color: black; filter:alpha(opacity=70); -moz-opacity:0.7; opacity: 0.7;'>\n";
 
 	// Title and Icon bar
@@ -139,7 +139,7 @@
 
 	print "              </tr>\n";
 	print "            </table>\n";
-	print "          </center>\n";
+	print "          \n";
 
 
 

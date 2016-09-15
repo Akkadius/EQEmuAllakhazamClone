@@ -3,7 +3,7 @@
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
 	require_once($includes_dir.'mysql.php');
-	require_once($includes_dir.'headers.php');
+
 	require_once($includes_dir.'functions.php');
 
 	$minskill = (isset($_GET['minskill']) ? $_GET['minskill'] : 0);
@@ -18,7 +18,7 @@
 	if (!ctype_digit($minskill)) { $minskill=0; }
 	if ($minskill>$maxskill) { $tempskill=$minskill; $minskill=$maxskill; $maxskill=$tempskill; }
 
-	print "<center><table border=0>";
+	print "<table border=0>";
 	print "<form method='GET' action=$PHP_SELF>";
 	print '<input type="hidden" name="a" value="recipes">';
 	print "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname></td></tr>";
@@ -28,7 +28,7 @@
 	print "<tr><td><b>Min trivial skill : </b></td><td><input type=text value=\"$minskill\" size=4 name=minskill></td></tr>";
 	print "<tr><td><b>Max trivial skill : </b></td><td><input type=text value=\"$maxskill\" size=4 name=maxskill></td></tr>";
 	print "<tr align=center><td colspan=2><input type='submit' value='Search' name='isearch' class='form'/> <input type='reset' value='Reset' class='form'/></td></tr>";
-	print "</form></table></center>";
+	print "</form></table>";
 
 	if (isset($isearch) && $isearch != "")
 	{

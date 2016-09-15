@@ -90,7 +90,7 @@ if ($SortZoneLevelList==TRUE) {
 
 
 print "<table><tr valign=top><td width=100%>";
-print "<center><table border=1>";
+print "<table border=1>";
 print "<tr class='menuh'><th>Name</th>
        <th class=tab_title>Short name</th>";
 $LevelMax = 0;
@@ -133,7 +133,7 @@ for ($i=0; $i<=$cpt; $i++) {
     }
   }
 }
-print "</table></center>";
+print "</table>";
 print "</td><td width=0% nowrap>";
 // right column, unused
 print "</td></tr></table>";

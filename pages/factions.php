@@ -45,7 +45,7 @@
 	$Title="Faction Search";
 
 
-	print "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
+	print "<table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
 	print "<tr>\n";
 	print "<td><b>Search : </b></td>\n";
 	print '<input type="hidden" name="a" value="factions">';
@@ -54,7 +54,7 @@
 	print "<tr align='center'>";
 	print "<td='1' colspan='2'><input type='submit' value='Search' name='isearch' class='form'/></td>\n";
 	print "</tr>\n";
-	print "</form></table></center>\n";
+	print "</form></table>\n";
 	print "\n";
 
 	if(isset($QueryResult))

@@ -3,7 +3,7 @@
 	require_once('./includes/constants.php');
 	require_once('./includes/config.php');
 	require_once($includes_dir.'mysql.php');
-	require_once($includes_dir.'headers.php');
+
 	require_once($includes_dir.'functions.php');
 
 	$isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
@@ -16,7 +16,7 @@
 	$irace = (isset($_GET['irace']) ? $_GET['irace'] : '');
 	if ($irace==0) { $irace=''; }
 
-	print "<center><table border=0 width=0%><tr valign=top><td>";
+	print "<table border=0 width=0%><tr valign=top><td>";
 	print "<table border=0 width=0%>";
 	print "<form method=GET action=$PHP_SELF>";
 	echo '<input type="hidden" name="a" value="advanced_npcs">';
@@ -34,7 +34,7 @@
 	print "<tr><td><b>Show level : </b></td><td><input type=checkbox name=ishowlevel ".($ishowlevel?" checked":"")."></td></tr>";
 	print "</table>";
 	print "<tr align=center colspan=2><td colspan=2><input type=submit value=Search name=isearch class=form></td></tr>";
-	print "</form></table></center>";
+	print "</form></table>";
 
 	if (isset($isearch) && $isearch!='')
 	{

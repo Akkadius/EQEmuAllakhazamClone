@@ -42,9 +42,9 @@ else
 
 $Title="Task :: ".$name;
 
-require_once($includes_dir.'headers.php');
 
-print "<p><center><table border='0' width='60%'>";
+
+print "<p><table border='0' width='60%'>";
 print "<tr><td><b>Task Title : </b></td><td width='100%'>".$task["title"]."</td></tr>";
 print "<tr><td><b>Task ID : </b></td><td width='100%'>".$task["id"]."</td></tr>";
 print "<tr><td><b>Min Level : </b></td><td width='100%'>".$task["minlevel"]."</td></tr>";
@@ -291,7 +291,7 @@ if ($DisplayTaskActivities==TRUE)
 	}
 
 }
-print "</table></center></p>";
+print "</table></p>";
 
 
 

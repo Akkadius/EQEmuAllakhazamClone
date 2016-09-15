@@ -25,7 +25,7 @@ $query="SELECT $tbzones.*
         WHERE $tbzones.short_name='$name'";
 $result=mysql_query($query) or message_die('zones.php','MYSQL_QUERY',$query,mysql_error());
 $zone=mysql_fetch_array($result);
-print "<center><table border=0 width=0%><tr valign=top><td>";
+print "<table border=0 width=0%><tr valign=top><td>";
 print "<p><b>Succor point : </b>".floor($zone["safe_x"])." / ".floor($zone["safe_y"])." / ".floor($zone["safe_z"]);
 if ($zone["minium_level"]>0) { print "<br><b>Minimum level : </b>".floor($zone["minium_level"]); }
 print "</td>";
@@ -199,7 +199,7 @@ if ($mode=="npcs") {
            </tr>";
   }
   print "</form>";
-  print "</table><p></center>";
+  print "</table><p>";
 } // end npcs
 
 

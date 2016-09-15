@@ -19,10 +19,10 @@
 	// Pagination //
 	
 	$Title="Bestiary by Factions";
-	require_once($includes_dir.'headers.php');
+
 	require_once($includes_dir.'functions.php');
 
-	echo '<br><center><table width="50%" border ="1" style="background-color: ; filter:alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8;"><td align="left">';
+	echo '<br><table width="50%" border ="1" style="background-color: ; filter:alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8;"><td align="left">';
 	echo "<p class=menuh>Factions:<p>";
 	$query="SELECT id,name from $tbfactionlist order by name ASC";
 	// Limits for pagination

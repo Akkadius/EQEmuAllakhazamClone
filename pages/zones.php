@@ -16,7 +16,7 @@ $query="SELECT $tbzones.short_name AS short_name,
 $query.=" GROUP BY $tbspawn2.zone
         ORDER BY $tbzones.long_name ASC";
 $result=mysql_query($query) or message_die('zones.php','MYSQL_QUERY',$query,mysql_error());
-print "<center><table class='display_table datatable container_div'><tr>
+print "<table class='display_table datatable container_div'><tr>
        <td style='font-weight:bold'>Name</td>
        <td style='font-weight:bold'>Short name</td>
        <td style='font-weight:bold'>ID</td>
@@ -30,7 +30,7 @@ while ($row=mysql_fetch_array($result)) {
          <td align=center>".$row["spawns"]."</td>
          </tr>";
 }
-print "</table></center>";
+print "</table>";
 print "</td><td width=0% nowrap>";
 print "</td></tr></table>";
 

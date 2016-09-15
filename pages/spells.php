@@ -45,7 +45,7 @@
 	}
 
 	/* Display Spell Form */
-	echo '<center><table border="0"><tr align="left"><td>';
+	echo '<table border="0"><tr align="left"><td>';
 	echo '
 			<form name="f" action="">
 			<input type="hidden" name="a" value="spells">
@@ -160,7 +160,7 @@
 			echo '<tr class="'.$RowClass.'">
 					<td valign="top"><a href="?a=spell&id='. $row['id'] . '"><img src="'. $icons_url . $row['new_icon'] . '.gif" align="center" border="1"></a></td>
 					<td valign="top"><a href="?a=spell&id='. $row['id'] . '">'. $row['name'] . '</a></td>
-					<td valign="top"><center>' . $ClassName . " " . $LevelCheck . '</center></td>
+					<td valign="top">' . $ClassName . " " . $LevelCheck . '</td>
 					<td valign="top"><small>';  
 					for ($n=1; $n<=12; $n++) { SpellDescription($row, $n); } 
 					echo '</small></td>

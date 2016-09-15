@@ -118,7 +118,7 @@
 				$RowClass = "lr";
 			}	
 		}
-		print "</tbody></table></center>";
+		print "</tbody></table>";
 	
 	}
 

@@ -326,6 +326,6 @@ print "</td>\n";
 print "</tr>\n";
 print "</table>\n";
 
-print "</center>\n";
+print "\n";
 
 ?>

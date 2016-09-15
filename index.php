@@ -26,21 +26,21 @@
 	
 
 	$Title="Wecome to AllaClone!";
-	require_once($includes_dir.'headers.php');
+
 
 	// Here's the main page of the website
 
 	if (file_exists("design/index.html"))
 	{
-		print "<center><table width=95% border=0><tr valign=top><td>";
+		print "<table width=95% border=0><tr valign=top><td>";
 		require_once("design/index.html");
-		print "</td></tr></table></center>";
+		print "</td></tr></table>";
 	}
 
 	if ($DiscoveredItemsOnly==TRUE){
 		$Title="Recently Discovered Items";
-		print "<center><table border='0' width='0%'><tr valign='top'><td class='header_cell'>";
-		print "<b><center>$Title</center></b>";
+		print "<table border='0' width='0%'><tr valign='top'><td class='header_cell'>";
+		print "<b>$Title</b>";
 		print "</td></tr>"; 
 
 		print "<table border=0 width=100%><tr valign=top><td width=100%>";
@@ -57,7 +57,7 @@
 		$query.=" ORDER BY $tbdiscovereditems.discovered_date DESC LIMIT $start, $MaxResultsPerPage";
 
 		$result=mysql_query($query) or message_die('index.php','MYSQL_QUERY',$query,mysql_error());
-		print "<center><table border=0 cellpadding='5' cellspacing='0'><tr>
+		print "<table border=0 cellpadding='5' cellspacing='0'><tr>
 			   <td class='menuh'>Item Name</td>
 			   <td class='menuh'>Item ID</td>
 			   <td class='menuh'>Discovered By</td>
@@ -94,7 +94,7 @@
 					$RowClass = "lr";
 				}
 		}
-		print "</table></center>";
+		print "</table>";
 		
 		print "<tr><td align='center'>";
 		print Pagination($targetpage, $page, $total_pages, $MaxResultsPerPage, $AdjacentPages);

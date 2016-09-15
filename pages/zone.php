@@ -240,7 +240,7 @@ if ($mode == "items") {
 
 if ($mode == "spawngroups") {
     if ($DisplaySpawnGroupInfo == TRUE) {
-        print "</center>";
+        print "";
         $query = "SELECT $tbspawngroup.*,$tbspawn2.x,$tbspawn2.y,$tbspawn2.z,$tbspawn2.respawntime
 			FROM $tbspawn2,$tbspawngroup
 			WHERE $tbspawn2.zone='$name'
@@ -266,7 +266,7 @@ if ($mode == "spawngroups") {
                 print "</ul>";
             }
         } else {
-            print "<br><b>No Spawns Found</b></center>";
+            print "<br><b>No Spawns Found</b>";
         }
 
     }
