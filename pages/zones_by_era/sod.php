@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=oldkithicor>Bloody Kithicor</a>
 <li><a href=?a=zone&name=oldkithicor>Bloody Kithicor: Raid Instance</a>
 <li><a href=?a=zone&name=oldkithicor>Bloody Kithicor: Safe Passage</a>

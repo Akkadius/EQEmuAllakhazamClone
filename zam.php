@@ -202,6 +202,7 @@
                                             if($route == "advanced_npcs"){ require_once('pages/advanced_npcs.php'); }
                                             if($route == "zone_era"){
                                                 echo '<table class=\'display_table container_div\'><tr><td>';
+                                                echo "<h2 class='section_header'>Zones</h2><br>";
                                                 require_once('pages/zones_by_era/' . $_GET['era'] . '.php');
                                                 echo '</td></tr></table>';
                                             }

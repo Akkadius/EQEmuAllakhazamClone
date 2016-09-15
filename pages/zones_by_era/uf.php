@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=arthicrex>Arthicrex</a>
 <li><a href=?a=zone&name=arthicrex>Arthicrex: Raid Instance</a>
 <li><a href=?a=zone&name=arthicrex>Arthicrex: To Serve Sporali</a>

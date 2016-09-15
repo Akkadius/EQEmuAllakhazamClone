@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=ashengate>Ashengate East (Raid)</a>
 <li><a href=?a=zone&name=ashengate>Ashengate North (Raid)</a>
 <li><a href=?a=zone&name=ashengate>Ashengate West (Raid)</a>

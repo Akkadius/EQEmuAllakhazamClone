@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=freeportacademy>Academy of Arcane Science</a>
 <li><a href=?a=zone&name=arcstone>Arcstone, Isle of Spirits</a>
 <li><a href=?a=zone&name=freeportcityhall>City Hall</a>

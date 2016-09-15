@@ -413,4 +413,5 @@ select {
 
 .display_table {
     width: 500px;
+    padding: 5px;
 }

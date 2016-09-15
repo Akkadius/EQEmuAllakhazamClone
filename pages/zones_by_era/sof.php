@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=bloodmoon>Bloodmoon Keep</a>
 <li><a href=?a=zone&name=bloodmoon>Bloodmoon Keep: Bronzebeard's Fate</a>
 <li><a href=?a=zone&name=bloodmoon>Bloodmoon Keep: Crazok Moonfang</a>

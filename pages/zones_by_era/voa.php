@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=shortname>Argath, Bastion of Illdaera</a>
 <li><a href=?a=zone&name=shortname>Argath: Illdaera's Vengeance</a>
 <li><a href=?a=zone&name=shortname>Argath: Raid Instance</a>

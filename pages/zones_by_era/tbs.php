@@ -2,7 +2,7 @@
 $Title="Outer Planes";
 
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=barren>Barren Coast</a>
 <li><a href=?a=zone&name=blacksail>Blacksail Folly: A Spy Among Them</a>
 <li><a href=?a=zone&name=blacksail>Blacksail Folly: Buried Treasure</a>

@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=alkabormare>Al'Kabor's Nightmare</a>
 <li><a href=?a=zone&name=alkabormare>Al'Kabor's Nightmare: At World's End</a>
 <li><a href=?a=zone&name=alkabormare>Al'Kabor's Nightmare: Catastrophic Power</a>

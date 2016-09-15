@@ -1,7 +1,7 @@
 <?php
 $Title="Outer Planes";
 ?>
-<p class=page_small_title>Zones</p><ul>
+
 <li><a href=?a=zone&name=guildhall>Guild Hall</a>
 <li><a href=?a=zone&name=guildlobby>Guild Lobby</a>
 <li><a href=?a=zone&name=delve>Lavaspinner's Lair</a>
