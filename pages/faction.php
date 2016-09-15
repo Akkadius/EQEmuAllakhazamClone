@@ -22,14 +22,14 @@ function PrintNpcsByZone($QueryResult)
         while ($row = mysql_fetch_array($QueryResult)) {
             if ($CurrentZone != $row["zone"]) {
                 if ($CurrentZone != "")
-                    print "                  <br/><br/>\n";
-                print "                  <b>in <a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b>\n";
+                    $print_buffer .= "                  <br/><br/>\n";
+                $print_buffer .= "                  <b>in <a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b>\n";
                 $CurrentZone = $row["zone"];
             }
-            print "<li><a href='?a=npc&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . $row["id"] . ")</li>\n";
+            $print_buffer .= "<li><a href='?a=npc&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . $row["id"] . ")</li>\n";
         }
         if ($CurrentZone != "")
-            print "                  <br/><br/>\n";
+            $print_buffer .= "                  <br/><br/>\n";
     }
 }
 
@@ -88,25 +88,25 @@ if ($id != "" && is_numeric($id)) {
 $Title = "Faction :: " . $name;
 
 
-print "          \n";
-print "            <table border='1' width='80%' style='background-color: black; filter:alpha(opacity=70); -moz-opacity:0.7; opacity: 0.7;'>\n";
+$print_buffer .= "          \n";
+$print_buffer .= "            <table border='1' width='80%' style='background-color: black; filter:alpha(opacity=70); -moz-opacity:0.7; opacity: 0.7;'>\n";
 
 // Title and Icon bar
-print "              <tr valign='top' align='left'>\n";
-print "                <td colspan='2' class='headerrow'>\n";
-print "                  <a href='" . $peqeditor_url . "index.php?editor=faction&amp;fid=" . $id . "'><img src='" . $images_url . "/peq_faction.png' align='right'/></a>\n";
-print "                  <b>" . $name . "</b>\n";
-print "                  <br/>id : " . $id . "\n";
-print "                </td>\n";
-print "              </tr>\n";
-print "            </table>\n";
+$print_buffer .= "              <tr valign='top' align='left'>\n";
+$print_buffer .= "                <td colspan='2' class='headerrow'>\n";
+$print_buffer .= "                  <a href='" . $peqeditor_url . "index.php?editor=faction&amp;fid=" . $id . "'><img src='" . $images_url . "/peq_faction.png' align='right'/></a>\n";
+$print_buffer .= "                  <b>" . $name . "</b>\n";
+$print_buffer .= "                  <br/>id : " . $id . "\n";
+$print_buffer .= "                </td>\n";
+$print_buffer .= "              </tr>\n";
+$print_buffer .= "            </table>\n";
 
-print "            <table border='0' width='80%' style='background-color: ; filter:alpha(opacity=70); -moz-opacity:0.7; opacity: 0.7;'>\n";
-print "              <tr valign='top' align='left'>\n";
+$print_buffer .= "            <table border='0' width='80%' style='background-color: ; filter:alpha(opacity=70); -moz-opacity:0.7; opacity: 0.7;'>\n";
+$print_buffer .= "              <tr valign='top' align='left'>\n";
 
 // NPCs raising the faction by killing them
-print "                <td width='50%' nowrap='1' align='left'>\n";
-print "                  <b>NPCs whom death raises the faction</b><br/><br/>\n";
+$print_buffer .= "                <td width='50%' nowrap='1' align='left'>\n";
+$print_buffer .= "                  <b>NPCs whom death raises the faction</b><br/><br/>\n";
 $Query = "
     SELECT
         $npc_types_table.id,
@@ -133,12 +133,12 @@ $Query = "
 	";
 $QueryResult = db_mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
 PrintNpcsByZone($QueryResult);
-print "                </td>\n";
+$print_buffer .= "                </td>\n";
 
 
 // NPCs lowering the faction by killing them
-print "                <td width='50%' nowrap='1' align='left'>\n";
-print "                  <b>NPCs whom death lowers the faction</b><br/><br/>\n";
+$print_buffer .= "                <td width='50%' nowrap='1' align='left'>\n";
+$print_buffer .= "                  <b>NPCs whom death lowers the faction</b><br/><br/>\n";
 $Query = "
     SELECT
         $npc_types_table.id,
@@ -165,11 +165,11 @@ $Query = "
 ";
 $QueryResult = db_mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
 PrintNpcsByZone($QueryResult);
-print "                </td>\n";
+$print_buffer .= "                </td>\n";
 
-print "              </tr>\n";
-print "            </table>\n";
-print "          \n";
+$print_buffer .= "              </tr>\n";
+$print_buffer .= "            </table>\n";
+$print_buffer .= "          \n";
 
 
 ?>

@@ -25,17 +25,17 @@ if ($minskill > $maxskill) {
     $maxskill = $tempskill;
 }
 
-print "<table border=0>";
-print "<form method='GET' action=$PHP_SELF>";
-print '<input type="hidden" name="a" value="recipes">';
-print "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname></td></tr>";
-print "<tr><td><b>Tradeskill : </b></td><td>";
-print SelectTradeSkills("iskill", $iskill);
-print "</td></tr>";
-print "<tr><td><b>Min trivial skill : </b></td><td><input type=text value=\"$minskill\" size=4 name=minskill></td></tr>";
-print "<tr><td><b>Max trivial skill : </b></td><td><input type=text value=\"$maxskill\" size=4 name=maxskill></td></tr>";
-print "<tr align=center><td colspan=2><input type='submit' value='Search' name='isearch' class='form'/> <input type='reset' value='Reset' class='form'/></td></tr>";
-print "</form></table>";
+$print_buffer .= "<table border=0>";
+$print_buffer .= "<form method='GET' action=$PHP_SELF>";
+$print_buffer .= '<input type="hidden" name="a" value="recipes">';
+$print_buffer .= "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname></td></tr>";
+$print_buffer .= "<tr><td><b>Tradeskill : </b></td><td>";
+$print_buffer .= SelectTradeSkills("iskill", $iskill);
+$print_buffer .= "</td></tr>";
+$print_buffer .= "<tr><td><b>Min trivial skill : </b></td><td><input type=text value=\"$minskill\" size=4 name=minskill></td></tr>";
+$print_buffer .= "<tr><td><b>Max trivial skill : </b></td><td><input type=text value=\"$maxskill\" size=4 name=maxskill></td></tr>";
+$print_buffer .= "<tr align=center><td colspan=2><input type='submit' value='Search' name='isearch' class='form'/> <input type='reset' value='Reset' class='form'/></td></tr>";
+$print_buffer .= "</form></table>";
 
 if (isset($isearch) && $isearch != "") {
     if ($minskill > $maxskill) {
@@ -73,11 +73,11 @@ if (isset($isearch) && $isearch != "") {
     $query .= " ORDER BY $trade_skill_recipe_table.`name`";
     $result = db_mysql_query($query) or message_die('?a=recipes&', 'MYSQL_QUERY', $query, mysql_error());
 
-    echo '<div>';
+    $print_buffer .= '<div>';
     if (isset($result)) {
         PrintQueryResults($result, $max_items_returned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
     }
-    echo '</div>';
+    $print_buffer .= '</div>';
 }
 
 

@@ -38,8 +38,8 @@ if ($opt == 1) {
 }
 
 /* Display Spell Form */
-echo '<table border="0"><tr align="left"><td>';
-echo '
+$print_buffer .= '<table border="0"><tr align="left"><td>';
+$print_buffer .= '
 			<form name="f" action="">
 			<input type="hidden" name="a" value="spells">
 			<table border="0" cellspacing="0" cellpadding="3">
@@ -68,10 +68,10 @@ echo '
 			<option value="">-----</option>';
 
 for ($i = 1; $i <= $server_max_level; $i++) {
-    echo '<option value="' . $i . '"' . ($level == $i ? ' selected="1"' : '') . '>' . $i . '</option>';
+    $print_buffer .= '<option value="' . $i . '"' . ($level == $i ? ' selected="1"' : '') . '>' . $i . '</option>';
 }
 
-echo '</select>
+$print_buffer .= '</select>
 			<label><input type="radio" name="opt" value="1" ' . $check1 . ' />Only</label>
 			<label><input type="radio" name="opt" value="2" ' . $check2 . ' />And Higher</label>
 			<label><input type="radio" name="opt" value="3" ' . $check3 . ' />And Lower</label></td></tr>
@@ -122,7 +122,7 @@ if (($type != 0 && $level != 0) || $namestring != '') {
         die('Invalid query: ' . mysql_error());
     }
 
-    echo ' <table border="0" cellpadding="5" cellspacing="0">';
+    $print_buffer .= ' <table border="0" cellpadding="5" cellspacing="0">';
     $LevelCheck = $level + $OpDiff;
     $Class = 'classes' . $type;
     $ClassName = $dbclasses[$type];
@@ -133,8 +133,8 @@ if (($type != 0 && $level != 0) || $namestring != '') {
         $DBSkill = $dbskills[$row["skill"]];
         if ($LevelCheck != $row[$Class]) {
             $LevelCheck = $row[$Class];
-            echo '<tr><td colspan="4"><b>Level: ' . $row['classes' . $type] . '</b></td></tr>';
-            echo '<tr>
+            $print_buffer .= '<tr><td colspan="4"><b>Level: ' . $row['classes' . $type] . '</b></td></tr>';
+            $print_buffer .= '<tr>
 					<td class="menuh" colspan=2>Name</td>
 					<td class="menuh">Class</td>
 					<td class="menuh">Effect(s)</td>
@@ -143,7 +143,7 @@ if (($type != 0 && $level != 0) || $namestring != '') {
 					<td class="menuh">Target Type</td>
 				  </tr>';
         }
-        echo '<tr class="' . $RowClass . '">
+        $print_buffer .= '<tr class="' . $RowClass . '">
 					<td valign="top"><a href="?a=spell&id=' . $row['id'] . '"><img src="' . $icons_url . $row['new_icon'] . '.gif" align="center" border="1"></a></td>
 					<td valign="top"><a href="?a=spell&id=' . $row['id'] . '">' . $row['name'] . '</a></td>
 					<td valign="top">' . $ClassName . " " . $LevelCheck . '</td>
@@ -151,14 +151,14 @@ if (($type != 0 && $level != 0) || $namestring != '') {
         for ($n = 1; $n <= 12; $n++) {
             SpellDescription($row, $n);
         }
-        echo '</small></td>
+        $print_buffer .= '</small></td>
 					<td>' . $row['mana'] . '</td>
 					<td>' . ucwords(strtolower($DBSkill)) . '</td>
 					<td>';
         if ($dbspelltargets[$row["targettype"]] != "") {
-            print $dbspelltargets[$row["targettype"]];
+            $print_buffer .= $dbspelltargets[$row["targettype"]];
         }
-        echo '</td></tr>';
+        $print_buffer .= '</td></tr>';
 
         if ($RowClass == "lr") {
             $RowClass = "dr";
@@ -166,9 +166,9 @@ if (($type != 0 && $level != 0) || $namestring != '') {
             $RowClass = "lr";
         }
     }
-    echo '</tr></table>';
+    $print_buffer .= '</tr></table>';
 }
-echo '</tr></table>';
+$print_buffer .= '</tr></table>';
 
 
 ?>

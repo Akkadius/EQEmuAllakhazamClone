@@ -42,17 +42,17 @@ if ($isearch != "") {
 $Title = "Faction Search";
 
 
-print "<table border='0' width='0%'><form method='GET' action='" . $PHP_SELF . "'>\n";
-print "<tr>\n";
-print "<td><b>Search : </b></td>\n";
-print '<input type="hidden" name="a" value="factions">';
-print "<td><input type='text' value=\"$iname\" size='30' name='iname'/></td>\n";
-print "</tr>";
-print "<tr align='center'>";
-print "<td='1' colspan='2'><input type='submit' value='Search' name='isearch' class='form'/></td>\n";
-print "</tr>\n";
-print "</form></table>\n";
-print "\n";
+$print_buffer .= "<table border='0' width='0%'><form method='GET' action='" . $PHP_SELF . "'>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "<td><b>Search : </b></td>\n";
+$print_buffer .= '<input type="hidden" name="a" value="factions">';
+$print_buffer .= "<td><input type='text' value=\"$iname\" size='30' name='iname'/></td>\n";
+$print_buffer .= "</tr>";
+$print_buffer .= "<tr align='center'>";
+$print_buffer .= "<td='1' colspan='2'><input type='submit' value='Search' name='isearch' class='form'/></td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "</form></table>\n";
+$print_buffer .= "\n";
 
 if (isset($QueryResult)) {
     PrintQueryResults($QueryResult, $MaxFactionsReturned, "?a=faction&", "faction", "factions", "id", "name");

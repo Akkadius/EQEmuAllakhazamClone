@@ -1,6 +1,6 @@
 <?php
 $Title = "Populated Zones List";
-print "<table class=''><tr valign=top><td>";
+$print_buffer .= "<table class=''><tr valign=top><td>";
 
 $query = "
     SELECT
@@ -23,23 +23,23 @@ $query = "
 $query .= " GROUP BY $spawn2_table.zone
         ORDER BY $zones_table.long_name ASC";
 $result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
-print "<table class='display_table datatable container_div'><tr>
+$print_buffer .= "<table class='display_table datatable container_div'><tr>
        <td style='font-weight:bold'>Name</td>
        <td style='font-weight:bold'>Short name</td>
        <td style='font-weight:bold'>ID</td>
        <td style='font-weight:bold'>Spawn points</td>
        ";
 while ($row = mysql_fetch_array($result)) {
-    print "<tr>
+    $print_buffer .= "<tr>
          <td><a href='?a=zone&name=" . $row["short_name"] . "''>" . $row["long_name"] . "</a></td>
          <td>" . $row["short_name"] . "</td>
          <td>" . $row["zoneidnumber"] . "</td>
          <td align=center>" . $row["spawns"] . "</td>
          </tr>";
 }
-print "</table>";
-print "</td><td width=0% nowrap>";
-print "</td></tr></table>";
+$print_buffer .= "</table>";
+$print_buffer .= "</td><td width=0% nowrap>";
+$print_buffer .= "</td></tr></table>";
 
 
 ?>

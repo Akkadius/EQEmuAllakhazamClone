@@ -1,9 +1,9 @@
 <?php
 $Title = "Populated Zones By Level";
 
-print "<p><b>The suggested levels are approximate based upon the levels of the majority of creatures found in the zone, and, except for the newbie zones, assume that you will hunt with a group.  Most zones also have some higher and lower level monsters roaming the area, and can thus be selectively hunted at different levels.  Follow the links to get more complete descriptions for the individual zones.</b><p>";
+$print_buffer .= "<p><b>The suggested levels are approximate based upon the levels of the majority of creatures found in the zone, and, except for the newbie zones, assume that you will hunt with a group.  Most zones also have some higher and lower level monsters roaming the area, and can thus be selectively hunted at different levels.  Follow the links to get more complete descriptions for the individual zones.</b><p>";
 if ($sort_zone_level_list == TRUE) {
-    print "<p><b>Zones are sorted following average npc's levels. If a newbie zone contains high level friendly guards, they count in the average level and false the sort.</b><p>";
+    $print_buffer .= "<p><b>Zones are sorted following average npc's levels. If a newbie zone contains high level friendly guards, they count in the average level and false the sort.</b><p>";
 }
 
 // Tweak the second SQL query to your needs, if for example you added a field for trigger npcs, or guards, filter it !
@@ -91,57 +91,57 @@ if ($sort_zone_level_list == TRUE) {
 } // end SortZoneLevelList
 
 
-print "<table><tr valign=top><td width=100%>";
-print "<table border=1>";
-print "<tr class='menuh'><th>Name</th>
+$print_buffer .= "<table><tr valign=top><td width=100%>";
+$print_buffer .= "<table border=1>";
+$print_buffer .= "<tr class='menuh'><th>Name</th>
        <th class=tab_title>Short name</th>";
 $LevelMax = 0;
 for ($i = 0; $i <= ($server_max_npc_level / 5); $i++) {
     $LevelMax += 5;
     $LevelMin = $LevelMax - 4;
-    print "<th class=tab_title>" . $LevelMin . " - " . $LevelMax . "</th>";
+    $print_buffer .= "<th class=tab_title>" . $LevelMin . " - " . $LevelMax . "</th>";
 }
-print "</tr>";
+$print_buffer .= "</tr>";
 
 $nb = 0;
 for ($i = 0; $i <= $cpt; $i++) {
     if ($zones[$i]["npcs"] > $lowlimit) {
         $nb++;
         if (modulo($nb, 10) == 1) {
-            print "<tr>
+            $print_buffer .= "<tr>
        <td class=tab_title>Name</td>
        <td class=tab_title>Short name</td>";
             if ($sort_zone_level_list == TRUE) {
-                print "<td class=tab_title>Avg Lvl</td>";
+                $print_buffer .= "<td class=tab_title>Avg Lvl</td>";
             }
             foreach ($levels AS $key2 => $val2) {
-                print "<td class=tab_title>$val2</td>";
+                $print_buffer .= "<td class=tab_title>$val2</td>";
             }
-            print "</tr>";
+            $print_buffer .= "</tr>";
         }
-        print "<tr>
+        $print_buffer .= "<tr>
            <td><a href=?a=zone&name=" . $zones[$i]["shortname"] . ">" . $zones[$i]["longname"] . "</a></td>
            <td>" . $zones[$i]["shortname"] . "</td>";
         if ($sort_zone_level_list == TRUE) {
-            print "<td align=center>" . round($zones[$i]["val"]) . "</td>";
+            $print_buffer .= "<td align=center>" . round($zones[$i]["val"]) . "</td>";
         }
         foreach ($levels AS $lkey => $lval) {
-            print "<td align=center>";
+            $print_buffer .= "<td align=center>";
             if ($zones[$i][$lkey] > $lowlimit) {
                 if ($show_npc_number_in_zone_level_list == TRUE) {
-                    print $zones[$i][$lkey];
+                    $print_buffer .= $zones[$i][$lkey];
                 } else {
-                    print "x";
+                    $print_buffer .= "x";
                 }
             }
-            print "</td>";
+            $print_buffer .= "</td>";
         }
     }
 }
-print "</table>";
-print "</td><td width=0% nowrap>";
+$print_buffer .= "</table>";
+$print_buffer .= "</td><td width=0% nowrap>";
 // right column, unused
-print "</td></tr></table>";
+$print_buffer .= "</td></tr></table>";
 
 
 ?>

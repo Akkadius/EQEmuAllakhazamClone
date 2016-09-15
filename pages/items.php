@@ -165,134 +165,134 @@ if ($isearch != "") {
 $Title = "Item Search";
 
 
-echo "<table><tr><td style='toggle_btn'></td></tr></table>";
-echo "<table border='0' width='0%' cellpadding='15'>\n";
+$print_buffer .= "<table><tr><td style='toggle_btn'></td></tr></table>";
+$print_buffer .= "<table border='0' width='0%' cellpadding='15'>\n";
 
-echo "<tbody id='myTbody'>";
+$print_buffer .= "<tbody id='myTbody'>";
 // Hide the search fields when results show
 
-echo "<form method='GET' action='" . $PHP_SELF . "'>\n";
-echo '<input type="hidden" name="a" value="items">';
+$print_buffer .= "<form method='GET' action='" . $PHP_SELF . "'>\n";
+$print_buffer .= '<input type="hidden" name="a" value="items">';
 // Split into 2 tables side by side
-echo "<tr><td><table border='0' width='0%'>";
-echo "<tr><td><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
-echo "<tr><td><b>Class : </b></td><td>";
+$print_buffer .= "<tr><td><table border='0' width='0%'>";
+$print_buffer .= "<tr><td><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
+$print_buffer .= "<tr><td><b>Class : </b></td><td>";
 SelectIClass("iclass", $iclass);
-echo "</td></tr>\n";
-echo "<tr><td><b>Race : </b></td><td>";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>Race : </b></td><td>";
 SelectRace("irace", $irace);
-echo "</td></tr>\n";
-echo "<tr><td><b>Slot : </b></td><td>";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>Slot : </b></td><td>";
 SelectSlot("islot", $islot);
-echo "</td></tr>\n";
-echo "<tr>\n";
-echo "  <td><b>Stats : </b></td>\n";
-echo "  <td>";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "  <td><b>Stats : </b></td>\n";
+$print_buffer .= "  <td>";
 SelectStats("istat1", $istat1);
-echo "\n";
-echo "    <select name='istat1comp'>\n";
-echo "      <option value='&gt;='" . ($istat1comp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
-echo "      <option value='&lt;='" . ($istat1comp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
-echo "      <option value='='" . ($istat1comp == '=' ? " selected='1'" : "") . ">=</option>\n";
-echo "      <option value='&lt'" . ($istat1comp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
-echo "    </select>\n";
-echo "    <input type='text' size='4' name='istat1value' value='" . $istat1value . "'/>\n";
-echo "  </td>\n";
-echo "</tr>\n";
-echo "<tr>\n";
-echo "  <td><b>Stats : </b></td>\n";
-echo "  <td>";
+$print_buffer .= "\n";
+$print_buffer .= "    <select name='istat1comp'>\n";
+$print_buffer .= "      <option value='&gt;='" . ($istat1comp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
+$print_buffer .= "      <option value='&lt;='" . ($istat1comp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
+$print_buffer .= "      <option value='='" . ($istat1comp == '=' ? " selected='1'" : "") . ">=</option>\n";
+$print_buffer .= "      <option value='&lt'" . ($istat1comp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
+$print_buffer .= "    </select>\n";
+$print_buffer .= "    <input type='text' size='4' name='istat1value' value='" . $istat1value . "'/>\n";
+$print_buffer .= "  </td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "  <td><b>Stats : </b></td>\n";
+$print_buffer .= "  <td>";
 SelectStats("istat2", $istat2);
-echo "\n";
-echo "    <select name='istat2comp'>\n";
-echo "      <option value='&gt;='" . ($istat2comp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
-echo "      <option value='&lt;='" . ($istat2comp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
-echo "      <option value='='" . ($istat2comp == '=' ? " selected='1'" : "") . ">=</option>\n";
-echo "      <option value='&lt'" . ($istat2comp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
-echo "    </select>\n";
-echo "    <input type='text' size='4' name='istat2value' value='" . $istat2value . "'/>\n";
-echo "  </td>\n";
-echo "</tr>\n";
-echo "<tr>\n";
-echo "  <td><b>Resists : </b></td>\n";
-echo "  <td>";
+$print_buffer .= "\n";
+$print_buffer .= "    <select name='istat2comp'>\n";
+$print_buffer .= "      <option value='&gt;='" . ($istat2comp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
+$print_buffer .= "      <option value='&lt;='" . ($istat2comp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
+$print_buffer .= "      <option value='='" . ($istat2comp == '=' ? " selected='1'" : "") . ">=</option>\n";
+$print_buffer .= "      <option value='&lt'" . ($istat2comp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
+$print_buffer .= "    </select>\n";
+$print_buffer .= "    <input type='text' size='4' name='istat2value' value='" . $istat2value . "'/>\n";
+$print_buffer .= "  </td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "  <td><b>Resists : </b></td>\n";
+$print_buffer .= "  <td>";
 SelectResists("iresists", $iresists);
-echo "\n";
-echo "    <select name='iresistscomp'>\n";
-echo "      <option value='&gt;='" . ($iresistscomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
-echo "      <option value='&lt;='" . ($iresistscomp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
-echo "      <option value='='" . ($iresistscomp == '=' ? " selected='1'" : "") . ">=</option>\n";
-echo "      <option value='&lt'" . ($iresistscomp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
-echo "    </select>\n";
-echo "    <input type='text' size='4' name='iresistsvalue' value='" . $iresistsvalue . "'/>\n";
-echo "  </td>\n";
-echo "</tr>\n";
-echo "<tr>\n";
-echo "  <td><b>Heroic Stats : </b></td>\n";
-echo "  <td>";
+$print_buffer .= "\n";
+$print_buffer .= "    <select name='iresistscomp'>\n";
+$print_buffer .= "      <option value='&gt;='" . ($iresistscomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
+$print_buffer .= "      <option value='&lt;='" . ($iresistscomp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
+$print_buffer .= "      <option value='='" . ($iresistscomp == '=' ? " selected='1'" : "") . ">=</option>\n";
+$print_buffer .= "      <option value='&lt'" . ($iresistscomp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
+$print_buffer .= "    </select>\n";
+$print_buffer .= "    <input type='text' size='4' name='iresistsvalue' value='" . $iresistsvalue . "'/>\n";
+$print_buffer .= "  </td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "  <td><b>Heroic Stats : </b></td>\n";
+$print_buffer .= "  <td>";
 SelectHeroicStats("iheroics", $iheroics);
-echo "\n";
-echo "    <select name='iheroicscomp'>\n";
-echo "      <option value='&gt;='" . ($iheroicscomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
-echo "      <option value='&lt;='" . ($iheroicscomp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
-echo "      <option value='='" . ($iheroicscomp == '=' ? " selected='1'" : "") . ">=</option>\n";
-echo "      <option value='&lt'" . ($iheroicscomp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
-echo "    </select>\n";
-echo "    <input type='text' size='4' name='iheroicsvalue' value='" . $iheroicsvalue . "'/>\n";
-echo "  </td>\n";
-echo "</tr>\n";
-echo "<tr>\n";
-echo "  <td><b>Modifiers : </b></td>\n";
-echo "  <td>";
+$print_buffer .= "\n";
+$print_buffer .= "    <select name='iheroicscomp'>\n";
+$print_buffer .= "      <option value='&gt;='" . ($iheroicscomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
+$print_buffer .= "      <option value='&lt;='" . ($iheroicscomp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
+$print_buffer .= "      <option value='='" . ($iheroicscomp == '=' ? " selected='1'" : "") . ">=</option>\n";
+$print_buffer .= "      <option value='&lt'" . ($iheroicscomp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
+$print_buffer .= "    </select>\n";
+$print_buffer .= "    <input type='text' size='4' name='iheroicsvalue' value='" . $iheroicsvalue . "'/>\n";
+$print_buffer .= "  </td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "  <td><b>Modifiers : </b></td>\n";
+$print_buffer .= "  <td>";
 SelectModifiers("imod", $imod);
-echo "\n";
-echo "    <select name='imodcomp'>\n";
-echo "      <option value='&gt;='" . ($imodcomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
-echo "      <option value='&lt;='" . ($imodcomp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
-echo "      <option value='='" . ($imodcomp == '=' ? " selected='1'" : "") . ">=</option>\n";
-echo "      <option value='&lt'" . ($imodcomp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
-echo "    </select>\n";
-echo "    <input type='text' size='4' name='imodvalue' value='" . $imodvalue . "'/>\n";
-echo "  </td>\n";
-echo "</tr>\n";
-echo "</td></tr></table></td><td>";
+$print_buffer .= "\n";
+$print_buffer .= "    <select name='imodcomp'>\n";
+$print_buffer .= "      <option value='&gt;='" . ($imodcomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
+$print_buffer .= "      <option value='&lt;='" . ($imodcomp == '<=' ? " selected='1'" : "") . ">&lt;=</option>\n";
+$print_buffer .= "      <option value='='" . ($imodcomp == '=' ? " selected='1'" : "") . ">=</option>\n";
+$print_buffer .= "      <option value='&lt'" . ($imodcomp == '<' ? " selected='1'" : "") . ">&lt</option>\n";
+$print_buffer .= "    </select>\n";
+$print_buffer .= "    <input type='text' size='4' name='imodvalue' value='" . $imodvalue . "'/>\n";
+$print_buffer .= "  </td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "</td></tr></table></td><td>";
 // Left Table End and Right Table Start
-echo "<table border='0' width='0%'>";
-echo "<tr><td><b>Item Type : </b></td><td>";
+$print_buffer .= "<table border='0' width='0%'>";
+$print_buffer .= "<tr><td><b>Item Type : </b></td><td>";
 SelectIType("itype", $itype);
-echo "</td></tr>\n";
-echo "<tr><td><b>Augmentation Type : </b></td><td>";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>Augmentation Type : </b></td><td>";
 SelectAugSlot("iaugslot", $iaugslot);
-echo "</td></tr>\n";
-echo "<tr><td><b>With Effect : </b></td><td><input type='text' value='" . $ieffect . "' size='30' name='ieffect'/></td></tr>\n";
-echo "<tr><td><b>Min Required Level : </b></td><td>\n";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>With Effect : </b></td><td><input type='text' value='" . $ieffect . "' size='30' name='ieffect'/></td></tr>\n";
+$print_buffer .= "<tr><td><b>Min Required Level : </b></td><td>\n";
 SelectLevel("iminlevel", $server_max_level, $iminlevel);
-echo "</td></tr>\n";
-echo "<tr><td><b>Max Required Level : </b></td><td>\n";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>Max Required Level : </b></td><td>\n";
 SelectLevel("ireqlevel", $server_max_level, $ireqlevel);
-echo "</td></tr>\n";
-echo "<tr><td><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'" . ($inodrop ? " checked='1'" : "") . "/></td></tr>\n";
-echo "<tr>\n";
-echo "  <td><b>Item availability : </b></td>\n";
-echo "  <td>\n";
-echo "    <select name='iavailability'>\n";
-echo "      <option value='0' " . ($iavailability == 0 ? " selected='1'" : "") . ">-</option>\n";
-echo "      <option value='1' " . ($iavailability == 1 ? " selected='1'" : "") . ">Mob Dropped</option>\n";
-echo "      <option value='2' " . ($iavailability == 2 ? " selected='1'" : "") . ">Merchant Sold</option>\n";
-echo "    </select>\n";
-echo "  </td>\n";
-echo "</tr>\n";
-echo "<tr><td><b>Max Level : </b></td><td>";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'" . ($inodrop ? " checked='1'" : "") . "/></td></tr>\n";
+$print_buffer .= "<tr>\n";
+$print_buffer .= "  <td><b>Item availability : </b></td>\n";
+$print_buffer .= "  <td>\n";
+$print_buffer .= "    <select name='iavailability'>\n";
+$print_buffer .= "      <option value='0' " . ($iavailability == 0 ? " selected='1'" : "") . ">-</option>\n";
+$print_buffer .= "      <option value='1' " . ($iavailability == 1 ? " selected='1'" : "") . ">Mob Dropped</option>\n";
+$print_buffer .= "      <option value='2' " . ($iavailability == 2 ? " selected='1'" : "") . ">Merchant Sold</option>\n";
+$print_buffer .= "    </select>\n";
+$print_buffer .= "  </td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr><td><b>Max Level : </b></td><td>";
 SelectLevel("iavaillevel", $server_max_level, $iavaillevel);
-echo "</td></tr>\n";
-echo "<tr><td><b>Deity : </b></td><td>";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "<tr><td><b>Deity : </b></td><td>";
 SelectDeity("ideity", $ideity);
-echo "</td></tr>\n";
-echo "</td></tr></table>";
-echo "<tr align='center'><td='1' colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
-echo "</form>\n";
-echo "</tbody>";
-echo "</table>\n";
+$print_buffer .= "</td></tr>\n";
+$print_buffer .= "</td></tr></table>";
+$print_buffer .= "<tr align='center'><td='1' colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
+$print_buffer .= "</form>\n";
+$print_buffer .= "</tbody>";
+$print_buffer .= "</table>\n";
 
 // Print the query results if any
 if (isset($QueryResult)) {
@@ -304,19 +304,19 @@ if (isset($QueryResult)) {
     if ($num_rows > LimitToUse($max_items_returned)) {
         $num_rows = LimitToUse($max_items_returned);
     }
-    echo "";
+    $print_buffer .= "";
     if ($num_rows == 0) {
-        echo "<b>No items found...</b><br>";
+        $print_buffer .= "<b>No items found...</b><br>";
     } else {
         $OutOf = "";
         if ($total_row_count > $num_rows) {
             $OutOf = " (Searches are limited to 100 Max Results)";
         }
-        echo "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
-        echo "";
+        $print_buffer .= "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
+        $print_buffer .= "";
 
-        echo "<table border='$Tableborder' cellpadding='5' width='0%'>";
-        echo "<tr>
+        $print_buffer .= "<table border='$Tableborder' cellpadding='5' width='0%'>";
+        $print_buffer .= "<tr>
 					<th class='menuh'>Icon</th>
 					<th class='menuh'>Item Name</th>
 					<th class='menuh'>Item Type</th>
@@ -365,9 +365,9 @@ if (isset($QueryResult)) {
                 $RowClass = "lr";
             }
 
-            print $TableData;
+            $print_buffer .= $TableData;
         }
-        echo "</table>";
+        $print_buffer .= "</table>";
     }
 }
 

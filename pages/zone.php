@@ -15,7 +15,7 @@ if ($use_custom_zone_list == TRUE && $name != '') {
 $Title = GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
 
 if (!isset($name)) {
-    print "<script>document.location=\"zones.php\";</script>";
+    $print_buffer .= "<script>document.location=\"zones.php\";</script>";
 }
 
 $ZoneDebug = FALSE; // this is new in 0.5.3 but undocumented, it is for world builders
@@ -41,9 +41,9 @@ if ($allow_quests_npc == TRUE) {
 }
 
 
-print '<table class="display_table container_div"><tr><td>';
+$print_buffer .= '<table class="display_table container_div"><tr><td>';
 
-print $resources_menu;
+$print_buffer .= $resources_menu;
 
 
 $query = "
@@ -56,17 +56,17 @@ $query = "
 ";
 $result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
-print "<table style='width:100%'><tr valign=top><td>";
-print "<p><b>Succor point : X (</b>" . floor($zone["safe_x"]) . ")  Y (" . floor($zone["safe_y"]) . ") Z (" . floor($zone["safe_z"]) . ")";
+$print_buffer .= "<table style='width:100%'><tr valign=top><td>";
+$print_buffer .= "<p><b>Succor point : X (</b>" . floor($zone["safe_x"]) . ")  Y (" . floor($zone["safe_y"]) . ") Z (" . floor($zone["safe_z"]) . ")";
 if ($zone["minium_level"] > 0) {
-    print "<br><b>Minimum level : </b>" . floor($zone["minium_level"]);
+    $print_buffer .= "<br><b>Minimum level : </b>" . floor($zone["minium_level"]);
 }
 
 if (file_exists($maps_dir . $name . ".jpg")) {
     if (!file_exists($maps_url . $name . "._tn.jpg")) {
         make_thumb($maps_dir . $name . ".jpg");
     }
-    print "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=" . $maps_url . $name . ".jpg><img src=" . $maps_url . $name . "._tn.jpg width=120 height=80 border=0></a><br>
+    $print_buffer .= "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=" . $maps_url . $name . ".jpg><img src=" . $maps_url . $name . "._tn.jpg width=120 height=80 border=0></a><br>
 		<a href=" . $maps_url . $name . ".jpg target=_new>Popup map</a>
 		</td>";
 }
@@ -91,28 +91,28 @@ if ($mode == "npcs") {
     $query .= " ORDER BY $order";
     $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        print "<p>Bestiary<p><table ><tr>";
+        $print_buffer .= "<p>Bestiary<p><table ><tr>";
         if ($ZoneDebug == TRUE) {
-            print "<td class='menuh'><b><a href=?a=zone&name=$name&order=id>Id</a></b></td>";
+            $print_buffer .= "<td class='menuh'><b><a href=?a=zone&name=$name&order=id>Id</a></b></td>";
         }
-        print "<td align='left'  class='menuh'><b><a href=?a=zone&name=$name&order=name>Name</a></b></td>";
+        $print_buffer .= "<td align='left'  class='menuh'><b><a href=?a=zone&name=$name&order=name>Name</a></b></td>";
         if ($ZoneDebug == TRUE) {
-            print "<td class='menuh' align='left'><b><a href=?a=zone&name=$name&order=loottable_id>Loottable</a></b></td>";
+            $print_buffer .= "<td class='menuh' align='left'><b><a href=?a=zone&name=$name&order=loottable_id>Loottable</a></b></td>";
         }
-        print "<td align='left'  class='menuh'><b><a href=?a=zone&name=$name&order=level>Level Range</a></b></td>";
-        print "<td align='left' class='menuh'><b><a href=?a=zone&name=$name&order=race>Race</a></b></td>";
-        print "<td align='left' class='menuh'><b>Type</b></td>";
+        $print_buffer .= "<td align='left'  class='menuh'><b><a href=?a=zone&name=$name&order=level>Level Range</a></b></td>";
+        $print_buffer .= "<td align='left' class='menuh'><b><a href=?a=zone&name=$name&order=race>Race</a></b></td>";
+        $print_buffer .= "<td align='left' class='menuh'><b>Type</b></td>";
 
         $RowClass = "lr";
         while ($row = mysql_fetch_array($result)) {
             if ((ReadableNpcName($row["name"])) != '' && ($row["trackable"] > 0 || $trackable_npcs_only == FALSE)) {
-                print "<tr class='" . $RowClass . "'>";
+                $print_buffer .= "<tr class='" . $RowClass . "'>";
                 if ($ZoneDebug == TRUE) {
-                    print "<td>" . $row["id"] . "</td>";
+                    $print_buffer .= "<td>" . $row["id"] . "</td>";
                 }
-                print "<td><a href=?a=npc&id=" . $row["id"] . ">" . ReadableNpcName($row["name"]) . "</a>";
+                $print_buffer .= "<td><a href=?a=npc&id=" . $row["id"] . ">" . ReadableNpcName($row["name"]) . "</a>";
                 if ($ZoneDebug == TRUE) {
-                    print "</td><td>" . $row["loottable_id"];
+                    $print_buffer .= "</td><td>" . $row["loottable_id"];
                 }
 
                 if ($row['maxlevel'] == 0) {
@@ -121,9 +121,9 @@ if ($mode == "npcs") {
                     $MaxLevel = $row['maxlevel'];
                 }
 
-                print "</td><td align=left>" . $row["level"] . " - " . $MaxLevel . " </td>";
-                print "<td align=left>" . $dbiracenames[$row["race"]] . "</td>";
-                print "<td align=left>" . NpcTypeFromName($row["name"]) . "</td></tr>";
+                $print_buffer .= "</td><td align=left>" . $row["level"] . " - " . $MaxLevel . " </td>";
+                $print_buffer .= "<td align=left>" . $dbiracenames[$row["race"]] . "</td>";
+                $print_buffer .= "<td align=left>" . NpcTypeFromName($row["name"]) . "</td></tr>";
 
                 if ($RowClass == "lr") {
                     $RowClass = "dr";
@@ -132,9 +132,9 @@ if ($mode == "npcs") {
                 }
             }
         }
-        print "</table>";
+        $print_buffer .= "</table>";
     } else {
-        print "<br><b>No NPCs Found</b>";
+        $print_buffer .= "<br><b>No NPCs Found</b>";
     }
 } // end npcs
 
@@ -238,21 +238,21 @@ if ($mode == "items") {
 
     $EquiptmentTable .= "</table>";
     if ($ItemsFound > 0) {
-        print $EquiptmentTable;
+        $print_buffer .= $EquiptmentTable;
         foreach ($ItemsData as $key => $ItemData) {
             $ToolTips .= CreateToolTip($ItemData["id"], BuildItemStats($ItemData, 1));
         }
-        print $ToolTips;
+        $print_buffer .= $ToolTips;
 
     } else {
-        print "<br><b>No Items Found</b>";
+        $print_buffer .= "<br><b>No Items Found</b>";
     }
 
 } // end items
 
 if ($mode == "spawngroups") {
     if ($display_spawn_group_info == TRUE) {
-        print "";
+        $print_buffer .= "";
         $query = "
             SELECT
                 $spawn_group_table.*, $spawn2_table.x,
@@ -272,7 +272,7 @@ if ($mode == "spawngroups") {
 
         if (mysql_num_rows($result) > 0) {
             while ($row = mysql_fetch_array($result)) {
-                print "<li><a href=spawngroup.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" .
+                $print_buffer .= "<li><a href=spawngroup.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" .
                     floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]) . ") (respawn time : " .
                     translate_time($row["respawntime"]) . ")<ul>";
                 $query = "
@@ -292,13 +292,13 @@ if ($mode == "spawngroups") {
                 ";
                 $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
                 while ($res = mysql_fetch_array($result2)) {
-                    print "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";
-                    print " (level " . $res["level"] . ")";
+                    $print_buffer .= "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";
+                    $print_buffer .= " (level " . $res["level"] . ")";
                 }
-                print "</ul>";
+                $print_buffer .= "</ul>";
             }
         } else {
-            print "<br><b>No Spawns Found</b>";
+            $print_buffer .= "<br><b>No Spawns Found</b>";
         }
 
     }
@@ -323,15 +323,15 @@ if ($mode == "forage") {
     ";
     $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        print "<p>Forageable Items<p><table border=1><tr>
+        $print_buffer .= "<p>Forageable Items<p><table border=1><tr>
 			<td class=tab_title>Name</a></td>
 			</tr>";
         while ($row = mysql_fetch_array($result)) {
-            print "<tr><td><a href=?a=item&id=" . $row["id"] . ">" . $row["Name"] . "</a></td></tr>";
+            $print_buffer .= "<tr><td><a href=?a=item&id=" . $row["id"] . ">" . $row["Name"] . "</a></td></tr>";
         }
-        print "</table>";
+        $print_buffer .= "</table>";
     } else {
-        print "<br><b>No Forageable Items Found</b>";
+        $print_buffer .= "<br><b>No Forageable Items Found</b>";
     }
 } // end forage
 
@@ -360,8 +360,8 @@ if ($mode == "tasks") {
         $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result) > 0) {
-            print "<table border=0 width=100% cellpadding='5' cellspacing='0'><tr valign=top><td width=100%>";
-            print "<table border=0 cellpadding='5' cellspacing='0'><tr>
+            $print_buffer .= "<table border=0 width=100% cellpadding='5' cellspacing='0'><tr valign=top><td width=100%>";
+            $print_buffer .= "<table border=0 cellpadding='5' cellspacing='0'><tr>
 				<td class='menuh'>Task Name</td>
 				<td class='menuh'>Task ID</td>
 				<td class='menuh'>MinLevel</td>
@@ -380,7 +380,7 @@ if ($mode == "tasks") {
                     }
                 }
 
-                print "<tr class='" . $RowClass . "'>
+                $print_buffer .= "<tr class='" . $RowClass . "'>
 					<td><a href=task.php?id=" . $row["id"] . ">" . $row["title"] . "</a></td>
 					<td align=center valign='top'>" . $row["id"] . "</td>
 					<td align=center valign='top'>" . $row["minlevel"] . "</td>
@@ -393,20 +393,20 @@ if ($mode == "tasks") {
                     $RowClass = "lr";
                 }
             }
-            print "</table>";
-            print "</td><td width=0% nowrap>";
-            print "</td></tr></table>";
+            $print_buffer .= "</table>";
+            $print_buffer .= "</td><td width=0% nowrap>";
+            $print_buffer .= "</td></tr></table>";
         } else {
-            print "<br><b>No Tasks Found</b>";
+            $print_buffer .= "<br><b>No Tasks Found</b>";
         }
     }
 
 } // end Tasks
 
-print "</td><td>"; // end first column
-print "</td></tr>";
-print "</table>";
+$print_buffer .= "</td><td>"; // end first column
+$print_buffer .= "</td></tr>";
+$print_buffer .= "</table>";
 
-print '</td></tr></table>';
+$print_buffer .= '</td></tr></table>';
 
 ?>

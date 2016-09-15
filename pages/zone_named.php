@@ -12,16 +12,16 @@ if ($display_named_npcs_info == FALSE) {
 $Title = GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
 
 if (!isset($name)) {
-    print "<script>document.location=\"zones.php\";</script>";
+    $print_buffer .= "<script>document.location=\"zones.php\";</script>";
 }
 
 $ZoneDebug = FALSE; // this is new in 0.5.3 but undocumented, it is for world builders
 
 if ($ZoneDebug == TRUE) {
-    print "<p>ZoneDebug at TRUE ! Edit source code and set it to false.<p>";
+    $print_buffer .= "<p>ZoneDebug at TRUE ! Edit source code and set it to false.<p>";
 }
 
-print "<table ><tr valign=top><td width=100%>";
+$print_buffer .= "<table ><tr valign=top><td width=100%>";
 
 $query = "
     SELECT
@@ -33,21 +33,21 @@ $query = "
 ";
 $result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
-print "<table border=0 width=0%><tr valign=top><td>";
-print "<p><b>Succor point : </b>" . floor($zone["safe_x"]) . " / " . floor($zone["safe_y"]) . " / " . floor($zone["safe_z"]);
+$print_buffer .= "<table border=0 width=0%><tr valign=top><td>";
+$print_buffer .= "<p><b>Succor point : </b>" . floor($zone["safe_x"]) . " / " . floor($zone["safe_y"]) . " / " . floor($zone["safe_z"]);
 if ($zone["minium_level"] > 0) {
-    print "<br><b>Minimum level : </b>" . floor($zone["minium_level"]);
+    $print_buffer .= "<br><b>Minimum level : </b>" . floor($zone["minium_level"]);
 }
-print "</td>";
+$print_buffer .= "</td>";
 if (file_exists($maps_dir . $name . ".jpg")) {
     if (!file_exists($maps_url . $name . "._tn.jpg")) {
         make_thumb($maps_dir . $name . ".jpg");
     }
-    print "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=" . $maps_url . $name . ".jpg><img src=" . $maps_url . $name . "._tn.jpg width=120 height=80 border=0></a><br>
+    $print_buffer .= "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=" . $maps_url . $name . ".jpg><img src=" . $maps_url . $name . "._tn.jpg width=120 height=80 border=0></a><br>
          <a href=" . $maps_url . $name . ".jpg target=_new>Popup map</a>
          </td>";
 }
-print "</tr></table>";
+$print_buffer .= "</tr></table>";
 
 function isChecked($id)
 {
@@ -64,7 +64,7 @@ if (isset($submitDetailCSV)) {
         $liste = $liste . $sep . $id;
         $sep = ":";
     }
-    print "<iframe src=zonenamedscsv.php?name=$name&liste=$liste
+    $print_buffer .= "<iframe src=zonenamedscsv.php?name=$name&liste=$liste
                 width=0
                 border=0 frameborder=0  
                 height=0>
@@ -73,8 +73,8 @@ if (isset($submitDetailCSV)) {
 
 if (isset($submitDetailMaps)) {
     $submitDetail = true;
-    print "<p><b>Map file's entries</b><p>";
-    print "<table border=0><tr><td bgcolor=white>";
+    $print_buffer .= "<p><b>Map file's entries</b><p>";
+    $print_buffer .= "<table border=0><tr><td bgcolor=white>";
     $v = "";
     for ($i = 0; $i < count($_POST["npc"]); $i++) {
         $query = "SELECT $npc_types_table.*
@@ -104,38 +104,38 @@ if (isset($submitDetailMaps)) {
         if (mysql_num_rows($result) > 0) {
             while ($row = mysql_fetch_array($result)) {
                 //    P 195.0000, 210.0000, 94.8135,  0, 0, 0,  3,  Gruppip_(Wizard_Spells)
-                print $v . "P " . round($row["x"], 2) . ", " . round($row["y"], 2) . ", " . round($row["z"], 2) . ",0,0,0,3," . str_replace(" ", "_", $mymob["name"]);
+                $print_buffer .= $v . "P " . round($row["x"], 2) . ", " . round($row["y"], 2) . ", " . round($row["z"], 2) . ",0,0,0,3," . str_replace(" ", "_", $mymob["name"]);
                 $v = "<br>\n";
             }
         }
     }
-    print "</td></tr></table><p>";
+    $print_buffer .= "</td></tr></table><p>";
 }
 
 if (isset($submitDetail)) {
-    print "<p><b>Detailled List</b>";
-    print "<p><table border=1><tr>";
+    $print_buffer .= "<p><b>Detailled List</b>";
+    $print_buffer .= "<p><table border=1><tr>";
     if ($ZoneDebug == TRUE) {
-        print "<td class=tab_title>Id</td>";
+        $print_buffer .= "<td class=tab_title>Id</td>";
     }
-    print "<td class=tab_title>Name</a></td>";
-    print "<td class=tab_title>Race</a></td>";
-    print "<td class=tab_title>Class</a></td>";
-    print "<td class=tab_title>Level</a></td>";
-    print "<td class=tab_title>Spawn points</td>";
-    print "<td class=tab_title>Drops</td>";
-    print "</tr>";
+    $print_buffer .= "<td class=tab_title>Name</a></td>";
+    $print_buffer .= "<td class=tab_title>Race</a></td>";
+    $print_buffer .= "<td class=tab_title>Class</a></td>";
+    $print_buffer .= "<td class=tab_title>Level</a></td>";
+    $print_buffer .= "<td class=tab_title>Spawn points</td>";
+    $print_buffer .= "<td class=tab_title>Drops</td>";
+    $print_buffer .= "</tr>";
     for ($i = 0; $i < count($_POST["npc"]); $i++) {
-        print "<tr valign=top>";
+        $print_buffer .= "<tr valign=top>";
         $query = "SELECT * FROM $npc_types_table WHERE $npc_types_table.id=" . $_POST["npc"][$i];
         $mymob = GetRowByQuery($query);
         if ($ZoneDebug == TRUE) {
-            print "<td align=center>" . $_POST["npc"][$i] . "</td>";
+            $print_buffer .= "<td align=center>" . $_POST["npc"][$i] . "</td>";
         }
-        print "<td><a href=?a=npc&id=" . $mymob["id"] . ">" . str_replace(array('_', '#'), ' ', $mymob["name"]) . "</a></td>";
-        print "<td>" . $dbiracenames[$mymob["race"]] . "</td>";
-        print "<td>" . $dbclasses[$mymob["class"]] . "</td>";
-        print "<td align=center>" . $mymob["level"] . "</td>";
+        $print_buffer .= "<td><a href=?a=npc&id=" . $mymob["id"] . ">" . str_replace(array('_', '#'), ' ', $mymob["name"]) . "</a></td>";
+        $print_buffer .= "<td>" . $dbiracenames[$mymob["race"]] . "</td>";
+        $print_buffer .= "<td>" . $dbclasses[$mymob["class"]] . "</td>";
+        $print_buffer .= "<td align=center>" . $mymob["level"] . "</td>";
 
 
         $query = "
@@ -158,14 +158,14 @@ if (isset($submitDetail)) {
         ";
         $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
-            print "<td>";
+            $print_buffer .= "<td>";
             $sep = "";
             while ($row = mysql_fetch_array($result)) {
-                print "$sep" . floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]);
-                print ", " . translate_time($row["respawntime"]);
+                $print_buffer .= "$sep" . floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]);
+                $print_buffer .= ", " . translate_time($row["respawntime"]);
                 $sep = "<br>";
             }
-            print "</td>";
+            $print_buffer .= "</td>";
         }
 
 
@@ -190,23 +190,23 @@ if (isset($submitDetail)) {
              ";
             $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
             if (mysql_num_rows($result) > 0) {
-                print "<td>";
+                $print_buffer .= "<td>";
                 $sep = "";
                 while ($row = mysql_fetch_array($result)) {
-                    print "$sep<a href=?a=item&id=" . $row["id"] . ">" . $row["Name"] . "</a>";
-                    print ", " . $dbitypes[$row["itemtype"]];
+                    $print_buffer .= "$sep<a href=?a=item&id=" . $row["id"] . ">" . $row["Name"] . "</a>";
+                    $print_buffer .= ", " . $dbitypes[$row["itemtype"]];
                     $sep = "<br>";
                 }
-                print "</td>";
+                $print_buffer .= "</td>";
             } else {
-                print "<td align=center>-</td>";
+                $print_buffer .= "<td align=center>-</td>";
             }
         } else {
-            print "<td align=center>-</td>";
+            $print_buffer .= "<td align=center>-</td>";
         }
-        print "</tr>";
+        $print_buffer .= "</tr>";
     }
-    print "</table><p>";
+    $print_buffer .= "</table><p>";
 }
 
 
@@ -241,59 +241,59 @@ if ($mode == "npcs") {
     }
     $query .= " ORDER BY $order";
     $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
-    print "<p><b>Bestiary</b><p><table border=1><tr>";
-    print "<form method=POST action=$PHP_SELF>";
-    print "<input type=submit name=submitDetail value=\"Detailled List\" class=form>";
-    print "&nbsp;<input type=submit name=submitDetailCSV value=\"Detailled List CSV\" class=form>";
-    print "&nbsp;<input type=submit name=submitDetailMaps value=\"Export map entries\" class=form>";
-    print "<input type=hidden name=name value=$name>";
+    $print_buffer .= "<p><b>Bestiary</b><p><table border=1><tr>";
+    $print_buffer .= "<form method=POST action=$PHP_SELF>";
+    $print_buffer .= "<input type=submit name=submitDetail value=\"Detailled List\" class=form>";
+    $print_buffer .= "&nbsp;<input type=submit name=submitDetailCSV value=\"Detailled List CSV\" class=form>";
+    $print_buffer .= "&nbsp;<input type=submit name=submitDetailMaps value=\"Export map entries\" class=form>";
+    $print_buffer .= "<input type=hidden name=name value=$name>";
     if ($ZoneDebug == TRUE) {
-        print "<td class=tab_title><a href=$PHP_SELF?name=$name&order=id>Id</a></td>";
+        $print_buffer .= "<td class=tab_title><a href=$PHP_SELF?name=$name&order=id>Id</a></td>";
     }
-    print "<td class=tab_title>List</a></td><td class=tab_title><a href=$PHP_SELF?name=$name&order=name>Name</a></td>";
+    $print_buffer .= "<td class=tab_title>List</a></td><td class=tab_title><a href=$PHP_SELF?name=$name&order=name>Name</a></td>";
     if ($ZoneDebug == TRUE) {
-        print "<td class=tab_title><a href=$PHP_SELF?name=$name&order=loottable_id>Loottable</a></td>";
+        $print_buffer .= "<td class=tab_title><a href=$PHP_SELF?name=$name&order=loottable_id>Loottable</a></td>";
     }
-    print "
+    $print_buffer .= "
          <td class=tab_title><a href=$PHP_SELF?name=$name&order=class>Class</a></td>
          <td class=tab_title><a href=$PHP_SELF?name=$name&order=race>Race</a></td>
          <td class=tab_title><a href=$PHP_SELF?name=$name&order=level>Level</a></td>
          ";
     while ($row = mysql_fetch_array($result)) {
-        print "<tr>";
+        $print_buffer .= "<tr>";
         if ($ZoneDebug == TRUE) {
-            print "<td>" . $row["id"] . "</td>";
+            $print_buffer .= "<td>" . $row["id"] . "</td>";
         }
-        print "<td align=center><input type=checkbox name=npc[] value=" . $row["id"] . (isChecked($row["id"]) ? " checked" : "") . " class=form></td>";
-        print "<td><a href=?a=npc&id=" . $row["id"] . ">" . str_replace(array('_', '#'), ' ', $row["name"]) . "</a>";
+        $print_buffer .= "<td align=center><input type=checkbox name=npc[] value=" . $row["id"] . (isChecked($row["id"]) ? " checked" : "") . " class=form></td>";
+        $print_buffer .= "<td><a href=?a=npc&id=" . $row["id"] . ">" . str_replace(array('_', '#'), ' ', $row["name"]) . "</a>";
         if ($ZoneDebug == TRUE) {
-            print "</td><td>" . $row["loottable_id"];
+            $print_buffer .= "</td><td>" . $row["loottable_id"];
         }
-        print "</td>
+        $print_buffer .= "</td>
            <td align=center>" . $dbclasses[$row["class"]] . "</td>
            <td align=center>" . $dbiracenames[$row["race"]] . "</td>
            <td align=center>" . $row["level"] . "</td>
            </tr>";
     }
-    print "</form>";
-    print "</table><p>";
+    $print_buffer .= "</form>";
+    $print_buffer .= "</table><p>";
 } // end npcs
 
 
-print "</td><td width=0% nowrap>"; // end first column
-print "<p class=page_small_title>Ressources</p>";
-print "<li><a href=?a=zone&name=$name&mode=npcs>" . $zone["long_name"] . " Bestiary List</a>";
-print "<li><a href=?a=zone_named&name=$name&mode=npcs>" . $zone["long_name"] . " Named Mobs List</a>";
-print "<li><a href=?a=zone&name=$name&mode=items>" . $zone["long_name"] . " Equipment List </a>";
+$print_buffer .= "</td><td width=0% nowrap>"; // end first column
+$print_buffer .= "<p class=page_small_title>Ressources</p>";
+$print_buffer .= "<li><a href=?a=zone&name=$name&mode=npcs>" . $zone["long_name"] . " Bestiary List</a>";
+$print_buffer .= "<li><a href=?a=zone_named&name=$name&mode=npcs>" . $zone["long_name"] . " Named Mobs List</a>";
+$print_buffer .= "<li><a href=?a=zone&name=$name&mode=items>" . $zone["long_name"] . " Equipment List </a>";
 if (file_exists($maps_dir . $name . ".jpg")) {
-    print "<li><a href=" . $maps_url . $name . ".jpg>" . $zone["long_name"] . " Map</a>";
+    $print_buffer .= "<li><a href=" . $maps_url . $name . ".jpg>" . $zone["long_name"] . " Map</a>";
 }
-print "<li><a href=?a=zone&name=$name&mode=spawngroups>" . $zone["long_name"] . " Spawn Groups</a>";
-print "<li><a href=?a=zone&name=$name&mode=forage>" . $zone["long_name"] . " Forageable items</a>";
+$print_buffer .= "<li><a href=?a=zone&name=$name&mode=spawngroups>" . $zone["long_name"] . " Spawn Groups</a>";
+$print_buffer .= "<li><a href=?a=zone&name=$name&mode=forage>" . $zone["long_name"] . " Forageable items</a>";
 if ($allow_quests_npc == TRUE) {
-    print "<li><a href=$root_url" . "quests/zones.php?aZone=$name>" . $zone["long_name"] . " Quest NPCs</a>";
+    $print_buffer .= "<li><a href=$root_url" . "quests/zones.php?aZone=$name>" . $zone["long_name"] . " Quest NPCs</a>";
 }
-print "</td></tr></table>";
+$print_buffer .= "</td></tr></table>";
 
 
 ?>

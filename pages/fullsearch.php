@@ -103,19 +103,19 @@ if (mysql_num_rows($FoundFactions) == 0
 $Title = "Search Results";
 
 // Display found objects
-print "          <table border='0' width='100%'>\n";
-print "            <tr valign='top'>\n";
-print "              <td='1' width='34%'>\n";
+$print_buffer .= "          <table border='0' width='100%'>\n";
+$print_buffer .= "            <tr valign='top'>\n";
+$print_buffer .= "              <td='1' width='34%'>\n";
 PrintQueryResults($FoundItems, $max_items_returned, "item.php", "item", "items", "id", "name");
-print "              </td>\n";
-print "              <td='1' width='33%'>\n";
+$print_buffer .= "              </td>\n";
+$print_buffer .= "              <td='1' width='33%'>\n";
 PrintQueryResults($FoundNpcs, $max_npcs_returned, "npc.php", "NPC", "NPCs", "id", "name");
-print "              </td>\n";
-print "              <td='1' width='33%'>\n";
+$print_buffer .= "              </td>\n";
+$print_buffer .= "              <td='1' width='33%'>\n";
 PrintQueryResults($FoundFactions, $MaxFactionsReturned, "faction.php", "faction", "factions", "id", "name");
-print "              </td>\n";
-print "            </tr>\n";
-print "          </table>\n";
+$print_buffer .= "              </td>\n";
+$print_buffer .= "            </tr>\n";
+$print_buffer .= "          </table>\n";
 
 
 ?>

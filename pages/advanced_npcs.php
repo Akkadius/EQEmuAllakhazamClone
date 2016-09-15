@@ -1,10 +1,5 @@
 <?php
 $Title = "Advanced NPC Search";
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir . 'mysql.php');
-
-require_once($includes_dir . 'functions.php');
 
 $isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
 $id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
@@ -18,25 +13,25 @@ if ($irace == 0) {
     $irace = '';
 }
 
-print "<table border=0 width=0%><tr valign=top><td>";
-print "<table border=0 width=0%>";
-print "<form method=GET action=$PHP_SELF>";
-echo '<input type="hidden" name="a" value="advanced_npcs">';
-print "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname ></td></tr>";
-print "<tr><td><b>Level : </b></td><td>Between ";
-print SelectLevel("iminlevel", $server_max_npc_level, $iminlevel);
-print " and ";
-print SelectLevel("imaxlevel", $server_max_npc_level, $imaxlevel);
-print "</tr>";
-print "<tr><td><b>Race : </b></td><td>";
-print SelectMobRace("irace", $irace);
-print "</td></tr>";
-print "<tr><td><b>Named mob : </b></td><td><input type=checkbox name=inamed " . ($inamed ? " checked" : "") . "></td></tr>";
-print "</table></td><td><table border=0 width=0%>";
-print "<tr><td><b>Show level : </b></td><td><input type=checkbox name=ishowlevel " . ($ishowlevel ? " checked" : "") . "></td></tr>";
-print "</table>";
-print "<tr align=center colspan=2><td colspan=2><input type=submit value=Search name=isearch class=form></td></tr>";
-print "</form></table>";
+$print_buffer .= "<table border=0 width=0%><tr valign=top><td>";
+$print_buffer .= "<table border=0 width=0%>";
+$print_buffer .= "<form method=GET action=$PHP_SELF>";
+$print_buffer .= '<input type="hidden" name="a" value="advanced_npcs">';
+$print_buffer .= "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname ></td></tr>";
+$print_buffer .= "<tr><td><b>Level : </b></td><td>Between ";
+$print_buffer .= SelectLevel("iminlevel", $server_max_npc_level, $iminlevel);
+$print_buffer .= " and ";
+$print_buffer .= SelectLevel("imaxlevel", $server_max_npc_level, $imaxlevel);
+$print_buffer .= "</tr>";
+$print_buffer .= "<tr><td><b>Race : </b></td><td>";
+$print_buffer .= SelectMobRace("irace", $irace);
+$print_buffer .= "</td></tr>";
+$print_buffer .= "<tr><td><b>Named mob : </b></td><td><input type=checkbox name=inamed " . ($inamed ? " checked" : "") . "></td></tr>";
+$print_buffer .= "</table></td><td><table border=0 width=0%>";
+$print_buffer .= "<tr><td><b>Show level : </b></td><td><input type=checkbox name=ishowlevel " . ($ishowlevel ? " checked" : "") . "></td></tr>";
+$print_buffer .= "</table>";
+$print_buffer .= "<tr align=center colspan=2><td colspan=2><input type=submit value=Search name=isearch class=form></td></tr>";
+$print_buffer .= "</form></table>";
 
 if (isset($isearch) && $isearch != '') {
     $query = "
@@ -77,19 +72,19 @@ if (isset($isearch) && $isearch != '') {
     $result = db_mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
     $n = mysql_num_rows($result);
     if ($n > $max_npcs_returned) {
-        print "$n ncps found, showing the $max_npcs_returned first ones...";
+        $print_buffer .= "$n ncps found, showing the $max_npcs_returned first ones...";
         $query .= " LIMIT $max_npcs_returned";
         $result = db_mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
     }
     if (mysql_num_rows($result) > 0) {
         while ($row = mysql_fetch_array($result)) {
-            print "<li><a href=?a=npc&id=" . $row["id"] . ">" . ReadableNpcName($row["name"]) . "</a>";
+            $print_buffer .= "<li><a href=?a=npc&id=" . $row["id"] . ">" . ReadableNpcName($row["name"]) . "</a>";
             if ($ishowlevel) {
-                print " - level " . $row["level"];
+                $print_buffer .= " - level " . $row["level"];
             }
         }
     } else {
-        print "<li>No npc found.";
+        $print_buffer .= "<li>No npc found.";
     }
 }
 

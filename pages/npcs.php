@@ -46,16 +46,16 @@ if ($isearch != "") {
 $Title = "NPCs search";
 
 
-echo "<table border='0' width='0%'><form method='GET' action='" . $PHP_SELF . "'>\n";
-echo '<input type="hidden" name="a" value="npcs">';
-echo "<tr align='left'>\n";
-echo "<td><b>Name : </b></td>\n";
-echo "<td><input type='text' value=\"$iname\" size='30' name='iname'></td>\n";
-echo "</tr>\n";
-echo "<tr tr align='left'>\n";
-echo "<td='1' colspan='2'><input type='submit' value='Search' name='isearch'/></td>\n";
-echo "</tr>\n";
-echo "</form></table>\n";
+$print_buffer .= "<table border='0' width='0%'><form method='GET' action='" . $PHP_SELF . "'>\n";
+$print_buffer .= '<input type="hidden" name="a" value="npcs">';
+$print_buffer .= "<tr align='left'>\n";
+$print_buffer .= "<td><b>Name : </b></td>\n";
+$print_buffer .= "<td><input type='text' value=\"$iname\" size='30' name='iname'></td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr tr align='left'>\n";
+$print_buffer .= "<td='1' colspan='2'><input type='submit' value='Search' name='isearch'/></td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "</form></table>\n";
 
 if (isset($QueryResult))
     PrintQueryResults($QueryResult, $max_npcs_returned, "npc.php", "npc", "npcs", "id", "name");

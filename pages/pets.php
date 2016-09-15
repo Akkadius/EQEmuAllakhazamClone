@@ -19,19 +19,19 @@ CreateToolTip('class5', '<table> <td> <img src="images/monograms/5.gif"> </td> <
 CreateToolTip('class10', '<table> <td> <img src="images/monograms/10.gif"> </td> <td> Shamen - primitive power. The only magic using class of the barbarians, ogres and trolls, shamen get a variety of spells that combine aspects of most of the other magic using classes. This combination, along with the racial strength, means the class can be played in a variety of different ways.  </td>');
 CreateToolTip('class2', '<table> <td> <img src="images/monograms/2.gif"> </td> <td> Clerics -- the premier healer in the game. A popular class for any group, the cleric brings the ability to heal the party and keep you from dying, and can even bring you back from death at higher levels.   </td>');
 CreateToolTip('class12', '<table> <td> <img src="images/monograms/12.gif"> </td> <td> S	The Wizard - Master Nuker. The wizard\'s abilities are in direct damage spells and in individual and group teleportation.   </td>');
-print "<table class='container_div display_table'><tr valign=top><td>";
-print "<h2 class='section_header'>Choose a class:</h2><ul style='text-align:left'>";
-print "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
-print "<li><a href=?a=pets&class=2  id='class2'>Cleric</a>";
-print "<li><a href=?a=pets&class=6  id='class6'>Druid</a>";
-print "<li><a href=?a=pets&class=14  id='class14'>Enchanter</a>";
-print "<li><a href=?a=pets&class=13  id='class13'>Magician</a>";
-print "<li><a href=?a=pets&class=11  id='class11'>Necromancer</a>";
-print "<li><a href=?a=pets&class=5  id='class5'>Shadow knight</a>";
-print "<li><a href=?a=pets&class=10  id='class10'>Shaman</a>";
-print "<li><a href=?a=pets&class=12  id='class12'>Wizard</a>";
-print "</ul>";
-print "</td></tr></table>";
+$print_buffer .= "<table class='container_div display_table'><tr valign=top><td>";
+$print_buffer .= "<h2 class='section_header'>Choose a class:</h2><ul style='text-align:left'>";
+$print_buffer .= "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
+$print_buffer .= "<li><a href=?a=pets&class=2  id='class2'>Cleric</a>";
+$print_buffer .= "<li><a href=?a=pets&class=6  id='class6'>Druid</a>";
+$print_buffer .= "<li><a href=?a=pets&class=14  id='class14'>Enchanter</a>";
+$print_buffer .= "<li><a href=?a=pets&class=13  id='class13'>Magician</a>";
+$print_buffer .= "<li><a href=?a=pets&class=11  id='class11'>Necromancer</a>";
+$print_buffer .= "<li><a href=?a=pets&class=5  id='class5'>Shadow knight</a>";
+$print_buffer .= "<li><a href=?a=pets&class=10  id='class10'>Shaman</a>";
+$print_buffer .= "<li><a href=?a=pets&class=12  id='class12'>Wizard</a>";
+$print_buffer .= "</ul>";
+$print_buffer .= "</td></tr></table>";
 
 if (isset($class) && $class != 0) {
     $Query = "SELECT
@@ -61,47 +61,47 @@ if (isset($class) && $class != 0) {
     $Query .= " GROUP BY $spells_table.`teleport_zone` ORDER BY $spells_table.classes" . $class;
     $result = db_mysql_query($Query);
     if (!$result) {
-        print 'Could not run query: ' . mysql_error();
+        $print_buffer .= 'Could not run query: ' . mysql_error();
         exit;
     }
     $columns = mysql_num_fields($result);
 
-    print '<h1>' . $dbclasses[$class] . '</h1>';
+    $print_buffer .= '<h1>' . $dbclasses[$class] . '</h1>';
 
-    print '<hr>';
+    $print_buffer .= '<hr>';
 
-    print "<table><thead>";
-    print "<th class='menuh'>Level</th>";
-    print "<th class='menuh'>Icon</th>";
-    print "<th class='menuh'>Spell Name</th>";
-    print "<th class='menuh'>Details</th>";
-    print "<th class='menuh'>Race</th>";
-    print "<th class='menuh'>Pet Level</th>";
-    print "<th class='menuh'>Pet Class</th>";
-    print "<th class='menuh'>HP</th>";
-    print "<th class='menuh'>Mana</th>";
-    print "<th class='menuh'>AC</th>";
-    print "<th class='menuh'>Min Damage</th>";
-    print "<th class='menuh'>Max Damage</th>";
+    $print_buffer .= "<table><thead>";
+    $print_buffer .= "<th class='menuh'>Level</th>";
+    $print_buffer .= "<th class='menuh'>Icon</th>";
+    $print_buffer .= "<th class='menuh'>Spell Name</th>";
+    $print_buffer .= "<th class='menuh'>Details</th>";
+    $print_buffer .= "<th class='menuh'>Race</th>";
+    $print_buffer .= "<th class='menuh'>Pet Level</th>";
+    $print_buffer .= "<th class='menuh'>Pet Class</th>";
+    $print_buffer .= "<th class='menuh'>HP</th>";
+    $print_buffer .= "<th class='menuh'>Mana</th>";
+    $print_buffer .= "<th class='menuh'>AC</th>";
+    $print_buffer .= "<th class='menuh'>Min Damage</th>";
+    $print_buffer .= "<th class='menuh'>Max Damage</th>";
 
 
     $RowClass = "lr";
-    print "</tr></thead><tbody>";
+    $print_buffer .= "</tr></thead><tbody>";
     while ($row = mysql_fetch_array($result)) {
-        print "<tr class='" . $RowClass . "'>";
-        print "<td>" . $row["classes" . $class] . "</td>";
-        print "<td><img src='" . $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";
-        print "<td><a href='?a=spell&id=" . $row['id'] . "'>  " . $row['name'] . " </a></td>";
-        print "<td><a href='?a=pet&name=" . $row['teleport_zone'] . "'>View</a></td>";
-        print "<td>" . $dbiracenames[$row["race"]] . "</td>";
-        print "<td>" . $row["level"] . "</td>";
-        print "<td>" . $row["class"] . "</td>";
-        print "<td>" . $row["hp"] . "</td>";
-        print "<td>" . $row["mana"] . "</td>";
-        print "<td>" . $row["ac"] . "</td>";
-        print "<td>" . $row["mindmg"] . "</td>";
-        print "<td>" . $row["maxdmg"] . "</td>";
-        print "</tr>";
+        $print_buffer .= "<tr class='" . $RowClass . "'>";
+        $print_buffer .= "<td>" . $row["classes" . $class] . "</td>";
+        $print_buffer .= "<td><img src='" . $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";
+        $print_buffer .= "<td><a href='?a=spell&id=" . $row['id'] . "'>  " . $row['name'] . " </a></td>";
+        $print_buffer .= "<td><a href='?a=pet&name=" . $row['teleport_zone'] . "'>View</a></td>";
+        $print_buffer .= "<td>" . $dbiracenames[$row["race"]] . "</td>";
+        $print_buffer .= "<td>" . $row["level"] . "</td>";
+        $print_buffer .= "<td>" . $row["class"] . "</td>";
+        $print_buffer .= "<td>" . $row["hp"] . "</td>";
+        $print_buffer .= "<td>" . $row["mana"] . "</td>";
+        $print_buffer .= "<td>" . $row["ac"] . "</td>";
+        $print_buffer .= "<td>" . $row["mindmg"] . "</td>";
+        $print_buffer .= "<td>" . $row["maxdmg"] . "</td>";
+        $print_buffer .= "</tr>";
 
         if ($RowClass == "lr") {
             $RowClass = "dr";
@@ -109,7 +109,7 @@ if (isset($class) && $class != 0) {
             $RowClass = "lr";
         }
     }
-    print "</tbody></table>";
+    $print_buffer .= "</tbody></table>";
 
 }
 
