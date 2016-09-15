@@ -70,8 +70,8 @@
 				print "<tr class='" .$RowClass. "'>
 				<td><a href=?a=item&id=".$row["item_id"]." id='" . $row["item_id"] . "'>";
 				
-				if(file_exists(getcwd(). "/icons/item_". $row['icon'] . ".gif")){ 
-					echo "<img src='".$icons_url. "item_" . $row['icon'].".gif' align='left'/ width='20' height='20'>  "; 
+				if(file_exists(getcwd(). "/icons/item_". $row['icon'] . ".png")){
+					echo "<img src='".$icons_url. "item_" . $row['icon'].".png' align='left'/ width='20' height='20'>  ";
 				}
 				
 				if ($charbrowser_url)

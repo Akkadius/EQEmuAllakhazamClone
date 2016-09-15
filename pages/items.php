@@ -311,9 +311,9 @@
 				$TableData = "";
 				$row = mysql_fetch_array($QueryResult);
 				$TableData .= "<tr valign='top' class='".$RowClass."'><td>";
-				if(file_exists(getcwd() . "/icons/item_" . $row["icon"] . ".gif"))
+				if(file_exists(getcwd() . "/icons/item_" . $row["icon"] . ".png"))
 				{ 
-					$TableData .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".gif' align='left'/>";
+					$TableData .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left'/>";
 				}
 				else
 				{

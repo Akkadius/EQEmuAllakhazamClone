@@ -99,7 +99,7 @@
 		{
 			print "<tr class='".$RowClass."'>";
 			print "<td>" . $row["classes". $class] . "</td>";
-			print "<td><img src='". $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";
+			print "<td><img src='". $icons_url . $row["new_icon"] . ".png' align='center' border='1' width='20' height='20'></td>";
 			print "<td><a href='?a=spell&id=". $row['id'] . "'>  ". $row['name'] . " </a></td>";
 			print "<td><a href='?a=pet&name=". $row['teleport_zone'] . "'>View</a></td>";
 			print "<td>" . $dbiracenames[$row["race"]] . "</td>";

@@ -203,7 +203,7 @@ if ($mode=="items") {
 			}
 		}
 		$EquiptmentTable .= "<tr class='".$RowClass."'>
-		<td><img src='".$icons_url."item_".$ItemData["icon"].".gif' align='left'/>
+		<td><img src='".$icons_url."item_".$ItemData["icon"].".png' align='left'/>
 		<img src='".$images_url."spacer_1.png' align='left'/>
 		</td><td><a href=?a=item&id=".$ItemData["id"]." id='" . $ItemData["id"] . "'>".$ItemData["Name"]."</a></td>
 		<td>".$ItemType."</td></tr>";

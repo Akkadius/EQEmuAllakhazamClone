@@ -66,8 +66,8 @@ print "<table border='$Tableborder' class='container_div' >\n";
 print "<tr valign='top'>\n";
 print "<td colspan='2' class='headerrow'>\n";
 
-if (file_exists(getcwd() . "/icons/item_" . $item['icon'] . ".gif")) {
-    echo "<img src='" . $icons_url . "item_" . $item["icon"] . ".gif' align='left'/>";
+if (file_exists(getcwd() . "/icons/item_" . $item['icon'] . ".png")) {
+    echo "<img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='left'/>";
 }
 
 print "<img src='" . $images_url . "spacer_1.png' align='left'/><a href='http://lucy.allakhazam.com/item.html?id=" . $id . "'><img src='" . $images_url . "lucy.png' align='right'/></a>\n";

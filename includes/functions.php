@@ -895,7 +895,7 @@ function BuildItemStats($item, $show_name_icon) {
 	if ($show_name_icon)
 	{
 		$html_string .= "<h4 style='margin-top:0'>" . $item["Name"] . "</h4></td>";
-		$html_string .= "<td><img src='" . $icons_url . "item_" . $item["icon"] . ".gif' align='right' valign='top'/></td></tr><tr><td>";
+		$html_string .= "<td><img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='right' valign='top'/></td></tr><tr><td>";
 	}
 	
 	$html_string .= "<table border='$Tableborder' width='100%' cellpadding='0' cellspacing='0'>";
@@ -1258,10 +1258,10 @@ function BuildItemStats($item, $show_name_icon) {
 	}
 	
 	$ItemValue .= "<tr><td><b>Value: </b>";
-	$ItemValue .= $Platinum." <img src='" . $icons_url . "item_644.gif' width='14' height='14'/> ".
-					$Gold." <img src='" . $icons_url . "item_645.gif' width='14' height='14'/> ".
-					$Silver." <img src='" . $icons_url . "item_646.gif' width='14' height='14'/> ".
-					$Copper." <img src='" . $icons_url . "item_647.gif' width='14' height='14'/>";
+	$ItemValue .= $Platinum." <img src='" . $icons_url . "item_644.png' width='14' height='14'/> ".
+					$Gold." <img src='" . $icons_url . "item_645.png' width='14' height='14'/> ".
+					$Silver." <img src='" . $icons_url . "item_646.png' width='14' height='14'/> ".
+					$Copper." <img src='" . $icons_url . "item_647.png' width='14' height='14'/>";
 	$ItemValue .= "</td></tr><br>";
 	$html_string .= $ItemValue;
 

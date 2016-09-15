@@ -55,7 +55,7 @@
 		while ($row=mysql_fetch_array($result))
 		{
 			CreateToolTip($row["item_id"], BuildItemStats($row, 1));
-			print "<img src='" . $icons_url . "item_" . $row["icon"] . ".gif' align='left' width='15' height='15' class='icon_pad'/>" .
+			print "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
 			"<a href=?a=item&id=" . $row["item_id"] . " id=" . $row["item_id"] . ">" .
 			str_replace("_"," ",$row["Name"])."</a><br>";
 			if ($recipe["replace_container"]==1)
@@ -83,7 +83,7 @@
 		while ($row=mysql_fetch_array($result))
 		{
 			CreateToolTip(($row["item_id"] * 110), BuildItemStats($row, 1));
-			print "<img src='" . $icons_url . "item_" . $row["icon"] . ".gif' align='left' width='15' height='15' class='icon_pad'/>" .
+			print "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
 			"<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 110) . ">" .
 			str_replace("_"," ",$row["Name"])."</a> x".$row["successcount"]." <br>"; 
 		}
@@ -108,7 +108,7 @@
 			while ($row=mysql_fetch_array($result))
 			{
 				CreateToolTip(($row["item_id"] * 10), BuildItemStats($row, 1));
-				print "<img src='" . $icons_url . "item_" . $row["icon"] . ".gif' align='left' width='15' height='15' class='icon_pad'/>" .
+				print "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
 				"<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 10) . ">" .
 				str_replace("_"," ",$row["Name"])."</a> x".$row["failcount"]." <br>"; 
 			}
@@ -134,7 +134,7 @@
 			while ($row=mysql_fetch_array($result))
 			{
 				CreateToolTip(($row["item_id"] * 100), BuildItemStats($row, 1));
-				print "<img src='" . $icons_url . "item_" . $row["icon"] . ".gif' align='left' width='15' height='15' class='icon_pad'	/> " .
+				print "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'	/> " .
 					"<a href=?a=item&id=".$row["item_id"]." id=".($row["item_id"] * 100).">".
 				str_replace("_"," ",$row["Name"])."</a> x ".$row["componentcount"]." <br>"; 
 			}
