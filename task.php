@@ -41,7 +41,7 @@ else
  */
 
 $Title="Task :: ".$name;
-$XhtmlCompliant = TRUE;
+
 require_once($includes_dir.'headers.php');
 
 print "<p><center><table border='0' width='60%'>";

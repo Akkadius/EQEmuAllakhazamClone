@@ -162,7 +162,7 @@
 	 */
 
 	$Title="Item Search";
-	$XhtmlCompliant = TRUE;
+
 	require_once($includes_dir.'headers.php');
 
 	echo "<center><table><tr><td style='toggle_btn'></td></tr></table></center>";

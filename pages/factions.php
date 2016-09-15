@@ -43,7 +43,7 @@
 	 */
 
 	$Title="Faction Search";
-	$XhtmlCompliant = TRUE;
+
 
 	print "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
 	print "<tr>\n";

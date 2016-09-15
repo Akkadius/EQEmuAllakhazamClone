@@ -81,7 +81,7 @@
 	 */
 
 	$Title = "Faction :: ".$name;
-	$XhtmlCompliant = TRUE;
+
 	require_once($includes_dir.'headers.php');
 
 	print "          <center>\n";

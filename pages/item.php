@@ -6,10 +6,6 @@
  *  If neither 'id' nor 'name' are specified or if 'id' is not a valid item ID, redirects to the item search page.
  */
 
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir . 'mysql.php');
-require_once($includes_dir . 'functions.php');
 
 $id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
@@ -54,17 +50,15 @@ if ($id != "" && is_numeric($id)) {
  *    The item actually exists
  */
 
-$Title = "Item:: " . str_replace('_', ' ', GetFieldByQuery("Name", "SELECT Name FROM $tbitems WHERE id=$id"));
-$XhtmlCompliant = TRUE;
-$item = $ItemRow;
-$Tableborder = 0;
+$Title = str_replace('_', ' ', GetFieldByQuery("Name", "SELECT Name FROM $tbitems WHERE id=$id"));
 
-print "<center>\n";
-print "<table border='$Tableborder' class='container_div' >\n";
+$item = $ItemRow;
+
+print "<table style='width:500px' class='container_div' >\n";
 
 // Title and Icon bar
 print "<tr valign='top'>\n";
-print "<td colspan='2' class='headerrow'>\n";
+print "<td colspan='2' class='headerrow' style='padding: 10px;'>\n";
 
 if (file_exists(getcwd() . "/icons/item_" . $item['icon'] . ".png")) {
     echo "<img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='left'/>";
@@ -80,14 +74,14 @@ if ($item["lore"] != "") {
 print "</td>\n";
 print "</tr>\n";
 print "<tr valign='top'>\n";
-print "<td width='90%'>\n";
-print "<table border='$Tableborder' width='100%'>\n";
+print "<td>\n";
+print "<table >\n";
 
 
 // Prints all Item data into formatted tables
 print BuildItemStats($item, 0);
 
-Print "<table border='$Tableborder' width='0%' cellpadding='0' cellspacing='0'>";
+Print "<table>";
 
 // Discovered by
 if ($DiscoveredItemsOnly == TRUE) {
@@ -191,7 +185,7 @@ if ($AllowQuestsNPC == TRUE) {
 print "</table>\n";
 print "</td>\n";
 print "<td width='0%'>\n";
-print "<table border='$Tableborder' width='0%'>\n";
+print "<table width='0%'>\n";
 
 $Separator = "";
 

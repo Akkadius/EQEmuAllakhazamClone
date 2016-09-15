@@ -15,7 +15,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Zones by Expansion :: EverQuest :: ZAM</title>
+    <title>EQEmulator Allakhazam</title>
     <link rel="icon" href="http://everquest.allakhazam.com/favicon.ico">
     <link rel="stylesheet" type="text/css" href="includes/alla.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
@@ -177,7 +177,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="center page-content">
+                                    <div class="page-content">
                                         <div id="title"></div>
                                         <?php
 
@@ -205,8 +205,10 @@
                                                 $footer_javascript .= '
                                                     <script type="text/javascript">
                                                         $("#title").html("<h1>' . $Title . '</h1>");
+                                                        document.title = "' . $Title . '";
                                                     </script>
                                                 ';
+
                                             }
                                         ?>
                                     </div>

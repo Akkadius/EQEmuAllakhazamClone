@@ -51,7 +51,7 @@ if($isearch != "")
  */
 
 $Title="NPCs search";
-$XhtmlCompliant = TRUE;
+
 require_once($includes_dir.'headers.php');
 
 echo "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";

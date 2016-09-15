@@ -9,7 +9,7 @@
 		exit();
 	}
 
-	$Title="Recipe : ".str_replace('_',' ',GetFieldByQuery("name","SELECT name FROM $tbtradeskillrecipe WHERE id=$id"));
+	$Title="Recipe :: ".str_replace('_',' ',GetFieldByQuery("name","SELECT name FROM $tbtradeskillrecipe WHERE id=$id"));
 
 
 	if (!isset($id)) { print "<script>document.location=\"index.php\";</script>"; }
@@ -20,15 +20,15 @@
 			
 	$result=mysql_query($query) or message_die('recipe.php','MYSQL_QUERY',$query,mysql_error());
 	$recipe=mysql_fetch_array($result);
-	print "<center>";
-	print "<table>";
-	print "<tr><td style='text-align:right'><b>Recipe : </b></td><td>".ucfirstwords(str_replace('_',' ',$recipe["name"]))."</td></tr>";
-	print "<tr><td style='text-align:right'><b>Tradeskill : </b></td><td>".ucfirstwords($dbskills[$recipe["tradeskill"]])."</td></tr>";
+
+	print "<table style='width:500px'>";
+	print "<tr><td style='text-align:right;'><b>Recipe: </b></td><td>".ucfirstwords(str_replace('_',' ',$recipe["name"]))."</td></tr>";
+	print "<tr><td style='text-align:right'><b>Tradeskill: </b></td><td>".ucfirstwords($dbskills[$recipe["tradeskill"]])."</td></tr>";
 	if ($recipe["skillneeded"]>0)
 	{
 		print "<tr><td style='text-align:right'><b>Skill needed : </b></td><td>".$recipe["skillneeded"]."</td></tr>";
 	}
-		print "<tr><td style='text-align:right'><b>Trivial at : </b></td><td>".$recipe["trivial"]."</td></tr>";
+		print "<tr><td style='text-align:right'><b>Trivial at: </b></td><td>".$recipe["trivial"]."</td></tr>";
 	if ($recipe["nofail"]>0)
 	{
 		print "<tr><td style='text-align:right' colspan=2>This recipe cannot fail.</td></tr>";
@@ -37,6 +37,9 @@
 	{
 		print "<tr><td style='text-align:right' cospan=2><b>Notes : </b>".$recipe["notes"]."</td></tr>";
 	}
+	print '</table>';
+
+	print '<table>';
 	// results containers
 	$query="SELECT $tbtradeskillrecipeentries.*,$tbitems.*,$tbitems.id AS item_id
 			FROM $tbtradeskillrecipe,$tbtradeskillrecipeentries,$tbitems
