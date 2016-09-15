@@ -1,5 +1,5 @@
 <?php
-$Title="Zones By Era";
+$Title = "Zones By Era";
 echo '<table class=\'display_table container_div\'><tr><td>';
 echo "<h2 class='section_header'>Zones</h2><br>";
 echo '<li><a href=?a=zone_era&era=antonica>Antonica</a></li>                      ';

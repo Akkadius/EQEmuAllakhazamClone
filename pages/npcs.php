@@ -7,40 +7,33 @@
  */
 
 $isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
-$iname   = (isset($_GET[  'iname']) ? $_GET[  'iname'] : '');
+$iname = (isset($_GET['iname']) ? $_GET['iname'] : '');
 
-if($isearch != "")
-{
-	if($iname == "")
-	{
-		$name = "";
-	}
-	else
-	{
-		$name = addslashes($iname);
-	}
-	$Query="SELECT $tbnpctypes.id,$tbnpctypes.name
+if ($isearch != "") {
+    if ($iname == "") {
+        $name = "";
+    } else {
+        $name = addslashes($iname);
+    }
+    $Query = "SELECT $tbnpctypes.id,$tbnpctypes.name
 		FROM $tbnpctypes
 		WHERE 1=1";
-	if($name != "")
-	{
-		$name = str_replace('`', '-', str_replace('_', '%', str_replace(' ', '%', $name)));
-		$Query .= " AND $tbnpctypes.Name like '%$name%'";
-	}
-	if($hide_invisible_men)
-	{
-		$Query .= " AND $tbnpctypes.race != 127 AND $tbnpctypes.race != 240";
-	}
-	$Query.=" ORDER BY $tbnpctypes.Name, $tbnpctypes.id LIMIT ".(LimitToUse($max_npcs_returned) + 1);
+    if ($name != "") {
+        $name = str_replace('`', '-', str_replace('_', '%', str_replace(' ', '%', $name)));
+        $Query .= " AND $tbnpctypes.Name like '%$name%'";
+    }
+    if ($hide_invisible_men) {
+        $Query .= " AND $tbnpctypes.race != 127 AND $tbnpctypes.race != 240";
+    }
+    $Query .= " ORDER BY $tbnpctypes.Name, $tbnpctypes.id LIMIT " . (LimitToUse($max_npcs_returned) + 1);
 
-	$QueryResult = mysql_query($Query) or message_die('npcs.php','MYSQL_QUERY',$Query,mysql_error());
+    $QueryResult = mysql_query($Query) or message_die('npcs.php', 'MYSQL_QUERY', $Query, mysql_error());
 
-	if(mysql_num_rows($QueryResult) == 1)
-	{
-		$row = mysql_fetch_array($QueryResult);
-		header("Location: ?a=npc&id=".$row["id"]);
-		exit();
-	}
+    if (mysql_num_rows($QueryResult) == 1) {
+        $row = mysql_fetch_array($QueryResult);
+        header("Location: ?a=npc&id=" . $row["id"]);
+        exit();
+    }
 }
 
 
@@ -50,11 +43,10 @@ if($isearch != "")
  *    $isearch is set if a query was issued
  */
 
-$Title="NPCs search";
+$Title = "NPCs search";
 
 
-
-echo "<table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
+echo "<table border='0' width='0%'><form method='GET' action='" . $PHP_SELF . "'>\n";
 echo '<input type="hidden" name="a" value="npcs">';
 echo "<tr align='left'>\n";
 echo "<td><b>Name : </b></td>\n";
@@ -65,8 +57,8 @@ echo "<td='1' colspan='2'><input type='submit' value='Search' name='isearch'/></
 echo "</tr>\n";
 echo "</form></table>\n";
 
-if(isset($QueryResult))
-  PrintQueryResults($QueryResult, $max_npcs_returned, "npc.php", "npc", "npcs", "id", "name");
+if (isset($QueryResult))
+    PrintQueryResults($QueryResult, $max_npcs_returned, "npc.php", "npc", "npcs", "id", "name");
 
 
 ?>

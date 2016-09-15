@@ -150,7 +150,7 @@ if (mysql_num_rows($result) > 0) {
                 <a href='?a=recipe&id=" . $row["id"] . "'>
                     " . str_replace("_", " ", $row["name"]) . "
                 </a>
-                (" . ucfirst(strtolower ($dbskills[$row["tradeskill"]])) . ")
+                (" . ucfirst(strtolower($dbskills[$row["tradeskill"]])) . ")
             </li>";
     }
     $trade_skill_return .= "</ul></td></tr>";

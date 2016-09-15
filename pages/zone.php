@@ -46,7 +46,6 @@ print '<table class="display_table container_div"><tr><td>';
 print $resources_menu;
 
 
-
 $query = "SELECT $tbzones.*
         FROM $tbzones
         WHERE $tbzones.short_name='$name'";
