@@ -398,3 +398,7 @@ select {
     border-collapse: separate;
     border-spacing: 0;
 }
+
+.icon_pad {
+    padding-right: 5px;
+}

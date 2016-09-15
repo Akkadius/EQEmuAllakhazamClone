@@ -20,20 +20,20 @@
 	print "<table border=0 width=0%>";
 	print "<form method=GET action=$PHP_SELF>";
 	echo '<input type="hidden" name="a" value="advanced_npcs">';
-	print "<tr><td nowrap><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname ></td></tr>";
-	print "<tr><td nowrap><b>Level : </b></td><td nowrap>Between ";
+	print "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname ></td></tr>";
+	print "<tr><td><b>Level : </b></td><td>Between ";
 	print SelectLevel("iminlevel",$ServerMaxNPCLevel,$iminlevel);
 	print " and ";
 	print SelectLevel("imaxlevel",$ServerMaxNPCLevel,$imaxlevel);
 	print "</tr>";
-	print "<tr><td nowrap><b>Race : </b></td><td nowrap>";
+	print "<tr><td><b>Race : </b></td><td>";
 	print SelectMobRace("irace",$irace);
 	print "</td></tr>";
-	print "<tr><td nowrap><b>Named mob : </b></td><td><input type=checkbox name=inamed ".($inamed?" checked":"")."></td></tr>";
+	print "<tr><td><b>Named mob : </b></td><td><input type=checkbox name=inamed ".($inamed?" checked":"")."></td></tr>";
 	print "</table></td><td><table border=0 width=0%>";
-	print "<tr><td nowrap><b>Show level : </b></td><td><input type=checkbox name=ishowlevel ".($ishowlevel?" checked":"")."></td></tr>";
+	print "<tr><td><b>Show level : </b></td><td><input type=checkbox name=ishowlevel ".($ishowlevel?" checked":"")."></td></tr>";
 	print "</table>";
-	print "<tr align=center colspan=2><td nowrap colspan=2><input type=submit value=Search name=isearch class=form></td></tr>";
+	print "<tr align=center colspan=2><td colspan=2><input type=submit value=Search name=isearch class=form></td></tr>";
 	print "</form></table></center>";
 
 	if (isset($isearch) && $isearch!='')

@@ -31,7 +31,7 @@ if ($zone["minium_level"]>0) { print "<br><b>Minimum level : </b>".floor($zone["
 print "</td>";
 if (file_exists($maps_dir.$name.".jpg")) {
   if (!file_exists($maps_url.$name."._tn.jpg")) { make_thumb($maps_dir.$name.".jpg"); }
-  print "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=".$maps_url.$name.".jpg><img src=".$maps_url.$name."._tn.jpg width=120 height=80 border=0></a><br>
+  print "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=".$maps_url. $name.".jpg><img src=".$maps_url.$name."._tn.jpg width=120 height=80 border=0></a><br>
          <a href=".$maps_url.$name.".jpg target=_new>Popup map</a>
          </td>";
 }
@@ -104,10 +104,10 @@ if (isset($submitDetail)) {
     $query="SELECT * FROM $tbnpctypes WHERE $tbnpctypes.id=".$_POST["npc"][$i];
     $mymob=GetRowByQuery($query);
     if ($ZoneDebug==TRUE) { print "<td align=center>".$_POST["npc"][$i]."</td>"; }
-    print "<td nowrap><a href=?a=npc&id=".$mymob["id"].">".str_replace(array('_','#'),' ',$mymob["name"])."</a></td>";
-    print "<td nowrap>".$dbiracenames[$mymob["race"]]."</td>";
-    print "<td nowrap>".$dbclasses[$mymob["class"]]."</td>";
-    print "<td nowrap align=center>".$mymob["level"]."</td>";
+    print "<td><a href=?a=npc&id=".$mymob["id"].">".str_replace(array('_','#'),' ',$mymob["name"])."</a></td>";
+    print "<td>".$dbiracenames[$mymob["race"]]."</td>";
+    print "<td>".$dbclasses[$mymob["class"]]."</td>";
+    print "<td align=center>".$mymob["level"]."</td>";
     
     
     $query="SELECT $tbspawn2.x,$tbspawn2.y,$tbspawn2.z,
@@ -121,7 +121,7 @@ if (isset($submitDetail)) {
                  AND $tbspawnentry.spawngroupID=$tbspawngroup.id";
     $result=mysql_query($query) or message_die('npc.php','MYSQL_QUERY',$query,mysql_error());
     if (mysql_num_rows($result)>0) {
-      print "<td nowrap>"; 
+      print "<td>";
       $sep="";
       while ($row=mysql_fetch_array($result)) {
         print "$sep".floor($row["y"])." / ".floor($row["x"])." / ".floor($row["z"]);
@@ -143,7 +143,7 @@ if (isset($submitDetail)) {
              ";
       $result=mysql_query($query) or message_die('npc.php','MYSQL_QUERY',$query,mysql_error());
       if (mysql_num_rows($result)>0) {
-        print "<td nowrap>";
+        print "<td>";
         $sep="";
         while ($row=mysql_fetch_array($result)) {
           print "$sep<a href=?a=item&id=".$row["id"].">".$row["Name"]."</a>";

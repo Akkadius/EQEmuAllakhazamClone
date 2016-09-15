@@ -43,7 +43,7 @@
 
 
   if ($npc["npcspecialattks"] != '') {
-    print "<tr><td nowrap><b>Special attacks : </b></td><td>" . SpecialAttacks($npc["npcspecialattks"]) . "</td></tr>";
+    print "<tr><td><b>Special attacks : </b></td><td>" . SpecialAttacks($npc["npcspecialattks"]) . "</td></tr>";
   }
 
   print "</tr></table>";

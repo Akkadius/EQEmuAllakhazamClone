@@ -4,14 +4,19 @@
  *  If the parameter 'isearchtype' equals 'name' and 'iname' is set then queries for objects with approximately this name and displays them.
  *  At the moment the object types supported are factions, NPCs and items.
  */
+
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-require_once($includes_dir.'mysql.php');
-require_once($includes_dir.'functions.php');
+require_once($includes_dir . 'mysql.php');
+require_once($includes_dir . 'functions.php');
 
 $iid         = (isset($_GET[        'iid']) ? addslashes($_GET[        'iid']) : '');
 $iname       = (isset($_GET[      'iname']) ? addslashes($_GET[      'iname']) : '');
 $isearchtype = (isset($_GET['isearchtype']) ? addslashes($_GET['isearchtype']) : '');
+
+$iid = $_GET['search'];
+$iname = $_GET['search'];
+$isearchtype = 'name';
 
 // Build the WHERE caluse
 $Where = "";
@@ -22,7 +27,7 @@ if($isearchtype == 'name' and $iname != "")
 
 if($Where == "")
 {
-	header("Location: items.php");
+	header("Location: ?a=items");
 	exit();
 }
 
@@ -100,19 +105,17 @@ if(     mysql_num_rows($FoundFactions) == 0
  */
 
 $Title="Search Results";
-$XhtmlCompliant = TRUE;
-require_once($includes_dir.'headers.php');
 
 // Display found objects
 print "          <table border='0' width='100%'>\n";
 print "            <tr valign='top'>\n";
-print "              <td nowrap='1' width='34%'>\n";
+print "              <td='1' width='34%'>\n";
 PrintQueryResults($FoundItems,       $MaxItemsReturned,    "item.php",    "item",    "items", "id", "name");
 print "              </td>\n";
-print "              <td nowrap='1' width='33%'>\n";
+print "              <td='1' width='33%'>\n";
 PrintQueryResults($FoundNpcs,         $MaxNpcsReturned,     "npc.php",     "NPC",     "NPCs", "id", "name");
 print "              </td>\n";
-print "              <td nowrap='1' width='33%'>\n";
+print "              <td='1' width='33%'>\n";
 PrintQueryResults($FoundFactions, $MaxFactionsReturned, "faction.php", "faction", "factions", "id", "name");
 print "              </td>\n";
 print "            </tr>\n";

@@ -1257,7 +1257,7 @@ function BuildItemStats($item, $show_name_icon) {
 		$Copper = ($ItemPrice - ($Platinum * 1000) - ($Gold * 100) - ($Silver * 10));
 	}
 	
-	$ItemValue .= "<tr><td nowrap><b>Value: </b>";	
+	$ItemValue .= "<tr><td><b>Value: </b>";
 	$ItemValue .= $Platinum." <img src='" . $icons_url . "item_644.gif' width='14' height='14'/> ".
 					$Gold." <img src='" . $icons_url . "item_645.gif' width='14' height='14'/> ".
 					$Silver." <img src='" . $icons_url . "item_646.gif' width='14' height='14'/> ".

@@ -21,13 +21,13 @@
 	print "<center><table border=0>";
 	print "<form method='GET' action=$PHP_SELF>";
 	print '<input type="hidden" name="a" value="recipes">';
-	print "<tr><td nowrap><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname></td></tr>";
-	print "<tr><td nowrap><b>Tradeskill : </b></td><td>";
+	print "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname></td></tr>";
+	print "<tr><td><b>Tradeskill : </b></td><td>";
 	print SelectTradeSkills("iskill",$iskill);
 	print "</td></tr>";
-	print "<tr><td nowrap><b>Min trivial skill : </b></td><td><input type=text value=\"$minskill\" size=4 name=minskill></td></tr>";
-	print "<tr><td nowrap><b>Max trivial skill : </b></td><td><input type=text value=\"$maxskill\" size=4 name=maxskill></td></tr>";
-	print "<tr align=center><td nowrap colspan=2><input type='submit' value='Search' name='isearch' class='form'/> <input type='reset' value='Reset' class='form'/></td></tr>";
+	print "<tr><td><b>Min trivial skill : </b></td><td><input type=text value=\"$minskill\" size=4 name=minskill></td></tr>";
+	print "<tr><td><b>Max trivial skill : </b></td><td><input type=text value=\"$maxskill\" size=4 name=maxskill></td></tr>";
+	print "<tr align=center><td colspan=2><input type='submit' value='Search' name='isearch' class='form'/> <input type='reset' value='Reset' class='form'/></td></tr>";
 	print "</form></table></center>";
 
 	if (isset($isearch) && $isearch != "")

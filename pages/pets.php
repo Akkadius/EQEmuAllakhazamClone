@@ -17,7 +17,7 @@
 
 	print "<center>";
 
-	print "<table><tr valign=top><td nowrap>";
+	print "<table><tr valign=top><td>";
 	
 	CreateToolTip('class15', '<table> <td> <img src="images/monograms/15.gif"> </td> <td> The Beastlord class is a unique class that is a hybrid of the Shaman and Monk parent classes. One of the class\'s distinguishing features is the ability to summon a warder pet to fight alongside them. The form the warder takes depends on the race of the beastlord. </td>');
 	CreateToolTip('class6', '<table> <td> <img src="images/monograms/6.gif"> </td> <td> Druids - a powerful outdoor class. With the triple ability to heal, inflict direct damage and cast damage over time, druids are a popular solo class, as well as popular in a group. They are also a travelling class, given both sow and teleportation abilities.  </td>');
@@ -40,7 +40,7 @@
 	print "<li><a href=?a=pets&class=10  id='class10'>Shaman</a>";
 	print "<li><a href=?a=pets&class=12  id='class12'>Wizard</a>";
 	print "</ul>";
-	print "</td></tr></table></td><td nowrap>";
+	print "</td></tr></table></td><td>";
 
 	if (isset($class) && $class != 0)
 	{

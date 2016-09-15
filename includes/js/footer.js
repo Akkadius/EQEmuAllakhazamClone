@@ -184,3 +184,10 @@ var Nav = new function() {
         }
     }
 }
+
+function global_search(val){
+    u = ".page-content";
+    $.get("pages/fullsearch.php?search=" + val, function (data) {
+        $(u).html(data);
+    });
+}

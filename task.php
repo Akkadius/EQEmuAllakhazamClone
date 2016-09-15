@@ -45,17 +45,17 @@ $XhtmlCompliant = TRUE;
 require_once($includes_dir.'headers.php');
 
 print "<p><center><table border='0' width='60%'>";
-print "<tr><td nowrap='1'><b>Task Title : </b></td><td width='100%'>".$task["title"]."</td></tr>";
-print "<tr><td nowrap='1'><b>Task ID : </b></td><td width='100%'>".$task["id"]."</td></tr>";
-print "<tr><td nowrap='1'><b>Min Level : </b></td><td width='100%'>".$task["minlevel"]."</td></tr>";
+print "<tr><td='1'><b>Task Title : </b></td><td width='100%'>".$task["title"]."</td></tr>";
+print "<tr><td='1'><b>Task ID : </b></td><td width='100%'>".$task["id"]."</td></tr>";
+print "<tr><td='1'><b>Min Level : </b></td><td width='100%'>".$task["minlevel"]."</td></tr>";
 if ($task["maxlevel"] <= $ServerMaxLevel && $task["maxlevel"] != 0)
 {
-	print "<tr><td nowrap='1'><b>Max Level : </b></td><td width='100%'>".$task["maxlevel"]."</td></tr>";
+	print "<tr><td='1'><b>Max Level : </b></td><td width='100%'>".$task["maxlevel"]."</td></tr>";
 }
 $ZoneID = $task["startzone"];
 $ZoneLongName = GetFieldByQuery("long_name","SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
 $ZoneShortName = GetFieldByQuery("short_name","SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
-print "<tr><td nowrap='1'><b>Starts In : </b></td><td><a href=?a=zone&name=".$ZoneShortName.">".$ZoneLongName."</a></td></tr>";
+print "<tr><td='1'><b>Starts In : </b></td><td><a href=?a=zone&name=".$ZoneShortName.">".$ZoneLongName."</a></td></tr>";
 $Reward = $task["reward"];
 if ($task["rewardmethod"] == 0)
 {
@@ -68,7 +68,7 @@ if ($task["rewardmethod"] == 0)
 }
 if ($Reward)
 {
-	print "<tr><td nowrap='1'><b>Reward : </b></td><td width='100%'>".$Reward."</td></tr>";
+	print "<tr><td='1'><b>Reward : </b></td><td width='100%'>".$Reward."</td></tr>";
 }
 
 print "<tr class='myline' height='6'><td colspan='2'></td></tr>\n";
@@ -78,7 +78,7 @@ $MultiStepDesc = "";
 $MultiStep = substr_count($TaskDesc, "[");
 if ($MultiStep)
 {
-	$MultiStepDesc .=  "<tr><td nowrap='1'><b>Task Description : </b></td><td width='50%'><table>";
+	$MultiStepDesc .=  "<tr><td='1'><b>Task Description : </b></td><td width='50%'><table>";
 	$StepDescArray = split("]", $TaskDesc);
 	foreach ($StepDescArray as $value)
 	{
@@ -95,7 +95,7 @@ if ($MultiStep)
 }
 else
 {
-	print "<tr><td nowrap='1'><b>Task Description : </b></td><td width='50%'><p>".$TaskDesc."</p></td></tr>";
+	print "<tr><td='1'><b>Task Description : </b></td><td width='50%'><p>".$TaskDesc."</p></td></tr>";
 }
 
 if ($DisplayTaskActivities==TRUE)
@@ -287,7 +287,7 @@ if ($DisplayTaskActivities==TRUE)
 	}
 	else
 	{
-		print "<tr><td nowrap='1'><b>No Task Activities Listed</b></td></tr>";
+		print "<tr><td='1'><b>No Task Activities Listed</b></td></tr>";
 	}
 
 }
