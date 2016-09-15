@@ -98,11 +98,21 @@ if ($discovered_items_only == TRUE) {
 }
 
 // places where to forage this item
-$query = "SELECT $zones_table.short_name,$zones_table.long_name,$forage_table.chance,$forage_table.level
-			FROM $zones_table,$forage_table
-			WHERE $zones_table.zoneidnumber=$forage_table.zoneid
-			AND $forage_table.itemid=$id
-			GROUP BY $zones_table.zoneidnumber";
+$query = "
+    SELECT
+        $zones_table.short_name,
+        $zones_table.long_name,
+        $forage_table.chance,
+        $forage_table. LEVEL
+    FROM
+        $zones_table,
+        $forage_table
+    WHERE
+        $zones_table.zoneidnumber = $forage_table.zoneid
+    AND $forage_table.itemid = $id
+    GROUP BY
+        $zones_table.zoneidnumber
+";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
@@ -116,7 +126,7 @@ if (mysql_num_rows($result) > 0) {
 // trade skills for which that item is a component
 $query = "
     SELECT
-        $trade_skill_recipe_table. NAME,
+        $trade_skill_recipe_table.name,
         $trade_skill_recipe_table.id,
         $trade_skill_recipe_table.tradeskill
     FROM
@@ -145,7 +155,7 @@ print $trade_skill_return;
 // trade skills which result is the component
 $query = "
     SELECT
-        $trade_skill_recipe_table. NAME,
+        $trade_skill_recipe_table.name,
         $trade_skill_recipe_table.id,
         $trade_skill_recipe_table.tradeskill
     FROM
@@ -217,29 +227,28 @@ if ($item_found_info == TRUE) {
     if ($IsDropped) {
         // npcs dropping this (Very Heavy Query)
         $query = "
-        SELECT
-            $npc_types_table.id,
-            $npc_types_table. NAME,
-            $spawn2_table.zone,
-            $zones_table.long_name,
-            $loot_table_entries.multiplier,
-            $loot_table_entries.probability,
-            $loot_drop_entries_table.chance
-        FROM
-            $npc_types_table,
-            $spawn2_table,
-            $spawn_entry_table,
-            $loot_table_entries,
-            $loot_drop_entries_table,
-            $zones_table
-        WHERE
-            $npc_types_table.id = $spawn_entry_table.npcID
-        AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
-        AND $npc_types_table.loottable_id = $loot_table_entries.loottable_id
-        AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
-        AND $loot_drop_entries_table.item_id = $id
-        AND $zones_table.short_name = $spawn2_table.zone
-
+            SELECT
+                $npc_types_table.id,
+                $npc_types_table. NAME,
+                $spawn2_table.zone,
+                $zones_table.long_name,
+                $loot_table_entries.multiplier,
+                $loot_table_entries.probability,
+                $loot_drop_entries_table.chance
+            FROM
+                $npc_types_table,
+                $spawn2_table,
+                $spawn_entry_table,
+                $loot_table_entries,
+                $loot_drop_entries_table,
+                $zones_table
+            WHERE
+                $npc_types_table.id = $spawn_entry_table.npcID
+            AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+            AND $npc_types_table.loottable_id = $loot_table_entries.loottable_id
+            AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
+            AND $loot_drop_entries_table.item_id = $id
+            AND $zones_table.short_name = $spawn2_table.zone
         ";
         if ($merchants_dont_drop_stuff == TRUE) {
             $query .= " AND $npc_types_table.merchant_id=0";
@@ -285,13 +294,26 @@ if ($item_found_info == TRUE) {
 
     if ($IsSold) {
         // npcs selling this (Very Heavy Query)
-        $query = "SELECT $npc_types_table.id,$npc_types_table.name,$spawn2_table.zone,$zones_table.long_name,$npc_types_table.class
-					FROM $npc_types_table,$merchant_list_table,$spawn2_table,$zones_table,$spawn_entry_table
-					WHERE $merchant_list_table.item=$id
-					AND $npc_types_table.id=$spawn_entry_table.npcID
-					AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
-					AND $merchant_list_table.merchantid=$npc_types_table.merchant_id
-					AND $zones_table.short_name=$spawn2_table.zone";
+        $query = "
+            SELECT
+                $npc_types_table.id,
+                $npc_types_table.name,
+                $spawn2_table.zone,
+                $zones_table.long_name,
+                $npc_types_table.class
+            FROM
+                $npc_types_table,
+                $merchant_list_table,
+                $spawn2_table,
+                $zones_table,
+                $spawn_entry_table
+            WHERE
+                $merchant_list_table.item = $id
+            AND $npc_types_table.id = $spawn_entry_table.npcID
+            AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+            AND $merchant_list_table.merchantid = $npc_types_table.merchant_id
+            AND $zones_table.short_name = $spawn2_table.zone
+        ";
         $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $MerchantList = "";
@@ -326,10 +348,18 @@ if ($item_found_info == TRUE) {
 
 
 // spawn points if its a ground item
-$query = "SELECT $ground_spawns_table.*,$zones_table.short_name,$zones_table.long_name
-			FROM $ground_spawns_table,$zones_table
-			WHERE item=$id
-			AND $ground_spawns_table.zoneid=$zones_table.zoneidnumber";
+$query = "
+    SELECT
+        $ground_spawns_table.*,
+        $zones_table.short_name,
+        $zones_table.long_name
+    FROM
+        $ground_spawns_table,
+        $zones_table
+    WHERE
+        item = $id
+    AND $ground_spawns_table.zoneid = $zones_table.zoneidnumber
+";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print $Separator;

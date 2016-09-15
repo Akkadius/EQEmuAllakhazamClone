@@ -38,7 +38,15 @@ $id = (isset($_GET['id']) ? $_GET['id'] : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 if ($id != "" && is_numeric($id)) {
-    $Query = "SELECT id,name FROM $faction_list_table WHERE id='" . $id . "'";
+    $Query = "
+        SELECT
+            id,
+            NAME
+        FROM
+            $faction_list_table
+        WHERE
+            id = '" . $id . "'
+    ";
     $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: factions.php");
@@ -47,7 +55,15 @@ if ($id != "" && is_numeric($id)) {
     $FactionRow = mysql_fetch_array($QueryResult);
     $name = $FactionRow["name"];
 } elseif ($name != "") {
-    $Query = "SELECT id,name FROM $faction_list_table WHERE name like '$name'";
+    $Query = "
+        SELECT
+            id,
+            NAME
+        FROM
+            $faction_list_table
+        WHERE
+            NAME LIKE '$name'
+    ";
     $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: factions.php?iname=" . $name . "&isearch=true");
@@ -91,17 +107,30 @@ print "              <tr valign='top' align='left'>\n";
 // NPCs raising the faction by killing them
 print "                <td width='50%' nowrap='1' align='left'>\n";
 print "                  <b>NPCs whom death raises the faction</b><br/><br/>\n";
-$Query = "SELECT $npc_types_table.id,$npc_types_table.name,$zones_table.long_name,$spawn2_table.zone
-			FROM $faction_entries_table,$npc_types_table,$spawn_entry_table,$spawn2_table,$zones_table
-			WHERE $faction_entries_table.faction_id=$id
-			AND $faction_entries_table.npc_faction_id=$npc_types_table.npc_faction_id
-			AND $faction_entries_table.value>0
-			AND $npc_types_table.id=$spawn_entry_table.npcID
-			AND $spawn2_table.spawngroupID=$spawn_entry_table.spawngroupID
-			AND $zones_table.short_name=$spawn2_table.zone
-			GROUP BY $npc_types_table.id
-			ORDER BY $zones_table.long_name ASC
-			";
+$Query = "
+    SELECT
+        $npc_types_table.id,
+        $npc_types_table. NAME,
+        $zones_table.long_name,
+        $spawn2_table.zone
+    FROM
+        $faction_entries_table,
+        $npc_types_table,
+        $spawn_entry_table,
+        $spawn2_table,
+        $zones_table
+    WHERE
+        $faction_entries_table.faction_id = $id
+    AND $faction_entries_table.npc_faction_id = $npc_types_table.npc_faction_id
+    AND $faction_entries_table.value > 0
+    AND $npc_types_table.id = $spawn_entry_table.npcID
+    AND $spawn2_table.spawngroupID = $spawn_entry_table.spawngroupID
+    AND $zones_table.short_name = $spawn2_table.zone
+    GROUP BY
+        $npc_types_table.id
+    ORDER BY
+        $zones_table.long_name ASC
+	";
 $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
 PrintNpcsByZone($QueryResult);
 print "                </td>\n";
@@ -110,17 +139,30 @@ print "                </td>\n";
 // NPCs lowering the faction by killing them
 print "                <td width='50%' nowrap='1' align='left'>\n";
 print "                  <b>NPCs whom death lowers the faction</b><br/><br/>\n";
-$Query = "SELECT $npc_types_table.id,$npc_types_table.name,$zones_table.long_name,$spawn2_table.zone
-			FROM $faction_entries_table,$npc_types_table,$spawn_entry_table,$spawn2_table,$zones_table
-			WHERE $faction_entries_table.faction_id=$id
-			AND $faction_entries_table.npc_faction_id=$npc_types_table.npc_faction_id
-			AND $faction_entries_table.value<0
-			AND $npc_types_table.id=$spawn_entry_table.npcID
-			AND $spawn2_table.spawngroupID=$spawn_entry_table.spawngroupID
-			AND $zones_table.short_name=$spawn2_table.zone
-			GROUP BY $npc_types_table.id
-			ORDER BY $zones_table.long_name ASC
-			";
+$Query = "
+    SELECT
+        $npc_types_table.id,
+        $npc_types_table. NAME,
+        $zones_table.long_name,
+        $spawn2_table.zone
+    FROM
+        $faction_entries_table,
+        $npc_types_table,
+        $spawn_entry_table,
+        $spawn2_table,
+        $zones_table
+    WHERE
+        $faction_entries_table.faction_id = $id
+    AND $faction_entries_table.npc_faction_id = $npc_types_table.npc_faction_id
+    AND $faction_entries_table.value < 0
+    AND $npc_types_table.id = $spawn_entry_table.npcID
+    AND $spawn2_table.spawngroupID = $spawn_entry_table.spawngroupID
+    AND $zones_table.short_name = $spawn2_table.zone
+    GROUP BY
+        $npc_types_table.id
+    ORDER BY
+        $zones_table.long_name ASC
+";
 $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
 PrintNpcsByZone($QueryResult);
 print "                </td>\n";

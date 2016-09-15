@@ -39,9 +39,16 @@ print "<tr align=center colspan=2><td colspan=2><input type=submit value=Search 
 print "</form></table>";
 
 if (isset($isearch) && $isearch != '') {
-    $query = "SELECT $npc_types_table.id,$npc_types_table.name,$npc_types_table.level
-				FROM $npc_types_table
-				WHERE 1=1";
+    $query = "
+        SELECT
+            $npc_types_table.id,
+            $npc_types_table.name,
+            $npc_types_table.level
+        FROM
+            $npc_types_table
+        WHERE
+            1 = 1
+    ";
     if ($iminlevel > $imaxlevel) {
         $c = $iminlevel;
         $iminlevel = $imaxlevel;
