@@ -230,7 +230,7 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
     $query = "
         SELECT
         $items_table.id,
-        $items_table.name,
+        $items_table.Name,
         $items_table.itemtype,
         $loot_drop_entries_table.chance,
         $loot_table_entries.probability,

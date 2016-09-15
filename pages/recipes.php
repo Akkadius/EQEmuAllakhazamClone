@@ -1,10 +1,5 @@
 <?php
 $Title = "Search Recipes";
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir . 'mysql.php');
-
-require_once($includes_dir . 'functions.php');
 
 $minskill = (isset($_GET['minskill']) ? $_GET['minskill'] : 0);
 $maxskill = (isset($_GET['maxskill']) ? $_GET['maxskill'] : 0);
@@ -48,9 +43,15 @@ if (isset($isearch) && $isearch != "") {
         $minskill = $maxskill;
         $maxskill = $tempskill;
     }
-    $query = "SELECT $trade_skill_recipe_table.id,$trade_skill_recipe_table.`name`,
-				$trade_skill_recipe_table.tradeskill,$trade_skill_recipe_table.trivial
-				FROM $trade_skill_recipe_table";
+    $query = "
+        SELECT
+            $trade_skill_recipe_table.id,
+            $trade_skill_recipe_table.`name`,
+            $trade_skill_recipe_table.tradeskill,
+            $trade_skill_recipe_table.trivial
+        FROM
+            $trade_skill_recipe_table
+    ";
     $s = "WHERE";
     if ($iname != "") {
         $iname = str_replace(' ', '%', addslashes($iname));

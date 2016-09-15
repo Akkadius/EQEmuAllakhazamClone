@@ -45,12 +45,19 @@ print '</table><br>';
 
 print '<table class="display_table container_div">';
 // results containers
-$query = "SELECT $trade_skill_recipe_entries.*,$items_table.*,$items_table.id AS item_id
-			FROM $trade_skill_recipe_table,$trade_skill_recipe_entries,$items_table
-			WHERE $trade_skill_recipe_table.id=$trade_skill_recipe_entries.recipe_id
-			  AND $trade_skill_recipe_entries.recipe_id=$id
-			  AND $trade_skill_recipe_entries.item_id=$items_table.id
-			  AND $trade_skill_recipe_entries.iscontainer=1";
+$query = "
+    SELECT
+        $trade_skill_recipe_entries.*, $items_table.*, $items_table.id AS item_id
+    FROM
+        $trade_skill_recipe_table,
+        $trade_skill_recipe_entries,
+        $items_table
+    WHERE
+        $trade_skill_recipe_table.id = $trade_skill_recipe_entries.recipe_id
+    AND $trade_skill_recipe_entries.recipe_id = $id
+    AND $trade_skill_recipe_entries.item_id = $items_table.id
+    AND $trade_skill_recipe_entries.iscontainer = 1
+";
 
 $result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 
@@ -71,12 +78,19 @@ if (mysql_num_rows($result) > 0) {
 
 
 // results success
-$query = "SELECT $trade_skill_recipe_entries.*,$items_table.*,$items_table.id AS item_id
-			FROM $trade_skill_recipe_table,$trade_skill_recipe_entries,$items_table
-			WHERE $trade_skill_recipe_table.id=$trade_skill_recipe_entries.recipe_id
-			  AND $trade_skill_recipe_entries.recipe_id=$id
-			  AND $trade_skill_recipe_entries.item_id=$items_table.id
-			  AND $trade_skill_recipe_entries.successcount>0";
+$query = "
+    SELECT
+        $trade_skill_recipe_entries.*, $items_table.*, $items_table.id AS item_id
+    FROM
+        $trade_skill_recipe_table,
+        $trade_skill_recipe_entries,
+        $items_table
+    WHERE
+        $trade_skill_recipe_table.id = $trade_skill_recipe_entries.recipe_id
+    AND $trade_skill_recipe_entries.recipe_id = $id
+    AND $trade_skill_recipe_entries.item_id = $items_table.id
+    AND $trade_skill_recipe_entries.successcount > 0
+";
 
 $result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
@@ -92,12 +106,19 @@ if (mysql_num_rows($result) > 0) {
 
 if ($recipe["nofail"] == 0) {
     // results fail
-    $query = "SELECT $trade_skill_recipe_entries.*,$items_table.*,$items_table.id AS item_id
-				FROM $trade_skill_recipe_table,$trade_skill_recipe_entries,$items_table
-				WHERE $trade_skill_recipe_table.id=$trade_skill_recipe_entries.recipe_id
-				  AND $trade_skill_recipe_entries.recipe_id=$id
-				  AND $trade_skill_recipe_entries.item_id=$items_table.id
-				  AND $trade_skill_recipe_entries.failcount>0";
+    $query = "
+        SELECT
+            $trade_skill_recipe_entries.*, $items_table.*, $items_table.id AS item_id
+        FROM
+            $trade_skill_recipe_table,
+            $trade_skill_recipe_entries,
+            $items_table
+        WHERE
+            $trade_skill_recipe_table.id = $trade_skill_recipe_entries.recipe_id
+        AND $trade_skill_recipe_entries.recipe_id = $id
+        AND $trade_skill_recipe_entries.item_id = $items_table.id
+        AND $trade_skill_recipe_entries.failcount > 0
+    ";
 
     $result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
@@ -113,13 +134,20 @@ if ($recipe["nofail"] == 0) {
 }
 
 // components
-$query = "SELECT $trade_skill_recipe_entries.*,$items_table.*,$items_table.id AS item_id
-			FROM $trade_skill_recipe_table,$trade_skill_recipe_entries,$items_table
-			WHERE $trade_skill_recipe_table.id=$trade_skill_recipe_entries.recipe_id
-			AND $trade_skill_recipe_entries.recipe_id=$id
-			AND $trade_skill_recipe_entries.item_id=$items_table.id
-			AND $trade_skill_recipe_entries.iscontainer=0
-			AND $trade_skill_recipe_entries.componentcount>0";
+$query = "
+    SELECT
+        $trade_skill_recipe_entries.*, $items_table.*, $items_table.id AS item_id
+    FROM
+        $trade_skill_recipe_table,
+        $trade_skill_recipe_entries,
+        $items_table
+    WHERE
+        $trade_skill_recipe_table.id = $trade_skill_recipe_entries.recipe_id
+    AND $trade_skill_recipe_entries.recipe_id = $id
+    AND $trade_skill_recipe_entries.item_id = $items_table.id
+    AND $trade_skill_recipe_entries.iscontainer = 0
+    AND $trade_skill_recipe_entries.componentcount > 0
+";
 
 $result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {

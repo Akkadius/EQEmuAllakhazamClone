@@ -23,9 +23,14 @@ if ($ZoneDebug == TRUE) {
 
 print "<table ><tr valign=top><td width=100%>";
 
-$query = "SELECT $zones_table.*
-        FROM $zones_table
-        WHERE $zones_table.short_name='$name'";
+$query = "
+    SELECT
+        $zones_table.*
+    FROM
+        $zones_table
+    WHERE
+        $zones_table.short_name = '$name'
+";
 $result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
 print "<table border=0 width=0%><tr valign=top><td>";
@@ -77,15 +82,24 @@ if (isset($submitDetailMaps)) {
             WHERE $npc_types_table.id=" . $_POST["npc"][$i];
         $mymob = GetRowByQuery($query);
 
-        $query = "SELECT $spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
-               $spawn_group_table.`name` as spawngroup,
-               $spawn_group_table.id as spawngroupID,
-               $spawn2_table.respawntime
-               FROM $spawn_entry_table,$spawn2_table,$spawn_group_table
-               WHERE $spawn_entry_table.npcID=" . $_POST["npc"][$i] . "
-                 AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
-                 AND $spawn2_table.zone='$name'
-                 AND $spawn_entry_table.spawngroupID=$spawn_group_table.id";
+        $query = "
+            SELECT
+                $spawn2_table.x,
+                $spawn2_table.y,
+                $spawn2_table.z,
+                $spawn_group_table.`name` AS spawngroup,
+                $spawn_group_table.id AS spawngroupID,
+                $spawn2_table.respawntime
+            FROM
+                $spawn_entry_table,
+                $spawn2_table,
+                $spawn_group_table
+            WHERE
+                $spawn_entry_table.npcID = " . $_POST["npc"][$i] . "
+            AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+            AND $spawn2_table.zone = '$name'
+            AND $spawn_entry_table.spawngroupID = $spawn_group_table.id
+        ";
         $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             while ($row = mysql_fetch_array($result)) {
@@ -124,15 +138,24 @@ if (isset($submitDetail)) {
         print "<td align=center>" . $mymob["level"] . "</td>";
 
 
-        $query = "SELECT $spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
-               $spawn_group_table.`name` as spawngroup,
-               $spawn_group_table.id as spawngroupID,
-               $spawn2_table.respawntime
-               FROM $spawn_entry_table,$spawn2_table,$spawn_group_table
-               WHERE $spawn_entry_table.npcID=" . $_POST["npc"][$i] . "
-                 AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
-                 AND $spawn2_table.zone='$name'
-                 AND $spawn_entry_table.spawngroupID=$spawn_group_table.id";
+        $query = "
+            SELECT
+                $spawn2_table.x,
+                $spawn2_table.y,
+                $spawn2_table.z,
+                $spawn_group_table.`name` AS spawngroup,
+                $spawn_group_table.id AS spawngroupID,
+                $spawn2_table.respawntime
+            FROM
+                $spawn_entry_table,
+                $spawn2_table,
+                $spawn_group_table
+            WHERE
+                $spawn_entry_table.npcID = " . $_POST["npc"][$i] . "
+            AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+            AND $spawn2_table.zone = '$name'
+            AND $spawn_entry_table.spawngroupID = $spawn_group_table.id
+        ";
         $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             print "<td>";
@@ -147,13 +170,23 @@ if (isset($submitDetail)) {
 
 
         if (($mymob["loottable_id"] > 0) AND ((!in_array($mymob["class"], $dbmerchants)) OR ($merchants_dont_drop_stuff == FALSE))) {
-            $query = "SELECT $items_table.id,$items_table.Name,$items_table.itemtype,
-                     $loot_drop_entries_table.chance,$loot_table_entries.probability,
-                     $loot_table_entries.lootdrop_id,$loot_table_entries.multiplier
-              FROM $items_table,$loot_table_entries,$loot_drop_entries_table
-              WHERE $loot_table_entries.loottable_id=" . $mymob["loottable_id"] . "
-                AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
-              AND $loot_drop_entries_table.item_id=$items_table.id
+            $query = "
+                SELECT
+                    $items_table.id,
+                    $items_table.name,
+                    $items_table.itemtype,
+                    $loot_drop_entries_table.chance,
+                    $loot_table_entries.probability,
+                    $loot_table_entries.lootdrop_id,
+                    $loot_table_entries.multiplier
+                FROM
+                    $items_table,
+                    $loot_table_entries,
+                    $loot_drop_entries_table
+                WHERE
+                    $loot_table_entries.loottable_id = " . $mymob["loottable_id"] . "
+                AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
+                AND $loot_drop_entries_table.item_id = $items_table.id
              ";
             $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
             if (mysql_num_rows($result) > 0) {
@@ -179,12 +212,25 @@ if (isset($submitDetail)) {
 
 if ($mode == "npcs") {
     ////////////// NPCS
-    $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.race,$npc_types_table.`name`,$npc_types_table.loottable_id
-          FROM $npc_types_table,$spawn2_table,$spawn_entry_table,$spawn_group_table
-          WHERE $spawn2_table.zone='$name'
-          AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
-          AND $spawn_entry_table.npcID=$npc_types_table.id
-          AND $spawn_group_table.id=$spawn_entry_table.spawngroupID";
+    $query = "
+        SELECT
+            $npc_types_table.id,
+            $npc_types_table.class,
+            $npc_types_table.level,
+            $npc_types_table.race,
+            $npc_types_table.`name`,
+            $npc_types_table.loottable_id
+        FROM
+            $npc_types_table,
+            $spawn2_table,
+            $spawn_entry_table,
+            $spawn_group_table
+        WHERE
+            $spawn2_table.zone = '$name'
+        AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+        AND $spawn_entry_table.npcID = $npc_types_table.id
+        AND $spawn_group_table.id = $spawn_entry_table.spawngroupID
+    ";
     if ($hide_invisible_men == TRUE) {
         $query .= " AND $npc_types_table.race!=127 AND $npc_types_table.race!=240";
     }

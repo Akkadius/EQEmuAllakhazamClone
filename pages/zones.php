@@ -2,13 +2,20 @@
 $Title = "Populated Zones List";
 print "<table class=''><tr valign=top><td>";
 
-$query = "SELECT $zones_table.short_name AS short_name,
-               $zones_table.long_name AS long_name,
-               COUNT($spawn2_table.id) AS spawns,
-               $zones_table.zoneidnumber AS zoneidnumber
-        FROM $zones_table,$spawn_entry_table,$spawn2_table
-        WHERE $spawn2_table.spawngroupID=$spawn_entry_table.spawngroupID
-          AND $spawn2_table.zone=$zones_table.short_name";
+$query = "
+    SELECT
+        $zones_table.short_name AS short_name,
+        $zones_table.long_name AS long_name,
+        COUNT($spawn2_table.id) AS spawns,
+        $zones_table.zoneidnumber AS zoneidnumber
+    FROM
+        $zones_table,
+        $spawn_entry_table,
+        $spawn2_table
+    WHERE
+        $spawn2_table.spawngroupID = $spawn_entry_table.spawngroupID
+    AND $spawn2_table.zone = $zones_table.short_name
+";
 /*foreach ($IgnoreZones AS $zid) {
   $query.=" AND $tbzones.short_name!='$zid'";
 }

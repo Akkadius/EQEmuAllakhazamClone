@@ -46,9 +46,14 @@ print '<table class="display_table container_div"><tr><td>';
 print $resources_menu;
 
 
-$query = "SELECT $zones_table.*
-        FROM $zones_table
-        WHERE $zones_table.short_name='$name'";
+$query = "
+    SELECT
+        $zones_table.*
+    FROM
+        $zones_table
+    WHERE
+        $zones_table.short_name = '$name'
+";
 $result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
 print "<table style='width:100%'><tr valign=top><td>";
@@ -142,12 +147,20 @@ if ($mode == "items") {
 		<th class='menuh'><a href=?a=zone&name=$name&mode=items&order=itemtype>Item type</a></th>
 		</tr>";
 
-    $query = "SELECT $npc_types_table.id";
-    $query .= " FROM $npc_types_table,$spawn2_table,$spawn_entry_table,$spawn_group_table";
-    $query .= " WHERE $spawn2_table.zone='$name'
-		AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
-		AND $spawn_entry_table.npcID=$npc_types_table.id
-		AND $spawn_group_table.id=$spawn_entry_table.spawngroupID";
+    $query = "
+        SELECT
+            $npc_types_table.id
+        FROM
+            $npc_types_table,
+            $spawn2_table,
+            $spawn_entry_table,
+            $spawn_group_table
+        WHERE
+            $spawn2_table.zone = '$name'
+        AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+        AND $spawn_entry_table.npcID = $npc_types_table.id
+        AND $spawn_group_table.id = $spawn_entry_table.spawngroupID
+    ";
 
     if ($merchants_dont_drop_stuff == TRUE) {
         foreach ($dbmerchants AS $c) {
@@ -240,11 +253,21 @@ if ($mode == "items") {
 if ($mode == "spawngroups") {
     if ($display_spawn_group_info == TRUE) {
         print "";
-        $query = "SELECT $spawn_group_table.*,$spawn2_table.x,$spawn2_table.y,$spawn2_table.z,$spawn2_table.respawntime
-			FROM $spawn2_table,$spawn_group_table
-			WHERE $spawn2_table.zone='$name'
-			AND $spawn_group_table.id=$spawn2_table.spawngroupID
-			ORDER BY $spawn_group_table.`name` ASC";
+        $query = "
+            SELECT
+                $spawn_group_table.*, $spawn2_table.x,
+                $spawn2_table.y,
+                $spawn2_table.z,
+                $spawn2_table.respawntime
+            FROM
+                $spawn2_table,
+                $spawn_group_table
+            WHERE
+                $spawn2_table.zone = '$name'
+            AND $spawn_group_table.id = $spawn2_table.spawngroupID
+            ORDER BY
+                $spawn_group_table.`name` ASC
+        ";
         $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result) > 0) {
@@ -252,11 +275,21 @@ if ($mode == "spawngroups") {
                 print "<li><a href=spawngroup.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" .
                     floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]) . ") (respawn time : " .
                     translate_time($row["respawntime"]) . ")<ul>";
-                $query = "SELECT $spawn_entry_table.npcID,$npc_types_table.`name`,$spawn_entry_table.chance,$npc_types_table.level
-					FROM $spawn_entry_table,$npc_types_table
-					WHERE $spawn_entry_table.npcID=$npc_types_table.id
-					AND $spawn_entry_table.spawngroupID=" . $row["id"] . "
-					ORDER BY $npc_types_table.`name` ASC";
+                $query = "
+                    SELECT
+                        $spawn_entry_table.npcID,
+                        $npc_types_table.`name`,
+                        $spawn_entry_table.chance,
+                        $npc_types_table.level
+                    FROM
+                        $spawn_entry_table,
+                        $npc_types_table
+                    WHERE
+                        $spawn_entry_table.npcID = $npc_types_table.id
+                    AND $spawn_entry_table.spawngroupID = " . $row["id"] . "
+                    ORDER BY
+                        $npc_types_table.`name` ASC
+                ";
                 $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
                 while ($res = mysql_fetch_array($result2)) {
                     print "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";
@@ -273,12 +306,21 @@ if ($mode == "spawngroups") {
 } // end spawngroups
 
 if ($mode == "forage") {
-    $query = "SELECT $items_table.Name,$items_table.id
-		FROM $items_table,$forage_table,$zones_table
-		WHERE $items_table.id=$forage_table.itemid
-		AND $forage_table.zoneid=$zones_table.zoneidnumber
-		AND $zones_table.short_name='$name'
-		ORDER BY $items_table.Name ASC";
+    $query = "
+        SELECT
+            $items_table.name,
+            $items_table.id
+        FROM
+            $items_table,
+            $forage_table,
+            $zones_table
+        WHERE
+            $items_table.id = $forage_table.itemid
+        AND $forage_table.zoneid = $zones_table.zoneidnumber
+        AND $zones_table.short_name = '$name'
+        ORDER BY
+            $items_table.name ASC
+    ";
     $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<p>Forageable Items<p><table border=1><tr>
@@ -297,10 +339,23 @@ if ($mode == "tasks") {
 
     if ($display_task_info == TRUE) {
         $ZoneID = GetFieldByQuery("zoneidnumber", "SELECT zoneidnumber FROM zone WHERE short_name = '$name'");
-        $query = "SELECT $tasks_table.id, $tasks_table.title, $tasks_table.startzone, $tasks_table.minlevel, $tasks_table.maxlevel, $tasks_table.reward, $tasks_table.rewardid, $tasks_table.rewardmethod
-			FROM $tasks_table
-			WHERE $tasks_table.startzone=$ZoneID
-			ORDER BY $tasks_table.id ASC";
+        $query = "
+            SELECT
+                $tasks_table.id,
+                $tasks_table.title,
+                $tasks_table.startzone,
+                $tasks_table.minlevel,
+                $tasks_table.maxlevel,
+                $tasks_table.reward,
+                $tasks_table.rewardid,
+                $tasks_table.rewardmethod
+            FROM
+                $tasks_table
+            WHERE
+                $tasks_table.startzone = $ZoneID
+            ORDER BY
+                $tasks_table.id ASC
+        ";
 
         $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
