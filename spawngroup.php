@@ -1,55 +1,55 @@
 <?php
 require_once('./includes/constants.php');
 require_once('./includes/config.php');
-require_once($includes_dir.'mysql.php');
-require_once($includes_dir.'functions.php');
+require_once($includes_dir . 'mysql.php');
+require_once($includes_dir . 'functions.php');
 
-$id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
+$id = (isset($_GET['id']) ? $_GET['id'] : '');
 
-if (!is_numeric($id) || $display_spawn_group_info==FALSE)
-{
-	header("Location: index.php");
-	exit();
+if (!is_numeric($id) || $display_spawn_group_info == FALSE) {
+    header("Location: index.php");
+    exit();
 }
-$query="SELECT $tbspawngroup.name AS sgname, $tbspawn2.*, 
+$query = "SELECT $tbspawngroup.name AS sgname, $tbspawn2.*,
         $tbzones.long_name AS zone, $tbzones.short_name AS spawnzone
         FROM $tbspawngroup,$tbspawn2,$tbzones
         WHERE $tbspawngroup.id=$id
           AND $tbspawn2.spawngroupID=$tbspawngroup.id
           AND $tbspawn2.zone=$tbzones.short_name";
-$result=mysql_query($query) or message_die('spawngroup.php','MYSQL_QUERY',$query,mysql_error());
-$spawn=mysql_fetch_array($result);
-$Title=$spawn["sgname"]." (".$spawn["zone"]." : ".floor($spawn["y"]).",".floor($spawn["x"]).",".floor($spawn["z"]).")";
-$x=floor($spawn["x"]);
-$y=floor($spawn["y"]);
-$z=floor($spawn["z"]);
+$result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
+$spawn = mysql_fetch_array($result);
+$Title = $spawn["sgname"] . " (" . $spawn["zone"] . " : " . floor($spawn["y"]) . "," . floor($spawn["x"]) . "," . floor($spawn["z"]) . ")";
+$x = floor($spawn["x"]);
+$y = floor($spawn["y"]);
+$z = floor($spawn["z"]);
 
 
-
-if (!isset($id) || $id=='') { print "<script>document.location=\"index.php\";</script>"; }
+if (!isset($id) || $id == '') {
+    print "<script>document.location=\"index.php\";</script>";
+}
 
 print "<table border=0 width=0%><tr valign=top><td width=50% nowrap>\n";
-$query="SELECT $tbspawnentry.chance,$tbnpctypes.name,$tbnpctypes.id
+$query = "SELECT $tbspawnentry.chance,$tbnpctypes.name,$tbnpctypes.id
         FROM $tbspawnentry,$tbnpctypes
         WHERE $tbspawnentry.spawngroupID=$id
           AND $tbspawnentry.npcID=$tbnpctypes.id 
         ORDER BY $tbnpctypes.name ASC
         ";
-$result=mysql_query($query) or message_die('spawngroup.php','MYSQL_QUERY',$query,mysql_error());
+$result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 print "<b>NPCs composing that spawngroup :</b>";
-if (mysql_num_rows($result)>0) {
-  while ($row=mysql_fetch_array($result)) {
-    print "<li><a href=?a=npc&id=".$row["id"].">".$row["name"]."</a> (".$row["chance"]."%)";
-  }
+if (mysql_num_rows($result) > 0) {
+    while ($row = mysql_fetch_array($result)) {
+        print "<li><a href=?a=npc&id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["chance"] . "%)";
+    }
 }
 print "</td><td width=50% nowrap>";
 print "<b>NPCs spawning around that spawngroup : </b><br>(Max range : $spawngroup_around_range)<ul>";
-$myrange=$spawngroup_around_range*$spawngroup_around_range; // precalculate, saves some mysql time
-$query="SELECT $tbspawnentry.chance,$tbspawn2.x AS x, $tbspawn2.y AS y, $tbspawn2.z AS z,
+$myrange = $spawngroup_around_range * $spawngroup_around_range; // precalculate, saves some mysql time
+$query = "SELECT $tbspawnentry.chance,$tbspawn2.x AS x, $tbspawn2.y AS y, $tbspawn2.z AS z,
                $tbnpctypes.name,$tbnpctypes.id,
                $tbspawngroup.id AS sgid,$tbspawngroup.name AS sgname
         FROM $tbspawnentry,$tbnpctypes,$tbspawngroup,$tbspawn2
-        WHERE $tbspawn2.zone='".$spawn["spawnzone"]."'
+        WHERE $tbspawn2.zone='" . $spawn["spawnzone"] . "'
           AND $tbspawn2.spawngroupID=$tbspawngroup.id
           AND $tbspawn2.spawngroupID=$tbspawnentry.spawngroupID
           AND $tbspawnentry.npcID=$tbnpctypes.id
@@ -58,20 +58,20 @@ $query="SELECT $tbspawnentry.chance,$tbspawn2.x AS x, $tbspawn2.y AS y, $tbspawn
           AND $tbspawngroup.id!=$id
         ORDER BY sgid ASC, $tbnpctypes.name ASC
         ";
-$result=mysql_query($query) or message_die('spawngroup.php','MYSQL_QUERY',$query,mysql_error());
-$sg=0;
-if (mysql_num_rows($result)>0) {
-  while ($row=mysql_fetch_array($result)) {
-    if ($sg!=$row["sgid"]) {
-      $sg=$row["sgid"];
-      print "</ul><li><a href=$PHP_SELF?id=".$row["sgid"].">".$row["sgname"]."</a>, range=";
-      print floor(sqrt(($x-$row["x"])*($x-$row["x"])+($y-$row["y"])*($y-$row["y"])));
-      print " (".floor($row["y"]).",".floor($row["x"]).",".floor($row["z"]).")<ul>";
+$result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
+$sg = 0;
+if (mysql_num_rows($result) > 0) {
+    while ($row = mysql_fetch_array($result)) {
+        if ($sg != $row["sgid"]) {
+            $sg = $row["sgid"];
+            print "</ul><li><a href=$PHP_SELF?id=" . $row["sgid"] . ">" . $row["sgname"] . "</a>, range=";
+            print floor(sqrt(($x - $row["x"]) * ($x - $row["x"]) + ($y - $row["y"]) * ($y - $row["y"])));
+            print " (" . floor($row["y"]) . "," . floor($row["x"]) . "," . floor($row["z"]) . ")<ul>";
+        }
+        print "<li><a href=?a=npc&id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["chance"] . "%)";
     }
-    print "<li><a href=?a=npc&id=".$row["id"].">".$row["name"]."</a> (".$row["chance"]."%)";
-  }
 } else {
-  print "None... ";
+    print "None... ";
 }
 print "</ul></td></tr></table>";
 
