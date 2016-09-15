@@ -37,25 +37,26 @@ $iavailevel = (isset($_GET['iavailevel']) ? addslashes($_GET['iavailevel']) : ''
 $ideity = (isset($_GET['ideity']) ? addslashes($_GET['ideity']) : '');
 
 if ($isearch != "") {
-    $Query = "SELECT $items_table.* FROM ($items_table";
+    $query = "SELECT $items_table.* FROM ($items_table";
 
     if ($discovered_items_only == TRUE) {
-        $Query .= ",discovered_items";
+        $query .= ",discovered_items";
     }
 
     if ($iavailability == 1) {
         // mob dropped
-        $Query .= ",$loot_drop_entries_table,$loot_table_entries,$npc_types_table";
+        $query .= ",$loot_drop_entries_table,$loot_table_entries,$npc_types_table";
     }
-    $Query .= ")";
+    $query .= ")";
     $s = " WHERE";
     if ($ieffect != "") {
         $effect = "%" . str_replace(',', '%', str_replace(' ', '%', addslashes($ieffect))) . "%";
-        $Query .= " LEFT JOIN $spells_table AS proc_s ON proceffect=proc_s.id";
-        $Query .= " LEFT JOIN $spells_table AS worn_s ON worneffect=worn_s.id";
-        $Query .= " LEFT JOIN $spells_table AS focus_s ON focuseffect=focus_s.id";
-        $Query .= " LEFT JOIN $spells_table AS click_s ON clickeffect=click_s.id";
-        $Query .= " WHERE (proc_s.`name` LIKE '$effect'
+
+        $query .= " LEFT JOIN $spells_table AS proc_s ON proceffect=proc_s.id";
+        $query .= " LEFT JOIN $spells_table AS worn_s ON worneffect=worn_s.id";
+        $query .= " LEFT JOIN $spells_table AS focus_s ON focuseffect=focus_s.id";
+        $query .= " LEFT JOIN $spells_table AS click_s ON clickeffect=click_s.id";
+        $query .= " WHERE (proc_s.`name` LIKE '$effect'
 				OR worn_s.`name` LIKE '$effect'
 				OR focus_s.`name` LIKE '$effect'
 				OR click_s.`name` LIKE '$effect') ";
@@ -63,89 +64,89 @@ if ($isearch != "") {
     }
     if (($istat1 != "") AND ($istat1value != "")) {
         if ($istat1 == "ratio") {
-            $Query .= " $s ($items_table.delay/$items_table.damage $istat1comp $istat1value) AND ($items_table.damage>0)";
+            $query .= " $s ($items_table.delay/$items_table.damage $istat1comp $istat1value) AND ($items_table.damage>0)";
             $s = "AND";
         } else {
-            $Query .= " $s ($items_table.$istat1 $istat1comp $istat1value)";
+            $query .= " $s ($items_table.$istat1 $istat1comp $istat1value)";
             $s = "AND";
         }
     }
     if (($istat2 != "") AND ($istat2value != "")) {
         if ($istat2 == "ratio") {
-            $Query .= " $s ($items_table.delay/$items_table.damage $istat2comp $istat2value) AND ($items_table.damage>0)";
+            $query .= " $s ($items_table.delay/$items_table.damage $istat2comp $istat2value) AND ($items_table.damage>0)";
             $s = "AND";
         } else {
-            $Query .= " $s ($items_table.$istat2 $istat2comp $istat2value)";
+            $query .= " $s ($items_table.$istat2 $istat2comp $istat2value)";
             $s = "AND";
         }
     }
     if (($imod != "") AND ($imodvalue != "")) {
-        $Query .= " $s ($items_table.$imod $imodcomp $imodvalue)";
+        $query .= " $s ($items_table.$imod $imodcomp $imodvalue)";
         $s = "AND";
     }
     if ($iavailability == 1) // mob dropped
     {
-        $Query .= " $s $loot_drop_entries_table.item_id=$items_table.id
+        $query .= " $s $loot_drop_entries_table.item_id=$items_table.id
 				AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
 				AND $loot_table_entries.loottable_id=$npc_types_table.loottable_id";
         if ($iavaillevel > 0) {
-            $Query .= " AND $npc_types_table.level<=$iavaillevel";
+            $query .= " AND $npc_types_table.level<=$iavaillevel";
         }
         $s = "AND";
     }
     if ($iavailability == 2) // merchant sold
     {
-        $Query .= ",$merchant_list_table $s $merchant_list_table.item=$items_table.id";
+        $query .= ",$merchant_list_table $s $merchant_list_table.item=$items_table.id";
         $s = "AND";
     }
     if ($discovered_items_only == TRUE) {
-        $Query .= " $s discovered_items.item_id=$items_table.id";
+        $query .= " $s discovered_items.item_id=$items_table.id";
         $s = "AND";
     }
     if ($iname != "") {
         $name = addslashes(str_replace("_", "%", str_replace(" ", "%", $iname)));
-        $Query .= " $s ($items_table.Name like '%" . $name . "%')";
+        $query .= " $s ($items_table.Name like '%" . $name . "%')";
         $s = "AND";
     }
     if ($iclass > 0) {
-        $Query .= " $s ($items_table.classes & $iclass) ";
+        $query .= " $s ($items_table.classes & $iclass) ";
         $s = "AND";
     }
     if ($ideity > 0) {
-        $Query .= " $s ($items_table.deity   & $ideity) ";
+        $query .= " $s ($items_table.deity   & $ideity) ";
         $s = "AND";
     }
     if ($irace > 0) {
-        $Query .= " $s ($items_table.races   & $irace) ";
+        $query .= " $s ($items_table.races   & $irace) ";
         $s = "AND";
     }
     if ($itype >= 0) {
-        $Query .= " $s ($items_table.itemtype=$itype) ";
+        $query .= " $s ($items_table.itemtype=$itype) ";
         $s = "AND";
     }
     if ($islot > 0) {
-        $Query .= " $s ($items_table.slots   & $islot) ";
+        $query .= " $s ($items_table.slots   & $islot) ";
         $s = "AND";
     }
     if ($iaugslot > 0) {
         $AugSlot = pow(2, $iaugslot) / 2;
-        $Query .= " $s ($items_table.augtype & $AugSlot) ";
+        $query .= " $s ($items_table.augtype & $AugSlot) ";
         $s = "AND";
     }
     if ($iminlevel > 0) {
-        $Query .= " $s ($items_table.reqlevel>=$iminlevel) ";
+        $query .= " $s ($items_table.reqlevel>=$iminlevel) ";
         $s = "AND";
     }
     if ($ireqlevel > 0) {
-        $Query .= " $s ($items_table.reqlevel<=$ireqlevel) ";
+        $query .= " $s ($items_table.reqlevel<=$ireqlevel) ";
         $s = "AND";
     }
     if ($inodrop) {
-        $Query .= " $s ($items_table.nodrop=1)";
+        $query .= " $s ($items_table.nodrop=1)";
         $s = "AND";
     }
-    $Query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (LimitToUse($max_items_returned) + 1);
-    $QueryResult = db_mysql_query($Query) or message_die('items.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (LimitToUse($max_items_returned) + 1);
+    $QueryResult = db_mysql_query($query) or message_die('items.php', 'MYSQL_QUERY', $query, mysql_error());
 
     if (mysql_num_rows($QueryResult) == 1) {
         $row = mysql_fetch_array($QueryResult);
@@ -177,18 +178,18 @@ $print_buffer .= '<input type="hidden" name="a" value="items">';
 $print_buffer .= "<tr><td><table border='0' width='0%'>";
 $print_buffer .= "<tr><td><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
 $print_buffer .= "<tr><td><b>Class : </b></td><td>";
-SelectIClass("iclass", $iclass);
+$print_buffer .= SelectIClass("iclass", $iclass);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>Race : </b></td><td>";
-SelectRace("irace", $irace);
+$print_buffer .= SelectRace("irace", $irace);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>Slot : </b></td><td>";
-SelectSlot("islot", $islot);
+$print_buffer .= SelectSlot("islot", $islot);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr>\n";
 $print_buffer .= "  <td><b>Stats : </b></td>\n";
 $print_buffer .= "  <td>";
-SelectStats("istat1", $istat1);
+$print_buffer .= SelectStats("istat1", $istat1);
 $print_buffer .= "\n";
 $print_buffer .= "    <select name='istat1comp'>\n";
 $print_buffer .= "      <option value='&gt;='" . ($istat1comp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
@@ -202,7 +203,7 @@ $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
 $print_buffer .= "  <td><b>Stats : </b></td>\n";
 $print_buffer .= "  <td>";
-SelectStats("istat2", $istat2);
+$print_buffer .= SelectStats("istat2", $istat2);
 $print_buffer .= "\n";
 $print_buffer .= "    <select name='istat2comp'>\n";
 $print_buffer .= "      <option value='&gt;='" . ($istat2comp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
@@ -216,7 +217,7 @@ $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
 $print_buffer .= "  <td><b>Resists : </b></td>\n";
 $print_buffer .= "  <td>";
-SelectResists("iresists", $iresists);
+$print_buffer .= SelectResists("iresists", $iresists);
 $print_buffer .= "\n";
 $print_buffer .= "    <select name='iresistscomp'>\n";
 $print_buffer .= "      <option value='&gt;='" . ($iresistscomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
@@ -230,7 +231,7 @@ $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
 $print_buffer .= "  <td><b>Heroic Stats : </b></td>\n";
 $print_buffer .= "  <td>";
-SelectHeroicStats("iheroics", $iheroics);
+$print_buffer .= SelectHeroicStats("iheroics", $iheroics);
 $print_buffer .= "\n";
 $print_buffer .= "    <select name='iheroicscomp'>\n";
 $print_buffer .= "      <option value='&gt;='" . ($iheroicscomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
@@ -244,7 +245,7 @@ $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
 $print_buffer .= "  <td><b>Modifiers : </b></td>\n";
 $print_buffer .= "  <td>";
-SelectModifiers("imod", $imod);
+$print_buffer .= SelectModifiers("imod", $imod);
 $print_buffer .= "\n";
 $print_buffer .= "    <select name='imodcomp'>\n";
 $print_buffer .= "      <option value='&gt;='" . ($imodcomp == '>=' ? " selected='1'" : "") . ">&gt;=</option>\n";
@@ -259,17 +260,17 @@ $print_buffer .= "</td></tr></table></td><td>";
 // Left Table End and Right Table Start
 $print_buffer .= "<table border='0' width='0%'>";
 $print_buffer .= "<tr><td><b>Item Type : </b></td><td>";
-SelectIType("itype", $itype);
+$print_buffer .= SelectIType("itype", $itype);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>Augmentation Type : </b></td><td>";
-SelectAugSlot("iaugslot", $iaugslot);
+$print_buffer .= SelectAugSlot("iaugslot", $iaugslot);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>With Effect : </b></td><td><input type='text' value='" . $ieffect . "' size='30' name='ieffect'/></td></tr>\n";
 $print_buffer .= "<tr><td><b>Min Required Level : </b></td><td>\n";
-SelectLevel("iminlevel", $server_max_level, $iminlevel);
+$print_buffer .= SelectLevel("iminlevel", $server_max_level, $iminlevel);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>Max Required Level : </b></td><td>\n";
-SelectLevel("ireqlevel", $server_max_level, $ireqlevel);
+$print_buffer .= SelectLevel("ireqlevel", $server_max_level, $ireqlevel);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'" . ($inodrop ? " checked='1'" : "") . "/></td></tr>\n";
 $print_buffer .= "<tr>\n";
@@ -283,10 +284,10 @@ $print_buffer .= "    </select>\n";
 $print_buffer .= "  </td>\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr><td><b>Max Level : </b></td><td>";
-SelectLevel("iavaillevel", $server_max_level, $iavaillevel);
+$print_buffer .= SelectLevel("iavaillevel", $server_max_level, $iavaillevel);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr><td><b>Deity : </b></td><td>";
-SelectDeity("ideity", $ideity);
+$print_buffer .= SelectDeity("ideity", $ideity);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "</td></tr></table>";
 $print_buffer .= "<tr align='center'><td='1' colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";

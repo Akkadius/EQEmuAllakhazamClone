@@ -65,10 +65,12 @@ $hide_invisible_men = TRUE; // hide the invisible mens in bestiaries
 
 /* Items */
 $item_add_chance_to_drop = TRUE; // shows what are the chances to see the item droped by the npcs
-$item_found_info = TRUE; // If TRUE, it displays where items can drop or be purchased (longer item page load times)
 $discovered_items_max_status = 20; // Max account status for a discovered item entry
 $discovered_items_only = FALSE; // If TRUE, only Discovered Items will be displayed
 $max_items_returned = 50; // max number of items returned by search engines (0=all)
+
+/* This can increase page load times up to 3-6 seconds without caching */
+$item_found_info = TRUE; // If TRUE, it displays where items can drop or be purchased (longer item page load times)
 
 /* Quest */
 $always_build_quest = FALSE; // rebuilds the quest each time a visitor browse it, put false if you don't modify them anymore

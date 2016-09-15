@@ -83,7 +83,7 @@ $print_buffer .= BuildItemStats($item, 0);
 
 $print_buffer .= "<table style='width:100%'>";
 
-// Discovered by
+/* Discovered by */
 if ($discovered_items_only == TRUE) {
     $CharName = GetFieldByQuery("char_name", "SELECT char_name  FROM $discovered_items_table WHERE item_id=$id");
     $DiscoveredDate = GetFieldByQuery("discovered_date", "SELECT discovered_date  FROM $discovered_items_table WHERE item_id=$id");
@@ -202,7 +202,12 @@ if ($allow_quests_npc == TRUE) {
     ";
     $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        $print_buffer .= "<tr><td><h2 class='section_header'>This item is from the result of a quest</h2></b><ul>";
+        $print_buffer .= "
+            <tr>
+                <td>
+                    <h2 class='section_header'>This item is from the result of a quest</h2>
+                    <ul>
+        ";
         while ($res = mysql_fetch_array($result)) {
             $print_buffer .= "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
             $print_buffer .= ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";

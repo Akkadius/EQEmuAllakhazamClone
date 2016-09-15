@@ -20,18 +20,19 @@ function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPa
 		$MoreObjectsExist = False;
 	}
 
+    $return_buffer = "";
 	if($ObjectsToShow == 0)
 	{
-		echo  "<ul><li><b>No ".$ObjectDescription." found.</b></li></ul>\n";
+		$return_buffer .=  "<ul><li><b>No ".$ObjectDescription." found.</b></li></ul>\n";
 	}
 	else
 	{
-		echo  "<ul><li><b>".$ObjectsToShow." ".($ObjectsToShow == 1 ? $ObjectDescription : $ObjectsDescription)." displayed.";
+		$return_buffer .=  "<ul><li><b>".$ObjectsToShow." ".($ObjectsToShow == 1 ? $ObjectDescription : $ObjectsDescription)." displayed.";
 		if($MoreObjectsExist){
-			echo  " More ".$ObjectsDescription." exist but you reached the query limit.";
+			$return_buffer .=  " More ".$ObjectsDescription." exist but you reached the query limit.";
 		}
-		echo  "</b></li>\n";
-		echo  "<ul>\n";
+		$return_buffer .=  "</b></li>\n";
+		$return_buffer .=  "<ul>\n";
 		for( $j = 1 ; $j <= $ObjectsToShow ; $j ++ ){
 			$row = mysql_fetch_array($FoundObjects);
 			$PrintString = " <li style='text-align:left'><a href='".$OpenObjectByIdPage."id=".$row[$IdAttribute]."'>";
@@ -47,10 +48,11 @@ function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPa
 			if ($ExtraField && $ExtraFieldDescription && $ExtraSkill){
 				$PrintString .= " - ".ucfirstwords(str_replace("_"," ",$dbskills[$row[$ExtraSkill]])).", $ExtraFieldDescription ".$row[$ExtraField];
 			}
-			echo  $PrintString;
-			echo  "</li>\n";
+			$return_buffer .=  $PrintString;
+			$return_buffer .=  "</li>\n";
 		}
-		echo  "</ul>\n</ul>\n";
+		$return_buffer .=  "</ul>\n</ul>\n";
+        return $return_buffer;
 	}
 }
 
@@ -261,234 +263,248 @@ function gedeities($val) {
 
 function SelectClass($name,$selected) {
   global $dbclasses;
-  print "<SELECT name=\"$name\">";
-  print "<option value='0'>-</option>\n";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= "<option value='0'>-</option>\n";
   for ($i=1; $i<=16; $i++) {
-    print "<option value='".$i."'";
-    if ($i==$selected) { print " selected='1'"; }
-    print ">".$dbclasses[$i]."</option>\n";
+    $return_buffer .= "<option value='".$i."'";
+    if ($i==$selected) { $return_buffer .= " selected='1'"; }
+    $return_buffer .= ">".$dbclasses[$i]."</option>\n";
   } 
-  print "</SELECT>";
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectDeity($name,$selected) {
   global $dbideities;
-  print "<SELECT name=\"$name\">";
-  print "<option value='0'>-</option>\n";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= "<option value='0'>-</option>\n";
   for ($i=2; $i<=65536; $i*=2) {
-    print "<option value='".$i."'";
-    if ($i==$selected) { print " selected='1'"; }
-    print ">".$dbideities[$i]."</option>\n";
+    $return_buffer .= "<option value='".$i."'";
+    if ($i==$selected) { $return_buffer .= " selected='1'"; }
+    $return_buffer .= ">".$dbideities[$i]."</option>\n";
   } 
-  print "</SELECT>";
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectRace($name,$selected) {
   global $dbraces;
-  print "<SELECT name=\"$name\">";
-  print "<option value='0'>-</option>\n";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= "<option value='0'>-</option>\n";
   for ($i=1; $i<32768; $i*=2) {
-    print "<option value='".$i."'";
-    if ($i==$selected) { print " selected='1'"; }
-    print ">".$dbraces[$i]."</option>\n";
+    $return_buffer .= "<option value='".$i."'";
+    if ($i==$selected) { $return_buffer .= " selected='1'"; }
+    $return_buffer .= ">".$dbraces[$i]."</option>\n";
   } 
-  print "</SELECT>";
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectMobRace($name,$selected) {
 	global $dbiracenames;
-	print "<SELECT name=\"$name\">";
-	print "<option value='0'>-</option>\n";
+	$return_buffer = "<SELECT name=\"$name\">";
+	$return_buffer .= "<option value='0'>-</option>\n";
 	foreach ($dbiracenames as $key => $value)
 	{
-		print "<option value='".$key."'";
-		if ($key==$selected) { print " selected='1'"; }
-		print ">".$value."</option>\n";
+		$return_buffer .= "<option value='".$key."'";
+		if ($key==$selected) { $return_buffer .= " selected='1'"; }
+		$return_buffer .= ">".$value."</option>\n";
 	}
-	print "</SELECT>";
+	$return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectIClass($name,$selected) {
 	global $dbiclasses;
-	print "<SELECT name=\"$name\">";
-	print "<option value='0'>-</option>\n";
+	$return_buffer = "<SELECT name=\"$name\">";
+	$return_buffer .= "<option value='0'>-</option>\n";
 	for ($i=1; $i<=32768; $i*=2)
 	{
-		print "<option value='".$i."'";
-		if ($i==$selected) { print " selected='1'"; }
-		print ">".$dbiclasses[$i]."</option>\n";
+		$return_buffer .= "<option value='".$i."'";
+		if ($i==$selected) { $return_buffer .= " selected='1'"; }
+		$return_buffer .= ">".$dbiclasses[$i]."</option>\n";
 	}   
-	print "</SELECT>";
+	$return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectIType($name,$selected) {
   global $dbitypes;
-  print "<SELECT name=\"$name\">";
-  print "<option value='-1'>-</option>\n";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= "<option value='-1'>-</option>\n";
   reset($dbitypes);
   do {
     $key=key($dbitypes);
-    print "<option value='".$key."'";
-    if ($key==$selected) { print " selected='1'"; }
-    print ">".current($dbitypes)."</option>\n";
+    $return_buffer .= "<option value='".$key."'";
+    if ($key==$selected) { $return_buffer .= " selected='1'"; }
+    $return_buffer .= ">".current($dbitypes)."</option>\n";
   } while (next($dbitypes));  
-  print "</SELECT>";
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectSlot($name,$selected) {
   global $dbslots;
-  print "<SELECT name=\"$name\">";
-  print "<option value='0'>-</option>\n";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= "<option value='0'>-</option>\n";
   reset($dbslots);
   do {
     $key=key($dbslots);
-    print "<option value='".$key."'";
-    if ($key==$selected) { print " selected='1'"; }
-    print ">".current($dbslots)."</option>\n";
+    $return_buffer .= "<option value='".$key."'";
+    if ($key==$selected) { $return_buffer .= " selected='1'"; }
+    $return_buffer .= ">".current($dbslots)."</option>\n";
   } while (next($dbslots));  
-  print "</SELECT>";
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectSpellEffect($name,$selected) {
 	global $dbspelleffects;
-	print "<SELECT name=\"$name\">";
-	print "<option value=-1>-</option>\n";
+	$return_buffer = "<SELECT name=\"$name\">";
+	$return_buffer .= "<option value=-1>-</option>\n";
 	reset($dbspelleffects);
 	do
 	{
 		$key=key($dbspelleffects);
-		print "<option value='".$key."'";
+		$return_buffer .= "<option value='".$key."'";
 		if ($key==$selected)
 		{
-			print " selected='1'";
+			$return_buffer .= " selected='1'";
 		}
-		print ">".current($dbspelleffects)."</option>\n";
+		$return_buffer .= ">".current($dbspelleffects)."</option>\n";
 	}
 	while (next($dbspelleffects));  
-	print "</SELECT>";
+	$return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectAugSlot($name,$selected) {
-  print "<SELECT name=\"$name\">";
-  print "<option value='0'>-</option>\n";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= "<option value='0'>-</option>\n";
   for ($i=1; $i<=25; $i++) {
-    print "<option value='".$i."'";
-    if ($i==$selected) { print " selected='1'"; }
-    print ">slot $i</option>\n";
+    $return_buffer .= "<option value='".$i."'";
+    if ($i==$selected) { $return_buffer .= " selected='1'"; }
+    $return_buffer .= ">slot $i</option>\n";
   }
-  print "</SELECT>";
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectLevel($name,$maxlevel,$selevel) {
-	print "<SELECT name=\"$name\">";
-	print "<option value='0'>-</option>\n";
+	$return_buffer = "<SELECT name=\"$name\">";
+	$return_buffer .= "<option value='0'>-</option>\n";
 	for ($i=1; $i<=$maxlevel; $i++)
 	{
-		print "<option value='".$i."'";
-		if ($i==$selevel) { print " selected='1'"; }
-		print ">$i</option>\n";
+		$return_buffer .= "<option value='".$i."'";
+		if ($i==$selevel) { $return_buffer .= " selected='1'"; }
+		$return_buffer .= ">$i</option>\n";
 	} 
-	print "</SELECT>";
+	$return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function SelectTradeSkills($name,$selected) {
-  print "<SELECT name=\"$name\">";
-  WriteIt("0","-",$selected);
-  WriteIt("59","Alchemy",$selected);
-  WriteIt("60","Baking",$selected);
-  WriteIt("63","Blacksmithing",$selected);
-  WriteIt("65","Brewing",$selected);
-  WriteIt("55","Fishing",$selected);
-  WriteIt("64","Fletching",$selected);
-  WriteIt("68","Jewelery making",$selected);
-  WriteIt("56","Poison making",$selected);
-  WriteIt("69","Pottery making",$selected);
-  WriteIt("58","Research",$selected);
-  WriteIt("61","Tailoring",$selected);
-  WriteIt("57","Tinkering",$selected);
-  print "</SELECT>";
+  $return_buffer = "<SELECT name=\"$name\">";
+  $return_buffer .= WriteIt("0","-",$selected);
+  $return_buffer .= WriteIt("59","Alchemy",$selected);
+  $return_buffer .= WriteIt("60","Baking",$selected);
+  $return_buffer .= WriteIt("63","Blacksmithing",$selected);
+  $return_buffer .= WriteIt("65","Brewing",$selected);
+  $return_buffer .= WriteIt("55","Fishing",$selected);
+  $return_buffer .= WriteIt("64","Fletching",$selected);
+  $return_buffer .= WriteIt("68","Jewelery making",$selected);
+  $return_buffer .= WriteIt("56","Poison making",$selected);
+  $return_buffer .= WriteIt("69","Pottery making",$selected);
+  $return_buffer .= WriteIt("58","Research",$selected);
+  $return_buffer .= WriteIt("61","Tailoring",$selected);
+  $return_buffer .= WriteIt("57","Tinkering",$selected);
+  $return_buffer .= "</SELECT>";
+    return $return_buffer;
 }
 
 function WriteIt($value,$name,$sel) {
-  print "  <option value='".$value."'";
-  if ($value==$sel) { print " selected='1'"; }
-  print ">$name</option>\n";
+  $return_buffer = "  <option value='".$value."'";
+  if ($value==$sel) { $return_buffer .= " selected='1'"; }
+  $return_buffer .= ">$name</option>\n";
+    return $return_buffer;
 }
 function SelectStats($name,$stat) {
-  print "<select name=\"$name\">\n";
-  print "  <option value=''>-</option>\n";
-  WriteIt("hp","Hit Points",$stat);
-  WriteIt("mana","Mana",$stat);
-  WriteIt("ac","AC",$stat);
-  WriteIt("attack","Attack",$stat);
-  WriteIt("aagi","Agility",$stat);
-  WriteIt("acha","Charisma",$stat);
-  WriteIt("adex","Dexterity",$stat);
-  WriteIt("aint","Intelligence",$stat);
-  WriteIt("asta","Stamina",$stat);
-  WriteIt("astr","Strength",$stat);
-  WriteIt("awis","Wisdom",$stat);
-  WriteIt("damage","Damage",$stat);
-  WriteIt("delay","Delay",$stat);
-  WriteIt("ratio","Ratio",$stat);
-  WriteIt("haste","Haste",$stat);
-  WriteIt("regen","HP Regen",$stat);
-  WriteIt("manaregen","Mana Regen",$stat);
-  WriteIt("enduranceregen","Endurance Regen",$stat);
-  print "</select>\n";
+  $return_buffer = "<select name=\"$name\">\n";
+  $return_buffer .= "  <option value=''>-</option>\n";
+  $return_buffer .= WriteIt("hp","Hit Points",$stat);
+  $return_buffer .= WriteIt("mana","Mana",$stat);
+  $return_buffer .= WriteIt("ac","AC",$stat);
+  $return_buffer .= WriteIt("attack","Attack",$stat);
+  $return_buffer .= WriteIt("aagi","Agility",$stat);
+  $return_buffer .= WriteIt("acha","Charisma",$stat);
+  $return_buffer .= WriteIt("adex","Dexterity",$stat);
+  $return_buffer .= WriteIt("aint","Intelligence",$stat);
+  $return_buffer .= WriteIt("asta","Stamina",$stat);
+  $return_buffer .= WriteIt("astr","Strength",$stat);
+  $return_buffer .= WriteIt("awis","Wisdom",$stat);
+  $return_buffer .= WriteIt("damage","Damage",$stat);
+  $return_buffer .= WriteIt("delay","Delay",$stat);
+  $return_buffer .= WriteIt("ratio","Ratio",$stat);
+  $return_buffer .= WriteIt("haste","Haste",$stat);
+  $return_buffer .= WriteIt("regen","HP Regen",$stat);
+  $return_buffer .= WriteIt("manaregen","Mana Regen",$stat);
+  $return_buffer .= WriteIt("enduranceregen","Endurance Regen",$stat);
+  $return_buffer .= "</select>\n";
+    return $return_buffer;
 }
 
 function SelectHeroicStats($name,$heroic) {
-  print "<select name=\"$name\">\n";
-  print "  <option value=''>-</option>\n";
-  WriteIt("heroic_agi","Heroic Agility",$stat);
-  WriteIt("heroic_cha","Heroic Charisma",$stat);
-  WriteIt("heroic_dex","Heroic Dexterity",$stat);
-  WriteIt("heroic_int","Heroic Intelligence",$stat);
-  WriteIt("heroic_sta","Heroic Stamina",$stat);
-  WriteIt("heroic_str","Heroic Strength",$stat);
-  WriteIt("heroic_wis","Heroic Wisdom",$stat);
-  WriteIt("heroic_mr","Heroic Resist Magic",$heroic);
-  WriteIt("heroic_fr","Heroic Resist Fire",$heroic);
-  WriteIt("heroic_cr","Heroic Resist Cold",$heroic);
-  WriteIt("heroic_pr","Heroic Resist Poison",$heroic);
-  WriteIt("heroic_dr","Heroic Resist Disease",$heroic);
-  WriteIt("heroic_svcorrup","Heroic Resist Corruption",$heroic);
-  print "</select>\n";
+  $return_buffer = "<select name=\"$name\">\n";
+  $return_buffer .= "  <option value=''>-</option>\n";
+  $return_buffer .= WriteIt("heroic_agi","Heroic Agility",$stat);
+  $return_buffer .= WriteIt("heroic_cha","Heroic Charisma",$stat);
+  $return_buffer .= WriteIt("heroic_dex","Heroic Dexterity",$stat);
+  $return_buffer .= WriteIt("heroic_int","Heroic Intelligence",$stat);
+  $return_buffer .= WriteIt("heroic_sta","Heroic Stamina",$stat);
+  $return_buffer .= WriteIt("heroic_str","Heroic Strength",$stat);
+  $return_buffer .= WriteIt("heroic_wis","Heroic Wisdom",$stat);
+  $return_buffer .= WriteIt("heroic_mr","Heroic Resist Magic",$heroic);
+  $return_buffer .= WriteIt("heroic_fr","Heroic Resist Fire",$heroic);
+  $return_buffer .= WriteIt("heroic_cr","Heroic Resist Cold",$heroic);
+  $return_buffer .= WriteIt("heroic_pr","Heroic Resist Poison",$heroic);
+  $return_buffer .= WriteIt("heroic_dr","Heroic Resist Disease",$heroic);
+  $return_buffer .= WriteIt("heroic_svcorrup","Heroic Resist Corruption",$heroic);
+  $return_buffer .= "</select>\n";return $return_buffer;
 }
 
 function SelectResists($name,$resist) {
-  print "<select name=\"$name\">\n";
-  print "  <option value=''>-</option>\n";
-  WriteIt("mr","Resist Magic",$resist);
-  WriteIt("fr","Resist Fire",$resist);
-  WriteIt("cr","Resist Cold",$resist);
-  WriteIt("pr","Resist Poison",$resist);
-  WriteIt("dr","Resist Disease",$resist);
-  WriteIt("svcorruption","Resist Corruption",$resist);
-  print "</select>\n";
+  $return_buffer = "<select name=\"$name\">\n";
+  $return_buffer .= "  <option value=''>-</option>\n";
+  $return_buffer .= WriteIt("mr","Resist Magic",$resist);
+  $return_buffer .= WriteIt("fr","Resist Fire",$resist);
+  $return_buffer .= WriteIt("cr","Resist Cold",$resist);
+  $return_buffer .= WriteIt("pr","Resist Poison",$resist);
+  $return_buffer .= WriteIt("dr","Resist Disease",$resist);
+  $return_buffer .= WriteIt("svcorruption","Resist Corruption",$resist);
+  $return_buffer .= "</select>\n";return $return_buffer;
 }
 
 function SelectModifiers($name,$mod) {
-  print "<select name=\"$name\">\n";
-  print "  <option value=''>-</option>\n";
-  WriteIt("avoidance","Avoidance",$mod);
-  WriteIt("accuracy","Accuracy",$mod);
-  WriteIt("backstabdmg","Backstab Damage",$mod);
-  WriteIt("clairvoyance","Clairvoyance",$mod);
-  WriteIt("combateffects","Combat Effects",$mod);
-  WriteIt("damageshield","Damage Shield",$mod);
-  WriteIt("dsmitigation","Damage Shield Mit",$mod);
-  WriteIt("dotshielding","DoT Shielding",$mod);
-  WriteIt("extradmgamt","Extra Damage",$mod);
-  WriteIt("healamt","Heal Amount",$mod);
-  WriteIt("purity","Purity",$mod);
-  WriteIt("shielding","Shielding",$mod);
-  WriteIt("spelldmg","Spell Damage",$mod);
-  WriteIt("spellshield","Spell Shielding",$mod);
-  WriteIt("strikethrough","Strikethrough",$mod);
-  WriteIt("stunresist","Stun Resist",$mod);
-  print "</select>\n";
+  $return_buffer = "<select name=\"$name\">\n";
+  $return_buffer .= "  <option value=''>-</option>\n";
+  $return_buffer .= WriteIt("avoidance","Avoidance",$mod);
+  $return_buffer .= WriteIt("accuracy","Accuracy",$mod);
+  $return_buffer .= WriteIt("backstabdmg","Backstab Damage",$mod);
+  $return_buffer .= WriteIt("clairvoyance","Clairvoyance",$mod);
+  $return_buffer .= WriteIt("combateffects","Combat Effects",$mod);
+  $return_buffer .= WriteIt("damageshield","Damage Shield",$mod);
+  $return_buffer .= WriteIt("dsmitigation","Damage Shield Mit",$mod);
+  $return_buffer .= WriteIt("dotshielding","DoT Shielding",$mod);
+  $return_buffer .= WriteIt("extradmgamt","Extra Damage",$mod);
+  $return_buffer .= WriteIt("healamt","Heal Amount",$mod);
+  $return_buffer .= WriteIt("purity","Purity",$mod);
+  $return_buffer .= WriteIt("shielding","Shielding",$mod);
+  $return_buffer .= WriteIt("spelldmg","Spell Damage",$mod);
+  $return_buffer .= WriteIt("spellshield","Spell Shielding",$mod);
+  $return_buffer .= WriteIt("strikethrough","Strikethrough",$mod);
+  $return_buffer .= WriteIt("stunresist","Stun Resist",$mod);
+  $return_buffer .= "</select>\n";
+    return $return_buffer;
 }
 
 function GetItemStatsString($name,$stat,$stat2,$stat2color) {
@@ -538,7 +554,7 @@ function GetItemStatsString($name,$stat,$stat2,$stat2color) {
 
 // spell_effects.cpp int Mob::CalcSpellEffectValue_formula(int formula, int base, int max, int caster_level, int16 spell_id)
 function CalcSpellEffectValue($form,$base,$max,$lvl) { 
- // print " (base=$base form=$form max=$max, lvl=$lvl)";
+ // $return_buffer .= " (base=$base form=$form max=$max, lvl=$lvl)";
   $sign=1; $ubase=abs($base); $result=0;
   if (($max<$base) AND ($max!=0)) { $sign=-1; }
   switch($form) {
@@ -598,7 +614,7 @@ function CalcSpellEffectValue($form,$base,$max,$lvl) {
 }
 
 function CalcBuffDuration($lvl,$form,$duration) { // spells.cpp, carefull, return value in ticks, not in seconds
-  //print " Duration lvl=$lvl, form=$form, duration=$duration ";
+  //$return_buffer .= " Duration lvl=$lvl, form=$form, duration=$duration ";
 	switch($form) {
 		case 0:	
 		  return 0; 
@@ -744,26 +760,26 @@ function AutoDataTable($Query) {
 	$result = db_mysql_query($Query);
 	if (!$result)
 	{
-		echo 'Could not run query: ' . mysql_error();
+		$return_buffer = 'Could not run query: ' . mysql_error();
 		exit;
 	}
 	$columns = mysql_num_fields($result);
-	echo "<table border=0 width=100%><thead>";
+	$return_buffer .= "<table border=0 width=100%><thead>";
 	$RowClass = "lr";
 	###Automatically Generate the column names from the Table	
 		for ($i = 0; $i < $columns; $i++)
 		{
-			echo "<th class='menuh'>". ucfirstwords(str_replace('_',' ',mysql_field_name($result, $i))) . " </th>";
+			$return_buffer .= "<th class='menuh'>". ucfirstwords(str_replace('_',' ',mysql_field_name($result, $i))) . " </th>";
 		}
-	echo "</tr></thead><tbody>";
+	$return_buffer .= "</tr></thead><tbody>";
 	while($row = mysql_fetch_array($result))
 	{ 
-		echo "<tr class='".$RowClass."'>";
+		$return_buffer .= "<tr class='".$RowClass."'>";
 		for($i = 0; $i < $columns; $i++)
 		{
-			echo "<td>" . $row[$i] . "</td>";
+			$return_buffer .= "<td>" . $row[$i] . "</td>";
 		}
-		echo "</tr>";
+		$return_buffer .= "</tr>";
 		if ($RowClass == "lr")
 		{
 			$RowClass = "dr";
@@ -773,12 +789,13 @@ function AutoDataTable($Query) {
 			$RowClass = "lr";
 		}	
 	}
-	echo "</tbody></table>";
+	$return_buffer .= "</tbody></table>";
+    return $return_buffer;
 }
 
 function CreateToolTip($ID, $Content){
 	$Content = preg_replace("/'/i", "\'", $Content);
-	echo '<script type="text/javascript">
+	$return_buffer = '<script type="text/javascript">
 		$(document).ready(function(){	
 			$("a").easyTooltip();
 			$("a#'. $ID . '").easyTooltip({
@@ -787,6 +804,7 @@ function CreateToolTip($ID, $Content){
 			});
 		});
 	</script>';
+    return $return_buffer;
 }
 
 
