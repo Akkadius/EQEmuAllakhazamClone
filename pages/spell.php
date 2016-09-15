@@ -86,7 +86,7 @@ $print_buffer .= "<tr><td colspan='2'><h2 class='section_header'>Spell Effects</
 
 $print_buffer .= '<td align="center" colspan=2><small>';
 for ($n = 1; $n <= 12; $n++) {
-    SpellDescription($spell, $n);
+    $print_buffer .= SpellDescription($spell, $n);
 }
 $print_buffer .= '</small></td>';
 

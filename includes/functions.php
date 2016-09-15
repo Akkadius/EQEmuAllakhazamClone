@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /** Displays the results of a query for objects returning the 'id' and 'name' fields.
  *  The query must have been done with at least a limit of '$MaxRowsReturned + 1'.
@@ -8,52 +8,47 @@
  *  'IdAttribute' and 'NameAttribute' are the name of the columns retrieved used for ID and Name (ex: 'id' and 'name').
  *  '$ObjectDescription' is the text describing the kind of objects to display (ex: 'NPC'). '$ObjectsDescription' is the plural.
  */
-function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPage, $ObjectDescription, $ObjectsDescription, $IdAttribute, $NameAttribute, $ExtraField, $ExtraFieldDescription, $ExtraSkill){
-	global $dbskills;
-	$ObjectsToShow = mysql_num_rows($FoundObjects);
-	if($ObjectsToShow > LimitToUse($MaxObjectsReturned)){
-		$ObjectsToShow = LimitToUse($MaxObjectsReturned);
-		$MoreObjectsExist = True;
-	}
-	else
-	{
-		$MoreObjectsExist = False;
-	}
+function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPage, $ObjectDescription, $ObjectsDescription, $IdAttribute, $NameAttribute, $ExtraField, $ExtraFieldDescription, $ExtraSkill)
+{
+    global $dbskills;
+    $ObjectsToShow = mysql_num_rows($FoundObjects);
+    if ($ObjectsToShow > LimitToUse($MaxObjectsReturned)) {
+        $ObjectsToShow = LimitToUse($MaxObjectsReturned);
+        $MoreObjectsExist = True;
+    } else {
+        $MoreObjectsExist = False;
+    }
 
     $return_buffer = "";
-	if($ObjectsToShow == 0)
-	{
-		$return_buffer .=  "<ul><li><b>No ".$ObjectDescription." found.</b></li></ul>\n";
-	}
-	else
-	{
-		$return_buffer .=  "<ul><li><b>".$ObjectsToShow." ".($ObjectsToShow == 1 ? $ObjectDescription : $ObjectsDescription)." displayed.";
-		if($MoreObjectsExist){
-			$return_buffer .=  " More ".$ObjectsDescription." exist but you reached the query limit.";
-		}
-		$return_buffer .=  "</b></li>\n";
-		$return_buffer .=  "<ul>\n";
-		for( $j = 1 ; $j <= $ObjectsToShow ; $j ++ ){
-			$row = mysql_fetch_array($FoundObjects);
-			$PrintString = " <li style='text-align:left'><a href='".$OpenObjectByIdPage."id=".$row[$IdAttribute]."'>";
-			if ($ObjectDescription == "npc"){
-				// Clean up the name for NPCs
-				$PrintString .= ReadableNpcName($row[$NameAttribute]);
-			}
-			else{
-				$PrintString .= $row[$NameAttribute];
-			}
-			$PrintString .= " (".$row[$IdAttribute].")</a>";
+    if ($ObjectsToShow == 0) {
+        $return_buffer .= "<ul><li><b>No " . $ObjectDescription . " found.</b></li></ul>\n";
+    } else {
+        $return_buffer .= "<ul><li><b>" . $ObjectsToShow . " " . ($ObjectsToShow == 1 ? $ObjectDescription : $ObjectsDescription) . " displayed.";
+        if ($MoreObjectsExist) {
+            $return_buffer .= " More " . $ObjectsDescription . " exist but you reached the query limit.";
+        }
+        $return_buffer .= "</b></li>\n";
+        $return_buffer .= "<ul>\n";
+        for ($j = 1; $j <= $ObjectsToShow; $j++) {
+            $row = mysql_fetch_array($FoundObjects);
+            $PrintString = " <li style='text-align:left'><a href='" . $OpenObjectByIdPage . "id=" . $row[$IdAttribute] . "'>";
+            if ($ObjectDescription == "npc") {
+                // Clean up the name for NPCs
+                $PrintString .= ReadableNpcName($row[$NameAttribute]);
+            } else {
+                $PrintString .= $row[$NameAttribute];
+            }
+            $PrintString .= " (" . $row[$IdAttribute] . ")</a>";
 
-			if ($ExtraField && $ExtraFieldDescription && $ExtraSkill){
-				$PrintString .= " - ".ucfirstwords(str_replace("_"," ",$dbskills[$row[$ExtraSkill]])).", $ExtraFieldDescription ".$row[$ExtraField];
-			}
-			$return_buffer .=  $PrintString;
-			$return_buffer .=  "</li>\n";
-		}
-		$return_buffer .=  "</ul>\n</ul>\n";
+            if ($ExtraField && $ExtraFieldDescription && $ExtraSkill) {
+                $PrintString .= " - " . ucfirstwords(str_replace("_", " ", $dbskills[$row[$ExtraSkill]])) . ", $ExtraFieldDescription " . $row[$ExtraField];
+            }
+            $return_buffer .= $PrintString;
+            $return_buffer .= "</li>\n";
+        }
+        $return_buffer .= "</ul>\n</ul>\n";
         return $return_buffer;
-	}
+    }
 }
 
 /** Returns the actual limit to use for queries for the specified limit '$MaxObjects'
@@ -62,745 +57,883 @@ function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPa
  */
 function LimitToUse($MaxObjects)
 {
-	if($MaxObjects == 0)
-		$Result = 2147483647;
-	else
-		$Result = $MaxObjects;
-	return $Result;
+    if ($MaxObjects == 0)
+        $Result = 2147483647;
+    else
+        $Result = $MaxObjects;
+    return $Result;
 }
 
 /** Returns the "readable" name of an NPC from its database-encoded '$DbName'.
  */
 function ReadableNpcName($DbName)
 {
-	$Result = str_replace('-', '`', str_replace('_', ' ', str_replace('#', '', str_replace('!', '', str_replace('~', '', $DbName)))));
-	for ($i = 0; $i < 10; $i++)
-	{
-		$Result = str_replace($i, '', $Result);
-	}
-	return $Result;
+    $Result = str_replace('-', '`', str_replace('_', ' ', str_replace('#', '', str_replace('!', '', str_replace('~', '', $DbName)))));
+    for ($i = 0; $i < 10; $i++) {
+        $Result = str_replace($i, '', $Result);
+    }
+    return $Result;
 }
 
 /** Returns the type of NPC based on the name of an NPC from its database-encoded '$DbName'.
  */
 function NpcTypeFromName($DbName)
 {
-	global $NPCTypeArray;
-	foreach ($NPCTypeArray as $key => $type)
-	{
-		$KeyCount = substr_count($DbName, $key);
-		$StringLength = strlen($DbName);
-		$KeyLength = strlen($key);
-		if($KeyCount > 0 && substr($DbName, 0, $KeyLength) == $key)
-		{
-			return $type;
-		}
-	}
-	return "Normal";
+    global $NPCTypeArray;
+    foreach ($NPCTypeArray as $key => $type) {
+        $KeyCount = substr_count($DbName, $key);
+        $StringLength = strlen($DbName);
+        $KeyLength = strlen($key);
+        if ($KeyCount > 0 && substr($DbName, 0, $KeyLength) == $key) {
+            return $type;
+        }
+    }
+    return "Normal";
 }
 
 // Converts the first letter of each word in $str to upper case and the rest to lower case.
 function ucfirstwords($str)
 {
-	return ucwords(strtolower($str));
+    return ucwords(strtolower($str));
 }
 
 /** Returns the URL in the Wiki to the image illustrating the NPC with ID '$NpcId'
  *  Returns an empty string if the image does not exist in the Wiki
  */
 function NpcImage($WikiServerUrl, $WikiRootName, $NpcId)
-{ $SystemCall = "wget -q \"".$WikiServerUrl.$WikiRootName."/index.php/Image:Npc-".$NpcId.".jpg\" -O -| grep \"/".$WikiRootName."/images\" | head -1 | sed 's;.*\\(/".$WikiRootName."/images/[^\"]*\\).*;\\1;'";
-  $Result = `$SystemCall`;
-  if($Result != "")
-    $Result = $WikiServerUrl.$Result;
+{
+    $SystemCall = "wget -q \"" . $WikiServerUrl . $WikiRootName . "/index.php/Image:Npc-" . $NpcId . ".jpg\" -O -| grep \"/" . $WikiRootName . "/images\" | head -1 | sed 's;.*\\(/" . $WikiRootName . "/images/[^\"]*\\).*;\\1;'";
+    $Result = `$SystemCall`;
+    if ($Result != "")
+        $Result = $WikiServerUrl . $Result;
 
-  return $Result;
+    return $Result;
 }
 
 
 /** Returns a uniform value 'Yes'/'No' for many ways of modelling a predicate.
  */
 function YesNo($val)
-{ switch (strtolower($val))
-  { case TRUE:
-    case 1:
-    case "yes":
-      $Result = "Yes";
-      break;
+{
+    switch (strtolower($val)) {
+        case TRUE:
+        case 1:
+        case "yes":
+            $Result = "Yes";
+            break;
 
-    case FALSE:
-    case 0:
-    case "no":
-      $Result = "No";
-      break;
-  }
-  return $Result;
+        case FALSE:
+        case 0:
+        case "no":
+            $Result = "No";
+            break;
+    }
+    return $Result;
 }
 
 /** Returns a human-readable translation of '$sec' seconds (for respawn times)
  *  If '$sec' is '0', returns 'time' (prints 'Spawns all the time' as a result)
  */
 function translate_time($sec)
-{ if($sec == 0)
-    $Result = "time";
-  else
-  { $h = floor($sec / 3600);
-    $m = floor(($sec - $h * 3600) / 60);
-    $s = $sec - $h * 3600 - $m * 60;
-    $Result = ( $h > 1 ? "$h hours " : "" ).( $h == 1 ? "1 hour " : "").( $m > 0 ? "$m min " : "").( $s > 0 ? "$s sec" : "" );
-  }
-  return $Result;
-}
-
-function make_thumb($FileSrc) {
-  // If PHP is installed with GD and jpeg support, uncomment the following line
-  //execute_make_thumb($FileSrc);
-}
-
-// This function (execute_make_thumb) requires to install PHP with GD & jpeg-6 support
-// GD -> http://www.boutell.com/gd/
-// JPEG -> ftp://ftp.uu.net/graphics/jpeg/
-// 
-function execute_make_thumb($FileSrc){
-  $tnH=100;
-  $size=getimagesize($FileSrc); 
-  $src=imagecreatefromjpeg($FileSrc); 
-  $destW=$size[0]*$tnH/$size[1];
-  $destH=$tnH;
-  $dest=imagecreate($destW,$destH); // creation de l'image de destination
-  imagecopyresized($dest,$src,0,0,0,0,$destW,$destH,$size[0],$size[1]);
-  $tn_name=$FileSrc;
-  $tn_name = preg_replace("/\.(gif|jpe|jpg|jpeg|png|wbmp)$/i","_tn",$tn_name);
-  imagejpeg($dest, $tn_name.".jpg");
+{
+    if ($sec == 0)
+        $Result = "time";
+    else {
+        $h = floor($sec / 3600);
+        $m = floor(($sec - $h * 3600) / 60);
+        $s = $sec - $h * 3600 - $m * 60;
+        $Result = ($h > 1 ? "$h hours " : "") . ($h == 1 ? "1 hour " : "") . ($m > 0 ? "$m min " : "") . ($s > 0 ? "$s sec" : "");
+    }
+    return $Result;
 }
 
 /** Returns the rest of the euclidian division of '$d' by '$v'
  *  Returns '0' if '$v' equals '0'
  *  Supposes '$d' and '$v' are positive
  */
-function modulo($d,$v)
-{ if($v == 0)
-    $Result = 0;
-  else
-  { $s=floor($d/$v);
-    $Result = $d - $v * $s;
-  }
+function modulo($d, $v)
+{
+    if ($v == 0)
+        $Result = 0;
+    else {
+        $s = floor($d / $v);
+        $Result = $d - $v * $s;
+    }
 }
 
 /** Returns the list of slot names '$val' corresponds to (as a bit field)
  */
 function getslots($val)
-{ global $dbslots;
-  reset($dbslots);
-  do
-  { $key=key($dbslots);
-    if($key <= $val)
-    { $val -= $key;
-      $Result .= $v.current($dbslots);
-      $v=", ";
+{
+    global $dbslots;
+    reset($dbslots);
+    do {
+        $key = key($dbslots);
+        if ($key <= $val) {
+            $val -= $key;
+            $Result .= $v . current($dbslots);
+            $v = ", ";
+        }
+    } while (next($dbslots));
+    return $Result;
+}
+
+function getclasses($val)
+{
+    global $dbiclasses;
+    reset($dbiclasses);
+    do {
+        $key = key($dbiclasses);
+        if ($key <= $val) {
+            $val -= $key;
+            $res .= $v . current($dbiclasses);
+            $v = ", ";
+        }
+    } while (next($dbiclasses));
+    return $res;
+}
+
+function getraces($val)
+{
+    global $dbraces;
+    reset($dbraces);
+    do {
+        $key = key($dbraces);
+        if ($key <= $val) {
+            $val -= $key;
+            $res .= $v . current($dbraces);
+            $v = ", ";
+        }
+    } while (next($dbraces));
+    return $res;
+}
+
+function getsize($val)
+{
+    switch ($val) {
+        case 0:
+            return "Tiny";
+            break;
+        case 1:
+            return "Small";
+            break;
+        case 2:
+            return "Medium";
+            break;
+        case 3:
+            return "Large";
+            break;
+        case 4:
+            return "Giant";
+            break;
+        default:
+            return "$val?";
+            break;
     }
-  } while (next($dbslots));
-  return $Result;
 }
 
-function getclasses($val) {
-  global $dbiclasses;
-  reset($dbiclasses);
-  do {
-    $key=key($dbiclasses);
-    if ($key<=$val) { $val-=$key; $res.=$v.current($dbiclasses); $v=", "; }
-  } while (next($dbiclasses));
-  return $res;
+function getspell($id)
+{
+    global $spells_table, $spell_globals_table, $use_spell_globals;
+    if ($use_spell_globals == TRUE) {
+        $query = "SELECT " . $spells_table . ".* FROM " . $spells_table . " WHERE " . $spells_table . ".id=" . $id . "
+			AND ISNULL((SELECT " . $spell_globals_table . ".spellid FROM " . $spell_globals_table . "
+			WHERE " . $spell_globals_table . ".spellid = " . $spells_table . ".id))";
+    } else {
+        $query = "SELECT * FROM $spells_table WHERE id=$id";
+    }
+    $result = db_mysql_query($query) or message_die('functions.php', 'getspell', $query, mysql_error());
+    $s = mysql_fetch_array($result);
+    return $s;
 }
 
-function getraces($val) {
-  global $dbraces;
-  reset($dbraces);
-  do {
-    $key=key($dbraces);
-    if ($key<=$val) { $val-=$key; $res.=$v.current($dbraces); $v=", "; }
-  } while (next($dbraces));
-  return $res;
+function gedeities($val)
+{
+    global $dbideities;
+    reset($dbideities);
+    do {
+        $key = key($dbideities);
+        if ($key <= $val) {
+            $val -= $key;
+            $res .= $v . current($dbideities);
+            $v = ", ";
+        }
+    } while (next($dbideities));
+    return $res;
 }
 
-function getsize($val) {
-  switch($val) {
-    case 0: return "Tiny"; break;
-    case 1: return "Small"; break;
-    case 2: return "Medium"; break;
-    case 3: return "Large"; break;
-    case 4: return "Giant"; break;
-    default: return "$val?"; break;
-  }
-}
-
-function getspell($id) {
-	global $spells_table,$spell_globals_table,$use_spell_globals;
-	if ($use_spell_globals==TRUE)
-	{
-		$query="SELECT ".$spells_table.".* FROM ".$spells_table." WHERE ".$spells_table.".id=".$id."
-			AND ISNULL((SELECT ".$spell_globals_table.".spellid FROM ".$spell_globals_table."
-			WHERE ".$spell_globals_table.".spellid = ".$spells_table.".id))";
-	}
-	else
-	{
-		$query="SELECT * FROM $spells_table WHERE id=$id";
-	}
-	$result=db_mysql_query($query) or message_die('functions.php','getspell',$query,mysql_error());
-	$s=mysql_fetch_array($result);
-	return $s;
-}
-
-function gedeities($val) {
-  global $dbideities;
-  reset($dbideities);
-  do {
-    $key=key($dbideities);
-    if ($key<=$val) { $val-=$key; $res.=$v.current($dbideities); $v=", "; }
-  } while (next($dbideities));
-  return $res;
-}
-
-function SelectClass($name,$selected) {
-  global $dbclasses;
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= "<option value='0'>-</option>\n";
-  for ($i=1; $i<=16; $i++) {
-    $return_buffer .= "<option value='".$i."'";
-    if ($i==$selected) { $return_buffer .= " selected='1'"; }
-    $return_buffer .= ">".$dbclasses[$i]."</option>\n";
-  } 
-  $return_buffer .= "</SELECT>";
+function SelectClass($name, $selected)
+{
+    global $dbclasses;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    for ($i = 1; $i <= 16; $i++) {
+        $return_buffer .= "<option value='" . $i . "'";
+        if ($i == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . $dbclasses[$i] . "</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectDeity($name,$selected) {
-  global $dbideities;
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= "<option value='0'>-</option>\n";
-  for ($i=2; $i<=65536; $i*=2) {
-    $return_buffer .= "<option value='".$i."'";
-    if ($i==$selected) { $return_buffer .= " selected='1'"; }
-    $return_buffer .= ">".$dbideities[$i]."</option>\n";
-  } 
-  $return_buffer .= "</SELECT>";
+function SelectDeity($name, $selected)
+{
+    global $dbideities;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    for ($i = 2; $i <= 65536; $i *= 2) {
+        $return_buffer .= "<option value='" . $i . "'";
+        if ($i == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . $dbideities[$i] . "</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectRace($name,$selected) {
-  global $dbraces;
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= "<option value='0'>-</option>\n";
-  for ($i=1; $i<32768; $i*=2) {
-    $return_buffer .= "<option value='".$i."'";
-    if ($i==$selected) { $return_buffer .= " selected='1'"; }
-    $return_buffer .= ">".$dbraces[$i]."</option>\n";
-  } 
-  $return_buffer .= "</SELECT>";
+function SelectRace($name, $selected)
+{
+    global $dbraces;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    for ($i = 1; $i < 32768; $i *= 2) {
+        $return_buffer .= "<option value='" . $i . "'";
+        if ($i == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . $dbraces[$i] . "</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectMobRace($name,$selected) {
-	global $dbiracenames;
-	$return_buffer = "<SELECT name=\"$name\">";
-	$return_buffer .= "<option value='0'>-</option>\n";
-	foreach ($dbiracenames as $key => $value)
-	{
-		$return_buffer .= "<option value='".$key."'";
-		if ($key==$selected) { $return_buffer .= " selected='1'"; }
-		$return_buffer .= ">".$value."</option>\n";
-	}
-	$return_buffer .= "</SELECT>";
+function SelectMobRace($name, $selected)
+{
+    global $dbiracenames;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    foreach ($dbiracenames as $key => $value) {
+        $return_buffer .= "<option value='" . $key . "'";
+        if ($key == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . $value . "</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectIClass($name,$selected) {
-	global $dbiclasses;
-	$return_buffer = "<SELECT name=\"$name\">";
-	$return_buffer .= "<option value='0'>-</option>\n";
-	for ($i=1; $i<=32768; $i*=2)
-	{
-		$return_buffer .= "<option value='".$i."'";
-		if ($i==$selected) { $return_buffer .= " selected='1'"; }
-		$return_buffer .= ">".$dbiclasses[$i]."</option>\n";
-	}   
-	$return_buffer .= "</SELECT>";
+function SelectIClass($name, $selected)
+{
+    global $dbiclasses;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    for ($i = 1; $i <= 32768; $i *= 2) {
+        $return_buffer .= "<option value='" . $i . "'";
+        if ($i == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . $dbiclasses[$i] . "</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectIType($name,$selected) {
-  global $dbitypes;
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= "<option value='-1'>-</option>\n";
-  reset($dbitypes);
-  do {
-    $key=key($dbitypes);
-    $return_buffer .= "<option value='".$key."'";
-    if ($key==$selected) { $return_buffer .= " selected='1'"; }
-    $return_buffer .= ">".current($dbitypes)."</option>\n";
-  } while (next($dbitypes));  
-  $return_buffer .= "</SELECT>";
+function SelectIType($name, $selected)
+{
+    global $dbitypes;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='-1'>-</option>\n";
+    reset($dbitypes);
+    do {
+        $key = key($dbitypes);
+        $return_buffer .= "<option value='" . $key . "'";
+        if ($key == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . current($dbitypes) . "</option>\n";
+    } while (next($dbitypes));
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectSlot($name,$selected) {
-  global $dbslots;
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= "<option value='0'>-</option>\n";
-  reset($dbslots);
-  do {
-    $key=key($dbslots);
-    $return_buffer .= "<option value='".$key."'";
-    if ($key==$selected) { $return_buffer .= " selected='1'"; }
-    $return_buffer .= ">".current($dbslots)."</option>\n";
-  } while (next($dbslots));  
-  $return_buffer .= "</SELECT>";
+function SelectSlot($name, $selected)
+{
+    global $dbslots;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    reset($dbslots);
+    do {
+        $key = key($dbslots);
+        $return_buffer .= "<option value='" . $key . "'";
+        if ($key == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . current($dbslots) . "</option>\n";
+    } while (next($dbslots));
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectSpellEffect($name,$selected) {
-	global $dbspelleffects;
-	$return_buffer = "<SELECT name=\"$name\">";
-	$return_buffer .= "<option value=-1>-</option>\n";
-	reset($dbspelleffects);
-	do
-	{
-		$key=key($dbspelleffects);
-		$return_buffer .= "<option value='".$key."'";
-		if ($key==$selected)
-		{
-			$return_buffer .= " selected='1'";
-		}
-		$return_buffer .= ">".current($dbspelleffects)."</option>\n";
-	}
-	while (next($dbspelleffects));  
-	$return_buffer .= "</SELECT>";
+function SelectSpellEffect($name, $selected)
+{
+    global $dbspelleffects;
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value=-1>-</option>\n";
+    reset($dbspelleffects);
+    do {
+        $key = key($dbspelleffects);
+        $return_buffer .= "<option value='" . $key . "'";
+        if ($key == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">" . current($dbspelleffects) . "</option>\n";
+    } while (next($dbspelleffects));
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectAugSlot($name,$selected) {
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= "<option value='0'>-</option>\n";
-  for ($i=1; $i<=25; $i++) {
-    $return_buffer .= "<option value='".$i."'";
-    if ($i==$selected) { $return_buffer .= " selected='1'"; }
-    $return_buffer .= ">slot $i</option>\n";
-  }
-  $return_buffer .= "</SELECT>";
+function SelectAugSlot($name, $selected)
+{
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    for ($i = 1; $i <= 25; $i++) {
+        $return_buffer .= "<option value='" . $i . "'";
+        if ($i == $selected) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">slot $i</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectLevel($name,$maxlevel,$selevel) {
-	$return_buffer = "<SELECT name=\"$name\">";
-	$return_buffer .= "<option value='0'>-</option>\n";
-	for ($i=1; $i<=$maxlevel; $i++)
-	{
-		$return_buffer .= "<option value='".$i."'";
-		if ($i==$selevel) { $return_buffer .= " selected='1'"; }
-		$return_buffer .= ">$i</option>\n";
-	} 
-	$return_buffer .= "</SELECT>";
+function SelectLevel($name, $maxlevel, $selevel)
+{
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= "<option value='0'>-</option>\n";
+    for ($i = 1; $i <= $maxlevel; $i++) {
+        $return_buffer .= "<option value='" . $i . "'";
+        if ($i == $selevel) {
+            $return_buffer .= " selected='1'";
+        }
+        $return_buffer .= ">$i</option>\n";
+    }
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function SelectTradeSkills($name,$selected) {
-  $return_buffer = "<SELECT name=\"$name\">";
-  $return_buffer .= WriteIt("0","-",$selected);
-  $return_buffer .= WriteIt("59","Alchemy",$selected);
-  $return_buffer .= WriteIt("60","Baking",$selected);
-  $return_buffer .= WriteIt("63","Blacksmithing",$selected);
-  $return_buffer .= WriteIt("65","Brewing",$selected);
-  $return_buffer .= WriteIt("55","Fishing",$selected);
-  $return_buffer .= WriteIt("64","Fletching",$selected);
-  $return_buffer .= WriteIt("68","Jewelery making",$selected);
-  $return_buffer .= WriteIt("56","Poison making",$selected);
-  $return_buffer .= WriteIt("69","Pottery making",$selected);
-  $return_buffer .= WriteIt("58","Research",$selected);
-  $return_buffer .= WriteIt("61","Tailoring",$selected);
-  $return_buffer .= WriteIt("57","Tinkering",$selected);
-  $return_buffer .= "</SELECT>";
+function SelectTradeSkills($name, $selected)
+{
+    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer .= WriteIt("0", "-", $selected);
+    $return_buffer .= WriteIt("59", "Alchemy", $selected);
+    $return_buffer .= WriteIt("60", "Baking", $selected);
+    $return_buffer .= WriteIt("63", "Blacksmithing", $selected);
+    $return_buffer .= WriteIt("65", "Brewing", $selected);
+    $return_buffer .= WriteIt("55", "Fishing", $selected);
+    $return_buffer .= WriteIt("64", "Fletching", $selected);
+    $return_buffer .= WriteIt("68", "Jewelery making", $selected);
+    $return_buffer .= WriteIt("56", "Poison making", $selected);
+    $return_buffer .= WriteIt("69", "Pottery making", $selected);
+    $return_buffer .= WriteIt("58", "Research", $selected);
+    $return_buffer .= WriteIt("61", "Tailoring", $selected);
+    $return_buffer .= WriteIt("57", "Tinkering", $selected);
+    $return_buffer .= "</SELECT>";
     return $return_buffer;
 }
 
-function WriteIt($value,$name,$sel) {
-  $return_buffer = "  <option value='".$value."'";
-  if ($value==$sel) { $return_buffer .= " selected='1'"; }
-  $return_buffer .= ">$name</option>\n";
-    return $return_buffer;
-}
-function SelectStats($name,$stat) {
-  $return_buffer = "<select name=\"$name\">\n";
-  $return_buffer .= "  <option value=''>-</option>\n";
-  $return_buffer .= WriteIt("hp","Hit Points",$stat);
-  $return_buffer .= WriteIt("mana","Mana",$stat);
-  $return_buffer .= WriteIt("ac","AC",$stat);
-  $return_buffer .= WriteIt("attack","Attack",$stat);
-  $return_buffer .= WriteIt("aagi","Agility",$stat);
-  $return_buffer .= WriteIt("acha","Charisma",$stat);
-  $return_buffer .= WriteIt("adex","Dexterity",$stat);
-  $return_buffer .= WriteIt("aint","Intelligence",$stat);
-  $return_buffer .= WriteIt("asta","Stamina",$stat);
-  $return_buffer .= WriteIt("astr","Strength",$stat);
-  $return_buffer .= WriteIt("awis","Wisdom",$stat);
-  $return_buffer .= WriteIt("damage","Damage",$stat);
-  $return_buffer .= WriteIt("delay","Delay",$stat);
-  $return_buffer .= WriteIt("ratio","Ratio",$stat);
-  $return_buffer .= WriteIt("haste","Haste",$stat);
-  $return_buffer .= WriteIt("regen","HP Regen",$stat);
-  $return_buffer .= WriteIt("manaregen","Mana Regen",$stat);
-  $return_buffer .= WriteIt("enduranceregen","Endurance Regen",$stat);
-  $return_buffer .= "</select>\n";
+function WriteIt($value, $name, $sel)
+{
+    $return_buffer = "  <option value='" . $value . "'";
+    if ($value == $sel) {
+        $return_buffer .= " selected='1'";
+    }
+    $return_buffer .= ">$name</option>\n";
     return $return_buffer;
 }
 
-function SelectHeroicStats($name,$heroic) {
-  $return_buffer = "<select name=\"$name\">\n";
-  $return_buffer .= "  <option value=''>-</option>\n";
-  $return_buffer .= WriteIt("heroic_agi","Heroic Agility",$stat);
-  $return_buffer .= WriteIt("heroic_cha","Heroic Charisma",$stat);
-  $return_buffer .= WriteIt("heroic_dex","Heroic Dexterity",$stat);
-  $return_buffer .= WriteIt("heroic_int","Heroic Intelligence",$stat);
-  $return_buffer .= WriteIt("heroic_sta","Heroic Stamina",$stat);
-  $return_buffer .= WriteIt("heroic_str","Heroic Strength",$stat);
-  $return_buffer .= WriteIt("heroic_wis","Heroic Wisdom",$stat);
-  $return_buffer .= WriteIt("heroic_mr","Heroic Resist Magic",$heroic);
-  $return_buffer .= WriteIt("heroic_fr","Heroic Resist Fire",$heroic);
-  $return_buffer .= WriteIt("heroic_cr","Heroic Resist Cold",$heroic);
-  $return_buffer .= WriteIt("heroic_pr","Heroic Resist Poison",$heroic);
-  $return_buffer .= WriteIt("heroic_dr","Heroic Resist Disease",$heroic);
-  $return_buffer .= WriteIt("heroic_svcorrup","Heroic Resist Corruption",$heroic);
-  $return_buffer .= "</select>\n";return $return_buffer;
-}
-
-function SelectResists($name,$resist) {
-  $return_buffer = "<select name=\"$name\">\n";
-  $return_buffer .= "  <option value=''>-</option>\n";
-  $return_buffer .= WriteIt("mr","Resist Magic",$resist);
-  $return_buffer .= WriteIt("fr","Resist Fire",$resist);
-  $return_buffer .= WriteIt("cr","Resist Cold",$resist);
-  $return_buffer .= WriteIt("pr","Resist Poison",$resist);
-  $return_buffer .= WriteIt("dr","Resist Disease",$resist);
-  $return_buffer .= WriteIt("svcorruption","Resist Corruption",$resist);
-  $return_buffer .= "</select>\n";return $return_buffer;
-}
-
-function SelectModifiers($name,$mod) {
-  $return_buffer = "<select name=\"$name\">\n";
-  $return_buffer .= "  <option value=''>-</option>\n";
-  $return_buffer .= WriteIt("avoidance","Avoidance",$mod);
-  $return_buffer .= WriteIt("accuracy","Accuracy",$mod);
-  $return_buffer .= WriteIt("backstabdmg","Backstab Damage",$mod);
-  $return_buffer .= WriteIt("clairvoyance","Clairvoyance",$mod);
-  $return_buffer .= WriteIt("combateffects","Combat Effects",$mod);
-  $return_buffer .= WriteIt("damageshield","Damage Shield",$mod);
-  $return_buffer .= WriteIt("dsmitigation","Damage Shield Mit",$mod);
-  $return_buffer .= WriteIt("dotshielding","DoT Shielding",$mod);
-  $return_buffer .= WriteIt("extradmgamt","Extra Damage",$mod);
-  $return_buffer .= WriteIt("healamt","Heal Amount",$mod);
-  $return_buffer .= WriteIt("purity","Purity",$mod);
-  $return_buffer .= WriteIt("shielding","Shielding",$mod);
-  $return_buffer .= WriteIt("spelldmg","Spell Damage",$mod);
-  $return_buffer .= WriteIt("spellshield","Spell Shielding",$mod);
-  $return_buffer .= WriteIt("strikethrough","Strikethrough",$mod);
-  $return_buffer .= WriteIt("stunresist","Stun Resist",$mod);
-  $return_buffer .= "</select>\n";
+function SelectStats($name, $stat)
+{
+    $return_buffer = "<select name=\"$name\">\n";
+    $return_buffer .= "  <option value=''>-</option>\n";
+    $return_buffer .= WriteIt("hp", "Hit Points", $stat);
+    $return_buffer .= WriteIt("mana", "Mana", $stat);
+    $return_buffer .= WriteIt("ac", "AC", $stat);
+    $return_buffer .= WriteIt("attack", "Attack", $stat);
+    $return_buffer .= WriteIt("aagi", "Agility", $stat);
+    $return_buffer .= WriteIt("acha", "Charisma", $stat);
+    $return_buffer .= WriteIt("adex", "Dexterity", $stat);
+    $return_buffer .= WriteIt("aint", "Intelligence", $stat);
+    $return_buffer .= WriteIt("asta", "Stamina", $stat);
+    $return_buffer .= WriteIt("astr", "Strength", $stat);
+    $return_buffer .= WriteIt("awis", "Wisdom", $stat);
+    $return_buffer .= WriteIt("damage", "Damage", $stat);
+    $return_buffer .= WriteIt("delay", "Delay", $stat);
+    $return_buffer .= WriteIt("ratio", "Ratio", $stat);
+    $return_buffer .= WriteIt("haste", "Haste", $stat);
+    $return_buffer .= WriteIt("regen", "HP Regen", $stat);
+    $return_buffer .= WriteIt("manaregen", "Mana Regen", $stat);
+    $return_buffer .= WriteIt("enduranceregen", "Endurance Regen", $stat);
+    $return_buffer .= "</select>\n";
     return $return_buffer;
 }
 
-function GetItemStatsString($name,$stat,$stat2,$stat2color) {
+function SelectHeroicStats($name, $heroic)
+{
+    $return_buffer = "<select name=\"$name\">\n";
+    $return_buffer .= "  <option value=''>-</option>\n";
+    $return_buffer .= WriteIt("heroic_agi", "Heroic Agility", $stat);
+    $return_buffer .= WriteIt("heroic_cha", "Heroic Charisma", $stat);
+    $return_buffer .= WriteIt("heroic_dex", "Heroic Dexterity", $stat);
+    $return_buffer .= WriteIt("heroic_int", "Heroic Intelligence", $stat);
+    $return_buffer .= WriteIt("heroic_sta", "Heroic Stamina", $stat);
+    $return_buffer .= WriteIt("heroic_str", "Heroic Strength", $stat);
+    $return_buffer .= WriteIt("heroic_wis", "Heroic Wisdom", $stat);
+    $return_buffer .= WriteIt("heroic_mr", "Heroic Resist Magic", $heroic);
+    $return_buffer .= WriteIt("heroic_fr", "Heroic Resist Fire", $heroic);
+    $return_buffer .= WriteIt("heroic_cr", "Heroic Resist Cold", $heroic);
+    $return_buffer .= WriteIt("heroic_pr", "Heroic Resist Poison", $heroic);
+    $return_buffer .= WriteIt("heroic_dr", "Heroic Resist Disease", $heroic);
+    $return_buffer .= WriteIt("heroic_svcorrup", "Heroic Resist Corruption", $heroic);
+    $return_buffer .= "</select>\n";
+    return $return_buffer;
+}
 
-	if (!$stat2) { $stat2 = 0; }
-	$PrintString = "";
-	if (is_numeric($stat))
-	{
-		if($stat != 0 || $stat2 != 0)
-		{
-			$PrintString .= "<tr><td><b>".$name.": </b></td><td>";
-			if($stat < 0)
-			{
-				$PrintString .= "<font color='red'>".sign($stat)."</font>";
-			}
-			else
-			{
-				$PrintString .= $stat;
-			}
-			if ($stat2 < 0)
-			{
-				$PrintString .= "<font color='red'> ".sign($stat2)."</font>";
-			}
-			elseif ($stat2 > 0)
-			{
-				if ($stat2color)
-				{
-					$PrintString .= "<font color='".$stat2color."'> ".sign($stat2)."</font>";
-				}
-				else
-				{
-					$PrintString .= sign($stat2);
-				}
-			}
-			$PrintString .= "</td></tr>";
-		}
-	}
-	else
-	{
-		if (ereg_replace("[^0-9]", "", $stat) > 0)
-		{
-			$PrintString .= "<tr><td><b>".$name.": </b></td><td>".$stat."</td></tr>";
-		}
-	}
-	return $PrintString;
+function SelectResists($name, $resist)
+{
+    $return_buffer = "<select name=\"$name\">\n";
+    $return_buffer .= "  <option value=''>-</option>\n";
+    $return_buffer .= WriteIt("mr", "Resist Magic", $resist);
+    $return_buffer .= WriteIt("fr", "Resist Fire", $resist);
+    $return_buffer .= WriteIt("cr", "Resist Cold", $resist);
+    $return_buffer .= WriteIt("pr", "Resist Poison", $resist);
+    $return_buffer .= WriteIt("dr", "Resist Disease", $resist);
+    $return_buffer .= WriteIt("svcorruption", "Resist Corruption", $resist);
+    $return_buffer .= "</select>\n";
+    return $return_buffer;
+}
+
+function SelectModifiers($name, $mod)
+{
+    $return_buffer = "<select name=\"$name\">\n";
+    $return_buffer .= "  <option value=''>-</option>\n";
+    $return_buffer .= WriteIt("avoidance", "Avoidance", $mod);
+    $return_buffer .= WriteIt("accuracy", "Accuracy", $mod);
+    $return_buffer .= WriteIt("backstabdmg", "Backstab Damage", $mod);
+    $return_buffer .= WriteIt("clairvoyance", "Clairvoyance", $mod);
+    $return_buffer .= WriteIt("combateffects", "Combat Effects", $mod);
+    $return_buffer .= WriteIt("damageshield", "Damage Shield", $mod);
+    $return_buffer .= WriteIt("dsmitigation", "Damage Shield Mit", $mod);
+    $return_buffer .= WriteIt("dotshielding", "DoT Shielding", $mod);
+    $return_buffer .= WriteIt("extradmgamt", "Extra Damage", $mod);
+    $return_buffer .= WriteIt("healamt", "Heal Amount", $mod);
+    $return_buffer .= WriteIt("purity", "Purity", $mod);
+    $return_buffer .= WriteIt("shielding", "Shielding", $mod);
+    $return_buffer .= WriteIt("spelldmg", "Spell Damage", $mod);
+    $return_buffer .= WriteIt("spellshield", "Spell Shielding", $mod);
+    $return_buffer .= WriteIt("strikethrough", "Strikethrough", $mod);
+    $return_buffer .= WriteIt("stunresist", "Stun Resist", $mod);
+    $return_buffer .= "</select>\n";
+    return $return_buffer;
+}
+
+function GetItemStatsString($name, $stat, $stat2, $stat2color)
+{
+
+    if (!$stat2) {
+        $stat2 = 0;
+    }
+    $PrintString = "";
+    if (is_numeric($stat)) {
+        if ($stat != 0 || $stat2 != 0) {
+            $PrintString .= "<tr><td><b>" . $name . ": </b></td><td>";
+            if ($stat < 0) {
+                $PrintString .= "<font color='red'>" . sign($stat) . "</font>";
+            } else {
+                $PrintString .= $stat;
+            }
+            if ($stat2 < 0) {
+                $PrintString .= "<font color='red'> " . sign($stat2) . "</font>";
+            } elseif ($stat2 > 0) {
+                if ($stat2color) {
+                    $PrintString .= "<font color='" . $stat2color . "'> " . sign($stat2) . "</font>";
+                } else {
+                    $PrintString .= sign($stat2);
+                }
+            }
+            $PrintString .= "</td></tr>";
+        }
+    } else {
+        if (ereg_replace("[^0-9]", "", $stat) > 0) {
+            $PrintString .= "<tr><td><b>" . $name . ": </b></td><td>" . $stat . "</td></tr>";
+        }
+    }
+    return $PrintString;
 }
 
 // spell_effects.cpp int Mob::CalcSpellEffectValue_formula(int formula, int base, int max, int caster_level, int16 spell_id)
-function CalcSpellEffectValue($form,$base,$max,$lvl) { 
- // $return_buffer .= " (base=$base form=$form max=$max, lvl=$lvl)";
-  $sign=1; $ubase=abs($base); $result=0;
-  if (($max<$base) AND ($max!=0)) { $sign=-1; }
-  switch($form) {
-		case 0:
-		case 100:
-			$result=$ubase; break;
-		case 101:
-			$result=$ubase+$sign*($lvl/2); break;
-		case 102:	
-			$result=$ubase+$sign*$lvl; break;
-		case 103:	
-			$result=$ubase+$sign*$lvl*2; break;
-		case 104:	
-			$result=$ubase+$sign*$lvl*3; break;
-		case 105:	
-		case 107:
-			$result=$ubase+$sign*$lvl*4; break;
-		case 108:	
-			$result=floor($ubase+$sign*$lvl/3); break;
-		case 109:	
-			$result=floor($ubase+$sign*$lvl/4); break;
-		case 110:	
-			$result=floor($ubase+$lvl/5); break;
-		case 111:
-			$result=$ubase+5*($lvl-16); break;
-		case 112:
-			$result=$ubase+8*($lvl-24); break;
-		case 113:
-			$result=$ubase+12*($lvl-34); break;
-		case 114:
-			$result=$ubase+15*($lvl-44); break;
-		case 115:
-			$result=$ubase+15*($lvl-54); break;
-	  case 116:
-	    $result=floor($ubase+8*($lvl-24)); break;
-	  case 117:
-	    $result=$ubase+11*($lvl-34); break;
-	  case 118:
-	    $result=$ubase+17*($lvl-44); break;
-	  case 119:
-			$result=floor($ubase+$lvl/8); break;
-	  case 121:
-			$result=floor($ubase+$lvl/3); break;
-	  
-		default:
-			if ($form<100) { $result=$ubase+($lvl*$form); }
-  } // end switch
-  if ($max!=0) {
-	  if ($sign==1) {
-    	if ($result>$max) { $result=$max; }
-  	} else {
-  		if ($result<$max) { $result=$max; }
+function CalcSpellEffectValue($form, $base, $max, $lvl)
+{
+    // $return_buffer .= " (base=$base form=$form max=$max, lvl=$lvl)";
+    $sign = 1;
+    $ubase = abs($base);
+    $result = 0;
+    if (($max < $base) AND ($max != 0)) {
+        $sign = -1;
     }
-	}
-	if (($base<0) && ($result>0)) { $result*=-1; }
-  return $result;
-}
+    switch ($form) {
+        case 0:
+        case 100:
+            $result = $ubase;
+            break;
+        case 101:
+            $result = $ubase + $sign * ($lvl / 2);
+            break;
+        case 102:
+            $result = $ubase + $sign * $lvl;
+            break;
+        case 103:
+            $result = $ubase + $sign * $lvl * 2;
+            break;
+        case 104:
+            $result = $ubase + $sign * $lvl * 3;
+            break;
+        case 105:
+        case 107:
+            $result = $ubase + $sign * $lvl * 4;
+            break;
+        case 108:
+            $result = floor($ubase + $sign * $lvl / 3);
+            break;
+        case 109:
+            $result = floor($ubase + $sign * $lvl / 4);
+            break;
+        case 110:
+            $result = floor($ubase + $lvl / 5);
+            break;
+        case 111:
+            $result = $ubase + 5 * ($lvl - 16);
+            break;
+        case 112:
+            $result = $ubase + 8 * ($lvl - 24);
+            break;
+        case 113:
+            $result = $ubase + 12 * ($lvl - 34);
+            break;
+        case 114:
+            $result = $ubase + 15 * ($lvl - 44);
+            break;
+        case 115:
+            $result = $ubase + 15 * ($lvl - 54);
+            break;
+        case 116:
+            $result = floor($ubase + 8 * ($lvl - 24));
+            break;
+        case 117:
+            $result = $ubase + 11 * ($lvl - 34);
+            break;
+        case 118:
+            $result = $ubase + 17 * ($lvl - 44);
+            break;
+        case 119:
+            $result = floor($ubase + $lvl / 8);
+            break;
+        case 121:
+            $result = floor($ubase + $lvl / 3);
+            break;
 
-function CalcBuffDuration($lvl,$form,$duration) { // spells.cpp, carefull, return value in ticks, not in seconds
-  //$return_buffer .= " Duration lvl=$lvl, form=$form, duration=$duration ";
-	switch($form) {
-		case 0:	
-		  return 0; 
-		  break;
-		case 1:	
-		  $i=ceil($lvl/2); 
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 2:	
-			$i=ceil($duration/5*3);
-			return ($i<$duration?($i<1?1:$i):$duration);
-			break;
-    case 3:	
-			$i=$lvl*30;
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 4:	
-			return $duration;
-      break;
-		case 5:	
-			$i=$duration;
-			return ($i<3?($i<1?1:$i):3);
-      break;
-		case 6:	
-			$i=ceil($lvl/2);
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 7:	
-			$i=$lvl;
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 8:	
-			$i=$lvl+10;
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 9:	
-			$i=$lvl*2+10;
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 10:
-			$i=$lvl*3+10;
-			return ($i<$duration?($i<1?1:$i):$duration);
-      break;
-		case 11:
-		case 12:	
-			return $duration;
-      break;
-		case 50:	
-			return 72000;	
-		case 3600:
-			return ($duration?$duration:3600);
-	}
-}
-
-function SpecialAttacks($att) {
-  $data=''; $v='';
-  // from mobs.h
-  for ($i=0; $i<strlen($att); $i++) {  
-    switch ($att{$i}) {
-      case 'A' : $data.=$v." Immune to melee"; $v=', '; break;
-      case 'B' : $data.=$v." Immune to magic"; $v=', '; break;
-      case 'C' : $data.=$v." Uncharmable"; $v=', '; break;
-      case 'D' : $data.=$v." Unfearable"; $v=', '; break;
-      case 'E' : $data.=$v." Enrage"; $v=', '; break;
-      case 'F' : $data.=$v." Flurry"; $v=', '; break;
-      case 'f' : $data.=$v." Immune to fleeing"; $v=', '; break;
-      case 'I' : $data.=$v." Unsnarable"; $v=', '; break;
-      case 'M' : $data.=$v." Unmezzable"; $v=', '; break;
-      case 'N' : $data.=$v." Unstunable"; $v=', '; break;
-      case 'O' : $data.=$v." Immune to melee except bane"; $v=', '; break;
-      case 'Q' : $data.=$v." Quadruple Attack"; $v=', '; break;
-      case 'R' : $data.=$v." Rampage"; $v=', '; break;
-      case 'S' : $data.=$v." Summon"; $v=', '; break;
-      case 'T' : $data.=$v." Triple Attack"; $v=', '; break;
-      case 'U' : $data.=$v." Unslowable"; $v=', '; break;
-      case 'W' : $data.=$v." Immune to melee except magical"; $v=', '; break;
+        default:
+            if ($form < 100) {
+                $result = $ubase + ($lvl * $form);
+            }
+    } // end switch
+    if ($max != 0) {
+        if ($sign == 1) {
+            if ($result > $max) {
+                $result = $max;
+            }
+        } else {
+            if ($result < $max) {
+                $result = $max;
+            }
+        }
     }
-  }
-  return $data; 
+    if (($base < 0) && ($result > 0)) {
+        $result *= -1;
+    }
+    return $result;
 }
 
-function price($price) {
-  $res="";
-  if ($price>=1000) { 
-    $p=floor($price/1000);
-    $price-=$p*1000;
-  }
-  if ($price>=100) {
-    $g=floor($price/100);
-    $price-=$g*100;
-  }
-  if ($price>=10) {
-    $s=floor($price/10);
-    $price-=$s*10;
-  }
-  $c=$price;
-  if ($p>0) { $res=$p."p"; $sep=" "; }
-  if ($g>0) { $res.=$sep.$g."g"; $sep=" "; }
-  if ($s>0) { $res.=$sep.$s."s"; $sep=" "; }
-  if ($c>0) { $res.=$sep.$c."c"; }
-  return $res;
+function CalcBuffDuration($lvl, $form, $duration)
+{ // spells.cpp, carefull, return value in ticks, not in seconds
+    //$return_buffer .= " Duration lvl=$lvl, form=$form, duration=$duration ";
+    switch ($form) {
+        case 0:
+            return 0;
+            break;
+        case 1:
+            $i = ceil($lvl / 2);
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 2:
+            $i = ceil($duration / 5 * 3);
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 3:
+            $i = $lvl * 30;
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 4:
+            return $duration;
+            break;
+        case 5:
+            $i = $duration;
+            return ($i < 3 ? ($i < 1 ? 1 : $i) : 3);
+            break;
+        case 6:
+            $i = ceil($lvl / 2);
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 7:
+            $i = $lvl;
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 8:
+            $i = $lvl + 10;
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 9:
+            $i = $lvl * 2 + 10;
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 10:
+            $i = $lvl * 3 + 10;
+            return ($i < $duration ? ($i < 1 ? 1 : $i) : $duration);
+            break;
+        case 11:
+        case 12:
+            return $duration;
+            break;
+        case 50:
+            return 72000;
+        case 3600:
+            return ($duration ? $duration : 3600);
+    }
 }
 
-function sign($val) {
-  if ($val>0) { return "+$val"; } else { return $val; }
-}
-function WriteDate($d) {
-  return date("F d, Y",$d);
+function SpecialAttacks($att)
+{
+    $data = '';
+    $v = '';
+    // from mobs.h
+    for ($i = 0; $i < strlen($att); $i++) {
+        switch ($att{$i}) {
+            case 'A' :
+                $data .= $v . " Immune to melee";
+                $v = ', ';
+                break;
+            case 'B' :
+                $data .= $v . " Immune to magic";
+                $v = ', ';
+                break;
+            case 'C' :
+                $data .= $v . " Uncharmable";
+                $v = ', ';
+                break;
+            case 'D' :
+                $data .= $v . " Unfearable";
+                $v = ', ';
+                break;
+            case 'E' :
+                $data .= $v . " Enrage";
+                $v = ', ';
+                break;
+            case 'F' :
+                $data .= $v . " Flurry";
+                $v = ', ';
+                break;
+            case 'f' :
+                $data .= $v . " Immune to fleeing";
+                $v = ', ';
+                break;
+            case 'I' :
+                $data .= $v . " Unsnarable";
+                $v = ', ';
+                break;
+            case 'M' :
+                $data .= $v . " Unmezzable";
+                $v = ', ';
+                break;
+            case 'N' :
+                $data .= $v . " Unstunable";
+                $v = ', ';
+                break;
+            case 'O' :
+                $data .= $v . " Immune to melee except bane";
+                $v = ', ';
+                break;
+            case 'Q' :
+                $data .= $v . " Quadruple Attack";
+                $v = ', ';
+                break;
+            case 'R' :
+                $data .= $v . " Rampage";
+                $v = ', ';
+                break;
+            case 'S' :
+                $data .= $v . " Summon";
+                $v = ', ';
+                break;
+            case 'T' :
+                $data .= $v . " Triple Attack";
+                $v = ', ';
+                break;
+            case 'U' :
+                $data .= $v . " Unslowable";
+                $v = ', ';
+                break;
+            case 'W' :
+                $data .= $v . " Immune to melee except magical";
+                $v = ', ';
+                break;
+        }
+    }
+    return $data;
 }
 
-function isinteger($val) {
-   return (intval($val)==$val);
+function price($price)
+{
+    $res = "";
+    if ($price >= 1000) {
+        $p = floor($price / 1000);
+        $price -= $p * 1000;
+    }
+    if ($price >= 100) {
+        $g = floor($price / 100);
+        $price -= $g * 100;
+    }
+    if ($price >= 10) {
+        $s = floor($price / 10);
+        $price -= $s * 10;
+    }
+    $c = $price;
+    if ($p > 0) {
+        $res = $p . "p";
+        $sep = " ";
+    }
+    if ($g > 0) {
+        $res .= $sep . $g . "g";
+        $sep = " ";
+    }
+    if ($s > 0) {
+        $res .= $sep . $s . "s";
+        $sep = " ";
+    }
+    if ($c > 0) {
+        $res .= $sep . $c . "c";
+    }
+    return $res;
 }
 
-function CanThisNPCDoubleAttack($class,$level) { // mob.cpp
-  if ($level>26) { return true; } #NPC over lvl 26 all double attack
-  switch ($class) {
-    case 0: # monks and warriors
-    case 1:
-    case 20:
-    case 26:
-    case 27: 
-      if ($level<15) { return false; }
-      break;
-    case 9: # rogues
-    case 28: 
-      if ($level<16) { return false; }
-      break;
-    case 4: # rangers
-    case 23:
-    case 5: # shadowknights
-    case 24:
-    case 3: # paladins
-    case 22:
-      if ($level<20) { return false; }
-      break;
-  }
-  return false;
+function sign($val)
+{
+    if ($val > 0) {
+        return "+$val";
+    } else {
+        return $val;
+    }
+}
+
+function WriteDate($d)
+{
+    return date("F d, Y", $d);
+}
+
+function isinteger($val)
+{
+    return (intval($val) == $val);
+}
+
+function CanThisNPCDoubleAttack($class, $level)
+{ // mob.cpp
+    if ($level > 26) {
+        return true;
+    } #NPC over lvl 26 all double attack
+    switch ($class) {
+        case 0: # monks and warriors
+        case 1:
+        case 20:
+        case 26:
+        case 27:
+            if ($level < 15) {
+                return false;
+            }
+            break;
+        case 9: # rogues
+        case 28:
+            if ($level < 16) {
+                return false;
+            }
+            break;
+        case 4: # rangers
+        case 23:
+        case 5: # shadowknights
+        case 24:
+        case 3: # paladins
+        case 22:
+            if ($level < 20) {
+                return false;
+            }
+            break;
+    }
+    return false;
 }
 
 // Automatically format and populate the table based on the query
-function AutoDataTable($Query) {
-	$result = db_mysql_query($Query);
-	if (!$result)
-	{
-		$return_buffer = 'Could not run query: ' . mysql_error();
-		exit;
-	}
-	$columns = mysql_num_fields($result);
-	$return_buffer .= "<table border=0 width=100%><thead>";
-	$RowClass = "lr";
-	###Automatically Generate the column names from the Table	
-		for ($i = 0; $i < $columns; $i++)
-		{
-			$return_buffer .= "<th class='menuh'>". ucfirstwords(str_replace('_',' ',mysql_field_name($result, $i))) . " </th>";
-		}
-	$return_buffer .= "</tr></thead><tbody>";
-	while($row = mysql_fetch_array($result))
-	{ 
-		$return_buffer .= "<tr class='".$RowClass."'>";
-		for($i = 0; $i < $columns; $i++)
-		{
-			$return_buffer .= "<td>" . $row[$i] . "</td>";
-		}
-		$return_buffer .= "</tr>";
-		if ($RowClass == "lr")
-		{
-			$RowClass = "dr";
-		}
-		else
-		{
-			$RowClass = "lr";
-		}	
-	}
-	$return_buffer .= "</tbody></table>";
+function AutoDataTable($Query)
+{
+    $result = db_mysql_query($Query);
+    if (!$result) {
+        $return_buffer = 'Could not run query: ' . mysql_error();
+        exit;
+    }
+    $columns = mysql_num_fields($result);
+    $return_buffer .= "<table border=0 width=100%><thead>";
+    $RowClass = "lr";
+    ###Automatically Generate the column names from the Table
+    for ($i = 0; $i < $columns; $i++) {
+        $return_buffer .= "<th class='menuh'>" . ucfirstwords(str_replace('_', ' ', mysql_field_name($result, $i))) . " </th>";
+    }
+    $return_buffer .= "</tr></thead><tbody>";
+    while ($row = mysql_fetch_array($result)) {
+        $return_buffer .= "<tr class='" . $RowClass . "'>";
+        for ($i = 0; $i < $columns; $i++) {
+            $return_buffer .= "<td>" . $row[$i] . "</td>";
+        }
+        $return_buffer .= "</tr>";
+        if ($RowClass == "lr") {
+            $RowClass = "dr";
+        } else {
+            $RowClass = "lr";
+        }
+    }
+    $return_buffer .= "</tbody></table>";
     return $return_buffer;
 }
 
-function CreateToolTip($ID, $Content){
-	$Content = preg_replace("/'/i", "\'", $Content);
-	$return_buffer = '<script type="text/javascript">
+function CreateToolTip($ID, $Content)
+{
+    $Content = preg_replace("/'/i", "\'", $Content);
+    $return_buffer = '<script type="text/javascript">
 		$(document).ready(function(){	
 			$("a").easyTooltip();
-			$("a#'. $ID . '").easyTooltip({
+			$("a#' . $ID . '").easyTooltip({
 				tooltipId: "easyTooltip2",
-				content: \''. $Content . '\'
+				content: \'' . $Content . '\'
 			});
 		});
 	</script>';
@@ -811,98 +944,87 @@ function CreateToolTip($ID, $Content){
 function Pagination($targetpage, $page, $total_pages, $limit, $adjacents)
 {
 
-	/* Setup page vars for display. */
-	if ($page == 0) $page = 1;					//if no page var is given, default to 1.
-	$prev = $page - 1;							//previous page is page - 1
-	$next = $page + 1;							//next page is page + 1
-	$lastpage = ceil($total_pages/$limit);		//lastpage is = total pages / items per page, rounded up.
-	$lpm1 = $lastpage - 1;						//last page minus 1
+    /* Setup page vars for display. */
+    if ($page == 0) $page = 1;                    //if no page var is given, default to 1.
+    $prev = $page - 1;                            //previous page is page - 1
+    $next = $page + 1;                            //next page is page + 1
+    $lastpage = ceil($total_pages / $limit);        //lastpage is = total pages / items per page, rounded up.
+    $lpm1 = $lastpage - 1;                        //last page minus 1
 
-	$pagination = "";
-	if($lastpage > 1)
-	{	
-		$pagination .= "<div class=\"pagination\">";
-		//previous button
-		if ($page > 1) 
-			$pagination.= "<a href=\"$targetpage?page=$prev\">previous</a>";
-		else
-			$pagination.= "<span class=\"disabled\">previous</span>";	
-		
-		//pages	
-		if ($lastpage < 7 + ($adjacents * 2))	//not enough pages to bother breaking it up
-		{	
-			for ($counter = 1; $counter <= $lastpage; $counter++)
-			{
-				if ($counter == $page)
-					$pagination.= "<span class=\"current\">$counter</span>";
-				else
-					$pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";					
-			}
-		}
-		elseif($lastpage > 5 + ($adjacents * 2))	//enough pages to hide some
-		{
-			//close to beginning; only hide later pages
-			if($page < 1 + ($adjacents * 2))		
-			{
-				for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++)
-				{
-					if ($counter == $page)
-						$pagination.= "<span class=\"current\">$counter</span>";
-					else
-						$pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";					
-				}
-				$pagination.= "...";
-				$pagination.= "<a href=\"$targetpage?page=$lpm1\">$lpm1</a>";
-				$pagination.= "<a href=\"$targetpage?page=$lastpage\">$lastpage</a>";		
-			}
-			//in middle; hide some front and some back
-			elseif($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2))
-			{
-				$pagination.= "<a href=\"$targetpage?page=1\">1</a>";
-				$pagination.= "<a href=\"$targetpage?page=2\">2</a>";
-				$pagination.= "...";
-				for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++)
-				{
-					if ($counter == $page)
-						$pagination.= "<span class=\"current\">$counter</span>";
-					else
-						$pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";					
-				}
-				$pagination.= "...";
-				$pagination.= "<a href=\"$targetpage?page=$lpm1\">$lpm1</a>";
-				$pagination.= "<a href=\"$targetpage?page=$lastpage\">$lastpage</a>";		
-			}
-			//close to end; only hide early pages
-			else
-			{
-				$pagination.= "<a href=\"$targetpage?page=1\">1</a>";
-				$pagination.= "<a href=\"$targetpage?page=2\">2</a>";
-				$pagination.= "...";
-				for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++)
-				{
-					if ($counter == $page)
-						$pagination.= "<span class=\"current\">$counter</span>";
-					else
-						$pagination.= "<a href=\"$targetpage?page=$counter\">$counter</a>";					
-				}
-			}
-		}
-		
-		//next button
-		if ($page < $counter - 1) 
-			$pagination.= "<a href=\"$targetpage?page=$next\">next</a>";
-		else
-			$pagination.= "<span class=\"disabled\">next</span>";
-		$pagination.= "</div>\n";		
-	}
-	return $pagination;
-}	
+    $pagination = "";
+    if ($lastpage > 1) {
+        $pagination .= "<div class=\"pagination\">";
+        //previous button
+        if ($page > 1)
+            $pagination .= "<a href=\"$targetpage?page=$prev\">previous</a>";
+        else
+            $pagination .= "<span class=\"disabled\">previous</span>";
 
+        //pages
+        if ($lastpage < 7 + ($adjacents * 2))    //not enough pages to bother breaking it up
+        {
+            for ($counter = 1; $counter <= $lastpage; $counter++) {
+                if ($counter == $page)
+                    $pagination .= "<span class=\"current\">$counter</span>";
+                else
+                    $pagination .= "<a href=\"$targetpage?page=$counter\">$counter</a>";
+            }
+        } elseif ($lastpage > 5 + ($adjacents * 2))    //enough pages to hide some
+        {
+            //close to beginning; only hide later pages
+            if ($page < 1 + ($adjacents * 2)) {
+                for ($counter = 1; $counter < 4 + ($adjacents * 2); $counter++) {
+                    if ($counter == $page)
+                        $pagination .= "<span class=\"current\">$counter</span>";
+                    else
+                        $pagination .= "<a href=\"$targetpage?page=$counter\">$counter</a>";
+                }
+                $pagination .= "...";
+                $pagination .= "<a href=\"$targetpage?page=$lpm1\">$lpm1</a>";
+                $pagination .= "<a href=\"$targetpage?page=$lastpage\">$lastpage</a>";
+            } //in middle; hide some front and some back
+            elseif ($lastpage - ($adjacents * 2) > $page && $page > ($adjacents * 2)) {
+                $pagination .= "<a href=\"$targetpage?page=1\">1</a>";
+                $pagination .= "<a href=\"$targetpage?page=2\">2</a>";
+                $pagination .= "...";
+                for ($counter = $page - $adjacents; $counter <= $page + $adjacents; $counter++) {
+                    if ($counter == $page)
+                        $pagination .= "<span class=\"current\">$counter</span>";
+                    else
+                        $pagination .= "<a href=\"$targetpage?page=$counter\">$counter</a>";
+                }
+                $pagination .= "...";
+                $pagination .= "<a href=\"$targetpage?page=$lpm1\">$lpm1</a>";
+                $pagination .= "<a href=\"$targetpage?page=$lastpage\">$lastpage</a>";
+            } //close to end; only hide early pages
+            else {
+                $pagination .= "<a href=\"$targetpage?page=1\">1</a>";
+                $pagination .= "<a href=\"$targetpage?page=2\">2</a>";
+                $pagination .= "...";
+                for ($counter = $lastpage - (2 + ($adjacents * 2)); $counter <= $lastpage; $counter++) {
+                    if ($counter == $page)
+                        $pagination .= "<span class=\"current\">$counter</span>";
+                    else
+                        $pagination .= "<a href=\"$targetpage?page=$counter\">$counter</a>";
+                }
+            }
+        }
+
+        //next button
+        if ($page < $counter - 1)
+            $pagination .= "<a href=\"$targetpage?page=$next\">next</a>";
+        else
+            $pagination .= "<span class=\"disabled\">next</span>";
+        $pagination .= "</div>\n";
+    }
+    return $pagination;
+}
 
 
 // Function to build item stats tables
 // Used for item.php as well as for tooltips for items
-function BuildItemStats($item, $show_name_icon) {
+function BuildItemStats($item, $show_name_icon)
+{
 
     global $dbitypes, $dam2h, $dbbagtypes, $dbskills, $icons_url, $spells_table, $dbiaugrestrict, $dbiracenames;
 
@@ -1241,10 +1363,11 @@ function BuildItemStats($item, $show_name_icon) {
 
 }
 
-function get_item_icon_from_id($id){
+function get_item_icon_from_id($id)
+{
     global $icon_cache;
 
-    if($icon_cache[$id])
+    if ($icon_cache[$id])
         return $icon_cache[$id];
 
     $query = "SELECT `icon` FROM `items` WHERE `id` = " . $id;

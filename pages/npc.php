@@ -181,8 +181,6 @@ if ($display_npc_stats == "TRUE") {
 
 $print_buffer .= "</td></tr></table>\n";
 
-$print_buffer .= "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
-
 $print_buffer .= "<tr valign='top'>";
 
 if ($npc["npc_spells_id"] > 0) {
@@ -190,7 +188,7 @@ if ($npc["npc_spells_id"] > 0) {
     $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $g = mysql_fetch_array($result);
-        $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC casts the following spells : </b><p>";
+        $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>This NPC casts the following spells</h2><p>";
         $query = "
             SELECT
                 $npc_spells_entries_table.*
@@ -254,9 +252,9 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
     $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         if ($show_npc_drop_chances == TRUE) {
-            $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>When killed, this NPC drops : </b><br/>";
+            $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>When killed, this NPC drops</h2><br/>";
         } else {
-            $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>When killed, this NPC can drop : </b><br/>";
+            $print_buffer .= " <td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>When killed, this NPCcan drop</h2><br/>";
         }
         $ldid = 0;
         while ($row = mysql_fetch_array($result)) {
