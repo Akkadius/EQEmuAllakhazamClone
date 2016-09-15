@@ -1,5 +1,5 @@
 <?php
-$Title="Gates of Discord";
+$Title = "Gates of Discord";
 ?>
 
 <li><a href=?a=zone&name=abysmal>Abysmal Sea</a>
@@ -24,4 +24,4 @@ $Title="Gates of Discord";
 <li><a href=?a=zone&name=uqua>Uqua - the Ocean God Chantry</a>
 <li><a href=?a=zone&name=vxed>Vxed - The Crumbling Caverns</a>
 <li><a href=?a=zone&name=yxtta>Yxtta - Pulpit of Exiles</a>
-</ul>
+    </ul>

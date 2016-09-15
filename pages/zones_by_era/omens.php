@@ -1,5 +1,5 @@
 <?php
-$Title="Omens of War";
+$Title = "Omens of War";
 ?>
 
 <li><a href=?a=zone&name=dranik>Catacombs of Dranik</a>
@@ -9,9 +9,9 @@ $Title="Omens of War";
 <li><a href=?a=zone&name=harbingers>Harbingers' Spire</a>
 <li><a href=?a=zone&name=provinggrounds>Muramite Proving Grounds</a>
 <li><a href=?a=zone&name=causeway>Nobles' Causeway</a>
-<li><a href=?a=zone&name=riftseekers >Riftseekers' Sanctum</a>
+<li><a href=?a=zone&name=riftseekers>Riftseekers' Sanctum</a>
 <li><a href=?a=zone&name=draniksewersa>Sewers of Dranik</a>
-<li><a href=?a=zone&name=bloodfields >The Bloodfields</a>
+<li><a href=?a=zone&name=bloodfields>The Bloodfields</a>
 <li><a href=?a=zone&name=dranik>The Ruined City of Dranik</a>
-<li><a href=?a=zone&name=wallofslaughter >Wall of Slaughter</a>
-</ul>
+<li><a href=?a=zone&name=wallofslaughter>Wall of Slaughter</a>
+    </ul>

@@ -1,5 +1,5 @@
 <?php
-$Title="Outer Planes";
+$Title = "Outer Planes";
 ?>
 
 <li><a href=?a=zone&name=alkabormare>Al'Kabor's Nightmare</a>

@@ -1,4 +1,3 @@
-
 <li><a href=?a=zone&name=westkorlachb>Caverns of the Lost</a>
 <li><a href=?a=zone&name=corathus>Corathus Creep</a>
 <li><a href=?a=zone&name=corathusb>Corathus Lair: The Mines</a>

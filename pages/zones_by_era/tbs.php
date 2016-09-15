@@ -1,5 +1,5 @@
 <?php
-$Title="Outer Planes";
+$Title = "Outer Planes";
 
 ?>
 

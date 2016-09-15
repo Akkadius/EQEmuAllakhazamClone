@@ -1,5 +1,5 @@
 <?php
-$Title="Continent of Odus";
+$Title = "Continent of Odus";
 ?>
 
 <li><a href=?a=zone&name=erudnext>Erudin</a>
@@ -10,4 +10,4 @@ $Title="Continent of Odus";
 <li><a href=?a=zone&name=stonebrunt>Stonebrunt Mountains</a>
 <li><a href=?a=zone&name=tox>Toxxulia Forrest</a>
 <li><a href=?a=zone&name=warrens>The Warrens</a>
-</ul>
+    </ul>

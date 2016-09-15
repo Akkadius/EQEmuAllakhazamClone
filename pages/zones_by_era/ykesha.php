@@ -1,5 +1,5 @@
 <?php
-$Title="Continent of Odus";
+$Title = "Continent of Odus";
 ?>
 
 <li><a href=?a=zone&name=chardokb>Chardok, Halls of Betrayal (Chardok B)</a>
@@ -10,4 +10,4 @@ $Title="Continent of Odus";
 <li><a href=?a=zone&name=poearthb>Ragrax, Stronghold of the Twelve</a>
 <li><a href=?a=zone&name=soldungc>The Caverns of Exile (Solusek C)</a>
 <li><a href=?a=zone&name=torgiran>Torgiran Mines</a>
-</ul>
+    </ul>

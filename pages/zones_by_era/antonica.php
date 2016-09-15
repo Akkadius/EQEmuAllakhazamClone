@@ -1,4 +1,3 @@
-
 <li><a href=?a=zone&name=arena>The Arena</a>
 <li><a href=?a=zone&name=befallen>Befallen</a>
 <li><a href=?a=zone&name=beholder>Gorge of King Xorbb (Beholder's Maze)</a>
@@ -54,4 +53,4 @@
 <li><a href=?a=zone&name=guktop>Upper Guk</a>
 <li><a href=?a=zone&name=commons>West Commonlands</a>
 <li><a href=?a=zone&name=westkarana>Western Plains of Karana</a>
-</ul>
+    </ul>
