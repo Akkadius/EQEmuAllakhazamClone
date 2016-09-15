@@ -27,11 +27,11 @@ if($isearch != "")
 		$name = str_replace('`', '-', str_replace('_', '%', str_replace(' ', '%', $name)));
 		$Query .= " AND $tbnpctypes.Name like '%$name%'";
 	}
-	if($HideInvisibleMen)
+	if($hide_invisible_men)
 	{
 		$Query .= " AND $tbnpctypes.race != 127 AND $tbnpctypes.race != 240";
 	}
-	$Query.=" ORDER BY $tbnpctypes.Name, $tbnpctypes.id LIMIT ".(LimitToUse($MaxNpcsReturned) + 1);
+	$Query.=" ORDER BY $tbnpctypes.Name, $tbnpctypes.id LIMIT ".(LimitToUse($max_npcs_returned) + 1);
 
 	$QueryResult = mysql_query($Query) or message_die('npcs.php','MYSQL_QUERY',$Query,mysql_error());
 
@@ -66,7 +66,7 @@ echo "</tr>\n";
 echo "</form></table>\n";
 
 if(isset($QueryResult))
-  PrintQueryResults($QueryResult, $MaxNpcsReturned, "npc.php", "npc", "npcs", "id", "name");
+  PrintQueryResults($QueryResult, $max_npcs_returned, "npc.php", "npc", "npcs", "id", "name");
 
 
 ?>

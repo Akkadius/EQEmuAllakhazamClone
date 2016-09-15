@@ -51,7 +51,7 @@
 		echo '<div>';
 		if(isset($result))
 		{
-			PrintQueryResults($result, $MaxItemsReturned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
+			PrintQueryResults($result, $max_items_returned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
 		}
 		echo '</div>';
 	}

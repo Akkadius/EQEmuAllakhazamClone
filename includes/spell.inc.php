@@ -1,9 +1,9 @@
 <?php
 function SpellDescription($spell,$n,$csv=false) {
-  global $dbspelleffects,$tbitems,$dbiracenames,$tbspells,$ServerMaxLevel;
+  global $dbspelleffects,$tbitems,$dbiracenames,$tbspells,$server_max_level;
   if (($spell["effectid$n"]!=254) AND ($spell["effectid$n"]!=10)) {
 	$maxlvl = $spell["effect_base_value$n"];
-	$minlvl = $ServerMaxLevel;
+	$minlvl = $server_max_level;
 	for ($i=1; $i<=16; $i++)
 	{
 		if ($spell["classes".$i] < $minlvl)
@@ -12,7 +12,7 @@ function SpellDescription($spell,$n,$csv=false) {
 		}
 	}
     $min=CalcSpellEffectValue($spell["formula".$n],$spell["effect_base_value$n"],$spell["max$n"],$minlvl);
-    $max=CalcSpellEffectValue($spell["formula".$n],$spell["effect_base_value$n"],$spell["max$n"],$ServerMaxLevel);
+    $max=CalcSpellEffectValue($spell["formula".$n],$spell["effect_base_value$n"],$spell["max$n"],$server_max_level);
 	$base_limit = $spell["effect_limit_value$n"];
     if (($min<$max) AND ($max<0))  { $tn=$min; $min=$max; $max=$tn; }
     if ($csv==true) { print ",,"; }

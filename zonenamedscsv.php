@@ -49,7 +49,7 @@ foreach ($npcs as $id) {
     }
   }
     
-  if (($mymob["loottable_id"]>0) AND ((!in_array($mymob["class"],$dbmerchants)) OR ($MerchantsDontDropStuff==FALSE))) {
+  if (($mymob["loottable_id"]>0) AND ((!in_array($mymob["class"],$dbmerchants)) OR ($merchants_dont_drop_stuff==FALSE))) {
     $query="SELECT $tbitems.id,$tbitems.Name,$tbitems.itemtype,
                    $tblootdropentries.chance,$tbloottableentries.probability,
                    $tbloottableentries.lootdrop_id,$tbloottableentries.multiplier

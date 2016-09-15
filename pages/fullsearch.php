@@ -40,7 +40,7 @@ $Query="SELECT $tbfactionlist.id,$tbfactionlist.name
 $FoundFactions = mysql_query($Query) or message_die('fullsearch.php','MYSQL_QUERY',$Query,mysql_error());
 
 // Query for Items
-if ($DiscoveredItemsOnly==TRUE)
+if ($discovered_items_only==TRUE)
 {
 		$Query = "SELECT * FROM $tbitems, discovered_items WHERE $tbitems.id='".$id."' AND discovered_items.item_id=$tbitems.id";
 	$Query="SELECT $tbitems.id,$tbitems.name
@@ -48,7 +48,7 @@ if ($DiscoveredItemsOnly==TRUE)
 		WHERE $Where
 		AND discovered_items.item_id=$tbitems.id 
 		ORDER BY $tbitems.name,$tbitems.id
-		LIMIT ".(LimitToUse($MaxItemsReturned) + 1);
+		LIMIT ".(LimitToUse($max_items_returned) + 1);
 }
 else
 {
@@ -56,7 +56,7 @@ else
 		FROM $tbitems
 		WHERE $Where
 		ORDER BY $tbitems.name,$tbitems.id
-		LIMIT ".(LimitToUse($MaxItemsReturned) + 1);
+		LIMIT ".(LimitToUse($max_items_returned) + 1);
 }
 $FoundItems = mysql_query($Query) or message_die('fullsearch.php','MYSQL_QUERY',$Query,mysql_error());
 
@@ -65,7 +65,7 @@ $Query="SELECT $tbnpctypes.id,$tbnpctypes.name
         FROM $tbnpctypes
         WHERE $Where
         ORDER BY $tbnpctypes.name,$tbnpctypes.id
-        LIMIT ".(LimitToUse($MaxNpcsReturned) + 1);
+        LIMIT ".(LimitToUse($max_npcs_returned) + 1);
 $FoundNpcs = mysql_query($Query) or message_die('fullsearch.php','MYSQL_QUERY',$Query,mysql_error());
 
 
@@ -110,10 +110,10 @@ $Title="Search Results";
 print "          <table border='0' width='100%'>\n";
 print "            <tr valign='top'>\n";
 print "              <td='1' width='34%'>\n";
-PrintQueryResults($FoundItems,       $MaxItemsReturned,    "item.php",    "item",    "items", "id", "name");
+PrintQueryResults($FoundItems,       $max_items_returned,    "item.php",    "item",    "items", "id", "name");
 print "              </td>\n";
 print "              <td='1' width='33%'>\n";
-PrintQueryResults($FoundNpcs,         $MaxNpcsReturned,     "npc.php",     "NPC",     "NPCs", "id", "name");
+PrintQueryResults($FoundNpcs,         $max_npcs_returned,     "npc.php",     "NPC",     "NPCs", "id", "name");
 print "              </td>\n";
 print "              <td='1' width='33%'>\n";
 PrintQueryResults($FoundFactions, $MaxFactionsReturned, "faction.php", "faction", "factions", "id", "name");

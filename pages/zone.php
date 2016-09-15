@@ -4,7 +4,7 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
 $mode = (isset($_GET['mode']) ? addslashes($_GET["mode"]) : 'npcs');
 
-if ($UseCustomZoneList == TRUE && $name != '') {
+if ($use_custom_zone_list == TRUE && $name != '') {
     $ZoneNote = GetFieldByQuery("note", "SELECT note FROM $tbzones WHERE short_name='$name'");
     if (substr_count(strtolower($ZoneNote), "disabled") >= 1) {
         header("Location: index.php");
@@ -22,21 +22,21 @@ $ZoneDebug = FALSE; // this is new in 0.5.3 but undocumented, it is for world bu
 
 $resources_menu = "<h2 class='section_header'>Resources</h2>";
 $resources_menu .= "<li><a href=?a=zone&name=$name&mode=npcs>" . $zone["long_name"] . " Bestiary List</a>";
-if ($DisplayNamedNPCsInfo == TRUE) {
+if ($display_named_npcs_info == TRUE) {
     $resources_menu .= "<li><a href=?a=zone_named&name=$name&mode=npcs>" . $zone["long_name"] . " Named Mobs List</a>";
 }
 $resources_menu .= "<li><a href=?a=zone&name=$name&mode=items>" . $zone["long_name"] . " Equipment List </a>";
 if (file_exists($maps_dir . $name . ".jpg")) {
     $resources_menu .= "<li><a href=" . $maps_url . $name . ".jpg>" . $zone["long_name"] . " Map</a>";
 }
-if ($DisplaySpawnGroupInfo == TRUE) {
+if ($display_spawn_group_info == TRUE) {
     $resources_menu .= "<li><a href=?a=zone&name=$name&mode=spawngroups>" . $zone["long_name"] . " Spawn Groups</a>";
 }
 $resources_menu .= "<li><a href=?a=zone&name=$name&mode=forage>" . $zone["long_name"] . " Forageable items</a>";
-if ($DisplayTaskInfo == TRUE) {
+if ($display_task_info == TRUE) {
     $resources_menu .= "<li><a href=?a=zone&name=$name&mode=tasks>" . $zone["long_name"] . " Tasks</a>";
 }
-if ($AllowQuestsNPC == TRUE) {
+if ($allow_quests_npc == TRUE) {
     $resources_menu .= "<li><a href=$root_url" . "quests/zones.php?aZone=$name>" . $zone["long_name"] . " Quest NPCs</a>";
 }
 
@@ -76,10 +76,10 @@ if ($mode == "npcs") {
 		AND $tbspawnentry.npcID=$tbnpctypes.id
 		AND $tbspawngroup.id=$tbspawnentry.spawngroupID";
 
-    if ($HideInvisibleMen == TRUE) {
+    if ($hide_invisible_men == TRUE) {
         $query .= " AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240";
     }
-    if ($GroupNpcsByName == TRUE) {
+    if ($group_npcs_by_name == TRUE) {
         $query .= " GROUP BY $tbnpctypes.name";
     } else {
         $query .= " GROUP BY $tbnpctypes.id";
@@ -101,7 +101,7 @@ if ($mode == "npcs") {
 
         $RowClass = "lr";
         while ($row = mysql_fetch_array($result)) {
-            if ((ReadableNpcName($row["name"])) != '' && ($row["trackable"] > 0 || $TrackableNPCsOnly == FALSE)) {
+            if ((ReadableNpcName($row["name"])) != '' && ($row["trackable"] > 0 || $trackable_npcs_only == FALSE)) {
                 print "<tr class='" . $RowClass . "'>";
                 if ($ZoneDebug == TRUE) {
                     print "<td>" . $row["id"] . "</td>";
@@ -150,7 +150,7 @@ if ($mode == "items") {
 		AND $tbspawnentry.npcID=$tbnpctypes.id
 		AND $tbspawngroup.id=$tbspawnentry.spawngroupID";
 
-    if ($MerchantsDontDropStuff == TRUE) {
+    if ($merchants_dont_drop_stuff == TRUE) {
         foreach ($dbmerchants AS $c) {
             $query .= " AND $tbnpctypes.class!=$c";
         }
@@ -164,14 +164,14 @@ if ($mode == "items") {
         //# For each NPC in the zone...
         $query = "SELECT $tbitems.*";
         $query .= " FROM $tbitems,$tbloottableentries,$tbnpctypes,$tblootdropentries";
-        if ($DiscoveredItemsOnly == TRUE) {
+        if ($discovered_items_only == TRUE) {
             $query .= ",$tbdiscovereditems";
         }
         $query .= " WHERE $tbnpctypes.id=" . $row["id"] . "
 			AND $tbnpctypes.loottable_id=$tbloottableentries.loottable_id
 			AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
 			AND $tblootdropentries.item_id=$tbitems.id";
-        if ($DiscoveredItemsOnly == TRUE) {
+        if ($discovered_items_only == TRUE) {
             $query .= " AND $tbdiscovereditems.item_id=$tbitems.id";
         }
         $query .= " GROUP BY $tbitems.id ORDER BY $tbitems.name";
@@ -239,7 +239,7 @@ if ($mode == "items") {
 } // end items
 
 if ($mode == "spawngroups") {
-    if ($DisplaySpawnGroupInfo == TRUE) {
+    if ($display_spawn_group_info == TRUE) {
         print "";
         $query = "SELECT $tbspawngroup.*,$tbspawn2.x,$tbspawn2.y,$tbspawn2.z,$tbspawn2.respawntime
 			FROM $tbspawn2,$tbspawngroup
@@ -296,7 +296,7 @@ if ($mode == "forage") {
 
 if ($mode == "tasks") {
 
-    if ($DisplayTaskInfo == TRUE) {
+    if ($display_task_info == TRUE) {
         $ZoneID = GetFieldByQuery("zoneidnumber", "SELECT zoneidnumber FROM zone WHERE short_name = '$name'");
         $query = "SELECT $tbtasks.id, $tbtasks.title, $tbtasks.startzone, $tbtasks.minlevel, $tbtasks.maxlevel, $tbtasks.reward, $tbtasks.rewardid, $tbtasks.rewardmethod
 			FROM $tbtasks

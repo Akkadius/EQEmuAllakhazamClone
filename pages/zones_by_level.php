@@ -2,7 +2,7 @@
 $Title="Populated Zones By Level";
 
 print "<p><b>The suggested levels are approximate based upon the levels of the majority of creatures found in the zone, and, except for the newbie zones, assume that you will hunt with a group.  Most zones also have some higher and lower level monsters roaming the area, and can thus be selectively hunted at different levels.  Follow the links to get more complete descriptions for the individual zones.</b><p>";
-if ($SortZoneLevelList==TRUE) {
+if ($sort_zone_level_list==TRUE) {
   print "<p><b>Zones are sorted following average npc's levels. If a newbie zone contains high level friendly guards, they count in the average level and false the sort.</b><p>";
 }
 
@@ -11,7 +11,7 @@ if ($SortZoneLevelList==TRUE) {
 
 $levels=array();
 $LevelRange = 0;
-for ($i = 0; $i <= ($ServerMaxNPCLevel / 5); $i++)
+for ($i = 0; $i <= ($server_max_npc_level / 5); $i++)
 {
 	$LevelRange += 5;
 	$levels[$i]=$LevelRange;
@@ -25,7 +25,7 @@ $zones=array();
 $query="SELECT $tbzones.*
         FROM $tbzones";
 $v="WHERE";        
-foreach ($IgnoreZones AS $zid) {
+foreach ($ignore_zones AS $zid) {
   $query.=" $v $tbzones.short_name!='$zid'"; $v=" AND ";
 }          
 $query.=" ORDER BY $tbzones.long_name ASC";
@@ -41,7 +41,7 @@ while ($res=mysql_fetch_array($result)) {
           WHERE $tbspawn2.zone='".$res["short_name"]."'
           AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
           AND $tbspawnentry.npcID=$tbnpctypes.id";
-  if ($HideInvisibleMen==TRUE) { $query.=" AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240"; }          
+  if ($hide_invisible_men==TRUE) { $query.=" AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240"; }
   $query.=" AND $tbnpctypes.level>$MinimumNpcLvl
           GROUP BY $tbnpctypes.id";
   $result2=mysql_query($query) or message_die('zones_by_level.php','MYSQL_QUERY',$query,mysql_error());
@@ -54,7 +54,7 @@ while ($res=mysql_fetch_array($result)) {
 }
 
 // Edit config.php and put FALSE to that next variable if you don't want to sort the zones
-if ($SortZoneLevelList==TRUE) {
+if ($sort_zone_level_list==TRUE) {
   for ($i=0; $i<$cpt; $i++) {
     if ($zones[$i]["npcs"]>0) { // populated
       $zones[$i]["val"]=0; $nb=0;
@@ -94,7 +94,7 @@ print "<table border=1>";
 print "<tr class='menuh'><th>Name</th>
        <th class=tab_title>Short name</th>";
 $LevelMax = 0;
-for ($i = 0; $i <= ($ServerMaxNPCLevel / 5); $i++)
+for ($i = 0; $i <= ($server_max_npc_level / 5); $i++)
 {
 	$LevelMax += 5;
 	$LevelMin = $LevelMax - 4;
@@ -110,20 +110,20 @@ for ($i=0; $i<=$cpt; $i++) {
       print "<tr>
        <td class=tab_title>Name</td>
        <td class=tab_title>Short name</td>";
-      if ($SortZoneLevelList==TRUE) { print "<td class=tab_title>Avg Lvl</td>"; }
+      if ($sort_zone_level_list==TRUE) { print "<td class=tab_title>Avg Lvl</td>"; }
       foreach ($levels AS $key2=>$val2) { print "<td class=tab_title>$val2</td>"; }
       print "</tr>";
     }
     print "<tr>
            <td><a href=?a=zone&name=".$zones[$i]["shortname"].">".$zones[$i]["longname"]."</a></td>
            <td>".$zones[$i]["shortname"]."</td>";
-    if ($SortZoneLevelList==TRUE) {
+    if ($sort_zone_level_list==TRUE) {
       print "<td align=center>".round($zones[$i]["val"])."</td>";           
     }
     foreach ($levels AS $lkey=>$lval) { 
       print "<td align=center>";
       if ($zones[$i][$lkey]>$lowlimit) {
-        if ($ShowNPCNumberInZoneLevelList==TRUE) { 
+        if ($show_npc_number_in_zone_level_list==TRUE) {
           print $zones[$i][$lkey]; 
         } else { 
           print "x"; 

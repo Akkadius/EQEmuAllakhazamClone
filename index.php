@@ -37,7 +37,7 @@
 		print "</td></tr></table>";
 	}
 
-	if ($DiscoveredItemsOnly==TRUE){
+	if ($discovered_items_only==TRUE){
 		$Title="Recently Discovered Items";
 		print "<table border='0' width='0%'><tr valign='top'><td class='header_cell'>";
 		print "<b>$Title</b>";
@@ -51,7 +51,7 @@
 					$tbdiscovereditems.discovered_date
 					FROM $tbitems, $tbdiscovereditems
 					WHERE $tbitems.id = $tbdiscovereditems.item_id
-					AND $tbdiscovereditems.account_status < $DiscoveredItemsMaxStatus";
+					AND $tbdiscovereditems.account_status < $discovered_items_max_status";
 
 		// Limits added for pagination
 		$query.=" ORDER BY $tbdiscovereditems.discovered_date DESC LIMIT $start, $MaxResultsPerPage";

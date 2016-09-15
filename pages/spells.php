@@ -74,7 +74,7 @@
 			<tr><td>Level:</td><td><select name="level">
 			<option value="">-----</option>';
 		
-	for($i=1; $i <= $ServerMaxLevel; $i++)
+	for($i=1; $i <= $server_max_level; $i++)
 	{
 		echo '<option value="' . $i . '"' . ($level == $i ? ' selected="1"' : '') . '>' . $i . '</option>';
 	}
@@ -113,11 +113,11 @@
 		if ($type)
 		{
 			$sql .= ' ' . $tbspells .'.classes' . $type . " " . $ClassOper .  " " . $level . ' 
-					AND ' . $tbspells .'.classes' . $type . ' <= '. $ServerMaxLevel;
+					AND ' . $tbspells .'.classes' . $type . ' <= '. $server_max_level;
 					$sv = 'AND';
 		}
 		$sql .= ' ' . $sv . ' ' . $tbspells .'.name LIKE \'%' . addslashes($namestring) . '%\'';
-		if ($UseSpellGlobals==TRUE)
+		if ($use_spell_globals==TRUE)
 		{
 			$sql .= ' AND ISNULL((SELECT ' . $tbspellglobals . '.spellid FROM ' . $tbspellglobals . ' 
 				WHERE ' . $tbspellglobals . '.spellid = ' . $tbspells .'.id))';
@@ -129,7 +129,7 @@
 		}
 		else
 		{
-			$sql .= ' ORDER BY ' . $tbspells . '.name LIMIT ' . $MaxItemsReturned;
+			$sql .= ' ORDER BY ' . $tbspells . '.name LIMIT ' . $max_items_returned;
 		}
 			
 		$result = mysql_query($sql); if (!$result) {die('Invalid query: ' . mysql_error());}

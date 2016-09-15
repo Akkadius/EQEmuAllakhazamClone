@@ -4,7 +4,7 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
 $mode= (isset($_GET['mode']) ? addslashes($_GET["mode"]) : 'npcs');
 
-if ($DisplayNamedNPCsInfo==FALSE)
+if ($display_named_npcs_info==FALSE)
 {
 	header("Location: index.php");
 	exit();
@@ -132,7 +132,7 @@ if (isset($submitDetail)) {
     }
     
     
-    if (($mymob["loottable_id"]>0) AND ((!in_array($mymob["class"],$dbmerchants)) OR ($MerchantsDontDropStuff==FALSE))) {
+    if (($mymob["loottable_id"]>0) AND ((!in_array($mymob["class"],$dbmerchants)) OR ($merchants_dont_drop_stuff==FALSE))) {
       $query="SELECT $tbitems.id,$tbitems.Name,$tbitems.itemtype,
                      $tblootdropentries.chance,$tbloottableentries.probability,
                      $tbloottableentries.lootdrop_id,$tbloottableentries.multiplier
@@ -167,8 +167,8 @@ if ($mode=="npcs") {
           AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
           AND $tbspawnentry.npcID=$tbnpctypes.id
           AND $tbspawngroup.id=$tbspawnentry.spawngroupID";
-  if ($HideInvisibleMen==TRUE) { $query.=" AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240"; }          
-  if ($GroupNpcsByName==TRUE) { $query.=" GROUP BY $tbnpctypes.name"; }
+  if ($hide_invisible_men==TRUE) { $query.=" AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240"; }
+  if ($group_npcs_by_name==TRUE) { $query.=" GROUP BY $tbnpctypes.name"; }
   else { $query.=" GROUP BY $tbnpctypes.id"; }
   $query.=" ORDER BY $order";
   $result=mysql_query($query) or message_die('zone.php','MYSQL_QUERY',$query,mysql_error());
@@ -214,7 +214,7 @@ if (file_exists($maps_dir.$name.".jpg")) {
 }
 print "<li><a href=?a=zone&name=$name&mode=spawngroups>".$zone["long_name"]." Spawn Groups</a>";
 print "<li><a href=?a=zone&name=$name&mode=forage>".$zone["long_name"]." Forageable items</a>";
-if ($AllowQuestsNPC==TRUE) {
+if ($allow_quests_npc==TRUE) {
   print "<li><a href=$root_url"."quests/zones.php?aZone=$name>".$zone["long_name"]." Quest NPCs</a>";
 }
 print "</td></tr></table>";

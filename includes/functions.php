@@ -233,8 +233,8 @@ function getsize($val) {
 }
 
 function getspell($id) {
-	global $tbspells,$tbspellglobals,$UseSpellGlobals;
-	if ($UseSpellGlobals==TRUE)
+	global $tbspells,$tbspellglobals,$use_spell_globals;
+	if ($use_spell_globals==TRUE)
 	{
 		$query="SELECT ".$tbspells.".* FROM ".$tbspells." WHERE ".$tbspells.".id=".$id." 
 			AND ISNULL((SELECT ".$tbspellglobals.".spellid FROM ".$tbspellglobals." 

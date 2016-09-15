@@ -11,7 +11,7 @@ $id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 if ($id != "" && is_numeric($id)) {
-    if ($DiscoveredItemsOnly == TRUE) {
+    if ($discovered_items_only == TRUE) {
         $Query = "SELECT * FROM $tbitems, discovered_items WHERE $tbitems.id='" . $id . "' AND discovered_items.item_id=$tbitems.id";
     } else {
         $Query = "SELECT * FROM $tbitems WHERE id='" . $id . "'";
@@ -24,7 +24,7 @@ if ($id != "" && is_numeric($id)) {
     $ItemRow = mysql_fetch_array($QueryResult);
     $name = $ItemRow["name"];
 } elseif ($name != "") {
-    if ($DiscoveredItemsOnly == TRUE) {
+    if ($discovered_items_only == TRUE) {
         $Query = "SELECT * FROM $tbitems, discovered_items WHERE $tbitems.name like '$name' AND discovered_items.item_id=$tbitems.id";
     } else {
         $Query = "SELECT * FROM $tbitems WHERE name like '$name'";
@@ -84,7 +84,7 @@ print BuildItemStats($item, 0);
 print "<table style='width:100%'>";
 
 // Discovered by
-if ($DiscoveredItemsOnly == TRUE) {
+if ($discovered_items_only == TRUE) {
     $CharName = GetFieldByQuery("char_name", "SELECT char_name  FROM $tbdiscovereditems WHERE item_id=$id");
     $DiscoveredDate = GetFieldByQuery("discovered_date", "SELECT discovered_date  FROM $tbdiscovereditems WHERE item_id=$id");
     if ($charbrowser_url) {
@@ -157,7 +157,7 @@ if (mysql_num_rows($result) > 0) {
 }
 print $trade_skill_return;
 
-if ($AllowQuestsNPC == TRUE) {
+if ($allow_quests_npc == TRUE) {
     // npcs that use that give that item as reward
     $query = "SELECT * FROM $tbquestitems WHERE item_id=$id AND rewarded>0";
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
@@ -192,7 +192,7 @@ print "<table width='0%'>\n";
 
 $Separator = "";
 
-if ($ItemFoundInfo == TRUE) {
+if ($item_found_info == TRUE) {
     // Check with a quick query before trying the long one
     $IsDropped = GetFieldByQuery("item_id", "SELECT item_id FROM $tblootdropentries WHERE item_id=$id LIMIT 1");
 
@@ -208,10 +208,10 @@ if ($ItemFoundInfo == TRUE) {
 					AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
 					AND $tblootdropentries.item_id=$id
 					AND $tbzones.short_name=$tbspawn2.zone";
-        if ($MerchantsDontDropStuff == TRUE) {
+        if ($merchants_dont_drop_stuff == TRUE) {
             $query .= " AND $tbnpctypes.merchant_id=0";
         }
-        foreach ($IgnoreZones AS $zid) {
+        foreach ($ignore_zones AS $zid) {
             $query .= " AND $tbzones.short_name!='$zid'";
         }
         $query .= " GROUP BY $tbspawnentry.npcID ORDER BY $tbzones.long_name ASC";
@@ -234,7 +234,7 @@ if ($ItemFoundInfo == TRUE) {
                     $CurrentZone = $row["zone"];
                 }
                 $DroppedList .= "<li><a href='?a=npc&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a>";
-                if ($ItemAddChanceToDrop) {
+                if ($item_add_chance_to_drop) {
                     $DroppedList .= " (" . ($row["chance"] * $row["probability"] / 100) . "% x " . $row["multiplier"] . ")";
                 }
                 $DroppedList .= "</li>\n";

@@ -6,7 +6,7 @@ require_once($includes_dir.'functions.php');
 
 $id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
 
-if (!is_numeric($id) || $DisplaySpawnGroupInfo==FALSE)
+if (!is_numeric($id) || $display_spawn_group_info==FALSE)
 {
 	header("Location: index.php");
 	exit();
@@ -43,8 +43,8 @@ if (mysql_num_rows($result)>0) {
   }
 }
 print "</td><td width=50% nowrap>";
-print "<b>NPCs spawning around that spawngroup : </b><br>(Max range : $SpawngroupAroundRange)<ul>";
-$myrange=$SpawngroupAroundRange*$SpawngroupAroundRange; // precalculate, saves some mysql time
+print "<b>NPCs spawning around that spawngroup : </b><br>(Max range : $spawngroup_around_range)<ul>";
+$myrange=$spawngroup_around_range*$spawngroup_around_range; // precalculate, saves some mysql time
 $query="SELECT $tbspawnentry.chance,$tbspawn2.x AS x, $tbspawn2.y AS y, $tbspawn2.z AS z,
                $tbnpctypes.name,$tbnpctypes.id,
                $tbspawngroup.id AS sgid,$tbspawngroup.name AS sgname

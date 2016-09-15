@@ -55,9 +55,9 @@
 			INNER JOIN $tbpets ON $tbpets.type = $tbspells.teleport_zone
 			INNER JOIN $tbnpctypes ON $tbnpctypes.name = $tbspells.teleport_zone
 			WHERE $tbspells.classes". $class ." > 0 
-			AND $tbspells.classes". $class ." < " . $ServerMaxLevel;
+			AND $tbspells.classes". $class ." < " . $server_max_level;
 			
-		if ($UseSpellGlobals==TRUE)
+		if ($use_spell_globals==TRUE)
 		{
 			$Query .= " AND ISNULL((SELECT spell_globals.spellid FROM spell_globals WHERE spell_globals.spellid = $tbspells.`id`))";
 		}

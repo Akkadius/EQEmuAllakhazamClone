@@ -45,7 +45,7 @@
 		exit();
 	}
 
-	if ($UseCustomZoneList==TRUE)
+	if ($use_custom_zone_list==TRUE)
 	{
 		$query="SELECT $tbzones.note
 					FROM $tbzones,$tbspawnentry,$tbspawn2
@@ -67,7 +67,7 @@
 		}
 	}
 
-	if ((ReadableNpcName($npc["name"])) == '' || ($npc["trackable"] == 0 && $TrackableNPCsOnly==TRUE))
+	if ((ReadableNpcName($npc["name"])) == '' || ($npc["trackable"] == 0 && $trackable_npcs_only==TRUE))
 	{
 		header("Location: npcs.php");
 		exit();
@@ -120,12 +120,12 @@
 
 	print "</td></tr>";
 
-	if ($DisplayNPCStats=="TRUE")
+	if ($display_npc_stats=="TRUE")
 	{
 		print "<tr><td><b>Health points : </b></td><td>".$npc["hp"]."</td></tr>";
 		print "<tr><td><b>Damage : </b></td><td>".$npc["mindmg"]." to ".$npc["maxdmg"]."</td></tr>";
 	}
-	if ($ShowNpcsAttackSpeed==TRUE)
+	if ($show_npcs_attack_speed==TRUE)
 	{
 		print "<tr><td><b>Attack speed : </b></td><td>";
 		if ($npc["attack_speed"]==0)
@@ -138,7 +138,7 @@
 		}
 		//print "</td></tr>";
 	}
-	if ($ShowNpcsAverageDamages==TRUE)
+	if ($show_npcs_average_damages==TRUE)
 	{
 		print "<tr><td><b>Average melee damages : </b></td><td>";
 		$avghit=($npc["maxdmg"]+$npc["mindmg"])/2; // average hit
@@ -182,7 +182,7 @@
 		if ($npc["attack_speed"]!=0) { $dam=$dam*(100+$npc["attack_speed"])/100; } // dam per hit
 		print round($dam)." per round</td></tr>";
 	}
-	if ($DisplayNPCStats=="TRUE")
+	if ($display_npc_stats=="TRUE")
 	{
 		if ($npc["npcspecialattks"]!='')
 		{
@@ -232,13 +232,13 @@
 		}
 	}
 
-	if (($npc["loottable_id"]>0) AND ((!in_array($npc["class"],$dbmerchants)) OR ($MerchantsDontDropStuff==FALSE)))
+	if (($npc["loottable_id"]>0) AND ((!in_array($npc["class"],$dbmerchants)) OR ($merchants_dont_drop_stuff==FALSE)))
 	{
 		$query="SELECT $tbitems.id,$tbitems.Name,$tbitems.itemtype,
 			$tblootdropentries.chance,$tbloottableentries.probability,
 			$tbloottableentries.lootdrop_id,$tbloottableentries.multiplier";
 
-		if ($DiscoveredItemsOnly==TRUE)
+		if ($discovered_items_only==TRUE)
 		{
 			$query.=" FROM $tbitems,$tbloottableentries,$tblootdropentries,$tbdiscovereditems";
 		}
@@ -251,14 +251,14 @@
 			AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
 			AND $tblootdropentries.item_id=$tbitems.id";
 
-		if ($DiscoveredItemsOnly==TRUE)
+		if ($discovered_items_only==TRUE)
 		{
 			$query.=" AND $tbdiscovereditems.item_id=$tbitems.id";
 		}
 		$result=mysql_query($query) or message_die('npc.php','MYSQL_QUERY',$query,mysql_error());
 		if (mysql_num_rows($result)>0)
 		{
-			if ($ShowNpcDropChances==TRUE)
+			if ($show_npc_drop_chances==TRUE)
 			{
 				print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>When killed, this NPC drops : </b><br/>";
 			}
@@ -269,7 +269,7 @@
 			$ldid=0;
 			while ($row=mysql_fetch_array($result))
 			{
-				if ($ShowNpcDropChances==TRUE)
+				if ($show_npc_drop_chances==TRUE)
 				{
 					if ($ldid!=$row["lootdrop_id"])
 					{
@@ -279,7 +279,7 @@
 				}
 				print "<li><a href='?a=item&id=".$row["id"]."'>".$row["Name"]."</a>";
 				print " (".$dbitypes[$row["itemtype"]].")";
-				if ($ShowNpcDropChances==TRUE)
+				if ($show_npc_drop_chances==TRUE)
 				{ 
 					print " - ".$row["chance"]."%";
 					print " (".($row["chance"]*$row["probability"]/100)."% global)";
@@ -355,7 +355,7 @@
 				AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
 				AND $tbspawn2.zone=$tbzones.short_name
 				AND $tbspawnentry.spawngroupID=$tbspawngroup.id";
-	foreach ($IgnoreZones AS $zid)
+	foreach ($ignore_zones AS $zid)
 	{
 		$query.=" AND $tbzones.short_name!='$zid'";
 	}          
@@ -371,7 +371,7 @@
 			{
 				print "<p><a href='?a=zone&name=".$row["short_name"]."'>".$row["long_name"]."</a>";
 				$z=$row["short_name"];
-				if ($AllowQuestsNPC==TRUE)
+				if ($allow_quests_npc==TRUE)
 				{
 					if (file_exists("$quests_dir$z/".str_replace("#","",$npc["name"]).".pl"))
 					{
@@ -379,7 +379,7 @@
 					}
 				}
 			}
-			if ($DisplaySpawnGroupInfo==TRUE)
+			if ($display_spawn_group_info==TRUE)
 			{
 				print "<li><a href='spawngroup.php?id=".$row["spawngroupID"]."'>".$row["spawngroup"]."</a> : ".floor($row["y"])." / ".floor($row["x"])." / ".floor($row["z"]);
 				print "<br/>Spawns every ".translate_time($row["respawntime"]);

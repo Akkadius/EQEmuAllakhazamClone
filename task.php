@@ -15,7 +15,7 @@ require_once($includes_dir.'mysql.php');
 $id   = (isset($_GET[  'id']) ? $_GET[  'id'] : '');
 $name = (isset($_GET['name']) ? $_GET['name'] : '');
 
-if($id != "" && is_numeric($id)&& $DisplayTaskInfo==TRUE)
+if($id != "" && is_numeric($id)&& $display_task_info==TRUE)
 {
 	$Query = "SELECT * FROM $tbtasks WHERE id='".$id."'";
 	$QueryResult = mysql_query($Query) or message_die('task.php','MYSQL_QUERY',$Query,mysql_error());
@@ -48,7 +48,7 @@ print "<p><table border='0' width='60%'>";
 print "<tr><td><b>Task Title : </b></td><td width='100%'>".$task["title"]."</td></tr>";
 print "<tr><td><b>Task ID : </b></td><td width='100%'>".$task["id"]."</td></tr>";
 print "<tr><td><b>Min Level : </b></td><td width='100%'>".$task["minlevel"]."</td></tr>";
-if ($task["maxlevel"] <= $ServerMaxLevel && $task["maxlevel"] != 0)
+if ($task["maxlevel"] <= $server_max_level && $task["maxlevel"] != 0)
 {
 	print "<tr><td><b>Max Level : </b></td><td width='100%'>".$task["maxlevel"]."</td></tr>";
 }
@@ -98,7 +98,7 @@ else
 	print "<tr><td><b>Task Description : </b></td><td width='50%'><p>".$TaskDesc."</p></td></tr>";
 }
 
-if ($DisplayTaskActivities==TRUE)
+if ($display_task_activities==TRUE)
 {
 	print "<tr class='myline' height='6'><td colspan='2'></td></tr>\n";
 	print "<tr valign='top'>";

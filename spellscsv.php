@@ -12,7 +12,7 @@ $imin   = (isset($_GET[  'imin']) ? $_GET[  'imin'] : 0);
 $imax   = (isset($_GET[  'imax']) ? $_GET[  'imax'] : 0);
 
 if ($imin==0 || !is_numeric($imin)) { $imin=1; }
-if ($imax==0 || !is_numeric($imax)) { $imax=$ServerMaxLevel; }
+if ($imax==0 || !is_numeric($imax)) { $imax=$server_max_level; }
 $query="SELECT $tbspells.*
         FROM $tbspells
         WHERE 1=1";
@@ -43,7 +43,7 @@ if (mysql_num_rows($result)>0) {
     }
     print $row["name"];
     print ",".$row["mana"];
-    $duration=CalcBuffDuration($ServerMaxLevel,$row["buffformula"],$row["buffduration"]);
+    $duration=CalcBuffDuration($server_max_level,$row["buffformula"],$row["buffduration"]);
     if ($duration==0) { print ",Instant"; } 
     else { print ",".translate_time($duration*6)." ($duration ticks)"; }
     print ",".($row["casttime"]/1000)." sec";

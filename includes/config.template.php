@@ -44,49 +44,50 @@ if (isset($_COOKIE["Theme"])) {
     $CssStyle = $DefaultCSS;
 }
 
-// OPTIONS
-$ServerMaxLevel = 80; // Max Level for Characters on the Server
-$ServerMaxNPCLevel = 95; // Max Level for any NPCs on the Server
-$MaxItemsReturned = 50; // max number of items returned by search engines (0=all)
-$MaxNpcsReturned = 50; // max number of npcs returned by search engines (0=all)
-$SpawngroupAroundRange = 100; // range of surrounding spawngroups, spawngroups page
-$EnableNews = TRUE; // If TRUE, it enables the use of the News (requires SQL Source includes/sql/news.sql)
-$ShowNpcDropChances = TRUE; // if TRUE, chances of droping of each item will be shown when browsing npcs
-$MerchantsDontDropStuff = TRUE; // if TRUE, you won't see merchants drops, damned PEQ word builders ! :)
-$ShowNPCNumberInZoneLevelList = TRUE; // choose between number and x for npcs in zone levels list
-$SortZoneLevelList = TRUE; // sort or not the zones in zone levels list
-$AllowQuestsNPC = FALSE; // quests for npcs are available from NPC's page
-$AlwaysBuildQuest = FALSE; // rebuilds the quest each time a visitor browse it, put false if you don't modify them anymore
-$GroupNpcsByName = TRUE; // groups the NPCs by their name in zone npcs lists
-$HideInvisibleMen = TRUE; // hide the invisible mens in bestiaries
-$ItemAddChanceToDrop = TRUE; // shows what are the chances to see the item droped by the npcs
-$ShowNpcsAttackSpeed = TRUE; // shows informations about NPCs' attack speed
-$ShowNpcsAverageDamages = TRUE; // How much NPC does as melee damages, in average, this allows to comparate mobs together
-$DisplayNamedNPCsInfo = TRUE; // If TRUE, will display a link to show named NPCs and export to CVS for maps
-$DisplayNPCStats = TRUE; // If TRUE, will display HP, Damage, Special Attacks, etc for NPCs
-$TrackableNPCsOnly = TRUE; // If TRUE, will only display NPCs that are set to be trackable in search results
-$DisplaySpawnGroupInfo = TRUE; // If TRUE, will display the spawngroup link from the zone pages
-$DisplayTaskInfo = TRUE; // If TRUE, will allow search results to show tasks and rewards
-$DisplayTaskActivities = TRUE; // If TRUE, will display all task activities
-$AllowCSVOutputOptions = FALSE; // If TRUE, will display CSV output button for searches that allow them
-$ItemFoundInfo = TRUE; // If TRUE, it displays where items can drop or be purchased (longer item page load times)
-$MaxRecentlyDiscoveredItems = 25; // Max number of recently discovered items to display
-$DiscoveredItemsMaxStatus = 20; // Max account status for a discovered item entry
-$DiscoveredItemsOnly = FALSE; // If TRUE, only Discovered Items will be displayed
-$UseSpellGlobals = FALSE; // If TRUE, any spells in the spell_globals table will not be displayed
-$UseZAMSearch = TRUE; // If TRUE, will display a ZAM search bar on the left with the sidemenu
+/* Options */
 
-$UseCustomZoneList = FALSE; // If TRUE, will display only the custom zone list in the menu, otherwise it displays all but custom.
-// For custom zone lists, set the file_name field of the zone table to a number (in the order you want them displayed)
-// Then, set the notes field in the zone table to the note you want for the zone such as "Raid Tier1"
-// You can block any zones from the custom zone list by adding "disabled" anywhere in the notes field
+/* NPC */
+$allow_csv_output_options = FALSE; // If TRUE, will display CSV output button for searches that allow them
+$allow_quests_npc = FALSE; // quests for npcs are available from NPC's page
+$display_named_npcs_info = TRUE; // If TRUE, will display a link to show named NPCs and export to CVS for maps
+$display_npc_stats = TRUE; // If TRUE, will display HP, Damage, Special Attacks, etc for NPCs
+$display_spawn_group_info = TRUE; // If TRUE, will display the spawngroup link from the zone pages
+$group_npcs_by_name = TRUE; // groups the NPCs by their name in zone npcs lists
+$max_npcs_returned = 50; // max number of npcs returned by search engines (0=all)
+$server_max_npc_level = 95; // Max Level for any NPCs on the Server
+$show_npc_drop_chances = TRUE; // if TRUE, chances of droping of each item will be shown when browsing npcs
+$show_npc_number_in_zone_level_list = TRUE; // choose between number and x for npcs in zone levels list
+$show_npcs_attack_speed = TRUE; // shows informations about NPCs' attack speed
+$show_npcs_average_damages = TRUE; // How much NPC does as melee damages, in average, this allows to comparate mobs together
+$spawngroup_around_range = 100; // range of surrounding spawngroups, spawngroups page
+$trackable_npcs_only = TRUE; // If TRUE, will only display NPCs that are set to be trackable in search results
+$hide_invisible_men = TRUE; // hide the invisible mens in bestiaries
+
+/* Items */
+$item_add_chance_to_drop = TRUE; // shows what are the chances to see the item droped by the npcs
+$item_found_info = TRUE; // If TRUE, it displays where items can drop or be purchased (longer item page load times)
+$discovered_items_max_status = 20; // Max account status for a discovered item entry
+$discovered_items_only = FALSE; // If TRUE, only Discovered Items will be displayed
+$max_items_returned = 50; // max number of items returned by search engines (0=all)
+
+/* Quest */
+$always_build_quest = FALSE; // rebuilds the quest each time a visitor browse it, put false if you don't modify them anymore
+
+/* Task */
+$display_task_activities = TRUE; // If TRUE, will display all task activities
+$display_task_info = TRUE; // If TRUE, will allow search results to show tasks and rewards
+
+/* Misc */
+$max_recently_discovered_items = 25; // Max number of recently discovered items to display
+$merchants_dont_drop_stuff = TRUE; // if TRUE, you won't see merchants drops, damned PEQ world builders ! :)
+$server_max_level = 80; // Max Level for Characters on the Server
+$sort_zone_level_list = TRUE; // sort or not the zones in zone levels list
+
+$use_spell_globals = FALSE; // If TRUE, any spells in the spell_globals table will not be displayed
+$use_zam_search = TRUE; // If TRUE, will display a ZAM search bar on the left with the sidemenu
 
 
-$ShowHeader = TRUE; // Shows the page header for each page
-$UseWikiImages = FALSE; // Use Wiki added images for NPCs and other (not in use yet)
-$IgnoreZones = array("load", "loading", "load2", "nektropos", "arttest", "apprentice", "tutorial");
-$ShowAccount = FALSE; // (not in use yet)
-$ShowCharacters = FALSE; // (not in use yet)
+$ignore_zones = array("load", "loading", "load2", "nektropos", "arttest", "apprentice", "tutorial");
 
 $db = mysql_connect($dbhost, $dbuser, $dbpasswd) or die("Impossible to connect to $dbhost : " . mysql_error());
 mysql_select_db($dbname, $db) or die("Impossible to select $dbname : " . mysql_error());

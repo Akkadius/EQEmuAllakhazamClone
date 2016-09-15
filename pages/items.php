@@ -40,7 +40,7 @@
 	{
 		$Query  = "SELECT $tbitems.* FROM ($tbitems";
 				
-		if ($DiscoveredItemsOnly==TRUE)
+		if ($discovered_items_only==TRUE)
 		{
 			$Query .= ",discovered_items";
 		}
@@ -112,7 +112,7 @@
 			$Query .= ",$tbmerchantlist $s $tbmerchantlist.item=$tbitems.id"; 
 			$s="AND";
 		}
-		if ($DiscoveredItemsOnly==TRUE)
+		if ($discovered_items_only==TRUE)
 		{
 			$Query .= " $s discovered_items.item_id=$tbitems.id"; 
 			$s="AND"; 
@@ -135,7 +135,7 @@
 		if($iminlevel > 0) { $Query.=" $s ($tbitems.reqlevel>=$iminlevel) "; $s="AND"; }
 		if($ireqlevel > 0) { $Query.=" $s ($tbitems.reqlevel<=$ireqlevel) "; $s="AND"; }
 		if($inodrop)       { $Query.=" $s ($tbitems.nodrop=1)";              $s="AND"; }
-		$Query.=" GROUP BY $tbitems.id ORDER BY $tbitems.Name LIMIT ".(LimitToUse($MaxItemsReturned) + 1);
+		$Query.=" GROUP BY $tbitems.id ORDER BY $tbitems.Name LIMIT ".(LimitToUse($max_items_returned) + 1);
 		$QueryResult = mysql_query($Query) or message_die('items.php','MYSQL_QUERY',$Query,mysql_error());
 
 		if(mysql_num_rows($QueryResult) == 1)
@@ -240,8 +240,8 @@
 	echo "<tr><td><b>Item Type : </b></td><td>"; SelectIType("itype",$itype); echo "</td></tr>\n";
 	echo "<tr><td><b>Augmentation Type : </b></td><td>"; SelectAugSlot("iaugslot",$iaugslot); echo "</td></tr>\n";
 	echo "<tr><td><b>With Effect : </b></td><td><input type='text' value='".$ieffect."' size='30' name='ieffect'/></td></tr>\n";
-	echo "<tr><td><b>Min Required Level : </b></td><td>\n"; SelectLevel("iminlevel",$ServerMaxLevel,$iminlevel); echo "</td></tr>\n";
-	echo "<tr><td><b>Max Required Level : </b></td><td>\n"; SelectLevel("ireqlevel",$ServerMaxLevel,$ireqlevel); echo "</td></tr>\n";
+	echo "<tr><td><b>Min Required Level : </b></td><td>\n"; SelectLevel("iminlevel",$server_max_level,$iminlevel); echo "</td></tr>\n";
+	echo "<tr><td><b>Max Required Level : </b></td><td>\n"; SelectLevel("ireqlevel",$server_max_level,$ireqlevel); echo "</td></tr>\n";
 	echo "<tr><td><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'".($inodrop?" checked='1'":"")."/></td></tr>\n";
 	echo "<tr>\n";
 	echo "  <td><b>Item availability : </b></td>\n";
@@ -253,7 +253,7 @@
 	echo "    </select>\n";
 	echo "  </td>\n";
 	echo "</tr>\n";
-	echo "<tr><td><b>Max Level : </b></td><td>"; SelectLevel("iavaillevel",$ServerMaxLevel,$iavaillevel); echo "</td></tr>\n";
+	echo "<tr><td><b>Max Level : </b></td><td>"; SelectLevel("iavaillevel",$server_max_level,$iavaillevel); echo "</td></tr>\n";
 	echo "<tr><td><b>Deity : </b></td><td>"; SelectDeity("ideity",$ideity); echo "</td></tr>\n";
 	echo "</td></tr></table>";
 	echo "<tr align='center'><td='1' colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
@@ -269,9 +269,9 @@
 
 		$num_rows = mysql_num_rows($QueryResult);
 		$total_row_count = $num_rows;
-		if($num_rows > LimitToUse($MaxItemsReturned))
+		if($num_rows > LimitToUse($max_items_returned))
 		{
-			$num_rows = LimitToUse($MaxItemsReturned);
+			$num_rows = LimitToUse($max_items_returned);
 		}
 		echo "";
 		if($num_rows == 0)

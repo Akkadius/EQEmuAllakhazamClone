@@ -22,9 +22,9 @@
 	echo '<input type="hidden" name="a" value="advanced_npcs">';
 	print "<tr><td><b>Name : </b></td><td><input type=text value=\"$iname\" size=30 name=iname ></td></tr>";
 	print "<tr><td><b>Level : </b></td><td>Between ";
-	print SelectLevel("iminlevel",$ServerMaxNPCLevel,$iminlevel);
+	print SelectLevel("iminlevel",$server_max_npc_level,$iminlevel);
 	print " and ";
-	print SelectLevel("imaxlevel",$ServerMaxNPCLevel,$imaxlevel);
+	print SelectLevel("imaxlevel",$server_max_npc_level,$imaxlevel);
 	print "</tr>";
 	print "<tr><td><b>Race : </b></td><td>";
 	print SelectMobRace("irace",$irace);
@@ -51,14 +51,14 @@
 			$iname=str_replace('`','%',str_replace(' ','%',addslashes($iname)));
 			$query.=" AND $tbnpctypes.name LIKE '%$iname%'";
 		}
-		if ($HideInvisibleMen==TRUE) { $query.=" AND $tbnpctypes.race!=127"; }
+		if ($hide_invisible_men==TRUE) { $query.=" AND $tbnpctypes.race!=127"; }
 		$query.=" ORDER BY $tbnpctypes.name";
 		$result=mysql_query($query) or message_die('npcs.php','MYSQL_QUERY',$query,mysql_error());
 		$n=mysql_num_rows($result);
-		if ($n>$MaxNpcsReturned)
+		if ($n>$max_npcs_returned)
 		{
-			print "$n ncps found, showing the $MaxNpcsReturned first ones...";
-			$query.=" LIMIT $MaxNpcsReturned";
+			print "$n ncps found, showing the $max_npcs_returned first ones...";
+			$query.=" LIMIT $max_npcs_returned";
 			$result=mysql_query($query) or message_die('npcs.php','MYSQL_QUERY',$query,mysql_error());
 		}
 		if (mysql_num_rows($result)>0)
