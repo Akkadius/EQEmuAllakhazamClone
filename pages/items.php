@@ -165,29 +165,28 @@ if ($isearch != "") {
 
 $Title = "Item Search";
 
-
-$print_buffer .= "<table><tr><td style='toggle_btn'></td></tr></table>";
-$print_buffer .= "<table border='0' width='0%' cellpadding='15'>\n";
+$print_buffer .= "<table ><tr><td style='toggle_btn'></td></tr></table>";
+$print_buffer .= "<table class='display_table container_div' border='0' style='width:900px !important;' cellpadding='15'>\n";
 
 $print_buffer .= "<tbody id='myTbody'>";
 // Hide the search fields when results show
 
-$print_buffer .= "<form method='GET' action='" . $PHP_SELF . "'>\n";
+$print_buffer .= "<form method='GET' action='" . $PHP_SELF . "' class='item_search'>\n";
 $print_buffer .= '<input type="hidden" name="a" value="items">';
 // Split into 2 tables side by side
 $print_buffer .= "<tr><td><table border='0' width='0%'>";
-$print_buffer .= "<tr><td><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
-$print_buffer .= "<tr><td><b>Class : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Name</b></td><td><input type='text' value=\"$iname\" style='width:100%' name='iname'/></td></tr>\n";
+$print_buffer .= "<tr><td style='text-align:right'><b>Class</b></td><td>";
 $print_buffer .= SelectIClass("iclass", $iclass);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>Race : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Race</b></td><td>";
 $print_buffer .= SelectRace("irace", $irace);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>Slot : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Slot</b></td><td>";
 $print_buffer .= SelectSlot("islot", $islot);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "<tr>\n";
-$print_buffer .= "  <td><b>Stats : </b></td>\n";
+$print_buffer .= "  <td style='text-align:right'><b>Stats</b></td>\n";
 $print_buffer .= "  <td>";
 $print_buffer .= SelectStats("istat1", $istat1);
 $print_buffer .= "\n";
@@ -201,7 +200,7 @@ $print_buffer .= "    <input type='text' size='4' name='istat1value' value='" . 
 $print_buffer .= "  </td>\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
-$print_buffer .= "  <td><b>Stats : </b></td>\n";
+$print_buffer .= "  <td style='text-align:right'><b>Stats</b></td>\n";
 $print_buffer .= "  <td>";
 $print_buffer .= SelectStats("istat2", $istat2);
 $print_buffer .= "\n";
@@ -215,7 +214,7 @@ $print_buffer .= "    <input type='text' size='4' name='istat2value' value='" . 
 $print_buffer .= "  </td>\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
-$print_buffer .= "  <td><b>Resists : </b></td>\n";
+$print_buffer .= "  <td style='text-align:right'><b>Resists</b></td>\n";
 $print_buffer .= "  <td>";
 $print_buffer .= SelectResists("iresists", $iresists);
 $print_buffer .= "\n";
@@ -229,7 +228,7 @@ $print_buffer .= "    <input type='text' size='4' name='iresistsvalue' value='" 
 $print_buffer .= "  </td>\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
-$print_buffer .= "  <td><b>Heroic Stats : </b></td>\n";
+$print_buffer .= "  <td style='text-align:right'><b>Heroic Stats</b></td>\n";
 $print_buffer .= "  <td>";
 $print_buffer .= SelectHeroicStats("iheroics", $iheroics);
 $print_buffer .= "\n";
@@ -243,7 +242,7 @@ $print_buffer .= "    <input type='text' size='4' name='iheroicsvalue' value='" 
 $print_buffer .= "  </td>\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr>\n";
-$print_buffer .= "  <td><b>Modifiers : </b></td>\n";
+$print_buffer .= "  <td style='text-align:right'><b>Modifiers</b></td>\n";
 $print_buffer .= "  <td>";
 $print_buffer .= SelectModifiers("imod", $imod);
 $print_buffer .= "\n";
@@ -259,41 +258,41 @@ $print_buffer .= "</tr>\n";
 $print_buffer .= "</td></tr></table></td><td>";
 // Left Table End and Right Table Start
 $print_buffer .= "<table border='0' width='0%'>";
-$print_buffer .= "<tr><td><b>Item Type : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Item Type</b></td><td>";
 $print_buffer .= SelectIType("itype", $itype);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>Augmentation Type : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Augmentation Type</b></td><td>";
 $print_buffer .= SelectAugSlot("iaugslot", $iaugslot);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>With Effect : </b></td><td><input type='text' value='" . $ieffect . "' size='30' name='ieffect'/></td></tr>\n";
-$print_buffer .= "<tr><td><b>Min Required Level : </b></td><td>\n";
+$print_buffer .= "<tr><td style='text-align:right'><b>With Effect</b></td><td><input type='text' value='" . $ieffect . "' size='30' name='ieffect'/></td></tr>\n";
+$print_buffer .= "<tr><td style='text-align:right'><b>Min Required Level</b></td><td>\n";
 $print_buffer .= SelectLevel("iminlevel", $server_max_level, $iminlevel);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>Max Required Level : </b></td><td>\n";
+$print_buffer .= "<tr><td style='text-align:right'><b>Max Required Level</b></td><td>\n";
 $print_buffer .= SelectLevel("ireqlevel", $server_max_level, $ireqlevel);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'" . ($inodrop ? " checked='1'" : "") . "/></td></tr>\n";
+$print_buffer .= "<tr><td style='text-align:right'><b>Tradeable Items Only</b></td><td><input type='checkbox' name='inodrop'" . ($inodrop ? " checked='1'" : "") . "/></td></tr>\n";
 $print_buffer .= "<tr>\n";
-$print_buffer .= "  <td><b>Item availability : </b></td>\n";
+$print_buffer .= "  <td style='text-align:right'><b>Item availability</b></td>\n";
 $print_buffer .= "  <td>\n";
-$print_buffer .= "    <select name='iavailability'>\n";
+$print_buffer .= "    <select name='iavailability' style='width:100%'>\n";
 $print_buffer .= "      <option value='0' " . ($iavailability == 0 ? " selected='1'" : "") . ">-</option>\n";
 $print_buffer .= "      <option value='1' " . ($iavailability == 1 ? " selected='1'" : "") . ">Mob Dropped</option>\n";
 $print_buffer .= "      <option value='2' " . ($iavailability == 2 ? " selected='1'" : "") . ">Merchant Sold</option>\n";
 $print_buffer .= "    </select>\n";
 $print_buffer .= "  </td>\n";
 $print_buffer .= "</tr>\n";
-$print_buffer .= "<tr><td><b>Max Level : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Max Level</b></td><td>";
 $print_buffer .= SelectLevel("iavaillevel", $server_max_level, $iavaillevel);
 $print_buffer .= "</td></tr>\n";
-$print_buffer .= "<tr><td><b>Deity : </b></td><td>";
+$print_buffer .= "<tr><td style='text-align:right'><b>Deity</b></td><td>";
 $print_buffer .= SelectDeity("ideity", $ideity);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "</td></tr></table>";
-$print_buffer .= "<tr align='center'><td='1' colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
+$print_buffer .= "<tr><td colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
 $print_buffer .= "</form>\n";
 $print_buffer .= "</tbody>";
-$print_buffer .= "</table>\n";
+$print_buffer .= "</table><center>\n";
 
 // Print the query results if any
 if (isset($QueryResult)) {
@@ -313,10 +312,10 @@ if (isset($QueryResult)) {
         if ($total_row_count > $num_rows) {
             $OutOf = " (Searches are limited to 100 Max Results)";
         }
-        $print_buffer .= "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
-        $print_buffer .= "";
+        # $print_buffer .= "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
+        $print_buffer .= "<br>";
 
-        $print_buffer .= "<table border='$Tableborder' cellpadding='5' width='0%'>";
+        $print_buffer .= "<table cellpadding='5' class='display_table container_div' style='width:700px'>";
         $print_buffer .= "<tr>
 					<th class='menuh'>Icon</th>
 					<th class='menuh'>Item Name</th>

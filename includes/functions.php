@@ -281,7 +281,7 @@ function SelectClass($name, $selected)
 function SelectDeity($name, $selected)
 {
     global $dbideities;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value='0'>-</option>\n";
     for ($i = 2; $i <= 65536; $i *= 2) {
         $return_buffer .= "<option value='" . $i . "'";
@@ -297,7 +297,7 @@ function SelectDeity($name, $selected)
 function SelectRace($name, $selected)
 {
     global $dbraces;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value='0'>-</option>\n";
     for ($i = 1; $i < 32768; $i *= 2) {
         $return_buffer .= "<option value='" . $i . "'";
@@ -313,7 +313,7 @@ function SelectRace($name, $selected)
 function SelectMobRace($name, $selected)
 {
     global $dbiracenames;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value='0'>-</option>\n";
     foreach ($dbiracenames as $key => $value) {
         $return_buffer .= "<option value='" . $key . "'";
@@ -329,7 +329,7 @@ function SelectMobRace($name, $selected)
 function SelectIClass($name, $selected)
 {
     global $dbiclasses;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value='0'>-</option>\n";
     for ($i = 1; $i <= 32768; $i *= 2) {
         $return_buffer .= "<option value='" . $i . "'";
@@ -345,7 +345,7 @@ function SelectIClass($name, $selected)
 function SelectIType($name, $selected)
 {
     global $dbitypes;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value='-1'>-</option>\n";
     reset($dbitypes);
     do {
@@ -363,7 +363,7 @@ function SelectIType($name, $selected)
 function SelectSlot($name, $selected)
 {
     global $dbslots;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value='0'>-</option>\n";
     reset($dbslots);
     do {
@@ -381,7 +381,7 @@ function SelectSlot($name, $selected)
 function SelectSpellEffect($name, $selected)
 {
     global $dbspelleffects;
-    $return_buffer = "<SELECT name=\"$name\">";
+    $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
     $return_buffer .= "<option value=-1>-</option>\n";
     reset($dbspelleffects);
     do {
