@@ -19,7 +19,7 @@ $query = "SELECT *
 			FROM $trade_skill_recipe_table
 			WHERE id=$id";
 
-$result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 $recipe = mysql_fetch_array($result);
 
 print "<table  class='display_table container_div'>";
@@ -59,7 +59,7 @@ $query = "
     AND $trade_skill_recipe_entries.iscontainer = 1
 ";
 
-$result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 
 if (mysql_num_rows($result) > 0) {
     print "<tr><td><h2 class='section_header'>Containers</h2>";
@@ -92,7 +92,7 @@ $query = "
     AND $trade_skill_recipe_entries.successcount > 0
 ";
 
-$result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr><td><h2 class='section_header'>Creates</h2><ul>";
     while ($row = mysql_fetch_array($result)) {
@@ -120,7 +120,7 @@ if ($recipe["nofail"] == 0) {
         AND $trade_skill_recipe_entries.failcount > 0
     ";
 
-    $result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr><td><h2 class='section_header'>Failure</h2><ul>";
         while ($row = mysql_fetch_array($result)) {
@@ -149,7 +149,7 @@ $query = "
     AND $trade_skill_recipe_entries.componentcount > 0
 ";
 
-$result = mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr><td><h2 class='section_header'>Required</h2><ul>";
 

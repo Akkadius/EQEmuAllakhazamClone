@@ -145,7 +145,7 @@ if ($isearch != "") {
         $s = "AND";
     }
     $Query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (LimitToUse($max_items_returned) + 1);
-    $QueryResult = mysql_query($Query) or message_die('items.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('items.php', 'MYSQL_QUERY', $Query, mysql_error());
 
     if (mysql_num_rows($QueryResult) == 1) {
         $row = mysql_fetch_array($QueryResult);

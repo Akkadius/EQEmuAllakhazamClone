@@ -27,7 +27,7 @@ if ($isearch != "") {
     }
     $Query .= " ORDER BY $npc_types_table.Name, $npc_types_table.id LIMIT " . (LimitToUse($max_npcs_returned) + 1);
 
-    $QueryResult = mysql_query($Query) or message_die('npcs.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('npcs.php', 'MYSQL_QUERY', $Query, mysql_error());
 
     if (mysql_num_rows($QueryResult) == 1) {
         $row = mysql_fetch_array($QueryResult);

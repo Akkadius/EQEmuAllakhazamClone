@@ -41,7 +41,7 @@ if (is_numeric($iclass) && $iclass > 0) {
 
 header("Content-type: application/vnd.ms-excel");
 header("Content-disposition: attachment; filename=spells.csv");
-$result = mysql_query($query) or message_die('spells.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('spells.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     $content = "";
     $l = 0;

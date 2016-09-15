@@ -16,7 +16,7 @@ $query = "SELECT $spawn_group_table.name AS sgname, $spawn2_table.*,
         WHERE $spawn_group_table.id=$id
           AND $spawn2_table.spawngroupID=$spawn_group_table.id
           AND $spawn2_table.zone=$zones_table.short_name";
-$result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 $spawn = mysql_fetch_array($result);
 $Title = $spawn["sgname"] . " (" . $spawn["zone"] . " : " . floor($spawn["y"]) . "," . floor($spawn["x"]) . "," . floor($spawn["z"]) . ")";
 $x = floor($spawn["x"]);
@@ -35,7 +35,7 @@ $query = "SELECT $spawn_entry_table.chance,$npc_types_table.name,$npc_types_tabl
           AND $spawn_entry_table.npcID=$npc_types_table.id
         ORDER BY $npc_types_table.name ASC
         ";
-$result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 print "<b>NPCs composing that spawngroup :</b>";
 if (mysql_num_rows($result) > 0) {
     while ($row = mysql_fetch_array($result)) {
@@ -58,7 +58,7 @@ $query = "SELECT $spawn_entry_table.chance,$spawn2_table.x AS x, $spawn2_table.y
           AND $spawn_group_table.id!=$id
         ORDER BY sgid ASC, $npc_types_table.name ASC
         ";
-$result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 $sg = 0;
 if (mysql_num_rows($result) > 0) {
     while ($row = mysql_fetch_array($result)) {

@@ -17,7 +17,7 @@ $name = (isset($_GET['name']) ? $_GET['name'] : '');
 
 if ($id != "" && is_numeric($id) && $display_task_info == TRUE) {
     $Query = "SELECT * FROM $tasks_table WHERE id='" . $id . "'";
-    $QueryResult = mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: customzoneslist.php");
         exit();
@@ -88,7 +88,7 @@ if ($display_task_activities == TRUE) {
     print "<tr class='myline' height='6'><td colspan='2'></td></tr>\n";
     print "<tr valign='top'>";
     $Query = "SELECT * FROM $activities_table WHERE taskid='" . $id . "' ORDER BY activityid";
-    $QueryResult = mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
 
     if (mysql_num_rows($QueryResult) > 0) {
         print "<tr><td><b>Task Activities</b></td></tr>";
@@ -230,7 +230,7 @@ if ($display_task_activities == TRUE) {
             // Goal List
             if ($GoalMethod == 1) {
                 $Query2 = "SELECT * FROM goallists WHERE listid='" . $GoalID . "'";
-                $QueryResult2 = mysql_query($Query2) or message_die('task.php', 'MYSQL_QUERY', $Query2, mysql_error());
+                $QueryResult2 = db_mysql_query($Query2) or message_die('task.php', 'MYSQL_QUERY', $Query2, mysql_error());
                 $GoalListString = "";
                 if (mysql_num_rows($QueryResult2) > 0) {
 

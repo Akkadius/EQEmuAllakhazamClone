@@ -24,7 +24,7 @@ echo "<p class=menuh>Factions:<p>";
 $query = "SELECT id,name from $faction_list_table order by name ASC";
 // Limits for pagination
 $query .= " LIMIT $start, $MaxResultsPerPage";
-$result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 $RowClass = "lr";
 
 while ($row = mysql_fetch_array($result)) {

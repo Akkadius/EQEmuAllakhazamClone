@@ -89,4 +89,6 @@ $use_zam_search = TRUE; // If TRUE, will display a ZAM search bar on the left wi
 $db = mysql_connect($dbhost, $dbuser, $dbpasswd) or die("Impossible to connect to $dbhost : " . mysql_error());
 mysql_select_db($dbname, $db) or die("Impossible to select $dbname : " . mysql_error());
 
+$mysql_debugging = true;
+
 ?>

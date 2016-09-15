@@ -47,7 +47,7 @@ if ($id != "" && is_numeric($id)) {
         WHERE
             id = '" . $id . "'
     ";
-    $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: factions.php");
         exit();
@@ -64,7 +64,7 @@ if ($id != "" && is_numeric($id)) {
         WHERE
             name LIKE '$name'
     ";
-    $QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: factions.php?iname=" . $name . "&isearch=true");
         exit();
@@ -131,7 +131,7 @@ $Query = "
     ORDER BY
         $zones_table.long_name ASC
 	";
-$QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
+$QueryResult = db_mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
 PrintNpcsByZone($QueryResult);
 print "                </td>\n";
 
@@ -163,7 +163,7 @@ $Query = "
     ORDER BY
         $zones_table.long_name ASC
 ";
-$QueryResult = mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
+$QueryResult = db_mysql_query($Query) or message_die('faction.php', 'MYSQL_QUERY', $query, mysql_error());
 PrintNpcsByZone($QueryResult);
 print "                </td>\n";
 

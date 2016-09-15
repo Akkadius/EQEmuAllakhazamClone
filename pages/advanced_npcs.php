@@ -74,12 +74,12 @@ if (isset($isearch) && $isearch != '') {
         $query .= " AND $npc_types_table.race!=127";
     }
     $query .= " ORDER BY $npc_types_table.`name`";
-    $result = mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
     $n = mysql_num_rows($result);
     if ($n > $max_npcs_returned) {
         print "$n ncps found, showing the $max_npcs_returned first ones...";
         $query .= " LIMIT $max_npcs_returned";
-        $result = mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
     }
     if (mysql_num_rows($result) > 0) {
         while ($row = mysql_fetch_array($result)) {

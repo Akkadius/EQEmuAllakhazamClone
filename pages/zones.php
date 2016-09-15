@@ -22,7 +22,7 @@ $query = "
 */
 $query .= " GROUP BY $spawn2_table.zone
         ORDER BY $zones_table.long_name ASC";
-$result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 print "<table class='display_table datatable container_div'><tr>
        <td style='font-weight:bold'>Name</td>
        <td style='font-weight:bold'>Short name</td>

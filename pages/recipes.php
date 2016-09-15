@@ -71,7 +71,7 @@ if (isset($isearch) && $isearch != "") {
         $s = "AND";
     }
     $query .= " ORDER BY $trade_skill_recipe_table.`name`";
-    $result = mysql_query($query) or message_die('?a=recipes&', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('?a=recipes&', 'MYSQL_QUERY', $query, mysql_error());
 
     echo '<div>';
     if (isset($result)) {

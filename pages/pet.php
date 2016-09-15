@@ -13,7 +13,7 @@ $query = "
         $npc_types_table.`name` = '$name'
     LIMIT 1
 ";
-$result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 $npc = mysql_fetch_array($result);
 
 print "<table class='container_div'><tr valign=top><td>\n";
@@ -62,7 +62,7 @@ print "<tr valign=top>";
 
 if ($npc["npc_spells_id"] > 0) {
     $query = "SELECT * FROM $npc_spells_table WHERE id=" . $npc["npc_spells_id"];
-    $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $g = mysql_fetch_array($result);
         print "<td><table border=0><tr><td colspan=2 nowrap><b>This pet casts the following spells : </b><p>";
@@ -78,7 +78,7 @@ if ($npc["npc_spells_id"] > 0) {
             ORDER BY
                 $npc_spells_entries_table.priority DESC
         ";
-        $result2 = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {
             print "</ul><li><b>Listname : </b>" . $g["name"];
             if ($g["attack_proc"] == 1) {

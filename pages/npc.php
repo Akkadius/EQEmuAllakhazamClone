@@ -13,7 +13,7 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 if ($id != "" && is_numeric($id)) {
     $Query = "SELECT * FROM $npc_types_table WHERE id='" . $id . "'";
-    $QueryResult = mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: npcs.php");
         exit();
@@ -22,7 +22,7 @@ if ($id != "" && is_numeric($id)) {
     $name = $npc["name"];
 } elseif ($name != "") {
     $Query = "SELECT * FROM $npc_types_table WHERE name like '$name'";
-    $QueryResult = mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: npcs.php?iname=" . $name . "&isearch=true");
         exit();
@@ -50,7 +50,7 @@ if ($use_custom_zone_list == TRUE) {
         AND $spawn2_table.zone = $zones_table.short_name
         AND LENGTH($zones_table.note) > 0
     ";
-    $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         while ($row = mysql_fetch_array($result)) {
             if (substr_count(strtolower($row["note"]), "disabled") >= 1) {
@@ -187,7 +187,7 @@ print "<tr valign='top'>";
 
 if ($npc["npc_spells_id"] > 0) {
     $query = "SELECT * FROM $npc_spells_table WHERE id=" . $npc["npc_spells_id"];
-    $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $g = mysql_fetch_array($result);
         print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC casts the following spells : </b><p>";
@@ -203,7 +203,7 @@ if ($npc["npc_spells_id"] > 0) {
             ORDER BY
                 $npc_spells_entries_table.priority DESC
         ";
-        $result2 = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {
             print "</ul><li><b>Listname : </b>" . ReadableNpcName($g["name"]);
             if ($DebugNpc) {
@@ -251,7 +251,7 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
     if ($discovered_items_only == TRUE) {
         $query .= " AND $discovered_items_table.item_id=$items_table.id";
     }
-    $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         if ($show_npc_drop_chances == TRUE) {
             print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>When killed, this NPC drops : </b><br/>";
@@ -297,7 +297,7 @@ if ($npc["merchant_id"] > 0) {
         ORDER BY
             $merchant_list_table.slot
     ";
-    $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells : </b><br/>";
         while ($row = mysql_fetch_array($result)) {
@@ -359,7 +359,7 @@ foreach ($ignore_zones AS $zid) {
     $query .= " AND $zones_table.short_name!='$zid'";
 }
 $query .= " ORDER BY $zones_table.long_name,$spawn_group_table.`name`";
-$result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<b>This NPC spawns in : </b>";
     $z = "";
@@ -397,7 +397,7 @@ $query = "
     GROUP BY
         $faction_list_table.id
 ";
-$result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<p><b>Killing this NPC lowers factions with : </b><ul>";
     while ($row = mysql_fetch_array($result)) {
@@ -420,7 +420,7 @@ $query = "
     GROUP BY
         $faction_list_table.id
 ";
-$result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<p><b>Killing this NPC raises factions with : </b><ul>";
     while ($row = mysql_fetch_array($result)) {

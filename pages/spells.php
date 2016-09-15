@@ -117,7 +117,7 @@ if (($type != 0 && $level != 0) || $namestring != '') {
         $sql .= ' ORDER BY ' . $spells_table . '.`name` LIMIT ' . $max_items_returned;
     }
 
-    $result = mysql_query($sql);
+    $result = db_mysql_query($sql);
     if (!$result) {
         die('Invalid query: ' . mysql_error());
     }

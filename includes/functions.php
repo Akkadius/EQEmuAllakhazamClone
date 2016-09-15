@@ -244,7 +244,7 @@ function getspell($id) {
 	{
 		$query="SELECT * FROM $spells_table WHERE id=$id";
 	}
-	$result=mysql_query($query) or message_die('functions.php','getspell',$query,mysql_error());
+	$result=db_mysql_query($query) or message_die('functions.php','getspell',$query,mysql_error());
 	$s=mysql_fetch_array($result);
 	return $s;
 }
@@ -741,7 +741,7 @@ function CanThisNPCDoubleAttack($class,$level) { // mob.cpp
 
 // Automatically format and populate the table based on the query
 function AutoDataTable($Query) {
-	$result = mysql_query($Query);
+	$result = db_mysql_query($Query);
 	if (!$result)
 	{
 		echo 'Could not run query: ' . mysql_error();

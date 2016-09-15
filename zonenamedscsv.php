@@ -39,7 +39,7 @@ foreach ($npcs as $id) {
             AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
             AND $spawn2_table.zone='$name'
             AND $spawn_entry_table.spawngroupID=$spawn_group_table.id";
-    $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $cpt = 0;
         while ($row = mysql_fetch_array($result)) {
@@ -57,7 +57,7 @@ foreach ($npcs as $id) {
             WHERE $loot_table_entries.loottable_id=" . $mymob["loottable_id"] . "
               AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
               AND $loot_drop_entries_table.item_id=$items_table.id";
-        $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $cpt = 0;
             while ($row = mysql_fetch_array($result)) {

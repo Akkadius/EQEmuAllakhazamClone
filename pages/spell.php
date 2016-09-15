@@ -103,7 +103,7 @@ $query = "
     ORDER BY
         $items_table.`name` ASC
 ";
-$result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result)) {
     print "<h2 class='section_header'>Items with spell</h2>";
     while ($row = mysql_fetch_array($result)) {

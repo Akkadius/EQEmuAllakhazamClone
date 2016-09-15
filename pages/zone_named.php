@@ -31,7 +31,7 @@ $query = "
     WHERE
         $zones_table.short_name = '$name'
 ";
-$result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
 print "<table border=0 width=0%><tr valign=top><td>";
 print "<p><b>Succor point : </b>" . floor($zone["safe_x"]) . " / " . floor($zone["safe_y"]) . " / " . floor($zone["safe_z"]);
@@ -100,7 +100,7 @@ if (isset($submitDetailMaps)) {
             AND $spawn2_table.zone = '$name'
             AND $spawn_entry_table.spawngroupID = $spawn_group_table.id
         ";
-        $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             while ($row = mysql_fetch_array($result)) {
                 //    P 195.0000, 210.0000, 94.8135,  0, 0, 0,  3,  Gruppip_(Wizard_Spells)
@@ -156,7 +156,7 @@ if (isset($submitDetail)) {
             AND $spawn2_table.zone = '$name'
             AND $spawn_entry_table.spawngroupID = $spawn_group_table.id
         ";
-        $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             print "<td>";
             $sep = "";
@@ -188,7 +188,7 @@ if (isset($submitDetail)) {
                 AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
                 AND $loot_drop_entries_table.item_id = $items_table.id
              ";
-            $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+            $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
             if (mysql_num_rows($result) > 0) {
                 print "<td>";
                 $sep = "";
@@ -240,7 +240,7 @@ if ($mode == "npcs") {
         $query .= " GROUP BY $npc_types_table.id";
     }
     $query .= " ORDER BY $order";
-    $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     print "<p><b>Bestiary</b><p><table border=1><tr>";
     print "<form method=POST action=$PHP_SELF>";
     print "<input type=submit name=submitDetail value=\"Detailled List\" class=form>";

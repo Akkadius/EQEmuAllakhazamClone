@@ -24,7 +24,7 @@ if ($isearch != "") {
         LIMIT
     " . (LimitToUse($MaxFactionsReturned) + 1);
 
-    $QueryResult = mysql_query($Query) or message_die('factions.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('factions.php', 'MYSQL_QUERY', $Query, mysql_error());
 
     if (mysql_num_rows($QueryResult) == 1) {
         $row = mysql_fetch_array($QueryResult);

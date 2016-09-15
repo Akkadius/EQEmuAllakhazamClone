@@ -56,7 +56,7 @@
 		// Limits added for pagination
 		$query.=" ORDER BY $discovered_items_table.discovered_date DESC LIMIT $start, $MaxResultsPerPage";
 
-		$result=mysql_query($query) or message_die('index.php','MYSQL_QUERY',$query,mysql_error());
+		$result=db_mysql_query($query) or message_die('index.php','MYSQL_QUERY',$query,mysql_error());
 		print "<table border=0 cellpadding='5' cellspacing='0'><tr>
 			   <td class='menuh'>Item Name</td>
 			   <td class='menuh'>Item ID</td>

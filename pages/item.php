@@ -16,7 +16,7 @@ if ($id != "" && is_numeric($id)) {
     } else {
         $Query = "SELECT * FROM $items_table WHERE id='" . $id . "'";
     }
-    $QueryResult = mysql_query($Query) or message_die('item.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('item.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: items.php");
         exit();
@@ -29,7 +29,7 @@ if ($id != "" && is_numeric($id)) {
     } else {
         $Query = "SELECT * FROM $items_table WHERE name like '$name'";
     }
-    $QueryResult = mysql_query($Query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: items.php?iname=" . $name . "&isearch=true");
         exit();
@@ -113,7 +113,7 @@ $query = "
     GROUP BY
         $zones_table.zoneidnumber
 ";
-$result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
     print "<tr><td><h2 class='section_header'>This item can be foraged in:</h2>";
@@ -139,7 +139,7 @@ $query = "
     GROUP BY
         $trade_skill_recipe_table.id
 ";
-$result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 $trade_skill_return = "";
 if (mysql_num_rows($result) > 0) {
     $trade_skill_return .= '<tr><td colspan="2"><h2 class="section_header">This item is used in tradeskill recipes</h2></td></tr>';
@@ -168,7 +168,7 @@ $query = "
     GROUP BY
         $trade_skill_recipe_table.id
 ";
-$result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 $trade_skill_return = "";
 if (mysql_num_rows($result) > 0) {
     $trade_skill_return .= "<tr><td><h2 class='section_header'>This item is the result of tradeskill recipes</h2><ul>";
@@ -196,7 +196,7 @@ if ($allow_quests_npc == TRUE) {
             item_id = $id
         AND rewarded > 0
     ";
-    $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr><td><h2 class='section_header'>This item is from the result of a quest</h2></b><ul>";
         while ($res = mysql_fetch_array($result)) {
@@ -217,7 +217,7 @@ if ($allow_quests_npc == TRUE) {
             item_id = $id
         AND handed > 0
     ";
-    $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr><td><b>This item is used in quests.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
@@ -273,7 +273,7 @@ if ($item_found_info == TRUE) {
             $query .= " AND $zones_table.short_name!='$zid'";
         }
         $query .= " GROUP BY $spawn_entry_table.npcID ORDER BY $zones_table.long_name ASC";
-        $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $DroppedList = "";
             $DroppedList .= $Separator;
@@ -330,7 +330,7 @@ if ($item_found_info == TRUE) {
             AND $merchant_list_table.merchantid = $npc_types_table.merchant_id
             AND $zones_table.short_name = $spawn2_table.zone
         ";
-        $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $MerchantList = "";
             $MerchantList .= $Separator;
@@ -376,7 +376,7 @@ $query = "
         item = $id
     AND $ground_spawns_table.zoneid = $zones_table.zoneidnumber
 ";
-$result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print $Separator;
     print "<tr>\n";

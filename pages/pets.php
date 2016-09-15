@@ -59,7 +59,7 @@ if (isset($class) && $class != 0) {
         $Query .= " AND ISNULL((SELECT spell_globals.spellid FROM spell_globals WHERE spell_globals.spellid = $spells_table.`id`))";
     }
     $Query .= " GROUP BY $spells_table.`teleport_zone` ORDER BY $spells_table.classes" . $class;
-    $result = mysql_query($Query);
+    $result = db_mysql_query($Query);
     if (!$result) {
         print 'Could not run query: ' . mysql_error();
         exit;

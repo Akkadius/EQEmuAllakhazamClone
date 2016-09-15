@@ -92,4 +92,6 @@ $ignore_zones = array("load", "loading", "load2", "nektropos", "arttest", "appre
 $db = mysql_connect($dbhost, $dbuser, $dbpasswd) or die("Impossible to connect to $dbhost : " . mysql_error());
 mysql_select_db($dbname, $db) or die("Impossible to select $dbname : " . mysql_error());
 
+$mysql_debugging = false;
+
 ?>

@@ -54,7 +54,7 @@ $query = "
     WHERE
         $zones_table.short_name = '$name'
 ";
-$result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
 print "<table style='width:100%'><tr valign=top><td>";
 print "<p><b>Succor point : X (</b>" . floor($zone["safe_x"]) . ")  Y (" . floor($zone["safe_y"]) . ") Z (" . floor($zone["safe_z"]) . ")";
@@ -89,7 +89,7 @@ if ($mode == "npcs") {
         $query .= " GROUP BY $npc_types_table.id";
     }
     $query .= " ORDER BY $order";
-    $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<p>Bestiary<p><table ><tr>";
         if ($ZoneDebug == TRUE) {
@@ -169,7 +169,7 @@ if ($mode == "items") {
     }
     $query .= " GROUP BY $npc_types_table.id";
 
-    $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     $ItemsData = array();
     $RowClass = "lr";
     while ($row = mysql_fetch_array($result)) {
@@ -188,7 +188,7 @@ if ($mode == "items") {
         }
         $query .= " GROUP BY $items_table.id ORDER BY $items_table.`name`";
 
-        $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result2) > 0) {
             $ItemsFound = mysql_num_rows($result2);
@@ -268,7 +268,7 @@ if ($mode == "spawngroups") {
             ORDER BY
                 $spawn_group_table.`name` ASC
         ";
-        $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result) > 0) {
             while ($row = mysql_fetch_array($result)) {
@@ -290,7 +290,7 @@ if ($mode == "spawngroups") {
                     ORDER BY
                         $npc_types_table.`name` ASC
                 ";
-                $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+                $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
                 while ($res = mysql_fetch_array($result2)) {
                     print "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";
                     print " (level " . $res["level"] . ")";
@@ -321,7 +321,7 @@ if ($mode == "forage") {
         ORDER BY
             $items_table.name ASC
     ";
-    $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<p>Forageable Items<p><table border=1><tr>
 			<td class=tab_title>Name</a></td>
@@ -357,7 +357,7 @@ if ($mode == "tasks") {
                 $tasks_table.id ASC
         ";
 
-        $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result) > 0) {
             print "<table border=0 width=100% cellpadding='5' cellspacing='0'><tr valign=top><td width=100%>";
