@@ -110,7 +110,7 @@ print "                  <b>NPCs whom death raises the faction</b><br/><br/>\n";
 $Query = "
     SELECT
         $npc_types_table.id,
-        $npc_types_table.name,
+        $npc_types_table.`name`,
         $zones_table.long_name,
         $spawn2_table.zone
     FROM
@@ -142,7 +142,7 @@ print "                  <b>NPCs whom death lowers the faction</b><br/><br/>\n";
 $Query = "
     SELECT
         $npc_types_table.id,
-        $npc_types_table.name,
+        $npc_types_table.`name`,
         $zones_table.long_name,
         $spawn2_table.zone
     FROM

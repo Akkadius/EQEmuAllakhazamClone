@@ -78,7 +78,7 @@ if (isset($submitDetailMaps)) {
         $mymob = GetRowByQuery($query);
 
         $query = "SELECT $spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
-               $spawn_group_table.name as spawngroup,
+               $spawn_group_table.`name` as spawngroup,
                $spawn_group_table.id as spawngroupID,
                $spawn2_table.respawntime
                FROM $spawn_entry_table,$spawn2_table,$spawn_group_table
@@ -125,7 +125,7 @@ if (isset($submitDetail)) {
 
 
         $query = "SELECT $spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
-               $spawn_group_table.name as spawngroup,
+               $spawn_group_table.`name` as spawngroup,
                $spawn_group_table.id as spawngroupID,
                $spawn2_table.respawntime
                FROM $spawn_entry_table,$spawn2_table,$spawn_group_table
@@ -179,7 +179,7 @@ if (isset($submitDetail)) {
 
 if ($mode == "npcs") {
     ////////////// NPCS
-    $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.race,$npc_types_table.name,$npc_types_table.loottable_id
+    $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.race,$npc_types_table.`name`,$npc_types_table.loottable_id
           FROM $npc_types_table,$spawn2_table,$spawn_entry_table,$spawn_group_table
           WHERE $spawn2_table.zone='$name'
           AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
@@ -189,7 +189,7 @@ if ($mode == "npcs") {
         $query .= " AND $npc_types_table.race!=127 AND $npc_types_table.race!=240";
     }
     if ($group_npcs_by_name == TRUE) {
-        $query .= " GROUP BY $npc_types_table.name";
+        $query .= " GROUP BY $npc_types_table.`name`";
     } else {
         $query .= " GROUP BY $npc_types_table.id";
     }

@@ -25,7 +25,7 @@ if ($id != "" && is_numeric($id)) {
     $name = $ItemRow["name"];
 } elseif ($name != "") {
     if ($discovered_items_only == TRUE) {
-        $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.name like '$name' AND discovered_items.item_id=$items_table.id";
+        $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.`name` like '$name' AND discovered_items.item_id=$items_table.id";
     } else {
         $Query = "SELECT * FROM $items_table WHERE name like '$name'";
     }
@@ -126,7 +126,7 @@ if (mysql_num_rows($result) > 0) {
 // trade skills for which that item is a component
 $query = "
     SELECT
-        $trade_skill_recipe_table.name,
+        $trade_skill_recipe_table.`name`,
         $trade_skill_recipe_table.id,
         $trade_skill_recipe_table.tradeskill
     FROM
@@ -155,7 +155,7 @@ print $trade_skill_return;
 // trade skills which result is the component
 $query = "
     SELECT
-        $trade_skill_recipe_table.name,
+        $trade_skill_recipe_table.`name`,
         $trade_skill_recipe_table.id,
         $trade_skill_recipe_table.tradeskill
     FROM
@@ -229,7 +229,7 @@ if ($item_found_info == TRUE) {
         $query = "
             SELECT
                 $npc_types_table.id,
-                $npc_types_table.name,
+                $npc_types_table.`name`,
                 $spawn2_table.zone,
                 $zones_table.long_name,
                 $loot_table_entries.multiplier,
@@ -297,7 +297,7 @@ if ($item_found_info == TRUE) {
         $query = "
             SELECT
                 $npc_types_table.id,
-                $npc_types_table.name,
+                $npc_types_table.`name`,
                 $spawn2_table.zone,
                 $zones_table.long_name,
                 $npc_types_table.class

@@ -15,7 +15,7 @@ if ($isearch != "") {
     } else {
         $name = addslashes($iname);
     }
-    $Query = "SELECT $npc_types_table.id,$npc_types_table.name
+    $Query = "SELECT $npc_types_table.id,$npc_types_table.`name`
 		FROM $npc_types_table
 		WHERE 1=1";
     if ($name != "") {

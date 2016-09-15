@@ -68,7 +68,7 @@ if (file_exists($maps_dir . $name . ".jpg")) {
 
 if ($mode == "npcs") {
     ////////////// NPCS
-    $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.trackable,$npc_types_table.maxlevel,$npc_types_table.race,$npc_types_table.name,$npc_types_table.maxlevel,$npc_types_table.loottable_id
+    $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.trackable,$npc_types_table.maxlevel,$npc_types_table.race,$npc_types_table.`name`,$npc_types_table.maxlevel,$npc_types_table.loottable_id
 		FROM $npc_types_table,$spawn2_table,$spawn_entry_table,$spawn_group_table";
     $query .= " WHERE $spawn2_table.zone='$name'
 		AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
@@ -79,7 +79,7 @@ if ($mode == "npcs") {
         $query .= " AND $npc_types_table.race!=127 AND $npc_types_table.race!=240";
     }
     if ($group_npcs_by_name == TRUE) {
-        $query .= " GROUP BY $npc_types_table.name";
+        $query .= " GROUP BY $npc_types_table.`name`";
     } else {
         $query .= " GROUP BY $npc_types_table.id";
     }
@@ -173,7 +173,7 @@ if ($mode == "items") {
         if ($discovered_items_only == TRUE) {
             $query .= " AND $discovered_items_table.item_id=$items_table.id";
         }
-        $query .= " GROUP BY $items_table.id ORDER BY $items_table.name";
+        $query .= " GROUP BY $items_table.id ORDER BY $items_table.`name`";
 
         $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
@@ -244,7 +244,7 @@ if ($mode == "spawngroups") {
 			FROM $spawn2_table,$spawn_group_table
 			WHERE $spawn2_table.zone='$name'
 			AND $spawn_group_table.id=$spawn2_table.spawngroupID
-			ORDER BY $spawn_group_table.name ASC";
+			ORDER BY $spawn_group_table.`name` ASC";
         $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result) > 0) {
@@ -252,11 +252,11 @@ if ($mode == "spawngroups") {
                 print "<li><a href=spawngroup.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" .
                     floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]) . ") (respawn time : " .
                     translate_time($row["respawntime"]) . ")<ul>";
-                $query = "SELECT $spawn_entry_table.npcID,$npc_types_table.name,$spawn_entry_table.chance,$npc_types_table.level
+                $query = "SELECT $spawn_entry_table.npcID,$npc_types_table.`name`,$spawn_entry_table.chance,$npc_types_table.level
 					FROM $spawn_entry_table,$npc_types_table
 					WHERE $spawn_entry_table.npcID=$npc_types_table.id
 					AND $spawn_entry_table.spawngroupID=" . $row["id"] . "
-					ORDER BY $npc_types_table.name ASC";
+					ORDER BY $npc_types_table.`name` ASC";
                 $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
                 while ($res = mysql_fetch_array($result2)) {
                     print "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";

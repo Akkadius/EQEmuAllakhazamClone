@@ -93,7 +93,7 @@ print "<tr><td><b>Level : </b></td><td width='100%'>" . $npc["level"] . "</td></
 print "<tr><td><b>Race : </b></td><td>" . $dbiracenames[$npc["race"]] . "</td></tr>";
 print "<tr><td><b>Class : </b></td><td>" . $dbclasses[$npc["class"]];
 if ($npc["npc_faction_id"] > 0) {
-    $query = "SELECT $faction_list_table.name,$faction_list_table.id
+    $query = "SELECT $faction_list_table.`name`,$faction_list_table.id
 				FROM $faction_list_table,$npc_faction_table
 				WHERE $npc_faction_table.id=" . $npc["npc_faction_id"] . "
 				AND $npc_faction_table.primaryfaction=$faction_list_table.id";
@@ -300,7 +300,7 @@ print "</td></tr><tr><td>";
 $query = "SELECT $zones_table.long_name,
 				$zones_table.short_name,
 				$spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
-				$spawn_group_table.name as spawngroup,
+				$spawn_group_table.`name` as spawngroup,
 				$spawn_group_table.id as spawngroupID,
 				$spawn2_table.respawntime
 				FROM $zones_table,$spawn_entry_table,$spawn2_table,$spawn_group_table
@@ -311,7 +311,7 @@ $query = "SELECT $zones_table.long_name,
 foreach ($ignore_zones AS $zid) {
     $query .= " AND $zones_table.short_name!='$zid'";
 }
-$query .= " ORDER BY $zones_table.long_name,$spawn_group_table.name";
+$query .= " ORDER BY $zones_table.long_name,$spawn_group_table.`name`";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<b>This NPC spawns in : </b>";
@@ -333,7 +333,7 @@ if (mysql_num_rows($result) > 0) {
     }
 }
 // factions
-$query = "SELECT $faction_list_table.name,
+$query = "SELECT $faction_list_table.`name`,
 			$faction_list_table.id,
 			$faction_entries_table.value
 			FROM $faction_list_table,$faction_entries_table
@@ -349,7 +349,7 @@ if (mysql_num_rows($result) > 0) {
     }
 }
 print "</ul>";
-$query = "SELECT $faction_list_table.name,
+$query = "SELECT $faction_list_table.`name`,
 			$faction_list_table.id,
 			$faction_entries_table.value
 			FROM $faction_list_table,$faction_entries_table

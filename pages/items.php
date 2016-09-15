@@ -55,10 +55,10 @@ if ($isearch != "") {
         $Query .= " LEFT JOIN $spells_table AS worn_s ON worneffect=worn_s.id";
         $Query .= " LEFT JOIN $spells_table AS focus_s ON focuseffect=focus_s.id";
         $Query .= " LEFT JOIN $spells_table AS click_s ON clickeffect=click_s.id";
-        $Query .= " WHERE (proc_s.name LIKE '$effect'
-				OR worn_s.name LIKE '$effect' 
-				OR focus_s.name LIKE '$effect' 
-				OR click_s.name LIKE '$effect') ";
+        $Query .= " WHERE (proc_s.`name` LIKE '$effect'
+				OR worn_s.`name` LIKE '$effect'
+				OR focus_s.`name` LIKE '$effect'
+				OR click_s.`name` LIKE '$effect') ";
         $s = "AND";
     }
     if (($istat1 != "") AND ($istat1value != "")) {

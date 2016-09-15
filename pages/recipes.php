@@ -48,13 +48,13 @@ if (isset($isearch) && $isearch != "") {
         $minskill = $maxskill;
         $maxskill = $tempskill;
     }
-    $query = "SELECT $trade_skill_recipe_table.id,$trade_skill_recipe_table.name,
+    $query = "SELECT $trade_skill_recipe_table.id,$trade_skill_recipe_table.`name`,
 				$trade_skill_recipe_table.tradeskill,$trade_skill_recipe_table.trivial
 				FROM $trade_skill_recipe_table";
     $s = "WHERE";
     if ($iname != "") {
         $iname = str_replace(' ', '%', addslashes($iname));
-        $query .= " $s $trade_skill_recipe_table.name like '%" . $iname . "%'";
+        $query .= " $s $trade_skill_recipe_table.`name` like '%" . $iname . "%'";
         $s = "AND";
     }
     if ($iskill > 0) {
@@ -69,7 +69,7 @@ if (isset($isearch) && $isearch != "") {
         $query .= " $s $trade_skill_recipe_table.trivial<=$maxskill";
         $s = "AND";
     }
-    $query .= " ORDER BY $trade_skill_recipe_table.name";
+    $query .= " ORDER BY $trade_skill_recipe_table.`name`";
     $result = mysql_query($query) or message_die('?a=recipes&', 'MYSQL_QUERY', $query, mysql_error());
 
     echo '<div>';

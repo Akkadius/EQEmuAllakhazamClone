@@ -6,7 +6,7 @@ $Title = "Pet :: $name";
 
 $query = "SELECT $npc_types_table.*
             FROM $npc_types_table
-            WHERE $npc_types_table.name = '$name' LIMIT 1";
+            WHERE $npc_types_table.`name` = '$name' LIMIT 1";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 $npc = mysql_fetch_array($result);
 

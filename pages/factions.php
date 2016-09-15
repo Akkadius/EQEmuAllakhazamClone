@@ -17,10 +17,10 @@ if ($isearch != "") {
     }
 
     $Query = "
-        SELECT $faction_list_table.id,$faction_list_table.name
+        SELECT $faction_list_table.id,$faction_list_table.`name`
         FROM $faction_list_table
-        WHERE $faction_list_table.name like '%" . $name . "%'
-        ORDER BY $faction_list_table.name
+        WHERE $faction_list_table.`name` like '%" . $name . "%'
+        ORDER BY $faction_list_table.`name`
         LIMIT
     " . (LimitToUse($MaxFactionsReturned) + 1);
 

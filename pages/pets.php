@@ -35,7 +35,7 @@ print "</td></tr></table>";
 
 if (isset($class) && $class != 0) {
     $Query = "SELECT
-			$spells_table.name,
+			$spells_table.`name`,
 			$spells_table.id,
 			$spells_table.new_icon,
 			$spells_table.teleport_zone,
@@ -51,7 +51,7 @@ if (isset($class) && $class != 0) {
 			FROM
 			$spells_table
 			INNER JOIN $pets_table ON $pets_table.type = $spells_table.teleport_zone
-			INNER JOIN $npc_types_table ON $npc_types_table.name = $spells_table.teleport_zone
+			INNER JOIN $npc_types_table ON $npc_types_table.`name` = $spells_table.teleport_zone
 			WHERE $spells_table.classes" . $class . " > 0
 			AND $spells_table.classes" . $class . " < " . $server_max_level;
 

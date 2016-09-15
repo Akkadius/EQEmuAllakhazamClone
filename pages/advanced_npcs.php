@@ -42,7 +42,7 @@ if (isset($isearch) && $isearch != '') {
     $query = "
         SELECT
             $npc_types_table.id,
-            $npc_types_table.name,
+            $npc_types_table.`name`,
             $npc_types_table.level
         FROM
             $npc_types_table
@@ -61,19 +61,19 @@ if (isset($isearch) && $isearch != '') {
         $query .= " AND $npc_types_table.level<=$imaxlevel";
     }
     if ($inamed) {
-        $query .= " AND substring($npc_types_table.name,1,1)='#'";
+        $query .= " AND substring($npc_types_table.`name`,1,1)='#'";
     }
     if ($irace > 0 && is_numeric($irace)) {
         $query .= " AND $npc_types_table.race=$irace";
     }
     if ($iname != "") {
         $iname = str_replace('`', '%', str_replace(' ', '%', addslashes($iname)));
-        $query .= " AND $npc_types_table.name LIKE '%$iname%'";
+        $query .= " AND $npc_types_table.`name` LIKE '%$iname%'";
     }
     if ($hide_invisible_men == TRUE) {
         $query .= " AND $npc_types_table.race!=127";
     }
-    $query .= " ORDER BY $npc_types_table.name";
+    $query .= " ORDER BY $npc_types_table.`name`";
     $result = mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
     $n = mysql_num_rows($result);
     if ($n > $max_npcs_returned) {

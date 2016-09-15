@@ -92,10 +92,10 @@ echo '</small></td>';
 
 print "</td></tr><tr><td colspan='2'>";
 
-$query = "SELECT $items_table.id,$items_table.name
+$query = "SELECT $items_table.id,$items_table.`name`
                 FROM $items_table
                 WHERE $items_table.scrolleffect=$id
-                ORDER BY $items_table.name ASC";
+                ORDER BY $items_table.`name` ASC";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result)) {
     print "<h2 class='section_header'>Items with spell</h2>";
