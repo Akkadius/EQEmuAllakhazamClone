@@ -87,6 +87,8 @@ $use_spell_globals = FALSE; // If TRUE, any spells in the spell_globals table wi
 $use_zam_search = TRUE; // If TRUE, will display a ZAM search bar on the left with the sidemenu
 
 
+$slow_page_caching = true; /* If pages take longer than 1 second to load, they will be cached for further use in cache/ folder */
+
 $ignore_zones = array("load", "loading", "load2", "nektropos", "arttest", "apprentice", "tutorial");
 
 $db = mysql_connect($dbhost, $dbuser, $dbpasswd) or die("Impossible to connect to $dbhost : " . mysql_error());

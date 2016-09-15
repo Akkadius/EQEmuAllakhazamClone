@@ -6,6 +6,7 @@
 
     $start = microtime(true);
     $debug_queries = "";
+    $print_buffer = "";
 ?>
 
 <!DOCTYPE html>
@@ -182,30 +183,39 @@
                                         <div id="title"></div>
                                         <?php
 
-                                            $route = $_GET['a'];
-                                            if($route == "spells"){ require_once('pages/spells.php'); }
-                                            if($route == "spell"){ require_once('pages/spell.php'); }
-                                            if($route == "item"){ require_once('pages/item.php'); }
-                                            if($route == "pets"){ require_once('pages/pets.php'); }
-                                            if($route == "zonelist"){ require_once('pages/zonelist.php'); }
-                                            if($route == "items"){ require_once('pages/items.php'); }
-                                            if($route == "factions"){ require_once('pages/factions.php'); }
-                                            if($route == "faction"){ require_once('pages/faction.php'); }
-                                            if($route == "pet"){ require_once('pages/pet.php'); }
-                                            if($route == "zones_by_level"){ require_once('pages/zones_by_level.php'); }
-                                            if($route == "zone"){ require_once('pages/zone.php'); }
-                                            if($route == "npc"){ require_once('pages/npc.php'); }
-                                            if($route == "recipe"){ require_once('pages/recipe.php'); }
-                                            if($route == "recipes"){ require_once('pages/recipes.php'); }
-                                            if($route == "zones"){ require_once('pages/zones.php'); }
-                                            if($route == "zone_named"){ require_once('pages/zone_named.php'); }
-                                            if($route == "npcs"){ require_once('pages/npcs.php'); }
-                                            if($route == "advanced_npcs"){ require_once('pages/advanced_npcs.php'); }
-                                            if($route == "zone_era"){
-                                                echo '<table class=\'display_table container_div\'><tr><td>';
-                                                echo "<h2 class='section_header'>Zones</h2><br>";
-                                                require_once('pages/zones_by_era/' . $_GET['era'] . '.php');
-                                                echo '</td></tr></table>';
+                                            if(file_exists("cache/" . $_SERVER['QUERY_STRING'])){
+                                                echo bzdecompress(file_get_contents("cache/" . $_SERVER['QUERY_STRING']));
+                                            }
+                                            else {
+                                                $route = $_GET['a'];
+                                                if($route == "spells"){ require_once('pages/spells.php'); }
+                                                if($route == "spell"){ require_once('pages/spell.php'); }
+                                                if($route == "item"){ require_once('pages/item.php'); }
+                                                if($route == "pets"){ require_once('pages/pets.php'); }
+                                                if($route == "zonelist"){ require_once('pages/zonelist.php'); }
+                                                if($route == "items"){ require_once('pages/items.php'); }
+                                                if($route == "factions"){ require_once('pages/factions.php'); }
+                                                if($route == "faction"){ require_once('pages/faction.php'); }
+                                                if($route == "pet"){ require_once('pages/pet.php'); }
+                                                if($route == "zones_by_level"){ require_once('pages/zones_by_level.php'); }
+                                                if($route == "zone"){ require_once('pages/zone.php'); }
+                                                if($route == "npc"){ require_once('pages/npc.php'); }
+                                                if($route == "recipe"){ require_once('pages/recipe.php'); }
+                                                if($route == "recipes"){ require_once('pages/recipes.php'); }
+                                                if($route == "zones"){ require_once('pages/zones.php'); }
+                                                if($route == "zone_named"){ require_once('pages/zone_named.php'); }
+                                                if($route == "npcs"){ require_once('pages/npcs.php'); }
+                                                if($route == "advanced_npcs"){ require_once('pages/advanced_npcs.php'); }
+                                                if($route == "zone_era") {
+                                                    echo '<table class=\'display_table container_div\'><tr><td>';
+                                                    echo "<h2 class='section_header'>Zones</h2><br>";
+                                                    require_once('pages/zones_by_era/' . $_GET['era'] . '.php');
+                                                    echo '</td></tr></table>';
+                                                }
+                                            }
+
+                                            if($print_buffer){
+                                                print $print_buffer;
                                             }
 
                                             if($Title){
@@ -238,12 +248,12 @@
         $page_load_time = 'This page loaded in ' . $time . ' seconds';
 
         if($slow_page_logging && $time > 1){
-            $myfile = fopen("logs/slow_page_logging.txt", "a") or die("Unable to open file!");
-            fwrite($myfile, $_SERVER['REQUEST_URI'] . ' :: Took ' . $time . ' to load' . "\n");
-            fclose($myfile);
+            if($print_buffer){
+                $my_file = fopen("cache/" . $_SERVER['QUERY_STRING'], "w") or die("Unable to open file!");
+                fwrite($my_file, bzcompress($print_buffer));
+                fclose($my_file);
+            }
         }
-
-
 
     ?>
 

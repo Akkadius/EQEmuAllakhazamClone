@@ -54,34 +54,34 @@ $Title = str_replace('_', ' ', GetFieldByQuery("Name", "SELECT Name FROM $items_
 
 $item = $ItemRow;
 
-print "<table style='width:500px' class='container_div' >\n";
+$print_buffer .= "<table style='width:500px' class='container_div' >\n";
 
 // Title and Icon bar
-print "<tr valign='top'>\n";
-print "<td colspan='2' class='headerrow' style='padding: 10px;'>\n";
+$print_buffer .= "<tr valign='top'>\n";
+$print_buffer .= "<td colspan='2' class='headerrow' style='padding: 10px;'>\n";
 
 if (file_exists(getcwd() . "/icons/item_" . $item['icon'] . ".png")) {
-    echo "<img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='left'/>";
+    $print_buffer .= "<img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='left'/>";
 }
 
-print "<img src='" . $images_url . "spacer_1.png' align='left'/><a href='http://lucy.allakhazam.com/item.html?id=" . $id . "'><img src='" . $images_url . "lucy.png' align='right'/></a>\n";
-print "                  <b>" . $item["Name"] . "</b>";
+$print_buffer .= "<img src='" . $images_url . "spacer_1.png' align='left'/><a href='http://lucy.allakhazam.com/item.html?id=" . $id . "'><img src='" . $images_url . "lucy.png' align='right'/></a>\n";
+$print_buffer .= "                  <b>" . $item["Name"] . "</b>";
 if ($item["lore"] != "") {
-    print "<br/>(" . $item["lore"] . ") - id : " . $id . "\n";
+    $print_buffer .= "<br/>(" . $item["lore"] . ") - id : " . $id . "\n";
 } else {
-    print "<br/>id : " . $id . "\n";
+    $print_buffer .= "<br/>id : " . $id . "\n";
 }
-print "</td>\n";
-print "</tr>\n";
-print "<tr valign='top'>\n";
-print "<td>\n";
-print "<table >\n";
+$print_buffer .= "</td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "<tr valign='top'>\n";
+$print_buffer .= "<td>\n";
+$print_buffer .= "<table >\n";
 
 
 // Prints all Item data into formatted tables
-print BuildItemStats($item, 0);
+$print_buffer .= BuildItemStats($item, 0);
 
-print "<table style='width:100%'>";
+$print_buffer .= "<table style='width:100%'>";
 
 // Discovered by
 if ($discovered_items_only == TRUE) {
@@ -93,7 +93,7 @@ if ($discovered_items_only == TRUE) {
         $DiscoveredBy = $CharName;
     }
     if ($CharName != '') {
-        print "<br><tr><td colspan='2' nowrap='1'><b>Discovered by: </b>$DiscoveredBy - " . date("m/d/y", $DiscoveredDate) . "</td></tr>";
+        $print_buffer .= "<br><tr><td colspan='2' nowrap='1'><b>Discovered by: </b>$DiscoveredBy - " . date("m/d/y", $DiscoveredDate) . "</td></tr>";
     }
 }
 
@@ -115,12 +115,12 @@ $query = "
 ";
 $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
-    print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    print "<tr><td><h2 class='section_header'>This item can be foraged in:</h2>";
+    $print_buffer .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
+    $print_buffer .= "<tr><td><h2 class='section_header'>This item can be foraged in:</h2>";
     while ($row = mysql_fetch_array($result)) {
-        print "<li><a href='?a=zone&name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a></li>";
+        $print_buffer .= "<li><a href='?a=zone&name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a></li>";
     }
-    print "</td></tr>";
+    $print_buffer .= "</td></tr>";
 }
 
 // trade skills for which that item is a component
@@ -149,7 +149,7 @@ if (mysql_num_rows($result) > 0) {
     }
     $trade_skill_return .= "</ul></td></tr>";
 }
-print $trade_skill_return;
+$print_buffer .= $trade_skill_return;
 
 
 // trade skills which result is the component
@@ -183,7 +183,7 @@ if (mysql_num_rows($result) > 0) {
     }
     $trade_skill_return .= "</ul></td></tr>";
 }
-print $trade_skill_return;
+$print_buffer .= $trade_skill_return;
 
 if ($allow_quests_npc == TRUE) {
     // npcs that use that give that item as reward
@@ -198,13 +198,13 @@ if ($allow_quests_npc == TRUE) {
     ";
     $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        print "<tr><td><h2 class='section_header'>This item is from the result of a quest</h2></b><ul>";
+        $print_buffer .= "<tr><td><h2 class='section_header'>This item is from the result of a quest</h2></b><ul>";
         while ($res = mysql_fetch_array($result)) {
-            print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
-            print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
-            print GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
+            $print_buffer .= "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
+            $print_buffer .= ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
+            $print_buffer .= GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
         }
-        print "</ul></td></tr>";
+        $print_buffer .= "</ul></td></tr>";
     }
 
     // npcs that use that give that item as quest item
@@ -219,29 +219,29 @@ if ($allow_quests_npc == TRUE) {
     ";
     $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        print "<tr><td><b>This item is used in quests.</b></b><ul>";
+        $print_buffer .= "<tr><td><b>This item is used in quests.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
-            print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
-            print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
-            print GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
+            $print_buffer .= "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
+            $print_buffer .= ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
+            $print_buffer .= GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
         }
-        print "</ul></td></tr>";
+        $print_buffer .= "</ul></td></tr>";
     }
 }
 
-print "</table>\n";
-print "</td>\n";
-print "<td width='0%'>\n";
-print "<table width='0%'>\n";
+$print_buffer .= "</table>\n";
+$print_buffer .= "</td>\n";
+$print_buffer .= "<td width='0%'>\n";
+$print_buffer .= "<table width='0%'>\n";
 
 $Separator = "";
 
 if ($item_found_info == TRUE) {
-    // Check with a quick query before trying the long one
-    $IsDropped = GetFieldByQuery("item_id", "SELECT item_id FROM $loot_drop_entries_table WHERE item_id=$id LIMIT 1");
+    /* Check with a quick query before trying the long one */
+    $is_item_dropped = GetFieldByQuery("item_id", "SELECT item_id FROM $loot_drop_entries_table WHERE item_id=$id LIMIT 1");
 
-    if ($IsDropped) {
-        // npcs dropping this (Very Heavy Query)
+    if ($is_item_dropped) {
+         /* npcs dropping this (Very Heavy Query)*/
         $query = "
             SELECT
                 $npc_types_table.id,
@@ -378,33 +378,33 @@ $query = "
 ";
 $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
-    print $Separator;
-    print "<tr>\n";
-    print "<td><h2 class='section_header'>This item spawns on the ground</h2>";
+    $print_buffer .= $Separator;
+    $print_buffer .= "<tr>\n";
+    $print_buffer .= "<td><h2 class='section_header'>This item spawns on the ground</h2>";
     $CurrentZone = "";
     while ($row = mysql_fetch_array($result)) {
         if ($CurrentZone != $row["short_name"]) {
             if ($CurrentZone != "") {
-                print "</ul>\n";
+                $print_buffer .= "</ul>\n";
             }
-            print "<b><a href='?a=zone&name=" . $row["short_name"] . "'>" . $row["long_name"] . "</a> at: </b>\n";
-            print "<ul>\n";
+            $print_buffer .= "<b><a href='?a=zone&name=" . $row["short_name"] . "'>" . $row["long_name"] . "</a> at: </b>\n";
+            $print_buffer .= "<ul>\n";
             $CurrentZone = $row["short_name"];
         }
-        print "<li>" . $row["max_y"] . " (Y), " . $row["max_x"] . " (X), " . $row["max_z"] . " (Z)</a></li>";
+        $print_buffer .= "<li>" . $row["max_y"] . " (Y), " . $row["max_x"] . " (X), " . $row["max_z"] . " (Z)</a></li>";
     }
-    print "</ul>\n";
-    print "</td>\n";
-    print "</tr>\n";
+    $print_buffer .= "</ul>\n";
+    $print_buffer .= "</td>\n";
+    $print_buffer .= "</tr>\n";
 }
 
-print "</table>\n";
-print $MerchantList;
-print $DroppedList;
-print "</td>\n";
-print "</tr>\n";
-print "</table>\n";
+$print_buffer .= "</table>\n";
+$print_buffer .= $MerchantList;
+$print_buffer .= $DroppedList;
+$print_buffer .= "</td>\n";
+$print_buffer .= "</tr>\n";
+$print_buffer .= "</table>\n";
 
-print "\n";
+$print_buffer .= "\n";
 
 ?>

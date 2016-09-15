@@ -44,11 +44,15 @@ function db_mysql_query($query){
 
     $result = mysql_query($query);
 
-    if($query != "" && $mysql_debugging){
-        $millisecond_time = microtime(true) - $start;
-        $millisecond_time = ($millisecond_time * 1000);
+    if(mysql_error()){
+        print mysql_error();
+        die;
+    }
 
-        $debug_queries .= ' <pre style="margin: 0px; line-height: 24px;">' . $query . ' <b>Execution Time :: ' . $millisecond_time . 'ms</b> ' . (mysql_error() ? 'ERROR: ' . mysql_error() : '') . '</pre><hr>';
+    if($query != "" && $mysql_debugging){
+        $millisecond_time = number_format((microtime(true) - $start), 2);
+
+        $debug_queries .= ' <pre style="margin: 0px; line-height: 24px;">' . $query . ' <b>Execution Time :: ' . $millisecond_time . 's</b> ' . (mysql_error() ? 'ERROR: ' . mysql_error() : '') . '</pre><hr>';
     }
 
     return $result;

@@ -65,10 +65,12 @@ $hide_invisible_men = TRUE; // hide the invisible mens in bestiaries
 
 /* Items */
 $item_add_chance_to_drop = TRUE; // shows what are the chances to see the item droped by the npcs
-$item_found_info = TRUE; // If TRUE, it displays where items can drop or be purchased (longer item page load times)
 $discovered_items_max_status = 20; // Max account status for a discovered item entry
 $discovered_items_only = FALSE; // If TRUE, only Discovered Items will be displayed
 $max_items_returned = 50; // max number of items returned by search engines (0=all)
+
+/* This can increase page load times up to 3-6 seconds without caching */
+$item_found_info = TRUE; // If TRUE, it displays where items can drop or be purchased (longer item page load times)
 
 /* Quest */
 $always_build_quest = FALSE; // rebuilds the quest each time a visitor browse it, put false if you don't modify them anymore
@@ -85,6 +87,8 @@ $sort_zone_level_list = TRUE; // sort or not the zones in zone levels list
 
 $use_spell_globals = FALSE; // If TRUE, any spells in the spell_globals table will not be displayed
 $use_zam_search = TRUE; // If TRUE, will display a ZAM search bar on the left with the sidemenu
+
+$slow_page_caching = true; /* If pages take longer than 1 second to load, they will be cached for further use in cache/ folder */
 
 $db = mysql_connect($dbhost, $dbuser, $dbpasswd) or die("Impossible to connect to $dbhost : " . mysql_error());
 mysql_select_db($dbname, $db) or die("Impossible to select $dbname : " . mysql_error());
