@@ -233,16 +233,16 @@ function getsize($val) {
 }
 
 function getspell($id) {
-	global $tbspells,$tbspellglobals,$use_spell_globals;
+	global $spells_table,$spell_globals_table,$use_spell_globals;
 	if ($use_spell_globals==TRUE)
 	{
-		$query="SELECT ".$tbspells.".* FROM ".$tbspells." WHERE ".$tbspells.".id=".$id." 
-			AND ISNULL((SELECT ".$tbspellglobals.".spellid FROM ".$tbspellglobals." 
-			WHERE ".$tbspellglobals.".spellid = ".$tbspells.".id))";
+		$query="SELECT ".$spells_table.".* FROM ".$spells_table." WHERE ".$spells_table.".id=".$id."
+			AND ISNULL((SELECT ".$spell_globals_table.".spellid FROM ".$spell_globals_table."
+			WHERE ".$spell_globals_table.".spellid = ".$spells_table.".id))";
 	}
 	else
 	{
-		$query="SELECT * FROM $tbspells WHERE id=$id";
+		$query="SELECT * FROM $spells_table WHERE id=$id";
 	}
 	$result=mysql_query($query) or message_die('functions.php','getspell',$query,mysql_error());
 	$s=mysql_fetch_array($result);
@@ -886,7 +886,7 @@ function Pagination($targetpage, $page, $total_pages, $limit, $adjacents)
 // Used for item.php as well as for tooltips for items
 function BuildItemStats($item, $show_name_icon) {
 
-    global $dbitypes, $dam2h, $dbbagtypes, $dbskills, $icons_url, $tbspells, $dbiaugrestrict, $dbiracenames;
+    global $dbitypes, $dam2h, $dbbagtypes, $dbskills, $icons_url, $spells_table, $dbiaugrestrict, $dbiracenames;
 
     $html_string = "";
     $html_string .= "<table width='100%'><tr><td valign='top'>";
@@ -1098,7 +1098,7 @@ function BuildItemStats($item, $show_name_icon) {
     }
     //item proc
     if (($item["proceffect"] > 0) && ($item["proceffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=" . $item["proceffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["proceffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=" . $item["proceffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["proceffect"]) . "</a>";
         if ($item["proclevel2"] > 0) {
             $html_string .= "<br><b>Level for effect: </b>" . $item["proclevel2"];
         }
@@ -1106,7 +1106,7 @@ function BuildItemStats($item, $show_name_icon) {
     }
     // worn effect
     if (($item["worneffect"] > 0) && ($item["worneffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=" . $item["worneffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["worneffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=" . $item["worneffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["worneffect"]) . "</a>";
         if ($item["wornlevel"] > 0) {
             $html_string .= "<br><b>Level for effect: </b>" . $item["wornlevel"];
         }
@@ -1114,7 +1114,7 @@ function BuildItemStats($item, $show_name_icon) {
     }
     // focus effect
     if (($item["focuseffect"] > 0) && ($item["focuseffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=" . $item["focuseffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["focuseffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=" . $item["focuseffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["focuseffect"]) . "</a>";
         if ($item["focuslevel"] > 0) {
             $html_string .= "<br/><b>Level for effect: </b>" . $item["focuslevel"];
         }
@@ -1122,7 +1122,7 @@ function BuildItemStats($item, $show_name_icon) {
     }
     // clicky effect
     if (($item["clickeffect"] > 0) && ($item["clickeffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=" . $item["clickeffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["clickeffect"]) . "</a> (";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=" . $item["clickeffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["clickeffect"]) . "</a> (";
         if ($item["clicktype"] == 4) {
             $html_string .= "Must Equip. ";
         }
@@ -1146,7 +1146,7 @@ function BuildItemStats($item, $show_name_icon) {
     }
     // scroll
     if (($item["scrolleffect"] > 0) && ($item["scrolleffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=" . $item["scrolleffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["scrolleffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=" . $item["scrolleffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["scrolleffect"]) . "</a>";
         $html_string .= "</td></tr>";
     }
     // bard item ?

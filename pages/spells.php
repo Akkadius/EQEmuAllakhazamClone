@@ -94,27 +94,27 @@ if (($type != 0 && $level != 0) || $namestring != '') {
         $ClassOper = ">";
     }
     $sql = 'SELECT
-			' . $tbspells . '.*
+			' . $spells_table . '.*
 			FROM
-			' . $tbspells . '
+			' . $spells_table . '
 			WHERE';
     $sv = '';
 
     if ($type) {
-        $sql .= ' ' . $tbspells . '.classes' . $type . " " . $ClassOper . " " . $level . '
-					AND ' . $tbspells . '.classes' . $type . ' <= ' . $server_max_level;
+        $sql .= ' ' . $spells_table . '.classes' . $type . " " . $ClassOper . " " . $level . '
+					AND ' . $spells_table . '.classes' . $type . ' <= ' . $server_max_level;
         $sv = 'AND';
     }
-    $sql .= ' ' . $sv . ' ' . $tbspells . '.name LIKE \'%' . addslashes($namestring) . '%\'';
+    $sql .= ' ' . $sv . ' ' . $spells_table . '.name LIKE \'%' . addslashes($namestring) . '%\'';
     if ($use_spell_globals == TRUE) {
-        $sql .= ' AND ISNULL((SELECT ' . $tbspellglobals . '.spellid FROM ' . $tbspellglobals . '
-				WHERE ' . $tbspellglobals . '.spellid = ' . $tbspells . '.id))';
+        $sql .= ' AND ISNULL((SELECT ' . $spell_globals_table . '.spellid FROM ' . $spell_globals_table . '
+				WHERE ' . $spell_globals_table . '.spellid = ' . $spells_table . '.id))';
     }
 
     if ($type != 0) {
-        $sql .= ' ORDER BY ' . $tbspells . '.classes' . $type . ', ' . $tbspells . '.name';
+        $sql .= ' ORDER BY ' . $spells_table . '.classes' . $type . ', ' . $spells_table . '.name';
     } else {
-        $sql .= ' ORDER BY ' . $tbspells . '.name LIMIT ' . $max_items_returned;
+        $sql .= ' ORDER BY ' . $spells_table . '.name LIMIT ' . $max_items_returned;
     }
 
     $result = mysql_query($sql);

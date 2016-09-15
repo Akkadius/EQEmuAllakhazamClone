@@ -2,19 +2,19 @@
 $Title = "Populated Zones List";
 print "<table class=''><tr valign=top><td>";
 
-$query = "SELECT $tbzones.short_name AS short_name,
-               $tbzones.long_name AS long_name,
-               COUNT($tbspawn2.id) AS spawns,
-               $tbzones.zoneidnumber AS zoneidnumber
-        FROM $tbzones,$tbspawnentry,$tbspawn2
-        WHERE $tbspawn2.spawngroupID=$tbspawnentry.spawngroupID 
-          AND $tbspawn2.zone=$tbzones.short_name";
+$query = "SELECT $zones_table.short_name AS short_name,
+               $zones_table.long_name AS long_name,
+               COUNT($spawn2_table.id) AS spawns,
+               $zones_table.zoneidnumber AS zoneidnumber
+        FROM $zones_table,$spawn_entry_table,$spawn2_table
+        WHERE $spawn2_table.spawngroupID=$spawn_entry_table.spawngroupID
+          AND $spawn2_table.zone=$zones_table.short_name";
 /*foreach ($IgnoreZones AS $zid) {
   $query.=" AND $tbzones.short_name!='$zid'";
 }
 */
-$query .= " GROUP BY $tbspawn2.zone
-        ORDER BY $tbzones.long_name ASC";
+$query .= " GROUP BY $spawn2_table.zone
+        ORDER BY $zones_table.long_name ASC";
 $result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 print "<table class='display_table datatable container_div'><tr>
        <td style='font-weight:bold'>Name</td>

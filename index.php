@@ -11,7 +11,7 @@
 	// Pagination //
 	$page = (isset($_GET['page']) ? addslashes($_GET['page']) : 0);
 	$targetpage = "index.php"; 					// File name  (the name of this file)
-	$tbl_name=$tbdiscovereditems;				// Table name
+	$tbl_name=$discovered_items_table;				// Table name
 	if($page)
 	{
 		$start = ($page - 1) * $MaxResultsPerPage; 			//first item to display on this page
@@ -46,15 +46,15 @@
 		print "<table border=0 width=100%><tr valign=top><td width=100%>";
 
 		$query="SELECT  items.*,
-					$tbdiscovereditems.item_id,
-					$tbdiscovereditems.char_name,
-					$tbdiscovereditems.discovered_date
-					FROM $tbitems, $tbdiscovereditems
-					WHERE $tbitems.id = $tbdiscovereditems.item_id
-					AND $tbdiscovereditems.account_status < $discovered_items_max_status";
+					$discovered_items_table.item_id,
+					$discovered_items_table.char_name,
+					$discovered_items_table.discovered_date
+					FROM $items_table, $discovered_items_table
+					WHERE $items_table.id = $discovered_items_table.item_id
+					AND $discovered_items_table.account_status < $discovered_items_max_status";
 
 		// Limits added for pagination
-		$query.=" ORDER BY $tbdiscovereditems.discovered_date DESC LIMIT $start, $MaxResultsPerPage";
+		$query.=" ORDER BY $discovered_items_table.discovered_date DESC LIMIT $start, $MaxResultsPerPage";
 
 		$result=mysql_query($query) or message_die('index.php','MYSQL_QUERY',$query,mysql_error());
 		print "<table border=0 cellpadding='5' cellspacing='0'><tr>

@@ -12,7 +12,7 @@ $id = (isset($_GET['id']) ? $_GET['id'] : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 if ($id != "" && is_numeric($id)) {
-    $Query = "SELECT * FROM $tbnpctypes WHERE id='" . $id . "'";
+    $Query = "SELECT * FROM $npc_types_table WHERE id='" . $id . "'";
     $QueryResult = mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: npcs.php");
@@ -21,7 +21,7 @@ if ($id != "" && is_numeric($id)) {
     $npc = mysql_fetch_array($QueryResult);
     $name = $npc["name"];
 } elseif ($name != "") {
-    $Query = "SELECT * FROM $tbnpctypes WHERE name like '$name'";
+    $Query = "SELECT * FROM $npc_types_table WHERE name like '$name'";
     $QueryResult = mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: npcs.php?iname=" . $name . "&isearch=true");
@@ -37,12 +37,12 @@ if ($id != "" && is_numeric($id)) {
 }
 
 if ($use_custom_zone_list == TRUE) {
-    $query = "SELECT $tbzones.note
-					FROM $tbzones,$tbspawnentry,$tbspawn2
-					WHERE $tbspawnentry.npcID=$id
-					AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-					AND $tbspawn2.zone=$tbzones.short_name
-					AND LENGTH($tbzones.note) > 0";
+    $query = "SELECT $zones_table.note
+					FROM $zones_table,$spawn_entry_table,$spawn2_table
+					WHERE $spawn_entry_table.npcID=$id
+					AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+					AND $spawn2_table.zone=$zones_table.short_name
+					AND LENGTH($zones_table.note) > 0";
     $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         while ($row = mysql_fetch_array($result)) {
@@ -93,10 +93,10 @@ print "<tr><td><b>Level : </b></td><td width='100%'>" . $npc["level"] . "</td></
 print "<tr><td><b>Race : </b></td><td>" . $dbiracenames[$npc["race"]] . "</td></tr>";
 print "<tr><td><b>Class : </b></td><td>" . $dbclasses[$npc["class"]];
 if ($npc["npc_faction_id"] > 0) {
-    $query = "SELECT $tbfactionlist.name,$tbfactionlist.id
-				FROM $tbfactionlist,$tbnpcfaction 
-				WHERE $tbnpcfaction.id=" . $npc["npc_faction_id"] . "
-				AND $tbnpcfaction.primaryfaction=$tbfactionlist.id";
+    $query = "SELECT $faction_list_table.name,$faction_list_table.id
+				FROM $faction_list_table,$npc_faction_table
+				WHERE $npc_faction_table.id=" . $npc["npc_faction_id"] . "
+				AND $npc_faction_table.primaryfaction=$faction_list_table.id";
     $faction = GetRowByQuery($query);
     print "<tr><td><b>Main faction : </b></td><td><a href='faction.php?id=" . $faction["id"] . "'>" . $faction["name"] . "</a></td></tr>";
 }
@@ -172,17 +172,17 @@ print "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
 print "<tr valign='top'>";
 
 if ($npc["npc_spells_id"] > 0) {
-    $query = "SELECT * FROM $tbnpcspells WHERE id=" . $npc["npc_spells_id"];
+    $query = "SELECT * FROM $npc_spells_table WHERE id=" . $npc["npc_spells_id"];
     $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $g = mysql_fetch_array($result);
         print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC casts the following spells : </b><p>";
-        $query = "SELECT $tbnpcspellsentries.*
-					FROM $tbnpcspellsentries
-					WHERE $tbnpcspellsentries.npc_spells_id=" . $npc["npc_spells_id"] . "
-					AND $tbnpcspellsentries.minlevel<=" . $npc["level"] . "
-					AND $tbnpcspellsentries.maxlevel>=" . $npc["level"] . "
-					ORDER BY $tbnpcspellsentries.priority DESC";
+        $query = "SELECT $npc_spells_entries_table.*
+					FROM $npc_spells_entries_table
+					WHERE $npc_spells_entries_table.npc_spells_id=" . $npc["npc_spells_id"] . "
+					AND $npc_spells_entries_table.minlevel<=" . $npc["level"] . "
+					AND $npc_spells_entries_table.maxlevel>=" . $npc["level"] . "
+					ORDER BY $npc_spells_entries_table.priority DESC";
         $result2 = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {
             print "</ul><li><b>Listname : </b>" . ReadableNpcName($g["name"]);
@@ -207,22 +207,22 @@ if ($npc["npc_spells_id"] > 0) {
 }
 
 if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR ($merchants_dont_drop_stuff == FALSE))) {
-    $query = "SELECT $tbitems.id,$tbitems.Name,$tbitems.itemtype,
-			$tblootdropentries.chance,$tbloottableentries.probability,
-			$tbloottableentries.lootdrop_id,$tbloottableentries.multiplier";
+    $query = "SELECT $items_table.id,$items_table.Name,$items_table.itemtype,
+			$loot_drop_entries_table.chance,$loot_table_entries.probability,
+			$loot_table_entries.lootdrop_id,$loot_table_entries.multiplier";
 
     if ($discovered_items_only == TRUE) {
-        $query .= " FROM $tbitems,$tbloottableentries,$tblootdropentries,$tbdiscovereditems";
+        $query .= " FROM $items_table,$loot_table_entries,$loot_drop_entries_table,$discovered_items_table";
     } else {
-        $query .= " FROM $tbitems,$tbloottableentries,$tblootdropentries";
+        $query .= " FROM $items_table,$loot_table_entries,$loot_drop_entries_table";
     }
 
-    $query .= " WHERE $tbloottableentries.loottable_id=" . $npc["loottable_id"] . "
-			AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
-			AND $tblootdropentries.item_id=$tbitems.id";
+    $query .= " WHERE $loot_table_entries.loottable_id=" . $npc["loottable_id"] . "
+			AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
+			AND $loot_drop_entries_table.item_id=$items_table.id";
 
     if ($discovered_items_only == TRUE) {
-        $query .= " AND $tbdiscovereditems.item_id=$tbitems.id";
+        $query .= " AND $discovered_items_table.item_id=$items_table.id";
     }
     $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
@@ -255,11 +255,11 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
 }
 
 if ($npc["merchant_id"] > 0) {
-    $query = "SELECT $tbitems.id,$tbitems.Name,$tbitems.price,$tbitems.ldonprice
-				FROM $tbitems,$tbmerchantlist
-				WHERE $tbmerchantlist.merchantid=" . $npc["merchant_id"] . "
-				AND $tbmerchantlist.item=$tbitems.id
-				ORDER BY $tbmerchantlist.slot";
+    $query = "SELECT $items_table.id,$items_table.Name,$items_table.price,$items_table.ldonprice
+				FROM $items_table,$merchant_list_table
+				WHERE $merchant_list_table.merchantid=" . $npc["merchant_id"] . "
+				AND $merchant_list_table.item=$items_table.id
+				ORDER BY $merchant_list_table.slot";
     $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells : </b><br/>";
@@ -297,21 +297,21 @@ if ($UseWikiImages) {
 
 print "</td></tr><tr><td>";
 // zone list
-$query = "SELECT $tbzones.long_name,
-				$tbzones.short_name,
-				$tbspawn2.x,$tbspawn2.y,$tbspawn2.z,
-				$tbspawngroup.name as spawngroup,
-				$tbspawngroup.id as spawngroupID,
-				$tbspawn2.respawntime
-				FROM $tbzones,$tbspawnentry,$tbspawn2,$tbspawngroup
-				WHERE $tbspawnentry.npcID=$id
-				AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-				AND $tbspawn2.zone=$tbzones.short_name
-				AND $tbspawnentry.spawngroupID=$tbspawngroup.id";
+$query = "SELECT $zones_table.long_name,
+				$zones_table.short_name,
+				$spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
+				$spawn_group_table.name as spawngroup,
+				$spawn_group_table.id as spawngroupID,
+				$spawn2_table.respawntime
+				FROM $zones_table,$spawn_entry_table,$spawn2_table,$spawn_group_table
+				WHERE $spawn_entry_table.npcID=$id
+				AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+				AND $spawn2_table.zone=$zones_table.short_name
+				AND $spawn_entry_table.spawngroupID=$spawn_group_table.id";
 foreach ($ignore_zones AS $zid) {
-    $query .= " AND $tbzones.short_name!='$zid'";
+    $query .= " AND $zones_table.short_name!='$zid'";
 }
-$query .= " ORDER BY $tbzones.long_name,$tbspawngroup.name";
+$query .= " ORDER BY $zones_table.long_name,$spawn_group_table.name";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<b>This NPC spawns in : </b>";
@@ -333,14 +333,14 @@ if (mysql_num_rows($result) > 0) {
     }
 }
 // factions
-$query = "SELECT $tbfactionlist.name,
-			$tbfactionlist.id,
-			$tbnpcfactionentries.value
-			FROM $tbfactionlist,$tbnpcfactionentries
-			WHERE $tbnpcfactionentries.npc_faction_id=" . $npc["npc_faction_id"] . "
-			AND $tbnpcfactionentries.faction_id=$tbfactionlist.id
-			AND $tbnpcfactionentries.value<0
-			GROUP BY $tbfactionlist.id";
+$query = "SELECT $faction_list_table.name,
+			$faction_list_table.id,
+			$faction_entries_table.value
+			FROM $faction_list_table,$faction_entries_table
+			WHERE $faction_entries_table.npc_faction_id=" . $npc["npc_faction_id"] . "
+			AND $faction_entries_table.faction_id=$faction_list_table.id
+			AND $faction_entries_table.value<0
+			GROUP BY $faction_list_table.id";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<p><b>Killing this NPC lowers factions with : </b><ul>";
@@ -349,14 +349,14 @@ if (mysql_num_rows($result) > 0) {
     }
 }
 print "</ul>";
-$query = "SELECT $tbfactionlist.name,
-			$tbfactionlist.id,
-			$tbnpcfactionentries.value
-			FROM $tbfactionlist,$tbnpcfactionentries
-			WHERE $tbnpcfactionentries.npc_faction_id=" . $npc["npc_faction_id"] . "
-			AND $tbnpcfactionentries.faction_id=$tbfactionlist.id
-			AND $tbnpcfactionentries.value>0
-			GROUP BY $tbfactionlist.id";
+$query = "SELECT $faction_list_table.name,
+			$faction_list_table.id,
+			$faction_entries_table.value
+			FROM $faction_list_table,$faction_entries_table
+			WHERE $faction_entries_table.npc_faction_id=" . $npc["npc_faction_id"] . "
+			AND $faction_entries_table.faction_id=$faction_list_table.id
+			AND $faction_entries_table.value>0
+			GROUP BY $faction_list_table.id";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<p><b>Killing this NPC raises factions with : </b><ul>";

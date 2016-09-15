@@ -5,14 +5,14 @@ $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
 $mode = (isset($_GET['mode']) ? addslashes($_GET["mode"]) : 'npcs');
 
 if ($use_custom_zone_list == TRUE && $name != '') {
-    $ZoneNote = GetFieldByQuery("note", "SELECT note FROM $tbzones WHERE short_name='$name'");
+    $ZoneNote = GetFieldByQuery("note", "SELECT note FROM $zones_table WHERE short_name='$name'");
     if (substr_count(strtolower($ZoneNote), "disabled") >= 1) {
         header("Location: index.php");
         exit();
     }
 }
 
-$Title = GetFieldByQuery("long_name", "SELECT long_name FROM $tbzones WHERE short_name='$name'") . " ($name)";
+$Title = GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
 
 if (!isset($name)) {
     print "<script>document.location=\"zones.php\";</script>";
@@ -46,9 +46,9 @@ print '<table class="display_table container_div"><tr><td>';
 print $resources_menu;
 
 
-$query = "SELECT $tbzones.*
-        FROM $tbzones
-        WHERE $tbzones.short_name='$name'";
+$query = "SELECT $zones_table.*
+        FROM $zones_table
+        WHERE $zones_table.short_name='$name'";
 $result = mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
 $zone = mysql_fetch_array($result);
 print "<table style='width:100%'><tr valign=top><td>";
@@ -68,20 +68,20 @@ if (file_exists($maps_dir . $name . ".jpg")) {
 
 if ($mode == "npcs") {
     ////////////// NPCS
-    $query = "SELECT $tbnpctypes.id,$tbnpctypes.class,$tbnpctypes.level,$tbnpctypes.trackable,$tbnpctypes.maxlevel,$tbnpctypes.race,$tbnpctypes.name,$tbnpctypes.maxlevel,$tbnpctypes.loottable_id
-		FROM $tbnpctypes,$tbspawn2,$tbspawnentry,$tbspawngroup";
-    $query .= " WHERE $tbspawn2.zone='$name'
-		AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-		AND $tbspawnentry.npcID=$tbnpctypes.id
-		AND $tbspawngroup.id=$tbspawnentry.spawngroupID";
+    $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.trackable,$npc_types_table.maxlevel,$npc_types_table.race,$npc_types_table.name,$npc_types_table.maxlevel,$npc_types_table.loottable_id
+		FROM $npc_types_table,$spawn2_table,$spawn_entry_table,$spawn_group_table";
+    $query .= " WHERE $spawn2_table.zone='$name'
+		AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+		AND $spawn_entry_table.npcID=$npc_types_table.id
+		AND $spawn_group_table.id=$spawn_entry_table.spawngroupID";
 
     if ($hide_invisible_men == TRUE) {
-        $query .= " AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240";
+        $query .= " AND $npc_types_table.race!=127 AND $npc_types_table.race!=240";
     }
     if ($group_npcs_by_name == TRUE) {
-        $query .= " GROUP BY $tbnpctypes.name";
+        $query .= " GROUP BY $npc_types_table.name";
     } else {
-        $query .= " GROUP BY $tbnpctypes.id";
+        $query .= " GROUP BY $npc_types_table.id";
     }
     $query .= " ORDER BY $order";
     $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
@@ -142,38 +142,38 @@ if ($mode == "items") {
 		<th class='menuh'><a href=?a=zone&name=$name&mode=items&order=itemtype>Item type</a></th>
 		</tr>";
 
-    $query = "SELECT $tbnpctypes.id";
-    $query .= " FROM $tbnpctypes,$tbspawn2,$tbspawnentry,$tbspawngroup";
-    $query .= " WHERE $tbspawn2.zone='$name'
-		AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-		AND $tbspawnentry.npcID=$tbnpctypes.id
-		AND $tbspawngroup.id=$tbspawnentry.spawngroupID";
+    $query = "SELECT $npc_types_table.id";
+    $query .= " FROM $npc_types_table,$spawn2_table,$spawn_entry_table,$spawn_group_table";
+    $query .= " WHERE $spawn2_table.zone='$name'
+		AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+		AND $spawn_entry_table.npcID=$npc_types_table.id
+		AND $spawn_group_table.id=$spawn_entry_table.spawngroupID";
 
     if ($merchants_dont_drop_stuff == TRUE) {
         foreach ($dbmerchants AS $c) {
-            $query .= " AND $tbnpctypes.class!=$c";
+            $query .= " AND $npc_types_table.class!=$c";
         }
     }
-    $query .= " GROUP BY $tbnpctypes.id";
+    $query .= " GROUP BY $npc_types_table.id";
 
     $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     $ItemsData = array();
     $RowClass = "lr";
     while ($row = mysql_fetch_array($result)) {
         //# For each NPC in the zone...
-        $query = "SELECT $tbitems.*";
-        $query .= " FROM $tbitems,$tbloottableentries,$tbnpctypes,$tblootdropentries";
+        $query = "SELECT $items_table.*";
+        $query .= " FROM $items_table,$loot_table_entries,$npc_types_table,$loot_drop_entries_table";
         if ($discovered_items_only == TRUE) {
-            $query .= ",$tbdiscovereditems";
+            $query .= ",$discovered_items_table";
         }
-        $query .= " WHERE $tbnpctypes.id=" . $row["id"] . "
-			AND $tbnpctypes.loottable_id=$tbloottableentries.loottable_id
-			AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
-			AND $tblootdropentries.item_id=$tbitems.id";
+        $query .= " WHERE $npc_types_table.id=" . $row["id"] . "
+			AND $npc_types_table.loottable_id=$loot_table_entries.loottable_id
+			AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
+			AND $loot_drop_entries_table.item_id=$items_table.id";
         if ($discovered_items_only == TRUE) {
-            $query .= " AND $tbdiscovereditems.item_id=$tbitems.id";
+            $query .= " AND $discovered_items_table.item_id=$items_table.id";
         }
-        $query .= " GROUP BY $tbitems.id ORDER BY $tbitems.name";
+        $query .= " GROUP BY $items_table.id ORDER BY $items_table.name";
 
         $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
@@ -240,11 +240,11 @@ if ($mode == "items") {
 if ($mode == "spawngroups") {
     if ($display_spawn_group_info == TRUE) {
         print "";
-        $query = "SELECT $tbspawngroup.*,$tbspawn2.x,$tbspawn2.y,$tbspawn2.z,$tbspawn2.respawntime
-			FROM $tbspawn2,$tbspawngroup
-			WHERE $tbspawn2.zone='$name'
-			AND $tbspawngroup.id=$tbspawn2.spawngroupID
-			ORDER BY $tbspawngroup.name ASC";
+        $query = "SELECT $spawn_group_table.*,$spawn2_table.x,$spawn2_table.y,$spawn2_table.z,$spawn2_table.respawntime
+			FROM $spawn2_table,$spawn_group_table
+			WHERE $spawn2_table.zone='$name'
+			AND $spawn_group_table.id=$spawn2_table.spawngroupID
+			ORDER BY $spawn_group_table.name ASC";
         $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 
         if (mysql_num_rows($result) > 0) {
@@ -252,11 +252,11 @@ if ($mode == "spawngroups") {
                 print "<li><a href=spawngroup.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" .
                     floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]) . ") (respawn time : " .
                     translate_time($row["respawntime"]) . ")<ul>";
-                $query = "SELECT $tbspawnentry.npcID,$tbnpctypes.name,$tbspawnentry.chance,$tbnpctypes.level
-					FROM $tbspawnentry,$tbnpctypes
-					WHERE $tbspawnentry.npcID=$tbnpctypes.id
-					AND $tbspawnentry.spawngroupID=" . $row["id"] . "
-					ORDER BY $tbnpctypes.name ASC";
+                $query = "SELECT $spawn_entry_table.npcID,$npc_types_table.name,$spawn_entry_table.chance,$npc_types_table.level
+					FROM $spawn_entry_table,$npc_types_table
+					WHERE $spawn_entry_table.npcID=$npc_types_table.id
+					AND $spawn_entry_table.spawngroupID=" . $row["id"] . "
+					ORDER BY $npc_types_table.name ASC";
                 $result2 = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
                 while ($res = mysql_fetch_array($result2)) {
                     print "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";
@@ -273,12 +273,12 @@ if ($mode == "spawngroups") {
 } // end spawngroups
 
 if ($mode == "forage") {
-    $query = "SELECT $tbitems.Name,$tbitems.id
-		FROM $tbitems,$tbforage,$tbzones
-		WHERE $tbitems.id=$tbforage.itemid
-		AND $tbforage.zoneid=$tbzones.zoneidnumber
-		AND $tbzones.short_name='$name'
-		ORDER BY $tbitems.Name ASC";
+    $query = "SELECT $items_table.Name,$items_table.id
+		FROM $items_table,$forage_table,$zones_table
+		WHERE $items_table.id=$forage_table.itemid
+		AND $forage_table.zoneid=$zones_table.zoneidnumber
+		AND $zones_table.short_name='$name'
+		ORDER BY $items_table.Name ASC";
     $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<p>Forageable Items<p><table border=1><tr>
@@ -297,10 +297,10 @@ if ($mode == "tasks") {
 
     if ($display_task_info == TRUE) {
         $ZoneID = GetFieldByQuery("zoneidnumber", "SELECT zoneidnumber FROM zone WHERE short_name = '$name'");
-        $query = "SELECT $tbtasks.id, $tbtasks.title, $tbtasks.startzone, $tbtasks.minlevel, $tbtasks.maxlevel, $tbtasks.reward, $tbtasks.rewardid, $tbtasks.rewardmethod
-			FROM $tbtasks
-			WHERE $tbtasks.startzone=$ZoneID
-			ORDER BY $tbtasks.id ASC";
+        $query = "SELECT $tasks_table.id, $tasks_table.title, $tasks_table.startzone, $tasks_table.minlevel, $tasks_table.maxlevel, $tasks_table.reward, $tasks_table.rewardid, $tasks_table.rewardmethod
+			FROM $tasks_table
+			WHERE $tasks_table.startzone=$ZoneID
+			ORDER BY $tasks_table.id ASC";
 
         $result = mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
 

@@ -12,9 +12,9 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 if ($id != "" && is_numeric($id)) {
     if ($discovered_items_only == TRUE) {
-        $Query = "SELECT * FROM $tbitems, discovered_items WHERE $tbitems.id='" . $id . "' AND discovered_items.item_id=$tbitems.id";
+        $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.id='" . $id . "' AND discovered_items.item_id=$items_table.id";
     } else {
-        $Query = "SELECT * FROM $tbitems WHERE id='" . $id . "'";
+        $Query = "SELECT * FROM $items_table WHERE id='" . $id . "'";
     }
     $QueryResult = mysql_query($Query) or message_die('item.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
@@ -25,9 +25,9 @@ if ($id != "" && is_numeric($id)) {
     $name = $ItemRow["name"];
 } elseif ($name != "") {
     if ($discovered_items_only == TRUE) {
-        $Query = "SELECT * FROM $tbitems, discovered_items WHERE $tbitems.name like '$name' AND discovered_items.item_id=$tbitems.id";
+        $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.name like '$name' AND discovered_items.item_id=$items_table.id";
     } else {
-        $Query = "SELECT * FROM $tbitems WHERE name like '$name'";
+        $Query = "SELECT * FROM $items_table WHERE name like '$name'";
     }
     $QueryResult = mysql_query($Query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
@@ -50,7 +50,7 @@ if ($id != "" && is_numeric($id)) {
  *    The item actually exists
  */
 
-$Title = str_replace('_', ' ', GetFieldByQuery("Name", "SELECT Name FROM $tbitems WHERE id=$id"));
+$Title = str_replace('_', ' ', GetFieldByQuery("Name", "SELECT Name FROM $items_table WHERE id=$id"));
 
 $item = $ItemRow;
 
@@ -85,8 +85,8 @@ print "<table style='width:100%'>";
 
 // Discovered by
 if ($discovered_items_only == TRUE) {
-    $CharName = GetFieldByQuery("char_name", "SELECT char_name  FROM $tbdiscovereditems WHERE item_id=$id");
-    $DiscoveredDate = GetFieldByQuery("discovered_date", "SELECT discovered_date  FROM $tbdiscovereditems WHERE item_id=$id");
+    $CharName = GetFieldByQuery("char_name", "SELECT char_name  FROM $discovered_items_table WHERE item_id=$id");
+    $DiscoveredDate = GetFieldByQuery("discovered_date", "SELECT discovered_date  FROM $discovered_items_table WHERE item_id=$id");
     if ($charbrowser_url) {
         $DiscoveredBy = "<a href=" . $charbrowser_url . "character.php?char=" . $CharName . ">" . $CharName . "</a>";
     } else {
@@ -98,11 +98,11 @@ if ($discovered_items_only == TRUE) {
 }
 
 // places where to forage this item
-$query = "SELECT $tbzones.short_name,$tbzones.long_name,$tbforage.chance,$tbforage.level
-			FROM $tbzones,$tbforage
-			WHERE $tbzones.zoneidnumber=$tbforage.zoneid
-			AND $tbforage.itemid=$id
-			GROUP BY $tbzones.zoneidnumber";
+$query = "SELECT $zones_table.short_name,$zones_table.long_name,$forage_table.chance,$forage_table.level
+			FROM $zones_table,$forage_table
+			WHERE $zones_table.zoneidnumber=$forage_table.zoneid
+			AND $forage_table.itemid=$id
+			GROUP BY $zones_table.zoneidnumber";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
@@ -114,12 +114,21 @@ if (mysql_num_rows($result) > 0) {
 }
 
 // trade skills for which that item is a component
-$query = "SELECT $tbtradeskillrecipe.name,$tbtradeskillrecipe.id,$tbtradeskillrecipe.tradeskill
-			FROM $tbtradeskillrecipe,$tbtradeskillrecipeentries
-			WHERE $tbtradeskillrecipe.id=$tbtradeskillrecipeentries.recipe_id
-			AND $tbtradeskillrecipeentries.item_id=$id
-			AND $tbtradeskillrecipeentries.componentcount>0
-			GROUP BY $tbtradeskillrecipe.id";
+$query = "
+    SELECT
+        $trade_skill_recipe_table. NAME,
+        $trade_skill_recipe_table.id,
+        $trade_skill_recipe_table.tradeskill
+    FROM
+        $trade_skill_recipe_table,
+        $trade_skill_recipe_entries
+    WHERE
+        $trade_skill_recipe_table.id = $trade_skill_recipe_entries.recipe_id
+    AND $trade_skill_recipe_entries.item_id = $id
+    AND $trade_skill_recipe_entries.componentcount > 0
+    GROUP BY
+        $trade_skill_recipe_table.id
+";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 $trade_skill_return = "";
 if (mysql_num_rows($result) > 0) {
@@ -134,12 +143,21 @@ print $trade_skill_return;
 
 
 // trade skills which result is the component
-$query = "SELECT $tbtradeskillrecipe.name,$tbtradeskillrecipe.id,$tbtradeskillrecipe.tradeskill
-			FROM $tbtradeskillrecipe,$tbtradeskillrecipeentries
-			WHERE $tbtradeskillrecipe.id=$tbtradeskillrecipeentries.recipe_id
-			AND $tbtradeskillrecipeentries.item_id=$id
-			AND $tbtradeskillrecipeentries.successcount>0
-			GROUP BY $tbtradeskillrecipe.id";
+$query = "
+    SELECT
+        $trade_skill_recipe_table. NAME,
+        $trade_skill_recipe_table.id,
+        $trade_skill_recipe_table.tradeskill
+    FROM
+        $trade_skill_recipe_table,
+        $trade_skill_recipe_entries
+    WHERE
+        $trade_skill_recipe_table.id = $trade_skill_recipe_entries.recipe_id
+    AND $trade_skill_recipe_entries.item_id = $id
+    AND $trade_skill_recipe_entries.successcount > 0
+    GROUP BY
+        $trade_skill_recipe_table.id
+";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 $trade_skill_return = "";
 if (mysql_num_rows($result) > 0) {
@@ -166,7 +184,7 @@ if ($allow_quests_npc == TRUE) {
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
             print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
-            print GetFieldByQuery("long_name", "SELECT long_name FROM $tbzones WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
+            print GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
         }
         print "</ul></td></tr>";
     }
@@ -179,7 +197,7 @@ if ($allow_quests_npc == TRUE) {
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
             print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
-            print GetFieldByQuery("long_name", "SELECT long_name FROM $tbzones WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
+            print GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='" . $res["zone"] . "'") . "</a></li>";
         }
         print "</ul></td></tr>";
     }
@@ -194,27 +212,42 @@ $Separator = "";
 
 if ($item_found_info == TRUE) {
     // Check with a quick query before trying the long one
-    $IsDropped = GetFieldByQuery("item_id", "SELECT item_id FROM $tblootdropentries WHERE item_id=$id LIMIT 1");
+    $IsDropped = GetFieldByQuery("item_id", "SELECT item_id FROM $loot_drop_entries_table WHERE item_id=$id LIMIT 1");
 
     if ($IsDropped) {
         // npcs dropping this (Very Heavy Query)
-        $query = "SELECT $tbnpctypes.id,$tbnpctypes.name,
-					$tbspawn2.zone,$tbzones.long_name,
-					$tbloottableentries.multiplier,$tbloottableentries.probability,$tblootdropentries.chance
-					FROM $tbnpctypes,$tbspawn2,$tbspawnentry,$tbloottableentries,$tblootdropentries,$tbzones
-					WHERE $tbnpctypes.id=$tbspawnentry.npcID
-					AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-					AND $tbnpctypes.loottable_id=$tbloottableentries.loottable_id
-					AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
-					AND $tblootdropentries.item_id=$id
-					AND $tbzones.short_name=$tbspawn2.zone";
+        $query = "
+        SELECT
+            $npc_types_table.id,
+            $npc_types_table. NAME,
+            $spawn2_table.zone,
+            $zones_table.long_name,
+            $loot_table_entries.multiplier,
+            $loot_table_entries.probability,
+            $loot_drop_entries_table.chance
+        FROM
+            $npc_types_table,
+            $spawn2_table,
+            $spawn_entry_table,
+            $loot_table_entries,
+            $loot_drop_entries_table,
+            $zones_table
+        WHERE
+            $npc_types_table.id = $spawn_entry_table.npcID
+        AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
+        AND $npc_types_table.loottable_id = $loot_table_entries.loottable_id
+        AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
+        AND $loot_drop_entries_table.item_id = $id
+        AND $zones_table.short_name = $spawn2_table.zone
+
+        ";
         if ($merchants_dont_drop_stuff == TRUE) {
-            $query .= " AND $tbnpctypes.merchant_id=0";
+            $query .= " AND $npc_types_table.merchant_id=0";
         }
         foreach ($ignore_zones AS $zid) {
-            $query .= " AND $tbzones.short_name!='$zid'";
+            $query .= " AND $zones_table.short_name!='$zid'";
         }
-        $query .= " GROUP BY $tbspawnentry.npcID ORDER BY $tbzones.long_name ASC";
+        $query .= " GROUP BY $spawn_entry_table.npcID ORDER BY $zones_table.long_name ASC";
         $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $DroppedList = "";
@@ -248,17 +281,17 @@ if ($item_found_info == TRUE) {
     }
 
     // Check with a quick query before trying the long one
-    $IsSold = GetFieldByQuery("item", "SELECT item FROM $tbmerchantlist WHERE item=$id LIMIT 1");
+    $IsSold = GetFieldByQuery("item", "SELECT item FROM $merchant_list_table WHERE item=$id LIMIT 1");
 
     if ($IsSold) {
         // npcs selling this (Very Heavy Query)
-        $query = "SELECT $tbnpctypes.id,$tbnpctypes.name,$tbspawn2.zone,$tbzones.long_name,$tbnpctypes.class
-					FROM $tbnpctypes,$tbmerchantlist,$tbspawn2,$tbzones,$tbspawnentry
-					WHERE $tbmerchantlist.item=$id
-					AND $tbnpctypes.id=$tbspawnentry.npcID
-					AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-					AND $tbmerchantlist.merchantid=$tbnpctypes.merchant_id
-					AND $tbzones.short_name=$tbspawn2.zone";
+        $query = "SELECT $npc_types_table.id,$npc_types_table.name,$spawn2_table.zone,$zones_table.long_name,$npc_types_table.class
+					FROM $npc_types_table,$merchant_list_table,$spawn2_table,$zones_table,$spawn_entry_table
+					WHERE $merchant_list_table.item=$id
+					AND $npc_types_table.id=$spawn_entry_table.npcID
+					AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+					AND $merchant_list_table.merchantid=$npc_types_table.merchant_id
+					AND $zones_table.short_name=$spawn2_table.zone";
         $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $MerchantList = "";
@@ -293,10 +326,10 @@ if ($item_found_info == TRUE) {
 
 
 // spawn points if its a ground item
-$query = "SELECT $tbgroundspawns.*,$tbzones.short_name,$tbzones.long_name
-			FROM $tbgroundspawns,$tbzones
+$query = "SELECT $ground_spawns_table.*,$zones_table.short_name,$zones_table.long_name
+			FROM $ground_spawns_table,$zones_table
 			WHERE item=$id
-			AND $tbgroundspawns.zoneid=$tbzones.zoneidnumber";
+			AND $ground_spawns_table.zoneid=$zones_table.zoneidnumber";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print $Separator;

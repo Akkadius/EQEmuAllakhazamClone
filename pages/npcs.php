@@ -15,17 +15,17 @@ if ($isearch != "") {
     } else {
         $name = addslashes($iname);
     }
-    $Query = "SELECT $tbnpctypes.id,$tbnpctypes.name
-		FROM $tbnpctypes
+    $Query = "SELECT $npc_types_table.id,$npc_types_table.name
+		FROM $npc_types_table
 		WHERE 1=1";
     if ($name != "") {
         $name = str_replace('`', '-', str_replace('_', '%', str_replace(' ', '%', $name)));
-        $Query .= " AND $tbnpctypes.Name like '%$name%'";
+        $Query .= " AND $npc_types_table.Name like '%$name%'";
     }
     if ($hide_invisible_men) {
-        $Query .= " AND $tbnpctypes.race != 127 AND $tbnpctypes.race != 240";
+        $Query .= " AND $npc_types_table.race != 127 AND $npc_types_table.race != 240";
     }
-    $Query .= " ORDER BY $tbnpctypes.Name, $tbnpctypes.id LIMIT " . (LimitToUse($max_npcs_returned) + 1);
+    $Query .= " ORDER BY $npc_types_table.Name, $npc_types_table.id LIMIT " . (LimitToUse($max_npcs_returned) + 1);
 
     $QueryResult = mysql_query($Query) or message_die('npcs.php', 'MYSQL_QUERY', $Query, mysql_error());
 

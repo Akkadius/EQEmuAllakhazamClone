@@ -35,30 +35,30 @@ print "</td></tr></table>";
 
 if (isset($class) && $class != 0) {
     $Query = "SELECT
-			$tbspells.name,
-			$tbspells.id,
-			$tbspells.new_icon,
-			$tbspells.teleport_zone,
-			$tbspells.classes" . $class . ",
-			$tbnpctypes.race,
-			$tbnpctypes.level,
-			$tbnpctypes.class,
-			$tbnpctypes.hp,
-			$tbnpctypes.mana,
-			$tbnpctypes.AC,
-			$tbnpctypes.mindmg,
-			$tbnpctypes.maxdmg
+			$spells_table.name,
+			$spells_table.id,
+			$spells_table.new_icon,
+			$spells_table.teleport_zone,
+			$spells_table.classes" . $class . ",
+			$npc_types_table.race,
+			$npc_types_table.level,
+			$npc_types_table.class,
+			$npc_types_table.hp,
+			$npc_types_table.mana,
+			$npc_types_table.AC,
+			$npc_types_table.mindmg,
+			$npc_types_table.maxdmg
 			FROM
-			$tbspells 
-			INNER JOIN $tbpets ON $tbpets.type = $tbspells.teleport_zone
-			INNER JOIN $tbnpctypes ON $tbnpctypes.name = $tbspells.teleport_zone
-			WHERE $tbspells.classes" . $class . " > 0
-			AND $tbspells.classes" . $class . " < " . $server_max_level;
+			$spells_table
+			INNER JOIN $pets_table ON $pets_table.type = $spells_table.teleport_zone
+			INNER JOIN $npc_types_table ON $npc_types_table.name = $spells_table.teleport_zone
+			WHERE $spells_table.classes" . $class . " > 0
+			AND $spells_table.classes" . $class . " < " . $server_max_level;
 
     if ($use_spell_globals == TRUE) {
-        $Query .= " AND ISNULL((SELECT spell_globals.spellid FROM spell_globals WHERE spell_globals.spellid = $tbspells.`id`))";
+        $Query .= " AND ISNULL((SELECT spell_globals.spellid FROM spell_globals WHERE spell_globals.spellid = $spells_table.`id`))";
     }
-    $Query .= " GROUP BY $tbspells.`teleport_zone` ORDER BY $tbspells.classes" . $class;
+    $Query .= " GROUP BY $spells_table.`teleport_zone` ORDER BY $spells_table.classes" . $class;
     $result = mysql_query($Query);
     if (!$result) {
         print 'Could not run query: ' . mysql_error();

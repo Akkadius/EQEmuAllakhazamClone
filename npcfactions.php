@@ -6,7 +6,7 @@ require_once($includes_dir . 'mysql.php');
 // Pagination //
 $page = (isset($_GET['page']) ? addslashes($_GET['page']) : 0);
 $targetpage = "npcfactions.php";                // File name  (the name of this file)
-$tbl_name = $tbfactionlist;                        // Table name
+$tbl_name = $faction_list_table;                        // Table name
 if ($page) {
     $start = ($page - 1) * $MaxResultsPerPage;    //first item to display on this page
 } else {
@@ -21,7 +21,7 @@ require_once($includes_dir . 'functions.php');
 
 echo '<br><table width="50%" border ="1" style="background-color: ; filter:alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8;"><td align="left">';
 echo "<p class=menuh>Factions:<p>";
-$query = "SELECT id,name from $tbfactionlist order by name ASC";
+$query = "SELECT id,name from $faction_list_table order by name ASC";
 // Limits for pagination
 $query .= " LIMIT $start, $MaxResultsPerPage";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());

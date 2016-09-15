@@ -16,10 +16,10 @@ if ($isearch != "") {
         $name = str_replace('_', '%', addslashes($iname));
     }
 
-    $Query = "SELECT $tbfactionlist.id,$tbfactionlist.name
-				FROM $tbfactionlist
-				WHERE $tbfactionlist.name like '%" . $name . "%'
-				ORDER BY $tbfactionlist.name
+    $Query = "SELECT $faction_list_table.id,$faction_list_table.name
+				FROM $faction_list_table
+				WHERE $faction_list_table.name like '%" . $name . "%'
+				ORDER BY $faction_list_table.name
 				LIMIT " . (LimitToUse($MaxFactionsReturned) + 1);
 
     $QueryResult = mysql_query($Query) or message_die('factions.php', 'MYSQL_QUERY', $Query, mysql_error());

@@ -10,7 +10,7 @@ $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
 $mode = (isset($_GET['mode']) ? addslashes($_GET["mode"]) : 'npcs');
 
 if ($name == "") exit;
-$zone = GetRowByQuery("SELECT * FROM $tbzones WHERE short_name='$name'");
+$zone = GetRowByQuery("SELECT * FROM $zones_table WHERE short_name='$name'");
 
 header("Content-type: application/vnd.ms-excel");
 header("Content-disposition: attachment; filename=$name.csv");
@@ -23,22 +23,22 @@ foreach ($npcs as $id) {
     $txt = "";
     $spawns = array();
     $loots = array();
-    $query = "SELECT $tbnpctypes.* FROM $tbnpctypes WHERE $tbnpctypes.id=$id";
+    $query = "SELECT $npc_types_table.* FROM $npc_types_table WHERE $npc_types_table.id=$id";
     $mymob = GetRowByQuery($query);
     $txt = str_replace(array('_', '#'), ' ', $mymob["name"]) . ",";
     $txt .= $dbiracenames[$mymob["race"]] . ",";
     $txt .= $dbclasses[$mymob["class"]] . ",";
     $txt .= $mymob["level"] . ",";
 
-    $query = "SELECT $tbspawn2.x,$tbspawn2.y,$tbspawn2.z,
-             $tbspawngroup.name as spawngroup,
-             $tbspawngroup.id as spawngroupID,
-             $tbspawn2.respawntime
-          FROM $tbspawnentry,$tbspawn2,$tbspawngroup
-          WHERE $tbspawnentry.npcID=$id
-            AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-            AND $tbspawn2.zone='$name'
-            AND $tbspawnentry.spawngroupID=$tbspawngroup.id";
+    $query = "SELECT $spawn2_table.x,$spawn2_table.y,$spawn2_table.z,
+             $spawn_group_table.name as spawngroup,
+             $spawn_group_table.id as spawngroupID,
+             $spawn2_table.respawntime
+          FROM $spawn_entry_table,$spawn2_table,$spawn_group_table
+          WHERE $spawn_entry_table.npcID=$id
+            AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+            AND $spawn2_table.zone='$name'
+            AND $spawn_entry_table.spawngroupID=$spawn_group_table.id";
     $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $cpt = 0;
@@ -50,13 +50,13 @@ foreach ($npcs as $id) {
     }
 
     if (($mymob["loottable_id"] > 0) AND ((!in_array($mymob["class"], $dbmerchants)) OR ($merchants_dont_drop_stuff == FALSE))) {
-        $query = "SELECT $tbitems.id,$tbitems.Name,$tbitems.itemtype,
-                   $tblootdropentries.chance,$tbloottableentries.probability,
-                   $tbloottableentries.lootdrop_id,$tbloottableentries.multiplier
-            FROM $tbitems,$tbloottableentries,$tblootdropentries
-            WHERE $tbloottableentries.loottable_id=" . $mymob["loottable_id"] . "
-              AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
-              AND $tblootdropentries.item_id=$tbitems.id";
+        $query = "SELECT $items_table.id,$items_table.Name,$items_table.itemtype,
+                   $loot_drop_entries_table.chance,$loot_table_entries.probability,
+                   $loot_table_entries.lootdrop_id,$loot_table_entries.multiplier
+            FROM $items_table,$loot_table_entries,$loot_drop_entries_table
+            WHERE $loot_table_entries.loottable_id=" . $mymob["loottable_id"] . "
+              AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
+              AND $loot_drop_entries_table.item_id=$items_table.id";
         $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $cpt = 0;

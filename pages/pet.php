@@ -4,9 +4,9 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 $Title = "Pet :: $name";
 
-$query = "SELECT $tbnpctypes.*
-            FROM $tbnpctypes
-            WHERE $tbnpctypes.name = '$name' LIMIT 1";
+$query = "SELECT $npc_types_table.*
+            FROM $npc_types_table
+            WHERE $npc_types_table.name = '$name' LIMIT 1";
 $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
 $npc = mysql_fetch_array($result);
 
@@ -55,17 +55,17 @@ print "<tr class=myline height=6><td colspan=2></td><tr>\n";
 print "<tr valign=top>";
 
 if ($npc["npc_spells_id"] > 0) {
-    $query = "SELECT * FROM $tbnpcspells WHERE id=" . $npc["npc_spells_id"];
+    $query = "SELECT * FROM $npc_spells_table WHERE id=" . $npc["npc_spells_id"];
     $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         $g = mysql_fetch_array($result);
         print "<td><table border=0><tr><td colspan=2 nowrap><b>This pet casts the following spells : </b><p>";
-        $query = "SELECT $tbnpcspellsentries.spellid
-                FROM $tbnpcspellsentries
-                WHERE $tbnpcspellsentries.npc_spells_id=" . $npc["npc_spells_id"] . "
-                  AND $tbnpcspellsentries.minlevel<=" . $npc["level"] . "
-                  AND $tbnpcspellsentries.maxlevel>=" . $npc["level"] . "
-                ORDER BY $tbnpcspellsentries.priority DESC
+        $query = "SELECT $npc_spells_entries_table.spellid
+                FROM $npc_spells_entries_table
+                WHERE $npc_spells_entries_table.npc_spells_id=" . $npc["npc_spells_id"] . "
+                  AND $npc_spells_entries_table.minlevel<=" . $npc["level"] . "
+                  AND $npc_spells_entries_table.maxlevel>=" . $npc["level"] . "
+                ORDER BY $npc_spells_entries_table.priority DESC
                 ";
         $result2 = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {

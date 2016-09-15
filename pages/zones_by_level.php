@@ -21,14 +21,14 @@ $lowlimit = 5;
 // $MinimumNpcLvl allows you to remove low lvl npcs, such as invisible men used for triggers, set to 0 if not used
 $MinimumNpcLvl = 1;
 $zones = array();
-$query = "SELECT $tbzones.*
-        FROM $tbzones";
+$query = "SELECT $zones_table.*
+        FROM $zones_table";
 $v = "WHERE";
 foreach ($ignore_zones AS $zid) {
-    $query .= " $v $tbzones.short_name!='$zid'";
+    $query .= " $v $zones_table.short_name!='$zid'";
     $v = " AND ";
 }
-$query .= " ORDER BY $tbzones.long_name ASC";
+$query .= " ORDER BY $zones_table.long_name ASC";
 $result = mysql_query($query) or message_die('zones_by_level.php', 'MYSQL_QUERY', $query, mysql_error());
 $cpt = 0;
 while ($res = mysql_fetch_array($result)) {
@@ -36,16 +36,16 @@ while ($res = mysql_fetch_array($result)) {
     $zones[$cpt]["longname"] = $res["long_name"];
     $zones[$cpt]["npcs"] = 0;
     $zones[$cpt]["val"] = 0;
-    $query = "SELECT $tbnpctypes.level
-          FROM $tbnpctypes,$tbspawn2,$tbspawnentry
-          WHERE $tbspawn2.zone='" . $res["short_name"] . "'
-          AND $tbspawnentry.spawngroupID=$tbspawn2.spawngroupID
-          AND $tbspawnentry.npcID=$tbnpctypes.id";
+    $query = "SELECT $npc_types_table.level
+          FROM $npc_types_table,$spawn2_table,$spawn_entry_table
+          WHERE $spawn2_table.zone='" . $res["short_name"] . "'
+          AND $spawn_entry_table.spawngroupID=$spawn2_table.spawngroupID
+          AND $spawn_entry_table.npcID=$npc_types_table.id";
     if ($hide_invisible_men == TRUE) {
-        $query .= " AND $tbnpctypes.race!=127 AND $tbnpctypes.race!=240";
+        $query .= " AND $npc_types_table.race!=127 AND $npc_types_table.race!=240";
     }
-    $query .= " AND $tbnpctypes.level>$MinimumNpcLvl
-          GROUP BY $tbnpctypes.id";
+    $query .= " AND $npc_types_table.level>$MinimumNpcLvl
+          GROUP BY $npc_types_table.id";
     $result2 = mysql_query($query) or message_die('zones_by_level.php', 'MYSQL_QUERY', $query, mysql_error());
     while ($row = mysql_fetch_array($result2)) {
         $lvl = floor($row["level"] / 5);

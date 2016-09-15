@@ -37,7 +37,7 @@ $iavailevel = (isset($_GET['iavailevel']) ? addslashes($_GET['iavailevel']) : ''
 $ideity = (isset($_GET['ideity']) ? addslashes($_GET['ideity']) : '');
 
 if ($isearch != "") {
-    $Query = "SELECT $tbitems.* FROM ($tbitems";
+    $Query = "SELECT $items_table.* FROM ($items_table";
 
     if ($discovered_items_only == TRUE) {
         $Query .= ",discovered_items";
@@ -45,16 +45,16 @@ if ($isearch != "") {
 
     if ($iavailability == 1) {
         // mob dropped
-        $Query .= ",$tblootdropentries,$tbloottableentries,$tbnpctypes";
+        $Query .= ",$loot_drop_entries_table,$loot_table_entries,$npc_types_table";
     }
     $Query .= ")";
     $s = " WHERE";
     if ($ieffect != "") {
         $effect = "%" . str_replace(',', '%', str_replace(' ', '%', addslashes($ieffect))) . "%";
-        $Query .= " LEFT JOIN $tbspells AS proc_s ON proceffect=proc_s.id";
-        $Query .= " LEFT JOIN $tbspells AS worn_s ON worneffect=worn_s.id";
-        $Query .= " LEFT JOIN $tbspells AS focus_s ON focuseffect=focus_s.id";
-        $Query .= " LEFT JOIN $tbspells AS click_s ON clickeffect=click_s.id";
+        $Query .= " LEFT JOIN $spells_table AS proc_s ON proceffect=proc_s.id";
+        $Query .= " LEFT JOIN $spells_table AS worn_s ON worneffect=worn_s.id";
+        $Query .= " LEFT JOIN $spells_table AS focus_s ON focuseffect=focus_s.id";
+        $Query .= " LEFT JOIN $spells_table AS click_s ON clickeffect=click_s.id";
         $Query .= " WHERE (proc_s.name LIKE '$effect'
 				OR worn_s.name LIKE '$effect' 
 				OR focus_s.name LIKE '$effect' 
@@ -63,88 +63,88 @@ if ($isearch != "") {
     }
     if (($istat1 != "") AND ($istat1value != "")) {
         if ($istat1 == "ratio") {
-            $Query .= " $s ($tbitems.delay/$tbitems.damage $istat1comp $istat1value) AND ($tbitems.damage>0)";
+            $Query .= " $s ($items_table.delay/$items_table.damage $istat1comp $istat1value) AND ($items_table.damage>0)";
             $s = "AND";
         } else {
-            $Query .= " $s ($tbitems.$istat1 $istat1comp $istat1value)";
+            $Query .= " $s ($items_table.$istat1 $istat1comp $istat1value)";
             $s = "AND";
         }
     }
     if (($istat2 != "") AND ($istat2value != "")) {
         if ($istat2 == "ratio") {
-            $Query .= " $s ($tbitems.delay/$tbitems.damage $istat2comp $istat2value) AND ($tbitems.damage>0)";
+            $Query .= " $s ($items_table.delay/$items_table.damage $istat2comp $istat2value) AND ($items_table.damage>0)";
             $s = "AND";
         } else {
-            $Query .= " $s ($tbitems.$istat2 $istat2comp $istat2value)";
+            $Query .= " $s ($items_table.$istat2 $istat2comp $istat2value)";
             $s = "AND";
         }
     }
     if (($imod != "") AND ($imodvalue != "")) {
-        $Query .= " $s ($tbitems.$imod $imodcomp $imodvalue)";
+        $Query .= " $s ($items_table.$imod $imodcomp $imodvalue)";
         $s = "AND";
     }
     if ($iavailability == 1) // mob dropped
     {
-        $Query .= " $s $tblootdropentries.item_id=$tbitems.id
-				AND $tbloottableentries.lootdrop_id=$tblootdropentries.lootdrop_id
-				AND $tbloottableentries.loottable_id=$tbnpctypes.loottable_id";
+        $Query .= " $s $loot_drop_entries_table.item_id=$items_table.id
+				AND $loot_table_entries.lootdrop_id=$loot_drop_entries_table.lootdrop_id
+				AND $loot_table_entries.loottable_id=$npc_types_table.loottable_id";
         if ($iavaillevel > 0) {
-            $Query .= " AND $tbnpctypes.level<=$iavaillevel";
+            $Query .= " AND $npc_types_table.level<=$iavaillevel";
         }
         $s = "AND";
     }
     if ($iavailability == 2) // merchant sold
     {
-        $Query .= ",$tbmerchantlist $s $tbmerchantlist.item=$tbitems.id";
+        $Query .= ",$merchant_list_table $s $merchant_list_table.item=$items_table.id";
         $s = "AND";
     }
     if ($discovered_items_only == TRUE) {
-        $Query .= " $s discovered_items.item_id=$tbitems.id";
+        $Query .= " $s discovered_items.item_id=$items_table.id";
         $s = "AND";
     }
     if ($iname != "") {
         $name = addslashes(str_replace("_", "%", str_replace(" ", "%", $iname)));
-        $Query .= " $s ($tbitems.Name like '%" . $name . "%')";
+        $Query .= " $s ($items_table.Name like '%" . $name . "%')";
         $s = "AND";
     }
     if ($iclass > 0) {
-        $Query .= " $s ($tbitems.classes & $iclass) ";
+        $Query .= " $s ($items_table.classes & $iclass) ";
         $s = "AND";
     }
     if ($ideity > 0) {
-        $Query .= " $s ($tbitems.deity   & $ideity) ";
+        $Query .= " $s ($items_table.deity   & $ideity) ";
         $s = "AND";
     }
     if ($irace > 0) {
-        $Query .= " $s ($tbitems.races   & $irace) ";
+        $Query .= " $s ($items_table.races   & $irace) ";
         $s = "AND";
     }
     if ($itype >= 0) {
-        $Query .= " $s ($tbitems.itemtype=$itype) ";
+        $Query .= " $s ($items_table.itemtype=$itype) ";
         $s = "AND";
     }
     if ($islot > 0) {
-        $Query .= " $s ($tbitems.slots   & $islot) ";
+        $Query .= " $s ($items_table.slots   & $islot) ";
         $s = "AND";
     }
     if ($iaugslot > 0) {
         $AugSlot = pow(2, $iaugslot) / 2;
-        $Query .= " $s ($tbitems.augtype & $AugSlot) ";
+        $Query .= " $s ($items_table.augtype & $AugSlot) ";
         $s = "AND";
     }
     if ($iminlevel > 0) {
-        $Query .= " $s ($tbitems.reqlevel>=$iminlevel) ";
+        $Query .= " $s ($items_table.reqlevel>=$iminlevel) ";
         $s = "AND";
     }
     if ($ireqlevel > 0) {
-        $Query .= " $s ($tbitems.reqlevel<=$ireqlevel) ";
+        $Query .= " $s ($items_table.reqlevel<=$ireqlevel) ";
         $s = "AND";
     }
     if ($inodrop) {
-        $Query .= " $s ($tbitems.nodrop=1)";
+        $Query .= " $s ($items_table.nodrop=1)";
         $s = "AND";
     }
-    $Query .= " GROUP BY $tbitems.id ORDER BY $tbitems.Name LIMIT " . (LimitToUse($max_items_returned) + 1);
+    $Query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (LimitToUse($max_items_returned) + 1);
     $QueryResult = mysql_query($Query) or message_die('items.php', 'MYSQL_QUERY', $Query, mysql_error());
 
     if (mysql_num_rows($QueryResult) == 1) {

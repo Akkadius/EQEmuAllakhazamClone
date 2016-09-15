@@ -39,8 +39,8 @@ print "<tr align=center colspan=2><td colspan=2><input type=submit value=Search 
 print "</form></table>";
 
 if (isset($isearch) && $isearch != '') {
-    $query = "SELECT $tbnpctypes.id,$tbnpctypes.name,$tbnpctypes.level
-				FROM $tbnpctypes
+    $query = "SELECT $npc_types_table.id,$npc_types_table.name,$npc_types_table.level
+				FROM $npc_types_table
 				WHERE 1=1";
     if ($iminlevel > $imaxlevel) {
         $c = $iminlevel;
@@ -48,25 +48,25 @@ if (isset($isearch) && $isearch != '') {
         $imaxlevel = $c;
     }
     if ($iminlevel > 0 && is_numeric($iminlevel)) {
-        $query .= " AND $tbnpctypes.level>=$iminlevel";
+        $query .= " AND $npc_types_table.level>=$iminlevel";
     }
     if ($imaxlevel > 0 && is_numeric($imaxlevel)) {
-        $query .= " AND $tbnpctypes.level<=$imaxlevel";
+        $query .= " AND $npc_types_table.level<=$imaxlevel";
     }
     if ($inamed) {
-        $query .= " AND substring($tbnpctypes.name,1,1)='#'";
+        $query .= " AND substring($npc_types_table.name,1,1)='#'";
     }
     if ($irace > 0 && is_numeric($irace)) {
-        $query .= " AND $tbnpctypes.race=$irace";
+        $query .= " AND $npc_types_table.race=$irace";
     }
     if ($iname != "") {
         $iname = str_replace('`', '%', str_replace(' ', '%', addslashes($iname)));
-        $query .= " AND $tbnpctypes.name LIKE '%$iname%'";
+        $query .= " AND $npc_types_table.name LIKE '%$iname%'";
     }
     if ($hide_invisible_men == TRUE) {
-        $query .= " AND $tbnpctypes.race!=127";
+        $query .= " AND $npc_types_table.race!=127";
     }
-    $query .= " ORDER BY $tbnpctypes.name";
+    $query .= " ORDER BY $npc_types_table.name";
     $result = mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysql_error());
     $n = mysql_num_rows($result);
     if ($n > $max_npcs_returned) {

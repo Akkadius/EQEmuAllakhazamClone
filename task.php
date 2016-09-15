@@ -16,7 +16,7 @@ $id = (isset($_GET['id']) ? $_GET['id'] : '');
 $name = (isset($_GET['name']) ? $_GET['name'] : '');
 
 if ($id != "" && is_numeric($id) && $display_task_info == TRUE) {
-    $Query = "SELECT * FROM $tbtasks WHERE id='" . $id . "'";
+    $Query = "SELECT * FROM $tasks_table WHERE id='" . $id . "'";
     $QueryResult = mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
     if (mysql_num_rows($QueryResult) == 0) {
         header("Location: customzoneslist.php");
@@ -87,7 +87,7 @@ if ($MultiStep) {
 if ($display_task_activities == TRUE) {
     print "<tr class='myline' height='6'><td colspan='2'></td></tr>\n";
     print "<tr valign='top'>";
-    $Query = "SELECT * FROM $tbtaskactivities WHERE taskid='" . $id . "' ORDER BY activityid";
+    $Query = "SELECT * FROM $activities_table WHERE taskid='" . $id . "' ORDER BY activityid";
     $QueryResult = mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
 
     if (mysql_num_rows($QueryResult) > 0) {

@@ -10,12 +10,12 @@ if (!is_numeric($id) || $display_spawn_group_info == FALSE) {
     header("Location: index.php");
     exit();
 }
-$query = "SELECT $tbspawngroup.name AS sgname, $tbspawn2.*,
-        $tbzones.long_name AS zone, $tbzones.short_name AS spawnzone
-        FROM $tbspawngroup,$tbspawn2,$tbzones
-        WHERE $tbspawngroup.id=$id
-          AND $tbspawn2.spawngroupID=$tbspawngroup.id
-          AND $tbspawn2.zone=$tbzones.short_name";
+$query = "SELECT $spawn_group_table.name AS sgname, $spawn2_table.*,
+        $zones_table.long_name AS zone, $zones_table.short_name AS spawnzone
+        FROM $spawn_group_table,$spawn2_table,$zones_table
+        WHERE $spawn_group_table.id=$id
+          AND $spawn2_table.spawngroupID=$spawn_group_table.id
+          AND $spawn2_table.zone=$zones_table.short_name";
 $result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 $spawn = mysql_fetch_array($result);
 $Title = $spawn["sgname"] . " (" . $spawn["zone"] . " : " . floor($spawn["y"]) . "," . floor($spawn["x"]) . "," . floor($spawn["z"]) . ")";
@@ -29,11 +29,11 @@ if (!isset($id) || $id == '') {
 }
 
 print "<table border=0 width=0%><tr valign=top><td width=50% nowrap>\n";
-$query = "SELECT $tbspawnentry.chance,$tbnpctypes.name,$tbnpctypes.id
-        FROM $tbspawnentry,$tbnpctypes
-        WHERE $tbspawnentry.spawngroupID=$id
-          AND $tbspawnentry.npcID=$tbnpctypes.id 
-        ORDER BY $tbnpctypes.name ASC
+$query = "SELECT $spawn_entry_table.chance,$npc_types_table.name,$npc_types_table.id
+        FROM $spawn_entry_table,$npc_types_table
+        WHERE $spawn_entry_table.spawngroupID=$id
+          AND $spawn_entry_table.npcID=$npc_types_table.id
+        ORDER BY $npc_types_table.name ASC
         ";
 $result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 print "<b>NPCs composing that spawngroup :</b>";
@@ -45,18 +45,18 @@ if (mysql_num_rows($result) > 0) {
 print "</td><td width=50% nowrap>";
 print "<b>NPCs spawning around that spawngroup : </b><br>(Max range : $spawngroup_around_range)<ul>";
 $myrange = $spawngroup_around_range * $spawngroup_around_range; // precalculate, saves some mysql time
-$query = "SELECT $tbspawnentry.chance,$tbspawn2.x AS x, $tbspawn2.y AS y, $tbspawn2.z AS z,
-               $tbnpctypes.name,$tbnpctypes.id,
-               $tbspawngroup.id AS sgid,$tbspawngroup.name AS sgname
-        FROM $tbspawnentry,$tbnpctypes,$tbspawngroup,$tbspawn2
-        WHERE $tbspawn2.zone='" . $spawn["spawnzone"] . "'
-          AND $tbspawn2.spawngroupID=$tbspawngroup.id
-          AND $tbspawn2.spawngroupID=$tbspawnentry.spawngroupID
-          AND $tbspawnentry.npcID=$tbnpctypes.id
-          AND(($x-$tbspawn2.x)*($x-$tbspawn2.x))+(($y-$tbspawn2.y)*($y-$tbspawn2.y))<$myrange
-          AND (abs(z-$tbspawn2.z)<20)
-          AND $tbspawngroup.id!=$id
-        ORDER BY sgid ASC, $tbnpctypes.name ASC
+$query = "SELECT $spawn_entry_table.chance,$spawn2_table.x AS x, $spawn2_table.y AS y, $spawn2_table.z AS z,
+               $npc_types_table.name,$npc_types_table.id,
+               $spawn_group_table.id AS sgid,$spawn_group_table.name AS sgname
+        FROM $spawn_entry_table,$npc_types_table,$spawn_group_table,$spawn2_table
+        WHERE $spawn2_table.zone='" . $spawn["spawnzone"] . "'
+          AND $spawn2_table.spawngroupID=$spawn_group_table.id
+          AND $spawn2_table.spawngroupID=$spawn_entry_table.spawngroupID
+          AND $spawn_entry_table.npcID=$npc_types_table.id
+          AND(($x-$spawn2_table.x)*($x-$spawn2_table.x))+(($y-$spawn2_table.y)*($y-$spawn2_table.y))<$myrange
+          AND (abs(z-$spawn2_table.z)<20)
+          AND $spawn_group_table.id!=$id
+        ORDER BY sgid ASC, $npc_types_table.name ASC
         ";
 $result = mysql_query($query) or message_die('spawngroup.php', 'MYSQL_QUERY', $query, mysql_error());
 $sg = 0;

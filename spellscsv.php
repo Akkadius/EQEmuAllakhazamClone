@@ -17,8 +17,8 @@ if ($imin == 0 || !is_numeric($imin)) {
 if ($imax == 0 || !is_numeric($imax)) {
     $imax = $server_max_level;
 }
-$query = "SELECT $tbspells.*
-        FROM $tbspells
+$query = "SELECT $spells_table.*
+        FROM $spells_table
         WHERE 1=1";
 if ($iname != "") {
     $iname = str_replace(' ', '%', $iname);
