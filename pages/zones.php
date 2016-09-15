@@ -1,6 +1,6 @@
 <?php
 $Title="Populated Zones List";
-print "<table ><tr valign=top><td width=100%>";
+print "<table class=''><tr valign=top><td>";
 
 $query="SELECT $tbzones.short_name AS short_name,
                $tbzones.long_name AS long_name,
@@ -16,11 +16,11 @@ $query="SELECT $tbzones.short_name AS short_name,
 $query.=" GROUP BY $tbspawn2.zone
         ORDER BY $tbzones.long_name ASC";
 $result=mysql_query($query) or message_die('zones.php','MYSQL_QUERY',$query,mysql_error());
-print "<center><table border=1><tr>
-       <td class=tab_title>Name</td>
-       <td class=tab_title>Short name</td>
-       <td class=tab_title>ID</td>
-       <td class=tab_title>Spawn points</td>
+print "<center><table class='display_table datatable container_div'><tr>
+       <td style='font-weight:bold'>Name</td>
+       <td style='font-weight:bold'>Short name</td>
+       <td style='font-weight:bold'>ID</td>
+       <td style='font-weight:bold'>Spawn points</td>
        ";
 while ($row=mysql_fetch_array($result)) {
   print "<tr>
@@ -31,11 +31,7 @@ while ($row=mysql_fetch_array($result)) {
          </tr>";
 }
 print "</table></center>";
-
 print "</td><td width=0% nowrap>";
-
-
-
 print "</td></tr></table>";
 
 

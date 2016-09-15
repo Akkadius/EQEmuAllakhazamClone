@@ -402,3 +402,15 @@ select {
 .icon_pad {
     padding-right: 5px;
 }
+
+.section_header {
+    font-size: 13px;
+    font-weight: bold;
+    background: #b1a67e;
+    margin: 0;
+    padding: 3px;
+}
+
+.display_table {
+    width: 500px;
+}

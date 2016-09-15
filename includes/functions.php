@@ -886,388 +886,340 @@ function Pagination($targetpage, $page, $total_pages, $limit, $adjacents)
 // Used for item.php as well as for tooltips for items
 function BuildItemStats($item, $show_name_icon) {
 
-	global $dbitypes, $dam2h, $dbbagtypes, $dbskills, $icons_url, $tbspells, $dbiaugrestrict, $dbiracenames;
+    global $dbitypes, $dam2h, $dbbagtypes, $dbskills, $icons_url, $tbspells, $dbiaugrestrict, $dbiracenames;
 
-	$Tableborder = 0;
+    $html_string = "";
+    $html_string .= "<table width='100%'><tr><td valign='top'>";
+    if ($show_name_icon) {
+        $html_string .= "<h4 style='margin-top:0'>" . $item["Name"] . "</h4></td>";
+        $html_string .= "<td><img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='right' valign='top'/></td></tr><tr><td>";
+    }
 
-	$html_string = "";
-	$html_string .= "<table border='$Tableborder' width='100%'><tr><td valign='top'>";
-	if ($show_name_icon)
-	{
-		$html_string .= "<h4 style='margin-top:0'>" . $item["Name"] . "</h4></td>";
-		$html_string .= "<td><img src='" . $icons_url . "item_" . $item["icon"] . ".png' align='right' valign='top'/></td></tr><tr><td>";
-	}
-	
-	$html_string .= "<table border='$Tableborder' width='100%' cellpadding='0' cellspacing='0'>";
+    $html_string .= "<table width='100%' cellpadding='0' cellspacing='0'>";
 
-	// lore, nodrop, norent, magic
-	$html_string .= "<tr>";
-	$html_string .= "<td colspan='2' nowrap='1'>";
-	$v = "";
-	if($item["itemtype"] == 54)  { $html_string .= "$v AUGMENTATION"; $v = " "; }
-	if($item["magic"] == 1)      { $html_string .= "$v MAGIC ITEM";   $v = " "; }
-	if($item["loreflag"] == 1)   { $html_string .= "$v LORE ITEM";    $v = " "; }
-	if($item["nodrop"] == 0)     { $html_string .= "$v NODROP";       $v = " "; }
-	if($item["norent"] == 0)     { $html_string .= "$v NORENT";       $v = " "; }
-	$html_string .= "                            </td>";
-	$html_string .= "                          </tr>";
+    // lore, nodrop, norent, magic
+    $html_string .= "<tr>";
+    $html_string .= "<td colspan='2' nowrap='1'>";
+    $v = "";
+    if ($item["itemtype"] == 54) {
+        $html_string .= "$v AUGMENTATION";
+        $v = " ";
+    }
+    if ($item["magic"] == 1) {
+        $html_string .= "$v MAGIC ITEM";
+        $v = " ";
+    }
+    if ($item["loreflag"] == 1) {
+        $html_string .= "$v LORE ITEM";
+        $v = " ";
+    }
+    if ($item["nodrop"] == 0) {
+        $html_string .= "$v NODROP";
+        $v = " ";
+    }
+    if ($item["norent"] == 0) {
+        $html_string .= "$v NORENT";
+        $v = " ";
+    }
+    $html_string .= "                            </td>";
+    $html_string .= "                          </tr>";
 
-	// Classes
-	if($item["classes"] > 0)
-	{
-		$html_string .= "<tr><td colspan='2'><b>Classes: </b>".getclasses($item["classes"])."</td></tr>";
-	}
-	else
-	{
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Classes: </b>All classes</td></tr>";
-	}
-	// Races
-	if($item["races"] > 0)
-	{
-		$html_string .= "<tr><td colspan='2'><b>Races: </b>".getraces($item["races"])."</td></tr>";
-	}
-	else
-	{
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Races: </b>All races</td></tr>";
-	}  
-	// Deity
-	if($item["deity"] > 0)
-	{
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Deity: </b>".gedeities($item["deity"])."</td></tr>";
-	}
+    // Classes
+    if ($item["classes"] > 0) {
+        $html_string .= "<tr><td colspan='2'><b>Classes: </b>" . getclasses($item["classes"]) . "</td></tr>";
+    } else {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Classes: </b>All classes</td></tr>";
+    }
+    // Races
+    if ($item["races"] > 0) {
+        $html_string .= "<tr><td colspan='2'><b>Races: </b>" . getraces($item["races"]) . "</td></tr>";
+    } else {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Races: </b>All races</td></tr>";
+    }
+    // Deity
+    if ($item["deity"] > 0) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Deity: </b>" . gedeities($item["deity"]) . "</td></tr>";
+    }
 
-	// Slots
-	if($item["slots"] > 0)
-	{
-		$html_string .= "<tr><td colspan='2'><b>Slot: </b>".strtoupper(getslots($item["slots"]))."</td></tr>";
-	}
-	if($item["slots"] == 0)
-	{
-		$html_string .= "<tr><td colspan='2' ><b>Slot: </b>NONE</td></tr>";
-	}
+    // Slots
+    if ($item["slots"] > 0) {
+        $html_string .= "<tr><td colspan='2'><b>Slot: </b>" . strtoupper(getslots($item["slots"])) . "</td></tr>";
+    }
+    if ($item["slots"] == 0) {
+        $html_string .= "<tr><td colspan='2' ><b>Slot: </b>NONE</td></tr>";
+    }
 
-	$TypeString = "";
-	switch($item["itemtype"])
-	{
-		case 0: // 1HS
-		case 2: // 1HP
-		case 3: // 1HB
-		case 42: // H2H
-		case 1: // 2hs
-		case 4: // 2hb 
-		case 35: // 2hp
-			$TypeString = "Skill";
-			break;
-		default:
-			$TypeString = "Item Type";
-			break;
-	}
-	// Item type or Skill
-	// Bags show as 1HS
-	if(($dbitypes[$item["itemtype"]] != "") && ($item["bagslots"] == 0))
-	{
-		if($item["slots"] == 0)
-		{
-			$html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>".$TypeString.": </b>Inventory";
-		}
-		else
-		{
-			$html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>".$TypeString.": </b>".$dbitypes[$item["itemtype"]];
-		}
-		if ($item["stackable"] > 0)
-		{
-			$html_string .= " (stackable)";
-		}
-		$html_string .= "</td></tr>";
-	}
+    $TypeString = "";
+    switch ($item["itemtype"]) {
+        case 0: // 1HS
+        case 2: // 1HP
+        case 3: // 1HB
+        case 42: // H2H
+        case 1: // 2hs
+        case 4: // 2hb
+        case 35: // 2hp
+            $TypeString = "Skill";
+            break;
+        default:
+            $TypeString = "Item Type";
+            break;
+    }
+    // Item type or Skill
+    // Bags show as 1HS
+    if (($dbitypes[$item["itemtype"]] != "") && ($item["bagslots"] == 0)) {
+        if ($item["slots"] == 0) {
+            $html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>" . $TypeString . ": </b>Inventory";
+        } else {
+            $html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>" . $TypeString . ": </b>" . $dbitypes[$item["itemtype"]];
+        }
+        if ($item["stackable"] > 0) {
+            $html_string .= " (stackable)";
+        }
+        $html_string .= "</td></tr>";
+    }
 
-	// Bag-specific information
-	if($item["bagslots"] > 0)
-	{
-		$html_string .= "<tr><td width='0%' nowrap='1'><b>Item Type: </b>Container</td></tr>";
-		$html_string .= "<tr><td width='0%' nowrap='1'><b>Number of Slots: </b>".$item["bagslots"]."</td></tr>";
-		if($item["bagtype"] > 0)
-		{
-			$html_string .= "<tr><td width='0%' nowrap='1'><b>Trade Skill Container: </b>".$dbbagtypes[$item["bagtype"]]."</td></tr>";
-		}
-		if($item["bagwr"] > 0)
-		{
-			$html_string .= "<tr><td width='0%'  nowrap='1'><b>Weight Reduction: </b>".$item["bagwr"]."%</td></tr>";
-		}
-		$html_string .= "<tr><td width='0%' nowrap='1' colspan='2'>This can hold ".strtoupper(getsize($item["bagsize"]))." and smaller items.</td></tr>";
-	}
+    // Bag-specific information
+    if ($item["bagslots"] > 0) {
+        $html_string .= "<tr><td width='0%' nowrap='1'><b>Item Type: </b>Container</td></tr>";
+        $html_string .= "<tr><td width='0%' nowrap='1'><b>Number of Slots: </b>" . $item["bagslots"] . "</td></tr>";
+        if ($item["bagtype"] > 0) {
+            $html_string .= "<tr><td width='0%' nowrap='1'><b>Trade Skill Container: </b>" . $dbbagtypes[$item["bagtype"]] . "</td></tr>";
+        }
+        if ($item["bagwr"] > 0) {
+            $html_string .= "<tr><td width='0%'  nowrap='1'><b>Weight Reduction: </b>" . $item["bagwr"] . "%</td></tr>";
+        }
+        $html_string .= "<tr><td width='0%' nowrap='1' colspan='2'>This can hold " . strtoupper(getsize($item["bagsize"])) . " and smaller items.</td></tr>";
+    }
 
-	$html_string .= "</table>";
+    $html_string .= "</table>";
 
-	$html_string .= "<table border='$Tableborder' width='0%' cellpadding='0' cellspacing='0'>";
+    $html_string .= "<table width='0%' cellpadding='0' cellspacing='0'>";
 
-	// Weight, Size, Rec/Req Level, skill
-	$html_string .= "<tr valign='top'><td>";
-	$html_string .= "<table width='0%' border='$Tableborder' cellpadding='0' cellspacing='5'>";
-	$html_string .= "<tr><td><b>Size: </b></td><td>".strtoupper(getsize($item["size"]))."</td></tr>";
-	$html_string .= GetItemStatsString("Weight",($item["weight"] / 10));
-	$html_string .= GetItemStatsString("Rec Level",$item["reclevel"]);
-	$html_string .= GetItemStatsString("Req Level",$item["reqlevel"]);
-	$html_string .= "</table>";
-	$html_string .= "</td><td>";
-	// AC, HP, Mana, End, Haste
-	$html_string .= "<table width='0%' border='$Tableborder' cellpadding='0' cellspacing='5'>";
-	$html_string .= GetItemStatsString("AC",$item["ac"]);
-	$html_string .= GetItemStatsString("HP",$item["hp"]);
-	$html_string .= GetItemStatsString("Mana",$item["mana"]);
-	$html_string .= GetItemStatsString("Endur",$item["endur"]);
-	$html_string .= GetItemStatsString("Haste",$item["haste"."%"]);
-	$html_string .= "</table>";
-	$html_string .= "</td><td>";
-	// Base Damage, Ele/Bane/BodyType Damage, BS Damage, Delay, Range, Damage Bonus, Range
-	$html_string .= "<table width='0%' border='$Tableborder' cellpadding='0' cellspacing='5'>";
-	$html_string .= GetItemStatsString("Base Damage",$item["damage"]);
-	$html_string .= GetItemStatsString(ucfirstwords($dbelements[$item["elemdmgtype"]])." Damage",$item["elemdmgamt"]);
-	if (($item["banedmgrace"]>0) && ($item["banedmgamt"]!=0))
-	{
-		$html_string .= "<tr><td><b>Bane Damage (";
-		$html_string .= $dbiracenames[$item["banedmgrace"]];
-		$html_string .= ") </b></td><td>".sign($item["banedmgamt"])."</td></tr>";
-	}
-	$html_string .= GetItemStatsString(ucfirstwords($dbbodytypes[$item["banedmgbody"]]),$item["banedmgamt"]);
-	$html_string .= GetItemStatsString("Backstab Damage",$item["backstabdmg"]);
-	$html_string .= GetItemStatsString("Delay",$item["delay"]);
-	if($item["damage"] > 0)
-	{
-		switch($item["itemtype"])
-		{
-			case 0: // 1HS
-			case 2: // 1HP
-			case 3: // 1HB
-			case 42: // H2H
-				$dmgbonus = 13; // floor((65-25)/3)  main hand
-				$html_string .= "<tr><td><b>Damage bonus: </b></td><td>$dmgbonus</td></tr>";
-				break;
-			case 1: // 2hs
-			case 4: // 2hb 
-			case 35: // 2hp
-				$dmgbonus = $dam2h[$item["delay"]]; 
-				$html_string .= "<tr><td><b>Damage bonus: </b></td><td>$dmgbonus</td></tr>";
-				break;  
-		}
-	}
-	$html_string .= GetItemStatsString("Range",$item["range"]);
-	$html_string .= "</table>";
-	$html_string .= "</td></tr>";
+    // Weight, Size, Rec/Req Level, skill
+    $html_string .= "<tr valign='top'><td>";
+    $html_string .= "<table cellspacing='5'>";
+    $html_string .= "<tr><td><b>Size: </b></td><td>" . strtoupper(getsize($item["size"])) . "</td></tr>";
+    $html_string .= GetItemStatsString("Weight", ($item["weight"] / 10));
+    $html_string .= GetItemStatsString("Rec Level", $item["reclevel"]);
+    $html_string .= GetItemStatsString("Req Level", $item["reqlevel"]);
+    $html_string .= "</table>";
+    $html_string .= "</td><td>";
+    // AC, HP, Mana, End, Haste
+    $html_string .= "<table width='0%' cellpadding='0' cellspacing='5'>";
+    $html_string .= GetItemStatsString("AC", $item["ac"]);
+    $html_string .= GetItemStatsString("HP", $item["hp"]);
+    $html_string .= GetItemStatsString("Mana", $item["mana"]);
+    $html_string .= GetItemStatsString("Endur", $item["endur"]);
+    $html_string .= GetItemStatsString("Haste", $item["haste" . "%"]);
+    $html_string .= "</table>";
+    $html_string .= "</td><td>";
+    // Base Damage, Ele/Bane/BodyType Damage, BS Damage, Delay, Range, Damage Bonus, Range
+    $html_string .= "<table width='0%' cellpadding='0' cellspacing='5'>";
+    $html_string .= GetItemStatsString("Base Damage", $item["damage"]);
+    $html_string .= GetItemStatsString(ucfirstwords($dbelements[$item["elemdmgtype"]]) . " Damage", $item["elemdmgamt"]);
+    if (($item["banedmgrace"] > 0) && ($item["banedmgamt"] != 0)) {
+        $html_string .= "<tr><td><b>Bane Damage (";
+        $html_string .= $dbiracenames[$item["banedmgrace"]];
+        $html_string .= ") </b></td><td>" . sign($item["banedmgamt"]) . "</td></tr>";
+    }
+    $html_string .= GetItemStatsString(ucfirstwords($dbbodytypes[$item["banedmgbody"]]), $item["banedmgamt"]);
+    $html_string .= GetItemStatsString("Backstab Damage", $item["backstabdmg"]);
+    $html_string .= GetItemStatsString("Delay", $item["delay"]);
+    if ($item["damage"] > 0) {
+        switch ($item["itemtype"]) {
+            case 0: // 1HS
+            case 2: // 1HP
+            case 3: // 1HB
+            case 42: // H2H
+                $dmgbonus = 13; // floor((65-25)/3)  main hand
+                $html_string .= "<tr><td><b>Damage bonus: </b></td><td>$dmgbonus</td></tr>";
+                break;
+            case 1: // 2hs
+            case 4: // 2hb
+            case 35: // 2hp
+                $dmgbonus = $dam2h[$item["delay"]];
+                $html_string .= "<tr><td><b>Damage bonus: </b></td><td>$dmgbonus</td></tr>";
+                break;
+        }
+    }
+    $html_string .= GetItemStatsString("Range", $item["range"]);
+    $html_string .= "</table>";
+    $html_string .= "</td></tr>";
 
-	$html_string .= "<tr valign='top'><td>";
-	$html_string .= "<table width='0%' border='$Tableborder' cellpadding='0' cellspacing='5'>";
-	$html_string .= GetItemStatsString("Strength",$item["astr"],$item["heroic_str"],"orange");
-	$html_string .= GetItemStatsString("Stamina",$item["asta"],$item["heroic_sta"],"orange");
-	$html_string .= GetItemStatsString("Intelligence",$item["aint"],$item["heroic_int"],"orange");
-	$html_string .= GetItemStatsString("Wisdom",$item["awis"],$item["heroic_wis"],"orange");
-	$html_string .= GetItemStatsString("Agility",$item["aagi"],$item["heroic_agi"],"orange");
-	$html_string .= GetItemStatsString("Dexterity",$item["adex"],$item["heroic_dex"],"orange");
-	$html_string .= GetItemStatsString("Charisma",$item["acha"],$item["heroic_cha"],"orange");
-	$html_string .= "</table>";
-	$html_string .= "</td><td>";
-	$html_string .= "<table width='0%' border='$Tableborder' cellpadding='0' cellspacing='5'>";
-	$html_string .= GetItemStatsString("Magic Resist",$item["mr"],$item["heroic_mr"],"orange");
-	$html_string .= GetItemStatsString("Fire Resist",$item["fr"],$item["heroic_fr"],"orange");
-	$html_string .= GetItemStatsString("Cold Resist",$item["cr"],$item["heroic_cr"],"orange");
-	$html_string .= GetItemStatsString("Disease Resist",$item["dr"],$item["heroic_dr"],"orange");
-	$html_string .= GetItemStatsString("Poison Resist",$item["pr"],$item["heroic_pr"],"orange");
-	$html_string .= "</table>";
-	$html_string .= "</td><td>";
-	$html_string .= "<table width='0%' border='$Tableborder' cellpadding='0' cellspacing='5'>";
-	$html_string .= GetItemStatsString("Attack",$item["attack"]);
-	$html_string .= GetItemStatsString("HP Regen",$item["regen"]);
-	$html_string .= GetItemStatsString("Mana Regen",$item["manaregen"]);
-	$html_string .= GetItemStatsString("Endurance Regen",$item["enduranceregen"]);
-	$html_string .= GetItemStatsString("Spell Shielding",$item["spellshield"]);
-	$html_string .= GetItemStatsString("Combat Effects",$item["combateffects"]);
-	$html_string .= GetItemStatsString("Shielding",$item["shielding"]);
-	$html_string .= GetItemStatsString("DoT Shielding",$item["dotshielding"]);
-	$html_string .= GetItemStatsString("Avoidance",$item["avoidance"]);
-	$html_string .= GetItemStatsString("Accuracy",$item["accuracy"]);
-	$html_string .= GetItemStatsString("Stun Resist",$item["stunresist"]);
-	$html_string .= GetItemStatsString("Strikethrough",$item["strikethrough"]);
-	$html_string .= GetItemStatsString("Damage Shield",$item["damageshield"]);
-	$html_string .= "</td></tr></table>";
-	$html_string .= "</td></tr></table>";
-	if ($item["extradmgamt"]>0)
-	{
-		$html_string .= "<tr><td><b>".ucfirstwords($dbskills[$item["extradmgskill"]])." Damage: </b>".sign($item["extradmgamt"])."</td></tr>";
-	}
-	//	$html_string .= "</td></tr>";
-	
-	// Skill Mods
-	if (($item["skillmodtype"]>0) && ($item["skillmodvalue"]!=0))
-	{
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Skill Mod: ".ucfirstwords($dbskills[$item["skillmodtype"]]).": </b>".sign($item["skillmodvalue"])."%</td></tr>";
-	}
-	// Augmentations
-	for( $i = 1; $i <= 5; $i ++)
-	{
-		if($item["augslot".$i."type"] > 0)
-		{
-			$html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>Slot ".$i.": </b>Type ".$item["augslot".$i."type"]."</td></tr>";
-		}
-	}
-	//item proc
-	if (($item["proceffect"]>0) && ($item["proceffect"]<65535))
-	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=".$item["proceffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["proceffect"])."</a>";
-		if ($item["proclevel2"]>0)
-		{
-			$html_string .= "<br><b>Level for effect: </b>".$item["proclevel2"];
-		}
-		$html_string .= "</td></tr>";
-	}
-	// worn effect
-	if (($item["worneffect"]>0) && ($item["worneffect"]<65535))
-	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=".$item["worneffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["worneffect"])."</a>";
-		if ($item["wornlevel"]>0)
-		{
-			$html_string .= "<br><b>Level for effect: </b>".$item["wornlevel"];
-		}
-		$html_string .= "</td></tr>";
-	}
-	// focus effect
-	if (($item["focuseffect"]>0) && ($item["focuseffect"]<65535))
-	{
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=".$item["focuseffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["focuseffect"])."</a>";
-		if ($item["focuslevel"]>0)
-		{
-			$html_string .= "<br/><b>Level for effect: </b>".$item["focuslevel"];
-		}
-		$html_string .= "</td></tr>";
-	}
-	// clicky effect
-	if (($item["clickeffect"]>0) && ($item["clickeffect"]<65535))
-	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=".$item["clickeffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["clickeffect"])."</a> (";
-		if ($item["clicktype"]==4)
-		{
-			$html_string .= "Must Equip. ";
-		}
-		if ($item["casttime"]>0)
-		{
-			$html_string .= "<b>Casting time: </b>".($item["casttime"]/1000)." sec";
-		}
-		else
-		{
-			$html_string .= "<b>Casting time: </b>Instant";
-		}
-		$html_string .= ")";
-		if ($item["clicklevel"]>0)
-		{
-			$html_string .= "<br/><b>Level for effect: </b>".$item["clicklevel"];
-		}
-		if ($item["maxcharges"]>0)
-		{
-			$html_string .= "<br/><b>Charges: </b>".$item["maxcharges"];
-		}
-		elseif ($item["maxcharges"]<0)
-		{
-			$html_string .= "<br/><b>Charges: </b>Unlimited";
-		}
-		else
-		{
-			$html_string .= "<br/><b>Charges: </b>None";
-		}
-		$html_string .= "</td></tr>";
-	}
-	// scroll
-	if (($item["scrolleffect"]>0) && ($item["scrolleffect"]<65535))
-	{ 
-		$html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=".$item["scrolleffect"]."'>".GetFieldByQuery("name","SELECT name FROM $tbspells WHERE id=".$item["scrolleffect"])."</a>";
-		$html_string .= "</td></tr>";
-	}
-	// bard item ?
-	if (($item["bardtype"]>22) && ($item["bardtype"]<65535))
-	{
-		$html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>Bard skill: </b> ".$dbbardskills[$item["bardtype"]];
-		if ($dbbardskills[$item["bardtype"]]=="")
-		{
-			$html_string .= "Unknown".$item["bardtype"];
-		}
-		$val=($item["bardvalue"]*10)-100;
-		if ($val>0)
-		{
-			$html_string .= " (".sign($val)."%)</td></tr>";
-		}
-	}
+    $html_string .= "<tr valign='top'><td>";
+    $html_string .= "<table width='0%' cellpadding='0' cellspacing='5'>";
+    $html_string .= GetItemStatsString("Strength", $item["astr"], $item["heroic_str"], "orange");
+    $html_string .= GetItemStatsString("Stamina", $item["asta"], $item["heroic_sta"], "orange");
+    $html_string .= GetItemStatsString("Intelligence", $item["aint"], $item["heroic_int"], "orange");
+    $html_string .= GetItemStatsString("Wisdom", $item["awis"], $item["heroic_wis"], "orange");
+    $html_string .= GetItemStatsString("Agility", $item["aagi"], $item["heroic_agi"], "orange");
+    $html_string .= GetItemStatsString("Dexterity", $item["adex"], $item["heroic_dex"], "orange");
+    $html_string .= GetItemStatsString("Charisma", $item["acha"], $item["heroic_cha"], "orange");
+    $html_string .= "</table>";
+    $html_string .= "</td><td>";
+    $html_string .= "<table width='0%' cellpadding='0' cellspacing='5'>";
+    $html_string .= GetItemStatsString("Magic Resist", $item["mr"], $item["heroic_mr"], "orange");
+    $html_string .= GetItemStatsString("Fire Resist", $item["fr"], $item["heroic_fr"], "orange");
+    $html_string .= GetItemStatsString("Cold Resist", $item["cr"], $item["heroic_cr"], "orange");
+    $html_string .= GetItemStatsString("Disease Resist", $item["dr"], $item["heroic_dr"], "orange");
+    $html_string .= GetItemStatsString("Poison Resist", $item["pr"], $item["heroic_pr"], "orange");
+    $html_string .= "</table>";
+    $html_string .= "</td><td>";
+    $html_string .= "<table width='0%' cellpadding='0' cellspacing='5'>";
+    $html_string .= GetItemStatsString("Attack", $item["attack"]);
+    $html_string .= GetItemStatsString("HP Regen", $item["regen"]);
+    $html_string .= GetItemStatsString("Mana Regen", $item["manaregen"]);
+    $html_string .= GetItemStatsString("Endurance Regen", $item["enduranceregen"]);
+    $html_string .= GetItemStatsString("Spell Shielding", $item["spellshield"]);
+    $html_string .= GetItemStatsString("Combat Effects", $item["combateffects"]);
+    $html_string .= GetItemStatsString("Shielding", $item["shielding"]);
+    $html_string .= GetItemStatsString("DoT Shielding", $item["dotshielding"]);
+    $html_string .= GetItemStatsString("Avoidance", $item["avoidance"]);
+    $html_string .= GetItemStatsString("Accuracy", $item["accuracy"]);
+    $html_string .= GetItemStatsString("Stun Resist", $item["stunresist"]);
+    $html_string .= GetItemStatsString("Strikethrough", $item["strikethrough"]);
+    $html_string .= GetItemStatsString("Damage Shield", $item["damageshield"]);
+    $html_string .= "</td></tr></table>";
+    $html_string .= "</td></tr></table>";
+    if ($item["extradmgamt"] > 0) {
+        $html_string .= "<tr><td><b>" . ucfirstwords($dbskills[$item["extradmgskill"]]) . " Damage: </b>" . sign($item["extradmgamt"]) . "</td></tr>";
+    }
+    //	$html_string .= "</td></tr>";
 
-	// Augmentation type
-	if($item["itemtype"] == 54)
-	{
-		if($item["augtype"] > 0)
-		{
-			$Comma = "";
-			$AugSlots = "";
-			$AugType = $item["augtype"];
-			$Bit = 1;
-			for ($i = 1; $i < 25; $i++)
-			{
-				if ($Bit <= $AugType && $Bit & $AugType)
-				{
-					$AugSlots .= $Comma.$i;
-					$Comma = ", ";
-				}
-				$Bit *= 2;
-			}	
-			$html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Slot Type: </b>".$AugSlots."</td></tr>";
-		}
-		else
-		{
-			$html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Slot Type: </b>All Slots</td></tr>";
-		}
-		if ($item["augrestrict"] > 0)
-		{
-			if ($item["augrestrict"] > 12)
-			{
-				$html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Restriction: </b>Unknown Type</td></tr>";
-			}
-			else
-			{
-				$Restriction = $dbiaugrestrict[$item["augrestrict"]];
-				$html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Restriction: </b>$Restriction</td></tr>";
-			}
-		}
-	}
+    // Skill Mods
+    if (($item["skillmodtype"] > 0) && ($item["skillmodvalue"] != 0)) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Skill Mod: " . ucfirstwords($dbskills[$item["skillmodtype"]]) . ": </b>" . sign($item["skillmodvalue"]) . "%</td></tr>";
+    }
+    // Augmentations
+    for ($i = 1; $i <= 5; $i++) {
+        if ($item["augslot" . $i . "type"] > 0) {
+            $html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>Slot " . $i . ": </b>Type " . $item["augslot" . $i . "type"] . "</td></tr>";
+        }
+    }
+    //item proc
+    if (($item["proceffect"] > 0) && ($item["proceffect"] < 65535)) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=" . $item["proceffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["proceffect"]) . "</a>";
+        if ($item["proclevel2"] > 0) {
+            $html_string .= "<br><b>Level for effect: </b>" . $item["proclevel2"];
+        }
+        $html_string .= "</td></tr>";
+    }
+    // worn effect
+    if (($item["worneffect"] > 0) && ($item["worneffect"] < 65535)) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=" . $item["worneffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["worneffect"]) . "</a>";
+        if ($item["wornlevel"] > 0) {
+            $html_string .= "<br><b>Level for effect: </b>" . $item["wornlevel"];
+        }
+        $html_string .= "</td></tr>";
+    }
+    // focus effect
+    if (($item["focuseffect"] > 0) && ($item["focuseffect"] < 65535)) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=" . $item["focuseffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["focuseffect"]) . "</a>";
+        if ($item["focuslevel"] > 0) {
+            $html_string .= "<br/><b>Level for effect: </b>" . $item["focuslevel"];
+        }
+        $html_string .= "</td></tr>";
+    }
+    // clicky effect
+    if (($item["clickeffect"] > 0) && ($item["clickeffect"] < 65535)) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=" . $item["clickeffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["clickeffect"]) . "</a> (";
+        if ($item["clicktype"] == 4) {
+            $html_string .= "Must Equip. ";
+        }
+        if ($item["casttime"] > 0) {
+            $html_string .= "<b>Casting time: </b>" . ($item["casttime"] / 1000) . " sec";
+        } else {
+            $html_string .= "<b>Casting time: </b>Instant";
+        }
+        $html_string .= ")";
+        if ($item["clicklevel"] > 0) {
+            $html_string .= "<br/><b>Level for effect: </b>" . $item["clicklevel"];
+        }
+        if ($item["maxcharges"] > 0) {
+            $html_string .= "<br/><b>Charges: </b>" . $item["maxcharges"];
+        } elseif ($item["maxcharges"] < 0) {
+            $html_string .= "<br/><b>Charges: </b>Unlimited";
+        } else {
+            $html_string .= "<br/><b>Charges: </b>None";
+        }
+        $html_string .= "</td></tr>";
+    }
+    // scroll
+    if (($item["scrolleffect"] > 0) && ($item["scrolleffect"] < 65535)) {
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=" . $item["scrolleffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $tbspells WHERE id=" . $item["scrolleffect"]) . "</a>";
+        $html_string .= "</td></tr>";
+    }
+    // bard item ?
+    if (($item["bardtype"] > 22) && ($item["bardtype"] < 65535)) {
+        $html_string .= "<tr><td width='0%' nowrap='1' colspan='2'><b>Bard skill: </b> " . $dbbardskills[$item["bardtype"]];
+        if ($dbbardskills[$item["bardtype"]] == "") {
+            $html_string .= "Unknown" . $item["bardtype"];
+        }
+        $val = ($item["bardvalue"] * 10) - 100;
+        if ($val > 0) {
+            $html_string .= " (" . sign($val) . "%)</td></tr>";
+        }
+    }
 
-	$ItemPrice = $item["price"];
-	$ItemValue = "";
-	$Platinum = 0;
-	$Gold = 0;
-	$Silver = 0;
-	$Copper = 0;
-	
-	if ($ItemPrice > 1000)
-	{
-		$Platinum = ((int)($ItemPrice / 1000));
-	}
-	if (($ItemPrice - ($Platinum * 1000)) > 100)
-	{
-		$Gold = ((int)(($ItemPrice - ($Platinum * 1000)) / 100));
-	}
-	if (($ItemPrice - ($Platinum * 1000) - ($Gold * 100)) > 10)
-	{
-		$Silver = ((int)(($ItemPrice - ($Platinum * 1000) - ($Gold * 100)) / 10));
-	}
-	if (($ItemPrice - ($Platinum * 1000) - ($Gold * 100) - ($Silver * 10)) > 0)
-	{
-		$Copper = ($ItemPrice - ($Platinum * 1000) - ($Gold * 100) - ($Silver * 10));
-	}
-	
-	$ItemValue .= "<tr><td><b>Value: </b>";
-	$ItemValue .= $Platinum." <img src='" . $icons_url . "item_644.png' width='14' height='14'/> ".
-					$Gold." <img src='" . $icons_url . "item_645.png' width='14' height='14'/> ".
-					$Silver." <img src='" . $icons_url . "item_646.png' width='14' height='14'/> ".
-					$Copper." <img src='" . $icons_url . "item_647.png' width='14' height='14'/>";
-	$ItemValue .= "</td></tr><br>";
-	$html_string .= $ItemValue;
+    // Augmentation type
+    if ($item["itemtype"] == 54) {
+        if ($item["augtype"] > 0) {
+            $Comma = "";
+            $AugSlots = "";
+            $AugType = $item["augtype"];
+            $Bit = 1;
+            for ($i = 1; $i < 25; $i++) {
+                if ($Bit <= $AugType && $Bit & $AugType) {
+                    $AugSlots .= $Comma . $i;
+                    $Comma = ", ";
+                }
+                $Bit *= 2;
+            }
+            $html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Slot Type: </b>" . $AugSlots . "</td></tr>";
+        } else {
+            $html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Slot Type: </b>All Slots</td></tr>";
+        }
+        if ($item["augrestrict"] > 0) {
+            if ($item["augrestrict"] > 12) {
+                $html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Restriction: </b>Unknown Type</td></tr>";
+            } else {
+                $Restriction = $dbiaugrestrict[$item["augrestrict"]];
+                $html_string .= "<tr><td colspan='2' nowrap='1'><b>Augmentation Restriction: </b>$Restriction</td></tr>";
+            }
+        }
+    }
 
-	$html_string .= "</td></tr></table>";
+    $ItemPrice = $item["price"];
+    $ItemValue = "";
+    $Platinum = 0;
+    $Gold = 0;
+    $Silver = 0;
+    $Copper = 0;
 
-	return $html_string;
+    if ($ItemPrice > 1000) {
+        $Platinum = ((int)($ItemPrice / 1000));
+    }
+    if (($ItemPrice - ($Platinum * 1000)) > 100) {
+        $Gold = ((int)(($ItemPrice - ($Platinum * 1000)) / 100));
+    }
+    if (($ItemPrice - ($Platinum * 1000) - ($Gold * 100)) > 10) {
+        $Silver = ((int)(($ItemPrice - ($Platinum * 1000) - ($Gold * 100)) / 10));
+    }
+    if (($ItemPrice - ($Platinum * 1000) - ($Gold * 100) - ($Silver * 10)) > 0) {
+        $Copper = ($ItemPrice - ($Platinum * 1000) - ($Gold * 100) - ($Silver * 10));
+    }
+
+    $ItemValue .= "<tr><td><b>Value: </b>";
+    $ItemValue .= $Platinum . " <img src='" . $icons_url . "item_644.png' width='14' height='14'/> " .
+        $Gold . " <img src='" . $icons_url . "item_645.png' width='14' height='14'/> " .
+        $Silver . " <img src='" . $icons_url . "item_646.png' width='14' height='14'/> " .
+        $Copper . " <img src='" . $icons_url . "item_647.png' width='14' height='14'/>";
+    $ItemValue .= "</td></tr><br>";
+    $html_string .= $ItemValue;
+
+    $html_string .= "</td></tr></table>";
+
+    return $html_string;
 
 }
 

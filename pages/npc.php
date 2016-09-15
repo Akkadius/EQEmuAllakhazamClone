@@ -84,7 +84,7 @@
 
 	$DebugNpc=FALSE; // for world builders, set this to false for common use
 
-	print "<center><table border='0' width='0%'><tr valign='top'><td colspan='2' class='headerrow'>";
+	print "<table class='display_table container_div'><tr valign='top'><td colspan='2' class='headerrow'>";
 	print "<a href='".$peqeditor_url."index.php?editor=npc&amp;npcid=".$id."'><img src='".$images_url."/peq_npc.png' align='right'/></a>";
 	print "<a href='".$peqeditor_url."index.php?editor=merchant&amp;npcid=".$id."'><img src='".$images_url."/peq_merchant.png' align='right'/></a>";
 	print "<b>".ReadableNpcName($npc["name"])."</b>";

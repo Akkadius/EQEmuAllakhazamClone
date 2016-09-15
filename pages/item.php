@@ -81,7 +81,7 @@ print "<table >\n";
 // Prints all Item data into formatted tables
 print BuildItemStats($item, 0);
 
-Print "<table>";
+print "<table style='width:100%'>";
 
 // Discovered by
 if ($DiscoveredItemsOnly == TRUE) {
@@ -106,7 +106,7 @@ $query = "SELECT $tbzones.short_name,$tbzones.long_name,$tbforage.chance,$tbfora
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    print "<tr><td><b>This item can be foraged in: </b>";
+    print "<tr><td><h2 class='section_header'>This item can be foraged in:</h2>";
     while ($row = mysql_fetch_array($result)) {
         print "<li><a href='?a=zone&name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a></li>";
     }
@@ -121,16 +121,16 @@ $query = "SELECT $tbtradeskillrecipe.name,$tbtradeskillrecipe.id,$tbtradeskillre
 			AND $tbtradeskillrecipeentries.componentcount>0
 			GROUP BY $tbtradeskillrecipe.id";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
-$TradeskillResults = "";
+$trade_skill_return = "";
 if (mysql_num_rows($result) > 0) {
-    $TradeskillResults .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    $TradeskillResults .= "<tr><td><b>This item is used in the following tradeskill recipes : </b><ul>";
+    $trade_skill_return .= '<tr><td colspan="2"><h2 class="section_header">This item is used in tradeskill recipes</h2></td></tr>';
+    $trade_skill_return .= "<tr><td><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $TradeskillResults .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
+        $trade_skill_return .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
     }
-    $TradeskillResults .= "</ul></td></tr>";
+    $trade_skill_return .= "</ul></td></tr>";
 }
-print $TradeskillResults;
+print $trade_skill_return;
 
 
 // trade skills which result is the component
@@ -141,24 +141,28 @@ $query = "SELECT $tbtradeskillrecipe.name,$tbtradeskillrecipe.id,$tbtradeskillre
 			AND $tbtradeskillrecipeentries.successcount>0
 			GROUP BY $tbtradeskillrecipe.id";
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
-$TradeskillResults = "";
+$trade_skill_return = "";
 if (mysql_num_rows($result) > 0) {
-    $TradeskillResults .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    $TradeskillResults .= "<tr><td><b>This item is the result of the following tradeskill recipes : </b><ul>";
+    $trade_skill_return .= "<tr><td><h2 class='section_header'>This item is the result of tradeskill recipes</h2><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $TradeskillResults .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . $dbskills[$row["tradeskill"]] . ")</li>";
+        $trade_skill_return .= "
+            <li>
+                <a href='?a=recipe&id=" . $row["id"] . "'>
+                    " . str_replace("_", " ", $row["name"]) . "
+                </a>
+                (" . ucfirst(strtolower ($dbskills[$row["tradeskill"]])) . ")
+            </li>";
     }
-    $TradeskillResults .= "</ul></td></tr>";
+    $trade_skill_return .= "</ul></td></tr>";
 }
-print $TradeskillResults;
+print $trade_skill_return;
 
 if ($AllowQuestsNPC == TRUE) {
     // npcs that use that give that item as reward
     $query = "SELECT * FROM $tbquestitems WHERE item_id=$id AND rewarded>0";
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-        print "<tr><td><b>This item is the result of a quest.</b></b><ul>";
+        print "<tr><td><h2 class='section_header'>This item is from the result of a quest</h2></b><ul>";
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
             print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
@@ -171,7 +175,6 @@ if ($AllowQuestsNPC == TRUE) {
     $query = "SELECT * FROM $tbquestitems WHERE item_id=$id AND handed>0";
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
-        print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
         print "<tr><td><b>This item is used in quests.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
@@ -216,9 +219,8 @@ if ($ItemFoundInfo == TRUE) {
         if (mysql_num_rows($result) > 0) {
             $DroppedList = "";
             $DroppedList .= $Separator;
-            $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
             $DroppedList .= "<tr>\n";
-            $DroppedList .= "<td><b>This item is dropped: </b>\n";
+            $DroppedList .= "<td><h2 class='section_header'>This item is dropped</h2>\n";
             $CurrentZone = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($CurrentZone != $row["zone"]) {
@@ -241,7 +243,7 @@ if ($ItemFoundInfo == TRUE) {
             $DroppedList .= "</ul>\n";
             $DroppedList .= "</td>\n";
             $DroppedList .= "</tr>\n";
-            print $DroppedList;
+
         }
     }
 
@@ -261,9 +263,8 @@ if ($ItemFoundInfo == TRUE) {
         if (mysql_num_rows($result) > 0) {
             $MerchantList = "";
             $MerchantList .= $Separator;
-            $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
             $MerchantList .= "<tr>\n";
-            $MerchantList .= "<td><b>This item is sold : </b>\n";
+            $MerchantList .= "<td><h2 class='section_header'>This item is sold:</h2>\n";
             $CurrentZone = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($CurrentZone != $row["zone"]) {
@@ -285,7 +286,7 @@ if ($ItemFoundInfo == TRUE) {
             $MerchantList .= "</ul>\n";
             $MerchantList .= "</td>\n";
             $MerchantList .= "</tr>\n";
-            print $MerchantList;
+
         }
     }
 }
@@ -299,9 +300,8 @@ $query = "SELECT $tbgroundspawns.*,$tbzones.short_name,$tbzones.long_name
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print $Separator;
-    $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
     print "<tr>\n";
-    print "<td><b>This item spawns on the ground in : </b><br><br>\n";
+    print "<td><h2 class='section_header'>This item spawns on the ground</h2>";
     $CurrentZone = "";
     while ($row = mysql_fetch_array($result)) {
         if ($CurrentZone != $row["short_name"]) {
@@ -320,9 +320,12 @@ if (mysql_num_rows($result) > 0) {
 }
 
 print "</table>\n";
+print $MerchantList;
+print $DroppedList;
 print "</td>\n";
 print "</tr>\n";
 print "</table>\n";
+
 print "</center>\n";
 
 ?>

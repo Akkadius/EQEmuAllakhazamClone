@@ -21,7 +21,13 @@
 	$result=mysql_query($query) or message_die('recipe.php','MYSQL_QUERY',$query,mysql_error());
 	$recipe=mysql_fetch_array($result);
 
-	print "<table style='width:500px'>";
+	print "<table  class='display_table container_div'>";
+	print '
+		<tr>
+			<td colspan="2">
+				<h2 class=\'section_header\'>Recipe</h2>
+			</td>
+		</tr>';
 	print "<tr><td style='text-align:right;'><b>Recipe: </b></td><td>".ucfirstwords(str_replace('_',' ',$recipe["name"]))."</td></tr>";
 	print "<tr><td style='text-align:right'><b>Tradeskill: </b></td><td>".ucfirstwords($dbskills[$recipe["tradeskill"]])."</td></tr>";
 	if ($recipe["skillneeded"]>0)
@@ -37,9 +43,9 @@
 	{
 		print "<tr><td style='text-align:right' cospan=2><b>Notes : </b>".$recipe["notes"]."</td></tr>";
 	}
-	print '</table>';
+	print '</table><br>';
 
-	print '<table>';
+	print '<table class="display_table container_div">';
 	// results containers
 	$query="SELECT $tbtradeskillrecipeentries.*,$tbitems.*,$tbitems.id AS item_id
 			FROM $tbtradeskillrecipe,$tbtradeskillrecipeentries,$tbitems
@@ -52,8 +58,7 @@
 	
 	if (mysql_num_rows($result)>0)
 	{
-		print "<tr class=myline height=6><td colspan=2></td><tr>";
-		print "<tr><td><b>Containers needed for the combine </b>";
+		print "<tr><td><h2 class='section_header'>Containers</h2>";
 		print "<ul>";
 		while ($row=mysql_fetch_array($result))
 		{
@@ -81,8 +86,7 @@
 	$result=mysql_query($query) or message_die('recipe.php','MYSQL_QUERY',$query,mysql_error());
 	if (mysql_num_rows($result)>0)
 	{
-		print "<tr class=myline height=6><td colspan=2></td><tr>";
-		print "<tr><td><b>Items resulting of a <FONT COLOR='#FFFF00'> successfull combine </FONT></b><ul>";
+		print "<tr><td><h2 class='section_header'>Creates</h2><ul>";
 		while ($row=mysql_fetch_array($result))
 		{
 			CreateToolTip(($row["item_id"] * 110), BuildItemStats($row, 1));
@@ -102,12 +106,11 @@
 				  AND $tbtradeskillrecipeentries.recipe_id=$id
 				  AND $tbtradeskillrecipeentries.item_id=$tbitems.id
 				  AND $tbtradeskillrecipeentries.failcount>0";
-				  
+
 		$result=mysql_query($query) or message_die('recipe.php','MYSQL_QUERY',$query,mysql_error());
 		if (mysql_num_rows($result)>0)
 		{
-			print "<tr class=myline height=6><td colspan=2></td><tr>";
-			print "<tr><td><b>Items resulting of a <FONT COLOR='#FF0000'> failed combine </FONT></b><ul>";
+			print "<tr><td><h2 class='section_header'>Failure</h2><ul>";
 			while ($row=mysql_fetch_array($result))
 			{
 				CreateToolTip(($row["item_id"] * 10), BuildItemStats($row, 1));
@@ -131,8 +134,7 @@
 	$result=mysql_query($query) or message_die('recipe.php','MYSQL_QUERY',$query,mysql_error());
 	if (mysql_num_rows($result)>0)
 	{
-		print "<tr class=myline height=6><td colspan=2></td><tr>";
-		print "<tr><td><b>Components Needed: </b><ul>";
+		print "<tr><td><h2 class='section_header'>Required</h2><ul>";
 
 			while ($row=mysql_fetch_array($result))
 			{
