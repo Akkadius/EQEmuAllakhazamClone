@@ -7,7 +7,7 @@
         header("Location: ?a=spells");
         exit();
     }
-    $Title = '<img src="' . $icons_url . $spell['new_icon'] . '.gif" style="width:25px; height:auto"> ' . $spell["name"] . ' ';
+    $Title = '<img src="' . $icons_url . $spell['new_icon'] . '.gif" style="width:17px; height:auto"> ' . $spell["name"] . ' ';
 
     $Title = str_replace('"', "'", $Title);
 

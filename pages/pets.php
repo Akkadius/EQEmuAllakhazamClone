@@ -1,9 +1,5 @@
 <?php
 
-	require_once('./includes/constants.php');
-	require_once('./includes/config.php');
-	require_once($includes_dir.'mysql.php');
-	require_once($includes_dir.'functions.php');
 
 	$class   = (isset($_GET['class']) ? $_GET['class'] : 0);
 	
@@ -15,10 +11,6 @@
 
 	$Title="Pets Statistics";
 
-	print "<center>";
-
-	print "<table><tr valign=top><td>";
-	
 	CreateToolTip('class15', '<table> <td> <img src="images/monograms/15.gif"> </td> <td> The Beastlord class is a unique class that is a hybrid of the Shaman and Monk parent classes. One of the class\'s distinguishing features is the ability to summon a warder pet to fight alongside them. The form the warder takes depends on the race of the beastlord. </td>');
 	CreateToolTip('class6', '<table> <td> <img src="images/monograms/6.gif"> </td> <td> Druids - a powerful outdoor class. With the triple ability to heal, inflict direct damage and cast damage over time, druids are a popular solo class, as well as popular in a group. They are also a travelling class, given both sow and teleportation abilities.  </td>');
 	CreateToolTip('class14', '<table> <td> <img src="images/monograms/14.gif"> </td> <td> Enchanter - the game\'s traffic cop. When the enchanter yells stop, creatures cease what they are doing and just wait to die. A complex class, enchanters get a variety of spells as well as a pet, and can be played in a number of different ways. </td>');
@@ -28,8 +20,8 @@
 	CreateToolTip('class10', '<table> <td> <img src="images/monograms/10.gif"> </td> <td> Shamen - primitive power. The only magic using class of the barbarians, ogres and trolls, shamen get a variety of spells that combine aspects of most of the other magic using classes. This combination, along with the racial strength, means the class can be played in a variety of different ways.  </td>');
 	CreateToolTip('class2', '<table> <td> <img src="images/monograms/2.gif"> </td> <td> Clerics -- the premier healer in the game. A popular class for any group, the cleric brings the ability to heal the party and keep you from dying, and can even bring you back from death at higher levels.   </td>');
 	CreateToolTip('class12', '<table> <td> <img src="images/monograms/12.gif"> </td> <td> S	The Wizard - Master Nuker. The wizard\'s abilities are in direct damage spells and in individual and group teleportation.   </td>');
-	print "<table><tr valign=top><td>";
-	print "<b>Choose a class:</b><ul style='text-align:left'>";
+	print "<table class='container_div display_table'><tr valign=top><td>";
+	print "<h2 class='section_header'>Choose a class:</h2><ul style='text-align:left'>";
 	print "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
 	print "<li><a href=?a=pets&class=2  id='class2'>Cleric</a>";
 	print "<li><a href=?a=pets&class=6  id='class6'>Druid</a>";
@@ -40,7 +32,7 @@
 	print "<li><a href=?a=pets&class=10  id='class10'>Shaman</a>";
 	print "<li><a href=?a=pets&class=12  id='class12'>Wizard</a>";
 	print "</ul>";
-	print "</td></tr></table></td><td>";
+	print "</td></tr></table>";
 
 	if (isset($class) && $class != 0)
 	{
@@ -77,7 +69,12 @@
 			exit;
 		}
 		$columns = mysql_num_fields($result);
-		print "<table style='width:100%'><thead>";
+
+		print '<h1>' . $dbclasses[$class] . '</h1>';
+
+		print '<hr>';
+
+		print "<table><thead>";
 		print "<th class='menuh'>Level</th>";
 		print "<th class='menuh'>Icon</th>";
 		print "<th class='menuh'>Spell Name</th>";
@@ -99,7 +96,7 @@
 		{
 			print "<tr class='".$RowClass."'>";
 			print "<td>" . $row["classes". $class] . "</td>";
-			print "<td><img src='". $icons_url . $row["new_icon"] . ".png' align='center' border='1' width='20' height='20'></td>";
+			print "<td><img src='". $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";
 			print "<td><a href='?a=spell&id=". $row['id'] . "'>  ". $row['name'] . " </a></td>";
 			print "<td><a href='?a=pet&name=". $row['teleport_zone'] . "'>View</a></td>";
 			print "<td>" . $dbiracenames[$row["race"]] . "</td>";
@@ -124,7 +121,5 @@
 		print "</tbody></table></center>";
 	
 	}
-
-	print "</td></tr></table>";
 
 ?>

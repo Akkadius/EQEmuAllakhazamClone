@@ -10,11 +10,11 @@
   $result = mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
   $npc = mysql_fetch_array($result);
 
-  print "<center><table><tr valign=top><td>\n";
+  print "<table class='container_div'><tr valign=top><td>\n";
   if (file_exists($npcs_dir . $id . ".jpg")) {
     print "<center><img src=" . $npcs_dir . $id . ".jpg></center>";
   }
-  print "<p><table border=0 width=100%>";
+  print "<p><table >";
   print "<tr><td style='text-align:right'><b>Full name : </b></td><td>" . str_replace("_", " ", $npc["name"]);
   if ($npc["lastname"] != "") {
     print str_replace("_", " ", " (" . $npc["lastname"] . ")");

@@ -165,8 +165,8 @@
 
 	require_once($includes_dir.'headers.php');
 
-	echo "<center><table><tr><td style='toggle_btn'></td></tr></table></center>";
-	echo "<center><table border='0' width='0%' cellpadding='15'>\n";
+	echo "<table><tr><td style='toggle_btn'></td></tr></table></center>";
+	echo "<table border='0' width='0%' cellpadding='15'>\n";
 
 	echo "<tbody id='myTbody'>";
 	// Hide the search fields when results show
