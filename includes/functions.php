@@ -1223,4 +1223,18 @@ function BuildItemStats($item, $show_name_icon) {
 
 }
 
+function get_item_icon_from_id($id){
+    global $icon_cache;
+
+    if($icon_cache[$id])
+        return $icon_cache[$id];
+
+    $query = "SELECT `icon` FROM `items` WHERE `id` = " . $id;
+    $result = db_mysql_query($query);
+    while ($row = mysql_fetch_array($result)) {
+        $icon_cache[$id] = '<img src="icons/item_' . $row['icon'] . '.png" style="width:15px;height:auto">';
+        return $icon_cache[$id];
+    }
+}
+
 ?>

@@ -145,7 +145,10 @@ if (mysql_num_rows($result) > 0) {
     $trade_skill_return .= '<tr><td colspan="2"><h2 class="section_header">This item is used in tradeskill recipes</h2></td></tr>';
     $trade_skill_return .= "<tr><td><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $trade_skill_return .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
+        $trade_skill_return .= "
+            <li>
+            " . get_item_icon_from_id($id) . "
+            <a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
     }
     $trade_skill_return .= "</ul></td></tr>";
 }
@@ -175,6 +178,7 @@ if (mysql_num_rows($result) > 0) {
     while ($row = mysql_fetch_array($result)) {
         $trade_skill_return .= "
             <li>
+                " . get_item_icon_from_id($id) . "
                 <a href='?a=recipe&id=" . $row["id"] . "'>
                     " . str_replace("_", " ", $row["name"]) . "
                 </a>
