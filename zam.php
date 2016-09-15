@@ -89,14 +89,14 @@
                                                 <td class="menuh" nowrap="1">Main...</td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td nowrap="1" class="menu_item">
                                                     <li><a href="?">AllaClone Main
                                                             Page</a>
                                                     </li>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="http://www.eqemulator.org">EQEmulator</a>
                                                     </li>
                                                 </td>
@@ -105,7 +105,7 @@
                                                 <td class="menuh" nowrap="1">Zones...</td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=zonelist">Zones by Era</a></li>
                                                     <li><a href="?a=zones">Populated Zones</a> </li>
                                                     <li><a href="?a=zones_by_level">Zones by Level</a> </li>
@@ -115,7 +115,7 @@
                                                 <td class="menuh" nowrap="1">Items...</td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=items">Item Search</a> </li>
                                                 </td>
                                             </tr>
@@ -123,7 +123,7 @@
                                                 <td class="menuh" nowrap="1">Spells...</td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=spells">Spell Search</a></li>
                                                 </td>
                                             </tr>
@@ -136,7 +136,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="http://10.0.1.12/allaclone/npcfactions.php">NPCs By
                                                             Faction</a>
                                                     </li>
@@ -146,20 +146,20 @@
                                                 <td class="menuh" nowrap="1">Bestiary...</td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=npcs">NPC Search</a>
                                                     </li>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=advanced_npcs">Advanced NPC
                                                             Search</a>
                                                     </li>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=pets">Pets</a>
                                                     </li>
                                                 </td>
@@ -168,7 +168,7 @@
                                                 <td class="menuh" nowrap="1">Trade skills...</td>
                                             </tr>
                                             <tr>
-                                                <td="1" class="menu_item">
+                                                <td  class="menu_item">
                                                     <li><a href="?a=recipes&">Recipe
                                                             Search</a>
                                                     </li>

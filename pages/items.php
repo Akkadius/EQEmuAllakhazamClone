@@ -175,12 +175,12 @@
 	echo '<input type="hidden" name="a" value="items">';
 	// Split into 2 tables side by side
 	echo "<tr><td><table border='0' width='0%'>";
-	echo "<tr><td='1'><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
-	echo "<tr><td='1'><b>Class : </b></td><td>"; SelectIClass("iclass", $iclass); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>Race : </b></td><td>";  SelectRace  ("irace",   $irace); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>Slot : </b></td><td>";  SelectSlot  ("islot",   $islot); echo "</td></tr>\n";
+	echo "<tr><td><b>Name : </b></td><td><input type='text' value=\"$iname\" size='30' name='iname'/></td></tr>\n";
+	echo "<tr><td><b>Class : </b></td><td>"; SelectIClass("iclass", $iclass); echo "</td></tr>\n";
+	echo "<tr><td><b>Race : </b></td><td>";  SelectRace  ("irace",   $irace); echo "</td></tr>\n";
+	echo "<tr><td><b>Slot : </b></td><td>";  SelectSlot  ("islot",   $islot); echo "</td></tr>\n";
 	echo "<tr>\n";
-	echo "  <td='1'><b>Stats : </b></td>\n";
+	echo "  <td><b>Stats : </b></td>\n";
 	echo "  <td>"; SelectStats("istat1", $istat1); echo "\n";
 	echo "    <select name='istat1comp'>\n";
 	echo "      <option value='&gt;='".   ($istat1comp == '>=' ? " selected='1'" : "").">&gt;=</option>\n";
@@ -192,7 +192,7 @@
 	echo "  </td>\n";
 	echo "</tr>\n";
 	echo "<tr>\n";
-	echo "  <td='1'><b>Stats : </b></td>\n";
+	echo "  <td><b>Stats : </b></td>\n";
 	echo "  <td>"; SelectStats("istat2",$istat2); echo "\n";
 	echo "    <select name='istat2comp'>\n";
 	echo "      <option value='&gt;='".   ($istat2comp == '>=' ? " selected='1'" : "").">&gt;=</option>\n";
@@ -204,7 +204,7 @@
 	echo "  </td>\n";
 	echo "</tr>\n";
 	echo "<tr>\n";
-	echo "  <td='1'><b>Resists : </b></td>\n";
+	echo "  <td><b>Resists : </b></td>\n";
 	echo "  <td>"; SelectResists("iresists",$iresists); echo "\n";
 	echo "    <select name='iresistscomp'>\n";
 	echo "      <option value='&gt;='".   ($iresistscomp == '>=' ? " selected='1'" : "").">&gt;=</option>\n";
@@ -216,7 +216,7 @@
 	echo "  </td>\n";
 	echo "</tr>\n";
 	echo "<tr>\n";
-	echo "  <td='1'><b>Heroic Stats : </b></td>\n";
+	echo "  <td><b>Heroic Stats : </b></td>\n";
 	echo "  <td>"; SelectHeroicStats("iheroics",$iheroics); echo "\n";
 	echo "    <select name='iheroicscomp'>\n";
 	echo "      <option value='&gt;='".   ($iheroicscomp == '>=' ? " selected='1'" : "").">&gt;=</option>\n";
@@ -228,7 +228,7 @@
 	echo "  </td>\n";
 	echo "</tr>\n";
 	echo "<tr>\n";
-	echo "  <td='1'><b>Modifiers : </b></td>\n";
+	echo "  <td><b>Modifiers : </b></td>\n";
 	echo "  <td>"; SelectModifiers("imod",$imod); echo "\n";
 	echo "    <select name='imodcomp'>\n";
 	echo "      <option value='&gt;='".   ($imodcomp == '>=' ? " selected='1'" : "").">&gt;=</option>\n";
@@ -242,14 +242,14 @@
 	echo "</td></tr></table></td><td>";
 	// Left Table End and Right Table Start
 	echo "<table border='0' width='0%'>";
-	echo "<tr><td='1'><b>Item Type : </b></td><td>"; SelectIType("itype",$itype); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>Augmentation Type : </b></td><td>"; SelectAugSlot("iaugslot",$iaugslot); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>With Effect : </b></td><td><input type='text' value='".$ieffect."' size='30' name='ieffect'/></td></tr>\n";
-	echo "<tr><td='1'><b>Min Required Level : </b></td><td>\n"; SelectLevel("iminlevel",$ServerMaxLevel,$iminlevel); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>Max Required Level : </b></td><td>\n"; SelectLevel("ireqlevel",$ServerMaxLevel,$ireqlevel); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'".($inodrop?" checked='1'":"")."/></td></tr>\n";
+	echo "<tr><td><b>Item Type : </b></td><td>"; SelectIType("itype",$itype); echo "</td></tr>\n";
+	echo "<tr><td><b>Augmentation Type : </b></td><td>"; SelectAugSlot("iaugslot",$iaugslot); echo "</td></tr>\n";
+	echo "<tr><td><b>With Effect : </b></td><td><input type='text' value='".$ieffect."' size='30' name='ieffect'/></td></tr>\n";
+	echo "<tr><td><b>Min Required Level : </b></td><td>\n"; SelectLevel("iminlevel",$ServerMaxLevel,$iminlevel); echo "</td></tr>\n";
+	echo "<tr><td><b>Max Required Level : </b></td><td>\n"; SelectLevel("ireqlevel",$ServerMaxLevel,$ireqlevel); echo "</td></tr>\n";
+	echo "<tr><td><b>Tradeable Items Only : </b></td><td><input type='checkbox' name='inodrop'".($inodrop?" checked='1'":"")."/></td></tr>\n";
 	echo "<tr>\n";
-	echo "  <td='1'><b>Item availability : </b></td>\n";
+	echo "  <td><b>Item availability : </b></td>\n";
 	echo "  <td>\n";
 	echo "    <select name='iavailability'>\n";
 	echo "      <option value='0' ".($iavailability==0?" selected='1'":"").">-</option>\n";
@@ -258,8 +258,8 @@
 	echo "    </select>\n";
 	echo "  </td>\n";
 	echo "</tr>\n";
-	echo "<tr><td='1'><b>Max Level : </b></td><td>"; SelectLevel("iavaillevel",$ServerMaxLevel,$iavaillevel); echo "</td></tr>\n";
-	echo "<tr><td='1'><b>Deity : </b></td><td>"; SelectDeity("ideity",$ideity); echo "</td></tr>\n";
+	echo "<tr><td><b>Max Level : </b></td><td>"; SelectLevel("iavaillevel",$ServerMaxLevel,$iavaillevel); echo "</td></tr>\n";
+	echo "<tr><td><b>Deity : </b></td><td>"; SelectDeity("ideity",$ideity); echo "</td></tr>\n";
 	echo "</td></tr></table>";
 	echo "<tr align='center'><td='1' colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
 	echo "</form>\n";

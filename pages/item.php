@@ -112,7 +112,7 @@ $query = "SELECT $tbzones.short_name,$tbzones.long_name,$tbforage.chance,$tbfora
 $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
 if (mysql_num_rows($result) > 0) {
     print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    print "<tr><td='1'><b>This item can be foraged in: </b>";
+    print "<tr><td><b>This item can be foraged in: </b>";
     while ($row = mysql_fetch_array($result)) {
         print "<li><a href='?a=zone&name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a></li>";
     }
@@ -130,7 +130,7 @@ $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, 
 $TradeskillResults = "";
 if (mysql_num_rows($result) > 0) {
     $TradeskillResults .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    $TradeskillResults .= "<tr><td='1'><b>This item is used in the following tradeskill recipes : </b><ul>";
+    $TradeskillResults .= "<tr><td><b>This item is used in the following tradeskill recipes : </b><ul>";
     while ($row = mysql_fetch_array($result)) {
         $TradeskillResults .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . ucfirstwords($dbskills[$row["tradeskill"]]) . ")</li>";
     }
@@ -150,7 +150,7 @@ $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, 
 $TradeskillResults = "";
 if (mysql_num_rows($result) > 0) {
     $TradeskillResults .= "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-    $TradeskillResults .= "<tr><td='1'><b>This item is the result of the following tradeskill recipes : </b><ul>";
+    $TradeskillResults .= "<tr><td><b>This item is the result of the following tradeskill recipes : </b><ul>";
     while ($row = mysql_fetch_array($result)) {
         $TradeskillResults .= "<li><a href='?a=recipe&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a> (" . $dbskills[$row["tradeskill"]] . ")</li>";
     }
@@ -164,7 +164,7 @@ if ($AllowQuestsNPC == TRUE) {
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-        print "<tr><td='1'><b>This item is the result of a quest.</b></b><ul>";
+        print "<tr><td><b>This item is the result of a quest.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
             print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
@@ -178,7 +178,7 @@ if ($AllowQuestsNPC == TRUE) {
     $result = mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
     if (mysql_num_rows($result) > 0) {
         print "<tr class='myline' height='6'><td colspan='2'></td><tr>";
-        print "<tr><td='1'><b>This item is used in quests.</b></b><ul>";
+        print "<tr><td><b>This item is used in quests.</b></b><ul>";
         while ($res = mysql_fetch_array($result)) {
             print "<li><a href='" . $root_url . "quests/index.php?zone=" . $res["zone"] . "&amp;npc=" . $res["npc"] . "'>" . str_replace("_", " ", $res["npc"]) . "</a>";
             print ", <a href=$root_url" . "?a=zone&name=" . $res["zone"] . ">";
@@ -224,7 +224,7 @@ if ($ItemFoundInfo == TRUE) {
             $DroppedList .= $Separator;
             $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
             $DroppedList .= "<tr>\n";
-            $DroppedList .= "<td='1'><b>This item is dropped: </b>\n";
+            $DroppedList .= "<td><b>This item is dropped: </b>\n";
             $CurrentZone = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($CurrentZone != $row["zone"]) {
@@ -269,7 +269,7 @@ if ($ItemFoundInfo == TRUE) {
             $MerchantList .= $Separator;
             $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
             $MerchantList .= "<tr>\n";
-            $MerchantList .= "<td='1'><b>This item is sold : </b>\n";
+            $MerchantList .= "<td><b>This item is sold : </b>\n";
             $CurrentZone = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($CurrentZone != $row["zone"]) {
@@ -307,7 +307,7 @@ if (mysql_num_rows($result) > 0) {
     print $Separator;
     $Separator = "<tr class='myline' height='6'><td colspan='2'></td><tr>\n";
     print "<tr>\n";
-    print "<td='1'><b>This item spawns on the ground in : </b><br><br>\n";
+    print "<td><b>This item spawns on the ground in : </b><br><br>\n";
     $CurrentZone = "";
     while ($row = mysql_fetch_array($result)) {
         if ($CurrentZone != $row["short_name"]) {

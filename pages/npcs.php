@@ -57,7 +57,7 @@ require_once($includes_dir.'headers.php');
 echo "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
 echo '<input type="hidden" name="a" value="npcs">';
 echo "<tr align='left'>\n";
-echo "<td='1'><b>Name : </b></td>\n";
+echo "<td><b>Name : </b></td>\n";
 echo "<td><input type='text' value=\"$iname\" size='30' name='iname'></td>\n";
 echo "</tr>\n";
 echo "<tr tr align='left'>\n";

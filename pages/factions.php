@@ -47,7 +47,7 @@
 
 	print "<center><table border='0' width='0%'><form method='GET' action='".$PHP_SELF."'>\n";
 	print "<tr>\n";
-	print "<td='1'><b>Search : </b></td>\n";
+	print "<td><b>Search : </b></td>\n";
 	print '<input type="hidden" name="a" value="factions">';
 	print "<td><input type='text' value=\"$iname\" size='30' name='iname'/></td>\n";
 	print "</tr>";

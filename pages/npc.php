@@ -99,19 +99,19 @@
 	//print "<tr valign='top'><td width='0%'><table><tr><td>";
 	print "<table border='0' width='0%'><tr valign='top'><td width='100%'>\n";
 	print "<p><table border='0' width='100%'>";
-	print "<tr><td='1'><b>Full name : </b></td><td>".ReadableNpcName($npc["name"]);
+	print "<tr><td><b>Full name : </b></td><td>".ReadableNpcName($npc["name"]);
 	if ($npc["lastname"]!="") { print str_replace("_"," "," (".$npc["lastname"].")"); }
 	print "</td></tr>";
-	print "<tr><td='1'><b>Level : </b></td><td width='100%'>".$npc["level"]."</td></tr>";
-	print "<tr><td='1'><b>Race : </b></td><td>".$dbiracenames[$npc["race"]]."</td></tr>";
-	print "<tr><td='1'><b>Class : </b></td><td>".$dbclasses[$npc["class"]];
+	print "<tr><td><b>Level : </b></td><td width='100%'>".$npc["level"]."</td></tr>";
+	print "<tr><td><b>Race : </b></td><td>".$dbiracenames[$npc["race"]]."</td></tr>";
+	print "<tr><td><b>Class : </b></td><td>".$dbclasses[$npc["class"]];
 	if ($npc["npc_faction_id"]>0) {
 	  $query="SELECT $tbfactionlist.name,$tbfactionlist.id
 				FROM $tbfactionlist,$tbnpcfaction 
 				WHERE $tbnpcfaction.id=".$npc["npc_faction_id"]." 
 				AND $tbnpcfaction.primaryfaction=$tbfactionlist.id";
 	  $faction=GetRowByQuery($query);
-	  print "<tr><td='1'><b>Main faction : </b></td><td><a href='faction.php?id=".$faction["id"]."'>".$faction["name"]."</a></td></tr>";
+	  print "<tr><td><b>Main faction : </b></td><td><a href='faction.php?id=".$faction["id"]."'>".$faction["name"]."</a></td></tr>";
 	}
 	if ($npc["findable"]==1)
 	{
@@ -122,12 +122,12 @@
 
 	if ($DisplayNPCStats=="TRUE")
 	{
-		print "<tr><td='1'><b>Health points : </b></td><td>".$npc["hp"]."</td></tr>";
-		print "<tr><td='1'><b>Damage : </b></td><td>".$npc["mindmg"]." to ".$npc["maxdmg"]."</td></tr>";
+		print "<tr><td><b>Health points : </b></td><td>".$npc["hp"]."</td></tr>";
+		print "<tr><td><b>Damage : </b></td><td>".$npc["mindmg"]." to ".$npc["maxdmg"]."</td></tr>";
 	}
 	if ($ShowNpcsAttackSpeed==TRUE)
 	{
-		print "<tr><td='1'><b>Attack speed : </b></td><td>";
+		print "<tr><td><b>Attack speed : </b></td><td>";
 		if ($npc["attack_speed"]==0)
 		{
 			print "Normal (100%)";
@@ -140,7 +140,7 @@
 	}
 	if ($ShowNpcsAverageDamages==TRUE)
 	{
-		print "<tr><td='1'><b>Average melee damages : </b></td><td>";
+		print "<tr><td><b>Average melee damages : </b></td><td>";
 		$avghit=($npc["maxdmg"]+$npc["mindmg"])/2; // average hit
 		$dam=$avghit; # first hit of main hand
 		$com=$npc["npcspecialattks"];
@@ -186,7 +186,7 @@
 	{
 		if ($npc["npcspecialattks"]!='')
 		{
-			print "<tr><td='1'><b>Special attacks : </b></td><td>".SpecialAttacks($npc["npcspecialattks"])."</td></tr>";
+			print "<tr><td><b>Special attacks : </b></td><td>".SpecialAttacks($npc["npcspecialattks"])."</td></tr>";
 		}
 	}
 	
@@ -321,7 +321,7 @@
 	
 	
 	print "</td><td valign='top'><table border='0' width='0%'>"; // right column height='100%'
-	print "<tr><td='1'>"; // image
+	print "<tr><td>"; // image
 	if($UseWikiImages)
 	{
 		$ImageFile = NpcImage($wiki_server_url, $wiki_root_name, $id);
@@ -342,7 +342,7 @@
 		}
 	}
 
-	print "</td></tr><tr><td='1'>";
+	print "</td></tr><tr><td>";
 	// zone list
 	$query="SELECT $tbzones.long_name,
 				$tbzones.short_name,
