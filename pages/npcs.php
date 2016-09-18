@@ -41,15 +41,7 @@ if ($npc_name != "") {
         exit();
     }
 }
-
-
-/** Here the following holds :
- *    $QueryResult : NPCs queried for if any query was issued, otherwise it is not defined
- *    $q : previously-typed query, or empty by default
- *    $isearch is set if a query was issued
- */
-
-$Title = "NPC search";
+$Title = "NPC Search";
 
 $print_buffer .= '
     <form method="GET" action="' . $PHP_SELF . '">
@@ -57,7 +49,7 @@ $print_buffer .= '
         <table>
             <tr>
                 <td>
-                    <input name="q" type="text" value="' . $npc_name . '" class="search" onfocus="this.select()" value="" autocomplete="off" placeholder="Search for NPCs">
+                    ' . search_box("q", $npc_name, "Search for NPCs") . '
                 </td>
             </tr>
             <tr>
@@ -72,8 +64,19 @@ $print_buffer .= '
     </form>
 ';
 
-if (isset($result))
-    echo print_query_results($result, $max_npcs_returned, "npc.php", "npc", "npcs", "id", "name");
+if (isset($result)){
+    $print_buffer .= '<br><hr>';
+    $print_buffer .= print_query_results(
+        $result,
+        $max_npcs_returned,
+        "?a=npc&",
+        "npc",
+        "npcs",
+        "id",
+        "name"
+    );
+}
+
 
 
 ?>

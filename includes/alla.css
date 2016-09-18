@@ -462,6 +462,35 @@ input.search  {
     margin: 0;
     padding: 8px 35px 7px 5px;
     width: 255px;
+}
 
+.search_box {
+    background: url(../images/bg/black-35.png);
+    padding: 1px;
+}
 
+.search_box a {
+    background: url(../images/bg/search.png) 10px 8px no-repeat !important;
+    height: 35px;
+    width: 21px;
+    position: absolute;
+    top: 60px;
+    left: 470px;
+    width: 35px;
+}
+
+input, select {
+    border: 0;
+    color: #000 !important;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    padding: 8px 35px 7px 5px;
+
+}
+
+select {
+    height:25px;
+    padding: 0px 35px 0px 5px;
 }

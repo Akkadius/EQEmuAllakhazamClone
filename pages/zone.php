@@ -105,12 +105,12 @@ if ($mode == "npcs") {
 
         $RowClass = "lr";
         while ($row = mysql_fetch_array($result)) {
-            if ((ReadableNpcName($row["name"])) != '' && ($row["trackable"] > 0 || $trackable_npcs_only == FALSE)) {
+            if ((get_npc_name_human_readable($row["name"])) != '' && ($row["trackable"] > 0 || $trackable_npcs_only == FALSE)) {
                 $print_buffer .= "<tr class='" . $RowClass . "'>";
                 if ($ZoneDebug == TRUE) {
                     $print_buffer .= "<td>" . $row["id"] . "</td>";
                 }
-                $print_buffer .= "<td><a href=?a=npc&id=" . $row["id"] . ">" . ReadableNpcName($row["name"]) . "</a>";
+                $print_buffer .= "<td><a href=?a=npc&id=" . $row["id"] . ">" . get_npc_name_human_readable($row["name"]) . "</a>";
                 if ($ZoneDebug == TRUE) {
                     $print_buffer .= "</td><td>" . $row["loottable_id"];
                 }

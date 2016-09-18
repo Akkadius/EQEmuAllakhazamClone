@@ -61,7 +61,7 @@ if ($use_custom_zone_list == TRUE) {
     }
 }
 
-if ((ReadableNpcName($npc["name"])) == '' || ($npc["trackable"] == 0 && $trackable_npcs_only == TRUE)) {
+if ((get_npc_name_human_readable($npc["name"])) == '' || ($npc["trackable"] == 0 && $trackable_npcs_only == TRUE)) {
     header("Location: npcs.php");
     exit();
 }
@@ -73,14 +73,14 @@ if ((ReadableNpcName($npc["name"])) == '' || ($npc["trackable"] == 0 && $trackab
  *    The NPC actually exists
  */
 
-$Title = "NPC :: " . ReadableNpcName($name);
+$Title = "NPC :: " . get_npc_name_human_readable($name);
 
 $DebugNpc = FALSE; // for world builders, set this to false for common use
 
 $print_buffer .= "<table class='display_table container_div'><tr valign='top'><td colspan='2' class='headerrow'>";
 $print_buffer .= "<a href='" . $peqeditor_url . "index.php?editor=npc&amp;npcid=" . $id . "'><img src='" . $images_url . "/peq_npc.png' align='right'/></a>";
 $print_buffer .= "<a href='" . $peqeditor_url . "index.php?editor=merchant&amp;npcid=" . $id . "'><img src='" . $images_url . "/peq_merchant.png' align='right'/></a>";
-$print_buffer .= "<b>" . ReadableNpcName($npc["name"]) . "</b>";
+$print_buffer .= "<b>" . get_npc_name_human_readable($npc["name"]) . "</b>";
 if ($npc["lastname"] != "") {
     $print_buffer .= "<br/>" . str_replace("_", " ", " (" . $npc["lastname"] . ")") . " - id : " . $id;
 } else {
@@ -91,7 +91,7 @@ $print_buffer .= "<tr valign='top'><td width='0%'><table><tr><td><table border='
 //$print_buffer .= "<tr valign='top'><td width='0%'><table><tr><td>";
 $print_buffer .= "<table border='0' width='0%'><tr valign='top'><td width='100%'>\n";
 $print_buffer .= "<p><table border='0' width='100%'>";
-$print_buffer .= "<tr><td><b>Full name : </b></td><td>" . ReadableNpcName($npc["name"]);
+$print_buffer .= "<tr><td><b>Full name : </b></td><td>" . get_npc_name_human_readable($npc["name"]);
 if ($npc["lastname"] != "") {
     $print_buffer .= str_replace("_", " ", " (" . $npc["lastname"] . ")");
 }
@@ -203,7 +203,7 @@ if ($npc["npc_spells_id"] > 0) {
         ";
         $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {
-            $print_buffer .= "</ul><li><b>Listname : </b>" . ReadableNpcName($g["name"]);
+            $print_buffer .= "</ul><li><b>Listname : </b>" . get_npc_name_human_readable($g["name"]);
             if ($DebugNpc) {
                 $print_buffer .= " (" . $npc["npc_spells_id"] . ")";
             }

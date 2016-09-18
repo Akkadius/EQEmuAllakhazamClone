@@ -239,7 +239,7 @@ if ($display_task_activities == TRUE) {
                         if ($GoalType == "NPCID" && $row2["entry"]) {
                             $NPCID = $row2["entry"];
                             $NPCName = GetFieldByQuery("name", "SELECT name FROM npc_types WHERE id = $NPCID");
-                            $GoalListString .= "<li>Related NPC: <a href=?a=npc&id=" . $NPCID . ">" . ReadableNpcName($NPCName) . "</a></li>";
+                            $GoalListString .= "<li>Related NPC: <a href=?a=npc&id=" . $NPCID . ">" . get_npc_name_human_readable($NPCName) . "</a></li>";
                         }
                         if ($GoalType == "ItemID" && $row2["entry"]) {
                             $ItemID = $row2["entry"];

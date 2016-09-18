@@ -1,53 +1,79 @@
 <?php
 
-/** Displays the results of a query for objects returning the 'id' and 'name' fields.
- *  The query must have been done with at least a limit of '$MaxRowsReturned + 1'.
- *  '$MaxObjectsReturned' can be '0', which means the query had no limits (ex: $MaxNpcsReturned).
- *  '$OpenObjectById' must contain the name of the page used to open one of the object (ex: npc.php) by passing it
- *    the ID by GET method.
- *  'IdAttribute' and 'NameAttribute' are the name of the columns retrieved used for ID and Name (ex: 'id' and 'name').
- *  '$ObjectDescription' is the text describing the kind of objects to display (ex: 'NPC'). '$ObjectsDescription' is the plural.
- */
-function print_query_results($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPage, $ObjectDescription, $ObjectsDescription, $IdAttribute, $NameAttribute, $ExtraField, $ExtraFieldDescription, $ExtraSkill)
+function wrap_content_box($content){
+    $return_buffer = '
+        <table class="container_div display_table">
+            <tr>
+                <td>
+                ' . $content . '
+                </td>
+            </tr>
+        </table>
+    ';
+    return $return_buffer;
+}
+
+function search_box($name = "", $value = "", $placeholder){
+    return '
+        <div class="search_box">
+            <input name="' . $name . '" type="text" value="' . $value . '" class="search" autocomplete="off" placeholder="' . $placeholder . '">
+            <a href="javascript:document.search.submit();"></a>
+        </div>
+    ';
+}
+
+function print_query_results(
+    $objects_found,
+    $rows_to_return,
+    $anchor_link_callout,
+    $query_description, /* Example: NPCs */
+    $object_description,
+    $href_id_name,
+    $href_name_attribute,
+    $extra_field = "",
+    $extra_field_description = "",
+    $extra_skill = ""
+)
 {
     global $dbskills;
-    $ObjectsToShow = mysql_num_rows($FoundObjects);
-    if ($ObjectsToShow > get_max_query_results_count($MaxObjectsReturned)) {
-        $ObjectsToShow = get_max_query_results_count($MaxObjectsReturned);
+
+    $mysql_rows_returned = mysql_num_rows($objects_found);
+    if ($mysql_rows_returned > get_max_query_results_count($rows_to_return)) {
+        $mysql_rows_returned = get_max_query_results_count($rows_to_return);
         $more_objects_exist = True;
     } else {
         $more_objects_exist = False;
     }
 
-    $return_buffer = "";
-    if ($ObjectsToShow == 0) {
-        $return_buffer .= "<ul><li><b>No " . $ObjectDescription . " found.</b></li></ul>\n";
+
+    if ($mysql_rows_returned == 0) {
+        $return_buffer .= "<ul><li><b>No " . $query_description . " found.</b></li></ul>\n";
     } else {
-        $return_buffer .= "<ul><li><b>" . $ObjectsToShow . " " . ($ObjectsToShow == 1 ? $ObjectDescription : $ObjectsDescription) . " displayed.";
+        $return_buffer .= "<ul><li><b>" . $mysql_rows_returned . " " . ($mysql_rows_returned == 1 ? $query_description : $object_description) . " displayed.";
         if ($more_objects_exist) {
-            $return_buffer .= " More " . $ObjectsDescription . " exist but you reached the query limit.";
+            $return_buffer .= " More " . $object_description . " exist but you reached the query limit.";
         }
         $return_buffer .= "</b></li>\n";
         $return_buffer .= "<ul>\n";
-        for ($j = 1; $j <= $ObjectsToShow; $j++) {
-            $row = mysql_fetch_array($FoundObjects);
-            $PrintString = " <li style='text-align:left'><a href='" . $OpenObjectByIdPage . "id=" . $row[$IdAttribute] . "'>";
-            if ($ObjectDescription == "npc") {
+        for ($j = 1; $j <= $mysql_rows_returned; $j++) {
+            $row = mysql_fetch_array($objects_found);
+            $return_buffer .=  " <li style='text-align:left'><a href='" . $anchor_link_callout . "id=" . $row[$href_id_name] . "'>";
+            if ($query_description == "npc") {
                 // Clean up the name for NPCs
-                $PrintString .= ReadableNpcName($row[$NameAttribute]);
+                $return_buffer .= get_npc_name_human_readable($row[$href_name_attribute]);
             } else {
-                $PrintString .= $row[$NameAttribute];
+                $return_buffer .= $row[$href_name_attribute];
             }
-            $PrintString .= " (" . $row[$IdAttribute] . ")</a>";
+            $return_buffer .= " (" . $row[$href_id_name] . ")</a>";
 
-            if ($ExtraField && $ExtraFieldDescription && $ExtraSkill) {
-                $PrintString .= " - " . ucfirstwords(str_replace("_", " ", $dbskills[$row[$ExtraSkill]])) . ", $ExtraFieldDescription " . $row[$ExtraField];
+            if ($extra_field && $extra_field_description && $extra_skill) {
+                $return_buffer .= " - " . ucfirstwords(str_replace("_", " ", $dbskills[$row[$extra_skill]])) . ", $extra_field_description " . $row[$extra_field];
             }
-            $return_buffer .= $PrintString;
             $return_buffer .= "</li>\n";
         }
         $return_buffer .= "</ul>\n</ul>\n";
-        return $return_buffer;
+
+        return wrap_content_box($return_buffer);
     }
 }
 
@@ -66,7 +92,7 @@ function get_max_query_results_count($MaxObjects)
 
 /** Returns the "readable" name of an NPC from its database-encoded '$DbName'.
  */
-function ReadableNpcName($DbName)
+function get_npc_name_human_readable($DbName)
 {
     $Result = str_replace('-', '`', str_replace('_', ' ', str_replace('#', '', str_replace('!', '', str_replace('~', '', $DbName)))));
     for ($i = 0; $i < 10; $i++) {

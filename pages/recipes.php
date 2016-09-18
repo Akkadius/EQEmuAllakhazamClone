@@ -75,7 +75,7 @@ if (isset($isearch) && $isearch != "") {
 
     $print_buffer .= '<div>';
     if (isset($result)) {
-        print_query_results($result, $max_items_returned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
+        $print_buffer .= print_query_results($result, $max_items_returned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at level", "tradeskill");
     }
     $print_buffer .= '</div>';
 }

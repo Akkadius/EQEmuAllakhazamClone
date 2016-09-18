@@ -78,7 +78,7 @@ if (isset($isearch) && $isearch != '') {
     }
     if (mysql_num_rows($result) > 0) {
         while ($row = mysql_fetch_array($result)) {
-            $print_buffer .= "<li><a href=?a=npc&id=" . $row["id"] . ">" . ReadableNpcName($row["name"]) . "</a>";
+            $print_buffer .= "<li><a href=?a=npc&id=" . $row["id"] . ">" . get_npc_name_human_readable($row["name"]) . "</a>";
             if ($ishowlevel) {
                 $print_buffer .= " - level " . $row["level"];
             }

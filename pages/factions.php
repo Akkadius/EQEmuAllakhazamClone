@@ -55,7 +55,7 @@ $print_buffer .= "</form></table>\n";
 $print_buffer .= "\n";
 
 if (isset($QueryResult)) {
-    print_query_results($QueryResult, $MaxFactionsReturned, "?a=faction&", "faction", "factions", "id", "name");
+    $print_buffer .= print_query_results($QueryResult, $MaxFactionsReturned, "?a=faction&", "faction", "factions", "id", "name");
 }
 
 
