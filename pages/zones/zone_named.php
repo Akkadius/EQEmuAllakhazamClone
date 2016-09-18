@@ -9,7 +9,7 @@ if ($display_named_npcs_info == FALSE) {
     exit();
 }
 
-$Title = GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
+$page_title = get_field_result("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
 
 if (!isset($name)) {
     $print_buffer .= "<script>document.location=\"zones.php\";</script>";

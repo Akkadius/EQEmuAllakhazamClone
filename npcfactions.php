@@ -12,10 +12,10 @@ if ($page) {
 } else {
     $start = 0;                                    //if no page var is given, set start to 0
 }
-$total_pages = GetFieldByQuery("num", "SELECT COUNT(*) as num FROM $tbl_name");
+$total_pages = get_field_result("num", "SELECT COUNT(*) as num FROM $tbl_name");
 // Pagination //
 
-$Title = "Bestiary by Factions";
+$page_title = "Bestiary by Factions";
 
 require_once($includes_dir . 'functions.php');
 

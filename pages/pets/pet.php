@@ -2,7 +2,7 @@
 
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
-$Title = "Pet :: $name";
+$page_title = "Pet :: $name";
 
 $query = "
     SELECT
@@ -17,8 +17,8 @@ $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query
 $npc = mysql_fetch_array($result);
 
 $print_buffer .= "<table class='container_div'><tr valign=top><td>\n";
-if (file_exists($npcs_dir . $id . ".jpg")) {
-    $print_buffer .= "<img src=" . $npcs_dir . $id . ".jpg>";
+if (file_exists($npcs_dir . $item_id . ".jpg")) {
+    $print_buffer .= "<img src=" . $npcs_dir . $item_id . ".jpg>";
 }
 $print_buffer .= "<p><table >";
 $print_buffer .= "<tr><td style='text-align:right'><b>Full name : </b></td><td>" . str_replace("_", " ", $npc["name"]);

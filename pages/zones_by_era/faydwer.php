@@ -1,5 +1,5 @@
 <?php
-$Title = "Continent of Faydwer";
+$page_title = "Continent of Faydwer";
 ?>
 
 <li><a href=?a=zone&name=akanon>Ak'Anon</a>

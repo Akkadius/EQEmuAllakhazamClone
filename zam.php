@@ -215,11 +215,11 @@
                                                 print $print_buffer;
                                             }
 
-                                            if($Title){
+                                            if($page_title){
                                                 $footer_javascript .= '
                                                     <script type="text/javascript">
-                                                        $("#title").html("<h1>' . $Title . '</h1>");
-                                                        document.title = "' . $Title . '";
+                                                        $("#title").html("<h1>' . $page_title . '</h1>");
+                                                        document.title = "' . $page_title . '";
                                                     </script>
                                                 ';
 

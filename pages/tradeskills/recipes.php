@@ -1,5 +1,5 @@
 <?php
-$Title = "Search Recipes";
+$page_title = "Search Recipes";
 
 $minskill = (isset($_GET['minskill']) ? $_GET['minskill'] : 0);
 $maxskill = (isset($_GET['maxskill']) ? $_GET['maxskill'] : 0);

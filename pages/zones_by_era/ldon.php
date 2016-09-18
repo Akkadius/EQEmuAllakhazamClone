@@ -1,5 +1,5 @@
 <?php
-$Title = "Lost Dungeons of Norrath";
+$page_title = "Lost Dungeons of Norrath";
 ?>
 
 <li>Deepest Guk

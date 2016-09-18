@@ -16,7 +16,7 @@ function message_die($t1, $t2, $t3, $t4)
 /** Runs '$query' and returns the value of '$field' of the first (arbitrarily) found row
  *  If no row is selected by '$query', returns an emty string
  */
-function GetFieldByQuery($field, $query)
+function get_field_result($field, $query)
 {
     $QueryResult = db_mysql_query($query) or message_die('mysql.php', 'GetFiedByQuery', $query, mysql_error());
     if (mysql_num_rows($QueryResult) > 0) {
@@ -44,15 +44,18 @@ function db_mysql_query($query){
 
     $result = mysql_query($query);
 
-    if(mysql_error()){
-        print mysql_error();
-        die;
-    }
+
 
     if($query != "" && $mysql_debugging){
         $millisecond_time = number_format((microtime(true) - $start), 2);
 
         $debug_queries .= ' <pre style="margin: 0px; line-height: 24px;">' . $query . ' <b>Execution Time :: ' . $millisecond_time . 's</b> ' . (mysql_error() ? 'ERROR: ' . mysql_error() : '') . '</pre><hr>';
+    }
+
+    if(mysql_error()){
+        print $debug_queries;
+        print mysql_error();
+        die;
     }
 
     return $result;

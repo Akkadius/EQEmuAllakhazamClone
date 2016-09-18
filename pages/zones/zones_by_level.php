@@ -1,5 +1,5 @@
 <?php
-$Title = "Populated Zones By Level";
+$page_title = "Populated Zones By Level";
 
 $print_buffer .= "<p><b>The suggested levels are approximate based upon the levels of the majority of creatures found in the zone, and, except for the newbie zones, assume that you will hunt with a group.  Most zones also have some higher and lower level monsters roaming the area, and can thus be selectively hunted at different levels.  Follow the links to get more complete descriptions for the individual zones.</b><p>";
 if ($sort_zone_level_list == TRUE) {

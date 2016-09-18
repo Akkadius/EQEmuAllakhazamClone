@@ -1,5 +1,5 @@
 <?php
-$Title = "Lost Continent of Kunark";
+$page_title = "Lost Continent of Kunark";
 ?>
 
 <li><a href=?a=zone&name=burningwood>Burning Woods</a>

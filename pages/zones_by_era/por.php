@@ -1,5 +1,5 @@
 <?php
-$Title = "Outer Planes";
+$page_title = "Outer Planes";
 ?>
 
 <li><a href=?a=zone&name=freeportacademy>Academy of Arcane Science</a>

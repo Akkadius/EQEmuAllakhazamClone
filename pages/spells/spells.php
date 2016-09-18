@@ -3,7 +3,7 @@
 #ini_set('display_errors', 'On');
 #error_reporting(E_ALL);
 
-$Title = "Spell Search";
+$page_title = "Spell Search";
 require_once($includes_dir . 'spell.inc.php');
 
 $opt = (isset($_GET['opt']) ? $_GET['opt'] : '');

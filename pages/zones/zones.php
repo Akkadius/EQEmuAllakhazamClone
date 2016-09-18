@@ -1,5 +1,5 @@
 <?php
-$Title = "Populated Zones List";
+$page_title = "Populated Zones List";
 $print_buffer .= "<table class=''><tr valign=top><td>";
 
 $query = "

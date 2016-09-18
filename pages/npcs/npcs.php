@@ -41,7 +41,7 @@ if ($npc_name != "") {
         exit();
     }
 }
-$Title = "NPC Search";
+$page_title = "NPC Search";
 
 $print_buffer .= '
     <form method="GET" action="' . $PHP_SELF . '">

@@ -1,5 +1,5 @@
 <?php
-$Title = "Frozen Lands of Velious";
+$page_title = "Frozen Lands of Velious";
 ?>
 
 <li><a href=?a=zone&name=cobaltscar>Cobalt Scar</a>

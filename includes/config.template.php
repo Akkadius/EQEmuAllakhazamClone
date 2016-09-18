@@ -22,8 +22,8 @@ $maps_dir = getcwd() . "/maps/";
 $maps_url = $root_url . "/maps/";
 $npcs_dir = getcwd() . "/npcs/";
 $npcs_url = $root_url . "/npcs/";
-$icons_dir = getcwd() . "/icons/";
-$icons_url = $root_url . "/icons/";
+$icons_dir = getcwd() . "/images/icons/";
+$icons_url = $root_url . "/images/icons/";
 $images_url = $root_url . "/images/";
 $charbrowser_url = "http://www.myserver.com/CharBrowser/"; // Set to "" to disable CharBrowser links for character names
 
@@ -88,8 +88,7 @@ $sort_zone_level_list = TRUE; // sort or not the zones in zone levels list
 $use_spell_globals = FALSE; // If TRUE, any spells in the spell_globals table will not be displayed
 $use_zam_search = TRUE; // If TRUE, will display a ZAM search bar on the left with the sidemenu
 
-
-$slow_page_caching = true; /* If pages take longer than 1 second to load, they will be cached for further use in cache/ folder */
+$slow_page_caching = false; /* If pages take longer than 1 second to load, they will be cached for further use in cache/ folder */
 
 $ignore_zones = array("load", "loading", "load2", "nektropos", "arttest", "apprentice", "tutorial");
 

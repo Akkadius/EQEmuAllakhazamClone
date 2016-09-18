@@ -36,7 +36,7 @@ if ($id != "" && is_numeric($id) && $display_task_info == TRUE) {
  *    The Task actually exists
  */
 
-$Title = "Task :: " . $name;
+$page_title = "Task :: " . $name;
 
 
 print "<p><table border='0' width='60%'>";
@@ -47,14 +47,14 @@ if ($task["maxlevel"] <= $server_max_level && $task["maxlevel"] != 0) {
     print "<tr><td><b>Max Level : </b></td><td width='100%'>" . $task["maxlevel"] . "</td></tr>";
 }
 $ZoneID = $task["startzone"];
-$ZoneLongName = GetFieldByQuery("long_name", "SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
-$ZoneShortName = GetFieldByQuery("short_name", "SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
+$ZoneLongName = get_field_result("long_name", "SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
+$ZoneShortName = get_field_result("short_name", "SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
 print "<tr><td><b>Starts In : </b></td><td><a href=?a=zone&name=" . $ZoneShortName . ">" . $ZoneLongName . "</a></td></tr>";
 $Reward = $task["reward"];
 if ($task["rewardmethod"] == 0) {
     if ($task["rewardid"] > 0) {
         $ItemID = $task["rewardid"];
-        $ItemName = GetFieldByQuery("Name", "SELECT Name FROM items WHERE id = $ItemID");
+        $ItemName = get_field_result("Name", "SELECT Name FROM items WHERE id = $ItemID");
         $Reward = "<a href=?a=item&id=" . $ItemID . ">" . $ItemName . "</a>";
     }
 }
@@ -213,8 +213,8 @@ if ($display_task_activities == TRUE) {
             if ($ZoneID == 0) {
                 $ZoneName = "Any Zone";
             } else {
-                $ZoneLongName = GetFieldByQuery("long_name", "SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
-                $ZoneShortName = GetFieldByQuery("short_name", "SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
+                $ZoneLongName = get_field_result("long_name", "SELECT long_name FROM zone WHERE zoneidnumber = $ZoneID");
+                $ZoneShortName = get_field_result("short_name", "SELECT short_name FROM zone WHERE zoneidnumber = $ZoneID");
                 $ZoneName = "<a href=?a=zone&name=" . $ZoneShortName . ">" . $ZoneLongName . "</a>";
             }
             print "<tr><td colspan='2' nowrap='1'><ul><li>Step " . ($row["activityid"] + 1) . ": $StepDescription - Zone: $ZoneName</li><ul>";
@@ -238,12 +238,12 @@ if ($display_task_activities == TRUE) {
 
                         if ($GoalType == "NPCID" && $row2["entry"]) {
                             $NPCID = $row2["entry"];
-                            $NPCName = GetFieldByQuery("name", "SELECT name FROM npc_types WHERE id = $NPCID");
+                            $NPCName = get_field_result("name", "SELECT name FROM npc_types WHERE id = $NPCID");
                             $GoalListString .= "<li>Related NPC: <a href=?a=npc&id=" . $NPCID . ">" . get_npc_name_human_readable($NPCName) . "</a></li>";
                         }
                         if ($GoalType == "ItemID" && $row2["entry"]) {
                             $ItemID = $row2["entry"];
-                            $ItemName = GetFieldByQuery("name", "SELECT name FROM items WHERE id = $ItemID");
+                            $ItemName = get_field_result("name", "SELECT name FROM items WHERE id = $ItemID");
                             $GoalListString .= "<li>Related Item: <a href=?a=item&id=" . $ItemID . ">" . $ItemName . "</a></li>";
                         }
                     }

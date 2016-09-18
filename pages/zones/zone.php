@@ -5,14 +5,14 @@ $order = (isset($_GET['order']) ? addslashes($_GET["order"]) : 'name');
 $mode = (isset($_GET['mode']) ? addslashes($_GET["mode"]) : 'npcs');
 
 if ($use_custom_zone_list == TRUE && $name != '') {
-    $ZoneNote = GetFieldByQuery("note", "SELECT note FROM $zones_table WHERE short_name='$name'");
+    $ZoneNote = get_field_result("note", "SELECT note FROM $zones_table WHERE short_name='$name'");
     if (substr_count(strtolower($ZoneNote), "disabled") >= 1) {
         header("Location: index.php");
         exit();
     }
 }
 
-$Title = GetFieldByQuery("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
+$page_title = get_field_result("long_name", "SELECT long_name FROM $zones_table WHERE short_name='$name'") . " ($name)";
 
 if (!isset($name)) {
     $print_buffer .= "<script>document.location=\"zones.php\";</script>";
@@ -240,7 +240,7 @@ if ($mode == "items") {
     if ($ItemsFound > 0) {
         $print_buffer .= $EquiptmentTable;
         foreach ($ItemsData as $key => $ItemData) {
-            $ToolTips .= CreateToolTip($ItemData["id"], BuildItemStats($ItemData, 1));
+            $ToolTips .= CreateToolTip($ItemData["id"], return_item_stat_box($ItemData, 1));
         }
         $print_buffer .= $ToolTips;
 
@@ -338,7 +338,7 @@ if ($mode == "forage") {
 if ($mode == "tasks") {
 
     if ($display_task_info == TRUE) {
-        $ZoneID = GetFieldByQuery("zoneidnumber", "SELECT zoneidnumber FROM zone WHERE short_name = '$name'");
+        $ZoneID = get_field_result("zoneidnumber", "SELECT zoneidnumber FROM zone WHERE short_name = '$name'");
         $query = "
             SELECT
                 $tasks_table.id,
@@ -375,7 +375,7 @@ if ($mode == "tasks") {
                 if ($row["rewardmethod"] == 0) {
                     if ($row["rewardid"] > 0) {
                         $ItemID = $row["rewardid"];
-                        $ItemName = GetFieldByQuery("Name", "SELECT Name FROM items WHERE id = $ItemID");
+                        $ItemName = get_field_result("Name", "SELECT Name FROM items WHERE id = $ItemID");
                         $Reward = "<a href=?a=item&id=" . $ItemID . ">" . $ItemName . "</a>";
                     }
                 }

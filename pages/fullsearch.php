@@ -40,7 +40,7 @@ $FoundFactions = db_mysql_query($Query) or message_die('fullsearch.php', 'MYSQL_
 
 // Query for Items
 if ($discovered_items_only == TRUE) {
-    $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.id='" . $id . "' AND discovered_items.item_id=$items_table.id";
+    $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.id='" . $item_id . "' AND discovered_items.item_id=$items_table.id";
     $Query = "SELECT $items_table.id,$items_table.`name`
 		FROM $items_table, discovered_items
 		WHERE $Where
@@ -100,7 +100,7 @@ if (mysql_num_rows($FoundFactions) == 0
  *    $FoundNpcs     : NPCs     found
  */
 
-$Title = "Search Results";
+$page_title = "Search Results";
 
 // Display found objects
 $print_buffer .= "          <table border='0' width='100%'>\n";

@@ -1,5 +1,5 @@
 <?php
-$Title = "Advanced NPC Search";
+$page_title = "Advanced NPC Search";
 
 $isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
 $id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');

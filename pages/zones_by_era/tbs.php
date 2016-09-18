@@ -1,5 +1,5 @@
 <?php
-$Title = "Outer Planes";
+$page_title = "Outer Planes";
 
 ?>
 

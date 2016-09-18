@@ -73,7 +73,7 @@ if ((get_npc_name_human_readable($npc["name"])) == '' || ($npc["trackable"] == 0
  *    The NPC actually exists
  */
 
-$Title = "NPC :: " . get_npc_name_human_readable($name);
+$page_title = "NPC :: " . get_npc_name_human_readable($name);
 
 $DebugNpc = FALSE; // for world builders, set this to false for common use
 

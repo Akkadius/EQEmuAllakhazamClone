@@ -1,5 +1,5 @@
 <?php
-$Title = "The Planes of Power";
+$page_title = "The Planes of Power";
 ?>
 
 <li><a href=?a=zone&name=pofire>Doomfire, the Burning Lands</a>

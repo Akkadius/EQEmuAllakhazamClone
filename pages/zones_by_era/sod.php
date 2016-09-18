@@ -1,5 +1,5 @@
 <?php
-$Title = "Outer Planes";
+$page_title = "Outer Planes";
 ?>
 
 <li><a href=?a=zone&name=oldkithicor>Bloody Kithicor</a>

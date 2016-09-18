@@ -1,5 +1,5 @@
 <?php
-$Title = "Omens of War";
+$page_title = "Omens of War";
 ?>
 
 <li><a href=?a=zone&name=dranik>Catacombs of Dranik</a>

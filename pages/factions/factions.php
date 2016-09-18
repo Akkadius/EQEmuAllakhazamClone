@@ -39,7 +39,7 @@ if ($isearch != "") {
  *    $isearch is set if a query was issued
  */
 
-$Title = "Faction Search";
+$page_title = "Faction Search";
 
 
 $print_buffer .= "<table border='0' width='0%'><form method='GET' action='" . $PHP_SELF . "'>\n";

@@ -1,5 +1,5 @@
 <?php
-$Title = "Gates of Discord";
+$page_title = "Gates of Discord";
 ?>
 
 <li><a href=?a=zone&name=abysmal>Abysmal Sea</a>

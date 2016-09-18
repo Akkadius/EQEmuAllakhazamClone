@@ -1,5 +1,14 @@
 <?php
 
+function return_item_icon_from_icon_id($icon_id, $size = 50){
+    global $icons_dir, $icons_url;
+
+    if (file_exists($icons_dir . "item_" . $icon_id . ".png")) {
+        return "<img src='" . $icons_url . "item_" . $icon_id . ".png' style='width:" . $size . "px;height:auto;'>";
+    }
+    return;
+}
+
 function wrap_content_box($content){
     $return_buffer = '
         <table class="container_div display_table">
@@ -13,6 +22,32 @@ function wrap_content_box($content){
     return $return_buffer;
 }
 
+function display_header($header)
+{
+    return '
+        <tr>
+            <td colspan="2">' . $header . '</td>
+        </tr>
+    ';
+}
+function display_table($content, $width = 500){
+    $return_buffer = '
+        <table class="container_div display_table" style="width:' . $width .'px">
+            ' . $content . '
+        </table>
+    ';
+    return $return_buffer;
+}
+
+function display_row($left, $right = ""){
+    return '
+        <tr>
+            <td>' . $left . '</td>
+            <td>' . $right . '</td>
+        </tr>
+    ';
+}
+
 function search_box($name = "", $value = "", $placeholder){
     return '
         <div class="search_box">
@@ -20,6 +55,11 @@ function search_box($name = "", $value = "", $placeholder){
             <a href="javascript:document.search.submit();"></a>
         </div>
     ';
+}
+
+function strip_underscores($string){
+    $string = str_replace("_", " ", $string);
+    return $string;
 }
 
 function print_query_results(
@@ -1049,7 +1089,7 @@ function Pagination($targetpage, $page, $total_pages, $limit, $adjacents)
 
 // Function to build item stats tables
 // Used for item.php as well as for tooltips for items
-function BuildItemStats($item, $show_name_icon)
+function return_item_stat_box($item, $show_name_icon)
 {
 
     global $dbitypes, $dam2h, $dbbagtypes, $dbskills, $icons_url, $spells_table, $dbiaugrestrict, $dbiracenames;
@@ -1264,7 +1304,7 @@ function BuildItemStats($item, $show_name_icon)
     }
     //item proc
     if (($item["proceffect"] > 0) && ($item["proceffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=" . $item["proceffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["proceffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Combat Effect: </b><a href='?a=spell&id=" . $item["proceffect"] . "'>" . get_field_result("name", "SELECT name FROM $spells_table WHERE id=" . $item["proceffect"]) . "</a>";
         if ($item["proclevel2"] > 0) {
             $html_string .= "<br><b>Level for effect: </b>" . $item["proclevel2"];
         }
@@ -1272,7 +1312,7 @@ function BuildItemStats($item, $show_name_icon)
     }
     // worn effect
     if (($item["worneffect"] > 0) && ($item["worneffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=" . $item["worneffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["worneffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Worn Effect: </b><a href='?a=spell&id=" . $item["worneffect"] . "'>" . get_field_result("name", "SELECT name FROM $spells_table WHERE id=" . $item["worneffect"]) . "</a>";
         if ($item["wornlevel"] > 0) {
             $html_string .= "<br><b>Level for effect: </b>" . $item["wornlevel"];
         }
@@ -1280,7 +1320,7 @@ function BuildItemStats($item, $show_name_icon)
     }
     // focus effect
     if (($item["focuseffect"] > 0) && ($item["focuseffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=" . $item["focuseffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["focuseffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Focus Effect: </b><a href='?a=spell&id=" . $item["focuseffect"] . "'>" . get_field_result("name", "SELECT name FROM $spells_table WHERE id=" . $item["focuseffect"]) . "</a>";
         if ($item["focuslevel"] > 0) {
             $html_string .= "<br/><b>Level for effect: </b>" . $item["focuslevel"];
         }
@@ -1288,7 +1328,7 @@ function BuildItemStats($item, $show_name_icon)
     }
     // clicky effect
     if (($item["clickeffect"] > 0) && ($item["clickeffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=" . $item["clickeffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["clickeffect"]) . "</a> (";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Click Effect: </b><a href='?a=spell&id=" . $item["clickeffect"] . "'>" . get_field_result("name", "SELECT name FROM $spells_table WHERE id=" . $item["clickeffect"]) . "</a> (";
         if ($item["clicktype"] == 4) {
             $html_string .= "Must Equip. ";
         }
@@ -1312,7 +1352,7 @@ function BuildItemStats($item, $show_name_icon)
     }
     // scroll
     if (($item["scrolleffect"] > 0) && ($item["scrolleffect"] < 65535)) {
-        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=" . $item["scrolleffect"] . "'>" . GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $item["scrolleffect"]) . "</a>";
+        $html_string .= "<tr><td colspan='2' nowrap='1'><b>Spell Scroll Effect: </b><a href='?a=spell&id=" . $item["scrolleffect"] . "'>" . get_field_result("name", "SELECT name FROM $spells_table WHERE id=" . $item["scrolleffect"]) . "</a>";
         $html_string .= "</td></tr>";
     }
     // bard item ?
@@ -1391,7 +1431,7 @@ function BuildItemStats($item, $show_name_icon)
 
 function get_item_icon_from_id($id)
 {
-    global $icon_cache;
+    global $icon_cache, $icons_url;
 
     if ($icon_cache[$id])
         return $icon_cache[$id];
@@ -1399,7 +1439,7 @@ function get_item_icon_from_id($id)
     $query = "SELECT `icon` FROM `items` WHERE `id` = " . $id;
     $result = db_mysql_query($query);
     while ($row = mysql_fetch_array($result)) {
-        $icon_cache[$id] = '<img src="icons/item_' . $row['icon'] . '.png" style="width:15px;height:auto">';
+        $icon_cache[$id] = '<img src="' . $icons_url . 'item_' . $row['icon'] . '.png" style="width:15px;height:auto">';
         return $icon_cache[$id];
     }
 }

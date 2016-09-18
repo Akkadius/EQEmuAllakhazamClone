@@ -20,12 +20,12 @@
 	{
 		$start = 0;								//if no page var is given, set start to 0
 	}
-	$total_pages = GetFieldByQuery("num", "SELECT COUNT(*) as num FROM $tbl_name");
+	$total_pages = get_field_result("num", "SELECT COUNT(*) as num FROM $tbl_name");
 	// Pagination //
 
 	
 
-	$Title="Wecome to AllaClone!";
+	$page_title="Wecome to AllaClone!";
 
 
 	// Here's the main page of the website
@@ -38,9 +38,9 @@
 	}
 
 	if ($discovered_items_only==TRUE){
-		$Title="Recently Discovered Items";
+		$page_title="Recently Discovered Items";
 		print "<table border='0' width='0%'><tr valign='top'><td class='header_cell'>";
-		print "<b>$Title</b>";
+		print "<b>$page_title</b>";
 		print "</td></tr>"; 
 
 		print "<table border=0 width=100%><tr valign=top><td width=100%>";
@@ -66,7 +66,7 @@
 			   
 		$RowClass = "lr";
 		while ($row=mysql_fetch_array($result)) {
-				CreateToolTip($row["item_id"], BuildItemStats($row, 1));
+				CreateToolTip($row["item_id"], return_item_stat_box($row, 1));
 				print "<tr class='" .$RowClass. "'>
 				<td><a href=?a=item&id=".$row["item_id"]." id='" . $row["item_id"] . "'>";
 				

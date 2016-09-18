@@ -72,7 +72,7 @@ function SpellDescription($spell, $n, $csv = false)
                 break;
             case 32: // summonitem
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $name = GetFieldByQuery("name", "SELECT name FROM $items_table WHERE id=" . $spell["effect_base_value$n"]);
+                $name = get_field_result("name", "SELECT name FROM $items_table WHERE id=" . $spell["effect_base_value$n"]);
                 if (($name != "") AND ($csv == false)) {
                     $print_buffer .= " : <a href=?a=item&id=" . $spell["effect_base_value$n"] . ">$name</a>";
                 } else {
@@ -244,7 +244,7 @@ function SpellDescription($spell, $n, $csv = false)
             case 289: // Improved Spell Effect:
             case 323: // Add Defensive Proc:
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $name = GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=" . $spell["effect_base_value$n"]);
+                $name = get_field_result("name", "SELECT name FROM $spells_table WHERE id=" . $spell["effect_base_value$n"]);
                 if ($csv == false) {
                     $print_buffer .= "<a href=?a=spell&id=" . $spell["effect_base_value$n"] . ">$name</a>";
                 } else {
@@ -296,7 +296,7 @@ function SpellDescription($spell, $n, $csv = false)
                     $max = -$max;
                     $v = " excluded";
                 }
-                $name = GetFieldByQuery("name", "SELECT name FROM $spells_table WHERE id=$max");
+                $name = get_field_result("name", "SELECT name FROM $spells_table WHERE id=$max");
                 if ($csv == false) {
                     $print_buffer .= "($name)";
                 } else {

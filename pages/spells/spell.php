@@ -7,9 +7,9 @@ if (!$spell) {
     header("Location: ?a=spells");
     exit();
 }
-$Title = '<img src="' . $icons_url . $spell['new_icon'] . '.gif" style="width:17px; height:auto"> ' . $spell["name"] . ' ';
+$page_title = '<img src="' . $icons_url . $spell['new_icon'] . '.gif" style="width:17px; height:auto"> ' . $spell["name"] . ' ';
 
-$Title = str_replace('"', "'", $Title);
+$page_title = str_replace('"', "'", $page_title);
 
 $print_buffer .= "<table class='container_div ' style='width:500px'><tr style='vertical-align:middle !important'>";
 
@@ -75,7 +75,7 @@ for ($i = 1; $i <= 4; $i++) {
     if ($spell["components" . $i] > 0) {
         $print_buffer .= "<tr><td style='text-align:right'><b>Needed reagent $i:</b></td><td>" .
             "<a href=?a=item&id=" . $spell["components" . $i] .
-            ">" . GetFieldByQuery("Name", "SELECT Name FROM $items_table WHERE id=" .
+            ">" . get_field_result("Name", "SELECT Name FROM $items_table WHERE id=" .
                 $spell["components" . $i]) .
             " </a>(" . $spell["component_counts" . $i] . ")</td></tr>";
     }

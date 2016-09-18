@@ -1,5 +1,5 @@
 <?php
-$Title = "Luclin";
+$page_title = "Luclin";
 ?>
 
 <li><a href=?a=zone&name=acrylia>Acrylia Caverns</a>

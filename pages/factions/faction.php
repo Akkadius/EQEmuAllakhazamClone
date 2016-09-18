@@ -85,7 +85,7 @@ if ($id != "" && is_numeric($id)) {
  *    The faction actually exists
  */
 
-$Title = "Faction :: " . $name;
+$page_title = "Faction :: " . $name;
 
 
 $print_buffer .= "          \n";

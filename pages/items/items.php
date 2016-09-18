@@ -163,7 +163,7 @@ if ($isearch != "") {
  *    $isearch is set if a query was issued
  */
 
-$Title = "Item Search";
+$page_title = "Item Search";
 
 $print_buffer .= "<table ><tr><td style='toggle_btn'></td></tr></table>";
 $print_buffer .= "<table class='display_table container_div' border='0' style='width:900px !important;' cellpadding='15'>\n";
@@ -336,14 +336,14 @@ if (isset($QueryResult)) {
             $TableData = "";
             $row = mysql_fetch_array($QueryResult);
             $TableData .= "<tr valign='top' class='" . $RowClass . "'><td>";
-            if (file_exists(getcwd() . "/icons/item_" . $row["icon"] . ".png")) {
+            if (file_exists($icons_dir . "item_" . $row["icon"] . ".png")) {
                 $TableData .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left'/>";
             } else {
                 $TableData .= "<img src='" . $icons_url . "item_.gif' align='left'/>";
             }
             $TableData .= "</td><td>";
 
-            CreateToolTip($row["id"], BuildItemStats($row, 1));
+            CreateToolTip($row["id"], return_item_stat_box($row, 1));
             $TableData .= "<a href='?a=item&id=" . $row["id"] . "' id='" . $row["id"] . "'>" . $row["Name"] . "</a>";
 
             $TableData .= "</td><td>";
