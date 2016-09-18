@@ -272,6 +272,7 @@
 
         <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
         <script src="includes/js/footer.js"></script>
+        <script src="includes/js/pjax.js"></script>
         <script type="text/javascript">
             Nav.init()
         </script>
