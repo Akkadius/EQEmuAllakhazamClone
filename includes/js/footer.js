@@ -189,6 +189,6 @@ function global_search(val){
     });
 }
 
-$(".submit").click(function() {
+$( ".submit" ).on( "click", function() {
     $(this).closest("form").submit();
 });

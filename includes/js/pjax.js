@@ -1,5 +1,5 @@
 var pjax_request_count = 1;
-var pjax_debug = 1;
+var pjax_debug = 0;
 
 $('a').live('click', function (e) {
     url = $(this).attr('href');
@@ -59,7 +59,8 @@ $('a').live('click', function (e) {
                 context: document.body
             }).done(function (e_res) {
                 e.preventDefault();
-                $('.page-content').hide().html(e_res).fadeIn(100);
+                // $('.page-content-ajax').hide().html(e_res).fadeIn(100);
+                $('.page-content-ajax').html(e_res);
                 if (e_res.indexOf('brush:')) {
                     if (typeof SyntaxHighlighter !== 'undefined') {
                         DoSyntaxHighlightGM();
@@ -98,7 +99,7 @@ window.addEventListener("popstate", function(e) {
         context: document.body
     }).done(function(e_res) {
         e.preventDefault();
-        $(".page-content").html(e_res);
+        $(".page-content-ajax").html(e_res);
         if(e_res.indexOf("brush:")){
             if(typeof SyntaxHighlighter !== "undefined"){
                 DoSyntaxHighlightGM();

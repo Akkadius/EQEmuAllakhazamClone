@@ -290,7 +290,7 @@ $print_buffer .= SelectDeity("ideity", $ideity);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "</td></tr></table>";
 $print_buffer .= "<tr><td colspan='2'>
-    <a class='button' onclick='$(\".item_search\").submit();'>Search</a>
+    <a class='button' onclick='$(\".item_search\").submit();' ignore-pjax='1'>Search</a>
     <a class='button' href='?a=items'>Reset</a>
     <input type='hidden' name='isearch' value='1'>
 </td></tr>\n";

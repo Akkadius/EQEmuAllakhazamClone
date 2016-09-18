@@ -9,6 +9,14 @@
     if(isset($_GET['v_ajax'])){
         require_once('routes.php');
         echo $print_buffer;
+        if($page_title){
+            $footer_javascript .= '
+                <script type="text/javascript">
+                    $("#title").html("<h1>' . $page_title . '</h1>");
+                    document.title = "' . $page_title . '";
+                </script>
+            ';
+        }
         echo $footer_javascript;
         exit;
     }
@@ -31,6 +39,7 @@
     <link rel="stylesheet" type="text/css" href="includes/alla.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
+    <link rel="stylesheet" type="text/css" href="includes/css/pace.css" id="css">
     <script src="./zam_files/jquery-1.10.2.min.js"></script>
     <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
 
@@ -187,24 +196,26 @@
                                     </div>
                                     <div class="page-content">
                                         <div id="title"></div>
-                                        <?php
+                                        <div class="page-content-ajax">
+                                            <?php
 
-                                            require_once('routes.php');
+                                                require_once('routes.php');
 
-                                            if($print_buffer){
-                                                print $print_buffer;
-                                            }
+                                                if($print_buffer){
+                                                    print $print_buffer;
+                                                }
 
-                                            if($page_title){
-                                                $footer_javascript .= '
-                                                    <script type="text/javascript">
-                                                        $("#title").html("<h1>' . $page_title . '</h1>");
-                                                        document.title = "' . $page_title . '";
-                                                    </script>
-                                                ';
+                                                if($page_title){
+                                                    $footer_javascript .= '
+                                                        <script type="text/javascript">
+                                                            $("#title").html("<h1>' . $page_title . '</h1>");
+                                                            document.title = "' . $page_title . '";
+                                                        </script>
+                                                    ';
 
-                                            }
-                                        ?>
+                                                }
+                                            ?>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -252,6 +263,7 @@
 
         <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
         <script src="includes/js/footer.js"></script>
+        <script src="includes/js/pace.min.js"></script>
         <script src="includes/js/pjax.js"></script>
         <script type="text/javascript">
             Nav.init()
