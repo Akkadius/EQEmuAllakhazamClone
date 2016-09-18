@@ -289,7 +289,11 @@ $print_buffer .= "<tr><td style='text-align:right'><b>Deity</b></td><td>";
 $print_buffer .= SelectDeity("ideity", $ideity);
 $print_buffer .= "</td></tr>\n";
 $print_buffer .= "</td></tr></table>";
-$print_buffer .= "<tr><td colspan='2'><input type='submit' value='Search' name='isearch'/>&nbsp;<input type='reset' value='Reset'/></td></tr>\n";
+$print_buffer .= "<tr><td colspan='2'>
+    <a class='button' onclick='$(\".item_search\").submit();'>Search</a>
+    <a class='button' href='?a=items'>Reset</a>
+    <input type='hidden' name='isearch' value='1'>
+</td></tr>\n";
 $print_buffer .= "</form>\n";
 $print_buffer .= "</tbody>";
 $print_buffer .= "</table><center>\n";

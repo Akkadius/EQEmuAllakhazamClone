@@ -478,19 +478,3 @@ input.search  {
     left: 470px;
     width: 35px;
 }
-
-input, select {
-    border: 0;
-    color: #000 !important;
-    font-size: 16px;
-    height: 20px;
-    line-height: 20px;
-    margin: 0;
-    padding: 8px 35px 7px 5px;
-
-}
-
-select {
-    height:25px;
-    padding: 0px 35px 0px 5px;
-}
