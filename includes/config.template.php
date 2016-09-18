@@ -1,5 +1,7 @@
 <?php
 
+error_reporting(0);
+
 $SiteTitle = 'EQEmu Server AllaClone';
 $ServerName = 'EQEmu Server';
 $cfgversion = '2.0 - Rev2100';

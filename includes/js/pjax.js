@@ -9,6 +9,10 @@ $('a').live('click', function (e) {
         return;
     }
 
+    if($(this).attr('href') == ""){
+        return;
+    }
+
     if(url.indexOf('javascript:;') != -1) {
         return;
     }
@@ -27,11 +31,6 @@ $('a').live('click', function (e) {
     /* Ignore anchors with # references */
     if(url.indexOf('#') != -1){
         if(pjax_debug){ console.log('pjax :: # trigger'); }
-        return;
-    }
-
-    /* Ignore IPAM... */
-    if(url.indexOf('IP/') != -1){
         return;
     }
 
@@ -60,7 +59,7 @@ $('a').live('click', function (e) {
                 context: document.body
             }).done(function (e_res) {
                 e.preventDefault();
-                $('page-content').hide().html(e_res).fadeIn(200);
+                $('.page-content').hide().html(e_res).fadeIn(100);
                 if (e_res.indexOf('brush:')) {
                     if (typeof SyntaxHighlighter !== 'undefined') {
                         DoSyntaxHighlightGM();
@@ -84,6 +83,8 @@ $('a').live('click', function (e) {
 window.addEventListener("popstate", function(e) {
     state_destination = document.location.href;
 
+    if(pjax_debug){ console.log('pjax :: triggering go back '); }
+
     if(pjax_debug){  console.log('pjax :: ' + state_destination); }
 
     if (state_destination) {
@@ -97,7 +98,7 @@ window.addEventListener("popstate", function(e) {
         context: document.body
     }).done(function(e_res) {
         e.preventDefault();
-        $("page-content").html(e_res);
+        $(".page-content").html(e_res);
         if(e_res.indexOf("brush:")){
             if(typeof SyntaxHighlighter !== "undefined"){
                 DoSyntaxHighlightGM();
