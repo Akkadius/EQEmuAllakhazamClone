@@ -34,7 +34,7 @@ var Nav = new function() {
     this.homeWidth = function() {
         var width = 0;
         $('nav > ul > li').each(function() {
-            width += ZAM.trueOffsetWidth(this);
+            // width += ZAM.trueOffsetWidth(this);
         });
         if ($.browser.msie && $.browser.version < 9)
             $('#home-nav').css('width',width+3+'px');
@@ -47,8 +47,7 @@ var Nav = new function() {
         var check = (parent.search(' ') > -1) ? parent+' li.hov > div' : parent+' ul';
         $(check).each(function () {
             var coords = $(this).offset();
-            var box = ZAM.boxDim(coords.left, coords.top, this.offsetWidth, this.offsetHeight);
-            OldAds.intersect(box, true);
+            // var box = ZAM.boxDim(coords.left, coords.top, this.offsetWidth, this.offsetHeight);
         });
     }
 
@@ -70,9 +69,7 @@ var Nav = new function() {
         clearTimeout(menuTimer);
         li.className = li.className.replace(/\b ?hov\b/g, '');
         resetTweaks(li); // Reset any changes that were dictated by test().
-        menuTimer = setTimeout(function() {
-            if ($('li.hov', thisParent).length == 0) OldAds.showAll()
-        }, 25);
+
     }
 
     function test(div, last) { // Test a menu div for visibility and pass to change it's columns or positioning accordingly.
@@ -152,7 +149,7 @@ var Nav = new function() {
         $div.find('li.has-sub')
             .mouseenter(function() {over(this, parent)})
             .mouseleave(function() {out(this, parent)});
-        if (!last) test(div, 1);
+
     }
 
     function deColumnize(div) {
@@ -191,3 +188,7 @@ function global_search(val){
         $(u).html(data);
     });
 }
+
+$(".submit").click(function() {
+    $(this).closest("form").submit();
+});

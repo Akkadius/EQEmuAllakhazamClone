@@ -145,7 +145,7 @@ if ($isearch != "") {
         $query .= " $s ($items_table.nodrop=1)";
         $s = "AND";
     }
-    $query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (LimitToUse($max_items_returned) + 1);
+    $query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (get_max_query_results_count($max_items_returned) + 1);
     $QueryResult = db_mysql_query($query) or message_die('items.php', 'MYSQL_QUERY', $query, mysql_error());
 
     if (mysql_num_rows($QueryResult) == 1) {
@@ -301,8 +301,8 @@ if (isset($QueryResult)) {
 
     $num_rows = mysql_num_rows($QueryResult);
     $total_row_count = $num_rows;
-    if ($num_rows > LimitToUse($max_items_returned)) {
-        $num_rows = LimitToUse($max_items_returned);
+    if ($num_rows > get_max_query_results_count($max_items_returned)) {
+        $num_rows = get_max_query_results_count($max_items_returned);
     }
     $print_buffer .= "";
     if ($num_rows == 0) {

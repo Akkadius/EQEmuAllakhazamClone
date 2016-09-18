@@ -8,15 +8,15 @@
  *  'IdAttribute' and 'NameAttribute' are the name of the columns retrieved used for ID and Name (ex: 'id' and 'name').
  *  '$ObjectDescription' is the text describing the kind of objects to display (ex: 'NPC'). '$ObjectsDescription' is the plural.
  */
-function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPage, $ObjectDescription, $ObjectsDescription, $IdAttribute, $NameAttribute, $ExtraField, $ExtraFieldDescription, $ExtraSkill)
+function print_query_results($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPage, $ObjectDescription, $ObjectsDescription, $IdAttribute, $NameAttribute, $ExtraField, $ExtraFieldDescription, $ExtraSkill)
 {
     global $dbskills;
     $ObjectsToShow = mysql_num_rows($FoundObjects);
-    if ($ObjectsToShow > LimitToUse($MaxObjectsReturned)) {
-        $ObjectsToShow = LimitToUse($MaxObjectsReturned);
-        $MoreObjectsExist = True;
+    if ($ObjectsToShow > get_max_query_results_count($MaxObjectsReturned)) {
+        $ObjectsToShow = get_max_query_results_count($MaxObjectsReturned);
+        $more_objects_exist = True;
     } else {
-        $MoreObjectsExist = False;
+        $more_objects_exist = False;
     }
 
     $return_buffer = "";
@@ -24,7 +24,7 @@ function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPa
         $return_buffer .= "<ul><li><b>No " . $ObjectDescription . " found.</b></li></ul>\n";
     } else {
         $return_buffer .= "<ul><li><b>" . $ObjectsToShow . " " . ($ObjectsToShow == 1 ? $ObjectDescription : $ObjectsDescription) . " displayed.";
-        if ($MoreObjectsExist) {
+        if ($more_objects_exist) {
             $return_buffer .= " More " . $ObjectsDescription . " exist but you reached the query limit.";
         }
         $return_buffer .= "</b></li>\n";
@@ -55,7 +55,7 @@ function PrintQueryResults($FoundObjects, $MaxObjectsReturned, $OpenObjectByIdPa
  *  Essentially transforms the '0' in a very large integer.
  *  Could be use to put an extra (hard-coded) upper limit to queries.
  */
-function LimitToUse($MaxObjects)
+function get_max_query_results_count($MaxObjects)
 {
     if ($MaxObjects == 0)
         $Result = 2147483647;

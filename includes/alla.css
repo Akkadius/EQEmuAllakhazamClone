@@ -443,5 +443,25 @@ a:hover.button {
     text-decoration: none;
     color:black !important;
 
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently */
+
 }
 
+input.search  {
+    background: #fff url(../images/bg/bg-light.gif) repeat-x !important;
+    border: 0;
+    color: #000 !important;
+    font-size: 16px;
+    height: 20px;
+    line-height: 20px;
+    margin: 0;
+    padding: 8px 35px 7px 5px;
+    width: 255px;
+
+
+}

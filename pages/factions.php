@@ -22,7 +22,7 @@ if ($isearch != "") {
         WHERE $faction_list_table.`name` like '%" . $name . "%'
         ORDER BY $faction_list_table.`name`
         LIMIT
-    " . (LimitToUse($MaxFactionsReturned) + 1);
+    " . (get_max_query_results_count($MaxFactionsReturned) + 1);
 
     $QueryResult = db_mysql_query($Query) or message_die('factions.php', 'MYSQL_QUERY', $Query, mysql_error());
 
@@ -55,7 +55,7 @@ $print_buffer .= "</form></table>\n";
 $print_buffer .= "\n";
 
 if (isset($QueryResult)) {
-    PrintQueryResults($QueryResult, $MaxFactionsReturned, "?a=faction&", "faction", "factions", "id", "name");
+    print_query_results($QueryResult, $MaxFactionsReturned, "?a=faction&", "faction", "factions", "id", "name");
 }
 
 

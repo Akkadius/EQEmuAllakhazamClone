@@ -24,7 +24,7 @@
     <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
     <script src="./zam_files/jquery-1.10.2.min.js"></script>
     <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
-    <script src="includes/js/footer.js"></script>
+
     <link rel="stylesheet" type="text/css" href="./zam_files/zul.css" id="zul-bar-stylesheet">
     <link rel="stylesheet" type="text/css" href="./zam_files/tooltips.css">
 </head>
@@ -61,9 +61,6 @@
                 </li>
             </ul>
         </div>
-        <script>
-            Nav.init()
-        </script>
     </div>
     <div id="wrapper">
         <div id="shadows">
@@ -274,6 +271,10 @@
         <div class="div15"></div>
 
         <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
+        <script src="includes/js/footer.js"></script>
+        <script type="text/javascript">
+            Nav.init()
+        </script>
         <?php
             if($footer_javascript){
                 echo $footer_javascript;
