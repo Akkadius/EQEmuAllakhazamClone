@@ -415,3 +415,33 @@ select {
     width: 500px;
     padding: 5px;
 }
+a:active:hover.button {
+    background-position:0 -64px
+}
+a:hover.button {
+    background-color: #b39b6e;
+    background-position: 0 -32px;
+    text-decoration: none;
+}
+
+.button {
+    background: #fff url(../images/css/image-sprite.png);
+    border-radius: 7px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    box-shadow: 0 2px 4px rgba(0,0,0,.65);
+    -moz-box-shadow: 0 2px 4px rgba(0,0,0,.65);
+    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.65);
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    margin: 0 14px 0 0;
+    padding: 8px 13px;
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    color:black !important;
+
+}
+

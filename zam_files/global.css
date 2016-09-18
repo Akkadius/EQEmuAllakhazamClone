@@ -1641,7 +1641,7 @@ table.sto-panel {padding:0}
 #recent-link {display:block;float:right;font-size:11px}
 
 .forums .post-buttons {cursor:default;height:36px;position:relative;top:2px}
-.forums .post-buttons a {background:#fff url(/i/forum-sprite.png?1);border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;box-shadow:0 2px 4px rgba(0,0,0,.65);-moz-box-shadow:0 2px 4px rgba(0,0,0,.65);-webkit-box-shadow:0 2px 4px rgba(0,0,0,.65);float:left;height:16px;line-height:16px;margin:0 14px 0 0;padding:8px 13px;position:relative}
+.forums .post-buttons a {background:#fff url(../images/css/image-sprite.png);border-radius:7px;-moz-border-radius:7px;-webkit-border-radius:7px;box-shadow:0 2px 4px rgba(0,0,0,.65);-moz-box-shadow:0 2px 4px rgba(0,0,0,.65);-webkit-box-shadow:0 2px 4px rgba(0,0,0,.65);float:left;height:16px;line-height:16px;margin:0 14px 0 0;padding:8px 13px;position:relative}
 .forums .post-buttons a:hover {background-position:0 -32px;text-decoration:none}
 .forums .post-buttons a span {background:none !important;font-size:14px;font-weight:bold;padding:0 !important}
 .forums .post-buttons a:hover span {text-decoration:none}
@@ -1930,7 +1930,7 @@ table.sto-panel {padding:0}
 .pre-ie9 .post .head a.button, .pre-ie9 .post .head .actions a, .pre-ie9 #posts h1 small a, .pre-ie9 #messages h1 small a, .pre-ie9 .post a.post-link {padding-right:0 !important}
 
 /* b formatting */
-.pre-ie9 .forums .post-buttons a b {background:url(/i/forum-buttons.png) top right;height:39px;position:absolute;right:-16px;top:0;width:16px}
+.pre-ie9 .forums .post-buttons a b {background:url(../images/css/image-sprite.png) top right;height:39px;position:absolute;right:-16px;top:0;width:16px}
 .pre-ie9 .forums .post-buttons a:hover b {background-position:right -38px}
 .pre-ie9 .forums .post-buttons a:active:hover b {background-position:right -76px}
 

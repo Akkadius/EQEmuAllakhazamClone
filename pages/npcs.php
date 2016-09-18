@@ -53,7 +53,11 @@ $print_buffer .= "<td><b>Name : </b></td>\n";
 $print_buffer .= "<td><input type='text' value=\"$iname\" size='30' name='iname'></td>\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "<tr tr align='left'>\n";
-$print_buffer .= "<td='1' colspan='2'><input type='submit' value='Search' name='isearch'/></td>\n";
+$print_buffer .= "<td colspan='2'>
+    <a class='button' onclick='$(field).closest('form').submit();'>
+        <span>Submit</span><b></b>
+    </a>
+\n";
 $print_buffer .= "</tr>\n";
 $print_buffer .= "</form></table>\n";
 

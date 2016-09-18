@@ -3,10 +3,6 @@
 #ini_set('display_errors', 'On');
 #error_reporting(E_ALL);
 
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir . 'mysql.php');
-require_once($includes_dir . 'functions.php');
 $Title = "Spell Search";
 require_once($includes_dir . 'spell.inc.php');
 
@@ -38,7 +34,7 @@ if ($opt == 1) {
 }
 
 /* Display Spell Form */
-$print_buffer .= '<table border="0"><tr align="left"><td>';
+$print_buffer .= '<table border="0" class="display_table container_div" style="width:800px"><tr align="left"><td>';
 $print_buffer .= '
 			<form name="f" action="">
 			<input type="hidden" name="a" value="spells">
