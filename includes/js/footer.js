@@ -182,12 +182,18 @@ var Nav = new function() {
     }
 }
 
-function global_search(val){
-    u = ".page-content";
-    $.get("pages/fullsearch.php?search=" + val, function (data) {
+$( "#global_search" ).submit(function( event ) {
+    event.preventDefault();
+
+    push_query = "?a=global_search&q=" + $('#qq').val();
+
+    history.pushState('page_pop', push_query, push_query);
+
+    u = ".page-content-ajax";
+    $.get(push_query + "&v_ajax", function (data) {
         $(u).html(data);
     });
-}
+});
 
 $( ".submit" ).on( "click", function() {
     $(this).closest("form").submit();

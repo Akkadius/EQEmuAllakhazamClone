@@ -1,121 +1,77 @@
 <?php
-/** If no proper query is specified (see below), redirects to the item search page (error).
- *  If the parameter 'isearchtype' equals 'id' and 'iid' is set then queries for objects with exactly this ID and displays them.
- *  If the parameter 'isearchtype' equals 'name' and 'iname' is set then queries for objects with approximately this name and displays them.
- *  At the moment the object types supported are factions, NPCs and items.
- */
 
-require_once('./includes/constants.php');
-require_once('./includes/config.php');
-require_once($includes_dir . 'mysql.php');
-require_once($includes_dir . 'functions.php');
+$name = mysql_real_escape_string($_GET['q']);
 
-$iid = (isset($_GET['iid']) ? addslashes($_GET['iid']) : '');
-$iname = (isset($_GET['iname']) ? addslashes($_GET['iname']) : '');
-$isearchtype = (isset($_GET['isearchtype']) ? addslashes($_GET['isearchtype']) : '');
+$page_title = "Global Search :: " . $_GET['q'];
 
-$iid = $_GET['search'];
-$iname = $_GET['search'];
-$isearchtype = 'name';
+$tab_title = "";
 
-// Build the WHERE caluse
-$Where = "";
-if ($isearchtype == 'id' and $iid != "")
-    $Where = "id='" . $iid . "'";
-if ($isearchtype == 'name' and $iname != "")
-    $Where = "name like '%" . str_replace('`', '%', str_replace('_', '%', str_replace(' ', '%', $iname))) . "%'";
-
-if ($Where == "") {
-    header("Location: ?a=items");
-    exit();
+/* Zones */
+$query = "SELECT COUNT(*) as found_count FROM `zone` WHERE `short_name` LIKE '%" . $name . "%' OR `long_name` = '%" . $name . "%'";
+$result = db_mysql_query($query);
+while ($row = mysql_fetch_array($result)) {
+    if($row['found_count'] > 0)
+        $tab_title = "<li class='current' onclick='tablistview(this.childNodes[0]);'><a  href='javascript:;' onclick='tablistview(this);'>Zones (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
-// Query for factions
-$Query = "SELECT $faction_list_table.id,$faction_list_table.`name`
-        FROM $faction_list_table
-        WHERE $Where
-        ORDER BY $faction_list_table.`name`,$faction_list_table.id
-        LIMIT " . (get_max_query_results_count($MaxFactionsReturned) + 1);
-$FoundFactions = db_mysql_query($Query) or message_die('fullsearch.php', 'MYSQL_QUERY', $Query, mysql_error());
-
-// Query for Items
-if ($discovered_items_only == TRUE) {
-    $Query = "SELECT * FROM $items_table, discovered_items WHERE $items_table.id='" . $item_id . "' AND discovered_items.item_id=$items_table.id";
-    $Query = "SELECT $items_table.id,$items_table.`name`
-		FROM $items_table, discovered_items
-		WHERE $Where
-		AND discovered_items.item_id=$items_table.id
-		ORDER BY $items_table.`name`,$items_table.id
-		LIMIT " . (get_max_query_results_count($max_items_returned) + 1);
-} else {
-    $Query = "SELECT $items_table.id,$items_table.`name`
-		FROM $items_table
-		WHERE $Where
-		ORDER BY $items_table.`name`,$items_table.id
-		LIMIT " . (get_max_query_results_count($max_items_returned) + 1);
-}
-$FoundItems = db_mysql_query($Query) or message_die('fullsearch.php', 'MYSQL_QUERY', $Query, mysql_error());
-
-// Query for NPCs
-$Query = "SELECT $npc_types_table.id,$npc_types_table.`name`
-        FROM $npc_types_table
-        WHERE $Where
-        ORDER BY $npc_types_table.`name`,$npc_types_table.id
-        LIMIT " . (get_max_query_results_count($max_npcs_returned) + 1);
-$FoundNpcs = db_mysql_query($Query) or message_die('fullsearch.php', 'MYSQL_QUERY', $Query, mysql_error());
-
-
-// In case only one object is found, redirect to its page
-if (mysql_num_rows($FoundFactions) == 1
-    and mysql_num_rows($FoundItems) == 0
-    and mysql_num_rows($FoundNpcs) == 0
-) {
-    $FactionRow = mysql_fetch_array($FoundFactions);
-    header("Location: faction.php?id=" . $FactionRow["id"]);
-    exit();
+/* NPCS */
+$query = "SELECT COUNT(*) as found_count FROM `npc_types` WHERE `name` LIKE '%" . $name . "%'";
+$result = db_mysql_query($query);
+while ($row = mysql_fetch_array($result)) {
+    if($row['found_count'] > 0)
+        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a id='Mobs_tab' href='javascript:;' onclick='tablistview(this);'>Mobs (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
-if (mysql_num_rows($FoundFactions) == 0
-    and mysql_num_rows($FoundItems) == 1
-    and mysql_num_rows($FoundNpcs) == 0
-) {
-    $ItemRow = mysql_fetch_array($FoundItems);
-    header("Location: ?a=item&id=" . $ItemRow["id"]);
-    exit();
+/* Items */
+$query = "SELECT COUNT(*) as found_count FROM `items` WHERE `Name` LIKE '%" . $name . "%'";
+$result = db_mysql_query($query);
+while ($row = mysql_fetch_array($result)) {
+    if($row['found_count'] > 0)
+        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Items (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
-if (mysql_num_rows($FoundFactions) == 0
-    and mysql_num_rows($FoundItems) == 0
-    and mysql_num_rows($FoundNpcs) == 1
-) {
-    $NpcRow = mysql_fetch_array($FoundNpcs);
-    header("Location: ?a=npc&id=" . $NpcRow["id"]);
-    exit();
+/* Factions */
+$query = "SELECT COUNT(*) as found_count FROM `faction_list` WHERE `name` LIKE '%" . $name . "%'";
+$result = db_mysql_query($query);
+while ($row = mysql_fetch_array($result)) {
+    if($row['found_count'] > 0)
+        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Factions (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
+/* Tradeskills */
+$query = "SELECT COUNT(*) as found_count FROM `tradeskill_recipe`  WHERE `name` LIKE '%" . $name . "%'";
+$result = db_mysql_query($query);
+while ($row = mysql_fetch_array($result)) {
+    if($row['found_count'] > 0)
+        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Tradeskills (" . $row['found_count'] . ")<b></b></a></li>";
+}
 
-/** Here the following holds :
- *    $FoundFactions : factions found
- *    $FoundItems    : items    found
- *    $FoundNpcs     : NPCs     found
- */
+/* Forage */
+$query = "
+    SELECT
+    COUNT(*) as found_count
+    FROM
+    forage
+    INNER JOIN items ON forage.Itemid = items.id
+    WHERE `name` LIKE '%" . $name . "%'
+";
+$result = db_mysql_query($query);
+while ($row = mysql_fetch_array($result)) {
+    if($row['found_count'] > 0)
+        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Foraging (" . $row['found_count'] . ")<b></b></a></li>";
+}
 
-$page_title = "Search Results";
-
-// Display found objects
-$print_buffer .= "          <table border='0' width='100%'>\n";
-$print_buffer .= "            <tr valign='top'>\n";
-$print_buffer .= "              <td='1' width='34%'>\n";
-$print_buffer .= print_query_results($FoundItems, $max_items_returned, "item.php", "item", "items", "id", "name");
-$print_buffer .= "              </td>\n";
-$print_buffer .= "              <td='1' width='33%'>\n";
-$print_buffer .= print_query_results($FoundNpcs, $max_npcs_returned, "npc.php", "NPC", "NPCs", "id", "name");
-$print_buffer .= "              </td>\n";
-$print_buffer .= "              <td='1' width='33%'>\n";
-$print_buffer .= print_query_results($FoundFactions, $MaxFactionsReturned, "faction.php", "faction", "factions", "id", "name");
-$print_buffer .= "              </td>\n";
-$print_buffer .= "            </tr>\n";
-$print_buffer .= "          </table>\n";
-
+echo '
+    <div class="tabwrapper">
+        <ul class="tablist">
+            ' . $tab_title . '
+            </li>
+        </ul>
+        <br>
+        <br>
+        <br>
+        <div id="active_search_content"></div>
+    </div>
+';
 
 ?>

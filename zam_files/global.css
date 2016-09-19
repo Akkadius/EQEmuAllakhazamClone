@@ -888,10 +888,8 @@ a.blocklink:hover {box-shadow:0 2px 5px rgba(0, 0, 0, .35), inset 0 0 0 100px rg
 #user-login {font-size:11px;line-height:35px;position:absolute;right:6px;top:106px;z-index:4}
 #user-login {display:none}
 #user-login a {display:block;float:left;height:35px;padding:0 6px}
-#shadows * {background:url(/i/black-35.png);height:1px;position:absolute;width:1px}
-#shadows #s-top, #shadows #s-bot {background:url(/i/black-35.png);bottom:0;height:1px;left:-1px;right:-1px;top:-1px;width:auto}
+
 #shadows #s-bot {background-position:bottom;bottom:-1px;top:auto}
-#shadows #s-left, #shadows #s-right {background:url(/i/black-35.png);bottom:0;height:auto;left:-1px;top:0;width:1px}
 #shadows #s-right {background-position:right;left:auto;right:-1px}
 #body {padding:0;position:relative;z-index:1}
 

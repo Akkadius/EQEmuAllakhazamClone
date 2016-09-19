@@ -27,7 +27,6 @@
 ?>
 
 <!DOCTYPE html>
-<!-- saved from url=(0055)http://everquest.allakhazam.com/db/zone.html?mode=bymap -->
 <html>
 
 <head>
@@ -70,8 +69,8 @@
             ?>"
         </div>
 
-        <form action="" name="search">
-            <input name="q" type="text" onfocus="this.select()" value="" autocomplete="off" placeholder="Search Items, NPCs, Zones etc." onkeydown="global_search(this.value)">
+        <form id="global_search">
+            <input id="qq" type="text" onfocus="this.select()" value="<?php echo $_GET['q']; ?>" autocomplete="off" placeholder="Search Items, NPCs, Zones etc.">
             <a href="javascript:document.search.submit();"></a>
         </form>
 
@@ -255,7 +254,6 @@
 
         <div class="div15"></div>
 
-        <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
         <script src="includes/js/footer.js"></script>
 
         <?php
