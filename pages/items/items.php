@@ -146,13 +146,7 @@ if (count($_GET) > 2) {
         $s = "AND";
     }
     $query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (get_max_query_results_count($max_items_returned) + 1);
-    $QueryResult = db_mysql_query($query) or message_die('items.php', 'MYSQL_QUERY', $query, mysql_error());
-
-    if (mysql_num_rows($QueryResult) == 1) {
-        $row = mysql_fetch_array($QueryResult);
-        header("Location: ?a=item&id=" . $row["id"]);
-        exit();
-    }
+    $QueryResult = db_mysql_query($query);
 
     $field_values = '';
     foreach ($_GET as $key => $val){
