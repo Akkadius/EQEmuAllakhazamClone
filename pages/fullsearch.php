@@ -6,6 +6,15 @@ $page_title = "Global Search :: " . $_GET['q'];
 
 if($_GET['get_data']){
     $name = mysql_real_escape_string($_GET['get_data']);
+    if($_GET['fetch_type'] == "global_tradeskills"){
+        $query = "SELECT * FROM `tradeskill_recipe`  WHERE `name` LIKE '%" . $name . "%' ORDER BY `name`";
+        $result = db_mysql_query($query);
+        echo '<ul>';
+        while ($row = mysql_fetch_array($result)) {
+            echo '<li><a href="?a=recipe&id=' . $row['id'] . '">' . $row['name'] . '</a></li>';
+        }
+        echo '</ul>';
+    }
     if($_GET['fetch_type'] == "global_zones"){
         $query = "SELECT * FROM `zone` WHERE `short_name` LIKE '%" . $name . "%' OR `long_name` LIKE '%" . $name . "%' ORDER BY `long_name`";
         $result = db_mysql_query($query);
