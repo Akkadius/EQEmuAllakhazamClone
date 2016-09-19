@@ -61,11 +61,7 @@ $('a').live('click', function (e) {
                 e.preventDefault();
                 // $('.page-content-ajax').hide().html(e_res).fadeIn(100);
                 $('.page-content-ajax').html(e_res);
-                if (e_res.indexOf('brush:')) {
-                    if (typeof SyntaxHighlighter !== 'undefined') {
-                        DoSyntaxHighlightGM();
-                    }
-                }
+
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
 
                 $('.tooltip').remove();

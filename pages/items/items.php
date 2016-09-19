@@ -36,7 +36,7 @@ $iavailability = (isset($_GET['iavailability']) ? addslashes($_GET['iavailabilit
 $iavailevel = (isset($_GET['iavailevel']) ? addslashes($_GET['iavailevel']) : '');
 $ideity = (isset($_GET['ideity']) ? addslashes($_GET['ideity']) : '');
 
-if ($isearch != "") {
+if (count($_GET) > 2) {
     $query = "SELECT $items_table.* FROM ($items_table";
 
     if ($discovered_items_only == TRUE) {
@@ -153,19 +153,29 @@ if ($isearch != "") {
         header("Location: ?a=item&id=" . $row["id"]);
         exit();
     }
+
+    $field_values = '';
+    foreach ($_GET as $key => $val){
+        $field_values .= '$("#'. $key . '").val("'. $val . '");';
+    }
+
+    $footer_javascript .= '<script type="text/javascript">' . $field_values . '</script>';
+    $footer_javascript .= '<script type="text/javascript">highlight_element("#item_search_results");</script>';
+
+
 } else {
     $iname = "";
 }
 
-/** Here the following holds :
- *    $QueryResult : items queried for if any query was issued, otherwise it is not defined
- *    $i* : previously-typed criterias, or empty by default
- *    $isearch is set if a query was issued
- */
-
 $page_title = "Item Search";
 
-require_once('item_search_form.php');
+$print_buffer .= '<table><tr><td>';
+
+$print_buffer .= file_get_contents('pages/items/item_search_form.html');
+
+$footer_javascript .= '
+    <script src="pages/items/items.js"></script>
+';
 
 // Print the query results if any
 if (isset($QueryResult)) {
@@ -188,18 +198,20 @@ if (isset($QueryResult)) {
         # $print_buffer .= "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
         $print_buffer .= "<br>";
 
-        $print_buffer .= "<table cellpadding='5' class='display_table container_div' style='width:700px'>";
-        $print_buffer .= "<tr>
-					<th class='menuh'>Icon</th>
-					<th class='menuh'>Item Name</th>
-					<th class='menuh'>Item Type</th>
-					<th class='menuh'>AC</th>
-					<th class='menuh'>HPs</th>
-					<th class='menuh'>Mana</th>
-					<th class='menuh'>Damage</th>
-					<th class='menuh'>Delay</th>
-					<th class='menuh'>Item ID</th>
-					</tr>";
+        $print_buffer .= "<table cellpadding='5' class='display_table container_div' id='item_search_results' style='width:700px'>";
+        $print_buffer .= "
+            <tr>
+                <th class='menuh'>Icon</th>
+                <th class='menuh'>Item Name</th>
+                <th class='menuh'>Item Type</th>
+                <th class='menuh'>AC</th>
+                <th class='menuh'>HPs</th>
+                <th class='menuh'>Mana</th>
+                <th class='menuh'>Damage</th>
+                <th class='menuh'>Delay</th>
+                <th class='menuh'>Item ID</th>
+            </tr>
+        ";
         $RowClass = "lr";
         for ($count = 1; $count <= $num_rows; $count++) {
             $TableData = "";
@@ -243,6 +255,8 @@ if (isset($QueryResult)) {
         $print_buffer .= "</table>";
     }
 }
+
+$print_buffer .= '</td></tr></table>';
 
 
 ?>

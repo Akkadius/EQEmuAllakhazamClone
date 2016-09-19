@@ -1,18 +1,18 @@
 <table class="display_table container_div" border="0" style="width:900px !important;" cellpadding="15" id="item_search_form">
     <tbody id="myTbody">
-    <input type="hidden" name="a" value="items">
+    <input type="hidden" id="a" value="items">
     <tr>
         <td>
             <table border="0" width="0%">
                 <tbody>
                 <tr>
                     <td style="text-align:right"><b>Name</b></td>
-                    <td><input type="text" value="" style="width:100%" name="iname"></td>
+                    <td><input type="text" value="" style="width:100%" id="iname"></td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Class</b></td>
                     <td>
-                        <select name="iclass" style="width:100%">
+                        <select id="iclass" style="width:100%">
                             <option value="0">-</option>
                             <option value="1">Warrior</option>
                             <option value="2">Cleric</option>
@@ -36,7 +36,7 @@
                 <tr>
                     <td style="text-align:right"><b>Race</b></td>
                     <td>
-                        <select name="irace" style="width:100%">
+                        <select id="irace" style="width:100%">
                             <option value="0">-</option>
                             <option value="1">Human</option>
                             <option value="2">Barbarian</option>
@@ -59,7 +59,7 @@
                 <tr>
                     <td style="text-align:right"><b>Slot</b></td>
                     <td>
-                        <select name="islot" style="width:100%">
+                        <select id="islot" style="width:100%">
                             <option value="0">-</option>
                             <option value="4194304">Ammo</option>
                             <option value="2097152">Power Source</option>
@@ -93,7 +93,7 @@
                 <tr>
                     <td style="text-align:right"><b>Stats</b></td>
                     <td>
-                        <select name="istat1">
+                        <select id="istat1">
                             <option value="">-</option>
                             <option value="hp">Hit Points</option>
                             <option value="mana">Mana</option>
@@ -114,19 +114,19 @@
                             <option value="manaregen">Mana Regen</option>
                             <option value="enduranceregen">Endurance Regen</option>
                         </select>
-                        <select name="istat1comp">
+                        <select id="istat1comp">
                             <option value=">=">&gt;=</option>
                             <option value="<=">&lt;=</option>
                             <option value="=">=</option>
                             <option value="<">&lt;</option>
                         </select>
-                        <input type="text" size="4" name="istat1value" value="">
+                        <input type="text" size="4" id="istat1value" value="">
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Stats</b></td>
                     <td>
-                        <select name="istat2">
+                        <select id="istat2">
                             <option value="">-</option>
                             <option value="hp">Hit Points</option>
                             <option value="mana">Mana</option>
@@ -147,19 +147,19 @@
                             <option value="manaregen">Mana Regen</option>
                             <option value="enduranceregen">Endurance Regen</option>
                         </select>
-                        <select name="istat2comp">
+                        <select id="istat2comp">
                             <option value=">=">&gt;=</option>
                             <option value="<=">&lt;=</option>
                             <option value="=">=</option>
                             <option value="<">&lt;</option>
                         </select>
-                        <input type="text" size="4" name="istat2value" value="">
+                        <input type="text" size="4" id="istat2value" value="">
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Resists</b></td>
                     <td>
-                        <select name="iresists">
+                        <select id="iresists">
                             <option value="">-</option>
                             <option value="mr">Resist Magic</option>
                             <option value="fr">Resist Fire</option>
@@ -168,19 +168,19 @@
                             <option value="dr">Resist Disease</option>
                             <option value="svcorruption">Resist Corruption</option>
                         </select>
-                        <select name="iresistscomp">
+                        <select id="iresistscomp">
                             <option value=">=">&gt;=</option>
                             <option value="<=">&lt;=</option>
                             <option value="=">=</option>
                             <option value="<">&lt;</option>
                         </select>
-                        <input type="text" size="4" name="iresistsvalue" value="">
+                        <input type="text" size="4" id="iresistsvalue" value="">
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Heroic Stats</b></td>
                     <td>
-                        <select name="iheroics">
+                        <select id="iheroics">
                             <option value="">-</option>
                             <option value="heroic_agi">Heroic Agility</option>
                             <option value="heroic_cha">Heroic Charisma</option>
@@ -196,19 +196,19 @@
                             <option value="heroic_dr">Heroic Resist Disease</option>
                             <option value="heroic_svcorrup">Heroic Resist Corruption</option>
                         </select>
-                        <select name="iheroicscomp">
+                        <select id="iheroicscomp">
                             <option value=">=">&gt;=</option>
                             <option value="<=">&lt;=</option>
                             <option value="=">=</option>
                             <option value="<">&lt;</option>
                         </select>
-                        <input type="text" size="4" name="iheroicsvalue" value="">
+                        <input type="text" size="4" id="iheroicsvalue" value="">
                     </td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Modifiers</b></td>
                     <td>
-                        <select name="imod">
+                        <select id="imod">
                             <option value="">-</option>
                             <option value="avoidance">Avoidance</option>
                             <option value="accuracy">Accuracy</option>
@@ -227,13 +227,13 @@
                             <option value="strikethrough">Strikethrough</option>
                             <option value="stunresist">Stun Resist</option>
                         </select>
-                        <select name="imodcomp">
+                        <select id="imodcomp">
                             <option value=">=">&gt;=</option>
                             <option value="<=">&lt;=</option>
                             <option value="=">=</option>
                             <option value="<">&lt;</option>
                         </select>
-                        <input type="text" size="4" name="imodvalue" value="">
+                        <input type="text" size="4" id="imodvalue" value="">
                     </td>
                 </tr>
                 </tbody>
@@ -245,7 +245,7 @@
                 <tr>
                     <td style="text-align:right"><b>Item Type</b></td>
                     <td>
-                        <select name="itype" style="width:100%">
+                        <select id="itype" style="width:100%">
                             <option value="-1">-</option>
                             <option value="0">1H Slashing</option>
                             <option value="1">2H Slashing</option>
@@ -308,7 +308,7 @@
                 <tr>
                     <td style="text-align:right"><b>Augmentation Type</b></td>
                     <td>
-                        <select name="iaugslot">
+                        <select id="iaugslot">
                             <option value="0">-</option>
                             <option value="1">slot 1</option>
                             <option value="2">slot 2</option>
@@ -340,12 +340,12 @@
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>With Effect</b></td>
-                    <td><input type="text" value="" size="30" name="ieffect"></td>
+                    <td><input type="text" value="" size="30" id="ieffect"></td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Min Required Level</b></td>
                     <td>
-                        <select name="iminlevel">
+                        <select id="iminlevel">
                             <option value="0">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -433,7 +433,7 @@
                 <tr>
                     <td style="text-align:right"><b>Max Required Level</b></td>
                     <td>
-                        <select name="ireqlevel">
+                        <select id="ireqlevel">
                             <option value="0">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -520,12 +520,12 @@
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Tradeable Items Only</b></td>
-                    <td><input type="checkbox" name="inodrop"></td>
+                    <td><input type="checkbox" id="inodrop"></td>
                 </tr>
                 <tr>
                     <td style="text-align:right"><b>Item availability</b></td>
                     <td>
-                        <select name="iavailability" style="width:100%">
+                        <select id="iavailability" style="width:100%">
                             <option value="0" selected="1">-</option>
                             <option value="1">Mob Dropped</option>
                             <option value="2">Merchant Sold</option>
@@ -535,7 +535,7 @@
                 <tr>
                     <td style="text-align:right"><b>Max Level</b></td>
                     <td>
-                        <select name="iavaillevel">
+                        <select id="iavaillevel">
                             <option value="0">-</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -623,7 +623,7 @@
                 <tr>
                     <td style="text-align:right"><b>Deity</b></td>
                     <td>
-                        <select name="ideity" style="width:100%">
+                        <select id="ideity" style="width:100%">
                             <option value="0">-</option>
                             <option value="2">Bertoxxulous</option>
                             <option value="4">Brell Serilis</option>
@@ -650,9 +650,9 @@
     </tr>
     <tr>
         <td colspan="2">
-            <a class="button" onclick="$(&quot;.item_search&quot;).submit();" ignore-pjax="1">Search</a>
+            <a class="button" onclick="item_search();">Search</a>
             <a class="button" href="?a=items">Reset</a>
-            <input type="hidden" name="isearch" value="1">
+            <input type="hidden" id="isearch" value="1">
         </td>
     </tr>
     </tbody>
