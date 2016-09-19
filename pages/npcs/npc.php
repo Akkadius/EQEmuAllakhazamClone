@@ -85,7 +85,7 @@ $print_buffer .= "
             <table>
                 <tr>
                     <td>
-                        <table border='0' width='100%' cellpadding='0' cellspacing='0'><tr><td>";
+                        ";
 
 
 
@@ -108,7 +108,7 @@ $npc_data = '
     <table border="0" width="100%">
         <tbody>
             <tr>
-                <td style="width:150px !important; text-align:right"><b>Full name</b>
+                <td style="width:250px !important; text-align:right"><b>Full name</b>
                 </td>
                 <td>' . get_npc_name_human_readable($npc["name"]) . " " . $npc["lastname"] . '</td>
             </tr>
@@ -154,8 +154,6 @@ $npc_data = '
 ';
 
 $print_buffer .= $npc_data;
-
-
 
 $print_buffer .= "<tr valign='top'>";
 

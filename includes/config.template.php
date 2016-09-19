@@ -15,6 +15,8 @@ $dbpasswd = "password";
 $use_pace_loader = true; /* shows a loader at the top of the page */
 $hide_navbar = false;
 
+$site_logo = "images/logos/logo.png"; /* Where you put your site logo */
+
 $root_url = 'http://www.myserver.com/AllaClone/';
 $includes_url = $root_url . 'includes/';
 $includes_dir = getcwd() . "/includes/";
