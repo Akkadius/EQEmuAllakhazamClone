@@ -1,109 +1,286 @@
 <?php
-	#ini_set('display_errors', 'On');
-	#error_reporting(E_ALL);
 
-	require_once('./includes/config.php');
-	require_once($includes_dir.'constants.php');
+    require_once('includes/constants.php');
+    require_once('includes/config.php');
+    require_once($includes_dir . 'mysql.php');
+    require_once($includes_dir . 'functions.php');
 
-	require_once($includes_dir.'mysql.php');
-	require_once($includes_dir.'functions.php');
-	
-	// Pagination //
-	$page = (isset($_GET['page']) ? addslashes($_GET['page']) : 0);
-	$targetpage = "index.php"; 					// File name  (the name of this file)
-	$tbl_name=$discovered_items_table;				// Table name
-	if($page)
-	{
-		$start = ($page - 1) * $MaxResultsPerPage; 			//first item to display on this page
-	}
-	else
-	{
-		$start = 0;								//if no page var is given, set start to 0
-	}
-	$total_pages = get_field_result("num", "SELECT COUNT(*) as num FROM $tbl_name");
-	// Pagination //
+    /* Handles PJAX requests */
+    if(isset($_GET['v_ajax'])){
+        require_once('routes.php');
+        echo $print_buffer;
+        if($page_title){
+            $footer_javascript .= '
+                <script type="text/javascript">
+                    $("#title").html("<h1>' . $page_title . '</h1>");
+                    document.title = "' . $page_title . '";
+                </script>
+            ';
+        }
+        echo $footer_javascript;
+        exit;
+    }
 
-	
-
-	$page_title="Wecome to AllaClone!";
-
-
-	// Here's the main page of the website
-
-	if (file_exists("design/index.html"))
-	{
-		print "<table width=95% border=0><tr valign=top><td>";
-		require_once("design/index.html");
-		print "</td></tr></table>";
-	}
-
-	if ($discovered_items_only==TRUE){
-		$page_title="Recently Discovered Items";
-		print "<table border='0' width='0%'><tr valign='top'><td class='header_cell'>";
-		print "<b>$page_title</b>";
-		print "</td></tr>"; 
-
-		print "<table border=0 width=100%><tr valign=top><td width=100%>";
-
-		$query="SELECT  items.*,
-					$discovered_items_table.item_id,
-					$discovered_items_table.char_name,
-					$discovered_items_table.discovered_date
-					FROM $items_table, $discovered_items_table
-					WHERE $items_table.id = $discovered_items_table.item_id
-					AND $discovered_items_table.account_status < $discovered_items_max_status";
-
-		// Limits added for pagination
-		$query.=" ORDER BY $discovered_items_table.discovered_date DESC LIMIT $start, $MaxResultsPerPage";
-
-		$result=db_mysql_query($query) or message_die('index.php','MYSQL_QUERY',$query,mysql_error());
-		print "<table border=0 cellpadding='5' cellspacing='0'><tr>
-			   <td class='menuh'>Item Name</td>
-			   <td class='menuh'>Item ID</td>
-			   <td class='menuh'>Discovered By</td>
-			   <td class='menuh'>Discovered Date</td>
-			   ";
-			   
-		$RowClass = "lr";
-		while ($row=mysql_fetch_array($result)) {
-				print "<tr class='" .$RowClass. "'>
-				<td><a href=?a=item&id=".$row["item_id"]." id='" . $row["item_id"] . "'>";
-				
-				if(file_exists(getcwd(). "/icons/item_". $row['icon'] . ".png")){
-					echo "<img src='".$icons_url. "item_" . $row['icon'].".png' align='left'/ width='20' height='20'>  ";
-				}
-				
-				if ($charbrowser_url)
-				{
-					$DiscoveredBy = "<a href=".$charbrowser_url."character.php?char=".$row["char_name"].">".$row["char_name"]."</a>";
-				}
-				else
-				{
-					$DiscoveredBy = $row["char_name"];
-				}
-				echo $row["Name"] . "</a></td> 
-					<td align=center>".$row["item_id"]."</td>
-					<td align=center>".$DiscoveredBy."</td>
-					<td>".date("m/d/y - H:i",$row["discovered_date"])."</td>
-					</tr>";
-				if ($RowClass == "lr"){
-					$RowClass = "dr";
-				}
-				else{
-					$RowClass = "lr";
-				}
-		}
-		print "</table>";
-		
-		print "<tr><td align='center'>";
-		print Pagination($targetpage, $page, $total_pages, $MaxResultsPerPage, $AdjacentPages);
-		print "</td></tr>";
-
-		//print "</td><td width=0% nowrap>";
-		print "</td></tr></table>";
-	}
-	
-
+    $start = microtime(true);
+    $debug_queries = "";
+    $print_buffer = "";
 ?>
 
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://everquest.allakhazam.com/db/zone.html?mode=bymap -->
+<html>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>EQEmulator Allakhazam</title>
+    <link rel="icon" href="http://everquest.allakhazam.com/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="includes/alla.css">
+    <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
+    <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
+    <link rel="stylesheet" type="text/css" href="includes/css/pace.css" id="css">
+    <script src="./zam_files/jquery-1.10.2.min.js"></script>
+    <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./zam_files/zul.css" id="zul-bar-stylesheet">
+    <link rel="stylesheet" type="text/css" href="./zam_files/tooltips.css">
+</head>
+
+<body class="has-zul-bar">
+<div id="headjs" style="position: absolute; left: 0px; right: 0px; top: 0px; z-index: 999999999;"></div>
+<div class="zul-bar" id="zul-bar" data-mobile="false">
+    <div class="zul-bar-inner" id="zul-bar-inner">
+    </div>
+</div>
+
+<div id="bg-wrapper" style="min-height: auto;">
+    <div id="skin-wrap"></div>
+    <div id="header">
+        <div id="logo" style="background: url(images/logos/eqemu.png) 0 10px no-repeat;">
+            <a href="#" style="background: url(images/logos/logo.png) right no-repeat;top:10px"></a>
+        </div>
+
+        <form action="" name="search">
+            <input name="q" type="text" onfocus="this.select()" value="" autocomplete="off" placeholder="Search Items, NPCs, Zones etc." onkeydown="global_search(this.value)">
+            <a href="javascript:document.search.submit();"></a>
+        </form>
+
+        <div id="nav">
+            <ul id="menu_horiz">
+                <li class="has-sub first-child  nc-home"><a href="?">Home</a>
+                    <div><em></em><var></var><strong></strong>
+                        <ul>
+                            <li class="first-child  nc-news-archives"><a href="http://eqemulator.org">EQEmulator</a> </li>
+                            <li class="last-child  nc-zam-tools"><a href="http://everquest.allakhazam.com/"><span class="icon-tools">Official Allakhazam</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div id="shadows">
+            <div id="s-top"></div>
+            <div id="s-bot"></div>
+            <div id="s-left"></div>
+            <div id="s-right"></div>
+        </div>
+        <div id="body">
+            <div id="cols">
+
+                <div id="col-main">
+                    <div id="col-main-inner">
+                        <div id="col-main-inner-2">
+                            <div id="col-main-inner-3">
+                                <div id="buffer-top"></div>
+
+
+                                <div style="width:100%">
+                                    <div style="width:200px; display: inline-block; float: left;">
+                                        <table border="0">
+                                            <form name="fullsearch" method="GET" action="fullsearch.php"></form>
+                                            <tbody>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Main...</td>
+                                            </tr>
+                                            <tr>
+                                                <td nowrap="1" class="menu_item">
+                                                    <li><a href="?">AllaClone Main
+                                                            Page</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="http://www.eqemulator.org">EQEmulator</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Zones...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=zonelist">Zones by Era</a></li>
+                                                    <li><a href="?a=zones">Populated Zones</a> </li>
+                                                    <li><a href="?a=zones_by_level">Zones by Level</a> </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Items...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=items">Item Search</a> </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Spells...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=spells">Spell Search</a></li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Factions...</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menu_item" nowrap="1">
+                                                    <li><a href="?a=factions">Faction Search</a> </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="http://10.0.1.12/allaclone/npcfactions.php">NPCs By
+                                                            Faction</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Bestiary...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=npcs">NPC Search</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=advanced_npcs">Advanced NPC
+                                                            Search</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=pets">Pets</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Trade skills...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=recipes&">Recipe
+                                                            Search</a>
+                                                    </li>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="page-content">
+                                        <div id="title"></div>
+                                        <div class="page-content-ajax">
+                                            <?php
+
+                                                require_once('routes.php');
+
+                                                if($print_buffer){
+                                                    print $print_buffer;
+                                                }
+
+                                                if($page_title){
+                                                    $footer_javascript .= '
+                                                        <script type="text/javascript">
+                                                            $("#title").html("<h1>' . $page_title . '</h1>");
+                                                            document.title = "' . $page_title . '";
+                                                        </script>
+                                                    ';
+
+                                                }
+                                            ?>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="clear"></div>
+                                <div id="buffer-bottom"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php
+        $end = microtime(true);
+        $time = number_format(($end - $start), 2);
+
+        $page_load_time = 'This page loaded in ' . $time . ' seconds';
+
+        if($slow_page_logging && $time > 1){
+            if($print_buffer){
+                $my_file = fopen("cache/" . $_SERVER['QUERY_STRING'], "w") or die("Unable to open file!");
+                fwrite($my_file, bzcompress($print_buffer));
+                fclose($my_file);
+            }
+        }
+
+    ?>
+
+    <footer>
+        <div class="block-content pad10" style="line-height:24px">
+            <ul class="site-footer">
+                <?php
+                    echo $page_load_time;
+
+                    if($mysql_debugging){
+                        print $debug_queries;
+                    }
+                ?>
+            </ul>
+            <div class="clear"></div>
+        </div>
+
+        <div class="div15"></div>
+
+        <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
+        <script src="includes/js/footer.js"></script>
+        <script src="includes/js/pace.min.js"></script>
+        <script src="includes/js/pjax.js"></script>
+        <script type="text/javascript">
+            Nav.init()
+        </script>
+        <?php
+            if($footer_javascript){
+                echo $footer_javascript;
+            }
+
+        ?>
+    </footer>
+
+    <div class="copyright">© 2016 EQEmulator :: Akkadius</div>
+
+</div>
+
+
+</body>
+
+</html>
