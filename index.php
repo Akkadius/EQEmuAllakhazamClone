@@ -39,11 +39,17 @@
     <link rel="stylesheet" type="text/css" href="includes/alla.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
-    <link rel="stylesheet" type="text/css" href="includes/css/pace.css" id="css">
+
     <script src="includes/js/jquery-3.1.0.min.js"></script>
     <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="./zam_files/zul.css" id="zul-bar-stylesheet">
+
+    <?php
+        if($hide_navbar){
+            echo '<style>.zul-bar { display:none; } </style>';
+        }
+    ?>
 </head>
 
 <body class="has-zul-bar">
@@ -247,7 +253,17 @@
 
         <script type="text/javascript" src="jquery/easytooltip/js/easyTooltip.js"></script>
         <script src="includes/js/footer.js"></script>
-        <script src="includes/js/pace.min.js"></script>
+
+        <?php
+            if($use_pace_loader){
+                echo '
+                    <link rel="stylesheet" type="text/css" href="includes/css/pace.css" id="css">
+                    <script src="includes/js/pace.min.js"></script>
+                ';
+            }
+        ?>
+
+
         <script src="includes/js/pjax.js"></script>
 
         <script src="includes/js/zam_tooltips.js"></script>

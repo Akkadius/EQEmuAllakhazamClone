@@ -13,6 +13,7 @@ $dbuser = "username";
 $dbpasswd = "password";
 
 $use_pace_loader = true; /* shows a loader at the top of the page */
+$hide_navbar = false;
 
 $root_url = 'http://www.myserver.com/AllaClone/';
 $includes_url = $root_url . 'includes/';
