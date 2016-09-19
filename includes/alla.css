@@ -478,3 +478,7 @@ input.search  {
     left: 470px;
     width: 35px;
 }
+
+.zul-bar{
+    position:fixed !important;
+}

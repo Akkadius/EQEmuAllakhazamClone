@@ -343,7 +343,7 @@ if (isset($QueryResult)) {
             }
             $TableData .= "</td><td>";
 
-            CreateToolTip($row["id"], return_item_stat_box($row, 1));
+            # CreateToolTip($row["id"], return_item_stat_box($row, 1));
             $TableData .= "<a href='?a=item&id=" . $row["id"] . "' id='" . $row["id"] . "'>" . $row["Name"] . "</a>";
 
             $TableData .= "</td><td>";
