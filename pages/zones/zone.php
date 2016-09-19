@@ -62,15 +62,6 @@ if ($zone["minium_level"] > 0) {
     $print_buffer .= "<br><b>Minimum level : </b>" . floor($zone["minium_level"]);
 }
 
-if (file_exists($maps_dir . $name . ".jpg")) {
-    if (!file_exists($maps_url . $name . "._tn.jpg")) {
-        make_thumb($maps_dir . $name . ".jpg");
-    }
-    $print_buffer .= "<td>&nbsp;&nbsp;&nbsp;</td><td align=center><a href=" . $maps_url . $name . ".jpg><img src=" . $maps_url . $name . "._tn.jpg width=120 height=80 border=0></a><br>
-		<a href=" . $maps_url . $name . ".jpg target=_new>Popup map</a>
-		</td>";
-}
-
 if ($mode == "npcs") {
     ////////////// NPCS
     $query = "SELECT $npc_types_table.id,$npc_types_table.class,$npc_types_table.level,$npc_types_table.trackable,$npc_types_table.maxlevel,$npc_types_table.race,$npc_types_table.`name`,$npc_types_table.maxlevel,$npc_types_table.loottable_id
