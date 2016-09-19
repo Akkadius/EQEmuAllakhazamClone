@@ -1,12 +1,6 @@
 <?php
-/** Displays the NPC identified by 'id' if it is specified and an NPC by this ID exists.
- *  Otherwise queries for the NPCs identified by 'name'. Underscores are considered as spaces and backquotes as minuses,
- *    for Wiki-EQEmu compatibility.
- *    If exactly one NPC is found, displays this NPC.
- *    Otherwise redirects to the NPC search page, displaying the results for '%name%'.
- *  If neither 'id' nor 'name' are specified or if 'id' is not a valid NPC ID, redirects to the NPC search page.
- */
 
+require_once('functions.php');
 
 $id = (isset($_GET['id']) ? $_GET['id'] : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
@@ -77,109 +71,91 @@ $page_title = "NPC :: " . get_npc_name_human_readable($name);
 
 $DebugNpc = FALSE; // for world builders, set this to false for common use
 
-$print_buffer .= "<table class='display_table container_div'><tr valign='top'><td colspan='2' class='headerrow'>";
-$print_buffer .= "<a href='" . $peqeditor_url . "index.php?editor=npc&amp;npcid=" . $id . "'><img src='" . $images_url . "/peq_npc.png' align='right'/></a>";
-$print_buffer .= "<a href='" . $peqeditor_url . "index.php?editor=merchant&amp;npcid=" . $id . "'><img src='" . $images_url . "/peq_merchant.png' align='right'/></a>";
-$print_buffer .= "<b>" . get_npc_name_human_readable($npc["name"]) . "</b>";
-if ($npc["lastname"] != "") {
-    $print_buffer .= "<br/>" . str_replace("_", " ", " (" . $npc["lastname"] . ")") . " - id : " . $id;
-} else {
-    $print_buffer .= "<br/>id : " . $id;
-}
-$print_buffer .= "</td></tr>";
-$print_buffer .= "<tr valign='top'><td width='0%'><table><tr><td><table border='0' width='100%' cellpadding='0' cellspacing='0'><tr><td>";
-//$print_buffer .= "<tr valign='top'><td width='0%'><table><tr><td>";
-$print_buffer .= "<table border='0' width='0%'><tr valign='top'><td width='100%'>\n";
-$print_buffer .= "<p><table border='0' width='100%'>";
-$print_buffer .= "<tr><td><b>Full name : </b></td><td>" . get_npc_name_human_readable($npc["name"]);
-if ($npc["lastname"] != "") {
-    $print_buffer .= str_replace("_", " ", " (" . $npc["lastname"] . ")");
-}
-$print_buffer .= "</td></tr>";
-$print_buffer .= "<tr><td><b>Level : </b></td><td width='100%'>" . $npc["level"] . "</td></tr>";
-$print_buffer .= "<tr><td><b>Race : </b></td><td>" . $dbiracenames[$npc["race"]] . "</td></tr>";
-$print_buffer .= "<tr><td><b>Class : </b></td><td>" . $dbclasses[$npc["class"]];
-if ($npc["npc_faction_id"] > 0) {
-    $query = "
-        SELECT
-            $faction_list_table.`name`,
-            $faction_list_table.id
-        FROM
-            $faction_list_table,
-            $npc_faction_table
-        WHERE
-            $npc_faction_table.id = " . $npc["npc_faction_id"] . "
-        AND $npc_faction_table.primaryfaction = $faction_list_table.id
-    ";
-    $faction = GetRowByQuery($query);
-    $print_buffer .= "<tr><td><b>Main faction : </b></td><td><a href='faction.php?id=" . $faction["id"] . "'>" . $faction["name"] . "</a></td></tr>";
-}
-if ($npc["findable"] == 1) {
-    $print_buffer .= " (findable)";
-}
+$print_buffer .= "
+    <table class='display_table container_div'>
+        <tr valign='top'>
+            <td colspan='2'>
+                <h1>" . get_npc_name_human_readable($npc["name"]) . "</h1>
+            </td>
+        </tr>
+";
+$print_buffer .= "
+    <tr valign='top'>
+        <td width='0%'>
+            <table>
+                <tr>
+                    <td>
+                        <table border='0' width='100%' cellpadding='0' cellspacing='0'><tr><td>";
 
-$print_buffer .= "</td></tr>";
 
-if ($display_npc_stats == "TRUE") {
-    $print_buffer .= "<tr><td><b>Health points : </b></td><td>" . $npc["hp"] . "</td></tr>";
-    $print_buffer .= "<tr><td><b>Damage : </b></td><td>" . $npc["mindmg"] . " to " . $npc["maxdmg"] . "</td></tr>";
-}
+
+$print_buffer .= "<table border='0' width='100%'>";
+
+$npc_attack_speed = "";
 if ($show_npcs_attack_speed == TRUE) {
-    $print_buffer .= "<tr><td><b>Attack speed : </b></td><td>";
+    $npc_attack_speed = "<tr><td style='text-align:right'><b>Attack speed</td><td>";
     if ($npc["attack_speed"] == 0) {
-        $print_buffer .= "Normal (100%)";
+        $npc_attack_speed .= "Normal (100%)";
     } else {
-        $print_buffer .= (100 + $npc["attack_speed"]) . "%";
+        $npc_attack_speed .= (100 + $npc["attack_speed"]) . "%";
     }
-    //$print_buffer .= "</td></tr>";
-}
-if ($show_npcs_average_damages == TRUE) {
-    $print_buffer .= "<tr><td><b>Average melee damages : </b></td><td>";
-    $avghit = ($npc["maxdmg"] + $npc["mindmg"]) / 2; // average hit
-    $dam = $avghit; # first hit of main hand
-    $com = $npc["npcspecialattks"];
-    if (CanThisNPCDoubleAttack($npc["class"], $npc["level"])) {
-        # chance to double attack = level+20>rand(0,99) (mobai.cpp)
-        $chance2 = ($npc["level"] + 20) / 100;
-        $com .= " DA=$chance2";
-        $dam += $avghit * $chance2;
-        if ($npc["npcspecialattks"] != "") {
-            # Npc has some special attacks
-            # Able to triple (implicitely, if he can quad, then he can triple, this is NOT in source code ATM (3 may 2006).
-            if ((strpos($npc["npcspecialattks"], "T") > 0) OR (strpos($npc["npcspecialattks"], "Q") > 0)) {
-                # chance to triple, happens when we doubled, and if level>rand(0,99)
-                $chance3 = $chance2 * $npc["level"] / 100;
-                $com .= " TA=$chance3";
-                $dam += $avghit * $chance3;
-                if (strpos($npc["npcspecialattks"], "Q") > 0) {
-                    # The NPC can quad
-                    # chance to quad, happens when we tripled and if level-20>rand(0,99)
-                    $chance4 = $chance2 * $chance3 * ($npc["level"] - 20) / 100;
-                    $com .= " QA=$chance4";
-                    $dam += $avghit * $chance4;
-                }
-            }
-            # the mob can flurry
-            if (strpos($npc["npcspecialattks"], "F") > 0) {
-                # the mob has 20% chances to flurry, and if it flurries, it will hit 2 times
-                # so, for each round, it has 20%x2 chances to hit
-                $dam += $avghit * 0.4;
-            }
-        }
-    }
-    # the npc is slower/faster than normal
-    if ($npc["attack_speed"] != 0) {
-        $dam = $dam * (100 + $npc["attack_speed"]) / 100;
-    } // dam per hit
-    $print_buffer .= round($dam) . " per round</td></tr>";
-}
-if ($display_npc_stats == "TRUE") {
-    if ($npc["npcspecialattks"] != '') {
-        $print_buffer .= "<tr><td><b>Special attacks : </b></td><td>" . SpecialAttacks($npc["npcspecialattks"]) . "</td></tr>";
-    }
+    $print_buffer .= "</td></tr>";
 }
 
-$print_buffer .= "</td></tr></table>\n";
+$print_buffer .= "</td></tr></table>";
+
+$npc_data = '
+    <table border="0" width="100%">
+        <tbody>
+            <tr>
+                <td style="width:150px !important; text-align:right"><b>Full name</b>
+                </td>
+                <td>' . get_npc_name_human_readable($npc["name"]) . " " . $npc["lastname"] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right""><b>Level</b>
+                </td>
+                <td>' . $npc["level"] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Race</b>
+                </td>
+                <td>' . $dbiracenames[$npc["race"]]  .'</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Class</b>
+                </td>
+                <td>' . $dbclasses[$npc["class"]] . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Main faction</b>
+                </td>
+                <td>' . return_npc_primary_faction($npc['npc_faction_id']) . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Health points</b>
+                </td>
+                <td>' . number_format($npc["hp"]) . '</td>
+            </tr>
+            <tr>
+                <td style="text-align:right"><b>Damage</b>
+                </td>
+                <td>' . $npc["mindmg"] . " to " . $npc["maxdmg"] . '</td>
+            </tr>
+            ' . $npc_attack_speed . '
+            <tr>
+                <td style="text-align:right"><b>Special attacks</b>
+                </td>
+                <td>' . SpecialAttacks($npc["npcspecialattks"]) . '</td>
+            </tr>
+        </tbody>
+    </table>
+
+';
+
+$print_buffer .= $npc_data;
+
+
 
 $print_buffer .= "<tr valign='top'>";
 
@@ -203,7 +179,7 @@ if ($npc["npc_spells_id"] > 0) {
         ";
         $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result2) > 0) {
-            $print_buffer .= "</ul><li><b>Listname : </b>" . get_npc_name_human_readable($g["name"]);
+            $print_buffer .= "</ul><li><b>Listname</b>" . get_npc_name_human_readable($g["name"]);
             if ($DebugNpc) {
                 $print_buffer .= " (" . $npc["npc_spells_id"] . ")";
             }
@@ -268,7 +244,7 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
             $print_buffer .= " (" . $dbitypes[$row["itemtype"]] . ")";
             if ($show_npc_drop_chances == TRUE) {
                 $print_buffer .= " - " . $row["chance"] . "%";
-                $print_buffer .= " (" . ($row["chance"] * $row["probability"] / 100) . "% global)";
+                $print_buffer .= " (" . ($row["chance"] * $row["probability"] / 100) . "% Global)";
             }
             $print_buffer .= "</li>";
         }
@@ -428,11 +404,11 @@ if (mysql_num_rows($result) > 0) {
     }
 }
 $print_buffer .= "</ul>";
-$print_buffer .= "</td></tr></table>\n";
+$print_buffer .= "</td></tr></table>";
 
-$print_buffer .= "</td></tr></table>\n";
-$print_buffer .= "</td></tr></table>\n";
-$print_buffer .= "</td></tr></table>\n";
+$print_buffer .= "</td></tr></table>";
+$print_buffer .= "</td></tr></table>";
+$print_buffer .= "</td></tr></table>";
 
 
 ?>
