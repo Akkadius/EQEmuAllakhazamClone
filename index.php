@@ -234,14 +234,6 @@
 
         $page_load_time = 'This page loaded in ' . $time . ' seconds';
 
-        if($slow_page_logging && $time > 1){
-            if($print_buffer){
-                $my_file = fopen("cache/" . $_SERVER['QUERY_STRING'], "w") or die("Unable to open file!");
-                fwrite($my_file, bzcompress($print_buffer));
-                fclose($my_file);
-            }
-        }
-
     ?>
 
     <footer>

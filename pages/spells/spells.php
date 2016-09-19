@@ -73,9 +73,9 @@ $print_buffer .= '</select>
 			<label><input type="radio" name="opt" value="3" ' . $check3 . ' />And Lower</label></td></tr>
 			<tr>
 			<td colspan="2">
-			<input type="submit" value="     Search     "/>
-			<input type="hidden" name="action" value="search"/>
-			<input type="reset" value="Reset"/>
+			<br>
+			<a class="button submit">Search</a>
+            <a class="button" href="?a=spells">Reset</a>
 			</td>
 			</td></tr>
 			</table>

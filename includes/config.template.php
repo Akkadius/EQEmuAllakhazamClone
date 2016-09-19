@@ -12,8 +12,6 @@ $dbname = "peq";
 $dbuser = "username";
 $dbpasswd = "password";
 
-$slow_page_logging = 1;
-
 $root_url = 'http://www.myserver.com/AllaClone/';
 $includes_url = $root_url . 'includes/';
 $includes_dir = getcwd() . "/includes/";

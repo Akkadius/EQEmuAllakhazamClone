@@ -42,8 +42,8 @@ function display_table($content, $width = 500){
 function display_row($left, $right = ""){
     return '
         <tr>
-            <td>' . $left . '</td>
-            <td>' . $right . '</td>
+            <td style="vertical-align:top">' . $left . '</td>
+            <td style="vertical-align:top">' . $right . '</td>
         </tr>
     ';
 }
@@ -63,7 +63,7 @@ function strip_underscores($string){
 }
 
 function print_query_results(
-    $objects_found,
+    $mysql_reference_data,
     $rows_to_return,
     $anchor_link_callout,
     $query_description, /* Example: NPCs */
@@ -77,26 +77,28 @@ function print_query_results(
 {
     global $dbskills;
 
-    $mysql_rows_returned = mysql_num_rows($objects_found);
+    $mysql_rows_returned = mysql_num_rows($mysql_reference_data);
     if ($mysql_rows_returned > get_max_query_results_count($rows_to_return)) {
         $mysql_rows_returned = get_max_query_results_count($rows_to_return);
-        $more_objects_exist = True;
-    } else {
-        $more_objects_exist = False;
+        $more_objects_exist = true;
+    }
+    else {
+        $more_objects_exist = false;
     }
 
-
     if ($mysql_rows_returned == 0) {
-        $return_buffer .= "<ul><li><b>No " . $query_description . " found.</b></li></ul>\n";
-    } else {
+        $return_buffer .= "<ul><li><b>No " . $query_description . " found.</b></li></ul>";
+    }
+    else {
         $return_buffer .= "<ul><li><b>" . $mysql_rows_returned . " " . ($mysql_rows_returned == 1 ? $query_description : $object_description) . " displayed.";
         if ($more_objects_exist) {
             $return_buffer .= " More " . $object_description . " exist but you reached the query limit.";
         }
-        $return_buffer .= "</b></li>\n";
-        $return_buffer .= "<ul>\n";
+        $return_buffer .= "</b></li>";
+        $return_buffer .= "<ul>";
         for ($j = 1; $j <= $mysql_rows_returned; $j++) {
-            $row = mysql_fetch_array($objects_found);
+            $row = mysql_fetch_array($mysql_reference_data);
+
             $return_buffer .=  " <li style='text-align:left'><a href='" . $anchor_link_callout . "id=" . $row[$href_id_name] . "'>";
             if ($query_description == "npc") {
                 // Clean up the name for NPCs
@@ -109,12 +111,11 @@ function print_query_results(
             if ($extra_field && $extra_field_description && $extra_skill) {
                 $return_buffer .= " - " . ucfirstwords(str_replace("_", " ", $dbskills[$row[$extra_skill]])) . ", $extra_field_description " . $row[$extra_field];
             }
-            $return_buffer .= "</li>\n";
+            $return_buffer .= "</li>";
         }
-        $return_buffer .= "</ul>\n</ul>\n";
-
-        return wrap_content_box($return_buffer);
+        $return_buffer .= "</ul></ul>";
     }
+    return wrap_content_box($return_buffer);
 }
 
 function get_max_query_results_count($MaxObjects)
@@ -305,13 +306,13 @@ function SelectMobRace($name, $selected)
 {
     global $dbiracenames;
     $return_buffer = "<SELECT name=\"$name\" style='width:100%'>";
-    $return_buffer .= "<option value='0'>-</option>\n";
+    $return_buffer .= "<option value='0'>-</option>";
     foreach ($dbiracenames as $key => $value) {
         $return_buffer .= "<option value='" . $key . "'";
         if ($key == $selected) {
             $return_buffer .= " selected='1'";
         }
-        $return_buffer .= ">" . $value . "</option>\n";
+        $return_buffer .= ">" . $value . "</option>";
     }
     $return_buffer .= "</SELECT>";
     return $return_buffer;
@@ -320,13 +321,13 @@ function SelectMobRace($name, $selected)
 function SelectLevel($name, $maxlevel, $selevel)
 {
     $return_buffer = "<SELECT name=\"$name\">";
-    $return_buffer .= "<option value='0'>-</option>\n";
+    $return_buffer .= "<option value='0'>-</option>";
     for ($i = 1; $i <= $maxlevel; $i++) {
         $return_buffer .= "<option value='" . $i . "'";
         if ($i == $selevel) {
             $return_buffer .= " selected='1'";
         }
-        $return_buffer .= ">$i</option>\n";
+        $return_buffer .= ">$i</option>";
     }
     $return_buffer .= "</SELECT>";
     return $return_buffer;
@@ -358,7 +359,7 @@ function WriteIt($value, $name, $sel)
     if ($value == $sel) {
         $return_buffer .= " selected='1'";
     }
-    $return_buffer .= ">$name</option>\n";
+    $return_buffer .= ">$name</option>";
     return $return_buffer;
 }
 
@@ -783,7 +784,7 @@ function Pagination($targetpage, $page, $total_pages, $limit, $adjacents)
             $pagination .= "<a href=\"$targetpage?page=$next\">next</a>";
         else
             $pagination .= "<span class=\"disabled\">next</span>";
-        $pagination .= "</div>\n";
+        $pagination .= "</div>";
     }
     return $pagination;
 }
