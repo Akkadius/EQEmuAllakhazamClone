@@ -21,7 +21,7 @@ if($_GET['get_data']){
         $result = db_mysql_query($query);
         echo '<ul>';
         while ($row = mysql_fetch_array($result)) {
-            echo '<a href="?a=item&id=' . $row['id'] . '">' . $row['Name'] . '</a><br>';
+            echo '<a href="?a=item&id=' . $row['id'] . '">' . return_item_icon_from_icon_id($row['icon'], 15) . ' ' . $row['Name'] . '</a><br>';
         }
         echo '</ul>';
     }
