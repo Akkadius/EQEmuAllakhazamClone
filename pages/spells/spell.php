@@ -126,7 +126,7 @@ $result = db_mysql_query($query);
 if (mysql_num_rows($result)) {
     $print_buffer .= "<h2 class='section_header'>Items with spell</h2><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $print_buffer .= "<a href=?a=item&id=" . $row["id"] . ">" . get_item_icon_from_id($row['id']) . ' ' . $row["name"] . "</a>";
+        $print_buffer .= "<a href=?a=item&id=" . $row["id"] . ">" . get_item_icon_from_id($row['id']) . ' ' . $row["name"] . "</a><br>";
     }
 }
 $print_buffer .= "</ul></td></tr></table>";
