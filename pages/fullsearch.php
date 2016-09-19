@@ -19,7 +19,7 @@ $query = "SELECT COUNT(*) as found_count FROM `npc_types` WHERE `name` LIKE '%" 
 $result = db_mysql_query($query);
 while ($row = mysql_fetch_array($result)) {
     if($row['found_count'] > 0)
-        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a id='Mobs_tab' href='javascript:;' onclick='tablistview(this);'>Mobs (" . $row['found_count'] . ")<b></b></a></li>";
+        $tab_title .= "<li onclick='tablistview(this.childNodes[0]);'><a id='Mobs_tab' href='javascript:;' onclick='tablistview(this);'>Mobs (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
 /* Items */
@@ -27,7 +27,7 @@ $query = "SELECT COUNT(*) as found_count FROM `items` WHERE `Name` LIKE '%" . $n
 $result = db_mysql_query($query);
 while ($row = mysql_fetch_array($result)) {
     if($row['found_count'] > 0)
-        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Items (" . $row['found_count'] . ")<b></b></a></li>";
+        $tab_title .= "<li onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Items (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
 /* Factions */
@@ -35,7 +35,7 @@ $query = "SELECT COUNT(*) as found_count FROM `faction_list` WHERE `name` LIKE '
 $result = db_mysql_query($query);
 while ($row = mysql_fetch_array($result)) {
     if($row['found_count'] > 0)
-        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Factions (" . $row['found_count'] . ")<b></b></a></li>";
+        $tab_title .= "<li onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Factions (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
 /* Tradeskills */
@@ -43,7 +43,7 @@ $query = "SELECT COUNT(*) as found_count FROM `tradeskill_recipe`  WHERE `name` 
 $result = db_mysql_query($query);
 while ($row = mysql_fetch_array($result)) {
     if($row['found_count'] > 0)
-        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Tradeskills (" . $row['found_count'] . ")<b></b></a></li>";
+        $tab_title .= "<li onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Tradeskills (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
 /* Forage */
@@ -58,7 +58,7 @@ $query = "
 $result = db_mysql_query($query);
 while ($row = mysql_fetch_array($result)) {
     if($row['found_count'] > 0)
-        $tab_title .= "<li class='current' onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Foraging (" . $row['found_count'] . ")<b></b></a></li>";
+        $tab_title .= "<li onclick='tablistview(this.childNodes[0]);'><a href='javascript:;' onclick='tablistview(this);'>Foraging (" . $row['found_count'] . ")<b></b></a></li>";
 }
 
 echo '
