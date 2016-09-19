@@ -152,13 +152,6 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td  class="menu_item">
-                                                    <li><a href="http://10.0.1.12/allaclone/npcfactions.php">NPCs By
-                                                            Faction</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td class="menuh" nowrap="1">Bestiary...</td>
                                             </tr>
                                             <tr>

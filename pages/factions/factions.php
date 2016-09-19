@@ -7,9 +7,9 @@
  */
 
 $isearch = (isset($_GET['q']) ? $_GET['q'] : '');
-$iname = (isset($_GET['q']) ? $_GET['q'] : '');
+$iname = $_GET['q'];
 
-if ($isearch != "") {
+
     if ($iname == "") {
         $name = "";
     } else {
@@ -19,13 +19,13 @@ if ($isearch != "") {
     $query = "
         SELECT $faction_list_table.id,$faction_list_table.`name`
         FROM $faction_list_table
-        WHERE $faction_list_table.`name` like '%" . $name . "%'
+        " . ($iname != "" ? "WHERE $faction_list_table.`name` like '%" . $name . "%'" : '') . "
         ORDER BY $faction_list_table.`name`
         LIMIT 500
     ";
 
     $result = db_mysql_query($query);
-}
+
 
 $page_title = "Faction Search";
 
