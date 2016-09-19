@@ -192,3 +192,29 @@ function global_search(val){
 $( ".submit" ).on( "click", function() {
     $(this).closest("form").submit();
 });
+
+function highlight_element(element){
+    $('html, body').animate({
+        scrollTop: ($(element).offset().top - 100)
+    }, 200, function () {
+        // $(element).pulsate({ color: "#399bc3", repeat: false });
+    });
+}
+
+function get_form_query_string(ID){
+    query_string = "";
+    $('#' + ID + '').find('input, select, textarea').each(function (key) {
+        val = $(this).val();
+        if (val == 'undefined') {
+            val = '';
+        }
+        if($(this).attr('type') == "checkbox"){
+            if (!$(this).is(':checked')) {
+                val = 0;
+            }
+        }
+
+        query_string = query_string + "&" + $(this).attr('id') + "=" + encodeURIComponent(val);
+    });
+    return query_string;
+}
