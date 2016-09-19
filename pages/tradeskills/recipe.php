@@ -65,7 +65,6 @@ if (mysql_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Containers</h2>";
     $print_buffer .= "<ul>";
     while ($row = mysql_fetch_array($result)) {
-        CreateToolTip($row["item_id"], return_item_stat_box($row, 1));
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . $row["item_id"] . ">" .
             str_replace("_", " ", $row["Name"]) . "</a><br>";
@@ -96,7 +95,6 @@ $result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $qu
 if (mysql_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Creates</h2><ul>";
     while ($row = mysql_fetch_array($result)) {
-        CreateToolTip(($row["item_id"] * 110), return_item_stat_box($row, 1));
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 110) . ">" .
             str_replace("_", " ", $row["Name"]) . "</a> x" . $row["successcount"] . " <br>";
@@ -124,7 +122,6 @@ if ($recipe["nofail"] == 0) {
     if (mysql_num_rows($result) > 0) {
         $print_buffer .= "<tr><td><h2 class='section_header'>Failure</h2><ul>";
         while ($row = mysql_fetch_array($result)) {
-            CreateToolTip(($row["item_id"] * 10), return_item_stat_box($row, 1));
             $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
                 "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 10) . ">" .
                 str_replace("_", " ", $row["Name"]) . "</a> x" . $row["failcount"] . " <br>";
@@ -154,7 +151,6 @@ if (mysql_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Required</h2><ul>";
 
     while ($row = mysql_fetch_array($result)) {
-        CreateToolTip(($row["item_id"] * 100), return_item_stat_box($row, 1));
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'	/> " .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 100) . ">" .
             str_replace("_", " ", $row["Name"]) . "</a> x " . $row["componentcount"] . " <br>";

@@ -239,9 +239,6 @@ if ($mode == "items") {
     $EquiptmentTable .= "</table>";
     if ($ItemsFound > 0) {
         $print_buffer .= $EquiptmentTable;
-        foreach ($ItemsData as $key => $ItemData) {
-            $ToolTips .= CreateToolTip($ItemData["id"], return_item_stat_box($ItemData, 1));
-        }
         $print_buffer .= $ToolTips;
 
     } else {

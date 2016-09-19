@@ -10,15 +10,6 @@ if (!is_numeric($class)) {
 
 $page_title = "Pets Statistics";
 
-CreateToolTip('class15', '<table> <td> <img src="images/monograms/15.gif"> </td> <td> The Beastlord class is a unique class that is a hybrid of the Shaman and Monk parent classes. One of the class\'s distinguishing features is the ability to summon a warder pet to fight alongside them. The form the warder takes depends on the race of the beastlord. </td>');
-CreateToolTip('class6', '<table> <td> <img src="images/monograms/6.gif"> </td> <td> Druids - a powerful outdoor class. With the triple ability to heal, inflict direct damage and cast damage over time, druids are a popular solo class, as well as popular in a group. They are also a travelling class, given both sow and teleportation abilities.  </td>');
-CreateToolTip('class14', '<table> <td> <img src="images/monograms/14.gif"> </td> <td> Enchanter - the game\'s traffic cop. When the enchanter yells stop, creatures cease what they are doing and just wait to die. A complex class, enchanters get a variety of spells as well as a pet, and can be played in a number of different ways. </td>');
-CreateToolTip('class13', '<table> <td> <img src="images/monograms/13.gif"> </td> <td> Magicians - Dealers of damage. With the combination of a strong pet and the second best set of direct damage spells, magicians can deal out some serious damage.  </td>');
-CreateToolTip('class11', '<table><td><img src="images/monograms/11.gif"> </td> <td> Necromancers - Masters of death. With their powerful pets and variety of damage over time spells, necromancers are one of the best solo classes in the game. </td>');
-CreateToolTip('class5', '<table> <td> <img src="images/monograms/5.gif"> </td> <td> Shadowknights - The evil warriors. A combination of fighter and necromancer, the shadowknight is a complex class to develop and play correctly.  </td>');
-CreateToolTip('class10', '<table> <td> <img src="images/monograms/10.gif"> </td> <td> Shamen - primitive power. The only magic using class of the barbarians, ogres and trolls, shamen get a variety of spells that combine aspects of most of the other magic using classes. This combination, along with the racial strength, means the class can be played in a variety of different ways.  </td>');
-CreateToolTip('class2', '<table> <td> <img src="images/monograms/2.gif"> </td> <td> Clerics -- the premier healer in the game. A popular class for any group, the cleric brings the ability to heal the party and keep you from dying, and can even bring you back from death at higher levels.   </td>');
-CreateToolTip('class12', '<table> <td> <img src="images/monograms/12.gif"> </td> <td> S	The Wizard - Master Nuker. The wizard\'s abilities are in direct damage spells and in individual and group teleportation.   </td>');
 $print_buffer .= "<table class='container_div display_table'><tr valign=top><td>";
 $print_buffer .= "<h2 class='section_header'>Choose a class:</h2><ul style='text-align:left'>";
 $print_buffer .= "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
