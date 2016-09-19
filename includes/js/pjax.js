@@ -64,7 +64,7 @@ $('a').live('click', function (e) {
 
                 document.body.scrollTop = document.documentElement.scrollTop = 0;
 
-                $('.tooltip').remove();
+                $('#tooltip_object').remove();
 
             });
 

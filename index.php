@@ -9,7 +9,7 @@
     if(isset($_GET['v_ajax'])){
         require_once('routes.php');
         echo $print_buffer;
-        if($page_title){
+        if($page_title && !isset($_GET['v_tooltip'])){
             $footer_javascript .= '
                 <script type="text/javascript">
                     $("#title").html("<h1>' . $page_title . '</h1>");
@@ -40,11 +40,10 @@
     <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
     <link rel="stylesheet" type="text/css" href="includes/css/pace.css" id="css">
-    <script src="./zam_files/jquery-1.10.2.min.js"></script>
+    <script src="includes/js/jquery-3.1.0.min.js"></script>
     <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="./zam_files/zul.css" id="zul-bar-stylesheet">
-    <link rel="stylesheet" type="text/css" href="./zam_files/tooltips.css">
 </head>
 
 <body class="has-zul-bar">
@@ -97,8 +96,8 @@
                                 <div id="buffer-top"></div>
 
 
-                                <div style="width:100%">
-                                    <div style="width:200px; display: inline-block; float: left;">
+                                <div style="width:100%; overflow: hidden;">
+                                    <div class="side_menu" style="width:200px; display: inline-block; float: left;">
                                         <table border="0">
                                             <form name="fullsearch" method="GET" action="fullsearch.php"></form>
                                             <tbody>
@@ -194,7 +193,7 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="page-content">
+                                    <div class="page-content" style="margin-left: 220px;">
                                         <div id="title"></div>
                                         <div class="page-content-ajax">
                                             <?php
@@ -265,6 +264,10 @@
         <script src="includes/js/footer.js"></script>
         <script src="includes/js/pace.min.js"></script>
         <script src="includes/js/pjax.js"></script>
+
+        <script src="includes/js/zam_tooltips.js"></script>
+
+
         <script type="text/javascript">
             Nav.init()
         </script>
