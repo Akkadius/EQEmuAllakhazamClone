@@ -160,7 +160,7 @@ if (count($_GET) > 2) {
     }
 
     $footer_javascript .= '<script type="text/javascript">' . $field_values . '</script>';
-    $footer_javascript .= '<script type="text/javascript">highlight_element("#item_search_results");</script>';
+    // $footer_javascript .= '<script type="text/javascript">highlight_element("#item_search_results");</script>';
 
 
 } else {
@@ -173,9 +173,12 @@ $print_buffer .= '<table><tr><td>';
 
 $print_buffer .= file_get_contents('pages/items/item_search_form.html');
 
-$footer_javascript .= '
-    <script src="pages/items/items.js"></script>
-';
+if(!isset($_GET['v_ajax'])){
+    $footer_javascript .= '
+        <script src="pages/items/items.js"></script>
+    ';
+}
+
 
 // Print the query results if any
 if (isset($QueryResult)) {
