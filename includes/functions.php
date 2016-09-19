@@ -109,7 +109,7 @@ function print_query_results(
             $return_buffer .= " (" . $row[$href_id_name] . ")</a>";
 
             if ($extra_field && $extra_field_description && $extra_skill) {
-                $return_buffer .= " - " . ucfirstwords(str_replace("_", " ", $dbskills[$row[$extra_skill]])) . ", $extra_field_description " . $row[$extra_field];
+                $return_buffer .= " - " . ucfirstwords(str_replace("_", " " . $dbskills[$row[$extra_skill]])) . " $extra_field_description " . $row[$extra_field];
             }
             $return_buffer .= "</li>";
         }

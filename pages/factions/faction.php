@@ -55,7 +55,7 @@ if ($id != "" && is_numeric($id)) {
 
 $page_title = "Faction :: " . $name;
 
-$raise_faction = "<h2 class='section_header'>NPCs whose death raise faction</h2>";
+$raise_faction = "<h2 class='section_header'>NPCs whose death raise faction</h2><br>";
 $query = "
     SELECT
         $npc_types_table.id,
@@ -84,7 +84,7 @@ $result = db_mysql_query($query);
 $raise_faction .= print_npcs_by_zone($result);
 
 
-$lower_faction = "<h2 class='section_header'>NPCs whom death lowers the faction</h2>";
+$lower_faction = "<h2 class='section_header'>NPCs whom death lowers the faction</h2><br>";
 $query = "
     SELECT
         $npc_types_table.id,

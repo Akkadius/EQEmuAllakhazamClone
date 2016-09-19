@@ -92,7 +92,7 @@ if ($sort_zone_level_list == TRUE) {
 
 
 $print_buffer .= "<table><tr valign=top><td width=100%>";
-$print_buffer .= "<table border=1>";
+$print_buffer .= "<table border=1 style='width:100%' class='display_table container_div'>";
 $print_buffer .= "<tr class='menuh'><th>Name</th>
        <th class=tab_title>Short name</th>";
 $LevelMax = 0;

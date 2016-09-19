@@ -19,31 +19,34 @@ $query = "SELECT *
 			FROM $trade_skill_recipe_table
 			WHERE id=$id";
 
-$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query);
 $recipe = mysql_fetch_array($result);
 
 $print_buffer .= "<table  class='display_table container_div'>";
 $print_buffer .= '
 		<tr>
 			<td colspan="2">
-				<h2 class=\'section_header\'>Recipe</h2>
+				<h2 class="section_header">Recipe: ' . ucfirstwords(str_replace('_', ' ', $recipe["name"])) . '</h2>
 			</td>
 		</tr>';
-$print_buffer .= "<tr><td style='text-align:right;'><b>Recipe: </b></td><td>" . ucfirstwords(str_replace('_', ' ', $recipe["name"])) . "</td></tr>";
-$print_buffer .= "<tr><td style='text-align:right'><b>Tradeskill: </b></td><td>" . ucfirstwords($dbskills[$recipe["tradeskill"]]) . "</td></tr>";
+
+$print_buffer .= '<tr><td><ul>';
+
+$print_buffer .= "<b>Recipe: </b>" . ucfirstwords(str_replace('_', ' ', $recipe["name"])) . "<br>";
+$print_buffer .= "<b>Tradeskill: </b>" . ucfirstwords($dbskills[$recipe["tradeskill"]]) . "<br>";
 if ($recipe["skillneeded"] > 0) {
-    $print_buffer .= "<tr><td style='text-align:right'><b>Skill needed : </b></td><td>" . $recipe["skillneeded"] . "</td></tr>";
+    $print_buffer .= "<b>Skill needed : </b></td><td>" . $recipe["skillneeded"] . "<br>";
 }
-$print_buffer .= "<tr><td style='text-align:right'><b>Trivial at: </b></td><td>" . $recipe["trivial"] . "</td></tr>";
+$print_buffer .= "<b>Trivial at: </b>" . $recipe["trivial"] . "<br>";
 if ($recipe["nofail"] > 0) {
-    $print_buffer .= "<tr><td style='text-align:right' colspan=2>This recipe cannot fail.</td></tr>";
+    $print_buffer .= "This recipe cannot fail.<br>";
 }
 if ($recipe["notes"] != "") {
-    $print_buffer .= "<tr><td style='text-align:right' cospan=2><b>Notes : </b>" . $recipe["notes"] . "</td></tr>";
+    $print_buffer .= "<b>Notes: </b>" . $recipe["notes"] . "<br>";
 }
-$print_buffer .= '</table><br>';
 
-$print_buffer .= '<table class="display_table container_div">';
+$print_buffer .= '</ul></td></tr>';
+
 // results containers
 $query = "
     SELECT
@@ -59,7 +62,7 @@ $query = "
     AND $trade_skill_recipe_entries.iscontainer = 1
 ";
 
-$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query);
 
 if (mysql_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Containers</h2>";
