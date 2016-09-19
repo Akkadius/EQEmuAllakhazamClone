@@ -4,7 +4,7 @@ function SpellDescription($spell, $n, $csv = false)
 {
     global $dbspelleffects, $items_table, $dbiracenames, $spells_table, $server_max_level;
 
-    $print_buffer = '';
+    $print_buffer = '<ul>';
 
     if (($spell["effectid$n"] != 254) AND ($spell["effectid$n"] != 10)) {
         $maxlvl = $spell["effect_base_value$n"];
@@ -389,7 +389,7 @@ function SpellDescription($spell, $n, $csv = false)
                 }
                 break;
         }
-        $print_buffer .= '<br>';
+        $print_buffer .= '</ul>';
     }
     return $print_buffer;
 }

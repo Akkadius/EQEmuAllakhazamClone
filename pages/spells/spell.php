@@ -7,25 +7,44 @@ if (!$spell) {
     header("Location: ?a=spells");
     exit();
 }
-$page_title = '<img src="' . $icons_url . $spell['new_icon'] . '.gif" style="width:17px; height:auto"> ' . $spell["name"] . ' ';
+$page_title = $spell["name"] . ' ';
 
 $page_title = str_replace('"', "'", $page_title);
 
 $print_buffer .= "<table class='container_div ' style='width:500px'><tr style='vertical-align:middle !important'>";
 
+$print_buffer .= "
+    <tr>
+        <td style='vertical-align:middle;text-align:center;width:150px;'>
+           " . '<img src="' . $icons_url . $spell['new_icon'] . '.gif" style="border-radius:5px"> ' . "
+        </td>
+        <td style='vertical-align:middle'>
+            <h1> Spell: " . $spell['name'] . "</h1>
+        </td>
+    </tr>
+";
 $print_buffer .= "<tr><td colspan='2'><h2 class='section_header'>Info</h2></td></tr>";
-$print_buffer .= "<tr><td style='text-align:right'><b>Classes: </b></td><td>";
+
 $v = "";
 $minlvl = 70;
+$class_found = 0;
+$class_data = "";
 for ($i = 1; $i <= 16; $i++) {
     if (($spell["classes$i"] > 0) AND ($spell["classes$i"] < 255)) {
-        $print_buffer .= "$v " . $dbclasses[$i] . " (" . $spell["classes$i"] . ")";
+        $class_found = 1;
+        $class_data .= "$v " . $dbclasses[$i] . " (" . $spell["classes$i"] . ")";
         $v = ",";
         if ($spell["classes$i"] < $minlvl) {
             $minlvl = $spell["classes$i"];
         }
     }
 }
+
+if($class_found) {
+    $print_buffer .= "<tr><td style='text-align:right'><b>Classes: </b></td><td>";
+    $print_buffer .= $class_data;
+}
+
 $print_buffer .= "</td></tr>";
 if ($spell["you_cast"] != "") {
     $print_buffer .= "<tr><td style='text-align:right'><b>When you cast: </b></td><td>" . $spell["you_cast"] . "</td></tr>";
@@ -84,7 +103,7 @@ for ($i = 1; $i <= 4; $i++) {
 
 $print_buffer .= "<tr><td colspan='2'><h2 class='section_header'>Spell Effects</h2></td></tr>";
 
-$print_buffer .= '<td align="center" colspan=2><small>';
+$print_buffer .= '<td colspan=2><small>';
 for ($n = 1; $n <= 12; $n++) {
     $print_buffer .= SpellDescription($spell, $n);
 }
@@ -103,13 +122,13 @@ $query = "
     ORDER BY
         $items_table.`name` ASC
 ";
-$result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query);
 if (mysql_num_rows($result)) {
-    $print_buffer .= "<h2 class='section_header'>Items with spell</h2>";
+    $print_buffer .= "<h2 class='section_header'>Items with spell</h2><ul>";
     while ($row = mysql_fetch_array($result)) {
-        $print_buffer .= "<li><a href=?a=item&id=" . $row["id"] . ">" . $row["name"] . "</a>";
+        $print_buffer .= "<a href=?a=item&id=" . $row["id"] . ">" . get_item_icon_from_id($row['id']) . ' ' . $row["name"] . "</a>";
     }
 }
-$print_buffer .= "</td></tr></table>";
+$print_buffer .= "</ul></td></tr></table>";
 
 ?>
