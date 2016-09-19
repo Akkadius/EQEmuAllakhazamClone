@@ -100,11 +100,6 @@ window.addEventListener("popstate", function(e) {
     }).done(function(e_res) {
         e.preventDefault();
         $(".page-content-ajax").html(e_res);
-        if(e_res.indexOf("brush:")){
-            if(typeof SyntaxHighlighter !== "undefined"){
-                DoSyntaxHighlightGM();
-            }
-        }
     });
 
 });
