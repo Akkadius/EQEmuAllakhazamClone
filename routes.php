@@ -29,7 +29,7 @@ else {
     if($route == "zone_named"){ require_once('pages/zones/zone_named.php'); }
     if($route == "npcs"){ require_once('pages/npcs/npcs.php'); }
     if($route == "advanced_npcs"){ require_once('pages/npcs/advanced_npcs.php'); }
-    if($route == "global_search"){ require_once('pages/fullsearch.php'); }
+    if($route == "global_search"){ require_once('pages/global_search.php'); }
     if($route == "zone_era") {
         echo '<table class=\'display_table container_div\'><tr><td>';
         echo "<h2 class='section_header'>Zones</h2><br>";
