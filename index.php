@@ -108,15 +108,14 @@
                                 <div style="width:100%; overflow: hidden;">
                                     <div class="side_menu" style="width:200px; display: inline-block; float: left;">
                                         <table border="0">
-                                            <form name="fullsearch" method="GET" action="fullsearch.php"></form>
+
                                             <tbody>
                                             <tr>
                                                 <td class="menuh" nowrap="1">Main...</td>
                                             </tr>
                                             <tr>
                                                 <td nowrap="1" class="menu_item">
-                                                    <li><a href="?">AllaClone Main
-                                                            Page</a>
+                                                    <li><a href="?">Home</a>
                                                     </li>
                                                 </td>
                                             </tr>
