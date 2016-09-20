@@ -67,7 +67,7 @@ function show_tooltip(e, request_url, input_element, in_set_height, in_set_width
 
     if(tooltip_cache_array[request_url]){
         $('.ajax_tooltip_content').html(tooltip_cache_array[request_url]);
-        console.log('hitting a cached tooltip');
+        // console.log('hitting a cached tooltip');
         position_tooltip(e, input_element);
         return;
     }
@@ -119,5 +119,6 @@ function position_tooltip(e, input_object) {
 }
 
 function hide_tooltip() {
-    tooltip_object.style.display='none';
+    if(tooltip_object)
+        tooltip_object.style.display='none';
 }

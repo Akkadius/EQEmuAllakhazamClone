@@ -11,7 +11,19 @@ if($_GET['get_data']){
         $result = db_mysql_query($query);
         echo '<ul>';
         while ($row = mysql_fetch_array($result)) {
-            echo '<li><a href="?a=recipe&id=' . $row['id'] . '">' . $row['name'] . '</a></li>';
+            echo '<li><a href="?a=recipe&id=' . $row['id'] . '">' . $row['name'] . ' ' . (trim(ucfirstwords($dbskills[$row["tradeskill"]])) ? '(' . ucfirstwords($dbskills[$row["tradeskill"]]) . ')' : '') . '</a></li>';
+        }
+        echo '</ul>';
+    }
+    if($_GET['fetch_type'] == "global_forage"){
+        $query = "SELECT * FROM
+            forage
+            INNER JOIN items ON forage.Itemid = items.id
+            WHERE `name` LIKE '%" . $name . "%'";
+        $result = db_mysql_query($query);
+        echo '<ul>';
+        while ($row = mysql_fetch_array($result)) {
+            echo '<li><a href="?a=item&id=' . $row['id'] . '">' . return_item_icon_from_icon_id($row['icon'], 15) . ' ' . $row['Name'] . '</a></li>';
         }
         echo '</ul>';
     }
@@ -79,7 +91,7 @@ foreach ($global_search_count as $key => $value){
     $result = db_mysql_query($value[1]);
     while ($row = mysql_fetch_array($result)) {
         if($row['found_count'] > 0)
-            $tab_title .= "<li onclick='tablistview(this.childNodes[0]);' id='global_" . $key . "'><a  href='javascript:;' onclick='fetch_global_data(\"global_" . $key . "\")'>" . $value[0]. " (" . $row['found_count'] . ")</a></li>";
+            $tab_title .= "<li id='global_" . $key . "'><a  href='javascript:;' onclick='fetch_global_data(\"global_" . $key . "\")'>" . $value[0]. " (" . $row['found_count'] . ")</a></li>";
     }
 }
 
@@ -97,16 +109,20 @@ echo '
 ';
 
 echo '<script type="text/javascript">
+
+    global_tab_cache = [];
+
     $(".tablist li").each(function(i) {
         u = "#active_search_content";
         $.get("?a=global_search&get_data=' . urlencode($_GET['q']) . '&fetch_type=" + $(this).attr("id") + "&v_ajax", function (data) {
             $(u).html(data);
+            global_tab_cache[$(this).attr("id")] = data;
         });
         $(this).addClass("current");
         return false;
     });
     function fetch_global_data(type){
-        console.log(type);
+        // console.log(type);
 
         $(".tablist li").each(function(i) {
             $(this).removeClass("current");
@@ -114,9 +130,15 @@ echo '<script type="text/javascript">
 
         $("#" + type).addClass("current");
 
+        if(global_tab_cache[type]){
+            // console.log("cache hit");
+            $(u).html(global_tab_cache[type]);
+        }
+
         u = "#active_search_content";
         $.get("?a=global_search&get_data=' . urlencode($_GET['q']) . '&fetch_type=" + type + "&v_ajax", function (data) {
             $(u).html(data);
+            global_tab_cache[type] = data;
         });
     }
 </script>';
