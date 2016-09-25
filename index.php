@@ -89,22 +89,13 @@
         </div>
     </div>
     <div id="wrapper">
-        <div id="shadows">
-            <div id="s-top"></div>
-            <div id="s-bot"></div>
-            <div id="s-left"></div>
-            <div id="s-right"></div>
-        </div>
         <div id="body">
             <div id="cols">
-
                 <div id="col-main">
                     <div id="col-main-inner">
                         <div id="col-main-inner-2">
                             <div id="col-main-inner-3">
                                 <div id="buffer-top"></div>
-
-
                                 <div style="width:100%; overflow: hidden;">
                                     <div class="side_menu" style="width:200px; display: inline-block; float: left;">
                                         <table border="0">
@@ -232,20 +223,20 @@
     <?php
         $end = microtime(true);
         $time = number_format(($end - $start), 2);
-
         $page_load_time = 'This page loaded in ' . $time . ' seconds';
-
     ?>
 
     <footer>
         <div class="block-content pad10" style="line-height:24px">
             <ul class="site-footer">
                 <?php
+
                     echo $page_load_time;
 
                     if($mysql_debugging){
                         print $debug_queries;
                     }
+
                 ?>
             </ul>
             <div class="clear"></div>
@@ -264,11 +255,8 @@
             }
         ?>
 
-
         <script src="includes/js/pjax.js"></script>
-
         <script src="includes/js/zam_tooltips.js"></script>
-
 
         <script type="text/javascript">
             Nav.init()
