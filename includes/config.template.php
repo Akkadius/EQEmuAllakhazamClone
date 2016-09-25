@@ -4,7 +4,7 @@ error_reporting(0);
 
 $SiteTitle = 'EQEmu Server AllaClone';
 $ServerName = 'EQEmu Server';
-$cfgversion = '2.0 - Rev2100';
+$cfgversion = '3.0';
 $SiteEmail = '';
 
 $dbhost = "localhost";
@@ -17,7 +17,7 @@ $hide_navbar = false;
 
 $site_logo = ""; /* Where you put your site logo */
 
-$root_url = 'http://www.myserver.com/AllaClone/';
+$root_url = 'http://www.myserver.com/AllaClone';
 $includes_url = $root_url . 'includes/';
 $includes_dir = getcwd() . "/includes/";
 $eqemu_dir = "/home/eqemu/server/";
@@ -30,24 +30,6 @@ $npcs_url = $root_url . "/npcs/";
 $icons_dir = getcwd() . "/images/icons/";
 $icons_url = $root_url . "/images/icons/";
 $images_url = $root_url . "/images/";
-$charbrowser_url = "http://www.myserver.com/CharBrowser/"; // Set to "" to disable CharBrowser links for character names
-
-
-$DefaultCSS = "allakhazam";
-
-// Available Styles - ( allakhazam, dark_blue )
-if (isset($_COOKIE["Theme"])) {
-    if ($_COOKIE["Theme"] == "Dark Blue") {
-        $CssStyle = "dark_blue";
-    }
-    if ($_COOKIE["Theme"] == "Allakhazam") {
-        $CssStyle = "allakhazam";
-    } else {
-        $CssStyle = $DefaultCSS;
-    }
-} else {
-    $CssStyle = $DefaultCSS;
-}
 
 /* Options */
 
