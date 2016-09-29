@@ -116,8 +116,8 @@ $dbclasses[71] = "Mercenary Merchant ";
 // Slots
 $dbslots = array();
 $dbslotsid = array();
-$dbslots[4194304] = "Ammo";
-$dbslots[2097152] = "Power Source";
+$dbslots[4194304] = "Power Source";
+$dbslots[2097152] = "Ammo";
 $dbslots[1048576] = "Waist";
 $dbslots[524288] = "Feet";
 $dbslots[262144] = "Legs";
