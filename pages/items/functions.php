@@ -23,10 +23,10 @@ function return_where_item_dropped_count($item_id){
 
     $return_buffer = "";
     if($is_item_dropped) {
-        $return_buffer .= "<tr id='npc_dropped_view'>";
+        $return_buffer .= "<tr>";
         $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
         $return_buffer .= "</tr>";
-        $return_buffer .= "<tr>";
+        $return_buffer .= "<tr id='npc_dropped_view'>";
         $return_buffer .= "<td><ul><li><a onclick='npc_dropped_view(" . $item_id . ")'>Click to View</a></li></ul></td>";
         $return_buffer .= "</tr>";
 
@@ -90,9 +90,8 @@ function return_where_item_dropped($item_id, $via_ajax = 0)
             $return_buffer = "";
             if($via_ajax == 0){
                 $return_buffer .= "<tr>";
+                $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
             }
-
-            $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
             $current_zone_iteration = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($current_zone_iteration != $row["zone"]) {
