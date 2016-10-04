@@ -92,16 +92,17 @@ if ($sort_zone_level_list == TRUE) {
 
 
 $print_buffer .= "<table><tr valign=top><td width=100%>";
-$print_buffer .= "<table border=1 style='width:100%' class='display_table container_div'>";
-$print_buffer .= "<tr class='menuh'><th>Name</th>
+$print_buffer .= "<table border=1 style='width:100%' class='display_table container_div datatable'>";
+$print_buffer .= "<thead class='menuh'><th>Name</th>
        <th class=tab_title>Short name</th>";
 $LevelMax = 0;
 for ($i = 0; $i <= ($server_max_npc_level / 5); $i++) {
     $LevelMax += 5;
     $LevelMin = $LevelMax - 4;
     $print_buffer .= "<th class=tab_title>" . $LevelMin . " - " . $LevelMax . "</th>";
+    $level_iterations = $i;
 }
-$print_buffer .= "</tr>";
+$print_buffer .= "</thead>";
 
 $nb = 0;
 for ($i = 0; $i <= $cpt; $i++) {
