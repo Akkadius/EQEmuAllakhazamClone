@@ -38,6 +38,7 @@
     <link rel="stylesheet" type="text/css" href="includes/alla.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/global.css">
     <link rel="stylesheet" type="text/css" href="./zam_files/site.css" id="css">
+    <link rel="stylesheet" type="text/css" href="includes/js/datatables/media/css/jquery.dataTables.min.css" id="css">
 
     <script src="includes/js/jquery-3.1.0.min.js"></script>
     <script src="./zam_files/jquery-migrate-1.2.1.min.js"></script>
@@ -257,7 +258,7 @@
 
         <script src="includes/js/pjax.js"></script>
         <script src="includes/js/zam_tooltips.js"></script>
-
+        <script src="includes/js/datatables/media/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript">
             Nav.init()
         </script>

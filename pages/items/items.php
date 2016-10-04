@@ -170,10 +170,8 @@ $print_buffer .= file_get_contents('pages/items/item_search_form.html');
 if(!isset($_GET['v_ajax'])){
     $footer_javascript .= '
         <script src="pages/items/items.js"></script>
-        <script src="includes/js/datatables/media/js/jquery.dataTables.min.js"></script>
     ';
 }
-
 
 // Print the query results if any
 if (isset($QueryResult)) {
@@ -196,9 +194,9 @@ if (isset($QueryResult)) {
         # $print_buffer .= "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
         $print_buffer .= "<br>";
 
-        $print_buffer .= "<table cellpadding='5' class='display_table container_div datatables' id='item_search_results' style='width:700px'>";
+        $print_buffer .= "<table class='display_table container_div datatable' id='item_search_results' style='width:100%'>";
         $print_buffer .= "
-            <tr>
+            <thead>
                 <th class='menuh'>Icon</th>
                 <th class='menuh'>Item Name</th>
                 <th class='menuh'>Item Type</th>
@@ -208,7 +206,7 @@ if (isset($QueryResult)) {
                 <th class='menuh'>Damage</th>
                 <th class='menuh'>Delay</th>
                 <th class='menuh'>Item ID</th>
-            </tr>
+            </thead>
         ";
         $RowClass = "lr";
         for ($count = 1; $count <= $num_rows; $count++) {
@@ -252,6 +250,20 @@ if (isset($QueryResult)) {
         }
         $print_buffer .= "</table>";
     }
+
+    $footer_javascript .= '
+        <script>
+            $(document).ready(function() {
+                var table = $(".datatable").DataTable( {
+                    paging:         false,
+                    "searching": false,
+                    "ordering": true,
+                } );
+                table.order( [ 1, "asc" ] );
+                table.draw();
+            });
+        </script>
+    ';
 }
 
 $print_buffer .= '</td></tr></table>';
