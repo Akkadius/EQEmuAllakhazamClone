@@ -163,6 +163,25 @@ $dbiclasses[4] = "Paladin";
 $dbiclasses[2] = "Cleric";
 $dbiclasses[1] = "Warrior";
 
+$db_classes_short = array();
+$db_classes_short[65535] = "ALL";
+$db_classes_short[32768] = "BER";
+$db_classes_short[16384] = "BST";
+$db_classes_short[8192] = "ENC";
+$db_classes_short[4096] = "MAG";
+$db_classes_short[2048] = "WIZ";
+$db_classes_short[1024] = "NEC";
+$db_classes_short[512] = "SHM";
+$db_classes_short[256] = "ROG";
+$db_classes_short[128] = "BRD";
+$db_classes_short[64] = "MNK";
+$db_classes_short[32] = "DRU";
+$db_classes_short[16] = "SHD";
+$db_classes_short[8] = "RNG";
+$db_classes_short[4] = "PAL";
+$db_classes_short[2] = "CLR";
+$db_classes_short[1] = "WAR";
+
 // races
 $dbraces = array();
 $dbraces[65535] = "All races";
@@ -182,6 +201,25 @@ $dbraces[8] = "Wood Elf";
 $dbraces[4] = "Erudite";
 $dbraces[2] = "Barbarian";
 $dbraces[1] = "Human";
+
+$db_races_short = array();
+$db_races_short[65535] = "ALL";
+$db_races_short[32768] = "DRK";
+$db_races_short[16384] = "FRG";
+$db_races_short[8192] = "VAH";
+$db_races_short[4096] = "IKS";
+$db_races_short[2048] = "GNM";
+$db_races_short[1024] = "HFL";
+$db_races_short[512] = "OGR";
+$db_races_short[256] = "TRL";
+$db_races_short[128] = "DWF";
+$db_races_short[64] = "HLF";
+$db_races_short[32] = "DKE";
+$db_races_short[16] = "HEF";
+$db_races_short[8] = "WLF";
+$db_races_short[4] = "ERU";
+$db_races_short[2] = "BAR";
+$db_races_short[1] = "HUM";
 
 // skills
 $dbskills = array();
@@ -474,11 +512,11 @@ $dbiskills[45] = "Hand to hand";
 
 // item types
 $dbitypes = array();
-$dbitypes[0] = "1H Slashing";
-$dbitypes[1] = "2H Slashing";
+$dbitypes[0] = "1HS";
+$dbitypes[1] = "2HS";
 $dbitypes[2] = "Piercing";
-$dbitypes[3] = "1H Blunt";
-$dbitypes[4] = "2H Blunt";
+$dbitypes[3] = "1HB";
+$dbitypes[4] = "2HB";
 $dbitypes[5] = "Archery";
 $dbitypes[6] = "Unknown";
 $dbitypes[7] = "Throwing range items";

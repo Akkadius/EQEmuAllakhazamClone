@@ -43,16 +43,28 @@
     $page_title = strip_underscores($item['Name']);
 
     $item_data = return_item_stat_box($item, 0);
-    $item_icon = return_item_icon_from_icon_id($item['icon'], 25);
+    $item_icon = return_item_icon_from_icon_id($item['icon'], 40);
 
-    $content = display_header('<h2>' . $item_icon . ' ' . $item['Name'] . '</h2>');
-    $content .= display_row($item_data . '<br>');
-    $content .= return_where_item_foraged($item_id);
-    $content .= return_where_item_used_trade_skills($item_id);
-    $content .= return_where_item_result_trade_skill($item_id);
-    $content .= return_where_item_sold($item_id);
-    $content .= return_where_item_ground_spawn($item_id);
-    $content .= $where_item_ground_spawn;
+    $content = '
+        <tr>
+            <td colspan="2">
+                <table>
+                    <tr>
+                        <td style="vertical-align:middle;width:50px"> ' . $item_icon . '</td>
+                        <td style="vertical-align:middle"><h2 style="margin: 0px;">' . $item['Name'] . '</h2></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    ';
+    $content .= display_row($item_data);
+    if(!isset($_GET['v_tooltip'])) {
+        $content .= return_where_item_foraged($item_id);
+        $content .= return_where_item_used_trade_skills($item_id);
+        $content .= return_where_item_result_trade_skill($item_id);
+        $content .= return_where_item_sold($item_id);
+        $content .= return_where_item_ground_spawn($item_id);
+    }
 
     $print_buffer .= display_table($content);
 
