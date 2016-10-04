@@ -170,6 +170,7 @@ $print_buffer .= file_get_contents('pages/items/item_search_form.html');
 if(!isset($_GET['v_ajax'])){
     $footer_javascript .= '
         <script src="pages/items/items.js"></script>
+        <script src="includes/js/datatables/media/js/jquery.dataTables.min.js"></script>
     ';
 }
 
@@ -195,7 +196,7 @@ if (isset($QueryResult)) {
         # $print_buffer .= "<b>" . $num_rows . " " . ($num_rows == 1 ? "item" : "items") . " displayed</b>" . $OutOf . "<br>";
         $print_buffer .= "<br>";
 
-        $print_buffer .= "<table cellpadding='5' class='display_table container_div' id='item_search_results' style='width:700px'>";
+        $print_buffer .= "<table cellpadding='5' class='display_table container_div datatables' id='item_search_results' style='width:700px'>";
         $print_buffer .= "
             <tr>
                 <th class='menuh'>Icon</th>
