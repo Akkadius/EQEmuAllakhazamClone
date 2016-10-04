@@ -4,6 +4,7 @@
 
     if(isset($_GET['view_dropped'])) {
         echo return_where_item_dropped($_GET['view_dropped'], 1);
+        exit;
     }
 
     $item_id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
