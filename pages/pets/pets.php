@@ -61,7 +61,7 @@ if (isset($class) && $class != 0) {
 
     $print_buffer .= '<hr>';
 
-    $print_buffer .= "<table><thead>";
+    $print_buffer .= "<table class='datatable'><thead>";
     $print_buffer .= "<th class='menuh'>Level</th>";
     $print_buffer .= "<th class='menuh'>Icon</th>";
     $print_buffer .= "<th class='menuh'>Spell Name</th>";
@@ -101,6 +101,7 @@ if (isset($class) && $class != 0) {
         }
     }
     $print_buffer .= "</tbody></table>";
+
 
 }
 
