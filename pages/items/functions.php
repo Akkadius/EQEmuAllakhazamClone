@@ -6,8 +6,38 @@
  * Time: 4:45 PM
  */
 
+function return_where_item_dropped_count($item_id){
+
+    global
+        $npc_types_table,
+        $spawn2_table,
+        $zones_table,
+        $loot_table_entries,
+        $loot_drop_entries_table,
+        $spawn_entry_table,
+        $merchants_dont_drop_stuff,
+        $item_add_chance_to_drop,
+        $ignore_zones;
+
+    $is_item_dropped = get_field_result("item_id", "SELECT item_id FROM $loot_drop_entries_table WHERE item_id=$item_id LIMIT 1");
+
+    $return_buffer = "";
+    if($is_item_dropped) {
+        $return_buffer .= "<tr id='npc_dropped_view'>";
+        $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
+        $return_buffer .= "</tr>";
+        $return_buffer .= "<tr>";
+        $return_buffer .= "<td><ul><li><a onclick='npc_dropped_view(" . $item_id . ")'>Click to View</a></li></ul></td>";
+        $return_buffer .= "</tr>";
+
+        return $return_buffer;
+    }
+
+    return;
+}
+
 /* npcs dropping this (Very Heavy Query)*/
-function return_where_item_dropped($item_id)
+function return_where_item_dropped($item_id, $via_ajax = 0)
 {
     global
             $npc_types_table,
@@ -45,7 +75,7 @@ function return_where_item_dropped($item_id)
             AND $spawn_entry_table.spawngroupID = $spawn2_table.spawngroupID
             AND $npc_types_table.loottable_id = $loot_table_entries.loottable_id
             AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
-            AND $loot_drop_entries_table.item_id = $id
+            AND $loot_drop_entries_table.item_id = $item_id
             AND $zones_table.short_name = $spawn2_table.zone
     ";
         if ($merchants_dont_drop_stuff == TRUE) {
@@ -58,8 +88,11 @@ function return_where_item_dropped($item_id)
         $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
         if (mysql_num_rows($result) > 0) {
             $return_buffer = "";
-            $return_buffer .= "<tr>";
-            $return_buffer .= "<td><h2 class='section_header'>This item is dropped</h2>";
+            if($via_ajax == 0){
+                $return_buffer .= "<tr>";
+            }
+
+            $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
             $current_zone_iteration = "";
             while ($row = mysql_fetch_array($result)) {
                 if ($current_zone_iteration != $row["zone"]) {
@@ -81,7 +114,9 @@ function return_where_item_dropped($item_id)
             $return_buffer .= "</ul>";
             $return_buffer .= "</ul>";
             $return_buffer .= "</td>";
-            $return_buffer .= "</tr>";
+            if($via_ajax == 0){
+                $return_buffer .= "</tr>";
+            }
             return $return_buffer;
         }
     }

@@ -2,6 +2,10 @@
 
     require_once('functions.php');
 
+    if(isset($_GET['view_dropped'])) {
+        echo return_where_item_dropped($_GET['view_dropped'], 1);
+    }
+
     $item_id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
     $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
@@ -59,6 +63,7 @@
     ';
     $content .= display_row($item_data);
     if(!isset($_GET['v_tooltip'])) {
+        $content .= return_where_item_dropped_count($item_id);
         $content .= return_where_item_foraged($item_id);
         $content .= return_where_item_used_trade_skills($item_id);
         $content .= return_where_item_result_trade_skill($item_id);
@@ -67,5 +72,13 @@
     }
 
     $print_buffer .= display_table($content);
+
+
+    if(!isset($_GET['v_ajax'])){
+        $footer_javascript .= '
+            <script src="pages/items/items.js"></script>
+        ';
+    }
+
 
 ?>

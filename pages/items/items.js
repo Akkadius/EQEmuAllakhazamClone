@@ -14,6 +14,14 @@ function item_search(){
     });
 }
 
+function npc_dropped_view(item_id){
+    u = "#npc_dropped_view";
+    entire_query = "?a=item&view_dropped=" + item_id + "&v_ajax";
+    $.get(entire_query, function (data) {
+        $(u).html(data);
+    });
+}
+
 $(document).on("change", "#item_search_form input, #item_search_form select", function(e){
     console.log('hit');
     item_search();
