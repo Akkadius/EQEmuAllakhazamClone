@@ -14,6 +14,7 @@ else if($route == "item"){ require_once('pages/items/item.php'); }
 else if($route == "pets"){ require_once('pages/pets/pets.php'); }
 else if($route == "zonelist"){ require_once('pages/zones/zonelist.php'); }
 else if($route == "items"){ require_once('pages/items/items.php'); }
+else if($route == "tasks"){ require_once('pages/tasks/tasks.php'); }
 else if($route == "factions"){ require_once('pages/factions/factions.php'); }
 else if($route == "faction"){ require_once('pages/factions/faction.php'); }
 else if($route == "pet"){ require_once('pages/pets/pet.php'); }
