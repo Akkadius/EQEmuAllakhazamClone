@@ -1,56 +1,49 @@
 <?php
 
-$version = "";
-
-if ($version != $cfgversion) {
-    $version = $cfgversion;
-//  print "The config file you're using is probably out to date, please use the one coming with EqBrowser version $version";
-}
-
 // tables
-$accounts_table = "account";
-$character_table = "character_data";
-$faction_list_table = "faction_list";
-$forage_table = "forage";
-$ground_spawns_table = "ground_spawns";
-$items_table = "items";
-$loot_drop_table = "lootdrop";
-$loot_drop_entries_table = "lootdrop_entries";
-$loot_table = "loottable";
-$loot_table_entries = "loottable_entries";
-$merchant_list_table = "merchantlist";
-$task_table = "tasks";
-$task_activities_table = "activities";
-$npc_faction_table = "npc_faction";
-$faction_entries_table = "npc_faction_entries";
-$npc_spells_entries_table = "npc_spells_entries";
-$npc_spells_table = "npc_spells";
-$npc_types_table = "npc_types";
-$pets_table = "pets";
-$spawn2_table = "spawn2";
-$spawn_entry_table = "spawnentry";
-$spawn_group_table = "spawngroup";
-$trade_skill_recipe_table = "tradeskill_recipe";
+$accounts_table             = "account";
+$character_table            = "character_data";
+$faction_list_table         = "faction_list";
+$forage_table               = "forage";
+$ground_spawns_table        = "ground_spawns";
+$items_table                = "items";
+$loot_drop_table            = "lootdrop";
+$loot_drop_entries_table    = "lootdrop_entries";
+$loot_table                 = "loottable";
+$loot_table_entries         = "loottable_entries";
+$merchant_list_table        = "merchantlist";
+$task_table                 = "tasks";
+$task_activities_table      = "activities";
+$npc_faction_table          = "npc_faction";
+$faction_entries_table      = "npc_faction_entries";
+$npc_spells_entries_table   = "npc_spells_entries";
+$npc_spells_table           = "npc_spells";
+$npc_types_table            = "npc_types";
+$pets_table                 = "pets";
+$spawn2_table               = "spawn2";
+$spawn_entry_table          = "spawnentry";
+$spawn_group_table          = "spawngroup";
+$trade_skill_recipe_table   = "tradeskill_recipe";
 $trade_skill_recipe_entries = "tradeskill_recipe_entries";
-$zones_table = "zone";
-$discovered_items_table = "discovered_items";
-$spell_globals_table = "spell_globals";
-$spells_table = "spells_new";
-$tasks_table = "tasks";
-$activities_table = "activities";
+$zones_table                = "zone";
+$discovered_items_table     = "discovered_items";
+$spell_globals_table        = "spell_globals";
+$spells_table               = "spells_new";
+$tasks_table                = "tasks";
+$activities_table           = "activities";
 
 // added tables, source the needed file from the includes/sql directory
-$tbspawnarea = "spawnarea"; // Tool Specific Table
-$tbnews = "eqbnews"; // Tool Specific Table
+$tbspawnarea  = "spawnarea"; // Tool Specific Table
+$tbnews       = "eqbnews"; // Tool Specific Table
 $tbquestitems = "quest_items"; // Tool Specific Table
-$tbraces = "races"; // Tool Specific Table
+$tbraces      = "races"; // Tool Specific Table
 
 
 // merchant classes
-$dbmerchants = array(40, 41, 59, 61, 67, 68, 70);
+$dbmerchants = [40, 41, 59, 61, 67, 68, 70];
 
 // factions (factions.h)
-$dbfactions = array(
+$dbfactions = [
     1 => "Ally",
     2 => "Warmly",
     3 => "Kindly",
@@ -59,182 +52,197 @@ $dbfactions = array(
     9 => "Apprehensive",
     8 => "Dubious",
     7 => "Threatenly",
-    6 => "Ready to attack"
-);
+    6 => "Ready to attack",
+];
 
 // classes
-$dbclasses_names = array("Warrior", "Cleric", "Paladin", "Ranger", "Shadowknight", "Druid",
-    "Monk", "Bard", "Rogue", "Shaman", "Necromancer", "Wizard", "Magician",
-    "Enchanter", "Beastlord", "Berserker");
-$dbclasses = array();
-$dbclasses[0] = "Warrior";
-$dbclasses[1] = "Warrior";
-$dbclasses[2] = "Cleric";
-$dbclasses[3] = "Paladin";
-$dbclasses[4] = "Ranger";
-$dbclasses[5] = "Shadown Knight";
-$dbclasses[6] = "Druid";
-$dbclasses[7] = "Monk";
-$dbclasses[8] = "Bard";
-$dbclasses[9] = "Rogue";
-$dbclasses[10] = "Shaman";
-$dbclasses[11] = "Necromancer";
-$dbclasses[12] = "Wizard";
-$dbclasses[13] = "Magician";
-$dbclasses[14] = "Enchanter";
-$dbclasses[15] = "Beastlord";
-$dbclasses[16] = "Berserker";
-$dbclasses[17] = "Banker";
-$dbclasses[20] = "GM Warrior";
-$dbclasses[21] = "GM Cleric";
-$dbclasses[22] = "GM Paladin";
-$dbclasses[23] = "GM Ranger";
-$dbclasses[24] = "GM Shadown Knight";
-$dbclasses[25] = "GM Druid";
-$dbclasses[26] = "GM Monk";
-$dbclasses[27] = "GM Bard";
-$dbclasses[28] = "GM Rogue";
-$dbclasses[29] = "GM Shaman";
-$dbclasses[30] = "GM Necromancer";
-$dbclasses[31] = "GM Wizard";
-$dbclasses[32] = "GM Magician";
-$dbclasses[33] = "GM Enchanter";
-$dbclasses[34] = "GM Beastlord";
-$dbclasses[35] = "GM Berserker";
-$dbclasses[40] = "Banker";
-$dbclasses[41] = "Shopkeeper";
-$dbclasses[59] = "Discord Merchant";
-$dbclasses[60] = "Adventure Recruiter";
-$dbclasses[61] = "Adventure Merchant";
-$dbclasses[63] = "Tribute Master";
-$dbclasses[64] = "Guild Tribute Master";
-$dbclasses[66] = "Guild Bank";
-$dbclasses[67] = "Radiant Crystal Merchant";
-$dbclasses[68] = "Ebon Crystal Merchant";
-$dbclasses[69] = "Fellowships";
-$dbclasses[70] = "Alternate Currency Merchant";
-$dbclasses[71] = "Mercenary Merchant ";
+$dbclasses_names = [
+    "Warrior",
+    "Cleric",
+    "Paladin",
+    "Ranger",
+    "Shadowknight",
+    "Druid",
+    "Monk",
+    "Bard",
+    "Rogue",
+    "Shaman",
+    "Necromancer",
+    "Wizard",
+    "Magician",
+    "Enchanter",
+    "Beastlord",
+    "Berserker",
+];
+$dbclasses       = [];
+$dbclasses[0]    = "Warrior";
+$dbclasses[1]    = "Warrior";
+$dbclasses[2]    = "Cleric";
+$dbclasses[3]    = "Paladin";
+$dbclasses[4]    = "Ranger";
+$dbclasses[5]    = "Shadown Knight";
+$dbclasses[6]    = "Druid";
+$dbclasses[7]    = "Monk";
+$dbclasses[8]    = "Bard";
+$dbclasses[9]    = "Rogue";
+$dbclasses[10]   = "Shaman";
+$dbclasses[11]   = "Necromancer";
+$dbclasses[12]   = "Wizard";
+$dbclasses[13]   = "Magician";
+$dbclasses[14]   = "Enchanter";
+$dbclasses[15]   = "Beastlord";
+$dbclasses[16]   = "Berserker";
+$dbclasses[17]   = "Banker";
+$dbclasses[20]   = "GM Warrior";
+$dbclasses[21]   = "GM Cleric";
+$dbclasses[22]   = "GM Paladin";
+$dbclasses[23]   = "GM Ranger";
+$dbclasses[24]   = "GM Shadown Knight";
+$dbclasses[25]   = "GM Druid";
+$dbclasses[26]   = "GM Monk";
+$dbclasses[27]   = "GM Bard";
+$dbclasses[28]   = "GM Rogue";
+$dbclasses[29]   = "GM Shaman";
+$dbclasses[30]   = "GM Necromancer";
+$dbclasses[31]   = "GM Wizard";
+$dbclasses[32]   = "GM Magician";
+$dbclasses[33]   = "GM Enchanter";
+$dbclasses[34]   = "GM Beastlord";
+$dbclasses[35]   = "GM Berserker";
+$dbclasses[40]   = "Banker";
+$dbclasses[41]   = "Shopkeeper";
+$dbclasses[59]   = "Discord Merchant";
+$dbclasses[60]   = "Adventure Recruiter";
+$dbclasses[61]   = "Adventure Merchant";
+$dbclasses[63]   = "Tribute Master";
+$dbclasses[64]   = "Guild Tribute Master";
+$dbclasses[66]   = "Guild Bank";
+$dbclasses[67]   = "Radiant Crystal Merchant";
+$dbclasses[68]   = "Ebon Crystal Merchant";
+$dbclasses[69]   = "Fellowships";
+$dbclasses[70]   = "Alternate Currency Merchant";
+$dbclasses[71]   = "Mercenary Merchant ";
 
 // Slots
-$dbslots = array();
-$dbslotsid = array();
+$dbslots          = [];
+$dbslotsid        = [];
 $dbslots[4194304] = "Power Source";
 $dbslots[2097152] = "Ammo";
 $dbslots[1048576] = "Waist";
-$dbslots[524288] = "Feet";
-$dbslots[262144] = "Legs";
-$dbslots[131072] = "Chest";
-$dbslots[98304] = "Fingers";
-$dbslots[65536] = "Finger";
-$dbslots[32768] = "Finger";
-$dbslots[16384] = "Secondary";
-$dbslots[8192] = "Primary";
-$dbslots[4096] = "Hands";
-$dbslots[2048] = "Range";
-$dbslots[1536] = "Wrists";
-$dbslots[1024] = "Wrist";
-$dbslots[512] = "Wrist";
-$dbslots[256] = "Back";
-$dbslots[128] = "Arms";
-$dbslots[64] = "Shoulders";
-$dbslots[32] = "Neck";
-$dbslots[18] = "Ears";
-$dbslots[16] = "Ear";
-$dbslots[8] = "Face";
-$dbslots[4] = "Head";
-$dbslots[2] = "Ear";
-$dbslots[1] = "Charm";
+$dbslots[524288]  = "Feet";
+$dbslots[262144]  = "Legs";
+$dbslots[131072]  = "Chest";
+$dbslots[98304]   = "Fingers";
+$dbslots[65536]   = "Finger";
+$dbslots[32768]   = "Finger";
+$dbslots[16384]   = "Secondary";
+$dbslots[8192]    = "Primary";
+$dbslots[4096]    = "Hands";
+$dbslots[2048]    = "Range";
+$dbslots[1536]    = "Wrists";
+$dbslots[1024]    = "Wrist";
+$dbslots[512]     = "Wrist";
+$dbslots[256]     = "Back";
+$dbslots[128]     = "Arms";
+$dbslots[64]      = "Shoulders";
+$dbslots[32]      = "Neck";
+$dbslots[18]      = "Ears";
+$dbslots[16]      = "Ear";
+$dbslots[8]       = "Face";
+$dbslots[4]       = "Head";
+$dbslots[2]       = "Ear";
+$dbslots[1]       = "Charm";
 
 // ItemClasses 2^(class-1)
-$dbiclasses = array();
+$dbiclasses        = [];
 $dbiclasses[65535] = "All classes";
 $dbiclasses[32768] = "Berserker";
 $dbiclasses[16384] = "Beastlord";
-$dbiclasses[8192] = "Enchanter";
-$dbiclasses[4096] = "Magician";
-$dbiclasses[2048] = "Wizard";
-$dbiclasses[1024] = "Necromancer";
-$dbiclasses[512] = "Shaman";
-$dbiclasses[256] = "Rogue";
-$dbiclasses[128] = "Bard";
-$dbiclasses[64] = "Monk";
-$dbiclasses[32] = "Druid";
-$dbiclasses[16] = "Shadow knight";
-$dbiclasses[8] = "Ranger";
-$dbiclasses[4] = "Paladin";
-$dbiclasses[2] = "Cleric";
-$dbiclasses[1] = "Warrior";
+$dbiclasses[8192]  = "Enchanter";
+$dbiclasses[4096]  = "Magician";
+$dbiclasses[2048]  = "Wizard";
+$dbiclasses[1024]  = "Necromancer";
+$dbiclasses[512]   = "Shaman";
+$dbiclasses[256]   = "Rogue";
+$dbiclasses[128]   = "Bard";
+$dbiclasses[64]    = "Monk";
+$dbiclasses[32]    = "Druid";
+$dbiclasses[16]    = "Shadow knight";
+$dbiclasses[8]     = "Ranger";
+$dbiclasses[4]     = "Paladin";
+$dbiclasses[2]     = "Cleric";
+$dbiclasses[1]     = "Warrior";
 
-$db_classes_short = array();
+$db_classes_short        = [];
 $db_classes_short[65535] = "ALL";
 $db_classes_short[32768] = "BER";
 $db_classes_short[16384] = "BST";
-$db_classes_short[8192] = "ENC";
-$db_classes_short[4096] = "MAG";
-$db_classes_short[2048] = "WIZ";
-$db_classes_short[1024] = "NEC";
-$db_classes_short[512] = "SHM";
-$db_classes_short[256] = "ROG";
-$db_classes_short[128] = "BRD";
-$db_classes_short[64] = "MNK";
-$db_classes_short[32] = "DRU";
-$db_classes_short[16] = "SHD";
-$db_classes_short[8] = "RNG";
-$db_classes_short[4] = "PAL";
-$db_classes_short[2] = "CLR";
-$db_classes_short[1] = "WAR";
+$db_classes_short[8192]  = "ENC";
+$db_classes_short[4096]  = "MAG";
+$db_classes_short[2048]  = "WIZ";
+$db_classes_short[1024]  = "NEC";
+$db_classes_short[512]   = "SHM";
+$db_classes_short[256]   = "ROG";
+$db_classes_short[128]   = "BRD";
+$db_classes_short[64]    = "MNK";
+$db_classes_short[32]    = "DRU";
+$db_classes_short[16]    = "SHD";
+$db_classes_short[8]     = "RNG";
+$db_classes_short[4]     = "PAL";
+$db_classes_short[2]     = "CLR";
+$db_classes_short[1]     = "WAR";
 
 // races
-$dbraces = array();
+$dbraces        = [];
 $dbraces[65535] = "All races";
 $dbraces[32768] = "Drakkin";
 $dbraces[16384] = "Froglok";
-$dbraces[8192] = "Vah Shir";
-$dbraces[4096] = "Iksar";
-$dbraces[2048] = "Gnome";
-$dbraces[1024] = "Halfling";
-$dbraces[512] = "Ogre";
-$dbraces[256] = "Troll";
-$dbraces[128] = "Dwarf";
-$dbraces[64] = "Half Elf";
-$dbraces[32] = "Dark Elf";
-$dbraces[16] = "High Elf";
-$dbraces[8] = "Wood Elf";
-$dbraces[4] = "Erudite";
-$dbraces[2] = "Barbarian";
-$dbraces[1] = "Human";
+$dbraces[8192]  = "Vah Shir";
+$dbraces[4096]  = "Iksar";
+$dbraces[2048]  = "Gnome";
+$dbraces[1024]  = "Halfling";
+$dbraces[512]   = "Ogre";
+$dbraces[256]   = "Troll";
+$dbraces[128]   = "Dwarf";
+$dbraces[64]    = "Half Elf";
+$dbraces[32]    = "Dark Elf";
+$dbraces[16]    = "High Elf";
+$dbraces[8]     = "Wood Elf";
+$dbraces[4]     = "Erudite";
+$dbraces[2]     = "Barbarian";
+$dbraces[1]     = "Human";
 
-$db_races_short = array();
+$db_races_short        = [];
 $db_races_short[65535] = "ALL";
 $db_races_short[32768] = "DRK";
 $db_races_short[16384] = "FRG";
-$db_races_short[8192] = "VAH";
-$db_races_short[4096] = "IKS";
-$db_races_short[2048] = "GNM";
-$db_races_short[1024] = "HFL";
-$db_races_short[512] = "OGR";
-$db_races_short[256] = "TRL";
-$db_races_short[128] = "DWF";
-$db_races_short[64] = "HLF";
-$db_races_short[32] = "DKE";
-$db_races_short[16] = "HEF";
-$db_races_short[8] = "WLF";
-$db_races_short[4] = "ERU";
-$db_races_short[2] = "BAR";
-$db_races_short[1] = "HUM";
+$db_races_short[8192]  = "VAH";
+$db_races_short[4096]  = "IKS";
+$db_races_short[2048]  = "GNM";
+$db_races_short[1024]  = "HFL";
+$db_races_short[512]   = "OGR";
+$db_races_short[256]   = "TRL";
+$db_races_short[128]   = "DWF";
+$db_races_short[64]    = "HLF";
+$db_races_short[32]    = "DKE";
+$db_races_short[16]    = "HEF";
+$db_races_short[8]     = "WLF";
+$db_races_short[4]     = "ERU";
+$db_races_short[2]     = "BAR";
+$db_races_short[1]     = "HUM";
 
 // skills
-$dbskills = array();
-$dbskills[0] = '1H_BLUNT';
-$dbskills[1] = '1H_SLASHING';
-$dbskills[2] = '2H_BLUNT';
-$dbskills[3] = '2H_SLASHING';
-$dbskills[4] = 'ABJURATION';
-$dbskills[5] = 'ALTERATION';
-$dbskills[6] = 'APPLY_POISON';
-$dbskills[7] = 'ARCHERY';
-$dbskills[8] = 'BACKSTAB';
-$dbskills[9] = 'BIND_WOUND';
+$dbskills     = [];
+$dbskills[0]  = '1H_BLUNT';
+$dbskills[1]  = '1H_SLASHING';
+$dbskills[2]  = '2H_BLUNT';
+$dbskills[3]  = '2H_SLASHING';
+$dbskills[4]  = 'ABJURATION';
+$dbskills[5]  = 'ALTERATION';
+$dbskills[6]  = 'APPLY_POISON';
+$dbskills[7]  = 'ARCHERY';
+$dbskills[8]  = 'BACKSTAB';
+$dbskills[9]  = 'BIND_WOUND';
 $dbskills[10] = 'BASH';
 $dbskills[11] = 'BLOCKSKILL';
 $dbskills[12] = 'BRASS_INSTRUMENTS';
@@ -301,92 +309,92 @@ $dbskills[72] = 'BERSERKING';
 $dbskills[73] = 'TAUNT';
 
 // spell effects
-$dbspelleffects = array();
-$dbspelleffects[0] = 'Increase Hitpoints'; // or decrease
-$dbspelleffects[1] = 'Increase AC';
-$dbspelleffects[2] = 'Increase ATK';
-$dbspelleffects[3] = 'In/Decrease Movement';
-$dbspelleffects[4] = 'Increase STR';
-$dbspelleffects[5] = 'Increase DEX';
-$dbspelleffects[6] = 'Increase AGI';
-$dbspelleffects[7] = 'Increase STA';
-$dbspelleffects[8] = 'Increase INT';
-$dbspelleffects[9] = 'Increase WIS';
-$dbspelleffects[10] = 'Increase CHA';
-$dbspelleffects[11] = 'In/Decrease Attack Speed';
-$dbspelleffects[12] = 'Invisibility';
-$dbspelleffects[13] = 'See Invisible';
-$dbspelleffects[14] = 'WaterBreathing';
-$dbspelleffects[15] = 'Increase Mana';
-$dbspelleffects[18] = 'Pacify';
-$dbspelleffects[19] = 'Increase Faction';
-$dbspelleffects[20] = 'Blindness';
-$dbspelleffects[21] = 'Stun';
-$dbspelleffects[22] = 'Charm';
-$dbspelleffects[23] = 'Fear';
-$dbspelleffects[24] = 'Stamina';
-$dbspelleffects[25] = 'Bind Affinity';
-$dbspelleffects[26] = 'Gate';
-$dbspelleffects[27] = 'Cancel Magic';
-$dbspelleffects[28] = 'Invisibility versus Undead';
-$dbspelleffects[29] = 'Invisibility versus Animals';
-$dbspelleffects[30] = 'Frenzy Radius';
-$dbspelleffects[31] = 'Mesmerize';
-$dbspelleffects[32] = 'Summon Item';
-$dbspelleffects[33] = 'Summon Pet:';
-$dbspelleffects[35] = 'Increase Disease Counter';
-$dbspelleffects[36] = 'Increase Poison Counter';
-$dbspelleffects[40] = 'Invunerability';
-$dbspelleffects[41] = 'Destroy Target';
-$dbspelleffects[42] = 'Shadowstep';
-$dbspelleffects[44] = 'Lycanthropy';
-$dbspelleffects[46] = 'Increase Fire Resist';
-$dbspelleffects[47] = 'Increase Cold Resist';
-$dbspelleffects[48] = 'Increase Poison Resist';
-$dbspelleffects[49] = 'Increase Disease Resist';
-$dbspelleffects[50] = 'Increase Magic Resist';
-$dbspelleffects[52] = 'Sense Undead';
-$dbspelleffects[53] = 'Sense Summoned';
-$dbspelleffects[54] = 'Sense Animals';
-$dbspelleffects[55] = 'Increase Absorb Damage';
-$dbspelleffects[56] = 'True North';
-$dbspelleffects[57] = 'Levitate';
-$dbspelleffects[58] = 'Illusion:';
-$dbspelleffects[59] = 'Increase Damage Shield';
-$dbspelleffects[61] = 'Identify';
-$dbspelleffects[63] = 'Memblur';
-$dbspelleffects[64] = 'SpinStun';
-$dbspelleffects[65] = 'Infravision';
-$dbspelleffects[66] = 'Ultravision';
-$dbspelleffects[67] = 'Eye Of Zomm';
-$dbspelleffects[68] = 'Reclaim Energy';
-$dbspelleffects[69] = 'Increase Max Hitpoints';
-$dbspelleffects[71] = 'Summon Skeleton Pet:';
-$dbspelleffects[73] = 'Bind Sight';
-$dbspelleffects[74] = 'Feign Death';
-$dbspelleffects[75] = 'Voice Graft';
-$dbspelleffects[76] = 'Sentinel';
-$dbspelleffects[77] = 'Locate Corpse';
-$dbspelleffects[78] = 'Increase Absorb Magic Damage';
-$dbspelleffects[79] = 'Increase HP when cast';
-$dbspelleffects[81] = 'Resurrect';
-$dbspelleffects[82] = 'Summon PC';
-$dbspelleffects[83] = 'Teleport';
-$dbspelleffects[85] = 'Add Proc:';
-$dbspelleffects[86] = 'Reaction Radius';
-$dbspelleffects[87] = 'Increase Magnification';
-$dbspelleffects[88] = 'Evacuate';
-$dbspelleffects[89] = 'Increase Player Size';
-$dbspelleffects[90] = 'Cloak';
-$dbspelleffects[91] = 'Summon Corpse';
-$dbspelleffects[92] = 'Increase hate';
-$dbspelleffects[93] = 'Stop Rain';
-$dbspelleffects[94] = 'Make Fragile (Delete if combat)';
-$dbspelleffects[95] = 'Sacrifice';
-$dbspelleffects[96] = 'Silence';
-$dbspelleffects[97] = 'Increase Mana Pool';
-$dbspelleffects[98] = 'Increase Haste v2';
-$dbspelleffects[99] = 'Root';
+$dbspelleffects      = [];
+$dbspelleffects[0]   = 'Increase Hitpoints'; // or decrease
+$dbspelleffects[1]   = 'Increase AC';
+$dbspelleffects[2]   = 'Increase ATK';
+$dbspelleffects[3]   = 'In/Decrease Movement';
+$dbspelleffects[4]   = 'Increase STR';
+$dbspelleffects[5]   = 'Increase DEX';
+$dbspelleffects[6]   = 'Increase AGI';
+$dbspelleffects[7]   = 'Increase STA';
+$dbspelleffects[8]   = 'Increase INT';
+$dbspelleffects[9]   = 'Increase WIS';
+$dbspelleffects[10]  = 'Increase CHA';
+$dbspelleffects[11]  = 'In/Decrease Attack Speed';
+$dbspelleffects[12]  = 'Invisibility';
+$dbspelleffects[13]  = 'See Invisible';
+$dbspelleffects[14]  = 'WaterBreathing';
+$dbspelleffects[15]  = 'Increase Mana';
+$dbspelleffects[18]  = 'Pacify';
+$dbspelleffects[19]  = 'Increase Faction';
+$dbspelleffects[20]  = 'Blindness';
+$dbspelleffects[21]  = 'Stun';
+$dbspelleffects[22]  = 'Charm';
+$dbspelleffects[23]  = 'Fear';
+$dbspelleffects[24]  = 'Stamina';
+$dbspelleffects[25]  = 'Bind Affinity';
+$dbspelleffects[26]  = 'Gate';
+$dbspelleffects[27]  = 'Cancel Magic';
+$dbspelleffects[28]  = 'Invisibility versus Undead';
+$dbspelleffects[29]  = 'Invisibility versus Animals';
+$dbspelleffects[30]  = 'Frenzy Radius';
+$dbspelleffects[31]  = 'Mesmerize';
+$dbspelleffects[32]  = 'Summon Item';
+$dbspelleffects[33]  = 'Summon Pet:';
+$dbspelleffects[35]  = 'Increase Disease Counter';
+$dbspelleffects[36]  = 'Increase Poison Counter';
+$dbspelleffects[40]  = 'Invunerability';
+$dbspelleffects[41]  = 'Destroy Target';
+$dbspelleffects[42]  = 'Shadowstep';
+$dbspelleffects[44]  = 'Lycanthropy';
+$dbspelleffects[46]  = 'Increase Fire Resist';
+$dbspelleffects[47]  = 'Increase Cold Resist';
+$dbspelleffects[48]  = 'Increase Poison Resist';
+$dbspelleffects[49]  = 'Increase Disease Resist';
+$dbspelleffects[50]  = 'Increase Magic Resist';
+$dbspelleffects[52]  = 'Sense Undead';
+$dbspelleffects[53]  = 'Sense Summoned';
+$dbspelleffects[54]  = 'Sense Animals';
+$dbspelleffects[55]  = 'Increase Absorb Damage';
+$dbspelleffects[56]  = 'True North';
+$dbspelleffects[57]  = 'Levitate';
+$dbspelleffects[58]  = 'Illusion:';
+$dbspelleffects[59]  = 'Increase Damage Shield';
+$dbspelleffects[61]  = 'Identify';
+$dbspelleffects[63]  = 'Memblur';
+$dbspelleffects[64]  = 'SpinStun';
+$dbspelleffects[65]  = 'Infravision';
+$dbspelleffects[66]  = 'Ultravision';
+$dbspelleffects[67]  = 'Eye Of Zomm';
+$dbspelleffects[68]  = 'Reclaim Energy';
+$dbspelleffects[69]  = 'Increase Max Hitpoints';
+$dbspelleffects[71]  = 'Summon Skeleton Pet:';
+$dbspelleffects[73]  = 'Bind Sight';
+$dbspelleffects[74]  = 'Feign Death';
+$dbspelleffects[75]  = 'Voice Graft';
+$dbspelleffects[76]  = 'Sentinel';
+$dbspelleffects[77]  = 'Locate Corpse';
+$dbspelleffects[78]  = 'Increase Absorb Magic Damage';
+$dbspelleffects[79]  = 'Increase HP when cast';
+$dbspelleffects[81]  = 'Resurrect';
+$dbspelleffects[82]  = 'Summon PC';
+$dbspelleffects[83]  = 'Teleport';
+$dbspelleffects[85]  = 'Add Proc:';
+$dbspelleffects[86]  = 'Reaction Radius';
+$dbspelleffects[87]  = 'Increase Magnification';
+$dbspelleffects[88]  = 'Evacuate';
+$dbspelleffects[89]  = 'Increase Player Size';
+$dbspelleffects[90]  = 'Cloak';
+$dbspelleffects[91]  = 'Summon Corpse';
+$dbspelleffects[92]  = 'Increase hate';
+$dbspelleffects[93]  = 'Stop Rain';
+$dbspelleffects[94]  = 'Make Fragile (Delete if combat)';
+$dbspelleffects[95]  = 'Sacrifice';
+$dbspelleffects[96]  = 'Silence';
+$dbspelleffects[97]  = 'Increase Mana Pool';
+$dbspelleffects[98]  = 'Increase Haste v2';
+$dbspelleffects[99]  = 'Root';
 $dbspelleffects[100] = 'Increase Hitpoints v2';
 $dbspelleffects[101] = 'Complete Heal (with duration)';
 $dbspelleffects[102] = 'Fearless';
@@ -481,15 +489,15 @@ $dbspelleffects[330] = 'Critical Damage Mob';
 
 
 // spell targets
-$dbspelltargets = array();
-$dbspelltargets[1] = "";
-$dbspelltargets[2] = "Area of effect over the caster";
-$dbspelltargets[3] = "Group teleport";
-$dbspelltargets[4] = "Area of effect around the caster";
-$dbspelltargets[5] = "Single target";
-$dbspelltargets[6] = "Self only";
-$dbspelltargets[8] = "Area of effect around the target";
-$dbspelltargets[9] = "Animal";
+$dbspelltargets     = [];
+$dbspelltargets[1]  = "";
+$dbspelltargets[2]  = "Area of effect over the caster";
+$dbspelltargets[3]  = "Group teleport";
+$dbspelltargets[4]  = "Area of effect around the caster";
+$dbspelltargets[5]  = "Single target";
+$dbspelltargets[6]  = "Self only";
+$dbspelltargets[8]  = "Area of effect around the target";
+$dbspelltargets[9]  = "Animal";
 $dbspelltargets[10] = "Undead only";
 $dbspelltargets[11] = "Summoned beings";
 $dbspelltargets[13] = "Tap";
@@ -504,26 +512,26 @@ $dbspelltargets[40] = "Friendly area of effect";
 $dbspelltargets[41] = "Group";
 
 // item skills
-$dbiskills = array();
-$dbiskills[0] = "One Hand Slash";
-$dbiskills[1] = "Two Hands Slash";
-$dbiskills[2] = "Piercing";
-$dbiskills[3] = "One Hand Blunt";
-$dbiskills[4] = "Two Hands Blunt";
+$dbiskills     = [];
+$dbiskills[0]  = "One Hand Slash";
+$dbiskills[1]  = "Two Hands Slash";
+$dbiskills[2]  = "Piercing";
+$dbiskills[3]  = "One Hand Blunt";
+$dbiskills[4]  = "Two Hands Blunt";
 $dbiskills[45] = "Hand to hand";
 
 // item types
-$dbitypes = array();
-$dbitypes[0] = "1HS";
-$dbitypes[1] = "2HS";
-$dbitypes[2] = "Piercing";
-$dbitypes[3] = "1HB";
-$dbitypes[4] = "2HB";
-$dbitypes[5] = "Archery";
-$dbitypes[6] = "Unknown";
-$dbitypes[7] = "Throwing range items";
-$dbitypes[8] = "Shield";
-$dbitypes[9] = "Unknown";
+$dbitypes     = [];
+$dbitypes[0]  = "1HS";
+$dbitypes[1]  = "2HS";
+$dbitypes[2]  = "Piercing";
+$dbitypes[3]  = "1HB";
+$dbitypes[4]  = "2HB";
+$dbitypes[5]  = "Archery";
+$dbitypes[6]  = "Unknown";
+$dbitypes[7]  = "Throwing range items";
+$dbitypes[8]  = "Shield";
+$dbitypes[9]  = "Unknown";
 $dbitypes[10] = "Armor";
 $dbitypes[11] = "Gems";
 $dbitypes[12] = "Lockpicks";
@@ -570,15 +578,15 @@ $dbitypes[52] = "Charm";
 $dbitypes[53] = "Unknown";
 $dbitypes[54] = "Augmentation";
 
-$dbiaugrestrict[1] = "Armor Only";
-$dbiaugrestrict[2] = "Weapons Only";
-$dbiaugrestrict[3] = "1h Weapons Only";
-$dbiaugrestrict[4] = "2h Weapons Only";
-$dbiaugrestrict[5] = "1h Slash Only";
-$dbiaugrestrict[6] = "1h Blunt Only";
-$dbiaugrestrict[7] = "Piercing Only";
-$dbiaugrestrict[8] = "Hand To Hand Only";
-$dbiaugrestrict[9] = "2h Slash Only";
+$dbiaugrestrict[1]  = "Armor Only";
+$dbiaugrestrict[2]  = "Weapons Only";
+$dbiaugrestrict[3]  = "1h Weapons Only";
+$dbiaugrestrict[4]  = "2h Weapons Only";
+$dbiaugrestrict[5]  = "1h Slash Only";
+$dbiaugrestrict[6]  = "1h Blunt Only";
+$dbiaugrestrict[7]  = "Piercing Only";
+$dbiaugrestrict[8]  = "Hand To Hand Only";
+$dbiaugrestrict[9]  = "2h Slash Only";
 $dbiaugrestrict[10] = "2h Blunt Only";
 $dbiaugrestrict[11] = "2h Pierce Only";
 $dbiaugrestrict[12] = "Bows Only";
@@ -589,40 +597,18 @@ $dbbardskills[25] = "Brass";
 $dbbardskills[26] = "Percussions";
 $dbbardskills[51] = "All instruments";
 
-// Taken from PEQ DB
-$dbpets = array();
-$dbpets["mag"]["earth"] = array(0, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 0, 578, 0, 0, 0, 0, 0, 579, 0, 0, 0, 0, 0, 0, 0, 580, 0, 0, 0, 0, 581);
-$dbpets["mag"]["air"] = array(0, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 0, 0, 0, 563, 0, 0, 0, 0, 0, 564, 0, 565, 0, 0, 0, 0, 566);
-$dbpets["mag"]["water"] = array(0, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 0, 0, 0, 0, 610, 0, 0, 0, 0, 0, 611, 0, 612, 0, 0, 0, 0, 613);
-$dbpets["mag"]["fire"] = array(0, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 0, 0, 593, 0, 0, 0, 0, 0, 594, 0, 0, 0, 0, 595, 0, 0, 0, 0, 596);
-$dbpets["mag"]["epic"] = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 598); // epic pet at lvl 50
-$dbpets["bst"] = array(515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528);
-$dbpets["enc"] = array(500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514);
-$dbpets["nec"] = array(614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 633);
-$dbpets["shm"] = array(545, 546, 547, 548, 549, 550, 551);
-$dbpets["dru"] = array(638);
-$dbpets["shd"] = array(614, 615, 616, 617, 618, 620, 621, 622, 623);
-$dbpetslvl = array();
-$dbpetslvl["mag"] = array(1, 4, 8, 12, 16, 20, 24, 29, 34, 39, 44, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70);
-$dbpetslvl["enc"] = array(1, 4, 8, 12, 16, 20, 24, 29, 34, 39, 44, 49, 55, 62, 66);
-$dbpetslvl["bst"] = array(9, 16, 22, 29, 39, 49, 52, 54, 56, 60, 62, 64, 68, 70);
-$dbpetslvl["nec"] = array(4, 8, 12, 16, 20, 24, 29, 34, 39, 44, 49, 53, 56, 59, 61, 63, 65, 67, 70);
-$dbpetslvl["shm"] = array(34, 39, 44, 49, 55, 61, 67);
-$dbpetslvl["dru"] = array(55);
-$dbpetslvl["shd"] = array(9, 15, 22, 30, 39, 49, 52, 58, 64);
-
-$NPCTypeArray = array(
+$NPCTypeArray = [
     '###' => 'Boss',
-    '##' => 'Mini-Boss',
-    '#' => 'Named',
-    '~' => 'Quest NPC',
-    '!' => 'Hidden',
-    '_' => 'Event Spawned'
-);
+    '##'  => 'Mini-Boss',
+    '#'   => 'Named',
+    '~'   => 'Quest NPC',
+    '!'   => 'Hidden',
+    '_'   => 'Event Spawned',
+];
 
 // deities
-$dbdeities = array();
-$dbdeities[0] = "Unknown";
+$dbdeities      = [];
+$dbdeities[0]   = "Unknown";
 $dbdeities[201] = "Bertoxxulous";
 $dbdeities[202] = "Brell Serilis";
 $dbdeities[203] = "Cazic Thule";
@@ -642,48 +628,185 @@ $dbdeities[216] = "Veeshan";
 $dbdeities[396] = "Agnostic";
 
 // deities (items)
-$dbideities = array();
+$dbideities        = [];
 $dbideities[65536] = "Veeshan";
 $dbideities[32768] = "Tunare";
 $dbideities[16384] = "The Tribunal";
-$dbideities[8192] = "Solusek Ro";
-$dbideities[4096] = "Rodcet Nife";
-$dbideities[2048] = "Rallos Zek";
-$dbideities[1024] = "Quellious";
-$dbideities[512] = "Prexus";
-$dbideities[256] = "Mithaniel Marr";
-$dbideities[128] = "Karana";
-$dbideities[64] = "Innoruuk";
-$dbideities[32] = "Bristlebane";
-$dbideities[16] = "Erollisi Marr";
-$dbideities[8] = "Cazic Thule";
-$dbideities[4] = "Brell Serilis";
-$dbideities[2] = "Bertoxxulous";
+$dbideities[8192]  = "Solusek Ro";
+$dbideities[4096]  = "Rodcet Nife";
+$dbideities[2048]  = "Rallos Zek";
+$dbideities[1024]  = "Quellious";
+$dbideities[512]   = "Prexus";
+$dbideities[256]   = "Mithaniel Marr";
+$dbideities[128]   = "Karana";
+$dbideities[64]    = "Innoruuk";
+$dbideities[32]    = "Bristlebane";
+$dbideities[16]    = "Erollisi Marr";
+$dbideities[8]     = "Cazic Thule";
+$dbideities[4]     = "Brell Serilis";
+$dbideities[2]     = "Bertoxxulous";
 
 // elements
-$dbelements = array("Unknown", "Magic", "Fire", "Cold", "Poison", "Disease", "Corruption");
+$dbelements = ["Unknown", "Magic", "Fire", "Cold", "Poison", "Disease", "Corruption"];
 
 // damage bonuses 2Hands at 65
 //http://lucy.allakhazam.com/dmgbonus.html
-$dam2h = array(0, 14, 14, 14, 14, 14, 14, 14, 14, 14, // 0->9
-    14, 14, 14, 14, 14, 14, 14, 14, 14, 14, // 10->19
-    14, 14, 14, 14, 14, 14, 14, 14, 35, 35, // 20->29
-    36, 36, 37, 37, 38, 38, 39, 39, 40, 40, // 30->39
-    42, 42, 42, 45, 45, 47, 48, 49, 49, 51, // 40->49
-    51, 52, 53, 54, 54, 56, 56, 57, 58, 59, // 50->59
-    59, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 60->69
-    68, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 70->79
-    0, 0, 0, 0, 0, 80, 0, 0, 0, 0, // 80->89
-    0, 0, 0, 0, 0, 88, 0, 0, 0, 0, // 90->99
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 100->109
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 110->119
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 120->129
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 130->139
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, // 140->149
-    132); // 150
+$dam2h = [
+    0,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14, // 0->9
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14, // 10->19
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    14,
+    35,
+    35, // 20->29
+    36,
+    36,
+    37,
+    37,
+    38,
+    38,
+    39,
+    39,
+    40,
+    40, // 30->39
+    42,
+    42,
+    42,
+    45,
+    45,
+    47,
+    48,
+    49,
+    49,
+    51, // 40->49
+    51,
+    52,
+    53,
+    54,
+    54,
+    56,
+    56,
+    57,
+    58,
+    59, // 50->59
+    59,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 60->69
+    68,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 70->79
+    0,
+    0,
+    0,
+    0,
+    0,
+    80,
+    0,
+    0,
+    0,
+    0, // 80->89
+    0,
+    0,
+    0,
+    0,
+    0,
+    88,
+    0,
+    0,
+    0,
+    0, // 90->99
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 100->109
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 110->119
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 120->129
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 130->139
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0, // 140->149
+    132,
+]; // 150
 
 // Body types (bodytypes.h)
-$dbbodytypes = array(
+$dbbodytypes     = [
     "Unknown", // 0
     "Humanoid", // 1
     "Lycanthrope", // 2
@@ -718,13 +841,14 @@ $dbbodytypes = array(
     "Unknown", //31
     "Dragon 3", //32
     "Boxes", //33
-    "Discord Mob"); //34
+    "Discord Mob",
+]; //34
 $dbbodytypes[60] = "No Target 2";
 $dbbodytypes[63] = "Swarm pet";
 $dbbodytypes[67] = "Special";
 
-$dbbagtypes = array(
-    9 => "Alchemy",
+$dbbagtypes = [
+    9  => "Alchemy",
     10 => "Tinkering",
     12 => "Poison Making",
     13 => "Special Quests",
@@ -738,22 +862,22 @@ $dbbagtypes = array(
     25 => "Research",
     26 => "Research",
     27 => "Research",
-    46 => "Fishing"
-);
+    46 => "Fishing",
+];
 
-$dbspelltypes = array(
-    1 => "Nuke",
-    2 => "Heal",
-    4 => "Root",
-    8 => "Buff",
-    16 => "Escape",
-    32 => "Pet",
-    64 => "Lifetap",
+$dbspelltypes = [
+    1   => "Nuke",
+    2   => "Heal",
+    4   => "Root",
+    8   => "Buff",
+    16  => "Escape",
+    32  => "Pet",
+    64  => "Lifetap",
     128 => "Snare",
-    256 => "Dot"
-);
+    256 => "Dot",
+];
 
-$dbspellresists = array(
+$dbspellresists = [
     0 => "None",
     1 => "Magic",
     2 => "Fire",
@@ -762,111 +886,111 @@ $dbspellresists = array(
     5 => "Disease",
     6 => "Chromatic",
     7 => "Prismatic",
-    8 => "Physical"
-);
+    8 => "Physical",
+];
 
 // Array of ALL races through VoA Expansion
 
-$dbiracenames[0] = "Invalid";
-$dbiracenames[1] = "Human";
-$dbiracenames[2] = "Barbarian";
-$dbiracenames[3] = "Erudite";
-$dbiracenames[4] = "Wood Elf";
-$dbiracenames[5] = "High Elf";
-$dbiracenames[6] = "Dark Elf";
-$dbiracenames[7] = "Half Elf";
-$dbiracenames[8] = "Dwarf";
-$dbiracenames[9] = "Troll";
-$dbiracenames[10] = "Ogre";
-$dbiracenames[11] = "Halfling";
-$dbiracenames[12] = "Gnome";
-$dbiracenames[13] = "Aviak";
-$dbiracenames[14] = "Werewolf";
-$dbiracenames[15] = "Brownie";
-$dbiracenames[16] = "Centaur";
-$dbiracenames[17] = "Golem";
-$dbiracenames[18] = "Giant";
-$dbiracenames[19] = "Trakanon";
-$dbiracenames[20] = "Venril Sathir";
-$dbiracenames[21] = "Evil Eye";
-$dbiracenames[22] = "Beetle";
-$dbiracenames[23] = "Kerran";
-$dbiracenames[24] = "Fish";
-$dbiracenames[25] = "Fairy";
-$dbiracenames[26] = "Froglok";
-$dbiracenames[27] = "Froglok";
-$dbiracenames[28] = "Fungusman";
-$dbiracenames[29] = "Gargoyle";
-$dbiracenames[30] = "Gasbag";
-$dbiracenames[31] = "Gelatinous Cube";
-$dbiracenames[32] = "Ghost";
-$dbiracenames[33] = "Ghoul";
-$dbiracenames[34] = "Bat";
-$dbiracenames[35] = "Eel";
-$dbiracenames[36] = "Rat";
-$dbiracenames[37] = "Snake";
-$dbiracenames[38] = "Spider";
-$dbiracenames[39] = "Gnoll";
-$dbiracenames[40] = "Goblin";
-$dbiracenames[41] = "Gorilla";
-$dbiracenames[42] = "Wolf";
-$dbiracenames[43] = "Bear";
-$dbiracenames[44] = "Guard";
-$dbiracenames[45] = "Demi Lich";
-$dbiracenames[46] = "Imp";
-$dbiracenames[47] = "Griffin";
-$dbiracenames[48] = "Kobold";
-$dbiracenames[49] = "Dragon";
-$dbiracenames[50] = "Lion";
-$dbiracenames[51] = "Lizard Man";
-$dbiracenames[52] = "Mimic";
-$dbiracenames[53] = "Minotaur";
-$dbiracenames[54] = "Orc";
-$dbiracenames[55] = "Beggar";
-$dbiracenames[56] = "Pixie";
-$dbiracenames[57] = "Drachnid";
-$dbiracenames[58] = "Solusek Ro";
-$dbiracenames[59] = "Goblin";
-$dbiracenames[60] = "Skeleton";
-$dbiracenames[61] = "Shark";
-$dbiracenames[62] = "Tunare";
-$dbiracenames[63] = "Tiger";
-$dbiracenames[64] = "Treant";
-$dbiracenames[65] = "Vampire";
-$dbiracenames[66] = "Rallos Zek";
-$dbiracenames[67] = "Human";
-$dbiracenames[68] = "Tentacle Terror";
-$dbiracenames[69] = "Will-O-Wisp";
-$dbiracenames[70] = "Zombie";
-$dbiracenames[71] = "Human";
-$dbiracenames[72] = "Ship";
-$dbiracenames[73] = "Launch";
-$dbiracenames[74] = "Piranha";
-$dbiracenames[75] = "Elemental";
-$dbiracenames[76] = "Puma";
-$dbiracenames[77] = "Dark Elf";
-$dbiracenames[78] = "Erudite";
-$dbiracenames[79] = "Bixie";
-$dbiracenames[80] = "Reanimated Hand";
-$dbiracenames[81] = "Halfling";
-$dbiracenames[82] = "Scarecrow";
-$dbiracenames[83] = "Skunk";
-$dbiracenames[84] = "Snake Elemental";
-$dbiracenames[85] = "Spectre";
-$dbiracenames[86] = "Sphinx";
-$dbiracenames[87] = "Armadillo";
-$dbiracenames[88] = "Clockwork Gnome";
-$dbiracenames[89] = "Drake";
-$dbiracenames[90] = "Barbarian";
-$dbiracenames[91] = "Alligator";
-$dbiracenames[92] = "Troll";
-$dbiracenames[93] = "Ogre";
-$dbiracenames[94] = "Dwarf";
-$dbiracenames[95] = "Cazic Thule";
-$dbiracenames[96] = "Cockatrice";
-$dbiracenames[97] = "Daisy Man";
-$dbiracenames[98] = "Vampire";
-$dbiracenames[99] = "Amygdalan";
+$dbiracenames[0]   = "Invalid";
+$dbiracenames[1]   = "Human";
+$dbiracenames[2]   = "Barbarian";
+$dbiracenames[3]   = "Erudite";
+$dbiracenames[4]   = "Wood Elf";
+$dbiracenames[5]   = "High Elf";
+$dbiracenames[6]   = "Dark Elf";
+$dbiracenames[7]   = "Half Elf";
+$dbiracenames[8]   = "Dwarf";
+$dbiracenames[9]   = "Troll";
+$dbiracenames[10]  = "Ogre";
+$dbiracenames[11]  = "Halfling";
+$dbiracenames[12]  = "Gnome";
+$dbiracenames[13]  = "Aviak";
+$dbiracenames[14]  = "Werewolf";
+$dbiracenames[15]  = "Brownie";
+$dbiracenames[16]  = "Centaur";
+$dbiracenames[17]  = "Golem";
+$dbiracenames[18]  = "Giant";
+$dbiracenames[19]  = "Trakanon";
+$dbiracenames[20]  = "Venril Sathir";
+$dbiracenames[21]  = "Evil Eye";
+$dbiracenames[22]  = "Beetle";
+$dbiracenames[23]  = "Kerran";
+$dbiracenames[24]  = "Fish";
+$dbiracenames[25]  = "Fairy";
+$dbiracenames[26]  = "Froglok";
+$dbiracenames[27]  = "Froglok";
+$dbiracenames[28]  = "Fungusman";
+$dbiracenames[29]  = "Gargoyle";
+$dbiracenames[30]  = "Gasbag";
+$dbiracenames[31]  = "Gelatinous Cube";
+$dbiracenames[32]  = "Ghost";
+$dbiracenames[33]  = "Ghoul";
+$dbiracenames[34]  = "Bat";
+$dbiracenames[35]  = "Eel";
+$dbiracenames[36]  = "Rat";
+$dbiracenames[37]  = "Snake";
+$dbiracenames[38]  = "Spider";
+$dbiracenames[39]  = "Gnoll";
+$dbiracenames[40]  = "Goblin";
+$dbiracenames[41]  = "Gorilla";
+$dbiracenames[42]  = "Wolf";
+$dbiracenames[43]  = "Bear";
+$dbiracenames[44]  = "Guard";
+$dbiracenames[45]  = "Demi Lich";
+$dbiracenames[46]  = "Imp";
+$dbiracenames[47]  = "Griffin";
+$dbiracenames[48]  = "Kobold";
+$dbiracenames[49]  = "Dragon";
+$dbiracenames[50]  = "Lion";
+$dbiracenames[51]  = "Lizard Man";
+$dbiracenames[52]  = "Mimic";
+$dbiracenames[53]  = "Minotaur";
+$dbiracenames[54]  = "Orc";
+$dbiracenames[55]  = "Beggar";
+$dbiracenames[56]  = "Pixie";
+$dbiracenames[57]  = "Drachnid";
+$dbiracenames[58]  = "Solusek Ro";
+$dbiracenames[59]  = "Goblin";
+$dbiracenames[60]  = "Skeleton";
+$dbiracenames[61]  = "Shark";
+$dbiracenames[62]  = "Tunare";
+$dbiracenames[63]  = "Tiger";
+$dbiracenames[64]  = "Treant";
+$dbiracenames[65]  = "Vampire";
+$dbiracenames[66]  = "Rallos Zek";
+$dbiracenames[67]  = "Human";
+$dbiracenames[68]  = "Tentacle Terror";
+$dbiracenames[69]  = "Will-O-Wisp";
+$dbiracenames[70]  = "Zombie";
+$dbiracenames[71]  = "Human";
+$dbiracenames[72]  = "Ship";
+$dbiracenames[73]  = "Launch";
+$dbiracenames[74]  = "Piranha";
+$dbiracenames[75]  = "Elemental";
+$dbiracenames[76]  = "Puma";
+$dbiracenames[77]  = "Dark Elf";
+$dbiracenames[78]  = "Erudite";
+$dbiracenames[79]  = "Bixie";
+$dbiracenames[80]  = "Reanimated Hand";
+$dbiracenames[81]  = "Halfling";
+$dbiracenames[82]  = "Scarecrow";
+$dbiracenames[83]  = "Skunk";
+$dbiracenames[84]  = "Snake Elemental";
+$dbiracenames[85]  = "Spectre";
+$dbiracenames[86]  = "Sphinx";
+$dbiracenames[87]  = "Armadillo";
+$dbiracenames[88]  = "Clockwork Gnome";
+$dbiracenames[89]  = "Drake";
+$dbiracenames[90]  = "Barbarian";
+$dbiracenames[91]  = "Alligator";
+$dbiracenames[92]  = "Troll";
+$dbiracenames[93]  = "Ogre";
+$dbiracenames[94]  = "Dwarf";
+$dbiracenames[95]  = "Cazic Thule";
+$dbiracenames[96]  = "Cockatrice";
+$dbiracenames[97]  = "Daisy Man";
+$dbiracenames[98]  = "Vampire";
+$dbiracenames[99]  = "Amygdalan";
 $dbiracenames[100] = "Dervish";
 $dbiracenames[101] = "Efreeti";
 $dbiracenames[102] = "Tadpole";
@@ -1447,6 +1571,3 @@ $dbiracenames[676] = "Braxy Mount";
 $dbiracenames[677] = "Kangon Mount";
 $dbiracenames[678] = "Erudite";
 $dbiracenames[679] = "Wurm Mount";
-
-
-?>

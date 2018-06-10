@@ -49,7 +49,7 @@ function db_mysql_query($query)
 {
     global $mysql_debugging, $debug_queries, $database;
 
-    $start = microtime(true);
+    $start  = microtime(true);
     $result = mysqli_query($database, $query);
 
     // var_dump($result->fetch_assoc());

@@ -14,18 +14,15 @@ if ($php_debug) {
 /**
  * Basic site info
  */
-$SiteTitle  = 'EQEmu Server AllaClone';
-$ServerName = 'EQEmu Server';
-$cfgversion = '3.0';
-$SiteEmail  = '';
+$site_title  = 'EQEmu Server AllaClone';
 
 /**
  * MySQL Config
  */
-$dbhost   = "localhost";
-$dbname   = "peq";
-$dbuser   = "username";
-$dbpasswd = "password";
+$db_host     = "localhost";
+$db_name     = "peq";
+$db_user     = "username";
+$db_password = "password";
 
 /**
  * Options
@@ -108,7 +105,7 @@ $slow_page_caching = false; /* If pages take longer than 1 second to load, they 
 $ignore_zones = ["load", "loading", "load2", "nektropos", "arttest", "apprentice", "tutorial"];
 
 $mysql_debugging = false;
-$database = mysqli_connect($dbhost, $dbuser, $dbpasswd, $dbname) or die("Impossible to connect to $dbhost");
+$database = mysqli_connect($db_host, $db_user, $db_password, $db_name) or die("Impossible to connect to $db_host");
 
 /**
  * Check if server is alive

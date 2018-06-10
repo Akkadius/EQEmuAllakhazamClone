@@ -2,65 +2,64 @@
 .main_page {
     background-color: #d6c399;
     background-image: url('../images/bg_alla.gif');
-    color:			#000000;
-    font-family:		verdana,arial,helvetica;
-    font-weight:		normal;
-    font-size:		10pt;
-    text-align:		justify;
+    color: #000000;
+    font-family: verdana, arial, helvetica;
+    font-weight: normal;
+    font-size: 10pt;
+    text-align: justify;
     margin: 0px;
     margin-top: 0px;
     padding: 0px;
     border: #555555 1px solid;
 }
 
-
 A:link {
-    text-decoration:  none;
-    font-weight:	    none;
-    color: 		    #0000FF;
+    text-decoration: none;
+    font-weight: none;
+    color: #0000FF;
 }
 
 A:active {
-    text-decoration:  none;
-    font-weight:	    none;
-    color: 		    #0000FF;
+    text-decoration: none;
+    font-weight: none;
+    color: #0000FF;
 }
 
 A:visited {
-    text-decoration:  none;
-    font-weight:	    none;
-    color: 		    #0000FF;
+    text-decoration: none;
+    font-weight: none;
+    color: #0000FF;
 }
 
 A:hover {
-    text-decoration:  underline;
-    font-weight:	    none;
-    color: 		    #0000FF;
+    text-decoration: underline;
+    font-weight: none;
+    color: #0000FF;
 }
 
 .form {
     background-color: #d6c399;
-    color:            #000000;
-    text-align:       left;
-    font-size:		13;
-    font-weight:		normal;
-    padding:          2 4 2 4;
-    border:           #000000 1px solid;
+    color: #000000;
+    text-align: left;
+    font-size: 13;
+    font-weight: normal;
+    padding: 2 4 2 4;
+    border: #000000 1px solid;
 }
 
 TABLE {
-    font-family:		arial,helvetica;
-    font-weight:		normal;
-    font-size:		  10pt;
-    text-align:		  inherit;
-    vertical-align:   top;
-    margin:           0px;
-    padding:          0px;
+    font-family: arial, helvetica;
+    font-weight: normal;
+    font-size: 10pt;
+    text-align: inherit;
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
 }
 
 .tab_title {
-    font-weight:    bold;
-    text-align:     center;
+    font-weight: bold;
+    text-align: center;
 }
 
 .myheader {
@@ -86,7 +85,7 @@ TABLE {
     border-style: outset;
     border-width: 1px;
     background: url('../images/bgmenu_title_alla.gif');
-    padding:  0 4 0 4;
+    padding: 0 4 0 4;
 }
 
 .menu_item {
@@ -96,26 +95,26 @@ TABLE {
     font-size: 12px;
     border-style: none;
     border-width: 0px;
-    padding:  0 4 0 4;
+    padding: 0 4 0 4;
 }
 
 .page_title {
-    color:  #000000;
-    font-size:  20pt;
+    color: #000000;
+    font-size: 20pt;
     font-family: 'Arial';
-    font-weight:	bold;
+    font-weight: bold;
     text-align: center;
-    font:Arial;
-    width:100%
+    font: Arial;
+    width: 100%
 }
 
 .page_small_title {
-    color:  #000000;
-    font-size:  18pt;
+    color: #000000;
+    font-size: 18pt;
     font-family: 'Times New Roman';
-    font-weight:		bold;
-    text-align:		left;
-    padding:  0 4 0 4;
+    font-weight: bold;
+    text-align: left;
+    padding: 0 4 0 4;
 }
 
 .headerrow {
@@ -127,55 +126,52 @@ TABLE {
 }
 
 .menuh {
-    font-weight:bold;
-    border-style:solid;
-    border-color:#e5e5e5 #696969 #696969 #e5e5e5;
-    border-width:1px;
-    background:url('images/bgmenu_title_alla.gif');
+    font-weight: bold;
+    border-style: solid;
+    border-color: #e5e5e5 #696969 #696969 #e5e5e5;
+    border-width: 1px;
+    background: url('images/bgmenu_title_alla.gif');
 }
 
 .lr, .s2-lr {
-    background:#d4c7ab url('../images/bg_alla_light.gif');
+    background: #d4c7ab url('../images/bg_alla_light.gif');
 }
 
 .dr, .s2-dr {
-    background:#d7c69a url('../images/bg_alla_dark.gif');
+    background: #d7c69a url('../images/bg_alla_dark.gif');
 }
 
 .header_cell {
-    font-weight:bold;
+    font-weight: bold;
     font-size: 20pt;
 }
 
-#easyTooltip{
-    padding:5px 10px;
-    border:1px solid #195fa4;
-    background:#195fa4 repeat-x;
-    color:#fff;
+#easyTooltip {
+    padding: 5px 10px;
+    border: 1px solid #195fa4;
+    background: #195fa4 repeat-x;
+    color: #fff;
 }
 
-#easyTooltip2{
-    padding:5px 10px;
-    border:1px solid #000000;
-    background:#5e5e5e repeat-x;
-    color:#fff;
+#easyTooltip2 {
+    padding: 5px 10px;
+    border: 1px solid #000000;
+    background: #5e5e5e repeat-x;
+    color: #fff;
     /*
     width:450px;
     */
-    width:450px;
-    z-index:9999;
+    width: 450px;
+    z-index: 9999;
 }
-#easyTooltip2 h4, #easyTooltip2 p, #easyTooltip2 table{
-    color:#fff;
-    margin:.25em 0;
+
+#easyTooltip2 h4, #easyTooltip2 p, #easyTooltip2 table {
+    color: #fff;
+    margin: .25em 0;
 
 }
 
-input[type=text]
-, input[type=password]
-, textarea
-, select
-{
+input[type=text], input[type=password], textarea, select {
     font-family: Verdana, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
     font-size: 12px;
     color: #424242;
@@ -196,11 +192,7 @@ input[type=text]
 
 }
 
-input[type=text]:focus
-, input[type=password]:focus
-, textarea:focus
-, select:focus
-{
+input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus {
     border: 1px solid #80bfff;
 
     -moz-box-shadow: 0 0 3px #80bfff, 0 1px 2px rgba(0, 0, 0, .15) inset;
@@ -211,22 +203,24 @@ input[type=text]:focus
 /* For modern browsers */
 .cf:before,
 .cf:after {
-    content:"";
-    display:table;
+    content: "";
+    display: table;
 }
 
 .cf:after {
-    clear:both;
+    clear: both;
 }
 
 /* For IE 6/7 (trigger hasLayout) */
 .cf {
-    zoom:1;
+    zoom: 1;
 }
 
 /* =Dropdown
 ----------------------------------------------- */
-.dropdown .item { padding-right: 25px; }
+.dropdown .item {
+    padding-right: 25px;
+}
 
 .dropdown .arrow {
     background: url(../images/layout/nav_arrow_lite.png) no-repeat 0 0;
@@ -239,13 +233,17 @@ input[type=text]:focus
     right: 10px;
 }
 
-.dropdown .item.icon { padding-right: 20px; }
-.dropdown .item.icon span { left: 0; }
+.dropdown .item.icon {
+    padding-right: 20px;
+}
+
+.dropdown .item.icon span {
+    left: 0;
+}
 
 /* =Btn
 ----------------------------------------------- */
-.btn
-, .btn:visited {
+.btn, .btn:visited {
     background-repeat: repeat-x;
     background-position: 0 0;
 
@@ -271,11 +269,11 @@ input[type=text]:focus
     -webkit-border-radius: 4px;
     border-radius: 4px;
 
-    text-shadow: 1px 1px 1px rgba(0,0,0,.25);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
 
-    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-    box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+    -moz-box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+    -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, .25);
 
 }
 
@@ -392,7 +390,7 @@ select {
     padding-left: 17px
 }
 
-.container_div{
+.container_div {
     border: 1px solid;
     border-color: #e5e5e5 #696969 #696969 #e5e5e5;
     border-collapse: separate;
@@ -415,9 +413,11 @@ select {
     width: 500px;
     padding: 5px;
 }
+
 a:active:hover.button {
-    background-position:0 -64px
+    background-position: 0 -64px
 }
+
 a:hover.button {
     background-color: #b39b6e;
     background-position: 0 -32px;
@@ -429,9 +429,9 @@ a:hover.button {
     border-radius: 7px;
     -moz-border-radius: 7px;
     -webkit-border-radius: 7px;
-    box-shadow: 0 2px 4px rgba(0,0,0,.65);
-    -moz-box-shadow: 0 2px 4px rgba(0,0,0,.65);
-    -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.65);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .65);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .65);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .65);
     float: left;
     height: 16px;
     line-height: 16px;
@@ -441,18 +441,18 @@ a:hover.button {
     font-size: 14px;
     font-weight: bold;
     text-decoration: none;
-    color:black !important;
+    color: black !important;
 
     -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none;   /* Chrome/Safari/Opera */
-    -khtml-user-select: none;    /* Konqueror */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Non-prefixed version, currently */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently */
 
 }
 
-input.search  {
+input.search {
     background: #fff url(../images/bg/bg-light.gif) repeat-x !important;
     border: 0;
     color: #000 !important;
@@ -479,11 +479,11 @@ input.search  {
     width: 35px;
 }
 
-.zul-bar{
-    position:fixed !important;
+.zul-bar {
+    position: fixed !important;
 }
 
-.ajaxtooltip{
+.ajaxtooltip {
     position: absolute; /*leave this alone*/
     display: none; /*leave this alone*/
     width: auto;
@@ -492,41 +492,41 @@ input.search  {
     border: 2px solid gray;
     border-width: 1px 2px 2px 1px;
     padding: 5px;
-    z-index:2000;
+    z-index: 2000;
     background: #d4c7ab url(/eq/i/bgl.gif);
 
 }
 
 /* CSS needed for the script */
 
-#tooltip_object{
-    z-index:1000000;
-    text-align:left;
+#tooltip_object {
+    z-index: 1000000;
+    text-align: left;
 }
-#tooltip_object div{
-    position:relative;
+
+#tooltip_object div {
+    position: relative;
 }
 
 /* If you don't want the arrow - Just set the width of this div to 1 or something like that and drop the background selectors from the CSS below */
 
-#tooltip_object .ajax_tooltip_content{
+#tooltip_object .ajax_tooltip_content {
     border: 2px solid black;
-    background-color:#fff;
+    background-color: #fff;
 
     -webkit-box-shadow: 8px 5px 5px 0px rgba(0, 0, 40, .6);
     -moz-box-shadow: 8px 5px 5px 0px rgba(0, 0, 40, .6);
     box-shadow: 8px 5px 5px 0px rgba(0, 0, 40, .6);
 
-    left:18px;	/* Same as border thickness */
-    top:100px;
-    position:absolute;
+    left: 18px; /* Same as border thickness */
+    top: 100px;
+    position: absolute;
 
+    width: auto;
+    height: auto;
 
-    width:auto;
-    height:auto;
-
-    overflow:auto;	/* Hide overflow content */
-    z-index:1000001;
+    overflow: auto; /* Hide overflow content */
+    z-index: 1000001;
 
     background: #d4c7ab url(/eq/i/bgl.gif);
 }
