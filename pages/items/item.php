@@ -1,6 +1,6 @@
 <?php
 
-require_once('functions.php');
+require_once('pages/items/functions.php');
 
 if (isset($_GET['view_dropped'])) {
     echo return_where_item_dropped($_GET['view_dropped'], 1);
