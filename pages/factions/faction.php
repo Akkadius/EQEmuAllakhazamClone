@@ -16,11 +16,11 @@ if ($id != "" && is_numeric($id)) {
             id = '" . $id . "'
     ";
     $result = db_mysql_query($query);
-    if (mysql_num_rows($result) == 0) {
+    if (mysqli_num_rows($result) == 0) {
         header("Location: ?a=factions");
         exit();
     }
-    $FactionRow = mysql_fetch_array($result);
+    $FactionRow = mysqli_fetch_array($result);
     $name = $FactionRow["name"];
 } elseif ($name != "") {
     $query = "
@@ -33,11 +33,11 @@ if ($id != "" && is_numeric($id)) {
             name LIKE '$name'
     ";
     $result = db_mysql_query($query);
-    if (mysql_num_rows($result) == 0) {
+    if (mysqli_num_rows($result) == 0) {
         header("Location: factions.php?iname=" . $name . "&isearch=true");
         exit();
     } else {
-        $FactionRow = mysql_fetch_array($result);
+        $FactionRow = mysqli_fetch_array($result);
         $id = $FactionRow["id"];
         $name = $FactionRow["name"];
     }

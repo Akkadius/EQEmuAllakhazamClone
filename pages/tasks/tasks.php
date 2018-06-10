@@ -8,13 +8,13 @@
 	$activity_data = array();
 	if ($id != "" && is_numeric($id)) {
 		$query = db_mysql_query("SELECT * FROM $task_table WHERE id = '$id'");
-		if (mysql_num_rows($query) > 0) {
-			$task_data = mysql_fetch_array($query);			
+		if (mysqli_num_rows($query) > 0) {
+			$task_data = mysqli_fetch_array($query);
 		}
 		
 		$query = db_mysql_query("SELECT * FROM $task_activities_table WHERE taskid = '$id' ORDER BY activityid, step");
-		if (mysql_num_rows($query) > 0) {
-			while ($row = mysql_fetch_array($query)) {
+		if (mysqli_num_rows($query) > 0) {
+			while ($row = mysqli_fetch_array($query)) {
 				array_push($activity_data, $row);
 			}
 		}
@@ -77,7 +77,7 @@
 							$print_buffer .=  "<li>Kill " . $activity["goalcount"] . " " . $activity["text1"] . "</li>";
 						} else if ($activity["goalid"] < 500) {
 							$query = db_mysql_query("SELECT DISTINCT $npc_types_table.`name` FROM $npc_types_table INNER JOIN goallists ON $npc_types_table.id = goallists.entry WHERE goallists.listid = '" . $activity["goalid"] . "'");
-							if (mysql_num_rows($query) > 0) {
+							if (mysqli_num_rows($query) > 0) {
 								$npcs = array();
 								while ($row = mysql_fetch_assoc($query)) {
 									array_push($npcs, NameCleanup($row["name"]));

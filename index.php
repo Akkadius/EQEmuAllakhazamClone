@@ -1,5 +1,11 @@
 <?php
 
+    error_reporting(1);
+    ini_set('display_errors', 1);
+
+    /*phpinfo();
+    exit;*/
+
     require_once('includes/constants.php');
     require_once('includes/config.php');
     require_once($includes_dir . 'mysql.php');

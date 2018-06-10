@@ -77,7 +77,7 @@ function print_query_results(
 {
     global $dbskills;
 
-    $mysql_rows_returned = mysql_num_rows($mysql_reference_data);
+    $mysql_rows_returned = mysqli_num_rows($mysql_reference_data);
     if ($mysql_rows_returned > get_max_query_results_count($rows_to_return)) {
         $mysql_rows_returned = get_max_query_results_count($rows_to_return);
         $more_objects_exist = true;
@@ -97,7 +97,7 @@ function print_query_results(
         $return_buffer .= "</b></li>";
         $return_buffer .= "<ul>";
         for ($j = 1; $j <= $mysql_rows_returned; $j++) {
-            $row = mysql_fetch_array($mysql_reference_data);
+            $row = mysqli_fetch_array($mysql_reference_data);
 
             $return_buffer .=  " <li style='text-align:left'><a href='" . $anchor_link_callout . "id=" . $row[$href_id_name] . "'>";
             if ($query_description == "npc") {
@@ -282,8 +282,8 @@ function getspell($id)
     } else {
         $query = "SELECT * FROM $spells_table WHERE id=$id";
     }
-    $result = db_mysql_query($query) or message_die('functions.php', 'getspell', $query, mysql_error());
-    $s = mysql_fetch_array($result);
+    $result = db_mysql_query($query) or message_die('functions.php', 'getspell', $query, mysqli_error());
+    $s = mysqli_fetch_array($result);
     return $s;
 }
 
@@ -363,12 +363,8 @@ function WriteIt($value, $name, $sel)
     return $return_buffer;
 }
 
-function get_item_stat_string($name, $stat, $stat2, $stat2color)
+function get_item_stat_string($name, $stat, $stat2 = 0, $stat2color = "")
 {
-
-    if (!$stat2) {
-        $stat2 = 0;
-    }
     $PrintString = "";
     if (is_numeric($stat)) {
         if ($stat != 0 || $stat2 != 0) {
@@ -390,7 +386,7 @@ function get_item_stat_string($name, $stat, $stat2, $stat2color)
             $PrintString .= "</td></tr>";
         }
     } else {
-        if (ereg_replace("[^0-9]", "", $stat) > 0) {
+        if (preg_replace("[^0-9]", "", $stat) > 0) {
             $PrintString .= "<tr><td ><b>" . $name . ": </b></td><td style='text-align:right'>" . $stat . "</td></tr>";
         }
     }
@@ -1152,7 +1148,7 @@ function get_item_icon_from_id($id)
 
     $query = "SELECT `icon` FROM `items` WHERE `id` = " . $id;
     $result = db_mysql_query($query);
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $icon_cache[$id] = '<img src="' . $icons_url . 'item_' . $row['icon'] . '.png" style="width:15px;height:auto">';
         return $icon_cache[$id];
     }

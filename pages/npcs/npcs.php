@@ -35,8 +35,8 @@ if ($npc_name != "") {
 
     $result = db_mysql_query($post_query);
 
-    if (mysql_num_rows($result) == 1) {
-        $row = mysql_fetch_array($result);
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_array($result);
         header("Location: ?a=npc&id=" . $row["id"]);
         exit();
     }

@@ -17,11 +17,11 @@
             $query = "SELECT * FROM $items_table WHERE id='" . $item_id . "'";
         }
         $query_result = db_mysql_query($query);
-        if (mysql_num_rows($query_result) == 0) {
+        if (mysqli_num_rows($query_result) == 0) {
             header("Location: items.php");
             exit();
         }
-        $item_db_data = mysql_fetch_array($query_result);
+        $item_db_data = mysqli_fetch_array($query_result);
         $name = $item_db_data["name"];
     } elseif ($name != "") {
         if ($discovered_items_only == TRUE) {
@@ -30,11 +30,11 @@
             $query = "SELECT * FROM $items_table WHERE name like '$name'";
         }
         $query_result = db_mysql_query($query);
-        if (mysql_num_rows($query_result) == 0) {
+        if (mysqli_num_rows($query_result) == 0) {
             header("Location: items.php?iname=" . $name . "&isearch=true");
             exit();
         } else {
-            $item_db_data = mysql_fetch_array($query_result);
+            $item_db_data = mysqli_fetch_array($query_result);
             $item_id = $item_db_data["id"];
             $name = $item_db_data["name"];
         }

@@ -10,7 +10,7 @@ if($_GET['get_data']){
         $query = "SELECT * FROM `tradeskill_recipe`  WHERE `name` LIKE '%" . $name . "%' ORDER BY `name`";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<li><a href="?a=recipe&id=' . $row['id'] . '">' . $row['name'] . ' ' . (trim(ucfirstwords($dbskills[$row["tradeskill"]])) ? '(' . ucfirstwords($dbskills[$row["tradeskill"]]) . ')' : '') . '</a></li>';
         }
         echo '</ul>';
@@ -22,7 +22,7 @@ if($_GET['get_data']){
             WHERE `name` LIKE '%" . $name . "%'";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<li><a href="?a=item&id=' . $row['id'] . '">' . return_item_icon_from_icon_id($row['icon'], 15) . ' ' . $row['Name'] . '</a></li>';
         }
         echo '</ul>';
@@ -31,7 +31,7 @@ if($_GET['get_data']){
         $query = "SELECT * FROM `spells_new` WHERE `name` LIKE '%" . $name . "%'";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<li><a href="?a=spell&id=' . $row['id'] . '">' . '<img src="' . $icons_url . $row['new_icon'] . '.gif" style="border-radius:5px;height:15px;width:auto"> ' . $row['name'] . '</a></li>';
         }
         echo '</ul>';
@@ -40,7 +40,7 @@ if($_GET['get_data']){
         $query = "SELECT * FROM `zone` WHERE `short_name` LIKE '%" . $name . "%' OR `long_name` LIKE '%" . $name . "%' ORDER BY `long_name`";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<li><a href="?a=zone&name=' . $row['short_name'] . '">' . get_npc_name_human_readable($row['long_name']) . '</a></li>';
         }
         echo '</ul>';
@@ -49,7 +49,7 @@ if($_GET['get_data']){
         $query = "SELECT * FROM `faction_list` WHERE `name` LIKE '%" . $name . "%' ORDER BY `name`";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<li><a href="?a=faction&id=' . $row['id'] . '">' . $row['name'] . '</a></li>';
         }
         echo '</ul>';
@@ -58,7 +58,7 @@ if($_GET['get_data']){
         $query = "SELECT * FROM `npc_types` WHERE `name` LIKE '%" . str_replace(' ', '_', $name) . "%' ORDER BY `name`";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<li><a href="?a=npc&id=' . $row['id'] . '">' . get_npc_name_human_readable($row['name']) . '</a></li>';
         }
         echo '</ul>';
@@ -67,7 +67,7 @@ if($_GET['get_data']){
         $query = "SELECT * FROM `items` WHERE `name` LIKE '%" . $name . "%' ORDER BY `name`";
         $result = db_mysql_query($query);
         echo '<ul>';
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             echo '<a href="?a=item&id=' . $row['id'] . '">' . return_item_icon_from_icon_id($row['icon'], 15) . ' ' . $row['Name'] . '</a><br>';
         }
         echo '</ul>';
@@ -99,7 +99,7 @@ $global_search_count = array(
 $tab_title = "";
 foreach ($global_search_count as $key => $value){
     $result = db_mysql_query($value[1]);
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         if($row['found_count'] > 0)
             $tab_title .= "<li id='global_" . $key . "'><a  href='javascript:;' onclick='fetch_global_data(\"global_" . $key . "\")'>" . $value[0]. " (" . $row['found_count'] . ")</a></li>";
     }

@@ -7,21 +7,21 @@ $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
 if ($id != "" && is_numeric($id)) {
     $Query = "SELECT * FROM $npc_types_table WHERE id='" . $id . "'";
-    $QueryResult = db_mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
-    if (mysql_num_rows($QueryResult) == 0) {
+    $QueryResult = db_mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysqli_error());
+    if (mysqli_num_rows($QueryResult) == 0) {
         header("Location: npcs.php");
         exit();
     }
-    $npc = mysql_fetch_array($QueryResult);
+    $npc = mysqli_fetch_array($QueryResult);
     $name = $npc["name"];
 } elseif ($name != "") {
     $Query = "SELECT * FROM $npc_types_table WHERE name like '$name'";
-    $QueryResult = db_mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysql_error());
-    if (mysql_num_rows($QueryResult) == 0) {
+    $QueryResult = db_mysql_query($Query) or message_die('npc.php', 'MYSQL_QUERY', $Query, mysqli_error());
+    if (mysqli_num_rows($QueryResult) == 0) {
         header("Location: npcs.php?iname=" . $name . "&isearch=true");
         exit();
     } else {
-        $npc = mysql_fetch_array($QueryResult);
+        $npc = mysqli_fetch_array($QueryResult);
         $id = $npc["id"];
         $name = $npc["name"];
     }
@@ -44,9 +44,9 @@ if ($use_custom_zone_list == TRUE) {
         AND $spawn2_table.zone = $zones_table.short_name
         AND LENGTH($zones_table.note) > 0
     ";
-    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
-        while ($row = mysql_fetch_array($result)) {
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_array($result)) {
             if (substr_count(strtolower($row["note"]), "disabled") >= 1) {
                 header("Location: npcs.php");
                 exit();
@@ -159,9 +159,9 @@ $print_buffer .= "<tr valign='top'>";
 
 if ($npc["npc_spells_id"] > 0) {
     $query = "SELECT * FROM $npc_spells_table WHERE id=" . $npc["npc_spells_id"];
-    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
-        $g = mysql_fetch_array($result);
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
+        $g = mysqli_fetch_array($result);
         $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>This NPC casts the following spells</h2><p>";
         $query = "
             SELECT
@@ -175,8 +175,8 @@ if ($npc["npc_spells_id"] > 0) {
             ORDER BY
                 $npc_spells_entries_table.priority DESC
         ";
-        $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-        if (mysql_num_rows($result2) > 0) {
+        $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+        if (mysqli_num_rows($result2) > 0) {
             $print_buffer .= "</ul><li><b>Listname</b>" . get_npc_name_human_readable($g["name"]);
             if ($DebugNpc) {
                 $print_buffer .= " (" . $npc["npc_spells_id"] . ")";
@@ -185,7 +185,7 @@ if ($npc["npc_spells_id"] > 0) {
                 $print_buffer .= " (Procs)";
             }
             $print_buffer .= "<ul>";
-            while ($row = mysql_fetch_array($result2)) {
+            while ($row = mysqli_fetch_array($result2)) {
                 $spell = getspell($row["spellid"]);
                 $print_buffer .= "<li><a href='?a=spell&id=" . $row["spellid"] . "'>" . $spell["name"] . "</a>";
                 $print_buffer .= " (" . $dbspelltypes[$row["type"]] . ")";
@@ -223,15 +223,15 @@ if (($npc["loottable_id"] > 0) AND ((!in_array($npc["class"], $dbmerchants)) OR 
     if ($discovered_items_only == TRUE) {
         $query .= " AND $discovered_items_table.item_id=$items_table.id";
     }
-    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
         if ($show_npc_drop_chances == TRUE) {
             $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>When killed, this NPC drops</h2><br/>";
         } else {
             $print_buffer .= " <td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>When killed, this NPCcan drop</h2><br/>";
         }
         $ldid = 0;
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             if ($show_npc_drop_chances == TRUE) {
                 if ($ldid != $row["lootdrop_id"]) {
                     $print_buffer .= "</ol><li>With a probability of " . $row["probability"] . "% (multiplier : " . $row["multiplier"] . "): </li><ol>";
@@ -269,10 +269,10 @@ if ($npc["merchant_id"] > 0) {
         ORDER BY
             $merchant_list_table.slot
     ";
-    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
         $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells : </b><br/>";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $print_buffer .= "<li><a href='?a=item&id=" . $row["id"] . "'>" . $row["Name"] . "</a> ";
             if ($npc["class"] == 41) {
                 $print_buffer .= "(" . price($row["price"]) . ")";
@@ -331,11 +331,11 @@ foreach ($ignore_zones AS $zid) {
     $query .= " AND $zones_table.short_name!='$zid'";
 }
 $query .= " ORDER BY $zones_table.long_name,$spawn_group_table.`name`";
-$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-if (mysql_num_rows($result) > 0) {
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<h2 class='section_header'>This NPC spawns in</h2>";
     $z = "";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         if ($z != $row["short_name"]) {
             $print_buffer .= "<p><a href='?a=zone&name=" . $row["short_name"] . "'>" . $row["long_name"] . "</a>";
             $z = $row["short_name"];
@@ -369,10 +369,10 @@ $query = "
     GROUP BY
         $faction_list_table.id
 ";
-$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-if (mysql_num_rows($result) > 0) {
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<h2 class='section_header'>Killing this NPC lowers factions with</h2><ul>";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<li><a href=faction.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
     }
 }
@@ -392,12 +392,12 @@ $query = "
     GROUP BY
         $faction_list_table.id
 ";
-$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-if (mysql_num_rows($result) > 0) {
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "
         <h2 class='section_header'>Killing this NPC raises factions with</h2>
         <ul>";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<li><a href=faction.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" . $row["value"] . ")";
     }
 }

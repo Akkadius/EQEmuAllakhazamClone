@@ -178,7 +178,7 @@ if (isset($QueryResult)) {
 
     $Tableborder = 0;
 
-    $num_rows = mysql_num_rows($QueryResult);
+    $num_rows = mysqli_num_rows($QueryResult);
     $total_row_count = $num_rows;
     if ($num_rows > get_max_query_results_count($max_items_returned)) {
         $num_rows = get_max_query_results_count($max_items_returned);
@@ -211,7 +211,7 @@ if (isset($QueryResult)) {
         $RowClass = "lr";
         for ($count = 1; $count <= $num_rows; $count++) {
             $TableData = "";
-            $row = mysql_fetch_array($QueryResult);
+            $row = mysqli_fetch_array($QueryResult);
             $TableData .= "<tr valign='top' class='" . $RowClass . "'><td>";
             if (file_exists($icons_dir . "item_" . $row["icon"] . ".png")) {
                 $TableData .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left'/>";

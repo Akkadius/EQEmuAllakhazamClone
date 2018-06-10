@@ -85,15 +85,15 @@ function return_where_item_dropped($item_id, $via_ajax = 0)
             $query .= " AND $zones_table.short_name!='$zid'";
         }
         $query .= " GROUP BY $spawn_entry_table.npcID ORDER BY $zones_table.long_name ASC";
-        $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysql_error());
-        if (mysql_num_rows($result) > 0) {
+        $result = db_mysql_query($query) or message_die('item.php', 'MYSQL_QUERY', $query, mysqli_error());
+        if (mysqli_num_rows($result) > 0) {
             $return_buffer = "";
             if($via_ajax == 0){
                 $return_buffer .= "<tr>";
                 $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
             }
             $current_zone_iteration = "";
-            while ($row = mysql_fetch_array($result)) {
+            while ($row = mysqli_fetch_array($result)) {
                 if ($current_zone_iteration != $row["zone"]) {
                     if ($current_zone_iteration != "") {
                         $return_buffer .= "</ul>";
@@ -160,13 +160,13 @@ function return_where_item_sold($item_id){
 
         $result = db_mysql_query($query);
 
-        if (mysql_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0) {
             $return_buffer = "";
             $return_buffer .= "<tr>";
             $return_buffer .= "<td><h2 class='section_header'>This item is sold:</h2>";
 
             $current_zone_iteration = "";
-            while ($row = mysql_fetch_array($result)) {
+            while ($row = mysqli_fetch_array($result)) {
                 if ($current_zone_iteration != $row["zone"]) {
                     if ($current_zone_iteration != "") {
                         $return_buffer .= "</ul>";
@@ -225,13 +225,13 @@ function return_where_item_ground_spawn($item_id){
     $return_buffer = "";
 
     $result = db_mysql_query($query);
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
         $return_buffer .= "<tr>";
         $return_buffer .= "<td><h2 class='section_header'>This item spawns on the ground</h2><br>";
 
         $current_zone_iteration = "";
 
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             if ($current_zone_iteration != $row["short_name"]) {
                 if ($current_zone_iteration != "") {
                     $return_buffer .= "</ul>";
@@ -273,7 +273,7 @@ function return_where_item_foraged($item_id){
     $print_buffer = "";
 
     $result = db_mysql_query($query);
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
         $print_buffer .= "
             <tr>
                 <td colspan='2'></td>
@@ -282,7 +282,7 @@ function return_where_item_foraged($item_id){
                 <td>
                 <h2 class='section_header'>This item can be foraged in:</h2>
         ";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $print_buffer .= "
                 <li>
                     <a href='?a=zone&name=" . $row["short_name"] . "'>" . str_replace("_", " ", $row["long_name"]) . "</a>
@@ -318,10 +318,10 @@ function return_where_item_used_trade_skills($item_id){
     ";
     $result = db_mysql_query($query);
     $return_buffer = "";
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
         $return_buffer .= '<tr><td colspan="2"><h2 class="section_header">This item is used in tradeskill recipes</h2></td></tr>';
         $return_buffer .= "<tr><td><ul>";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $return_buffer .= "
                 <li>
                     " . get_item_icon_from_id($item_id) . "
@@ -359,9 +359,9 @@ function return_where_item_result_trade_skill($item_id){
     ";
     $result = db_mysql_query($query);
     $return_buffer = "";
-    if (mysql_num_rows($result) > 0) {
+    if (mysqli_num_rows($result) > 0) {
         $return_buffer .= "<tr><td><h2 class='section_header'>This item is the result of tradeskill recipes</h2><ul>";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $return_buffer .= "
                 <li>
                     " . get_item_icon_from_id($item_id) . "

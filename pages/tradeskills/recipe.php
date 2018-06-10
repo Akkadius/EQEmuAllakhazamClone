@@ -20,7 +20,7 @@ $query = "SELECT *
 			WHERE id=$id";
 
 $result = db_mysql_query($query);
-$recipe = mysql_fetch_array($result);
+$recipe = mysqli_fetch_array($result);
 
 $print_buffer .= "<table  class='display_table container_div'>";
 $print_buffer .= '
@@ -64,10 +64,10 @@ $query = "
 
 $result = db_mysql_query($query);
 
-if (mysql_num_rows($result) > 0) {
+if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Containers</h2>";
     $print_buffer .= "<ul>";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . $row["item_id"] . ">" .
             str_replace("_", " ", $row["Name"]) . "</a><br>";
@@ -94,10 +94,10 @@ $query = "
     AND $trade_skill_recipe_entries.successcount > 0
 ";
 
-$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
-if (mysql_num_rows($result) > 0) {
+$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysqli_error());
+if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Creates</h2><ul>";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 110) . ">" .
             str_replace("_", " ", $row["Name"]) . "</a> x" . $row["successcount"] . " <br>";
@@ -121,10 +121,10 @@ if ($recipe["nofail"] == 0) {
         AND $trade_skill_recipe_entries.failcount > 0
     ";
 
-    $result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
+    $result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
         $print_buffer .= "<tr><td><h2 class='section_header'>Failure</h2><ul>";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
                 "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 10) . ">" .
                 str_replace("_", " ", $row["Name"]) . "</a> x" . $row["failcount"] . " <br>";
@@ -149,11 +149,11 @@ $query = "
     AND $trade_skill_recipe_entries.componentcount > 0
 ";
 
-$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysql_error());
-if (mysql_num_rows($result) > 0) {
+$result = db_mysql_query($query) or message_die('recipe.php', 'MYSQL_QUERY', $query, mysqli_error());
+if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Required</h2><ul>";
 
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'	/> " .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 100) . ">" .
             str_replace("_", " ", $row["Name"]) . "</a> x " . $row["componentcount"] . " <br>";

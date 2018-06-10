@@ -79,9 +79,18 @@ $slow_page_caching = false; /* If pages take longer than 1 second to load, they 
 
 $ignore_zones = array("load", "loading", "load2", "nektropos", "arttest", "apprentice", "tutorial");
 
-$db = mysql_connect($dbhost, $dbuser, $dbpasswd) or die("Impossible to connect to $dbhost : " . mysql_error());
-mysql_select_db($dbname, $db) or die("Impossible to select $dbname : " . mysql_error());
-
 $mysql_debugging = false;
+$database = mysqli_connect($dbhost, $dbuser, $dbpasswd, $dbname) or die("Impossible to connect to $dbhost");
+
+/**
+ * Check if server is alive
+ */
+if ($mysql_debugging) {
+    if (mysqli_ping($database)) {
+        printf("Our connection is ok!\n");
+    } else {
+        printf("Error: %s\n", mysqli_error($database));
+    }
+}
 
 ?>

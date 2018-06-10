@@ -2,9 +2,9 @@
 
 function print_npcs_by_zone($query_result)
 {
-    if (mysql_num_rows($query_result) > 0) {
+    if (mysqli_num_rows($query_result) > 0) {
         $current_zone_iteration = "";
-        while ($row = mysql_fetch_array($query_result)) {
+        while ($row = mysqli_fetch_array($query_result)) {
             if ($current_zone_iteration != $row["zone"]) {
                 if ($current_zone_iteration != "")
                     $print_buffer .= "                  <br/><br/>\n";

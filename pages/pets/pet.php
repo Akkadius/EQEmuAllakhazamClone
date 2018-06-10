@@ -13,8 +13,8 @@ $query = "
         $npc_types_table.`name` = '$name'
     LIMIT 1
 ";
-$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-$npc = mysql_fetch_array($result);
+$result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+$npc = mysqli_fetch_array($result);
 
 $print_buffer .= "<table class='container_div' style='width:500px'><tr valign=top><td>";
 if (file_exists($npcs_dir . $item_id . ".jpg")) {
@@ -65,9 +65,9 @@ $print_buffer .= "<tr valign=top>";
 
 if ($npc["npc_spells_id"] > 0) {
     $query = "SELECT * FROM $npc_spells_table WHERE id=" . $npc["npc_spells_id"];
-    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
-        $g = mysql_fetch_array($result);
+    $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
+        $g = mysqli_fetch_array($result);
         $print_buffer .= "<td colspan='2'>
             <h2 class='section_header'>This pet casts the following spells</h2>
         ";
@@ -83,16 +83,16 @@ if ($npc["npc_spells_id"] > 0) {
             ORDER BY
                 $npc_spells_entries_table.priority DESC
         ";
-        $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
 
         $print_buffer .= '<ul>';
-        if (mysql_num_rows($result2) > 0) {
+        if (mysqli_num_rows($result2) > 0) {
             $print_buffer .= "<li><b>Listname</b> " . $g["name"];
             if ($g["attack_proc"] == 1) {
                 $print_buffer .= " (Procs)";
             }
             $print_buffer .= "</ll>";
-            while ($row = mysql_fetch_array($result2)) {
+            while ($row = mysqli_fetch_array($result2)) {
                 $spell = getspell($row["spellid"]);
                 $print_buffer .= "<li><a href=?a=spell&id=" . $row["spellid"] . ">" . $spell["name"] . "</a></li>";
             }

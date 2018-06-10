@@ -115,7 +115,7 @@ if (($type != 0 && $level != 0) || $namestring != '') {
 
     $result = db_mysql_query($sql);
     if (!$result) {
-        die('Invalid query: ' . mysql_error());
+        die('Invalid query: ' . mysqli_error());
     }
 
     $print_buffer .= ' <table border="0" cellpadding="5" cellspacing="0">';
@@ -124,7 +124,7 @@ if (($type != 0 && $level != 0) || $namestring != '') {
     $ClassName = $dbclasses[$type];
 
     $RowClass = "lr";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         /* This will only come through when the Level Changes */
         $DBSkill = $dbskills[$row["skill"]];
         if ($LevelCheck != $row[$Class]) {

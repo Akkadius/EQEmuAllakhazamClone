@@ -54,8 +54,8 @@ $query = "
     WHERE
         $zones_table.short_name = '$name'
 ";
-$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
-$zone = mysql_fetch_array($result);
+$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysqli_error());
+$zone = mysqli_fetch_array($result);
 $print_buffer .= "<table style='width:100%'><tr valign=top><td>";
 $print_buffer .= "<p><b>Succor point : X (</b>" . floor($zone["safe_x"]) . ")  Y (" . floor($zone["safe_y"]) . ") Z (" . floor($zone["safe_z"]) . ")";
 if ($zone["minium_level"] > 0) {
@@ -80,8 +80,8 @@ if ($mode == "npcs") {
         $query .= " GROUP BY $npc_types_table.id";
     }
     $query .= " ORDER BY $order";
-    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
         $print_buffer .= "<p>Bestiary<p><table ><tr>";
         if ($ZoneDebug == TRUE) {
             $print_buffer .= "<td class='menuh'><b><a href=?a=zone&name=$name&order=id>Id</a></b></td>";
@@ -95,7 +95,7 @@ if ($mode == "npcs") {
         $print_buffer .= "<td align='left' class='menuh'><b>Type</b></td>";
 
         $RowClass = "lr";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             if ((get_npc_name_human_readable($row["name"])) != '' && ($row["trackable"] > 0 || $trackable_npcs_only == FALSE)) {
                 $print_buffer .= "<tr class='" . $RowClass . "'>";
                 if ($ZoneDebug == TRUE) {
@@ -160,10 +160,10 @@ if ($mode == "items") {
     }
     $query .= " GROUP BY $npc_types_table.id";
 
-    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
     $ItemsData = array();
     $RowClass = "lr";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         //# For each NPC in the zone...
         $query = "SELECT $items_table.*";
         $query .= " FROM $items_table,$loot_table_entries,$npc_types_table,$loot_drop_entries_table";
@@ -179,13 +179,13 @@ if ($mode == "items") {
         }
         $query .= " GROUP BY $items_table.id ORDER BY $items_table.`name`";
 
-        $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
 
-        if (mysql_num_rows($result2) > 0) {
-            $ItemsFound = mysql_num_rows($result2);
+        if (mysqli_num_rows($result2) > 0) {
+            $ItemsFound = mysqli_num_rows($result2);
         }
 
-        while ($res = mysql_fetch_array($result2)) {
+        while ($res = mysqli_fetch_array($result2)) {
             $ItemsData[$res["id"]] = $res;
         }
     }
@@ -256,10 +256,10 @@ if ($mode == "spawngroups") {
             ORDER BY
                 $spawn_group_table.`name` ASC
         ";
-        $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
 
-        if (mysql_num_rows($result) > 0) {
-            while ($row = mysql_fetch_array($result)) {
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
                 $print_buffer .= "<li><a href=spawngroup.php?id=" . $row["id"] . ">" . $row["name"] . "</a> (" .
                     floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]) . ") (respawn time : " .
                     translate_time($row["respawntime"]) . ")<ul>";
@@ -278,8 +278,8 @@ if ($mode == "spawngroups") {
                     ORDER BY
                         $npc_types_table.`name` ASC
                 ";
-                $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
-                while ($res = mysql_fetch_array($result2)) {
+                $result2 = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
+                while ($res = mysqli_fetch_array($result2)) {
                     $print_buffer .= "<li><a href=?a=npc&id=" . $res["npcID"] . ">" . $res["name"] . "</a>, chance " . $res["chance"] . "%";
                     $print_buffer .= " (level " . $res["level"] . ")";
                 }
@@ -309,12 +309,12 @@ if ($mode == "forage") {
         ORDER BY
             $items_table.name ASC
     ";
-    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
-    if (mysql_num_rows($result) > 0) {
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
+    if (mysqli_num_rows($result) > 0) {
         $print_buffer .= "<p>Forageable Items<p><table border=1><tr>
 			<td class=tab_title>Name</a></td>
 			</tr>";
-        while ($row = mysql_fetch_array($result)) {
+        while ($row = mysqli_fetch_array($result)) {
             $print_buffer .= "<tr><td><a href=?a=item&id=" . $row["id"] . ">" . $row["Name"] . "</a></td></tr>";
         }
         $print_buffer .= "</table>";
@@ -345,9 +345,9 @@ if ($mode == "tasks") {
                 $tasks_table.id ASC
         ";
 
-        $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+        $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
 
-        if (mysql_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0) {
             $print_buffer .= "<table border=0 width=100% cellpadding='5' cellspacing='0'><tr valign=top><td width=100%>";
             $print_buffer .= "<table border=0 cellpadding='5' cellspacing='0'><tr>
 				<td class='menuh'>Task Name</td>
@@ -358,7 +358,7 @@ if ($mode == "tasks") {
 				";
 
             $RowClass = "lr";
-            while ($row = mysql_fetch_array($result)) {
+            while ($row = mysqli_fetch_array($result)) {
                 $Reward = $row["reward"];
                 if ($row["rewardmethod"] == 0) {
                     if ($row["rewardid"] > 0) {

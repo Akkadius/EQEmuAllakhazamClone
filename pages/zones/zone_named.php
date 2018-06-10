@@ -31,8 +31,8 @@ $query = "
     WHERE
         $zones_table.short_name = '$name'
 ";
-$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
-$zone = mysql_fetch_array($result);
+$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysqli_error());
+$zone = mysqli_fetch_array($result);
 $print_buffer .= "<table border=0 width=0%><tr valign=top><td>";
 $print_buffer .= "<p><b>Succor point : </b>" . floor($zone["safe_x"]) . " / " . floor($zone["safe_y"]) . " / " . floor($zone["safe_z"]);
 if ($zone["minium_level"] > 0) {
@@ -100,9 +100,9 @@ if (isset($submitDetailMaps)) {
             AND $spawn2_table.zone = '$name'
             AND $spawn_entry_table.spawngroupID = $spawn_group_table.id
         ";
-        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-        if (mysql_num_rows($result) > 0) {
-            while ($row = mysql_fetch_array($result)) {
+        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+        if (mysqli_num_rows($result) > 0) {
+            while ($row = mysqli_fetch_array($result)) {
                 //    P 195.0000, 210.0000, 94.8135,  0, 0, 0,  3,  Gruppip_(Wizard_Spells)
                 $print_buffer .= $v . "P " . round($row["x"], 2) . ", " . round($row["y"], 2) . ", " . round($row["z"], 2) . ",0,0,0,3," . str_replace(" ", "_", $mymob["name"]);
                 $v = "<br>\n";
@@ -156,11 +156,11 @@ if (isset($submitDetail)) {
             AND $spawn2_table.zone = '$name'
             AND $spawn_entry_table.spawngroupID = $spawn_group_table.id
         ";
-        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-        if (mysql_num_rows($result) > 0) {
+        $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+        if (mysqli_num_rows($result) > 0) {
             $print_buffer .= "<td>";
             $sep = "";
-            while ($row = mysql_fetch_array($result)) {
+            while ($row = mysqli_fetch_array($result)) {
                 $print_buffer .= "$sep" . floor($row["y"]) . " / " . floor($row["x"]) . " / " . floor($row["z"]);
                 $print_buffer .= ", " . translate_time($row["respawntime"]);
                 $sep = "<br>";
@@ -188,11 +188,11 @@ if (isset($submitDetail)) {
                 AND $loot_table_entries.lootdrop_id = $loot_drop_entries_table.lootdrop_id
                 AND $loot_drop_entries_table.item_id = $items_table.id
              ";
-            $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysql_error());
-            if (mysql_num_rows($result) > 0) {
+            $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+            if (mysqli_num_rows($result) > 0) {
                 $print_buffer .= "<td>";
                 $sep = "";
-                while ($row = mysql_fetch_array($result)) {
+                while ($row = mysqli_fetch_array($result)) {
                     $print_buffer .= "$sep<a href=?a=item&id=" . $row["id"] . ">" . $row["Name"] . "</a>";
                     $print_buffer .= ", " . $dbitypes[$row["itemtype"]];
                     $sep = "<br>";
@@ -240,7 +240,7 @@ if ($mode == "npcs") {
         $query .= " GROUP BY $npc_types_table.id";
     }
     $query .= " ORDER BY $order";
-    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysql_error());
+    $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
     $print_buffer .= "<p><b>Bestiary</b><p><table border=1><tr>";
     $print_buffer .= "<form method=POST action=$PHP_SELF>";
     $print_buffer .= "<input type=submit name=submitDetail value=\"Detailled List\" class=form>";
@@ -259,7 +259,7 @@ if ($mode == "npcs") {
          <td class=tab_title><a href=$PHP_SELF?name=$name&order=race>Race</a></td>
          <td class=tab_title><a href=$PHP_SELF?name=$name&order=level>Level</a></td>
          ";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<tr>";
         if ($ZoneDebug == TRUE) {
             $print_buffer .= "<td>" . $row["id"] . "</td>";

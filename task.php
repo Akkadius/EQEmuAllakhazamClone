@@ -17,12 +17,12 @@ $name = (isset($_GET['name']) ? $_GET['name'] : '');
 
 if ($id != "" && is_numeric($id) && $display_task_info == TRUE) {
     $Query = "SELECT * FROM $tasks_table WHERE id='" . $id . "'";
-    $QueryResult = db_mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
-    if (mysql_num_rows($QueryResult) == 0) {
+    $QueryResult = db_mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysqli_error());
+    if (mysqli_num_rows($QueryResult) == 0) {
         header("Location: customzoneslist.php");
         exit();
     }
-    $task = mysql_fetch_array($QueryResult);
+    $task = mysqli_fetch_array($QueryResult);
     $name = $task["title"];
 } else {
     header("Location: customzoneslist.php");
@@ -88,11 +88,11 @@ if ($display_task_activities == TRUE) {
     print "<tr class='myline' height='6'><td colspan='2'></td></tr>\n";
     print "<tr valign='top'>";
     $Query = "SELECT * FROM $activities_table WHERE taskid='" . $id . "' ORDER BY activityid";
-    $QueryResult = db_mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysql_error());
+    $QueryResult = db_mysql_query($Query) or message_die('task.php', 'MYSQL_QUERY', $Query, mysqli_error());
 
-    if (mysql_num_rows($QueryResult) > 0) {
+    if (mysqli_num_rows($QueryResult) > 0) {
         print "<tr><td><b>Task Activities</b></td></tr>";
-        while ($row = mysql_fetch_array($QueryResult)) {
+        while ($row = mysqli_fetch_array($QueryResult)) {
 
 
             $Text1 = $row["text1"];
@@ -230,11 +230,11 @@ if ($display_task_activities == TRUE) {
             // Goal List
             if ($GoalMethod == 1) {
                 $Query2 = "SELECT * FROM goallists WHERE listid='" . $GoalID . "'";
-                $QueryResult2 = db_mysql_query($Query2) or message_die('task.php', 'MYSQL_QUERY', $Query2, mysql_error());
+                $QueryResult2 = db_mysql_query($Query2) or message_die('task.php', 'MYSQL_QUERY', $Query2, mysqli_error());
                 $GoalListString = "";
-                if (mysql_num_rows($QueryResult2) > 0) {
+                if (mysqli_num_rows($QueryResult2) > 0) {
 
-                    while ($row2 = mysql_fetch_array($QueryResult2)) {
+                    while ($row2 = mysqli_fetch_array($QueryResult2)) {
 
                         if ($GoalType == "NPCID" && $row2["entry"]) {
                             $NPCID = $row2["entry"];

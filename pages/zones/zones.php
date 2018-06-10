@@ -22,14 +22,14 @@ $query = "
 */
 $query .= " GROUP BY $spawn2_table.zone
         ORDER BY $zones_table.long_name ASC";
-$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysql_error());
+$result = db_mysql_query($query) or message_die('zones.php', 'MYSQL_QUERY', $query, mysqli_error());
 $print_buffer .= "<table class='display_table datatable container_div'><tr>
        <td style='font-weight:bold'>Name</td>
        <td style='font-weight:bold'>Short name</td>
        <td style='font-weight:bold'>ID</td>
        <td style='font-weight:bold'>Spawn points</td>
        ";
-while ($row = mysql_fetch_array($result)) {
+while ($row = mysqli_fetch_array($result)) {
     $print_buffer .= "<tr>
          <td><a href='?a=zone&name=" . $row["short_name"] . "''>" . $row["long_name"] . "</a></td>
          <td>" . $row["short_name"] . "</td>

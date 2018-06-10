@@ -52,10 +52,10 @@ if (isset($class) && $class != 0) {
     $Query .= " GROUP BY $spells_table.`teleport_zone` ORDER BY $spells_table.classes" . $class;
     $result = db_mysql_query($Query);
     if (!$result) {
-        $print_buffer .= 'Could not run query: ' . mysql_error();
+        $print_buffer .= 'Could not run query: ' . mysqli_error();
         exit;
     }
-    $columns = mysql_num_fields($result);
+    $columns = mysqli_num_fields($result);
 
     $print_buffer .= '<h1>' . $dbclasses[$class] . '</h1>';
 
@@ -78,7 +78,7 @@ if (isset($class) && $class != 0) {
 
     $RowClass = "lr";
     $print_buffer .= "</tr></thead><tbody>";
-    while ($row = mysql_fetch_array($result)) {
+    while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<tr class='" . $RowClass . "'>";
         $print_buffer .= "<td>" . $row["classes" . $class] . "</td>";
         $print_buffer .= "<td><img src='" . $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";

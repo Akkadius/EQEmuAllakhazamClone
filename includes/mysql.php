@@ -18,43 +18,54 @@ function message_die($t1, $t2, $t3, $t4)
  */
 function get_field_result($field, $query)
 {
-    $QueryResult = db_mysql_query($query) or message_die('mysql.php', 'GetFiedByQuery', $query, mysql_error());
-    if (mysql_num_rows($QueryResult) > 0) {
-        $rows = mysql_fetch_array($QueryResult) or message_die('mysql.php', 'GetFiedByQuery', "MYSQL_FETCH_ARRAY", mysql_error());
+    $QueryResult = db_mysql_query($query) or message_die('mysql.php', 'GetFiedByQuery', $query, mysqli_error());
+    if (mysqli_num_rows($QueryResult) > 0) {
+        $rows = mysqli_fetch_array($QueryResult) or message_die(
+            'mysql.php',
+            'GetFiedByQuery',
+            "MYSQL_FETCH_ARRAY",
+            mysqli_error()
+        );
         $Result = $rows[$field];
-    } else
+    } else {
         $Result = "";
+    }
 
     return $Result;
 }
 
-/** Runs '$query' and returns the first (arbitrarily) found row.
+/**
+ * Runs '$query' and returns the first (arbitrarily) found row.
  */
 function GetRowByQuery($query)
 {
     $QueryResult = db_mysql_query($query) or mysql_die($query);
-    $Result = mysql_fetch_array($QueryResult);
+    $Result = mysqli_fetch_array($QueryResult);
 
     return $Result;
 }
 
-function db_mysql_query($query){
-    global $mysql_debugging, $debug_queries;
+function db_mysql_query($query)
+{
+    global $mysql_debugging, $debug_queries, $database;
+
     $start = microtime(true);
+    $result = mysqli_query($database, $query);
 
-    $result = mysql_query($query);
+    // var_dump($result->fetch_assoc());
 
-
-
-    if($query != "" && $mysql_debugging){
+    if ($query != "" && $mysql_debugging) {
         $millisecond_time = number_format((microtime(true) - $start), 2);
 
-        $debug_queries .= ' <pre style="margin: 0px; line-height: 24px;">' . $query . ' <b>Execution Time :: ' . $millisecond_time . 's</b> ' . (mysql_error() ? 'ERROR: ' . mysql_error() : '') . '</pre><hr>';
+        $debug_queries .= ' <pre style="margin: 0px; line-height: 24px;">' .
+                          $query . ' <b>Execution Time :: ' .
+                          $millisecond_time . 's</b> ' .
+                          (mysqli_error($database) ? 'ERROR: ' . mysqli_error($database) : '') . '</pre><hr>';
     }
 
-    if(mysql_error()){
+    if (mysqli_error($database)) {
         print $debug_queries;
-        print mysql_error();
+        print mysqli_error($database);
         die;
     }
 
