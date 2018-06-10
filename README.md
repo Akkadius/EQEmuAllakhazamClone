@@ -22,8 +22,15 @@
   * nginx
   * php-fpm 7.2
   * mariadb
+* You will need to first go to the `laradock` folder and copy the example env config 
+
+```cp env-example .env```
+
+* Then you can proceed below
 
 ### Starting the docker environment
+
+![image](https://user-images.githubusercontent.com/3319450/41198122-8d575772-6c37-11e8-849c-492051b12ab9.png)
 
 ```./docker-up.sh```
 
@@ -50,3 +57,7 @@ script to do just that
 * From the `laradock` directory run:
 
 ```docker-compose exec workspace php seed-db.php```
+
+![image](https://user-images.githubusercontent.com/3319450/41198130-cdcc9f92-6c37-11e8-8051-40d73741fda0.png)
+
+* At this point you should have all data sourced into your docker database environment and you should be able to connect without issue. The stock config template should work out of the box for the docker development environment
