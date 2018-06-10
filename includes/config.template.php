@@ -19,7 +19,7 @@ $site_title  = 'EQEmu Server AllaClone';
 /**
  * MySQL Config
  */
-$db_host     = "localhost";
+$db_host     = "mariadb";
 $db_name     = "peq";
 $db_user     = "root";
 $db_password = "root";
