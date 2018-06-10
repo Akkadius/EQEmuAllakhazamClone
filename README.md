@@ -47,4 +47,6 @@ can simply start the nginx container via `docker-compose up -d nginx workspace` 
 * Assuming you are using the laradock setup mentioned above, you will need to source in a database, we've provided a handy
 script to do just that
 
+* From the `laradock` directory run:
+
 ```docker-compose exec workspace php seed-db.php```
