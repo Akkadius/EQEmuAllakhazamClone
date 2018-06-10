@@ -46,10 +46,10 @@ if (isset($class) && $class != 0) {
 			WHERE $spells_table.classes" . $class . " > 0
 			AND $spells_table.classes" . $class . " < " . $server_max_level;
 
-    if ($use_spell_globals == TRUE) {
+    if ($use_spell_globals == true) {
         $Query .= " AND ISNULL((SELECT spell_globals.spellid FROM spell_globals WHERE spell_globals.spellid = $spells_table.`id`))";
     }
-    $Query .= " GROUP BY $spells_table.`teleport_zone` ORDER BY $spells_table.classes" . $class;
+    $Query  .= " GROUP BY $spells_table.`teleport_zone` ORDER BY $spells_table.classes" . $class;
     $result = db_mysql_query($Query);
     if (!$result) {
         $print_buffer .= 'Could not run query: ' . mysqli_error();
@@ -59,9 +59,7 @@ if (isset($class) && $class != 0) {
 
     $print_buffer .= '<h1>' . $dbclasses[$class] . '</h1>';
 
-    $print_buffer .= '<hr>';
-
-    $print_buffer .= "<table class='datatable'><thead>";
+    $print_buffer .= "<table class='datatable' style='clear:none'><thead>";
     $print_buffer .= "<th class='menuh'>Level</th>";
     $print_buffer .= "<th class='menuh'>Icon</th>";
     $print_buffer .= "<th class='menuh'>Spell Name</th>";
@@ -76,7 +74,7 @@ if (isset($class) && $class != 0) {
     $print_buffer .= "<th class='menuh'>Max Damage</th>";
 
 
-    $RowClass = "lr";
+    $RowClass     = "lr";
     $print_buffer .= "</tr></thead><tbody>";
     while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<tr class='" . $RowClass . "'>";
@@ -101,8 +99,6 @@ if (isset($class) && $class != 0) {
         }
     }
     $print_buffer .= "</tbody></table>";
-
-
 }
 
 ?>
