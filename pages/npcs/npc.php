@@ -1,6 +1,6 @@
 <?php
 
-require_once('functions.php');
+require_once('pages/npcs/functions.php');
 
 $id = (isset($_GET['id']) ? $_GET['id'] : '');
 $name = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
