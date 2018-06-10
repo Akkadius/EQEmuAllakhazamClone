@@ -21,8 +21,8 @@ $site_title  = 'EQEmu Server AllaClone';
  */
 $db_host     = "localhost";
 $db_name     = "peq";
-$db_user     = "username";
-$db_password = "password";
+$db_user     = "root";
+$db_password = "root";
 
 /**
  * Options
@@ -32,7 +32,7 @@ $hide_navbar     = false;
 
 $site_logo = ""; /* Where you put your site logo */
 
-$root_url     = 'http://www.myserver.com/AllaClone';
+$root_url     = 'http://localhost/';
 $includes_url = $root_url . 'includes/';
 $includes_dir = getcwd() . "/includes/";
 $eqemu_dir    = "/home/eqemu/server/";
