@@ -1,11 +1,11 @@
 <?php
 
-$name = mysql_real_escape_string($_GET['q']);
+$name = mysqli_real_escape_string($database, $_GET['q']);
 
 $page_title = "Global Search :: " . $_GET['q'];
 
 if($_GET['get_data']){
-    $name = mysql_real_escape_string($_GET['get_data']);
+    $name = mysqli_real_escape_string($database, $_GET['get_data']);
     if($_GET['fetch_type'] == "global_tradeskills"){
         $query = "SELECT * FROM `tradeskill_recipe`  WHERE `name` LIKE '%" . $name . "%' ORDER BY `name`";
         $result = db_mysql_query($query);
