@@ -98,11 +98,11 @@ function print_query_results(
     if ($mysql_rows_returned == 0) {
         $return_buffer .= "<ul><li><b>No " . $query_description . " found.</b></li></ul>";
     } else {
-        $return_buffer .= "<ul><li><b>" . $mysql_rows_returned . " " . ($mysql_rows_returned == 1 ? $query_description : $object_description) . " displayed.";
+        $return_buffer .= "<h1>" . $mysql_rows_returned . " " . ($mysql_rows_returned == 1 ? $query_description : $object_description) . " displayed";
         if ($more_objects_exist) {
             $return_buffer .= " More " . $object_description . " exist but you reached the query limit.";
         }
-        $return_buffer .= "</b></li>";
+        $return_buffer .= "</h1>";
         $return_buffer .= "<ul>";
         for ($j = 1; $j <= $mysql_rows_returned; $j++) {
             $row = mysqli_fetch_array($mysql_reference_data);

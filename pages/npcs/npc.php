@@ -282,7 +282,7 @@ if ($npc["merchant_id"] > 0) {
     if (mysqli_num_rows($result) > 0) {
         $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells</b><br/><br>";
         while ($row = mysqli_fetch_array($result)) {
-            $print_buffer .= "<li style='list-style-type:none'><a href='?a=item&id=" . $row["id"] . "'>" .
+            $print_buffer .= "<li style='list-style-type:none;margin-left:15px;'><a href='?a=item&id=" . $row["id"] . "'>" .
                 '<img src="' . $icons_url . $row['icon'] . '.gif" align="center" border="1" style="border-radius:5px;height:15px;width:auto"> ' .
                  $row["Name"] .
                  "</a> ";

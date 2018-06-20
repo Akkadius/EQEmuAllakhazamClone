@@ -323,7 +323,7 @@ function return_where_item_used_trade_skills($item_id){
         $return_buffer .= "<tr><td><ul>";
         while ($row = mysqli_fetch_array($result)) {
             $return_buffer .= "
-                <li>
+                <li style='list-style-type:none'>
                     " . get_item_icon_from_id($item_id) . "
                     <a href='?a=recipe&id=" . $row["id"] . "'>
                         " . str_replace("_", " ", $row["name"]) . "
@@ -363,7 +363,7 @@ function return_where_item_result_trade_skill($item_id){
         $return_buffer .= "<tr><td><h2 class='section_header'>This item is the result of tradeskill recipes</h2><ul>";
         while ($row = mysqli_fetch_array($result)) {
             $return_buffer .= "
-                <li>
+                <li style='list-style-type:none'>
                     " . get_item_icon_from_id($item_id) . "
                     <a href='?a=recipe&id=" . $row["id"] . "'>
                         " . str_replace("_", " ", $row["name"]) . "
