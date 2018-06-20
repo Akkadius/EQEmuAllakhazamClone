@@ -163,13 +163,17 @@ if ($npc["npc_spells_id"] > 0) {
     if (mysqli_num_rows($result) > 0) {
         $g = mysqli_fetch_array($result);
         $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>This NPC casts the following spells</h2><p>";
+        /** @noinspection SqlDialectInspection */
         $query = "
             SELECT
-                $npc_spells_entries_table.*
+                npc_spells_entries.*,
+                spells_new.`name`,
+                spells_new.`new_icon`
             FROM
-                $npc_spells_entries_table
+                npc_spells_entries, spells_new
             WHERE
-                $npc_spells_entries_table.npc_spells_id = " . $npc["npc_spells_id"] . "
+            	{$npc_spells_entries_table}.spellid = spells_new.id
+            AND $npc_spells_entries_table.npc_spells_id = " . $npc["npc_spells_id"] . "
             AND $npc_spells_entries_table.minlevel <= " . $npc["level"] . "
             AND $npc_spells_entries_table.maxlevel >= " . $npc["level"] . "
             ORDER BY
@@ -177,7 +181,9 @@ if ($npc["npc_spells_id"] > 0) {
         ";
         $result2 = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
         if (mysqli_num_rows($result2) > 0) {
-            $print_buffer .= "</ul><li><b>Listname</b>" . get_npc_name_human_readable($g["name"]);
+            $list_name = get_npc_name_human_readable($g["name"]);
+
+            $print_buffer .= "</ul>{$list_name}";
             if ($DebugNpc) {
                 $print_buffer .= " (" . $npc["npc_spells_id"] . ")";
             }
@@ -186,8 +192,10 @@ if ($npc["npc_spells_id"] > 0) {
             }
             $print_buffer .= "<ul>";
             while ($row = mysqli_fetch_array($result2)) {
-                $spell = getspell($row["spellid"]);
-                $print_buffer .= "<li><a href='?a=spell&id=" . $row["spellid"] . "'>" . $spell["name"] . "</a>";
+
+                $icon = '<img src="' . $icons_url . $row['new_icon'] . '.gif" align="center" border="1" style="border-radius:5px;height:15px;width:auto">';
+
+                $print_buffer .= "<li><a href='?a=spell&id=" . $row["spellid"] . "'>{$icon} {$row['name']} </a>";
                 $print_buffer .= " (" . $dbspelltypes[$row["type"]] . ")";
                 if ($DebugNpc) {
                     $print_buffer .= " (recast=" . $row["recast_delay"] . ", priority= " . $row["priority"] . ")";
@@ -259,7 +267,8 @@ if ($npc["merchant_id"] > 0) {
             $items_table.id,
             $items_table.Name,
             $items_table.price,
-            $items_table.ldonprice
+            $items_table.ldonprice,
+            $items_table.icon
         FROM
             $items_table,
             $merchant_list_table
@@ -271,9 +280,12 @@ if ($npc["merchant_id"] > 0) {
     ";
     $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
     if (mysqli_num_rows($result) > 0) {
-        $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells : </b><br/>";
+        $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><b>This NPC sells</b><br/><br>";
         while ($row = mysqli_fetch_array($result)) {
-            $print_buffer .= "<li><a href='?a=item&id=" . $row["id"] . "'>" . $row["Name"] . "</a> ";
+            $print_buffer .= "<li style='list-style-type:none'><a href='?a=item&id=" . $row["id"] . "'>" .
+                '<img src="' . $icons_url . $row['icon'] . '.gif" align="center" border="1" style="border-radius:5px;height:15px;width:auto"> ' .
+                 $row["Name"] .
+                 "</a> ";
             if ($npc["class"] == 41) {
                 $print_buffer .= "(" . price($row["price"]) . ")";
             } // NPC is a shopkeeper

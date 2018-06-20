@@ -11,7 +11,7 @@ if (!is_numeric($class)) {
 $page_title = "Pets Statistics";
 
 $print_buffer .= "<table class='container_div display_table'><tr valign=top><td>";
-$print_buffer .= "<h2 class='section_header'>Choose a class:</h2><ul style='text-align:left'>";
+$print_buffer .= "<h2 class='section_header'>Choose a class</h2><ul style='text-align:left'>";
 $print_buffer .= "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
 $print_buffer .= "<li><a href=?a=pets&class=2  id='class2'>Cleric</a>";
 $print_buffer .= "<li><a href=?a=pets&class=6  id='class6'>Druid</a>";

@@ -26,6 +26,7 @@ if ($minskill > $maxskill) {
 }
 
 $print_buffer .= '
+<div class="display_table container_div">
     <form method="GET" lpformnum="1">
         <table border="0">
             <input type="hidden" name="a" value="recipes">
@@ -59,7 +60,7 @@ $print_buffer .= '
                     </td>
                 </tr>
                 <tr>
-                    <td><b style="text-align:right">Min trivial skill</b>
+                    <td style="text-align:right"><b>Min trivial skill</b>
                     </td>
                     <td>
                         <input type="text" value="0" size="4" name="minskill">
@@ -73,7 +74,7 @@ $print_buffer .= '
                     </td>
                 </tr>
                 <tr align="center">
-                    <td colspan="2">
+                    <td> 
                         <br>
                         <a class="button submit">Search</a>
                         <a class="button" href="?a=recipes">Reset</a>
@@ -83,6 +84,7 @@ $print_buffer .= '
             </tbody>
         </table>
     </form>
+    </div>
     <br>
 
 ';

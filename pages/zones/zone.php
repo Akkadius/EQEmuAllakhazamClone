@@ -21,6 +21,7 @@ if (!isset($name)) {
 $ZoneDebug = FALSE; // this is new in 0.5.3 but undocumented, it is for world builders
 
 $resources_menu = "<h2 class='section_header'>Resources</h2>";
+$resources_menu .= "<ul>";
 $resources_menu .= "<li><a href=?a=zone&name=$name&mode=npcs>" . $zone["long_name"] . " Bestiary List</a>";
 if ($display_named_npcs_info == TRUE) {
     $resources_menu .= "<li><a href=?a=zone_named&name=$name&mode=npcs>" . $zone["long_name"] . " Named Mobs List</a>";
@@ -39,6 +40,7 @@ if ($display_task_info == TRUE) {
 if ($allow_quests_npc == TRUE) {
     $resources_menu .= "<li><a href=$root_url" . "quests/zones.php?aZone=$name>" . $zone["long_name"] . " Quest NPCs</a>";
 }
+$resources_menu .= '</ul';
 
 
 $print_buffer .= '<table class="display_table container_div"><tr><td>';
