@@ -26,24 +26,23 @@ $print_buffer .= "<table  class='display_table container_div'>";
 $print_buffer .= '
 		<tr>
 			<td colspan="2">
-				<h2 class="section_header">Recipe: ' . ucfirstwords(str_replace('_', ' ', $recipe["name"])) . '</h2>
+				<h2 class="section_header">Info</h2>
 			</td>
 		</tr>';
 
 $print_buffer .= '<tr><td><ul>';
+$print_buffer .= "<b>Tradeskill: </b>" . $dbskills[$recipe["tradeskill"]] . "<br>";
+if ($recipe["skillneeded"] > 0)
+    $print_buffer .= "<b>Skill Needed: </b></td><td>" . $recipe["skillneeded"] . "<br>";
+	
+if ($recipe["trivial"])
+	$print_buffer .= "<b>Trivial: </b>" . $recipe["trivial"] . "<br>";
 
-$print_buffer .= "<b>Recipe: </b>" . ucfirstwords(str_replace('_', ' ', $recipe["name"])) . "<br>";
-$print_buffer .= "<b>Tradeskill: </b>" . ucfirstwords($dbskills[$recipe["tradeskill"]]) . "<br>";
-if ($recipe["skillneeded"] > 0) {
-    $print_buffer .= "<b>Skill needed : </b></td><td>" . $recipe["skillneeded"] . "<br>";
-}
-$print_buffer .= "<b>Trivial at: </b>" . $recipe["trivial"] . "<br>";
-if ($recipe["nofail"] > 0) {
-    $print_buffer .= "This recipe cannot fail.<br>";
-}
-if ($recipe["notes"] != "") {
+if ($recipe["notes"] != "")
     $print_buffer .= "<b>Notes: </b>" . $recipe["notes"] . "<br>";
-}
+
+if ($recipe["nofail"] > 0)
+    $print_buffer .= "<b>This recipe cannot fail.</b><br>";
 
 $print_buffer .= '</ul></td></tr>';
 
@@ -70,10 +69,11 @@ if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . $row["item_id"] . ">" .
-            str_replace("_", " ", $row["Name"]) . "</a><br>";
-        if ($recipe["replace_container"] == 1) {
-            $print_buffer .= " (this container will disappear after combine)";
-        }
+            str_replace("_", " ", $row["Name"]) . "</a>";
+        if ($recipe["replace_container"] == 1)
+            $print_buffer .= " (Consumed)";
+		
+		$print_buffer .= "<br>";
     }
     $print_buffer .= "</ul></td></tr>";
 }
@@ -99,8 +99,9 @@ if (mysqli_num_rows($result) > 0) {
     $print_buffer .= "<tr><td><h2 class='section_header'>Creates</h2><ul>";
     while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
-            "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 110) . ">" .
-            str_replace("_", " ", $row["Name"]) . "</a> x" . $row["successcount"] . " <br>";
+           $row["successcount"] . " " .
+		   "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 110) . ">" .
+            str_replace("_", " ", $row["Name"]) . "</a><br>";
     }
     $print_buffer .= "</ul></td></tr>";
 }
@@ -126,8 +127,9 @@ if ($recipe["nofail"] == 0) {
         $print_buffer .= "<tr><td><h2 class='section_header'>Failure</h2><ul>";
         while ($row = mysqli_fetch_array($result)) {
             $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'/>" .
+				$row["failcount"] . " " .
                 "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 10) . ">" .
-                str_replace("_", " ", $row["Name"]) . "</a> x" . $row["failcount"] . " <br>";
+                str_replace("_", " ", $row["Name"]) . "</a><br>";
         }
         $print_buffer .= "</td></tr>";
     }
@@ -155,8 +157,9 @@ if (mysqli_num_rows($result) > 0) {
 
     while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<img src='" . $icons_url . "item_" . $row["icon"] . ".png' align='left' width='15' height='15' class='icon_pad'	/> " .
+			$row["componentcount"] . " " . 
             "<a href=?a=item&id=" . $row["item_id"] . " id=" . ($row["item_id"] * 100) . ">" .
-            str_replace("_", " ", $row["Name"]) . "</a> x " . $row["componentcount"] . " <br>";
+            str_replace("_", " ", $row["Name"]) . "</a><br>";
     }
     $print_buffer .= "</td></tr>";
 }

@@ -7,18 +7,18 @@ $isearch = (isset($_GET['isearch']) ? $_GET['isearch'] : '');
 $iname = (isset($_GET['iname']) ? $_GET['iname'] : '');
 $iskill = (isset($_GET['iskill']) ? $_GET['iskill'] : 0);
 
-if (!isset($maxskill)) {
+if (!isset($maxskill))
     $maxskill = 0;
-}
-if (!isset($minskill)) {
+	
+if (!isset($minskill))
     $minskill = 0;
-}
-if (!ctype_digit($maxskill)) {
+	
+if (!ctype_digit($maxskill))
     $maxskill = 0;
-}
-if (!ctype_digit($minskill)) {
+	
+if (!ctype_digit($minskill))
     $minskill = 0;
-}
+	
 if ($minskill > $maxskill) {
     $tempskill = $minskill;
     $minskill = $maxskill;
@@ -50,9 +50,9 @@ $print_buffer .= '
                             <option value="65">Brewing</option>
                             <option value="55">Fishing</option>
                             <option value="64">Fletching</option>
-                            <option value="68">Jewelery making</option>
-                            <option value="56">Poison making</option>
-                            <option value="69">Pottery making</option>
+                            <option value="68">Jewelery Making</option>
+                            <option value="56">Poison Making</option>
+                            <option value="69">Pottery Making</option>
                             <option value="58">Research</option>
                             <option value="61">Tailoring</option>
                             <option value="57">Tinkering</option>
@@ -60,14 +60,14 @@ $print_buffer .= '
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:right"><b>Min trivial skill</b>
+                    <td style="text-align:right"><b>Minimum Skill</b>
                     </td>
                     <td>
                         <input type="text" value="0" size="4" name="minskill">
                     </td>
                 </tr>
                 <tr>
-                    <td style="text-align:right"><b>Max trivial skill</b>
+                    <td style="text-align:right"><b>Maximum Skill</b>
                     </td>
                     <td>
                         <input type="text" value="0" size="4" name="maxskill">
@@ -95,6 +95,7 @@ if (isset($isearch) && $isearch != "") {
         $minskill = $maxskill;
         $maxskill = $tempskill;
     }
+	
     $query = "
         SELECT
             $trade_skill_recipe_table.id,
@@ -110,27 +111,29 @@ if (isset($isearch) && $isearch != "") {
         $query .= " $s $trade_skill_recipe_table.`name` like '%" . $iname . "%'";
         $s = "AND";
     }
+	
     if ($iskill > 0) {
-        $query .= " $s $trade_skill_recipe_table.tradeskill=$iskill";
+        $query .= " $s $trade_skill_recipe_table.tradeskill = '$iskill'";
         $s = "AND";
     }
+	
     if ($minskill > 0) {
-        $query .= " $s $trade_skill_recipe_table.trivial>=$minskill";
+        $query .= " $s $trade_skill_recipe_table.trivial >= '$minskill'";
         $s = "AND";
     }
+	
     if ($maxskill > 0) {
-        $query .= " $s $trade_skill_recipe_table.trivial<=$maxskill";
+        $query .= " $s $trade_skill_recipe_table.trivial <= '$maxskill'";
         $s = "AND";
     }
-    $query .= " ORDER BY $trade_skill_recipe_table.`name`";
+	
+    $query .= " ORDER BY $trade_skill_recipe_table.`name` ASC";
     $result = db_mysql_query($query);
 
     $print_buffer .= '<div>';
-    if (isset($result)) {
-        $print_buffer .= print_query_results($result, $max_items_returned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial", "trivial at skill level", "tradeskill");
-    }
+    if (isset($result))
+        $print_buffer .= print_query_results($result, $max_items_returned, "?a=recipe&", "recipe", "recipes", "id", "name", "trivial");
+	
     $print_buffer .= '</div>';
 }
-
-
 ?>

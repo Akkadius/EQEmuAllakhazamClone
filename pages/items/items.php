@@ -49,19 +49,19 @@ if (count($_GET) > 2) {
     }
     $query .= ")";
     $s = " WHERE";
-    if ($ieffect != "") {
-        $effect = "%" . str_replace(',', '%', str_replace(' ', '%', addslashes($ieffect))) . "%";
-
-        $query .= " LEFT JOIN $spells_table AS proc_s ON proceffect=proc_s.id";
-        $query .= " LEFT JOIN $spells_table AS worn_s ON worneffect=worn_s.id";
-        $query .= " LEFT JOIN $spells_table AS focus_s ON focuseffect=focus_s.id";
-        $query .= " LEFT JOIN $spells_table AS click_s ON clickeffect=click_s.id";
-        $query .= " WHERE (proc_s.`name` LIKE '$effect'
-				OR worn_s.`name` LIKE '$effect'
-				OR focus_s.`name` LIKE '$effect'
-				OR click_s.`name` LIKE '$effect') ";
-        $s = "AND";
-    }
+    # if ($ieffect != "") {
+    #     $effect = "%" . str_replace(',', '%', str_replace(' ', '%', addslashes($ieffect))) . "%";
+    # 
+    #     $query .= " LEFT JOIN $spells_table AS proc_s ON proceffect=proc_s.id";
+    #     $query .= " LEFT JOIN $spells_table AS worn_s ON worneffect=worn_s.id";
+    #     $query .= " LEFT JOIN $spells_table AS focus_s ON focuseffect=focus_s.id";
+    #     $query .= " LEFT JOIN $spells_table AS click_s ON clickeffect=click_s.id";
+    #     $query .= " WHERE (proc_s.`name` LIKE '$effect'
+	# 			OR worn_s.`name` LIKE '$effect'
+	# 			OR focus_s.`name` LIKE '$effect'
+	# 			OR click_s.`name` LIKE '$effect') ";
+    #     $s = "AND";
+    # }
     if (($istat1 != "") AND ($istat1value != "")) {
         if ($istat1 == "ratio") {
             $query .= " $s ($items_table.delay/$items_table.damage $istat1comp $istat1value) AND ($items_table.damage>0)";

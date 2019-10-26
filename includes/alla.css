@@ -1,8 +1,6 @@
-
 .main_page {
-    background-color: #d6c399;
-    background-image: url('../images/bg_alla.gif');
-    color: #000000;
+    background-color: #000000;
+    color: white;
     font-family: verdana, arial, helvetica;
     font-weight: normal;
     font-size: 10pt;
@@ -15,31 +13,27 @@
 
 A:link {
     text-decoration: none;
-    font-weight: none;
-    color: #0000FF;
+    color: yellow;
 }
 
 A:active {
     text-decoration: none;
-    font-weight: none;
-    color: #0000FF;
+    color: yellow;
 }
 
 A:visited {
     text-decoration: none;
-    font-weight: none;
-    color: #0000FF;
+    color: yellow;
 }
 
 A:hover {
     text-decoration: underline;
     font-weight: none;
-    color: #0000FF;
+    color: yellow;
 }
 
 .form {
-    background-color: #d6c399;
-    color: #000000;
+    background-color: #000000;
     text-align: left;
     font-size: 13;
     font-weight: normal;
@@ -63,7 +57,7 @@ TABLE {
 }
 
 .myheader {
-    background: url(../images/header_alla.gif) no-repeat center;
+    background: #000000;
     font-family: 'Arial', Times;
     font-weight: bold;
     text-align: right;
@@ -74,7 +68,8 @@ TABLE {
 }
 
 .myline {
-    background-image: url(../images/line_alla.gif);
+    background: #000000;
+	color: white;
 }
 
 .menu_title {
@@ -84,7 +79,8 @@ TABLE {
     font-size: 11px;
     border-style: outset;
     border-width: 1px;
-    background: url('../images/bgmenu_title_alla.gif');
+    background: #000000;
+	color: white;
     padding: 0 4 0 4;
 }
 
@@ -98,8 +94,13 @@ TABLE {
     padding: 0 4 0 4;
 }
 
+.menu_item a {
+	color: yellow;
+}
+
 .page_title {
-    color: #000000;
+	background-color: #000000;
+    color: white;
     font-size: 20pt;
     font-family: 'Arial';
     font-weight: bold;
@@ -109,7 +110,8 @@ TABLE {
 }
 
 .page_small_title {
-    color: #000000;
+	background-color: #000000;
+    color: white;
     font-size: 18pt;
     font-family: 'Times New Roman';
     font-weight: bold;
@@ -118,8 +120,8 @@ TABLE {
 }
 
 .headerrow {
-    background: #B1A67E;
-    color: black;
+	background-color: #000000;
+    color: white;
     font-size: 12px;
     font-weight: bold;
     margin: 0px;
@@ -127,19 +129,20 @@ TABLE {
 
 .menuh {
     font-weight: bold;
-    border-style: solid;
-    border-color: #e5e5e5 #696969 #696969 #e5e5e5;
-    border-width: 1px;
-    background: url('images/bgmenu_title_alla.gif');
+	background-color: #000000;
+	border-bottom: 1px solid white;
+    color: white;
 }
 
 .lr, .s2-lr {
-    background: #d4c7ab url('../images/bg_alla_light.gif');
+    background: #000000;
 }
 
 .dr, .s2-dr {
-    background: #d7c69a url('../images/bg_alla_dark.gif');
+    background: #000000;
 }
+
+
 
 .header_cell {
     font-weight: bold;
@@ -149,15 +152,15 @@ TABLE {
 #easyTooltip {
     padding: 5px 10px;
     border: 1px solid #195fa4;
-    background: #195fa4 repeat-x;
-    color: #fff;
+    background: #000000 repeat-x;
+    color: white;
 }
 
 #easyTooltip2 {
     padding: 5px 10px;
     border: 1px solid #000000;
-    background: #5e5e5e repeat-x;
-    color: #fff;
+    background: #000000 repeat-x;
+    color: white;
     /*
     width:450px;
     */
@@ -223,7 +226,8 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus
 }
 
 .dropdown .arrow {
-    background: url(../images/layout/nav_arrow_lite.png) no-repeat 0 0;
+    background: #000000;
+	color: white;
     width: 8px;
     height: 4px;
     display: block;
@@ -313,7 +317,7 @@ form {
 
 label {
     cursor: pointer;
-    color: #666;
+    color: white;
     font-weight: bold;
     vertical-align: middle
 }
@@ -350,20 +354,22 @@ select {
 .inputradio {
     padding: 0;
     margin: 0 5px 0 0;
-    vertical-align: middle
+    vertical-align: middle;
+	color: white;
 }
 
 .inputcheckbox {
     border: 0;
-    vertical-align: middle
+    vertical-align: middle;
+	color: white;
 }
 
 .inputbutton, .inputsubmit {
     border-style: solid;
     border-width: 1px;
     border-color: #dddfe2 #0e1f5b #0e1f5b #d9dfea;
-    background-color: #3b5998;
-    color: #fff;
+    background-color: #000000;
+    color: white;
     padding: 2px 15px 3px 15px;
     text-align: center
 }
@@ -391,10 +397,12 @@ select {
 }
 
 .container_div {
-    border: 1px solid;
-    border-color: #e5e5e5 #696969 #696969 #e5e5e5;
-    border-collapse: separate;
-    border-spacing: 0;
+	background-color: #000000;
+	color: white;
+}
+
+.container_div a {
+	color: yellow;
 }
 
 .icon_pad {
@@ -402,9 +410,12 @@ select {
 }
 
 .section_header {
+	border: 1px solid;
+	border-color: white;
     font-size: 13px;
     font-weight: bold;
-    background: #b1a67e;
+    background: #000000;
+	color: white;
     margin: 0;
     padding: 3px;
 }
@@ -419,7 +430,8 @@ a:active:hover.button {
 }
 
 a:hover.button {
-    background-color: #b39b6e;
+    background-color: #000000;
+	color: cyan;
     background-position: 0 -32px;
     text-decoration: none;
 }
@@ -453,7 +465,7 @@ a:hover.button {
 }
 
 input.search {
-    background: #fff url(../images/bg/bg-light.gif) repeat-x !important;
+    background: #fff url(../images/bg/bg-dark.gif) repeat-x !important;
     border: 0;
     color: #000 !important;
     font-size: 16px;
@@ -493,7 +505,8 @@ input.search {
     border-width: 1px 2px 2px 1px;
     padding: 5px;
     z-index: 2000;
-    background: #d4c7ab url(/eq/i/bgl.gif);
+    background: #000000;
+	color: white;
 
 }
 
@@ -512,7 +525,8 @@ input.search {
 
 #tooltip_object .ajax_tooltip_content {
     border: 2px solid black;
-    background-color: #fff;
+    background-color: #000000;
+	color: white;
 
     -webkit-box-shadow: 8px 5px 5px 0px rgba(0, 0, 40, .6);
     -moz-box-shadow: 8px 5px 5px 0px rgba(0, 0, 40, .6);
@@ -528,5 +542,5 @@ input.search {
     overflow: auto; /* Hide overflow content */
     z-index: 1000001;
 
-    background: #d4c7ab url(/eq/i/bgl.gif);
+    background: #000000;
 }

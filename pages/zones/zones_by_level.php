@@ -28,6 +28,7 @@ foreach ($ignore_zones AS $zid) {
     $query .= " $v $zones_table.short_name!='$zid'";
     $v = " AND ";
 }
+$query .= "AND $zones_table.min_status = '0'";
 $query .= " ORDER BY $zones_table.long_name ASC";
 $result = db_mysql_query($query) or message_die('zones_by_level.php', 'MYSQL_QUERY', $query, mysqli_error());
 $cpt = 0;
@@ -123,9 +124,9 @@ for ($i = 0; $i <= $cpt; $i++) {
         $print_buffer .= "<tr>
            <td><a href=?a=zone&name=" . $zones[$i]["shortname"] . ">" . $zones[$i]["longname"] . "</a></td>
            <td>" . $zones[$i]["shortname"] . "</td>";
-        if ($sort_zone_level_list == TRUE) {
-            $print_buffer .= "<td align=center>" . round($zones[$i]["val"]) . "</td>";
-        }
+        #if ($sort_zone_level_list == TRUE) {
+        #    $print_buffer .= "<td align=center>" . round($zones[$i]["val"]) . "</td>";
+        #}
         foreach ($levels AS $lkey => $lval) {
             $print_buffer .= "<td align=center>";
             if ($zones[$i][$lkey] > $lowlimit) {

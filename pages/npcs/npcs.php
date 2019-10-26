@@ -77,6 +77,10 @@ if (isset($result)){
     );
 }
 
-
+if (!isset($_GET['v_ajax'])) {
+    $footer_javascript .= '
+            <script src="pages/npcs/npcs.js"></script>
+        ';
+}
 
 ?>

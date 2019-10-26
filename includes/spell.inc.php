@@ -1,11 +1,8 @@
 <?php
 
-function SpellDescription($spell, $n, $csv = false)
-{
+function SpellDescription($spell, $n, $csv = false) {
     global $dbspelleffects, $items_table, $dbiracenames, $spells_table, $server_max_level;
-
-    $print_buffer = '<ul>';
-
+    $print_buffer = "<tr>";
     if (($spell["effectid$n"] != 254) AND ($spell["effectid$n"] != 10)) {
         $maxlvl = $spell["effect_base_value$n"];
         $minlvl = $server_max_level;
@@ -14,13 +11,13 @@ function SpellDescription($spell, $n, $csv = false)
                 $minlvl = $spell["classes" . $i];
             }
         }
-        $min        = CalcSpellEffectValue(
+        $min = CalcSpellEffectValue(
             $spell["formula" . $n],
             $spell["effect_base_value$n"],
             $spell["max$n"],
             $minlvl
         );
-        $max        = CalcSpellEffectValue(
+        $max = CalcSpellEffectValue(
             $spell["formula" . $n],
             $spell["effect_base_value$n"],
             $spell["max$n"],
@@ -35,62 +32,70 @@ function SpellDescription($spell, $n, $csv = false)
         if ($csv == true) {
             $print_buffer .= ",,";
         } else {
-            $print_buffer .= "<b>$n : Effect type : </b>";
+            $print_buffer .= "<td><b>Effect $n</b></td>";
         }
         switch ($spell["effectid$n"]) {
-            case 3: // Increase Movement (% / 0)
-                if ($max < 0) { // Decrease
-                    $print_buffer .= "Decrease Movement";
-                    if ($min != $max) {
-                        $print_buffer .= " by " . abs($min) . "% (L$minlvl) to " . abs($max) . "% (L$maxlvl)";
-                    } else {
-                        $print_buffer .= " by " . abs(100) . "%";
-                    }
-                } else {
-                    $print_buffer .= "Increase Movement";
-                    if ($min != $max) {
-                        $print_buffer .= " by " . $min . "% (L$minlvl) to " . ($max) . "% (L$maxlvl)";
-                    } else {
-                        $print_buffer .= " by " . ($max) . "%";
-                    }
-                }
+            case 3: // Increase Movement (% / 0)				
+				$print_buffer .= "<td>";
+					if ($max < 0) { // Decrease
+						$print_buffer .= "Decrease Movement";
+						if ($min != $max) {
+							$print_buffer .= " by " . abs($min) . "% (Level $minlvl) to " . abs($max) . "% (Level $maxlvl)";
+						} else {
+							$print_buffer .= " by " . abs(100) . "%";
+						}
+					} else {
+						$print_buffer .= "Increase Movement";
+						if ($min != $max) {
+							$print_buffer .= " by " . $min . "% (Level $minlvl) to " . ($max) . "% (Level $maxlvl)";
+						} else {
+							$print_buffer .= " by " . ($max) . "%";
+						}
+					}
+				$print_buffer .= "</td>";
                 break;
             case 11: // Decrease OR Inscrease AttackSpeed (max/min = percentage of speed / normal speed, IE, 70=>-30% 130=>+30%
-                if ($max < 100) { // Decrease
-                    $print_buffer .= "Decrease Attack Speed";
-                    if ($min != $max) {
-                        $print_buffer .= " by " . (100 - $min) . "% (L$minlvl) to " . (100 - $max) . "% (L$maxlvl)";
-                    } else {
-                        $print_buffer .= " by " . (100 - $max) . "%";
-                    }
-                } else {
-                    $print_buffer .= "Increase Attack Speed";
-                    if ($min != $max) {
-                        $print_buffer .= " by " . ($min - 100) . "% (L$minlvl) to " . ($max - 100) . "% (L$maxlvl)";
-                    } else {
-                        $print_buffer .= " by " . ($max - 100) . "%";
-                    }
-                }
+				$print_buffer .= "<td>";
+					if ($max < 100) { // Decrease
+						$print_buffer .= "Decrease Attack Speed";
+						if ($min != $max) {
+							$print_buffer .= " by " . (100 - $min) . "% (Level $minlvl) to " . (100 - $max) . "% (Level $maxlvl)";
+						} else {
+							$print_buffer .= " by " . (100 - $max) . "%";
+						}
+					} else {
+						$print_buffer .= "Increase Attack Speed";
+						if ($min != $max) {
+							$print_buffer .= " by " . ($min - 100) . "% (Level $minlvl) to " . ($max - 100) . "% (Level $maxlvl)";
+						} else {
+							$print_buffer .= " by " . ($max - 100) . "%";
+						}
+					}
+				$print_buffer .= "</td>";
                 break;
             case 21: // stun
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                if ($min != $max) {
-                    $print_buffer .= " (" . ($min / 1000) . " sec (L$minlvl) to " . ($max / 1000) . " sec (L$maxlvl))";
-                } else {
-                    $print_buffer .= " (" . ($max / 1000) . " sec)";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					if ($min != $max) {
+						$print_buffer .= " (" . ($min / 1000) . " Second(s) (Level $minlvl) to " . ($max / 1000) . " Second(s) (Level $maxlvl))";
+					} else {
+						$print_buffer .= " (" . ($max / 1000) . " Second(s))";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 32: // summonitem
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $name         = get_field_result(
-                    "name",
-                    "SELECT name FROM $items_table WHERE id=" . $spell["effect_base_value$n"]
-                );
-                if (($name != "") AND ($csv == false)) {
-                    $print_buffer .= " : <a href=?a=item&id=" . $spell["effect_base_value$n"] . ">$name</a>";
-                } else {
-                    $print_buffer .= " : $name";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$name = get_field_result(
+						"name",
+						"SELECT name FROM $items_table WHERE id=" . $spell["effect_base_value$n"]
+					);
+					if (($name != "") AND ($csv == false)) {
+						$print_buffer .= ": <a href=?a=item&id=" . $spell["effect_base_value$n"] . ">$name</a>";
+					} else {
+						$print_buffer .= ": $name";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 87: // Increase Magnification
             case 98: // Increase Haste v2
@@ -128,49 +133,60 @@ function SpellDescription($spell, $n, $csv = false)
             case 266: // Add Attack Chance
             case 273: // Increase Critical Dot Chance
             case 294: // Increase Critical Spell Chance
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                if ($min != $max) {
-                    $print_buffer .= " by $min% (L$minlvl) to $max% (L$maxlvl)";
-                } else {
-                    $print_buffer .= " by $max%";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					if ($min != $max) {
+						$print_buffer .= " by $min% (Level $minlvl) to $max% (Level $maxlvl)";
+					} else {
+						$print_buffer .= " by $max%";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 15: // Increase Mana per tick
             case 100: // Increase Hitpoints v2 per tick
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                if ($min != $max) {
-                    $print_buffer .= " by " . abs($min) . " (L$minlvl) to " . abs(
-                            $max
-                        ) . " (L$maxlvl) per tick (total " . abs($min * $duration) . " to " . abs(
-                                         $max * $duration
-                                     ) . ")";
-                } else {
-                    $print_buffer .= " by $max per tick (total " . abs($max * $duration) . ")";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					if ($min != $max) {
+						$print_buffer .= " by " . abs($min) . " (Level $minlvl) to " . abs(
+								$max
+							) . " (Level $maxlvl) per Tic (Total " . abs($min * $duration) . " to " . abs(
+												$max * $duration
+											) . ")";
+					} else {
+						$print_buffer .= " by $max per Tic (Total " . abs($max * $duration) . ")";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 30: // Frenzy Radius
             case 86: // Reaction Radius
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " (" . $spell["effect_base_value$n"] . "/" . $spell["effect_limit_value$n"] . ")";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " (" . $spell["effect_base_value$n"] . "/" . $spell["effect_limit_value$n"] . ")";
+				$print_buffer .= "</td>";
                 break;
             case 22: // Charm
             case 23: // Fear
             case 31: // Mesmerize
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " up to level " . $spell["effect_limit_value$n"];
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " up to Level " . $spell["effect_limit_value$n"];
+				$print_buffer .= "</td>";
                 break;
             case 33: // Summon Pet:
             case 68: // Summon Skeleton Pet:
+			case 71: // Summon Undead:
             case 106: // Summon Warder:
             case 108: // Summon Familiar:
             case 113: // Summon Horse:
             case 152: // Summon Pets:
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                if ($csv == false) {
-                    $print_buffer .= " <a href=?a=pet&name=" . $spell["teleport_zone"] . ">" . $spell["teleport_zone"] . "</a>";
-                } else {
-                    $print_buffer .= " : " . $spell["teleport_zone"];
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					if ($csv == false) {
+						$print_buffer .= " <a href='?a=pet&name=" . $spell["teleport_zone"] . "'>" . $spell["teleport_zone"] . "</a>";
+					} else {
+						$print_buffer .= ": " . $spell["teleport_zone"];
+					}
+				$print_buffer .= "</td>";
                 break;
             case 13: // See Invisible
             case 18: // Pacify
@@ -230,137 +246,172 @@ function SpellDescription($spell, $n, $csv = false)
             case 311: // Limit: Combat Skills Not Allowed
             case 314: // Fixed Duration Invisbility
             case 299: // Wake the Dead
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+				$print_buffer .= "</td>";
                 break;
             case 58: // Illusion:
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= $dbiracenames[$spell["effect_base_value$n"]];
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= $dbiracenames[$spell["effect_base_value$n"]];
+				$print_buffer .= "</td>";
                 break;
             case 63: // Memblur
             case 120: // Set Healing Effectiveness
             case 330: // Critical Damage Mob
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " ($max%)";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " ($max%)";
+				$print_buffer .= "</td>";
                 break;
             case 81: // Resurrect
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " and restore " . $spell["effect_base_value$n"] . "% experience";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " and restore " . $spell["effect_base_value$n"] . "% experience";
+				$print_buffer .= "</td>";
                 break;
             case 83: // Teleport
             case 88: // Evacuate
             case 145: // Teleport v2
-                //$print_buffer .= " (Need to add zone to spells table)";
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                if ($csv == false) {
-                    $print_buffer .= " <a href=?a=zone&name=" . $spell["teleport_zone"] . ">" . $spell["teleport_zone"] . "</a>";
-                } else {
-                    $print_buffer .= " : " . $spell["teleport_zone"];
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					if ($csv == false) {
+						$print_buffer .= " <a href=?a=zone&name=" . $spell["teleport_zone"] . ">" . $spell["teleport_zone"] . "</a>";
+					} else {
+						$print_buffer .= " : " . $spell["teleport_zone"];
+					}
+				$print_buffer .= "</td>";
                 break;
             case 85: // Add Proc:
             case 289: // Improved Spell Effect:
             case 323: // Add Defensive Proc:
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $name         = get_field_result(
-                    "name",
-                    "SELECT name FROM $spells_table WHERE id=" . $spell["effect_base_value$n"]
-                );
-                if ($csv == false) {
-                    $print_buffer .= "<a href=?a=spell&id=" . $spell["effect_base_value$n"] . ">$name</a>";
-                } else {
-                    $print_buffer .= " : $name";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$name = get_field_result(
+						"name",
+						"SELECT name FROM $spells_table WHERE id=" . $spell["effect_base_value$n"]
+					);
+					if ($csv == false) {
+						$print_buffer .= "<a href=?a=spell&id=" . $spell["effect_base_value$n"] . ">$name</a>";
+					} else {
+						$print_buffer .= ": $name";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 89: // Increase Player Size
-                $name = $dbspelleffects[$spell["effectid$n"]];
-                $min  -= 100;
-                $max  -= 100;
-                if ($max < 0) {
-                    $name = str_replace("Increase", "Decrease", $name);
-                }
-                $print_buffer .= $name;
-                if ($min != $max) {
-                    $print_buffer .= " by $min% (L$minlvl) to $max% (L$maxlvl)";
-                } else {
-                    $print_buffer .= " by $max%";
-                }
+				$print_buffer .= "<td>";
+					$name = $dbspelleffects[$spell["effectid$n"]];
+					$min -= 100;
+					$max -= 100;
+					if ($max < 0) {
+						$name = str_replace("Increase", "Decrease", $name);
+					}
+					$print_buffer .= $name;
+					if ($min != $max) {
+						$print_buffer .= " by $min% (Level $minlvl) to $max% (Level $maxlvl)";
+					} else {
+						$print_buffer .= " by $max%";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 27: // Cancel Magic
             case 134: // Limit: Max Level
             case 157: // Spell-Damage Shield
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " ($max)";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " ($max)";
+				$print_buffer .= "</td>";
                 break;
             case 121: // Reverse Damage Shield
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " (-$max)";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " (-$max)";
+				$print_buffer .= "</td>";
                 break;
             case 91: // Summon Corpse
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " (max level $max)";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " (max level $max)";
+				$print_buffer .= "</td>";
                 break;
             case 136: // Limit: Target
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                if ($max < 0) {
-                    $max = -$max;
-                    $v   = " excluded";
-                } else {
-                    $v = "";
-                }
-                $print_buffer .= " (" . $dbspelltargets[$max] . "$v)";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					if ($max < 0) {
+						$max = -$max;
+						$v = " excluded";
+					} else {
+						$v = "";
+					}
+					$print_buffer .= " (" . $dbspelltargets[$max] . "$v)";
+				$print_buffer .= "</td>";
                 break;
             case 139: // Limit: Spell
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $max          = $spell["effect_base_value$n"];
-                if ($max < 0) {
-                    $max = -$max;
-                    $v   = " excluded";
-                }
-                $name = get_field_result("name", "SELECT name FROM $spells_table WHERE id=$max");
-                if ($csv == false) {
-                    $print_buffer .= "($name)";
-                } else {
-                    $print_buffer .= " (<a href=?a=spell&id=" . $spell["effect_base_value$n"] . ">$name</a>$v)";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$max          = $spell["effect_base_value$n"];
+					if ($max < 0) {
+						$max = -$max;
+						$v = " excluded";
+					}
+					$name = get_field_result("name", "SELECT name FROM $spells_table WHERE id=$max");
+					if ($csv == false) {
+						$print_buffer .= "($name)";
+					} else {
+						$print_buffer .= " (<a href=?a=spell&id=" . $spell["effect_base_value$n"] . ">$name</a>$v)";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 140: // Limit: Min Duration
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $min          *= 6;
-                $max          *= 6;
-                if ($min != $max) {
-                    $print_buffer .= " ($min sec (L$minlvl) to $max sec (L$maxlvl))";
-                } else {
-                    $print_buffer .= " ($max sec)";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$min *= 6;
+					$max *= 6;
+					if ($min != $max) {
+						$print_buffer .= " ($min Second(s) (Level $minlvl) to $max Second(s) (Level $maxlvl))";
+					} else {
+						$print_buffer .= " ($max Second(s))";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 143: // Limit: Min Casting Time
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $min          *= 6;
-                $max          *= 6;
-                if ($min != $max) {
-                    $print_buffer .= " (" . ($min / 6000) . " sec (L$minlvl) to " . ($max / 6000) . " sec (L$maxlvl))";
-                } else {
-                    $print_buffer .= " (" . ($max / 6000) . " sec)";
-                }
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$min          *= 6;
+					$max          *= 6;
+					if ($min != $max) {
+						$print_buffer .= " (" . ($min / 6000) . " Second(s) (Level $minlvl) to " . ($max / 6000) . " Second(s) (Level $maxlvl))";
+					} else {
+						$print_buffer .= " (" . ($max / 6000) . " Second(s))";
+					}
+				$print_buffer .= "</td>";
                 break;
             case 148: // Stacking: Overwrite existing spell
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " if slot " . ($spell["effectid$n"] - 200) . " is effect '" . $dbspelleffects[$spell["effect_base_value$n"]] . "' and <" . $spell["effect_limit_value$n"];
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " if slot " . ($spell["effectid$n"] - 200) . " is effect '" . $dbspelleffects[$spell["effect_base_value$n"]] . "' and <" . $spell["effect_limit_value$n"];
+				$print_buffer .= "</td>";
                 break;
             case 149: // Stacking: Overwrite existing spell
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " if slot " . ($spell["effectid$n"] - 200) . " is effect '" . $dbspelleffects[$spell["effect_base_value$n"]] . "' and <" . $spell["effect_limit_value$n"];
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " if slot " . ($spell["effectid$n"] - 200) . " is effect '" . $dbspelleffects[$spell["effect_base_value$n"]] . "' and <" . $spell["effect_limit_value$n"];
+				$print_buffer .= "</td>";
                 break;
             case 147: // Increase Hitpoints (%)
-                $name = $dbspelleffects[$spell["effectid$n"]];
-                if ($max < 0) {
-                    $name = str_replace("Increase", "Decrease", $name);
-                }
-                $print_buffer .= $name . " by " . $spell["effect_limit_value$n"] . " ($max% max)";
+				$print_buffer .= "<td>";
+					$name = $dbspelleffects[$spell["effectid$n"]];
+					if ($max < 0) {
+						$name = str_replace("Increase", "Decrease", $name);
+					}
+					$print_buffer .= $name . " by " . $spell["effect_limit_value$n"] . " ($max% Max)";
+				$print_buffer .= "</td>";
                 break;
             case 153: // Balance Party Health
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " ($max% penalty)";
+				$print_buffer .= "<td>";
+					$print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+					$print_buffer .= " ($max% Penalty)";
+				$print_buffer .= "</td>";
                 break;
             case 0: // In/Decrease hitpoints
             case 1: // Increase AC
@@ -394,22 +445,24 @@ function SpellDescription($spell, $n, $csv = false)
             case 167: // Pet Power Increase
             case 192: // Increase hate
             default:
-                $name = $dbspelleffects[$spell["effectid$n"]];
-                if ($max < 0) {
-                    $name = str_replace("Increase", "Decrease", $name);
-                }
-                $print_buffer .= $name;
-                if ($min != $max) {
-                    $print_buffer .= " by $min (L$minlvl) to $max (L$maxlvl)";
-                } else {
-                    if ($max < 0) {
-                        $max = -$max;
-                    }
-                    $print_buffer .= " by $max";
-                }
+				$print_buffer .= "<td>";
+					$name = $dbspelleffects[$spell["effectid$n"]];
+					if ($max < 0) {
+						$name = str_replace("Increase", "Decrease", $name);
+					}
+					$print_buffer .= $name;
+					if ($min != $max) {
+						$print_buffer .= " by $min (Level $minlvl) to $max (Level $maxlvl)";
+					} else {
+						if ($max < 0) {
+							$max = -$max;
+						}
+						$print_buffer .= " by $max";
+					}
+				$print_buffer .= "</td>";
                 break;
         }
-        $print_buffer .= '</ul>';
+		$print_buffer .= "</td></tr>";
     }
 
     return $print_buffer;

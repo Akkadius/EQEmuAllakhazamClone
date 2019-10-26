@@ -129,7 +129,6 @@ if (($type != 0 && $level != 0) || $namestring != '') {
         $DBSkill = $dbskills[$row["skill"]];
         if ($LevelCheck != $row[$Class]) {
             $LevelCheck = $row[$Class];
-            $print_buffer .= '<tr><td colspan="4"><b>Level: ' . $row['classes' . $type] . '</b></td></tr>';
             $print_buffer .= '<tr>
 					<td class="menuh" colspan=2>Name</td>
 					<td class="menuh">Class</td>

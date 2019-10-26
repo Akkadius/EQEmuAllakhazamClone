@@ -72,7 +72,7 @@ if (isset($isearch) && $isearch != '') {
     $result = db_mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysqli_error());
     $n = mysqli_num_rows($result);
     if ($n > $max_npcs_returned) {
-        $print_buffer .= "$n ncps found, showing the $max_npcs_returned first ones...";
+        $print_buffer .= "$n NPCs found, showing the $max_npcs_returned first ones...";
         $query .= " LIMIT $max_npcs_returned";
         $result = db_mysql_query($query) or message_die('npcs.php', 'MYSQL_QUERY', $query, mysqli_error());
     }

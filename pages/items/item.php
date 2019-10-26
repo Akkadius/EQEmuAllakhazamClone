@@ -7,6 +7,11 @@ if (isset($_GET['view_dropped'])) {
     exit;
 }
 
+if (isset($_GET['view_sold'])) {
+	echo return_where_item_sold($_GET['view_sold'], 1);
+	exit;
+}
+
 $item_id = (isset($_GET['id']) ? addslashes($_GET['id']) : '');
 $name    = (isset($_GET['name']) ? addslashes($_GET['name']) : '');
 
@@ -45,7 +50,7 @@ if ($item_id != "" && is_numeric($item_id)) {
 
 
 $item       = $item_db_data;
-$page_title = strip_underscores($item['Name']);
+$page_title = "Item :: " . strip_underscores($item['Name']);
 
 $item_data = return_item_stat_box($item, 0);
 $item_icon = return_item_icon_from_icon_id($item['icon'], 40);
@@ -68,7 +73,7 @@ if (!isset($_GET['v_tooltip'])) {
     $content .= return_where_item_foraged($item_id);
     $content .= return_where_item_used_trade_skills($item_id);
     $content .= return_where_item_result_trade_skill($item_id);
-    $content .= return_where_item_sold($item_id);
+    $content .= return_where_item_sold_count($item_id);
     $content .= return_where_item_ground_spawn($item_id);
 }
 

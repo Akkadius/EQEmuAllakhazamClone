@@ -22,6 +22,14 @@ function npc_dropped_view(item_id) {
 	});
 }
 
+function npc_sold_view(item_id) {
+	u = "#npc_sold_view";
+	entire_query = "?a=item&view_sold=" + item_id + "&v_ajax";
+	$.get(entire_query, function (data) {
+		$(u).html(data);
+	});
+}
+
 $('#iname').keypress(function (e) {
 	var key = e.which;
 	if (key === 13)  // the enter key code
@@ -30,8 +38,3 @@ $('#iname').keypress(function (e) {
 		return false;
 	}
 });
-
-/*
-$(document).on("change", "#item_search_form input, #item_search_form select", function(e){
-    item_search();
-});*/

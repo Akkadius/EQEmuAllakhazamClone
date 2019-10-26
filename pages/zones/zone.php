@@ -331,34 +331,35 @@ if ($mode == "tasks") {
         $ZoneID = get_field_result("zoneidnumber", "SELECT zoneidnumber FROM zone WHERE short_name = '$name'");
         $query = "
             SELECT
-                $tasks_table.id,
-                $tasks_table.title,
-                $tasks_table.startzone,
-                $tasks_table.minlevel,
-                $tasks_table.maxlevel,
-                $tasks_table.reward,
-                $tasks_table.rewardid,
-                $tasks_table.rewardmethod
+                DISTINCT t.id,
+				t.type,
+				t.duration,
+				t.duration_code,
+                t.title,
+				t.description,
+                t.reward,
+                t.rewardid,
+				t.cashreward,
+				t.xpreward,
+                t.rewardmethod,
+                t.minlevel,
+                t.maxlevel,
+				t.repeatable,
+				t.faction_reward,
+				t.completion_emote,
+				ta.zones
             FROM
-                $tasks_table
-            WHERE
-                $tasks_table.startzone = $ZoneID
+                $task_table t INNER JOIN $task_activities_table ta ON t.id = ta.taskid
+             WHERE
+                ta.zones LIKE '%$ZoneID%'
             ORDER BY
-                $tasks_table.id ASC
+                t.id ASC
         ";
-
         $result = db_mysql_query($query) or message_die('zone.php', 'MYSQL_QUERY', $query, mysqli_error());
 
+		$print_buffer .= "<h2 class='section_header'>Tasks</h2>";
         if (mysqli_num_rows($result) > 0) {
-            $print_buffer .= "<table border=0 width=100% cellpadding='5' cellspacing='0'><tr valign=top><td width=100%>";
-            $print_buffer .= "<table border=0 cellpadding='5' cellspacing='0'><tr>
-				<td class='menuh'>Task Name</td>
-				<td class='menuh'>Task ID</td>
-				<td class='menuh'>MinLevel</td>
-				<td class='menuh'>MaxLevel</td>
-				<td class='menuh'>Reward</td>
-				";
-
+			$print_buffer .= "<ol>";
             $RowClass = "lr";
             while ($row = mysqli_fetch_array($result)) {
                 $Reward = $row["reward"];
@@ -366,28 +367,20 @@ if ($mode == "tasks") {
                     if ($row["rewardid"] > 0) {
                         $ItemID = $row["rewardid"];
                         $ItemName = get_field_result("Name", "SELECT Name FROM items WHERE id = $ItemID");
-                        $Reward = "<a href=?a=item&id=" . $ItemID . ">" . $ItemName . "</a>";
+                        $Reward = "<a href = '?a=item&id=" . $ItemID . "'>" . $ItemName . "</a>";
                     }
                 }
 
-                $print_buffer .= "<tr class='" . $RowClass . "'>
-					<td><a href=task.php?id=" . $row["id"] . ">" . $row["title"] . "</a></td>
-					<td align=center valign='top'>" . $row["id"] . "</td>
-					<td align=center valign='top'>" . $row["minlevel"] . "</td>
-					<td align=center valign='top'>" . $row["maxlevel"] . "</td>
-					<td>" . $Reward . "</td>
-					</tr>";
+                $print_buffer .= "<li><a href = '?a=task&id=" . $row["id"] . "'>" . $row["title"] . "</a></li>";
                 if ($RowClass == "lr") {
                     $RowClass = "dr";
                 } else {
                     $RowClass = "lr";
                 }
             }
-            $print_buffer .= "</table>";
-            $print_buffer .= "</td><td width=0% nowrap>";
-            $print_buffer .= "</td></tr></table>";
+			$print_buffer .= "</ol>";
         } else {
-            $print_buffer .= "<br><b>No Tasks Found</b>";
+            $print_buffer .= "<ul><li>No Tasks Found</li></ul>";
         }
     }
 

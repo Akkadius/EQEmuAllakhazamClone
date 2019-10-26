@@ -24,12 +24,11 @@ function return_where_item_dropped_count($item_id){
     $return_buffer = "";
     if($is_item_dropped) {
         $return_buffer .= "<tr>";
-        $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
+        $return_buffer .= "<td><h2 class='section_header'>Item Drops</h2>";
         $return_buffer .= "</tr>";
         $return_buffer .= "<tr id='npc_dropped_view'>";
         $return_buffer .= "<td><ul><li><a onclick='npc_dropped_view(" . $item_id . ")'>Click to View</a></li></ul></td>";
         $return_buffer .= "</tr>";
-
         return $return_buffer;
     }
 
@@ -56,7 +55,7 @@ function return_where_item_dropped($item_id, $via_ajax = 0)
 
         $query = "
             SELECT
-                $npc_types_table.id,
+                DISTINCT $npc_types_table.id,
                 $npc_types_table.`name`,
                 $spawn2_table.zone,
                 $zones_table.long_name,
@@ -90,7 +89,7 @@ function return_where_item_dropped($item_id, $via_ajax = 0)
             $return_buffer = "";
             if($via_ajax == 0){
                 $return_buffer .= "<tr>";
-                $return_buffer .= "<td><h2 class='section_header'>This item is dropped in zones</h2>";
+                $return_buffer .= "<td><h2 class='section_header'>Item Drops</h2>";
             }
             $current_zone_iteration = "";
             while ($row = mysqli_fetch_array($result)) {
@@ -100,14 +99,23 @@ function return_where_item_dropped($item_id, $via_ajax = 0)
                         $return_buffer .= "</ul>";
                     }
                     $return_buffer .= "<ul>";
-                    $return_buffer .= "<li><b>in <a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b></li>";
-                    $return_buffer .= "<ul>";
-                    $current_zone_iteration = $row["zone"];
-                }
-                $return_buffer .= "<li><a href='?a=npc&id=" . $row["id"] . "'>" . str_replace("_", " ", $row["name"]) . "</a>";
-                if ($item_add_chance_to_drop) {
-                    $return_buffer .= " (" . ($row["chance"] * $row["probability"] / 100) . "% x " . $row["multiplier"] . ")";
-                }
+					$return_buffer .= "
+					<li>
+						<b><a href='?a=zone&name=" . $row["zone"] . "'>" .
+							$row["long_name"] . "</a>
+						</b>
+					</li>";
+					$return_buffer .= "<ul>";
+					$current_zone_iteration = $row["zone"];
+				}
+                $return_buffer .= "
+				<li>
+					<a href='?a=npc&id=" . $row["id"] . "'>" .
+						str_replace("_", " ", $row["name"]) . 
+					"</a>";
+					if ($item_add_chance_to_drop) {
+						$return_buffer .= " has a " . ($row["chance"] * $row["probability"] / 100) . "% probability to drop this item at a multiplier of  " . $row["multiplier"] . ".";
+					}
                 $return_buffer .= "</li>";
             }
             $return_buffer .= "</ul>";
@@ -122,7 +130,33 @@ function return_where_item_dropped($item_id, $via_ajax = 0)
     return;
 }
 
-function return_where_item_sold($item_id){
+function return_where_item_sold_count($item_id){
+
+    global
+        $npc_types_table,
+        $merchant_list_table,
+        $spawn2_table,
+        $zones_table,
+        $spawn_entry_table,
+        $item;
+
+    $is_item_sold = get_field_result("item", "SELECT item FROM $merchant_list_table  WHERE item=$item_id LIMIT 1");
+
+    $return_buffer = "";
+    if($is_item_sold) {
+		$return_buffer .= "<tr>";
+		$return_buffer .= "<td><h2 class='section_header'>Item Sold</h2>";		
+        $return_buffer .= "</tr>";
+        $return_buffer .= "<tr id='npc_sold_view'>";
+        $return_buffer .= "<td><ul><li><a onclick='npc_sold_view(" . $item_id . ")'>Click to View</a></li></ul></td>";
+		$return_buffer .= "</tr>";		
+        return $return_buffer;
+    }
+
+    return;
+}
+
+function return_where_item_sold($item_id, $via_ajax = 0){
     global
             $npc_types_table,
             $merchant_list_table,
@@ -139,7 +173,7 @@ function return_where_item_sold($item_id){
         // npcs selling this (Very Heavy Query)
         $query = "
             SELECT
-                $npc_types_table.id,
+                DISTINCT $npc_types_table.id,
                 $npc_types_table.`name`,
                 $spawn2_table.zone,
                 $zones_table.long_name,
@@ -162,8 +196,10 @@ function return_where_item_sold($item_id){
 
         if (mysqli_num_rows($result) > 0) {
             $return_buffer = "";
-            $return_buffer .= "<tr>";
-            $return_buffer .= "<td><h2 class='section_header'>This item is sold:</h2>";
+			if ($via_ajax == 0) {
+				$return_buffer .= "<tr>";
+				$return_buffer .= "<td><h2 class='section_header'>Item Sold</h2>";
+			}
 
             $current_zone_iteration = "";
             while ($row = mysqli_fetch_array($result)) {
@@ -173,7 +209,7 @@ function return_where_item_sold($item_id){
                         $return_buffer .= "</ul>";
                     }
                     $return_buffer .= "<ul>";
-                    $return_buffer .= "<li><b>in <a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a> by </b></li>";
+                    $return_buffer .= "<li><b><a href='?a=zone&name=" . $row["zone"] . "'>" . $row["long_name"] . "</a></b></li>";
                     $return_buffer .= "<ul>";
 
                     $current_zone_iteration = $row["zone"];
@@ -186,15 +222,14 @@ function return_where_item_sold($item_id){
                         </a>
                 ";
 
-                if ($row["class"] == 41) $return_buffer .= " (" . price($item["price"]) . ")"; // NPC is a shopkeeper
-                if ($row["class"] == 61) $return_buffer .= " (" . $item["ldonprice"] . " points)"; // NPC is a LDON merchant
-
                 $return_buffer .= "</li>";
             }
             $return_buffer .= "</ul>";
             $return_buffer .= "</ul>";
             $return_buffer .= "</td>";
-            $return_buffer .= "</tr>";
+			if ($via_ajax == 0) {
+				$return_buffer .= "</tr>";
+			}
 
             return $return_buffer;
         }
@@ -368,7 +403,7 @@ function return_where_item_result_trade_skill($item_id){
                     <a href='?a=recipe&id=" . $row["id"] . "'>
                         " . str_replace("_", " ", $row["name"]) . "
                     </a>
-                    (" . ucfirstwords(strip_underscores(strtolower($dbskills[$row["tradeskill"]]))) . ")
+                    (" . strip_underscores(strtolower($dbskills[$row["tradeskill"]])) . ")
                 </li>";
         }
         $return_buffer .= "</ul></td></tr>";

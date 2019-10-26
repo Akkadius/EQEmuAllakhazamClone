@@ -1,19 +1,20 @@
-html, body {background:#8a816f url(/eq/i/bgl-dark.gif);color:#000}
+html, body {background:#000000; color: white;}
 a {color:#1313d5;text-decoration:none}
-a:hover {color:#000;text-decoration:underline}
+a:hover {color:white;text-decoration:underline}
 hr {border-color:#000}
 
-#wrapper {background:#d4c7ab url(/eq/i/bgl.gif)}
+#wrapper {background:#000000; border: 1px solid; border-color: white}
 #logo a {background:url(/eq/i/logo.png) right no-repeat;width:331px}
 #row-top {background:#c0ad89 url(/eq/i/bgd.gif)}
 #cols {border-top:1px solid #e5e5e5}
 #col-right {background:#c0ad89 url(/eq/i/colright.png)}
-#featured-promos .cont {background:#d4c7ab url(/eq/i/bgl.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
-footer .block-content {background:#d4c7ab url(/eq/i/bgl.gif)}
+#featured-promos .cont {background:#000000;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+footer .block-content {background:#000000; color: white;}
 footer .footer-featured-sites ul li a, footer .footer-zam .footer-social .footer-callout, footer .footer-zam .footer-social-links
     {background:#c0ad89 url(/eq/i/colright.png) -1px 0}
 
-#menu_horiz {background:url(../images/nav.jpg);border-color:#696969}
+#menu_horiz {background: #000000; color: white; }
+#menu_horiz a { color: yellow }
 #nav a, #user-login a {color:#000}
 #nav a:hover, #user-login a:hover {color:#1313d5}
 #menu_horiz > li:hover {background:url(/eq/i/nav.jpg) bottom}
@@ -22,7 +23,7 @@ footer .footer-featured-sites ul li a, footer .footer-zam .footer-social .footer
 #nav div li {border-bottom:1px solid #696969}
 #nav div a {border-bottom:0 !important;border-left:1px solid #e5e5e5;border-top:1px solid #e5e5e5}
 #nav li:hover > a {background:url(/i/nav-white-top.png) repeat-x}
-#nav div li:hover {background:#d4c7ab url(/eq/i/bgl.gif)}
+#nav div li:hover {background:#000000; color: white}
 #nav > ul > .ext > a {background:url(/i/extarrow-black.gif) right no-repeat}
 #menu_horiz li li.has-sub > a {background:url(/i/arrow-right-spaced-black.png) right no-repeat !important}
 #menu_horiz > li > div {left:-1px}
@@ -32,24 +33,24 @@ footer .footer-featured-sites ul li a, footer .footer-zam .footer-social .footer
 .nc-account-code {border-left:1px solid #696969}
 .nc-account-code > a {border-right:0 !important}
 
-#footer {color:#333}
+#footer {background-color:#000000; color: white;}
 #footer li, #footer #footer-network {border-color:#6b6b6b}
-#footer h3 {color:#000}
-#footer a {color:#333}
-#footer a:hover {color:#000}
+#footer h3 {background-color:#000000; color: white;}
+#footer a {background-color:#000000; color: yellow;}
+#footer a:hover {background-color:#000000; color: yellow;}
 #footer #footer-logo .logo {background:url(/i/logo-footer-black.png)}
 
 .no-template {background:#d4c7ab url(/eq/i/bgl.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
 
-.menuh {font-weight:bold;border-style:solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-width:1px;background:url(/eq/i/bgd.gif)}
+.menuh {font-weight:bold;background:url(/eq/i/bgd.gif)}
 
 #pagetitle{font-family:'Charter BT';font-size:22px;font-weight:bold}
 
 .hb {background:#b1a67e;font-size:10px}
 
 .fs14 {font-size:12.5px;font-weight:500}
-.lr, .s2-lr {background:#d4c7ab url(/eq/i/bgl.gif)}
-.dr, .s2-dr {background:#d7c69a url(/eq/i/bg.gif)}
+.lr, .s2-lr {background:#000000; color: white}
+.dr, .s2-dr {background:#000000; color: white}
 .link-list .s2-lr, .link-list .s2-dr, .list .s2-lr, .list .s2-dr, #rss-feed .s2-lr, #rss-feed .s2-dr {border-color:#696969 !important}
 
 #bigrow, .bigrow {color:#000;font-size:18px;font-weight:bold}
@@ -172,14 +173,14 @@ div.nobgrd .herosta {color:purple}
 
 .alert > .box {background:#c0ad89 url(/eq/i/bgd.gif)}
 
-.datatable {background:#d7c69a url(/eq/i/bg.gif);border:1px solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-collapse:separate;border-spacing:0}
-.datatable caption {background:#d7c69a url(/eq/i/bg.gif);border-color:#e5e5e5 #696969 #696969 #e5e5e5}
-.datatable th {background:#b1a67e url(/eq/i/bgd.gif);border:solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-width:0 0 1px}
-.datatable td {border:solid #9e9e9e;border-width:1px 0 0}
-.datatable td:first-child {border-left:0}
+.datatable {background:#000000;border:1px solid;border-color: white; border-collapse:separate;border-spacing:0}
+.datatable caption {background:#000000;border-color:#e5e5e5 #696969 #696969 #e5e5e5}
+.datatable th {background:#000000;border:solid;border-color:#e5e5e5 #696969 #696969 #e5e5e5;border-width:0 0 1px}
+.datatable td {background:#000000;border:solid #9e9e9e;border-width:1px 0 0}
+.datatable td:first-child {background:#000000;border-left:0}
 .datatable tbody tr:first-child td {border-top:0}
 .datatable .lr, .datatable .dr {background:none}
-.datatable tr:hover, .datatable tr.lr:hover, .datatable tr.dr:hover {background:#d4c7ab url(/eq/i/bgl.gif)}
+.datatable tr:hover, .datatable tr.lr:hover, .datatable tr.dr:hover {background:#333333;}
 
 #livetable .secrow td {border-top:0}
 
@@ -194,7 +195,7 @@ div.nobgrd .herosta {color:purple}
 
 /* NF */
 
-.f-search input.inactive {color:#999}
+.f-search input.inactive {background:#000000; color:white}
 
 .forums .post-buttons a {background-color:#b8a177}
 .forums .post-buttons a:hover {background-color:#b39b6e}

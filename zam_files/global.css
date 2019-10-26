@@ -1487,8 +1487,8 @@ table.sto-panel {padding:0}
 .sto-panel .inner {background:#06101a;border-radius:5px;-moz-border-radius:5px;-webkit-border-radius:5px;padding:5px}
 .sto-panel table.inner {padding:0}
 .sto-panel .datatable, .sto-panel .datatable thead, .sto-panel .datatable th, .sto-panel .datatable td, .sto-panel .datatable caption {background:none !important;border:0 !important;text-align:left}
-.sto-panel .datatable .lr {background:#181818}
-.sto-panel .datatable .dr {background:#000}
+.sto-panel .datatable .lr {background:#000000}
+.sto-panel .datatable .dr {background:#000000}
 .sto-mission-summary {color:#37ff37}
 
 .sto-q0 a, .sto-q1 a, .sto-q2 a, .sto-q3 a, .sto-q4 a {text-decoration:underline !important}

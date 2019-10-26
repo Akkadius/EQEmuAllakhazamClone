@@ -8,17 +8,17 @@ if (!is_numeric($class)) {
     exit();
 }
 
-$page_title = "Pets Statistics";
+$page_title = "Pets :: Pet Statistics";
 
 $print_buffer .= "<table class='container_div display_table'><tr valign=top><td>";
-$print_buffer .= "<h2 class='section_header'>Choose a class</h2><ul style='text-align:left'>";
+$print_buffer .= "<h2 class='section_header'>Choose a Class</h2><ul style='text-align:left'>";
 $print_buffer .= "<li><a href=?a=pets&class=15 id='class15'>Beastlord</a>";
 $print_buffer .= "<li><a href=?a=pets&class=2  id='class2'>Cleric</a>";
 $print_buffer .= "<li><a href=?a=pets&class=6  id='class6'>Druid</a>";
 $print_buffer .= "<li><a href=?a=pets&class=14  id='class14'>Enchanter</a>";
 $print_buffer .= "<li><a href=?a=pets&class=13  id='class13'>Magician</a>";
 $print_buffer .= "<li><a href=?a=pets&class=11  id='class11'>Necromancer</a>";
-$print_buffer .= "<li><a href=?a=pets&class=5  id='class5'>Shadow knight</a>";
+$print_buffer .= "<li><a href=?a=pets&class=5  id='class5'>Shadowknight</a>";
 $print_buffer .= "<li><a href=?a=pets&class=10  id='class10'>Shaman</a>";
 $print_buffer .= "<li><a href=?a=pets&class=12  id='class12'>Wizard</a>";
 $print_buffer .= "</ul>";
@@ -62,34 +62,32 @@ if (isset($class) && $class != 0) {
     $print_buffer .= "<table class='datatable' style='clear:none'><thead>";
     $print_buffer .= "<th class='menuh'>Level</th>";
     $print_buffer .= "<th class='menuh'>Icon</th>";
-    $print_buffer .= "<th class='menuh'>Spell Name</th>";
+    $print_buffer .= "<th class='menuh'>Spell</th>";
     $print_buffer .= "<th class='menuh'>Details</th>";
     $print_buffer .= "<th class='menuh'>Race</th>";
-    $print_buffer .= "<th class='menuh'>Pet Level</th>";
-    $print_buffer .= "<th class='menuh'>Pet Class</th>";
+    $print_buffer .= "<th class='menuh'>Level</th>";
+    $print_buffer .= "<th class='menuh'>Class</th>";
     $print_buffer .= "<th class='menuh'>HP</th>";
     $print_buffer .= "<th class='menuh'>Mana</th>";
-    $print_buffer .= "<th class='menuh'>AC</th>";
-    $print_buffer .= "<th class='menuh'>Min Damage</th>";
-    $print_buffer .= "<th class='menuh'>Max Damage</th>";
+    $print_buffer .= "<th class='menuh'>Armor Class</th>";
+    $print_buffer .= "<th class='menuh'>Damage</th>";
 
 
-    $RowClass     = "lr";
+    $RowClass = "lr";
     $print_buffer .= "</tr></thead><tbody>";
     while ($row = mysqli_fetch_array($result)) {
         $print_buffer .= "<tr class='" . $RowClass . "'>";
-        $print_buffer .= "<td>" . $row["classes" . $class] . "</td>";
-        $print_buffer .= "<td><img src='" . $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";
-        $print_buffer .= "<td><a href='?a=spell&id=" . $row['id'] . "'>  " . $row['name'] . " </a></td>";
-        $print_buffer .= "<td><a href='?a=pet&name=" . $row['teleport_zone'] . "'>View</a></td>";
-        $print_buffer .= "<td>" . $dbiracenames[$row["race"]] . "</td>";
-        $print_buffer .= "<td>" . $row["level"] . "</td>";
-        $print_buffer .= "<td>" . $row["class"] . "</td>";
-        $print_buffer .= "<td>" . $row["hp"] . "</td>";
-        $print_buffer .= "<td>" . $row["mana"] . "</td>";
-        $print_buffer .= "<td>" . $row["ac"] . "</td>";
-        $print_buffer .= "<td>" . $row["mindmg"] . "</td>";
-        $print_buffer .= "<td>" . $row["maxdmg"] . "</td>";
+			$print_buffer .= "<td>" . $row["classes" . $class] . "</td>";
+			$print_buffer .= "<td><img src='" . $icons_url . $row["new_icon"] . ".gif' align='center' border='1' width='20' height='20'></td>";
+			$print_buffer .= "<td><a href='?a=spell&id=" . $row['id'] . "'>  " . $row['name'] . " </a></td>";
+			$print_buffer .= "<td><a href='?a=pet&name=" . $row['teleport_zone'] . "'>View</a></td>";
+			$print_buffer .= "<td>" . $dbiracenames[$row["race"]]. "</td>";
+			$print_buffer .= "<td>" . $row["level"] . "</td>";
+			$print_buffer .= "<td>" . $row["class"] . "</td>";
+			$print_buffer .= "<td>" . number_format($row["hp"]) . "</td>";
+			$print_buffer .= "<td>" . number_format($row["mana"]) . "</td>";
+			$print_buffer .= "<td>" . number_format($row["ac"]) . "</td>";
+			$print_buffer .= "<td>" . number_format($row["mindmg"]) . " to " . number_format($row["maxdmg"]) . "</td>";
         $print_buffer .= "</tr>";
 
         if ($RowClass == "lr") {

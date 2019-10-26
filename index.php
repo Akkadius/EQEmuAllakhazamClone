@@ -61,34 +61,6 @@
 
 <div id="bg-wrapper" style="min-height: auto;">
     <div id="skin-wrap"></div>
-    <div id="header">
-        <div id="logo" style="background: url(images/logos/eqemu.png) 0 10px no-repeat;">
-            <a href="#" style="background: url(images/logos/logo.png) right no-repeat;top:10px"></a>
-            <?php
-                if($site_logo)
-                    echo '<img src="' . $site_logo . '" style="width: 200px;height:auto;position: absolute;left: 340px;z-index: 900;bottom: 10px;">';
-            ?>"
-        </div>
-
-        <form id="global_search">
-            <input id="qq" type="text" onfocus="this.select()" value="<?php echo $_GET['q']; ?>" autocomplete="off" placeholder="Search Items, NPCs, Zones etc.">
-            <a href="javascript:document.search.submit();"></a>
-        </form>
-
-        <div id="nav">
-            <ul id="menu_horiz">
-                <li class="has-sub first-child  nc-home"><a href="?">Home</a>
-                    <div><em></em><var></var><strong></strong>
-                        <ul>
-                            <li class="first-child  nc-news-archives"><a href="http://eqemulator.org">EQEmulator</a> </li>
-                            <li class="last-child  nc-zam-tools"><a href="http://everquest.allakhazam.com/"><span class="icon-tools">Official Allakhazam</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
     <div id="wrapper">
         <div id="body">
             <div id="cols">
@@ -106,25 +78,11 @@
                                                 <td class="menuh" nowrap="1">Main...</td>
                                             </tr>
                                             <tr>
-                                                <td nowrap="1" class="menu_item">
-                                                    <li><a href="?">Home</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td  class="menu_item">
-                                                    <li><a href="http://www.eqemulator.org">EQEmulator</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="menuh" nowrap="1">Zones...</td>
-                                            </tr>
-                                            <tr>
-                                                <td  class="menu_item">
-                                                    <li><a href="?a=zonelist">Zones by Era</a></li>
-                                                    <li><a href="?a=zones">Populated Zones</a> </li>
-                                                    <li><a href="?a=zones_by_level">Zones by Level</a> </li>
+                                                    <li><a href="/">Home</a></li>
+													<li><a href="/?p=leaderboard">Leaderboard</a></li>
+													<li><a href="/Magelo">Magelo</a></li>
+                                                    <li><a href="http://www.eqemulator.org">EQEmulator</a></li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -144,27 +102,11 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="menuh" nowrap="1">Factions...</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="menu_item" nowrap="1">
-                                                    <li><a href="?a=factions">Faction Search</a> </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td class="menuh" nowrap="1">Bestiary...</td>
-                                            </tr>
+											</tr>
                                             <tr>
                                                 <td  class="menu_item">
-                                                    <li><a href="?a=npcs">NPC Search</a>
-                                                    </li>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td  class="menu_item">
-                                                    <li><a href="?a=advanced_npcs">Advanced NPC
-                                                            Search</a>
-                                                    </li>
+                                                    <li><a href="?a=npcs">NPC Search</a></li>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -174,13 +116,27 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="menuh" nowrap="1">Trade skills...</td>
+                                                <td class="menuh" nowrap="1">Tasks...</td>
                                             </tr>
                                             <tr>
                                                 <td  class="menu_item">
-                                                    <li><a href="?a=recipes&">Recipe
-                                                            Search</a>
-                                                    </li>
+                                                    <li><a href="?a=tasks">Task Search</a></li>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="menuh" nowrap="1">Tradeskills...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=recipes">Recipe Search</a></li>
+                                                </td>
+                                            </tr><tr>
+                                                <td class="menuh" nowrap="1">Zones...</td>
+                                            </tr>
+                                            <tr>
+                                                <td  class="menu_item">
+                                                    <li><a href="?a=zonelist">Zones by Era</a></li>
+                                                    <li><a href="?a=zones">Populated Zones</a> </li>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -224,20 +180,16 @@
     <?php
         $end = microtime(true);
         $time = number_format(($end - $start), 2);
-        $page_load_time = 'This page loaded in ' . $time . ' seconds';
+        $page_load_time = 'This page loaded in ' . $time . ' seconds.';
     ?>
 
     <footer>
         <div class="block-content pad10" style="line-height:24px">
             <ul class="site-footer">
                 <?php
-
                     echo $page_load_time;
-
-                    if($mysql_debugging){
+                    if($mysql_debugging)
                         print $debug_queries;
-                    }
-
                 ?>
             </ul>
             <div class="clear"></div>
