@@ -1,5 +1,8 @@
 <?php
 
+// Trim whitespace from start and end of query; this works for direct entry and JS updates
+$_GET['q'] = trim($_GET['q']);
+
 $name = mysqli_real_escape_string($database, $_GET['q']);
 
 $page_title = "Global Search :: " . $_GET['q'];
