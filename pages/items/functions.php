@@ -157,7 +157,9 @@ function return_where_item_sold($item_id){
             AND $merchant_list_table.merchantid = $npc_types_table.merchant_id
             AND $zones_table.short_name = $spawn2_table.zone
         ";
-
+        foreach ($ignore_zones AS $zid) {
+            $query .= " AND $zones_table.short_name!='$zid'";
+        }
         $result = db_mysql_query($query);
 
         if (mysqli_num_rows($result) > 0) {

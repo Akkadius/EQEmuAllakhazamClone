@@ -145,6 +145,9 @@ if (count($_GET) > 2) {
         $query .= " $s ($items_table.nodrop=1)";
         $s = "AND";
     }
+	foreach ($ignore_zones AS $zid) {
+		$query .= " AND $zones_table.short_name!='$zid'";
+	}
     $query .= " GROUP BY $items_table.id ORDER BY $items_table.Name LIMIT " . (get_max_query_results_count($max_items_returned) + 1);
     $QueryResult = db_mysql_query($query);
 
