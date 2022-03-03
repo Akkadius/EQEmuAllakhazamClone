@@ -2,7 +2,7 @@
 
 function SpellDescription($spell, $n, $csv = false)
 {
-    global $dbspelleffects, $items_table, $dbiracenames, $spells_table, $server_max_level;
+    global $dbspelleffects, $dbspelltargets, $items_table, $dbiracenames, $spells_table, $server_max_level;
 
     $print_buffer = '<ul>';
 
