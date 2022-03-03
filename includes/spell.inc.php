@@ -42,14 +42,14 @@ function SpellDescription($spell, $n, $csv = false)
                 if ($max < 0) { // Decrease
                     $print_buffer .= "Decrease Movement";
                     if ($min != $max) {
-                        $print_buffer .= " by " . abs($min) . "% (L$minlvl) to " . abs($max) . "% (L$maxlvl)";
+                        $print_buffer .= " by " . abs($min) . "% to " . abs($max) . "%";
                     } else {
                         $print_buffer .= " by " . abs(100) . "%";
                     }
                 } else {
                     $print_buffer .= "Increase Movement";
                     if ($min != $max) {
-                        $print_buffer .= " by " . $min . "% (L$minlvl) to " . ($max) . "% (L$maxlvl)";
+                        $print_buffer .= " by " . $min . "% to " . ($max) . "%";
                     } else {
                         $print_buffer .= " by " . ($max) . "%";
                     }
@@ -59,14 +59,14 @@ function SpellDescription($spell, $n, $csv = false)
                 if ($max < 100) { // Decrease
                     $print_buffer .= "Decrease Attack Speed";
                     if ($min != $max) {
-                        $print_buffer .= " by " . (100 - $min) . "% (L$minlvl) to " . (100 - $max) . "% (L$maxlvl)";
+                        $print_buffer .= " by " . (100 - $min) . "% to " . (100 - $max) . "%";
                     } else {
                         $print_buffer .= " by " . (100 - $max) . "%";
                     }
                 } else {
                     $print_buffer .= "Increase Attack Speed";
                     if ($min != $max) {
-                        $print_buffer .= " by " . ($min - 100) . "% (L$minlvl) to " . ($max - 100) . "% (L$maxlvl)";
+                        $print_buffer .= " by " . ($min - 100) . "% to " . ($max - 100) . "%";
                     } else {
                         $print_buffer .= " by " . ($max - 100) . "%";
                     }
@@ -130,7 +130,7 @@ function SpellDescription($spell, $n, $csv = false)
             case 294: // Increase Critical Spell Chance
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
                 if ($min != $max) {
-                    $print_buffer .= " by $min% (L$minlvl) to $max% (L$maxlvl)";
+                    $print_buffer .= " by $min% to $max%";
                 } else {
                     $print_buffer .= " by $max%";
                 }
@@ -139,9 +139,9 @@ function SpellDescription($spell, $n, $csv = false)
             case 100: // Increase Hitpoints v2 per tick
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
                 if ($min != $max) {
-                    $print_buffer .= " by " . abs($min) . " (L$minlvl) to " . abs(
+                    $print_buffer .= " by " . abs($min) . " to " . abs(
                             $max
-                        ) . " (L$maxlvl) per tick (total " . abs($min * $duration) . " to " . abs(
+                        ) . " per tick (total " . abs($min * $duration) . " to " . abs(
                                          $max * $duration
                                      ) . ")";
                 } else {
@@ -280,7 +280,7 @@ function SpellDescription($spell, $n, $csv = false)
                 }
                 $print_buffer .= $name;
                 if ($min != $max) {
-                    $print_buffer .= " by $min% (L$minlvl) to $max% (L$maxlvl)";
+                    $print_buffer .= " by $min% to $max%";
                 } else {
                     $print_buffer .= " by $max%";
                 }
@@ -400,7 +400,7 @@ function SpellDescription($spell, $n, $csv = false)
                 }
                 $print_buffer .= $name;
                 if ($min != $max) {
-                    $print_buffer .= " by $min (L$minlvl) to $max (L$maxlvl)";
+                    $print_buffer .= " by $min to $max";
                 } else {
                     if ($max < 0) {
                         $max = -$max;
