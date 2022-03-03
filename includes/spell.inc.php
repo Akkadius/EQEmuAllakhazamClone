@@ -293,7 +293,7 @@ function SpellDescription($spell, $n, $csv = false)
                 break;
             case 121: // Reverse Damage Shield
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " (-$max)";
+                $print_buffer .= " ($max)";
                 break;
             case 91: // Summon Corpse
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
