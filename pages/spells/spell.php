@@ -70,6 +70,13 @@ $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Casti
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Recovery time</b></td><td>" . ($spell["recovery_time"] / 1000) . " sec</td></tr>";
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Recast time</b></td><td>" . ($spell["recast_time"] / 1000) . " sec</td></tr>";
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Range</b></td><td>" . $spell["range"] . "</td></tr>";
+// Adding these two fields seems to give the clearest picture.  Technically
+// HateAdded is modified for pets, dispel, and first hits, but those are
+// probably not the cases most people are looking for.
+$hate = $spell["HateAdded"] + $spell["bonushate"];
+if ($hate != 0) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Hate Generated</b></td><td>$hate</td></tr>";
+}
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Target</b></td><td>";
 if ($dbspelltargets[$spell["targettype"]] != "") {
     $print_buffer .= $dbspelltargets[$spell["targettype"]];
