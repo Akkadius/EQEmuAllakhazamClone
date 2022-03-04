@@ -128,7 +128,27 @@ function SpellDescription($spell, $n, $csv = false)
             case 266: // Add Attack Chance
             case 273: // Increase Critical Dot Chance
             case 294: // Increase Critical Spell Chance
-                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+                $name = $dbspelleffects[$spell["effectid$n"]];
+                // For several of these cases, we have better information on
+                // the range of values for the focus effect.
+                switch ($spell["effectid$n"]) {
+                    case 123: // Increase Spell Damage
+                    case 124: // Increase Spell Damage
+                    case 125: // Increase Spell Healing
+                    case 131: // Decrease Chance of Using Reagent
+                    case 132: // Decrease Spell Mana Cost
+                        $min = $spell["effect_base_value$n"];
+                        $max = $spell["effect_limit_value$n"];
+                        break;
+                    // Reword this effect to seem more natural, matching
+                    // Allakhazam.
+                    case 130: // Decrease Spell/Bash Hate
+                        $min = $spell["effect_base_value$n"];
+                        $max = $spell["effect_limit_value$n"];
+                        $name = str_replace("Decrease", "Increase", $name);
+                        break;
+                }
+                $print_buffer .= $name;
                 if ($min != $max) {
                     $print_buffer .= " by $min% to $max%";
                 } else {
