@@ -84,6 +84,18 @@ if ($dbspelltargets[$spell["targettype"]] != "") {
     $print_buffer .= "Unknown target (" . $spell["targettype"] . ")";
 }
 $print_buffer .= "</td></tr>";
+// AE range seems to be 1 for self/single-target spells
+if ($spell["aoerange"] > 1) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>AoE Range</b></td><td>" . $spell["aoerange"] . "</td></tr>";
+}
+// AE max targets seems to be 1 for self/single-target spells
+if ($spell["aemaxtargets"] > 1) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>AoE Max Targets</b></td><td>" . $spell["aemaxtargets"] . "</td></tr>";
+}
+// EQEmu server checks that duration >= 1000 before applying any AE rules
+if ($spell["AEDuration"] >= 1000) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>AoE Duration</td><td>" . ($spell["AEDuration"] / 1000) . " sec</td></tr>";
+}
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Resist</b></td><td>" . $dbspellresists[$spell["resisttype"]];
 if ($spell["ResistDiff"] != 0) {
     $print_buffer .= " (adjust: " . $spell["ResistDiff"] . ")";
