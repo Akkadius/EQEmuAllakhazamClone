@@ -77,7 +77,7 @@ if ($dbspelltargets[$spell["targettype"]] != "") {
     $print_buffer .= "Unknown target (" . $spell["targettype"] . ")";
 }
 $print_buffer .= "</td></tr>";
-$print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Resist</b></td><td>" . $dbspellresists[$spell["resist"]] . " (adjust: " . $spell["ResistDiff"] . ")</td></tr>";
+$print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Resist</b></td><td>" . $dbspellresists[$spell["resisttype"]] . " (adjust: " . $spell["ResistDiff"] . ")</td></tr>";
 if ($spell["TimeOfDay"] == 2) {
     $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Casting restriction</b></td><td>Nighttime</td></tr>";
 }
