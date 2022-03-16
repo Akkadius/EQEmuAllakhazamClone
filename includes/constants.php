@@ -887,6 +887,7 @@ $dbspellresists = [
     6 => "Chromatic",
     7 => "Prismatic",
     8 => "Physical",
+    9 => "Corruption",
 ];
 
 // Array of ALL races through VoA Expansion

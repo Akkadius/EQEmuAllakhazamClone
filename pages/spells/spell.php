@@ -70,6 +70,13 @@ $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Casti
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Recovery time</b></td><td>" . ($spell["recovery_time"] / 1000) . " sec</td></tr>";
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Recast time</b></td><td>" . ($spell["recast_time"] / 1000) . " sec</td></tr>";
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Range</b></td><td>" . $spell["range"] . "</td></tr>";
+// Adding these two fields seems to give the clearest picture.  Technically
+// HateAdded is modified for pets, dispel, and first hits, but those are
+// probably not the cases most people are looking for.
+$hate = $spell["HateAdded"] + $spell["bonushate"];
+if ($hate != 0) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Hate Generated</b></td><td>$hate</td></tr>";
+}
 $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Target</b></td><td>";
 if ($dbspelltargets[$spell["targettype"]] != "") {
     $print_buffer .= $dbspelltargets[$spell["targettype"]];
@@ -77,7 +84,24 @@ if ($dbspelltargets[$spell["targettype"]] != "") {
     $print_buffer .= "Unknown target (" . $spell["targettype"] . ")";
 }
 $print_buffer .= "</td></tr>";
-$print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Resist</b></td><td>" . $dbspellresists[$spell["resist"]] . " (adjust: " . $spell["ResistDiff"] . ")</td></tr>";
+// AE range seems to be 1 for self/single-target spells
+if ($spell["aoerange"] > 1) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>AoE Range</b></td><td>" . $spell["aoerange"] . "</td></tr>";
+}
+// AE max targets seems to be 1 for self/single-target spells
+if ($spell["aemaxtargets"] > 1) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>AoE Max Targets</b></td><td>" . $spell["aemaxtargets"] . "</td></tr>";
+}
+// EQEmu server checks that duration >= 1000 before applying any AE rules
+if ($spell["AEDuration"] >= 1000) {
+    $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>AoE Duration</td><td>" . ($spell["AEDuration"] / 1000) . " sec</td></tr>";
+}
+$print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Resist</b></td><td>" . $dbspellresists[$spell["resisttype"]];
+if ($spell["ResistDiff"] != 0) {
+    $print_buffer .= " (adjust: " . $spell["ResistDiff"] . ")";
+}
+$print_buffer .= "</td></tr>";
+$print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Interruptable</b></td><td>" . (($spell["uninterruptable"] == 0) ? "Yes" : "No") . "</td></tr>";
 if ($spell["TimeOfDay"] == 2) {
     $print_buffer .= "<tr><td style='text-align:right; padding-right: 5px;'><b>Casting restriction</b></td><td>Nighttime</td></tr>";
 }
