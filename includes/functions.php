@@ -1091,6 +1091,7 @@ function return_item_stat_box($item, $show_name_icon)
         if ($item["proclevel2"] > 0) {
             $html_string .= "<br><b>Level for effect: </b>" . $item["proclevel2"];
         }
+        $html_string .= "<br><b>Effect chance modifier: </b>" . (100 + $item["procrate"]) . "%";
         $html_string .= "</td></tr>";
     }
     // worn effect
