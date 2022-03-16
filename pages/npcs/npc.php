@@ -163,6 +163,19 @@ if ($npc["npc_spells_id"] > 0) {
     if (mysqli_num_rows($result) > 0) {
         $g = mysqli_fetch_array($result);
         $print_buffer .= "<td><table border='0'><tr><td colspan='2' nowrap='1'><h2 class='section_header'>This NPC casts the following spells</h2><p>";
+
+        // Show proc chance, which is just in npc_spells, not npc_spells_entries like the main spells below
+        if ($g["attack_proc"] > 0 ) {
+            $query = "SELECT id, name, new_icon FROM $spells_table WHERE id=" . $g["attack_proc"];
+            $result = db_mysql_query($query) or message_die('npc.php', 'MYSQL_QUERY', $query, mysqli_error());
+            if (mysqli_num_rows($result) > 0) {
+                $proc = mysqli_fetch_array($result);
+                $icon = '<img src="' . $icons_url . $proc['new_icon'] . '.gif" align="center" border="1" style="border-radius:5px;height:15px;width:auto">';
+                $print_buffer .= "<a href='?a=spell&id=" . $proc["id"] . "'>{$icon} {$proc['name']}</a>";
+                $print_buffer .= " (" . $g["proc_chance"] . "% proc)<br/><br/>";
+            }
+        }
+
         /** @noinspection SqlDialectInspection */
         $query = "
             SELECT
@@ -186,9 +199,6 @@ if ($npc["npc_spells_id"] > 0) {
             $print_buffer .= "</ul>{$list_name}";
             if ($DebugNpc) {
                 $print_buffer .= " (" . $npc["npc_spells_id"] . ")";
-            }
-            if ($g["attack_proc"] == 1) {
-                $print_buffer .= " (Procs)";
             }
             $print_buffer .= "<ul>";
             while ($row = mysqli_fetch_array($result2)) {
