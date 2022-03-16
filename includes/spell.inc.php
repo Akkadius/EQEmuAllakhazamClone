@@ -154,10 +154,16 @@ function SpellDescription($spell, $n, $csv = false)
                 $print_buffer .= " (" . $spell["effect_base_value$n"] . "/" . $spell["effect_limit_value$n"] . ")";
                 break;
             case 22: // Charm
+                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+                $print_buffer .= " up to level " . $spell["max1"];
+                break;            
             case 23: // Fear
+                $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
+                $print_buffer .= " up to level " . $spell["max1"];
+                break;
             case 31: // Mesmerize
                 $print_buffer .= $dbspelleffects[$spell["effectid$n"]];
-                $print_buffer .= " up to level " . $spell["effect_limit_value$n"];
+                $print_buffer .= " up to level " . $spell["max1"];
                 break;
             case 33: // Summon Pet:
             case 68: // Summon Skeleton Pet:
