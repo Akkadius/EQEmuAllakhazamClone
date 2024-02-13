@@ -19,10 +19,18 @@ $site_title  = 'EQEmu Server AllaClone';
 /**
  * MySQL Config
  */
-$db_host     = "mariadb";
-$db_name     = "peq";
-$db_user     = "root";
-$db_password = "root";
+function env($variable, $default)
+{
+    return getenv($variable) ? getenv($variable) : $default;
+}
+
+/**
+ * Database info
+ */
+$db_host = env('DB_HOST', 'mariadb');
+$db_user = env('DB_USER', 'root');
+$dbpass  = env('DB_PASSWORD', 'root');
+$db_name = env('DB_NAME', 'peq');
 
 /**
  * Options
