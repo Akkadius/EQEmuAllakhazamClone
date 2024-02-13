@@ -27,10 +27,10 @@ function env($variable, $default)
 /**
  * Database info
  */
-$db_host = env('DB_HOST', 'mariadb');
-$db_user = env('DB_USER', 'root');
-$dbpass  = env('DB_PASSWORD', 'root');
-$db_name = env('DB_NAME', 'peq');
+$db_host      = env('DB_HOST', 'mariadb');
+$db_user      = env('DB_USER', 'root');
+$db_password  = env('DB_PASSWORD', 'root');
+$db_name      = env('DB_NAME', 'peq');
 
 /**
  * Options
