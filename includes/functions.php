@@ -594,7 +594,7 @@ function SpecialAttacks($att)
     $v    = '';
     // from mobs.h
     for ($i = 0; $i < strlen($att); $i++) {
-        switch ($att{$i}) {
+        switch ($att[$i]) {
             case 'A' :
                 $data .= $v . " Immune to melee";
                 $v    = ', ';
